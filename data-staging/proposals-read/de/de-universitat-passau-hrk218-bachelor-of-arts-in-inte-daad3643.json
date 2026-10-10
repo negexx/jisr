@@ -1,0 +1,44 @@
+{
+  "slug": "de-universitat-passau-hrk218-bachelor-of-arts-in-inte-daad3643",
+  "programmePage": "https://www.uni-passau.de/en/ba-icbs/?mtm_campaign=DAADIPG",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.uni-passau.de/en/ba-icbs/?mtm_campaign=DAADIPG",
+          "quote": "Duration and credits 6 semesters; 180 ECTS credits"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uni-passau.de/en/ba-icbs/?mtm_campaign=DAADIPG",
+          "quote": "Language of instruction German; includes individual modules taught in two foreign languages"
+        }
+      ]
+    }
+  },
+  "notes": "The BA ICBS page and the DAAD page state no day+month+year application deadline for this programme, and the deadline '15 July' is a general one: 01.04.2026 'Öffnung des uni-assist Bewerbungsportals für Bewerbungen mit internationalen Qualifikationen' and '15.07.2026 Bewerbungsschluss für grundständige Studiengänge über uni-assist' on https://www.uni-passau.de/termine-fristen. The September 2026 deadlines on https://www.uni-passau.de/termine-fristen concern 'Studium in Passau für US-Studierende' (https://www.uni-passau.de/studieninfos-usa). The VPD/uni-assist route for international applicants at this university could not be quoted.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Si vous fournissez un certificat B2 au moment de la candidature, vous pouvez postuler, mais vous devrez présenter un certificat C1 avant l'inscription.",
+          "en": "With a B2 certificate at the time of application you may apply, but you will have to provide a C1 certificate by the time you enrol."
+        },
+        "evidence": [
+          {
+            "url": "https://www.uni-passau.de/en/ba-icbs/?mtm_campaign=DAADIPG",
+            "quote": "If you can provide recognised certificates for German language skills at level B2 CEFR at the time of application, you may apply for this degree programme."
+          }
+        ]
+      }
+    ]
+  }
+}

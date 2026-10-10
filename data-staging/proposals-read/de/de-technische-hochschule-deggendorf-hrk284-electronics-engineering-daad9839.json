@@ -1,0 +1,145 @@
+{
+  "slug": "de-technische-hochschule-deggendorf-hrk284-electronics-engineering-daad9839",
+  "programmePage": "https://www.th-deg.de/eai-b-en",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/eai-b-en",
+          "quote": "Duration 8 semesters (4 years)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/eai-b-en",
+          "quote": "Taught in 1st - 3rd semester: English, German language courses for A2 through B2 part of curriculum From the 4th semester: German"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 50000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9839/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries Switzerland United Kingdom 500 EUR"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 12,
+            "day": 1
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/eai-b-en",
+          "quote": "Application period 15 October - 1 December Admission requirements General German university entrance qualification, or please check your eligibilty at the DAAD if you own an international qualification"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/en/apply",
+          "quote": "If you are interested in applying to our university, choose what you aim to study and apply directly to DIT via our own online application portal, Primuss."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "university-entrance-qualification",
+          "name": {
+            "fr": "Diplôme donnant accès à l'université",
+            "en": "University entrance qualification"
+          },
+          "quotedAs": "University entrance qualification",
+          "translationRequired": null
+        },
+        {
+          "slug": "identity-card-copy",
+          "name": {
+            "fr": "Copie de la carte d'identité",
+            "en": "Copy of your identity card"
+          },
+          "quotedAs": "Copy of your identity card",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "Curriculum vitae",
+            "en": "Curriculum vitae"
+          },
+          "quotedAs": "Curriculum vitae",
+          "translationRequired": null
+        },
+        {
+          "slug": "proof-of-language-proficiency",
+          "name": {
+            "fr": "Preuve de compétence linguistique",
+            "en": "Proof of language proficiency"
+          },
+          "quotedAs": "Proof of language proficiency",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/en/apply",
+          "quote": "University entrance qualification Copy of your identity card Curriculum vitae Proof of language proficiency, if applicable"
+        }
+      ]
+    }
+  },
+  "notes": "The application channel is de-university-direct: the pages state that international applicants apply directly via the DIT online application portal, Primuss; no uni-assist or VPD is mentioned. The tuition fee of EUR 500 per semester is stated on the DAAD page as applying to applicants from non-EU countries. The 'No tuition fees' statement on the th-deg.de/eai-b-en page appears in the general 'Fees' section and is not quoted for the tuition fact because it conflicts with the DAAD non-EU fee. Dates for the application period (15 October – 1 December) are given without a year.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9839/",
+            "quote": "German language skills A1 required, please provide an official language certificate, e.g.: Goethe-Zertifikat: Goethe-Zertifikat A1 telc Deutsch: telc Deutsch A1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'admission en ligne (questions de mathématiques) doit être réussi.",
+          "en": "A successfully completed online admission test (mathematics questions) is required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-deg.de/eai-b-en",
+            "quote": "A successfully completed admission test (online option available). The test consists of questions from Mathematics."
+          }
+        ]
+      }
+    ]
+  }
+}

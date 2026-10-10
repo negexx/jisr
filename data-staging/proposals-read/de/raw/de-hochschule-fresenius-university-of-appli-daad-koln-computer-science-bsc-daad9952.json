@@ -1,0 +1,73 @@
+{
+  "slug": "de-hochschule-fresenius-university-of-appli-daad-koln-computer-science-bsc-daad9952",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9952/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9952/",
+          "quote": "Programme duration 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9952/",
+          "quote": "Teaching language English Languages Courses are held in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 612000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9952/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 6,120 EUR"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9952/",
+            "quote": "English language skills B2 required, please provide an official language certificate"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien d'admission de 15 minutes est prévu après vérification des conditions d'admission ; il ne s'agit pas d'un test de connaissances.",
+          "en": "A 15-minute admission interview is scheduled after the admission requirements are checked; it is not a knowledge test."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-fresenius.com/application-process/?crmid=aBbTjOcDaAaAaAaA",
+            "quote": "The interview is scheduled for 15 minutes."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Aucune date de candidature (le DAAD indique que le programme n'a pas de date limite et renvoie au site de l'université), aucun canal de candidature (aucune page ne nomme uni-assist ni le portail propre pour ce programme) et aucune liste de documents: les seules pièces nommées (CV, relevé de notes de bachelor) concernent une candidature master, pas ce bachelor, et les pages ne parlent ni de traduction ni de diplôme étranger pour ce niveau."
+}

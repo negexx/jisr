@@ -1,0 +1,138 @@
+{
+  "slug": "de-hochschule-fur-angewandte-wissenschaften-hrk44-kronach-digital-business-models-daad10485",
+  "programmePage": "https://www.hs-coburg.de/en/digital-business/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/digital-business/",
+          "quote": "Standard period of study 7 terms (incl. internship term), 210 ECTS"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/digital-business/",
+          "quote": "Language of Instruction English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/digital-business/",
+          "quote": "The fees for international students from non-EU countries amount to €1,500 per semester."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10485/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 2,
+            "day": 28
+          }
+        },
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 9,
+            "day": 30
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10485/",
+          "quote": "The following is valid for applicants from: all countries For the summer semester: until 28 February"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10485/",
+          "quote": "The following is valid for applicants from: all countries For the winter semester: until 30 September 2026"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "Curriculum vitae",
+            "en": "Curriculum vitae"
+          },
+          "quotedAs": "Curriculum vitae",
+          "translationRequired": null
+        },
+        {
+          "slug": "english-language-certificate",
+          "name": {
+            "fr": "Preuve de compétence en anglais",
+            "en": "Proof of English language proficiency"
+          },
+          "quotedAs": "Official proof of English language proficiency at level B2",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/digital-business/",
+          "quote": "an CV with scanned copy of all diplomas and certificates (including scan of your ID or passport) – required for enrollment"
+        },
+        {
+          "url": "https://www.hs-coburg.de/en/digital-business/",
+          "quote": "Curriculum vitae Official proof of English language proficiency at level B2"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.hs-coburg.de/en/study/registration-and-enrollment/international-applicants/",
+            "quote": "Before enrolling, you must provide proof of English proficiency at the B2 level in one of the following ways in order to be admitted to an english-taught degree program at Coburg University of Applied Sciences and Arts."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats internationaux doivent fournir une évaluation du certificat (APS, VPD d'uni-assist ou évaluation du ZAB).",
+          "en": "International applicants need a certificate assessment (APS, VPD from uni-assist or evaluation by the ZAB)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-coburg.de/en/digital-business/",
+            "quote": "International applicants require a certificate assessment (APS certificate, VPD from uniassist or evaluation of the ZAB )."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Le montant des frais de scolarité (1 500 EUR) est donné par semestre, pas par an. L'échéance du 30 septembre 2026 est indiquée pour le semestre d'hiver ; une échéance au 28 février est indiquée sans année, donc récurrente. Aucune des pages n'indique la voie de candidature (uni-assist VPD ou portail de l'université) pour ce programme précis : la page 'International applicants' renvoie seulement à uni-assist pour l'évaluation du diplôme, sans préciser si la candidature elle-même passe par uni-assist. La voie n'a donc pas été renseignée."
+}

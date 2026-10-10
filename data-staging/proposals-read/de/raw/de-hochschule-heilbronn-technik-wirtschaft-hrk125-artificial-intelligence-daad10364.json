@@ -1,0 +1,174 @@
+{
+  "slug": "de-hochschule-heilbronn-technik-wirtschaft-hrk125-artificial-intelligence-daad10364",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10364/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/de/kuenstliche-intelligenz-und-industrielle-digitalisierung",
+          "quote": "7 Semester : 210 ECTS"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/de/kuenstliche-intelligenz-und-industrielle-digitalisierung",
+          "quote": "Sprache : Deutsch / Englisch"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10364/",
+          "quote": "Teaching language German English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/tuition-fees",
+          "quote": "Newly enrolled international students not from EU/EEA countries have to pay tuition fees of 1,500 € per semester."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+          "quote": "If you hold a non-German school leaving certificate, you must first have it recognized by Studienkolleg Konstanz or by Uni-Assist."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Certificat de fin d'études secondaires (diplôme étranger)",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "non-German school leaving certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "certificate-recognition",
+          "name": {
+            "fr": "Reconnaissance du diplôme (Studienkolleg Konstanz ou Uni-Assist)",
+            "en": "Certificate recognition (Studienkolleg Konstanz or Uni-Assist)"
+          },
+          "quotedAs": "Recognition of certificates from the Center for International Students in Konstanz",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+          "quote": "If you hold a non-German school leaving certificate, you must first have it recognized by Studienkolleg Konstanz or by Uni-Assist."
+        },
+        {
+          "url": "https://www.hs-heilbronn.de/en/application-for-international-applicants-2628bd72c149a41d",
+          "quote": "Recognition of certificates from the Center for International Students in Konstanz"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10364/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 6"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "testdaf"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+            "quote": "Künstliche Intelligenz und industrielle Digitalisierung"
+          },
+          {
+            "url": "https://www.hs-heilbronn.de/de/bewerbung-bachelor",
+            "quote": "Künstliche Intelligenz und industrielle Digitalisierung (deutsches Profil)"
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10364/",
+            "quote": "applicants hold an academic qualification that would enable them to study the chosen subject in their home country"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez via la base de données DAAD si votre Baccalauréat marocain donne un accès direct ou nécessite une admission par Studienkolleg. Une reconnaissance du diplôme par le Studienkolleg Konstanz ou Uni-Assist est en tout cas nécessaire.",
+          "en": "Check the DAAD database whether your Moroccan Baccalaureate gives direct admission or requires Studienkolleg. Recognition of the certificate by Studienkolleg Konstanz or Uni-Assist is required in any case."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+            "quote": "Without certificate recognition, your application will unfortunately not be considered."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le programme est en profil allemand : les études principales (3e à 7e semestre) sont en allemand, un niveau B2 d'allemand est demandé et un cours d'allemand obligatoire est prévu la première année.",
+          "en": "This is the German-profile programme: main studies (3rd to 7th semester) are taught in German, B2 German is required and a compulsory German course takes place in the first year."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10364/",
+            "quote": "The basic studies (first and second semesters) are taught in English."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un pré-stage en entreprise de 30 jours est recommandé (non obligatoire).",
+          "en": "A 30-day pre-internship in a company is recommended (not required)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-heilbronn.de/de/kuenstliche-intelligenz-und-industrielle-digitalisierung",
+            "quote": "Ein Vorpraktikum in einem Unternehmen im Umfang von 30 Präsenztagen wird für den Studiengang empfohlen"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Page de programme principale : les pages DAAD et hs-heilbronn.de sont des pages de présentation de ce programme. Les règles d'admission internationales proviennent des pages générales de candidature HHN et sont reprises ici pour ce programme. La date limite du 15 juillet / 15 janvier est une date générale sans année et sans mention explicite des candidats non-UE, elle n'est donc pas reprise comme échéance ferme. Le frais de dossier semestriel de 188 EUR (Semesterbeitrag) et les frais de scolarité de 1500 EUR/semestre pour les non-EU/EEA sont bien mentionnés sur la page de programme (DAAD) et la page des frais de scolarité de l'université. La voie d'admission de-uni-assist-vpd est retenue car la page anglaise indique que les titulaires d'un diplôme étranger doivent d'abord faire reconnaître leur certificat : \"must first have it recognized by Studienkolleg Konstanz or by Uni-Assist\". La page DAAD mentionne des frais de scolarité de 1 500 EUR par semestre pour les étudiants non-UE. Le programme est répertorié comme zulassungsfrei (sans restriction d'admission) sur la page allemande."
+}

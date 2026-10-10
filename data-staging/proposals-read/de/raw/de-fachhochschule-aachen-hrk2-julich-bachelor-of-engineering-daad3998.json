@@ -1,0 +1,106 @@
+{
+  "slug": "de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad3998",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3998/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3998/",
+          "quote": "Programme duration 6 semesters, 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3998/",
+          "quote": "Teaching language German"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3998/",
+          "quote": "The course of study is conducted in German."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3998/",
+          "quote": "Deadlines: 15 July for international applicants (only through uni-assist)"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3998/",
+          "quote": "Please apply via uni-assist."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3998/",
+          "quote": "Deadlines: 15 July for international applicants (only through uni-assist)"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3998/",
+            "quote": "German language skills B2 required, please provide an official language certificate, e.g.:"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que votre diplôme marocain est reconnu comme équivalent à l'Abitur ou à la Fachhochschulreife (base de données anabin) ; sinon, une année préparatoire (Freshman Year) peut être nécessaire.",
+          "en": "Check that your Moroccan diploma is recognised as equivalent to the Abitur or Fachhochschulreife (anabin database); otherwise a Freshman Year may be required."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3998/",
+            "quote": "German entrance qualification for universities of applied sciences or equivalent (http://anabin.kmk.org)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un stage pratique est exigé avant le début des études : renseignez-vous sur sa durée et son contenu auprès de l'université.",
+          "en": "A practical internship is required before the start of studies: check its duration and content with the university."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3998/",
+            "quote": "Students are required to complete an internship before their studies in order to obtain practical experience in their chosen field."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "No tuition fee and no document list are given for this programme on the supplied page. The page does not state any tuition fees for non-EU students (it says tuition fees per semester None, but only a general statement), so no tuition fact is included. The duration quote gives 6 or 7 semesters; the value 3 uses the lower bound (6 semesters). The deadline quote gives no year, so it is expressed as a recurring 15 July deadline for international applicants."
+}

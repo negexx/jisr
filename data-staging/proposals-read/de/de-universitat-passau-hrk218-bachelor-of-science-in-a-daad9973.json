@@ -1,0 +1,89 @@
+{
+  "slug": "de-universitat-passau-hrk218-bachelor-of-science-in-a-daad9973",
+  "programmePage": "https://www.uni-passau.de/en/bsc-artificial-intelligence/?mtm_campaign=DAADIPG",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.uni-passau.de/en/bsc-artificial-intelligence/?mtm_campaign=DAADIPG",
+          "quote": "Duration and credits 6 semesters; 180 ECTS credits"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uni-passau.de/en/bsc-artificial-intelligence/?mtm_campaign=DAADIPG",
+          "quote": "Language of instruction English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9973/",
+          "quote": "At the time of writing (April 2026), the University of Passau does not charge tuition fees."
+        },
+        {
+          "url": "https://www.uni-passau.de/en/bsc-artificial-intelligence/?mtm_campaign=DAADIPG",
+          "quote": "studying here is very affordable, with no tuition fees"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9973/",
+          "quote": "Application periods The following is valid for applicants from: all countries For the winter semester: 1 April - 15 July"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.uni-passau.de/termine-fristen",
+          "quote": "15.07.2026 Bewerbungsschluss für grundständige Studiengänge über uni-assist"
+        }
+      ]
+    }
+  },
+  "notes": "The application deadline (1 April - 15 July) is general ('valid for applicants from: all countries'), so it is a recurring deadline without a year. The pages do not give a separate deadline for non-EU applicants, so no dated applicationDeadline is output. Tuition: the DAAD page says the University of Passau does not charge tuition fees (as of April 2026), and the programme page quotes a student saying there are no tuition fees; the semester contribution of around 130 EUR is not tuition. Application channel: there is no dedicated non-EU sentence for this bachelor's programme; the uni-assist route is only visible on the general 'Termine und Fristen' page ('Bewerbungsschluss für grundständige Studiengänge über uni-assist'), not stated for the B.Sc. Artificial Intelligence specifically, so this is a manual check. Documents: the pages name the university entrance qualification and the aptitude tests, but no full document list or translation requirement is stated.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non-EEA doivent réussir un test d'aptitude : SAT (1240+), TestAS (percentile 80+), ACT (25+) ou JEE/CSAT.",
+          "en": "Non-EEA applicants must pass an aptitude test: SAT (1240+), TestAS (percentile 80+), ACT (25+) or JEE/CSAT."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9973/",
+            "quote": "Scholastic Assessment Test (SAT) with a score of 1240 or higher"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "de-hochschule-fulda-university-of-applied-s-hrk92-international-business-m-daad5651",
+  "programmePage": "https://www.hs-fulda.de/ibm",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.hs-fulda.de/ibm",
+          "quote": "Regelstudienzeit 7 Semester"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-fulda.de/ibm",
+          "quote": "Unterrichtssprache Englisch"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/",
+          "quote": "The programme is entirely taught in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-fulda.de/ibm",
+          "quote": "studiengebührenfreie Rahmenbedingungen. Es fällt lediglich der reguläre Semesterbeitrag von etwa 400 € pro Semester an"
+        },
+        {
+          "url": "https://www.hs-fulda.de/internationales/international-office/wege-nach-fulda/kosten-und-finanzierung",
+          "quote": "Als staatliche Hochschule im Bundesland Hessen müssen Studierende an der Hochschule Fulda keine Studiengebühren bezahlen."
+        }
+      ]
+    }
+  },
+  "notes": "applicationChannel left out: the pages mention no application platform (no uni-assist, no university portal sentence); the DAAD page only says 'Submit application via Please check this website.' The fee exemption is evidence-based from the IBM page and the international students' cost page of the same university. The programme starts in both winter and summer semester, but intake rows are only kept for the deadlines that explicitly name foreign-qualification applicants ('Alle anderen Staatsangehörige mit ausländischem Schul- oder Hochschulabschluss').",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier l'exigence de l'Hochschulzugangsberechtigung (HZB) : la page indique « University entrance qualification (Hochschulzugangsberechtigung, HZB) for German universities », à confirmer pour un bac marocain.",
+          "en": "Check the Hochschulzugangsberechtigung (HZB) requirement: the page states 'University entrance qualification (Hochschulzugangsberechtigung, HZB) for German universities', to be confirmed for a Moroccan Baccalauréat."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/",
+            "quote": "University entrance qualification (Hochschulzugangsberechtigung, HZB) for German universities"
+          }
+        ]
+      }
+    ]
+  }
+}

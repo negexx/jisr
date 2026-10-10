@@ -1,0 +1,88 @@
+{
+  "slug": "de-hochschule-ravensburg-weingarten-hrk224-electrical-engineering-a-daad3993",
+  "programmePage": "https://www.rwu.de/en/study/courses/electrical-engineering-and-information-technology-en",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3993/",
+          "quote": "Course highlights are the short duration (seven semesters = three and a half years)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3993/",
+          "quote": "The course language is English (semesters 1 through 4) and later German (semesters 5 through 7)."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.rwu.de/en/international/international-degree-seeking-students/study-offer-and-application",
+          "quote": "Depending on the degree program, applicants must first register at hochschulstart.de (German-speaking study programs) or can apply directly through our RWU Portal (English-speaking study programs)."
+        },
+        {
+          "url": "https://www.rwu.de/news-medien/termine/bewerbungszeitraum-fuer-englischsprachige-bachelor-studiengaenge",
+          "quote": "Unabhängig vom Herkunftsland müssen alle Bewerber*innen zuerst eine Onlinebewerbung im Bewerberportal vornehmen UND im Anschluss alle geforderten Unterlagen postalisch an uns versenden."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: DAAD page states 1,500 EUR per semester for non-EU applicants; the RWU financing pages say 1,500 EUR per semester for all students who do not come from the EU, so the fact is stated as 300,000 EUR per year. Semester fee (224 EUR first semester, 215 EUR afterwards) is not tuition and is left out. Documents list comes from the RWU programme page; the RWU page requires only a true certified copy of the university entrance qualification, civil documents are not required. Intake: the RWU page gives the application period 01 September - 31 October but no year for the deadline; the RWU dates page gives 1 September - 31 October 2026 for the summer 2027 intake of the English-language Bachelor's programmes, which includes Electrical Engineering and Information Technology (EN); English-language Bachelor's programmes apply directly through the RWU portal, including applicants from third countries. For applicants with a foreign (non-EU) secondary diploma whose certificate is not ANABIN-recognised, the written entrance examination is required (TestAS/ITB/SAT/ACT) plus a 30-minute oral exam in English; a Studienkolleg route at Konstanz applies only to German-language programmes. Anabin compliance and grade thresholds are left as manual checks. No winter intake: 'There is no winter intake for this study program.' The teaching languages are quoted from the DAAD page; the RWU page says the same.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme (Bac marocain) est reconnu selon ANABIN. Sinon, un test d'aptitude (TestAS, ITB, SAT, ACT) et un entretien oral en anglais de 30 minutes sont exigés.",
+          "en": "Check whether your diploma (Moroccan Bac) is recognised according to ANABIN. If not, an aptitude test (TestAS, ITB, SAT, ACT) and a 30-minute oral exam in English are required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.rwu.de/en/study/courses/electrical-engineering-and-information-technology-en",
+            "quote": "1. Your university entrance qualification is compliant to ANABIN, the official information portal for international educational qualifications."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "De très bonnes compétences en mathématiques et de bonnes connaissances dans d'autres matières scientifiques (physique, informatique, etc.) sont exigées.",
+          "en": "Very good mathematics skills and good knowledge in other science subjects (physics, computer science, etc.) are required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.rwu.de/en/study/courses/electrical-engineering-and-information-technology-en",
+            "quote": "Very good Mathematic skills and good knowledge in any other science subjects (physics, computer science, etc.)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un certificat de langue anglaise (TOEFL iBT min. 70 ou IELTS min. 6.0) datant de moins de 2 ans est exigé. Les attestations de langue d'enseignement ne sont pas acceptées.",
+          "en": "An English language certificate (TOEFL iBT min. 70 or IELTS min. 6.0) no older than 2 years is required. Medium of instruction certificates are not accepted."
+        },
+        "evidence": [
+          {
+            "url": "https://www.rwu.de/en/study/courses/electrical-engineering-and-information-technology-en",
+            "quote": "TOEFL iBT: a total score of min. 70 IELTS: an overall band score of min. 6.0"
+          },
+          {
+            "url": "https://www.rwu.de/en/study/courses/electrical-engineering-and-information-technology-en",
+            "quote": "English Language Certificate (TOEFL iBT or IELTS) - no older than 2 years!"
+          }
+        ]
+      }
+    ]
+  }
+}

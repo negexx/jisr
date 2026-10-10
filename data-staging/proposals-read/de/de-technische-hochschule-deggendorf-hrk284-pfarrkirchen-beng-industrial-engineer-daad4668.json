@@ -1,0 +1,118 @@
+{
+  "slug": "de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-beng-industrial-engineer-daad4668",
+  "programmePage": "https://www.th-deg.de/ie-b-en",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4668/",
+          "quote": "The Bachelor's programme has a standard period of study of seven semesters, with six academic semesters and one practical semester."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4668/",
+          "quote": "Course language: English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 50000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4668/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries Switzerland United Kingdom 500 EUR"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4668/",
+          "quote": "Application periods The following is valid for applicants from: all countries 15 April - 15 July"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://th-deg.de/en/apply",
+          "quote": "choose what you aim to study and apply directly to DIT via our own online application portal, Primuss"
+        }
+      ]
+    }
+  },
+  "notes": "La page DAAD indique pour les ressortissants non-UE des frais de scolarité de 500 EUR par semestre. Les pages DIT mentionnent des frais de service de 500 EUR par semestre pour les étudiants non-UE/EEE, mais il s'agit de frais administratifs, non de frais de scolarité. Le délai de candidature 15 avril - 15 juillet est donné pour 'all countries' et ne précise pas qu'il s'applique spécifiquement aux candidats non-UE; il est récurrent (sans année). Le canal de candidature est le portail propre de l'université (Primuss); aucune mention d'uni-assist n'apparaît sur les pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4668/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 72 TOEIC Reading: 385 Listening: 400 IELTS Academic: 5.5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez votre admissibilité avec votre Baccalauréat marocain via la base de données DAAD ou Anabin; un an d'études ou un Studienkolleg peut être requis.",
+          "en": "Check your eligibility with your Moroccan Baccalaureate via the DAAD database or Anabin; one year of studies or a Studienkolleg may be required."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4668/",
+            "quote": "General university entrance qualification"
+          },
+          {
+            "url": "https://th-deg.de/en/apply",
+            "quote": "One year of study at an internationally recognized university in your country"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'aptitude académique (Academic Readiness Assessment) est requis et son certificat doit être fourni avec les autres documents de candidature.",
+          "en": "An Academic Readiness Assessment test is required and its certificate must be provided along with the other application documents."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-deg.de/ie-b-en",
+            "quote": "Applicants have to take an Academic Readiness Assessment test and provide the result certificate in supplement to the other documents required for application"
+          }
+        ]
+      }
+    ]
+  }
+}

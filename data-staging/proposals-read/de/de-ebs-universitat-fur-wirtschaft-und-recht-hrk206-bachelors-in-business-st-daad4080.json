@@ -1,0 +1,101 @@
+{
+  "slug": "de-ebs-universitat-fur-wirtschaft-und-recht-hrk206-bachelors-in-business-st-daad4080",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/",
+          "quote": "Programme duration 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/",
+          "quote": "The programme follows international standards and is therefore 100% in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 908000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/",
+          "quote": "The following tuition fees apply for applicants from: all countries 9,080 EUR"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Certificat de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "foreign school-leaving certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "Curriculum vitae",
+            "en": "Curriculum vitae"
+          },
+          "quotedAs": "Curriculum vitae",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/",
+          "quote": "Proof of a general higher education entrance qualification or a foreign school-leaving certificate recognised as equivalent."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/",
+          "quote": "Curriculum vitae in tabular form"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Pour les candidats internationaux nécessitant un visa, il est recommandé de soumettre la candidature avant le 30 mai (semestre d'hiver) ou le 15 octobre (semestre d'été).",
+          "en": "For international applicants who require a visa, it is recommended to submit the application before 30 May (winter semester) or 15 October (summer semester)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/",
+            "quote": "For international applicants who require a visa, we recommend that you submit your application before 30 May (for a start in the winter semester) or 15 October (for a start in the summer semester)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test de connaissances et un test de personnalité sont exigés, ainsi qu'un entretien de sélection personnel de 30 minutes.",
+          "en": "A knowledge test, a personality test, and a 30-minute personal selection interview are required."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/",
+            "quote": "Knowledge and personality test"
+          }
+        ]
+      }
+    ]
+  }
+}

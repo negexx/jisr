@@ -1,0 +1,178 @@
+{
+  "slug": "de-hochschule-der-medien-stuttgart-hrk250-social-media-marketing-m-daad9705",
+  "programmePage": "https://sm-bachelor.hdm-stuttgart.de/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://sm-bachelor.hdm-stuttgart.de/",
+          "quote": "Standard period of study 7 semester"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9705/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9705/",
+          "quote": "Teaching language English"
+        },
+        {
+          "url": "https://sm-bachelor.hdm-stuttgart.de/",
+          "quote": "Teaching language English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://sm-bachelor.hdm-stuttgart.de/admission",
+          "quote": "Tuition Fees: 1,500.00*"
+        },
+        {
+          "url": "https://hdm-stuttgart.de/en/before-your-studies/requirements/costs/",
+          "quote": "Regulations regarding tuition fees for international students in the amount of € 1500 per semester"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2026-05-20",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://sm-bachelor.hdm-stuttgart.de/admission",
+          "quote": "Important: International applicants from non-EU/EEA countries without a German higher education entrance qualification must apply for entrance exam (Round 1)."
+        },
+        {
+          "url": "https://sm-bachelor.hdm-stuttgart.de/admission",
+          "quote": "Entrance exam (Round 1): Online application form deadline: 20 May 2026 (via application portal)"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://sm-bachelor.hdm-stuttgart.de/admission",
+          "quote": "All applicants from non-EU/EEA countries only need to upload their documents via the HdM admission portal."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "school leaving certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "certificate-of-recognition-studienkolleg-konstanz",
+          "name": {
+            "fr": "Certificat de reconnaissance du Studienkolleg Konstanz",
+            "en": "Certificate of recognition issued by Studienkolleg Konstanz"
+          },
+          "quotedAs": "Certificate of recognition issued by Studienkolleg Konstanz",
+          "translationRequired": null
+        },
+        {
+          "slug": "entrance-exam-certificate",
+          "name": {
+            "fr": "Certificat de réussite de l'examen d'entrée",
+            "en": "Certificate of successful completion of the entrance exam"
+          },
+          "quotedAs": "Certificate of successful completion of the entrance exam",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://sm-bachelor.hdm-stuttgart.de/admission",
+          "quote": "After successful registration, you will be able to upload your documents, including your school leaving certificate, the recognition from Studienkolleg Konstanz (if applicable), and the certificate confirming that you have passed the entrance exam."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9705/",
+            "quote": "English language skills B2 required, proof via placement test/interview"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée obligatoire (formulaire de candidature, test d'anglais et entretien en ligne) doit être réussi avant de pouvoir postuler au programme.",
+          "en": "A mandatory entrance exam (application form, English proficiency test and online interview) must be passed before you can apply to the programme."
+        },
+        "evidence": [
+          {
+            "url": "https://sm-bachelor.hdm-stuttgart.de/admission",
+            "quote": "To be eligible to apply for a study place in the Social Media Marketing & Management programme, applicants must first successfully complete a mandatory entrance exam."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le certificat de fin d'études doit être reconnu par le Studienkolleg Konstanz, avec un délai de traitement souvent long; déposez la demande de reconnaissance le plus tôt possible.",
+          "en": "The school-leaving certificate must be recognised by Studienkolleg Konstanz, and processing times can be long; submit the recognition request as early as possible."
+        },
+        "evidence": [
+          {
+            "url": "https://sm-bachelor.hdm-stuttgart.de/admission",
+            "quote": "In order to be admitted to HdM, international applicants with an international degree need a recognition of certificates from the Studienkolleg Konstanz."
+          },
+          {
+            "url": "https://sm-bachelor.hdm-stuttgart.de/admission",
+            "quote": "Please make sure to apply for the recognition as early as possible – ideally before you submit your application to HdM – as long processing times are to be expected."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est classée selon un score : l'examen d'entrée compte pour 70 % et le diplôme de fin d'études pour 30 %.",
+          "en": "Admission is based on a ranking: the entrance exam accounts for 70% and the school leaving certificate for 30%."
+        },
+        "evidence": [
+          {
+            "url": "https://sm-bachelor.hdm-stuttgart.de/admission",
+            "quote": "Admission is based on a ranking, with the entrance exam accounting for 70% and the school leaving certificate for 30%."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "tuition: the DAAD page states “non-EU countries 1,500 EUR” per semester and the HdM costs page states “€ 1500 per semester” for international students; the HdM costs page gives a semester period, matching the semester-based figure on the programme admission page. intakes: the deadline quoted is explicitly for international non-EU/EEA applicants without a German higher education entrance qualification. applicationChannel: for a foreign-diploma applicant the programme page says non-EU/EEA applicants apply via the HdM admission portal, so the direct university route (de-university-direct) is used here."
+}

@@ -1,0 +1,119 @@
+{
+  "slug": "de-hochschule-osnabruck-hrk214-engineering-sciences-daad11216",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11216/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11216/",
+          "quote": "Programme duration 8 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11216/",
+          "quote": "The programme is taught entirely in German."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 6,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11216/",
+          "quote": "Applicants with international educational qualifications: 15 June"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11216/",
+          "quote": "Submit application via • uni-assist"
+        },
+        {
+          "url": "https://www.hs-osnabrueck.de/studium/studienangebot/bachelor/ingenieurwissenschaften-bsc/bewerbung/",
+          "quote": "Studieninteressierte mit ausländischen Bildungsnachweisen bewerben sich über uni-assist an der Hochschule Osnabrück."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "testdaf",
+          "dsh"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11216/",
+            "quote": "In addition, German language proficiency at a minimum level of B2 according to the Common European Framework of Reference for Languages (CEFR) is required."
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11216/",
+            "quote": "Deutsche Sprachprüfung für den Hochschulzugang (DSH): DSH-1"
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11216/",
+            "quote": "Applicants are required to hold a recognised school leaving certificate qualifying them for university admission."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le baccalauréat marocain doit être reconnu comme donnant accès à l'université en Allemagne ; faites vérifier votre diplôme par uni-assist.",
+          "en": "The Moroccan Baccalauréat must be recognised as qualifying for university admission in Germany; have your certificate checked by uni-assist."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11216/",
+            "quote": "Applicants are required to hold a recognised school leaving certificate qualifying them for university admission."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est soumise à un numerus clausus / classement : les notes du baccalauréat comptent.",
+          "en": "Admission is competitive (numerus clausus / ranking): your school-leaving grades count."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-osnabrueck.de/studium/studienangebot/bachelor/ingenieurwissenschaften-bsc/bewerbung/",
+            "quote": "Der Bachelorstudiengang Ingenieurwissenschaften ist zulassungsbeschränkt."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Saisonbeginn: die DAAD-Seite nennt keine Frist für Studierende mit internationalen Zeugnissen mit Jahr; die Seite der Hochschule nennt 15. Juni (DAAD) für internationale Zeugnisse, aber die zentrale Bewerbungsseite der Hochschule verweist für internationale Nachweise auf abweichende Fristen auf den Studiengangsseiten, ohne sie dort zu nennen – deshalb hier recurringDeadline (15. Juni) und keine Jahresfrist. Deutschkenntnisse: DSH-1 genügt laut DAAD-Seite (entspricht B2); die studiengangseigene Seite verlangt „DSH 1/B2“. Studiengebühren: die DAAD-Seite nennt nur den Semesterbeitrag von ca. 440 EUR (Wintersemester 2026/2027 sogar 443 EUR); es wird kein Studienbeitrag für internationale Studierende genannt, daher kein tuition-Fakt. Dokuments: die Seiten nennen keine konkrete Dokumentenliste (Zeugnisse werden laut Bewerbungsportal erst bei der Immatrikulation angefordert), daher weggelassen. Als Nachweis gilt die DAAD-Seite von 2026/2027 und die studiengangseigene Bewerbungsseite; Modulhandbuch- und Gebührenordnungsseiten anderer Studiengänge wurden ignoriert."
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "de-technische-hochschule-mannheim-hrk177-e-mobility-and-autonomou-daad7693",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7693/",
+  "facts": {},
+  "notes": "Tuition fees: EUR 1,500 per semester applies to non-EU degree-seeking students. Deadline: 31 July 2027 is the general application deadline; 15 May 2027 is recommended (not required) for international applicants for visa reasons. Application channel: the pages only describe the university's own portal (campus.th-mannheim.de) and email evaluation; no uni-assist or VPD is mentioned.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un comité d'admission examine vos notes en maths et en physique ; obtenez de très bonnes notes dans ces matières.",
+          "en": "An admissions committee reviews your grades in Maths and Physics; aim for a very good school-leaving certificate."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ete.hs-mannheim.de/bachelor/apply.html",
+            "quote": "Our admissions committee focuses on your grades in Maths and Physics."
+          }
+        ]
+      }
+    ]
+  }
+}

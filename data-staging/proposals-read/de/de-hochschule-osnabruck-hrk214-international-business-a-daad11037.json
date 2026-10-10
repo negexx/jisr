@@ -1,0 +1,82 @@
+{
+  "slug": "de-hochschule-osnabruck-hrk214-international-business-a-daad11037",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11037/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11037/",
+          "quote": "Programme duration 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11037/",
+          "quote": "Teaching language German English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11037/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11037/",
+          "quote": "Please apply via uni-assist."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the DAAD page states 'Tuition fees per semester None' for this programme; no separate non-EU fee is stated. Semester contribution (approx. 380 EUR) is not a tuition fee. Application deadlines: the DAAD page gives application periods for EU and non-EU applicants (winter: 1 March - 15 June; summer: 1 September - 15 December) but does not state the year, so no dated deadline was recorded. The programme's own Bewerbung page gives deadlines (15 July / 15 January) and mentions that applicants with foreign educational certificates have different deadlines ('Abweichende Termine für Bewerberinnen und Bewerber mit ausländischen Bildungsnachweisen'), but those alternative dates are not spelled out. No document list for international applicants was found on the supplied pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "C1",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "testdaf"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11037/",
+            "quote": "German language skills C1 required, please provide an official language certificate, e.g.: TestDaF: TDN 4"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que votre diplôme de fin d'études secondaires est reconnu comme donnant accès à un Bachelor (anabin/DAAD).",
+          "en": "Check that your secondary school diploma is recognised as qualifying for admission to a Bachelor's programme (anabin/DAAD)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11037/",
+            "quote": "The secondary school diploma or university degree must be recognised as qualifying for admission to a Bachelor's programme."
+          }
+        ]
+      }
+    ]
+  }
+}

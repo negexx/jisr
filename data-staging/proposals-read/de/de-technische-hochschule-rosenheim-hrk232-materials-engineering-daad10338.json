@@ -1,0 +1,136 @@
+{
+  "slug": "de-technische-hochschule-rosenheim-hrk232-materials-engineering-daad10338",
+  "programmePage": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/materials-engineering",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/materials-engineering",
+          "quote": "Duration 8 Semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/materials-engineering",
+          "quote": "Language German & English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 50000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/studium-und-weiterbildung/vor-dem-studium/was-kostet-das-studium-studierendenwerksbeitrag-und-studiengebuehren",
+          "quote": "Für internationale Studierende aus Drittstaaten fallen seit dem Sommersemester 2026 Studiengebühren in Höhe von 500 € pro immatrikuliertes Semester an."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/materials-engineering",
+          "quote": "Apply only via uni-assist if you have obtained your higher education entrance qualification outside Germany"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "university-entrance-qualification",
+          "name": {
+            "fr": "Attestation de qualification d'entrée à l'université",
+            "en": "University entrance qualification"
+          },
+          "quotedAs": "University entrance qualification",
+          "translationRequired": null
+        },
+        {
+          "slug": "certificate-for-university-entrance-qualification",
+          "name": {
+            "fr": "Certificat de qualification d'entrée à l'université",
+            "en": "Certificate for a university entrance qualification"
+          },
+          "quotedAs": "Certificate for a university entrance qualification",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/materials-engineering",
+          "quote": "University entrance qualification"
+        },
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/materials-engineering",
+          "quote": "Certificate for a university entrance qualification"
+        }
+      ]
+    }
+  },
+  "notes": "le montant des frais de scolarité (500 EUR par semestre) est une information institutionnelle figurant sur la page des frais de scolarité de l'université, pas sur la page du programme; la page du programme indique \"Please note that tuition fees apply for international students from Non-EU countries.\" Les échéances indiquées sont pour l'admission en 2026; pour les demandes ultérieures, les dates peuvent être similaires (avec année mise à jour).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/materials-engineering",
+            "quote": "English language skills at level B2"
+          },
+          {
+            "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/materials-engineering",
+            "quote": "Internet-based TOEFL or TOEFL iBT Home Edition, each with 72 points or more"
+          },
+          {
+            "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/materials-engineering",
+            "quote": "IELTS or IELTS Academic or IELTS ONLINE, each with a band score of 6.0 or higher"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/materials-engineering",
+            "quote": "German language skills at level A2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un stage préalable (Vorpraxis) d'au moins 8 semaines est requis ; il peut être effectué avant ou pendant les premiers semestres.",
+          "en": "A preliminary internship (Vorpraxis) of at least 8 weeks is required; it can be completed before or during the first semesters."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/materials-engineering",
+            "quote": "Internship prior to beginning the degree at least 8 weeks according to the curriculum"
+          }
+        ]
+      }
+    ]
+  }
+}

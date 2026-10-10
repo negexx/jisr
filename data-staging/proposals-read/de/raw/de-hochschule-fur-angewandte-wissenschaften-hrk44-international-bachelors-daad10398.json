@@ -1,0 +1,126 @@
+{
+  "slug": "de-hochschule-fur-angewandte-wissenschaften-hrk44-international-bachelors-daad10398",
+  "programmePage": "https://www.hs-coburg.de/en/electrical-engineering-for-sustainable-and-renewable-energy/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/electrical-engineering-for-sustainable-and-renewable-energy/",
+          "quote": "Standard period of study 8 semesters (incl. Industrial Internship and Bachelor Thesis), 240 ECTS"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/electrical-engineering-for-sustainable-and-renewable-energy/",
+          "quote": "Language of instruction English and German"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/electrical-engineering-for-sustainable-and-renewable-energy/",
+          "quote": "The fees for international students from non-EU countries amount to €1,500 per semester."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2026-09-30",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/electrical-engineering-for-sustainable-and-renewable-energy/",
+          "quote": "Registration deadline for the winter term: 30 September 2026"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/electrical-engineering-for-sustainable-and-renewable-energy/",
+          "quote": "International applicants require a certificate assessment (APS certificate, VPD from uniassist or evaluation of the ZAB)."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Certificat de fin d'études secondaires",
+            "en": "school-leaving certificate"
+          },
+          "quotedAs": "school-leaving certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/electrical-engineering-for-sustainable-and-renewable-energy/",
+          "quote": "University entrance qualification, entrance qualification for universities of applied sciences, vocational qualification or foreign educational certificate"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.hs-coburg.de/en/electrical-engineering-for-sustainable-and-renewable-energy/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.:"
+          },
+          {
+            "url": "https://www.hs-coburg.de/en/study/registration-and-enrollment/international-applicants/",
+            "quote": "IELTS – International English Language Testing System (Minimum overall score – 5.5)"
+          },
+          {
+            "url": "https://www.hs-coburg.de/en/study/registration-and-enrollment/international-applicants/",
+            "quote": "TOEFL – Test of English as a Foreign Language (iBT) (Minimum overall score – 72 / new scoring 2026: minimum overall score 4)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Évaluation du certificat de fin d'études secondaires (VPD d'uni-assist) requise pour les candidats internationaux.",
+          "en": "Certificate assessment (VPD from uni-assist) required for international applicants."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-coburg.de/en/study/registration-and-enrollment/international-applicants/",
+            "quote": "If you earned your degree abroad, you must have your transcripts evaluated and apply to us at the same time, within the deadlines."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Le délai du 30 septembre 2026 est indiqué comme valable pour les candidats de tous les pays, y compris les candidats internationaux. Le VPD (Vorprüfungsdokumentation) d'uni-assist est exigé pour l'évaluation du certificat ; les pages n'indiquent pas la valeur exacte des frais de dossier ni les conditions de candidature."
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "de-friedrich-alexander-universitat-erlangen-hrk70-artificial-intelligence-daad9594",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/",
+          "quote": "Programme duration 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/",
+          "quote": "Courses are held in English, and the Bachelor's thesis has to be written in English as well."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 100000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.fau.eu/studying/international-students/application-and-enrollment-for-international-applicants/tuition-fees-for-students-from-non-eu-states/",
+          "quote": "Artificial Intelligence* Bachelor of Science Yes 1,000 euros"
+        },
+        {
+          "url": "https://www.fau.eu/studying/international-students/application-and-enrollment-for-international-applicants/tuition-fees-for-students-from-non-eu-states/",
+          "quote": "The amount of tuition fees depends on the degree program and final qualification and amounts to between 1,000 and 6,000 euros per semester."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee evidence: the DAAD page shows 'Tuition fees per semester Varied Tuition fees may vary'. The quota-support page shows no tuition fee for this programme; the fee evidence comes from the programme page. Intake deadline year inferred from the page's 'Updated information on the application period for the year 2026!' which refers to the 2026 application period. Application channel: the pages do not mention uni-assist; international applicants use the university's own Campo portal.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": null,
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/",
+            "quote": "English language skills B1 required, please provide an official language certificate, e.g.: IELTS Academic: 5"
+          },
+          {
+            "url": "https://www.ai.study.fau.eu/prospective-students/bachelor-ai/application/",
+            "quote": "Language proficiency: English B1+ level (CEFR) or higher"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Tous les candidats doivent réussir un processus d'évaluation d'aptitude (Eignungsfeststellungsverfahren) comprenant un test en ligne (mathématiques, résolution de problèmes).",
+          "en": "All applicants must pass a qualification assessment process (Eignungsfeststellungsverfahren) including an online test (mathematics, problem solving)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/",
+            "quote": "All applicants to the BSc AI have to pass a qualification assessment process (\"Eignungsfeststellungsverfahren\"), which includes an online test in English with questions on mathematics and problem solving."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission repose sur des points : note du diplôme d'accès à l'université et test en ligne. Moins de 140 points : non apte ; au moins 140 points : apte.",
+          "en": "Admission uses a points system: university entrance qualification grade and online test. Less than 140 points: not suitable; at least 140 points: suitable."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ai.study.fau.eu/prospective-students/bachelor-ai/admission-test/",
+            "quote": "Applicants who achieve less than 140 points are unfortunately not suitable for the degree program."
+          }
+        ]
+      }
+    ]
+  }
+}

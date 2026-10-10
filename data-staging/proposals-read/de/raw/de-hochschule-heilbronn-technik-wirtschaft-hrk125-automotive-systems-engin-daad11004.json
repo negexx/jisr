@@ -1,0 +1,160 @@
+{
+  "slug": "de-hochschule-heilbronn-technik-wirtschaft-hrk125-automotive-systems-engin-daad11004",
+  "programmePage": "https://www.hs-heilbronn.de/en/automotive-systems-engineering",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/automotive-systems-engineering",
+          "quote": "7 Semester : 3.5 years standard period of study"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11004/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11004/",
+          "quote": "The first and second semesters are taught in English."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11004/",
+          "quote": "The third semester through the seventh semester are taught in German."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 300000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11004/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        },
+        {
+          "url": "https://www.hs-heilbronn.de/en/tuition-fees",
+          "quote": "Newly enrolled international students not from EU/EEA countries have to pay tuition fees of 1,500 € per semester."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+          "quote": "If you hold a non-German school leaving certificate, you must first have it recognized by Studienkolleg Konstanz or by Uni-Assist."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "school-leaving certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+          "quote": "If you hold a non-German school leaving certificate, you must first have it recognized by Studienkolleg Konstanz or by Uni-Assist."
+        },
+        {
+          "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+          "quote": "you will need to have your school-leaving certificate recognized by the Regierungspräsidium Stuttgart in order to apply."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11004/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 79 Reading: 18 Listening: 17 Speaking: 20 Writing: 17 IELTS Academic: 6 Cambridge English Qualifications: B2 First"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats sans diplôme allemand doivent faire reconnaître leur certificat de fin d'études par le Studienkolleg Konstanz ou uni-assist avant de postuler.",
+          "en": "Applicants without a German certificate must have their school-leaving certificate recognized by Studienkolleg Konstanz or uni-assist before applying."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+            "quote": "If you hold a non-German school leaving certificate, you must first have it recognized by Studienkolleg Konstanz or by Uni-Assist."
+          },
+          {
+            "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+            "quote": "Without certificate recognition, your application will unfortunately not be considered."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les compétences en allemand (A2 recommandé) ne sont pas exigées à l'admission ; un cours d'allemand obligatoire fait partie du programme.",
+          "en": "German language skills (A2 recommended) are not required for admission; a compulsory German language course is part of the programme."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11004/",
+            "quote": "German language skills A2 required/recommended, no proof required"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11004/",
+            "quote": "An obligatory German language course takes place in the first year (thirteen hours per week + intensive language classes of 40 hours per week during the semester breaks)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Ce programme fait partie de ceux accessibles via l'examen d'entrée spécifique à l'université (notes minimales TestAS, SAT, ACT, IELTS, TOEFL, etc.).",
+          "en": "This programme is among those accessible via the university-specific entrance exam (minimum scores in TestAS, SAT, ACT, IELTS, TOEFL, etc.)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+            "quote": "The following degree programs allow entry via university-specific entrance exam:"
+          },
+          {
+            "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+            "quote": "Automotive Systems Engineering Bachelor (International Profile)"
+          },
+          {
+            "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+            "quote": "SAT (1150) with IELTS Writing (6.0) ACT (24) with IELTS Writing (6.0)"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "La page de ce programme ne donne aucune date limite de candidature. La page DAAD indique seulement une période générale sans année : « Application periods Mid-May until mid-September »; aucune date datée pour les candidats internationaux n'est fournie, donc l'échéance est omise. L'université parle d'une candidature via eCampus, mais les pages imposent d'abord la reconnaissance du diplôme par Studienkolleg Konstanz ou uni-assist; le choix « de-uni-assist-vpd » reflète cette étape préalable. Le montant des frais (1 500 EUR) est par semestre, pas par an."
+}

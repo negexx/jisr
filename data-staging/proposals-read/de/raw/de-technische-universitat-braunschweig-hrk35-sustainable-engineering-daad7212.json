@@ -1,0 +1,221 @@
+{
+  "slug": "de-technische-universitat-braunschweig-hrk35-sustainable-engineering-daad7212",
+  "programmePage": "https://www.tu-braunschweig.de/en/fmb/students/bachelors-degree-programmes/sustainable-engineering-of-products-and-processes",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7212/",
+          "quote": "Programme duration 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7212/",
+          "quote": "Teaching language German English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7212/",
+          "quote": "Tuition fees per semester None"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7212/",
+          "quote": "In order to enrol at TU Braunschweig or to re-register for the coming semester, you have to pay your semester contribution (currently approx. 440 EUR)."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.tu-braunschweig.de/en/fmb/students/bachelors-degree-programmes/sustainable-engineering-of-products-and-processes",
+          "quote": "Application period 1 June - 15 July (non-EU), 1 June - 15 Oct (Germany/EU) of the year in which the programme begins"
+        },
+        {
+          "url": "https://www.tu-braunschweig.de/en/fmb/students/bachelors-degree-programmes/sustainable-engineering-of-products-and-processes/application",
+          "quote": "Application deadline for winter semester: July 15 (non-EU) October 15 (German/EU applicants only)"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.tu-braunschweig.de/en/application",
+          "quote": "If you have This is a heading I have Please select... German or EU citizen (including European Economic Area) Non-EU citizen Please use our online application to apply for your chosen program."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "online-application-form",
+          "name": {
+            "fr": "Formulaire de candidature en ligne",
+            "en": "Online application form"
+          },
+          "quotedAs": "Online application form",
+          "translationRequired": null
+        },
+        {
+          "slug": "secondary-school-certificate",
+          "name": {
+            "fr": "Certificat de fin d'études secondaires",
+            "en": "Secondary school certificate"
+          },
+          "quotedAs": "Secondary school certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "official-translation-secondary-school-certificate",
+          "name": {
+            "fr": "Traduction officielle du certificat de fin d'études secondaires",
+            "en": "Official translation of secondary school certificate"
+          },
+          "quotedAs": "Official translation of your secondary school certificate",
+          "translationRequired": true
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "Curriculum vitæ",
+            "en": "Curriculum vitae"
+          },
+          "quotedAs": "Your curriculum vitae",
+          "translationRequired": null
+        },
+        {
+          "slug": "english-language-proficiency",
+          "name": {
+            "fr": "Preuve de compétence en anglais",
+            "en": "Proof of English language proficiency"
+          },
+          "quotedAs": "Proof of sufficient English language proficiency",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.tu-braunschweig.de/en/fmb/students/bachelors-degree-programmes/sustainable-engineering-of-products-and-processes/application",
+          "quote": "Online application form (Antrag auf Zulassung) Secondary school certificate and academic transcripts of subjects and grades from that school (in the original language) Official translation of your secondary school certificate an academic transcripts of subjects and grades from that school (in English or German), if applicable Your curriculum vitae Proof of sufficient English language proficiency (PDF form) receipt for payment of your assessment fee (e.g. online payment receipt), if applicable (international degrees only)"
+        },
+        {
+          "url": "https://www.tu-braunschweig.de/en/fmb/students/bachelors-degree-programmes/sustainable-engineering-of-products-and-processes/application",
+          "quote": "Official translation of your secondary school certificate an academic transcripts of subjects and grades from that school (in English or German), if applicable"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7212/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.:"
+          },
+          {
+            "url": "https://www.tu-braunschweig.de/en/fmb/students/bachelors-degree-programmes/sustainable-engineering-of-products-and-processes/application",
+            "quote": "TOEFL IBT (85 points or higher)"
+          },
+          {
+            "url": "https://www.tu-braunschweig.de/en/fmb/students/bachelors-degree-programmes/sustainable-engineering-of-products-and-processes/application",
+            "quote": "IELTS (6,5 or higher)"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7212/",
+            "quote": "German language skills A2 required, please provide an official language certificate, e.g.:"
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.tu-braunschweig.de/en/fmb/students/bachelors-degree-programmes/sustainable-engineering-of-products-and-processes/application",
+            "quote": "You must have completed secondary school."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un stage préalable de 8 semaines est requis ; il peut être reporté jusqu'à la fin du 4e semestre.",
+          "en": "A pre-study internship of 8 weeks is required; it can be deferred until the end of the 4th semester."
+        },
+        "evidence": [
+          {
+            "url": "https://www.tu-braunschweig.de/en/fmb/students/bachelors-degree-programmes/sustainable-engineering-of-products-and-processes/application",
+            "quote": "A pre-study internship of 8 weeks is required."
+          },
+          {
+            "url": "https://www.tu-braunschweig.de/en/fmb/students/bachelors-degree-programmes/sustainable-engineering-of-products-and-processes/application",
+            "quote": "(If you do not have the opportunity to complete a pre-internship, you can apply for a deferment of the internship and make up for it by the end of the fourth semester.)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Frais d'évaluation de 75 € pour les diplômes étrangers, à payer lors de la candidature ; des cas d'exemption existent.",
+          "en": "Assessment fee of €75 for foreign qualifications, payable when applying; exemptions exist."
+        },
+        "evidence": [
+          {
+            "url": "https://www.tu-braunschweig.de/en/fmb/students/bachelors-degree-programmes/sustainable-engineering-of-products-and-processes/application",
+            "quote": "The TU Braunschweig charges a fee of € 75,- for the assessment of foreign qualifications which you have to pay when applying."
+          },
+          {
+            "url": "https://www.tu-braunschweig.de/en/fmb/students/bachelors-degree-programmes/sustainable-engineering-of-products-and-processes/application",
+            "quote": "You are exempt from the assessment fee, if:"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "tuition: 'None' (no tuition fees), restated in Lower Saxony; the semester contribution is not tuition. applicationChannel: pages do not name uni-assist or a VPD; applicants use the university's own online application. Total cost of living above is for non-EU students; not used for tuition."
+}

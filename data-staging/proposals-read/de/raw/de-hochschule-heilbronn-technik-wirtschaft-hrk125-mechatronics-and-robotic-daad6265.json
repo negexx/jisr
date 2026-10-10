@@ -1,0 +1,104 @@
+{
+  "slug": "de-hochschule-heilbronn-technik-wirtschaft-hrk125-mechatronics-and-robotic-daad6265",
+  "programmePage": "https://www.hs-heilbronn.de/en/mechatronics-and-robotics",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/mechatronics-and-robotics",
+          "quote": "7 Semester : 210 ECTS 7 Semester : Standard period of study: 3.5 years"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6265/",
+          "quote": "The basic studies (first and second semesters) are taught in English."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6265/",
+          "quote": "The main studies (the third semester to the seventh semester) are taught in German."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/mechatronics-and-robotics",
+          "quote": "Tuition fee : 1500 € Tuition fee : per semester. International students who are not citizens of an EU/EEA member state and do not have a German university entrance qualification"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6265/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 79 Reading: 18 Listening: 17 Speaking: 20 Writing: 17 Cambridge English Qualifications: B2 First IELTS Academic: 6"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un certificat de langue allemande est demandé avant le début du 5e semestre (DSH-1, TestDAF, telc Deutsch B2 ou Goethe B2-Certificate).",
+          "en": "A German language certificate is required before the start of the 5th semester (DSH-1, TestDAF, telc Deutsch B2 or Goethe B2-Certificate)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-heilbronn.de/en/mechatronics-and-robotics",
+            "quote": "Before the beginning of the 5th semester Proof of German Language Skills must be submitted: DSH -1 (Deutsche Sprachführung für den Hochschulzugang / German Language Examination for Academic Purposes), or TestDAF (Test Deutsch als Fremdsprache / Test in German as a Foreign Language) telc Deutsch B2, or Goethe B2-Certificate"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats internationaux sans diplôme allemand doivent faire reconnaître leurs diplômes par le Studienkolleg de Constance ou par uni-assist.",
+          "en": "International applicants without a German qualification must have their certificates recognised by the Studienkolleg in Konstanz or by uni-assist."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6265/",
+            "quote": "International applicants who do not hold a German university entrance qualification (a German high school certificate): In order to examine the equivalence of their university entrance qualifications, applicants should submit their qualifications to the Studienkolleg – Center for International Students in Konstanz or to uni-assist."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats doivent fournir un CV chronologique complet et une preuve de participation à un test d'orientation (en ligne, environ 10 minutes).",
+          "en": "Applicants must provide a complete chronological CV and proof of a study orientation test (online, about 10 minutes)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-heilbronn.de/en/checklist-for-bachelor-applicants-2f2f62a1ac1a86e6",
+            "quote": "Complete CV, chronological Proof of study orientation test online, takes about 10 minutes"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The German-taught main studies are not an elective: the programme is bilingual (basic studies English, main studies German). Requirement admission is subject to the general requirement that applicants hold an academic qualification that would enable them to study the chosen subject in their home country."
+}

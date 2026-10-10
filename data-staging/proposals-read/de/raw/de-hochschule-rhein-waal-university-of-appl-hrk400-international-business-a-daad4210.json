@@ -1,0 +1,122 @@
+{
+  "slug": "de-hochschule-rhein-waal-university-of-appl-hrk400-international-business-a-daad4210",
+  "programmePage": "https://www.hochschule-rhein-waal.de/en/faculties/society-and-economics/degree-programmes/international-business-and-management-ba",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.hochschule-rhein-waal.de/en/faculties/society-and-economics/degree-programmes/international-business-and-management-ba",
+          "quote": "Standard study duration 7 semesters How long it takes to graduate if everything goes according to plan."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4210/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4210/",
+          "quote": "Teaching language English Languages Courses are held entirely in English."
+        },
+        {
+          "url": "https://www.hochschule-rhein-waal.de/en/faculties/society-and-economics/degree-programmes/international-business-and-management-ba",
+          "quote": "Language of instruction English All courses and exams are offered in the language of instruction."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "english-language-certificate",
+          "name": {
+            "fr": "Certificat de compétence linguistique en anglais",
+            "en": "English language certificate"
+          },
+          "quotedAs": "official language certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4210/",
+          "quote": "please provide an official language certificate"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl",
+          "pte",
+          "cambridge",
+          "telc",
+          "toeic"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4210/",
+            "quote": "English language skills B2 required, please provide an official language certificate"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4210/",
+            "quote": "IELTS Academic: 5.5"
+          },
+          {
+            "url": "https://www.hochschule-rhein-waal.de/en/faculties/society-and-economics/degree-programmes/international-business-and-management-ba",
+            "quote": "To apply for our Bachelor’s degree programmes, you need proof of English language proficiency at B2 level."
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.hochschule-rhein-waal.de/en/faculties/society-and-economics/degree-programmes/international-business-and-management-ba",
+            "quote": "you usually need a qualification giving you access to higher education: a general university entrance qualification"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un stage préparatoire de huit semaines doit être effectué avant le début du quatrième semestre.",
+          "en": "An eight-week preparatory internship must be completed before the start of the fourth semester."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4210/",
+            "quote": "Completion of an eight-week preparatory internship. This is not required for initial admission, but it must be met by the fourth semester re-enrolment deadline at the latest."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier l'équivalence de votre diplôme marocain avec l'autorité compétente.",
+          "en": "Check the equivalence of your Moroccan diploma with the competent authority."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hochschule-rhein-waal.de/en/faculties/society-and-economics/degree-programmes/international-business-and-management-ba",
+            "quote": "Restricted: slots are distributed via a selection process."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Les frais de scolarité ne sont pas indiqués pour ce programme spécifique. Le site DAAD mentionne 'Tuition fees per semester None' mais aussi 'Semester contribution Enrolment fees amount to approximately 300 EUR per semester.' Il s'agit d'une contribution semestrielle, pas de frais de scolarité. Aucun montant de frais de scolarité n'est indiqué pour les étudiants internationaux. La page de l'université indique 'you do not pay tuition fees, as it is a state university in North Rhine-Westphalia.'"
+}

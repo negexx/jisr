@@ -1,0 +1,112 @@
+{
+  "slug": "de-hochschule-heilbronn-technik-wirtschaft-hrk125-intelligent-mechatronic-daad10366",
+  "programmePage": "https://www.hs-heilbronn.de/en/intelligent-mechatronic-systems",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10366/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10366/",
+          "quote": "Teaching language English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/intelligent-mechatronic-systems",
+          "quote": "Tuition fee : 1500 € Tuition fee : Concerns students form non-EU/EEA countries only"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10366/",
+          "quote": "non-EU countries 1,500 EUR"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2026-09-28",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10366/",
+          "quote": "The following is valid for applicants from: all countries For the winter semester: until 28 September 2026"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+          "quote": "If you hold an international certificate that qualifies you for the Studienkolleg, you must first have it recognized by Uni-Assist."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "recognition-of-school-leaving-certificate",
+          "name": {
+            "fr": "Reconnaissance du certificat de fin d'études",
+            "en": "Recognition of school-leaving certificate"
+          },
+          "quotedAs": "certificate recognition",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+          "quote": "Without certificate recognition, your application will unfortunately not be considered."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.hs-heilbronn.de/en/intelligent-mechatronic-systems",
+            "quote": "Language : English language skills at level B2 are required."
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10366/",
+            "quote": "B2 required, please provide an official language certificate, e.g.: IELTS Academic: 6"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The tuition quote '1,500 EUR' on the DAAD page does not state the period; the programme page states '1,500 € per semester'. The programme page states '1,500 €' and 'Concerns students form non-EU/EEA countries only'. The application deadline '28 September 2026' is stated on the DAAD page for applicants from all countries; the programme page gives no year. The programme-specific page does not list required application documents; the quote for document recognition comes from the university's general Bachelor application page."
+}
