@@ -21,8 +21,9 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
-  source: programme
+  value:
+    - fr
+  source: page-6
   info_kind: official
 tuition:
   value:
@@ -167,3 +168,6 @@ sources:
   page-5:
     url: https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles
     last_verified_at: 2026-10-09
+  page-6:
+    url: https://economie.uca.fr/formation/licence
+    last_verified_at: 2026-10-10
