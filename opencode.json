@@ -1,0 +1,24 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "opencode-go/deepseek-v4.1-flash",
+  "small_model": "opencode-go/deepseek-v4.1-flash",
+  "instructions": ["AGENTS.md", ".claude/CLAUDE.md", ".claude/docs/conventions.md"],
+  "agent": {
+    "researcher": {
+      "description": "Fast lookups: where does X happen, how does library Y work. Use before planning a change.",
+      "model": "opencode-go/deepseek-v4.1-flash"
+    },
+    "planner": {
+      "description": "Produces implementation plans with strategy, trade-offs and risks before code changes.",
+      "model": "opencode-go/deepseek-v4.1-flash"
+    },
+    "implementer": {
+      "description": "Executes a written plan once the strategy is settled.",
+      "model": "opencode-go/deepseek-v4.1-flash"
+    },
+    "reviewer": {
+      "description": "Reviews a diff or change set for correctness, security and project conventions before merge.",
+      "model": "opencode-go/deepseek-v4.1-flash"
+    }
+  }
+}
