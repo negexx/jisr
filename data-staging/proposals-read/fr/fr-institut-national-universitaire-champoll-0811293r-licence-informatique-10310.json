@@ -1,0 +1,59 @@
+{
+  "slug": "fr-institut-national-universitaire-champoll-0811293r-licence-informatique-10310",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10310&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10310&typeBac=0&originePc=0",
+          "quote": "La licence informatique est une licence généraliste de haut niveau permettant de préparer en 6 semestres une poursuite d'étude en master informatique."
+        }
+      ]
+    }
+  },
+  "notes": "The programme's own page (Parcoursup fiche) does not state a tuition fee for non-EU/foreign-diploma students, and it does not state a duration in years directly (6 semesters = 3 years). The university page https://www.univ-jfc.fr/formation/sinscrire-candidater/droits-dinscription gives tuition only per level and without any non-EU distinction, and https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses gives the French differentiated fee for non-EU students (2 902 € for a Licence year) but only as a general French institution figure, not specific to this programme, so no tuition fact was extracted. The university's international page states that for 1st-year licence applicants residing abroad the DAP procedure runs from 1 October to 15 December, but this is not specific to this programme and no year is given, so no intake was extracted. The 'anglais' mentioned in the programme is a taught language course (LV1), not the language of instruction, so teachingLanguages was left out.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10310&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non ressortissants de l'UE titulaires d'un diplôme équivalent au baccalauréat passent par la procédure DAP (Études en France), pas par Parcoursup.",
+          "en": "Non-EU applicants holding a qualification equivalent to the French baccalauréat must go through the DAP procedure (Études en France), not Parcoursup."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10310&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Admission sur examen du dossier par une commission : les résultats scolaires comptent pour 90 % (dont les notes de mathématiques et de NSI), méthodes de travail 5 % et savoir-être 5 %.",
+          "en": "Admission based on a file review by a commission: academic results count for 90% (including mathematics and computer science marks), working methods 5% and soft skills 5%."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10310&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 90%"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "slug": "fr-i-u-t-de-saint-brieuc-0221848p-but-science-et-genie-des-materia-3383",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3383&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+          "quote": "Le Bachelor Universitaire de Technologie est une licence professionnelle dispensée dans les IUT (instituts universitaires de technologie)."
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3383&typeBac=0&originePc=0",
+          "quote": "en trois ans"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3383&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 290200,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://formations.univ-rennes.fr/droits-dinscription-bourses-et-exonerations-pour-les-etudiantes-et-etudiants-internationaux",
+          "quote": "• Licence, BUT : 2 902 € par année universitaire"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 12,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.univ-rennes.fr/candidater-une-premiere-annee-de-licence-de-prepa-ecole-dingenieur-ou-de",
+          "quote": "Candidater à une 1ère année de B.U.T. ou à une prépa école d'ingénieur : procédure Études en France"
+        },
+        {
+          "url": "https://www.univ-rennes.fr/candidater-une-premiere-annee-de-licence-de-prepa-ecole-dingenieur-ou-de",
+          "quote": "Mi-décembre : date limite de dépôt des candidatures"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3383&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": [
+          "mathematics",
+          "physics-chemistry"
+        ],
+        "mode": "all",
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3383&typeBac=0&originePc=0",
+            "quote": "Nous recommandons 2 spécialités scientifiques parmi Maths, Physique chimie et SI (ou ITEC pour les STI2D)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le BUT SGM est une formation sélective : entretien oral avec un enseignant du département. Vérifiez les modalités pour les candidats internationaux.",
+          "en": "The BUT SGM is a selective programme: an oral interview with a department teacher. Check the procedures for international applicants."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3383&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3383&typeBac=0&originePc=0",
+            "quote": "Entretien avec un enseignant du département SGM."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Le montant de 2 902 €/an (droits différenciés, Licence/BUT) figure sur la page institutionnelle des droits d'inscription de l'Université de Rennes ; il n'est pas propre à la fiche Parcoursup de ce BUT. La fiche Parcoursup indique « Par année 178 euros », montant réservé aux étudiants non assujettis aux droits différenciés (dont les boursiers). L'université est exonérée partiellement dans certains cas (bourses, accords) : voir les pages. Le délai de candidature (mi-décembre) est celui de la procédure Études en France pour une 1re année de B.U.T. (hors Europe, diplôme étranger) ; la page Campus France Maroc confirme que le bac marocain relève d'Études en France. La page campusfrance mentionne des certifications de français (TCF, DELF B2, DALF) avec des cas de dispense ; voir la page « Les dispenses de certification de français » non fournie."
+}

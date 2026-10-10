@@ -1,0 +1,44 @@
+{
+  "slug": "fr-universite-de-bretagne-sud-site-de-vanne-0561739l-licence-economie-et-gestion-6508",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6508&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6508&typeBac=0&originePc=0",
+          "quote": "Organisée en 3 années elle se complète normalement par un Master organisé sur deux années."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6508&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des droits d'inscription différenciés pour un étudiant extra-communautaire (2 902 € pour une année en cycle de Licence) figure sur une page institutionnelle/orientation Campus France et non sur la page de ce programme : à vérifier par un humain. Aucune date de candidature au format jour/mois/année explicitement destinée aux candidats non-UE / titulaires d'un diplôme étranger n'est fournie pour cette licence (les dates Parcoursup concernent les bacheliers français/européens) ; pour un titulaire de Bac marocain, la candidature passe par la plateforme Études en France (non demandée ici). Aucune liste de documents propre à ce programme n'est disponible.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6508&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      }
+    ]
+  }
+}

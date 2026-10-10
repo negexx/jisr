@@ -1,0 +1,22 @@
+{
+  "slug": "fr-universite-polytechnique-hauts-de-france-0597132g-licence-genie-civil-7012",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7012&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uphf.fr/recherche/lecole-doctorale/candidater-these/liste-documents-fournir-pour-demande-candidature-en-doctorat",
+          "quote": "Lettre de motivation rédigée en français ou en anglais (une page minimum)."
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7012&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Les documents listés (diplôme, relevé de notes, CV, certification de français) sont mentionnés sur les pages de l'UPHF et de Campus France Maroc. La certification de français (TCF, DELF B2, DALF) est obligatoire pour la procédure Études en France, sauf dispense. Le niveau B2 est exigé pour le français à l'UPHF (page anglaise) et recommandé par Campus France Maroc. Les critères d'admission sont fixés par l'établissement et peuvent varier."
+}

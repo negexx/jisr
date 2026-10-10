@@ -1,0 +1,115 @@
+{
+  "slug": "fr-i-u-t-de-colmar-0680053n-but-techniques-de-commercialisat-8119",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8119&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8119&typeBac=0&originePc=0",
+          "quote": "La durée du cursus est de trois ans et demi."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr",
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8119&typeBac=0&originePc=0",
+          "quote": "Les cours sont assurés dans les 3 langues"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8119&typeBac=0&originePc=0",
+          "quote": "La maîtrise de l'allemand ET de l'anglais au niveau B2 est indispensable pour suivre les cours dispensés dans ces langues et réussir les semestres qui se déroulent en Allemagne et en Suisse"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 17800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8119&typeBac=0&originePc=0",
+          "quote": "Par année 178 euros."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8119&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8119&typeBac=0&originePc=0",
+            "quote": "Les candidats doivent maîtriser l’allemand (niveau B2) ET l’anglais et le français permettant de suivre des cours dans ces langues."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8119&typeBac=0&originePc=0",
+            "quote": "Les candidats doivent maîtriser l’allemand (niveau B2) ET l’anglais et le français permettant de suivre des cours dans ces langues."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les compétences et résultats en mathématiques seront examinés avec soin : vérifiez le niveau attendu.",
+          "en": "Skills and results in mathematics will be examined carefully: check the expected level."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8119&typeBac=0&originePc=0",
+            "quote": "Les compétences et résultats en mathématiques seront examinés avec soin."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "En cas d'admissibilité, un entretien de motivation en trois langues est prévu : préparez-vous à un oral.",
+          "en": "If shortlisted, a motivation interview in three languages is planned: prepare for an oral exam."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8119&typeBac=0&originePc=0",
+            "quote": "En cas d'admissibilité, l'examen du dossier de candidature sera complété par un entretien de motivation en trois langues qui permettra de vérifier l'adéquation entre le projet du candidat et la formation proposée."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Le montant de 178 €/an est le tarif public affiché sur la fiche Parcoursup (droits d'inscription Licence). L'UHA Business School signale que les étudiants extracommunautaires peuvent relever de droits différenciés plus élevés, sauf exonération (décret) ; à vérifier au cas par cas. Un étudiant marocain non titulaire d'un bac français/européen doit candidater via Etudes en France / Campus France, pas sur Parcoursup (voir recoupement avec le site Campus France Maroc)."
+}

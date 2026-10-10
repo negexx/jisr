@@ -1,0 +1,105 @@
+{
+  "slug": "fr-universite-sorbonne-paris-nord-0931238r-licence-informatique-11251",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11251&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11251&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11251&typeBac=0&originePc=0",
+          "quote": "Un TCF totalisant un score de 400 pts ou un DELF B2"
+        }
+      ]
+    }
+  },
+  "notes": "La fiche Parcoursup affiche « Frais de scolarité : Par année 178 euros », tarif des étudiants français et communautaires ; le tarif des étudiants extra-communautaires (2 902 €/an) figure sur la page institutionnelle des droits de scolarité et non sur la fiche du programme, il n'est donc pas repris ici. Les deux pages (fiche programme et UFR LLSHS) mentionnent le niveau de français B2 ; la page Campus France Maroc précise que cette certification est obligatoire pour les candidats non ressortissants de l'UE, y compris ceux qui postulent en L1 (aucune dispense pour la 1ère année de licence), et l'UFR LLSHS indique que le TCF DAP est obligatoire pour la DAP. Aucune date de candidature spécifique à ce programme n'est donnée dans les pages fournies.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "tcf",
+          "delf-dalf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11251&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Vous pouvez passer un TCF TP (tout public), un DELF B2 ou un DALF C1/C2 pour toutes les candidatures."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non ressortissants de l'UE titulaires d'un diplôme étranger de fin d'études secondaires doivent passer par la Demande d'admission préalable (DAP) blanche (plateforme Études en France), avec un test linguistique payant (TCF DAP).",
+          "en": "Non-EU applicants with a foreign secondary school diploma must go through the Demande d'admission préalable (DAP blanche, Études en France platform), including a paid language test (TCF DAP)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.univ-spn.fr/demande-dadmission-prealable/",
+            "quote": "Les ressortissants d'un pays tiers à l'UE, à l'EEE et à la Suisse, titulaires ou en préparation d'un diplôme étranger de fin d'études secondaires non-européens à l'UE, à l'EEE et à la Suisse et souhaitant s'inscrire en première année de licence dans une université française sont soumis à une demande d'admission préalable (DAP)."
+          },
+          {
+            "url": "https://www.univ-spn.fr/demande-dadmission-prealable/",
+            "quote": "Le formulaire (« dossier blanc ») concerne les candidats qui ne possèdent pas la nationalité française ou d'un État membre de l'Union européenne, d'un État partie à l'accord sur l'espace économique européen ou de la confédération helvétique, qui ne sont pas titulaires ou futurs titulaires du baccalauréat français ou européen et qui vivent à l'étranger."
+          },
+          {
+            "url": "https://llshs.univ-spn.fr/candidatures-inscriptions/admission-inscription-etudiants-internationaux/",
+            "quote": "Lors du dépôt de dossier, il faut fournir un Test de Connaissance du Français pour la DAP (TCF DAP) de niveau B2 minimum pour une candidature en licence."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats titulaires du bac français ou européen doivent candidater sur Parcoursup ; les autres (bac marocain, diplôme étranger) via Études en France / DAP blanche.",
+          "en": "Holders of the French or European bac must apply on Parcoursup; others (Moroccan bac, foreign diploma) via Études en France / DAP blanche."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11251&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          },
+          {
+            "url": "https://llshs.univ-spn.fr/candidatures-inscriptions/admission-inscription-etudiants-internationaux/",
+            "quote": "Vous résidez à l'étranger et vous préparez ou êtes titulaire d'un diplôme de fin d'études secondaires à l'étranger ? Vous devez suivre la procédure DAP blanc."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidatures sont classées surtout sur les résultats scolaires (70 %) ; il faut des notes solides en mathématiques et sciences.",
+          "en": "Applications are ranked mainly on academic results (70%); strong maths and science grades are required."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11251&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 70%"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11251&typeBac=0&originePc=0",
+            "quote": "Ainsi la licence d'informatique réclame une certaine aisance en mathématiques."
+          }
+        ]
+      }
+    ]
+  }
+}

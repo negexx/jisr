@@ -1,0 +1,136 @@
+{
+  "slug": "fr-universite-de-limoges-0870669e-licence-genie-civil-20744",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20744&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20744&typeBac=0&originePc=0",
+          "quote": "A l'issue des 4 années, si l'ensemble des UEs est validé, les mêmes compétences disciplinaires et transverses que celles du cursus en 3 ans sont acquises."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20744&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20744&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : Anglais"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": "2026-10-01",
+          "applicationDeadline": null,
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+          "quote": "Vous avez la nationalité marocaine Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France."
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+          "quote": "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "delf-dalf",
+          "tcf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20744&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": [
+          "mathematics",
+          "physics-chemistry"
+        ],
+        "mode": "any",
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20744&typeBac=0&originePc=0",
+            "quote": "Résultats en Maths, Physique-Chimie, SPI, NSI"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20744&typeBac=0&originePc=0",
+            "quote": "Les candidats titulaires ou en préparation d'un baccalauréat français des séries générales, technologiques ou professionnelles."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier si l'université exige les droits différenciés de 2 902 € ou applique une exonération.",
+          "en": "Check whether the university charges the differentiated fee of €2,902 or grants an exemption."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+            "quote": "Le montant des droits d’inscription que vous avez à payer est de : 2 902 euros pour une année en cycle de Licence"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+            "quote": "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non ressortissants de l'UE titulaires d'un diplôme étranger passent par la procédure DAP, et non par Parcoursup.",
+          "en": "Non-EU candidates with a foreign diploma apply via the DAP procedure, not Parcoursup."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20744&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les aménagements possibles pour les étudiants internationaux (accompagnement à l'UL).",
+          "en": "Check the possible accommodations for international students (support at UL)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unilim.fr/admission/je-suis-etudiant-international/",
+            "quote": "Une hotline est joignable afin de répondre à toutes vos questions sur les procédures d’inscription administrative à l’UL"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Le coût de la scolarité pour les étudiants non-UE est indiqué sous forme de droits différenciés (2 902 € par an en Licence) sur la page de Campus France Maroc. Le montant ne figure pas sur la fiche programme elle-même. Une mention générique du site de l'Université de Limoges indique que le cadre réglementaire a évolué avec le décret n° 2026-385 du 19 mai 2026, sans donner de montant précis. Le tarif de 178 €/an sur la fiche Parcoursup concerne les étudiants français/UE. Aucune date de début de programme n'est indiquée. Le lien pour la plateforme Etudes en France n'est pas fourni ici car la procédure est gérée séparément."
+}

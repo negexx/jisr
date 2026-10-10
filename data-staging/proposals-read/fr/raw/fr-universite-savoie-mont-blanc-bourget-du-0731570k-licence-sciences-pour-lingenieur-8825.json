@@ -1,0 +1,104 @@
+{
+  "slug": "fr-universite-savoie-mont-blanc-bourget-du-0731570k-licence-sciences-pour-lingenieur-8825",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8825&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8825&typeBac=0&originePc=0",
+          "quote": "Durée : 3 années, 6 semestres"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8825&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "Curriculum vitae",
+            "en": "Curriculum vitae"
+          },
+          "quotedAs": "curriculum vitae",
+          "translationRequired": null
+        },
+        {
+          "slug": "motivation-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Motivation letter"
+          },
+          "quotedAs": "Lettre de motivation",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8825&typeBac=0&originePc=0",
+          "quote": "Centres d'intérêt dans le curriculum vitae, stages éventuels, activités extra scolaires montrant une curiosité scientifique et technologique"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8825&typeBac=0&originePc=0",
+          "quote": "Motivation, connaissance des spécificités de la formation, cohérence du projet Lettre de motivation Important 2 sur 4"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8825&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": [
+          "mathematics",
+          "computer-science",
+          "physics-chemistry"
+        ],
+        "mode": "all",
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8825&typeBac=0&originePc=0",
+            "quote": "Notes en Mathématiques, en Sciences de l’ingénieur et en Numérique et Sciences Informatiques (lorsque l'option a été choisie), en Physique Chimie Bulletins de 1ere et de Terminale Essentiel 4 sur 4"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier le niveau requis et les critères d'admission (notes en mathématiques, sciences de l'ingénieur, NSI, physique-chimie, français, anglais) avant de candidater.",
+          "en": "Check the required level and admission criteria (grades in mathematics, engineering sciences, computer science, physics-chemistry, French, English) before applying."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8825&typeBac=0&originePc=0",
+            "quote": "Notes en Mathématiques, en Sciences de l’ingénieur et en Numérique et Sciences Informatiques (lorsque l'option a été choisie), en Physique Chimie Bulletins de 1ere et de Terminale Essentiel 4 sur 4"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Les pages maroc.campusfrance.org concernent la procédure Études en France / Campus France pour les titulaires d'un bac marocain et ne relèvent pas de ce programme. La page Parcoursup s'adresse aux titulaires d'un bac français ou européen ; pour un candidat étranger (diplôme marocain), la procédure est DAP / Études en France, et non Parcoursup. Le montant des frais de scolarité indiqué (178 euros par année) concerne les étudiants français ou communautaires, pas les étudiants extra-communautaires (droits différenciés de 2 902 euros évoqués sur la page maroc.campusfrance.org)."
+}

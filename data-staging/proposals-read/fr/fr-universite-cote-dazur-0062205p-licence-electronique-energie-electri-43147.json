@@ -1,0 +1,116 @@
+{
+  "slug": "fr-universite-cote-dazur-0062205p-licence-electronique-energie-electri-43147",
+  "programmePage": "https://univ-cotedazur.fr/formation/offre-de-formation/licence-electronique-energie-electrique-automatique-1",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://univ-cotedazur.fr/formation/offre-de-formation/licence-electronique-energie-electrique-automatique-1",
+          "quote": "La Licence se déroule sur 3 ans, répartis en 6 semestres."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://univ-cotedazur.fr/formation/offre-de-formation/licence-electronique-energie-electrique-automatique-1",
+          "quote": "Portail Sciences et Technologies / École Universitaire de Recherche Systèmes Numériques pour l’Humain Nice Campus Valrose Français"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 290200,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://univ-cotedazur.fr/formation/offre-de-formation/licence-electronique-energie-electrique-automatique-1",
+          "quote": "Étudiants étrangers extra-communautaires (sauf cas de non-assujettissement et exonérations prévues par la loi) : 2 902 euros/an + CVEC"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": "2026-08-31",
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://univ-cotedazur.fr/formation/offre-de-formation/licence-electronique-energie-electrique-automatique-1",
+          "quote": "31 août 2026 : début de la période de rentrée"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the programme page states EU students pay EUR 178/year and extra-EU students pay EUR 2,902/year; the EUR 2,902/year quote applies to extra-communautaires (Moroccan student with a foreign diploma). Only the Passport/ID mention is treated as a named document on the pages; the pages do not otherwise give a document list specific to this programme. No dated non-EU application deadline with a year was found that is specific to this programme (the L1 route for foreign-diploma applicants goes through Études en France / DAP, which is set separately). No applicationChannel is output per the task.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43147&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Admission en L1 : baccalauréat ou diplôme admis en équivalence. Les titulaires d'un bac marocain doivent candidater via Études en France (DAP Blanc), pas via Parcoursup.",
+          "en": "L1 admission: baccalaureate or equivalent. Holders of a Moroccan baccalaureate must apply via Études en France (DAP Blanc), not Parcoursup."
+        },
+        "evidence": [
+          {
+            "url": "https://univ-cotedazur.fr/formation/offre-de-formation/licence-electronique-energie-electrique-automatique-1",
+            "quote": "Admission en L1 : Baccalauréat ou diplôme admis en équivalence."
+          },
+          {
+            "url": "https://univ-cotedazur.fr/formation/offre-de-formation/licence-electronique-energie-electrique-automatique-1",
+            "quote": "Si vous ne résidez pas en France, vous devez suivre la procédure DAP Blanc."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La procédure et les dates de candidature dépendent de votre nationalité, de votre pays de résidence et de votre projet d'études. Consultez le portail d'Université Côte d'Azur (ou Campus France Maroc) pour la bonne procédure et les dates.",
+          "en": "The application procedure and dates depend on your nationality, country of residence and study plans. Check Université Côte d'Azur portal (or Campus France Maroc) for the right procedure and dates."
+        },
+        "evidence": [
+          {
+            "url": "https://ds4h.univ-cotedazur.fr/etudier-a-leur-ds4h/admissions/candidatures",
+            "quote": "la procédure de candidature varie en fonction de votre nationalité, de votre pays de résidence et de vos projets d'études"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le montant des droits différenciés (2 902 €/an) peut être réduit par une exonération partielle ou totale ; le dossier d'exonération se dépose auprès des assistantes sociales.",
+          "en": "The differentiated fee (EUR 2,902/year) may be reduced by partial or full exemption; the exemption application is filed with the social assistants."
+        },
+        "evidence": [
+          {
+            "url": "https://univ-cotedazur.fr/formation/scolarite/droits-d-inscription",
+            "quote": "Les étudiants concernés par le paiement des DIDEEC pourront être exonérés partiellement, au vu de leur situation personnelle étudiée en commission d'exonération."
+          }
+        ]
+      }
+    ]
+  }
+}

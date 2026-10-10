@@ -1,0 +1,122 @@
+{
+  "slug": "fr-iut-de-moselle-est-site-de-sarreguemines-0573433x-but-gestion-administrative-et-co-6666",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6666&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6666&typeBac=0&originePc=0",
+          "quote": "Ce diplôme de niveau Licence offre un apprentissage professionnalisant, concret et directement connecté aux besoins des entreprises. En trois ans, les étudiants deviennent des professionnels polyvalents"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6666&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 17800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6666&typeBac=0&originePc=0",
+          "quote": "Par année 178 euros."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6666&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vous devez candidater via Études en France (Campus France Maroc), et non sur Parcoursup : vérifiez la procédure et le calendrier sur www.maroc.campusfrance.org.",
+          "en": "You must apply through Études en France (Campus France Morocco), not Parcoursup: check the procedure and calendar on www.maroc.campusfrance.org."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6666&typeBac=0&originePc=0",
+            "quote": "Vous devez faire vos démarches sur le site de Campus France de votre pays de résidence : www.nom_du_pays.campusfrance.org (exemple : www.maroc.campusfrance.org)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sauf cas de dispense, une certification de français (TCF, DELF B2 ou DALF) est obligatoire pour le dossier Campus France : renseignez-vous sur les dispenses et le calendrier.",
+          "en": "Unless exempt, a French certification (TCF, DELF B2 or DALF) is required for the Campus France application: check exemptions and the exam calendar."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La sélection peut comprendre un entretien individuel de 15 minutes : préparez votre motivation, votre connaissance de la formation GACO et votre projet professionnel.",
+          "en": "Selection may include a 15-minute individual interview: prepare your motivation, knowledge of the GACO programme and career plan."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6666&typeBac=0&originePc=0",
+            "quote": "Un entretien individuel de 15 minutes en présentiel pourra vous être proposé."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'analyse des candidatures est formalisée par une grille avec des pourcentages. Vérifiez aussi le rapport public et les conseils aux candidats de la formation.",
+          "en": "Applications are assessed with a weighted grid. Also check the public report and the programme's advice to applicants."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6666&typeBac=0&originePc=0",
+            "quote": "Rapport public Télécharger le rapport d'analyse des candidatures de la session 2025PDF - 0ko"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des frais de dossier Campus France peuvent s'appliquer. Vérifiez le montant et les modalités sur le site Campus France Maroc.",
+          "en": "Campus France application fees may apply. Check the amount and terms on the Campus France Morocco website."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+            "quote": "Les frais de dossier Campus France"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "La page programme est la fiche Parcoursup du BUT GACO. Les frais indiqués (178 euros par année) sont probablement ceux d'un étudiant non-extra-communautaire et peuvent ne pas refléter les droits différenciés. Une page Campus France indique des droits différenciés pour les étudiants extra-communautaires (2 902 euros pour une année en cycle de Licence), mais un autre passage de la même page dit que certains établissements exonèrent ces étudiants ; ce montant qui n'est pas propre à ce programme est donc mentionné ici pour information seulement. Les langues d'enseignement : la page indique « Niveau de français requis ... B2 » et « Langue vivante 1 : Anglais », ce qui laisse entendre un enseignement en français. Aucune date de candidature pour les non-EU avec année n'est fournie sur cette page, donc aucune intake n'est listée. Le calendrier ADIUT Maroc 2026-2027 indiqué sur une autre page ne mentionne pas ce programme spécifiquement. La candidature se fait via Études en France / Campus France, pas via Parcoursup."
+}

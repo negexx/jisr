@@ -1,0 +1,57 @@
+{
+  "slug": "fr-universite-toulouse-iii-universite-toulo-0313218e-licence-electronique-energie-electri-4184",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4184&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4184&typeBac=0&originePc=0",
+          "quote": "Ce parcours permet d'effectuer la licence en 2 ans au lieu des 3 ans habituels."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4184&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Frais de scolarité (178 € par an) concernent les étudiants français/UE ; pour un étudiant extracommunautaire, les droits différenciés (2 850 €) s'appliquent selon un autre document, mais aucune page spécifique à ce programme ne mentionne la procédure Etudes en France ni de dates pour les candidats non-UE.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4184&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission dépend des notes de première et terminale en mathématiques et physique-chimie ; un parcours accéléré est proposé aux candidats ayant une moyenne supérieure à 16.",
+          "en": "Admission depends on first- and final-year grades in mathematics and physics-chemistry; an accelerated track is offered to applicants with an average above 16."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4184&typeBac=0&originePc=0",
+            "quote": "Un parcours Accéléré Licence en 2 ans est systématiquement proposé, à la rentrée en L1, aux candidats ayant une moyenne générale supérieure à 16 en terminale et dans les matières scientifiques (mathématiques, Physique-Chimie et/ou Sciences de l'Ingénieur)."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "fr-facultes-libres-de-louest-uco-bretagne-n-0221844k-licence-economie-et-gestion-17395",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=17395&typeBac=0&originePc=0",
+  "facts": {},
+  "notes": "Seules les données de la fiche Parcoursup de cette formation ont été trouvées. Le tarif indiqué (8020€/an) est pour les étudiants internationaux (hors espace Schengen) ; le tarif pour les boursiers et les frais modulés ne s'appliquent pas ici. Aucune information trouvée sur la durée officielle en années, les dates de candidature et la procédure Études en France pour cette formation.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=17395&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les attendus en mathématiques, statistiques et expression écrite : ils ne sont pas validés automatiquement.",
+          "en": "Check the requirements in mathematics, statistics and written expression: they are not automatically verified."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=17395&typeBac=0&originePc=0",
+            "quote": "Il est attendu des candidats en licence Mention ECONOMIE ET GESTION : * Disposer des compétences mathématiques et statistiques indispensables à l'économie et à la gestion"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les prérequis en anglais, ils sont jugés essentiels pour la formation.",
+          "en": "Check the English language requirements, they are considered essential for the programme."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=17395&typeBac=0&originePc=0",
+            "quote": "* Disposer de compétences en langue anglaise Nombreux sont les secteurs en économie et gestion où la documentation professionnelle et universitaire ainsi que les relations d'affaires reposent sur l'anglais."
+          }
+        ]
+      }
+    ]
+  }
+}

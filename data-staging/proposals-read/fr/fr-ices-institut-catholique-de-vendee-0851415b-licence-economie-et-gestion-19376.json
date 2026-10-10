@@ -1,0 +1,98 @@
+{
+  "slug": "fr-ices-institut-catholique-de-vendee-0851415b-licence-economie-et-gestion-19376",
+  "programmePage": "https://ices.fr/formation/licence-economie-gestion/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://ices.fr/formation/licence-economie-gestion/",
+          "quote": "Durée 3 ans (6 semestres)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19376&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : Anglais Langue vivante 2 : Pas de LV2 Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "pre-inscription-form",
+          "name": {
+            "fr": "Dossier de pré-inscription",
+            "en": "Pre-registration form"
+          },
+          "quotedAs": "dossier de pré-inscription",
+          "translationRequired": null
+        },
+        {
+          "slug": "validation-des-acquis-form",
+          "name": {
+            "fr": "Dossier de validation des acquis",
+            "en": "Validation of prior learning form"
+          },
+          "quotedAs": "dossier de validation des acquis",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://ices.fr/candidater/",
+          "quote": "Remplissez le dossier de pré-inscription et le dossier de validation des acquis et complétez avec les documents indiqués."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the pages state fees only as 'part fixe' plus a variable part based on family income, without a single figure applicable to a non-EU applicant, so no tuition fact is recorded. The Parcoursup page's 'Niveau de français requis : B2' is the only stated admission language condition; the Campus France pages say the French certificate is obligatory for the Etudes en France procedure (with exemptions) and mention recommended levels, not hard requirements for this programme. Intakes: no academic-year start date, opening date or dated application deadline with a year was found for this programme. applicationChannel is deliberately omitted per the task.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19376&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La candidature est sélective : un dossier de pré-inscription et de validation des acquis est étudié par une commission, suivie d'un avis pédagogique.",
+          "en": "Admission is selective: a pre-registration and validation-of-acquired-skills file is reviewed by a commission, followed by an academic opinion."
+        },
+        "evidence": [
+          {
+            "url": "https://ices.fr/candidater/",
+            "quote": "Votre candidature sera étudiée et un avis pédagogique vous sera donné. Si ce dernier est favorable, votre candidature sera examinée par une commission de validation à l'aide du dossier que vous aurez préalablement rempli."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Documents à envoyer avant le 01 avril (sans année précisée) : vérifier la date exacte ainsi que la procédure de visa étudiant avant de postuler.",
+          "en": "Documents must be sent before 01 April (no year stated): check the exact date and the student visa procedure before applying."
+        },
+        "evidence": [
+          {
+            "url": "https://ices.fr/candidater/",
+            "quote": "Envoyer les deux dossiers avant le 01 Avril à l'adresse suivante : ICES 17 Boulevard des Belges - BP 691 85017 LA ROCHE SUR YON Cedex - FRANCE"
+          }
+        ]
+      }
+    ]
+  }
+}
