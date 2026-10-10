@@ -1,6 +1,6 @@
 # Deploying Jisr (Vercel Hobby, region fra1)
 
-Last updated 2026-10-08. Decisions and reasons: `.claude/docs/decisions/0011-deployment.md`. Limits: `docs/ops/limits-runbook.md`. Launch gates: `docs/ops/prelaunch-checklist.md`.
+Last updated 2026-10-10. Decisions and reasons: `.claude/docs/decisions/0011-deployment.md`. Limits: `docs/ops/limits-runbook.md`. Launch gates: `docs/ops/prelaunch-checklist.md`.
 
 This guide is written for the owner, who has not used Vercel before. Words in plain type are explained where they first appear. **Never paste a token, secret or password into a chat, an issue, a commit or a file in this repository.** Tokens go only into the GitHub "Secrets" form (step 6 below) and nowhere else.
 
@@ -214,6 +214,20 @@ When you have bought one:
 5. Once the new domain is live, in the same Domains list edit the old `jisr.vercel.app` entry and set **Redirect to** the new apex with a 308 (permanent) redirect. Otherwise the old address keeps serving the whole site, and search engines would index the same pages twice (canonical tags point to the new origin, but a real redirect is cleaner).
 6. Change the repository variable `SMOKE_URL` to the same origin and run `pnpm ops:smoke https://jisr.fyi --expect=indexable`. The smoke test does not follow redirects, so it must target the final origin.
 7. Revisit the HSTS decision (ADR 0011) only after every subdomain you use serves HTTPS.
+
+### Result (2026-10-10)
+
+`jisrr.org` is live. The domain is registered at **Namecheap**; DNS is on **Cloudflare (Free)** with the two Vercel records set to **DNS only** (grey cloud): apex `A 216.198.79.1`, `www CNAME 0a11a47df940be13.vercel-dns-017.com`. Namecheap's nameservers point at Cloudflare (`conrad.ns.cloudflare.com`, `ulla.ns.cloudflare.com`).
+
+Verified against the live site:
+
+- `http://jisrr.org` → **308** `https://jisrr.org`; `https://jisrr.org/` → **307** `/fr`.
+- `www.jisrr.org` → **308** `https://jisrr.org/` (apex is canonical, per step 1).
+- `robots.txt` allows crawling and names `Sitemap: https://jisrr.org/sitemap.xml`.
+- The canonical link on `/fr` is `https://jisrr.org/fr`; the sitemap host is `https://jisrr.org`.
+- `NEXT_PUBLIC_SITE_URL` and `SMOKE_URL` are `https://jisrr.org`; the old `jisr-phi.vercel.app` → **308** `https://jisrr.org/`.
+
+Cloudflare's AI/robots policy (search, agent, training) is set to allow. DNSSEC and HSTS `includeSubDomains`/`preload` (step 7) remain deferred.
 
 ## 7. Rollback
 
