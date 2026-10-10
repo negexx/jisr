@@ -33,8 +33,11 @@ tuition:
   source: page-1
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-05-11
+  source: page-4
   info_kind: official
 applicationChannel:
   value: null
@@ -130,3 +133,6 @@ sources:
   page-3:
     url: https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf
     last_verified_at: 2026-10-09
+  page-4:
+    url: https://www.economia.unifi.it/vp-631-call-for-applications-sustainable-business-for-societal-challenges.html
+    last_verified_at: 2026-10-10

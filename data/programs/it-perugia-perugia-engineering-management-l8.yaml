@@ -42,56 +42,62 @@ applicationChannel:
   info_kind: official
 documents:
   value:
-    - slug: secondary-school-diploma
+    - slug: school-leaving-certificate
       name:
         fr:
-          text: Titre final des études secondaires obtenu avec au moins 12 ans de scolarité
+          text: Diplôme de fin d'études secondaires
           status: draft
         en:
-          text: Final secondary school qualification obtained after at least 12 years of schooling
+          text: High school diploma
           status: draft
-        ar:
-          text: الشهادة النهائية للدراسة الثانوية المحصَّل عليها بعد 12 سنة دراسية على الأقل
-          status: draft
-      translationRequired: null
-    - slug: cimea-statement-or-declaration-of-value
+      translationRequired: true
+    - slug: transcript-last-two-years
       name:
         fr:
-          text: Attestation CIMEA ou déclaration de valeur, si l’établissement la demande
+          text: Relevé de notes / certificat de matières des deux dernières années
           status: draft
         en:
-          text: CIMEA statement or Declaration of value, if the institution asks for it
-          status: draft
-        ar:
-          text: إفادة CIMEA أو بيان القيمة، إذا طلبته المؤسسة
+          text: School report/subject certificate of the last two years
           status: draft
       translationRequired: null
-    - slug: university-entrance-aptitude-certificate
+    - slug: passport
       name:
         fr:
-          text: Certificat de réussite à l’épreuve d’aptitude académique d’accès à l’université du pays d’origine, s’il en existe une
+          text: Copie du passeport valide
           status: draft
         en:
-          text: Certificate of passing the academic aptitude test for university entrance in the home country, where one exists
-          status: draft
-        ar:
-          text: شهادة النجاح في اختبار الكفاءة الأكاديمية للولوج إلى الجامعة في بلد المنشأ، إن وُجد هذا الاختبار
+          text: Copy of a valid passport
           status: draft
       translationRequired: null
-    - slug: italian-translation-of-documents
+    - slug: cv
       name:
         fr:
-          text: Traductions en italien des documents ci-dessus, si l’établissement les demande
+          text: Curriculum vitae
           status: draft
         en:
-          text: Italian translations of the documents above, where the institution asks for them
-          status: draft
-        ar:
-          text: ترجمات الوثائق أعلاه إلى الإيطالية، إذا طلبتها المؤسسة
+          text: Curriculum vitae
           status: draft
       translationRequired: null
-  source: page-4
-  info_kind: guidance
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Certification de compétence en anglais de niveau B2
+          status: draft
+        en:
+          text: B2 level English certification
+          status: draft
+      translationRequired: null
+    - slug: cimea-statement-verification-or-comparability
+      name:
+        fr:
+          text: Attestation de vérification ou de comparabilité du diplôme par CIMEA
+          status: draft
+        en:
+          text: Statement of verification or comparability of academic qualification by CIMEA
+          status: draft
+      translationRequired: null
+  source: page-5
+  info_kind: official
 requirements:
   coverage: partial
   source: programme
@@ -178,3 +184,6 @@ sources:
   page-4:
     url: https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf
     last_verified_at: 2026-10-09
+  page-5:
+    url: https://www.unipg.it/en/international-students/becoming-a-unipg-student/list-of-study-documents
+    last_verified_at: 2026-10-10

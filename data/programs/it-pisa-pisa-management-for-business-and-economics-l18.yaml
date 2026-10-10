@@ -33,8 +33,11 @@ tuition:
   source: page-1
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-07-05
+  source: page-3
   info_kind: official
 applicationChannel:
   value: it-universitaly
@@ -144,3 +147,6 @@ sources:
   page-2:
     url: https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf
     last_verified_at: 2026-10-09
+  page-3:
+    url: https://alboufficiale.unipi.it/wp-content/uploads/2026/05/Bando-MBE-202627-ENG-rettificato-1-1.pdf
+    last_verified_at: 2026-10-10
