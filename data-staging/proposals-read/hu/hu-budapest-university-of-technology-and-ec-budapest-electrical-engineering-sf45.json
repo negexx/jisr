@@ -1,0 +1,36 @@
+{
+  "slug": "hu-budapest-university-of-technology-and-ec-budapest-electrical-engineering-sf45",
+  "programmePage": "https://www.vik.bme.hu/en/education/programs/",
+  "facts": {},
+  "notes": "No tuition fee is stated on the supplied pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test de placement en mathématiques, physique et anglais est obligatoire pour tous les candidats au BSc.",
+          "en": "A placement test in Mathematics, Physics, and English is mandatory for all BSc applicants."
+        },
+        "evidence": [
+          {
+            "url": "https://www.vik.bme.hu/en/education/admission/",
+            "quote": "The placement test is mandatory for all applicants who wish to enter into a BSc degree program at BME VIK."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un certificat d'anglais est recommandé pour le BSc (niveau non précisé).",
+          "en": "An English certificate is recommended for BSc (level not specified)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.vik.bme.hu/en/education/admission/",
+            "quote": "Proof of English language proficiency: TOEFL iBT score of 4.0, or PBT score 550 or Cambridge First Certificate \"B\" or IELTS score of 5.0 (recommended for BSc, required for MSc and PhD) or Pearson PTE min. 51"
+          }
+        ]
+      }
+    ]
+  }
+}

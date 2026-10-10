@@ -1,0 +1,51 @@
+{
+  "slug": "hu-university-of-pannonia-nagykanizsa-water-operation-engineer-sf582",
+  "programmePage": "https://pen.uni-pannon.hu/en/water-operation-engineering/",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://pen.uni-pannon.hu/en/water-operation-engineering/",
+          "quote": "Study Formats: Full-time program in English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 175000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://pen.uni-pannon.hu/en/water-operation-engineering/",
+          "quote": "for non-EU students: 1,750 EUR/semester"
+        }
+      ]
+    }
+  },
+  "notes": "No explicit document checklist for international applicants, no application platform, no intake dates and no stated application deadline for non-EU/foreign-qualification applicants are given on the supplied pages; the 'Curriculum' item is only a downloadable information link, not a stated required document for admission. The How to apply page and scholarship page mention Stipendium Hungaricum and self-funded routes but name no application platform or deadline for this programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://pen.uni-pannon.hu/en/water-operation-engineering/",
+            "quote": "English proficiency at CEFR level B2 or above, demonstrated by Cambridge B2 First (FCE) or C1 Advanced (CAE), IELTS 5.5 or above, TOEFL iBT 4 or above."
+          }
+        ]
+      }
+    ]
+  }
+}

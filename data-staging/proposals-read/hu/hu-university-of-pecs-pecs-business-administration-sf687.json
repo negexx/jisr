@@ -1,0 +1,68 @@
+{
+  "slug": "hu-university-of-pecs-pecs-business-administration-sf687",
+  "programmePage": "https://ktk.pte.hu/en/education/bachelor-programmes/bsc-business-administration-and-management",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://ktk.pte.hu/en/education/bachelor-programmes/bsc-business-administration-and-management",
+          "quote": "Duration of training: 3.5 years (7 semesters)"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 275000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://ktk.pte.hu/en/education/bachelor-programmes/bsc-business-administration-and-management",
+          "quote": "for citizens of all other countries 2 750 EUR / semester"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://ktk.pte.hu/en/felvetelizok/felveteli/application-guide",
+          "quote": "From 2018, applications can be submitted through the online application site of University of Pécs."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition for non-EU students is stated as '2 750 EUR / semester'; amountMinor 275000 EUR (period semester). No document list was quotable on these pages. Admission guide page is empty of dates.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://ktk.pte.hu/en/education/bachelor-programmes/bsc-business-administration-and-management",
+            "quote": "A firm knowledge of English is absolutely necessary to be able to take our courses in English."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test de mathématiques est obligatoire : en ligne, noté sur 20 points. L'admission est refusée si le test n'est pas passé ou si le score est inférieur à 50 %.",
+          "en": "A Mathematics test is compulsory: online, graded 0-20 points. Admission is rejected if you do not take the test or score below 50%."
+        },
+        "evidence": [
+          {
+            "url": "https://ktk.pte.hu/en/education/bachelor-programmes/bsc-business-administration-and-management",
+            "quote": "Your application must be rejected if you are not attending the test or the result is below 50%."
+          }
+        ]
+      }
+    ]
+  }
+}

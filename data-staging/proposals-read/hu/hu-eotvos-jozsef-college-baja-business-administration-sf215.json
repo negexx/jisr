@@ -1,0 +1,116 @@
+{
+  "slug": "hu-eotvos-jozsef-college-baja-business-administration-sf215",
+  "programmePage": "https://ejf.hu/en/business-and-management-ba",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://ejf.hu/en/business-and-management-ba",
+          "quote": "LANGUAGE English"
+        },
+        {
+          "url": "https://ejf.hu/node/185",
+          "quote": "Business and Management (BA) – EU-accredited bachelor programme taught in English"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary school leaving certificate"
+          },
+          "quotedAs": "Secondary school leaving certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "english-language-certificate",
+          "name": {
+            "fr": "Certificat de langue anglaise",
+            "en": "English language certificate"
+          },
+          "quotedAs": "English language certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "application-form",
+          "name": {
+            "fr": "Formulaire de candidature",
+            "en": "Application form"
+          },
+          "quotedAs": "Completed application form",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport",
+          "name": {
+            "fr": "Passeport",
+            "en": "Passport"
+          },
+          "quotedAs": "Passport with at least 5 years validity",
+          "translationRequired": null
+        },
+        {
+          "slug": "medical-certificate",
+          "name": {
+            "fr": "Certificat médical",
+            "en": "Medical certificate"
+          },
+          "quotedAs": "Medical certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "police-clearance-certificate",
+          "name": {
+            "fr": "Certificat de police",
+            "en": "Police clearance certificate"
+          },
+          "quotedAs": "Police clearance certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://ejf.hu/node/185",
+          "quote": "To be considered for admission, applicants should provide: Secondary school leaving certificate (school report) English language certificate or international language exam result Completed application form Passport with at least 5 years validity Medical certificate Police clearance certificate"
+        }
+      ]
+    }
+  },
+  "notes": "No tuition fee for self-financed non-EU/EEA students is stated on the supplied pages: the programme page and the admission page give no fee amount, only a mention of 'fee-paying applicants'. No application deadline, intake date or platform (e.g. Stipendium Hungaricum) is stated. Duration from 'Semesters: 7' = 3.5 years. Documents listed on ejf.hu/node/185 under 'To be considered for admission, applicants should provide'.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission et les modalités de candidature auprès de l'établissement par e-mail.",
+          "en": "Check the admission conditions and application procedure with the college directly by email."
+        },
+        "evidence": [
+          {
+            "url": "https://ejf.hu/node/185",
+            "quote": "For personalised guidance and questions, applicants are encouraged to contact the college directly"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Contactez l'établissement pour les possibilités de bourse ou pour étudier en tant qu'étudiant payant.",
+          "en": "Contact the college for scholarship or fee-paying study options."
+        },
+        "evidence": [
+          {
+            "url": "https://ejf.hu/node/185",
+            "quote": "In short: choose your programme, prepare the required documents, submit clear electronic copies, and contact the college for scholarship or fee-paying study options."
+          }
+        ]
+      }
+    ]
+  }
+}

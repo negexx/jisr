@@ -1,0 +1,174 @@
+{
+  "slug": "hu-university-of-nyiregyhaza-nyiregyhaza-computer-science-enginee-sf538",
+  "programmePage": null,
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://english.nye.hu/en/node/319",
+          "quote": "Computer Science Engineering BSc 7 2450 EUR *** 1800 EUR ***"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 245000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://english.nye.hu/en/node/319",
+          "quote": "Computer Science Engineering BSc 7 2450 EUR *** 1800 EUR ***"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "1. The application form you can find here: https://applicationform.nye.hu/"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "secondary-school-leaving-certificate",
+          "name": {
+            "fr": "Certificat de fin d'études secondaires",
+            "en": "Secondary school leaving certificate"
+          },
+          "quotedAs": "secondary school leaving certificate",
+          "translationRequired": true
+        },
+        {
+          "slug": "transcript-of-records",
+          "name": {
+            "fr": "Relevé de notes",
+            "en": "Transcript of Records"
+          },
+          "quotedAs": "Transcript of Records",
+          "translationRequired": true
+        },
+        {
+          "slug": "passport-copy",
+          "name": {
+            "fr": "Copie du passeport",
+            "en": "Copy of passport"
+          },
+          "quotedAs": "Copy of passport",
+          "translationRequired": null
+        },
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV",
+            "en": "CV"
+          },
+          "quotedAs": "CV",
+          "translationRequired": null
+        },
+        {
+          "slug": "motivation-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Motivation letter"
+          },
+          "quotedAs": "Motivation letter",
+          "translationRequired": null
+        },
+        {
+          "slug": "proof-of-language-proficiency",
+          "name": {
+            "fr": "Preuve de compétence linguistique",
+            "en": "Proof of language proficiency"
+          },
+          "quotedAs": "Proof of language proficiency",
+          "translationRequired": null
+        },
+        {
+          "slug": "general-medical-certificate",
+          "name": {
+            "fr": "Certificat médical général",
+            "en": "General Medical Certificate"
+          },
+          "quotedAs": "General Medical Certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "application-fee-payment-slip",
+          "name": {
+            "fr": "Reçu de paiement des frais de dossier",
+            "en": "Proof of application fee payment slip"
+          },
+          "quotedAs": "Proof of application fee payment slip",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "Academic certificates (secondary school leaving certificate or university degree) and Transcript of Records (these documents have to be officially attested with English translation)"
+        },
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "Copy of passport"
+        },
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "CV"
+        },
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "Motivation letter"
+        },
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "Proof of language proficiency (not mandatory)"
+        },
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "General Medical Certificate (Download form) – The certificate must be issued within the previous 6 months."
+        },
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "Proof of application fee payment slip (100 EUR, non-refundable)"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien oral en ligne (Microsoft Teams) est requis pour vérifier l'anglais, l'orientation professionnelle et la motivation.",
+          "en": "An online oral interview (Microsoft Teams) is required to check English skills, professional orientation and motivation."
+        },
+        "evidence": [
+          {
+            "url": "https://english.nye.hu/en/node/30",
+            "quote": "Entrance exam: Short oral interview via internet (platform: Microsoft Teams) to check the English skills, professional orientation and motivation)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Frais de dossier de 100 EUR non remboursables ; le montant complet doit arriver sur le compte de l'université.",
+          "en": "Non-refundable application fee of 100 EUR; the full amount must arrive in the university's bank account."
+        },
+        "evidence": [
+          {
+            "url": "https://english.nye.hu/en/node/30",
+            "quote": "Proof of application fee payment slip (100 EUR, non-refundable)"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "teachingLanguages: aucune page ne dit dans quelle langue ce programme est enseigné (seule la liste des « English programmes » le suggère, sans phrase citable pour ce programme) : laissé de côté. intakes: la seule date (30 juin 2026) concerne l'admission de septembre 2026, alors que le programme est proposé pour 2027/2028 ; les autres mentions (« opens in December 2026 / January 2027 ») ne donnent pas de jour précis : laissé de côté. tuition: 2450 EUR/semestre pour les candidats non-UE selon le tableau ; la mention « *** » renvoie à un paiement anticipé des deux premiers semestres (voir https://english.nye.hu/en/node/319). La réduction (1800 EUR) ne concerne pas les non-EU. Aucune page spécifique au programme « Computer Science Engineering » n'est fournie ; le tableau des frais (node/319) et la procédure (node/30) s'appliquent à ce programme. Les ressortissants marocains ne figurent pas dans la liste des pays dont les candidatures ne sont plus acceptées (Afghanistan, Algeria, Bangladesh, Nepal, Saudi Arabia, Syria, Yemen)."
+}

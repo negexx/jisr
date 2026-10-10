@@ -1,0 +1,62 @@
+{
+  "slug": "hu-obuda-university-budapest-business-administration-sf562",
+  "programmePage": null,
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 290000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://uni-obuda.hu/tuition-fees/",
+          "quote": "Business Administration and Management Digital Manager 2,000 EUR 2,900 EUR Projectmanagement – B2B marketing"
+        },
+        {
+          "url": "https://uni-obuda.hu/tuition-fees/",
+          "quote": "2. Tuition fee: payable per academic semester"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://uni-obuda.hu/application-deadlines/",
+          "quote": "the Matriculation / School Leaving Certificate has to be uploaded into the University’s online application system by the 1st of August the year of application"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le relevé de notes/le certificat de fin d'études secondaires doit être téléversé dans le système de candidature en ligne de l'université avant le 1er août de l'année de candidature. Documents originaux ou copies certifiées conformes uniquement.",
+          "en": "The Matriculation / School Leaving Certificate must be uploaded to the university's online application system by 1 August of the application year. Only original or certified documents."
+        },
+        "evidence": [
+          {
+            "url": "https://uni-obuda.hu/application-deadlines/",
+            "quote": "the Matriculation / School Leaving Certificate has to be uploaded into the University’s online application system by the 1st of August the year of application"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Critère d'âge : l'âge minimum de 18 ans doit être atteint au début de la période d'études (fin septembre 2026). Vérifiez si cela est requis pour votre dossier.",
+          "en": "Age criterion: applicants must be at least 18 years old by the start of the study period (end of September 2026). Check if this applies to your application."
+        },
+        "evidence": [
+          {
+            "url": "https://uni-obuda.hu/application-deadlines/",
+            "quote": "Applicants must be at least 18 years old by the start of the study period in the Fall semester of Year 1 at the University, i.e., by the end of September 2026."
+          }
+        ]
+      }
+    ]
+  }
+}

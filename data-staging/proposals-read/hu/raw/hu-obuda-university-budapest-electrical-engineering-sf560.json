@@ -1,0 +1,45 @@
+{
+  "slug": "hu-obuda-university-budapest-electrical-engineering-sf560",
+  "programmePage": null,
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 300000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://uni-obuda.hu/tuition-fees/",
+          "quote": "Electrical Engineering Communication engineering 2,000 EUR 3,000 EUR Instrumentation and automation Embedded systems Energy Engineering Management Projectmanagement 2,700 EUR Corporate management"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://uni-obuda.hu/application-deadlines/",
+          "quote": "the Matriculation / School Leaving Certificate has to be uploaded into the University’s online application system by the 1st of August the year of application."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les dates limites de candidature pour le semestre d'automne (31 mai 2026) sont indiquées ; vérifiez la date applicable à votre parcours d'étudiant international non-UE.",
+          "en": "Application deadlines for the autumn semester (31 May 2026) are given; check the applicable date for your non-EU international applicant route."
+        },
+        "evidence": [
+          {
+            "url": "https://uni-obuda.hu/how-to-apply/",
+            "quote": "Fall Semester Application deadline: 31th May, 2026"
+          }
+        ]
+      }
+    ]
+  }
+}

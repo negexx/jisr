@@ -1,0 +1,190 @@
+{
+  "slug": "hu-university-of-nyiregyhaza-nyiregyhaza-computer-science-sf536",
+  "programmePage": null,
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://english.nye.hu/en/node/319",
+          "quote": "Computer Science BSc 6 2450 EUR *** 1800 EUR ***"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 245000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://english.nye.hu/en/node/319",
+          "quote": "Computer Science BSc 6 2450 EUR *** 1800 EUR ***"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": "2026-12-01",
+          "applicationDeadline": null,
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://english.nye.hu/",
+          "quote": "The new application period will open in December 2026 for the September 2027 intake."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "The application form you can find here: https://applicationform.nye.hu/"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary school leaving certificate"
+          },
+          "quotedAs": "secondary school leaving certificate",
+          "translationRequired": true
+        },
+        {
+          "slug": "transcript-of-records",
+          "name": {
+            "fr": "Relevé de notes",
+            "en": "Transcript of Records"
+          },
+          "quotedAs": "Transcript of Records",
+          "translationRequired": true
+        },
+        {
+          "slug": "passport",
+          "name": {
+            "fr": "Copie du passeport",
+            "en": "Copy of passport"
+          },
+          "quotedAs": "Copy of passport",
+          "translationRequired": null
+        },
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV",
+            "en": "CV"
+          },
+          "quotedAs": "CV",
+          "translationRequired": null
+        },
+        {
+          "slug": "motivation-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Motivation letter"
+          },
+          "quotedAs": "Motivation letter",
+          "translationRequired": null
+        },
+        {
+          "slug": "proof-of-language-proficiency",
+          "name": {
+            "fr": "Preuve de compétence linguistique",
+            "en": "Proof of language proficiency"
+          },
+          "quotedAs": "Proof of language proficiency",
+          "translationRequired": null
+        },
+        {
+          "slug": "general-medical-certificate",
+          "name": {
+            "fr": "Certificat médical général",
+            "en": "General Medical Certificate"
+          },
+          "quotedAs": "General Medical Certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "application-fee-payment-slip",
+          "name": {
+            "fr": "Preuve de paiement des frais de dossier",
+            "en": "Proof of application fee payment slip"
+          },
+          "quotedAs": "Proof of application fee payment slip",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "Academic certificates (secondary school leaving certificate or university degree) and Transcript of Records (these documents have to be officially attested with English translation)"
+        },
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "Copy of passport"
+        },
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "CV"
+        },
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "Motivation letter"
+        },
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "Proof of language proficiency (not mandatory)"
+        },
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "General Medical Certificate (Download form) – The certificate must be issued within the previous 6 months."
+        },
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "Proof of application fee payment slip (100 EUR, non-refundable)"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Frais de dossier : 100 EUR, non remboursables, à joindre à la candidature.",
+          "en": "Application fee: 100 EUR, non-refundable, to be submitted with the application."
+        },
+        "evidence": [
+          {
+            "url": "https://english.nye.hu/en/node/30",
+            "quote": "Proof of application fee payment slip (100 EUR, non-refundable)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Entretien oral en ligne (Microsoft Teams) sur les compétences en anglais, l'orientation professionnelle et la motivation.",
+          "en": "Short oral interview via internet (Microsoft Teams) to check English skills, professional orientation and motivation."
+        },
+        "evidence": [
+          {
+            "url": "https://english.nye.hu/en/node/30",
+            "quote": "Entrance exam: Short oral interview via internet (platform: Microsoft Teams) to check the English skills, professional orientation and motivation)"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The tuition fee quote is programme-specific and lists both the non-EU fee (2450 EUR/semester) and the EU/EEA/Türkiye fee; the non-EU figure is given. The application deadline shown for the September 2026 intake (30 June 2026) is general and no year is stated for a non-EU-specific deadline for the September 2027 intake, so only the opening in December 2026 is recorded; the entry requirement details (language level, subject prerequisites) are not given on these pages."
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "hu-university-of-debrecen-debrecen-commerce-and-marketing-sf124",
+  "programmePage": "https://www.edu.unideb.hu/p/commerce-and-marketing-bsc",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/commerce-and-marketing-bsc",
+          "quote": "All courses are taught in English; therefore, a B2 level English proficiency is required."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 700000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/commerce-and-marketing-bsc",
+          "quote": "The tuition fee for this program is 7,000 USD/Year"
+        }
+      ]
+    }
+  },
+  "notes": "The programme page states documents and general application steps; the application platform quote is general but applies to all applicants. Tuition is stated only in USD by the pages; other currencies not given. The non-refundable application fee of 150 USD and entrance procedure fee of 350 USD are extra costs, not tuition.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/commerce-and-marketing-bsc",
+            "quote": "Applicants must have an English proficiency of at least B2 level as the program is fully taught in English."
+          },
+          {
+            "url": "https://www.edu.unideb.hu/p/commerce-and-marketing-bsc",
+            "quote": "a TOEFL test with a minimum score of 513 (Paper-Based)."
+          },
+          {
+            "url": "https://www.edu.unideb.hu/p/commerce-and-marketing-bsc",
+            "quote": "an IELTS test with a minimum score of 5.5."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez l'exigence d'un examen d'entrée en mathématiques et les modalités d'inscription.",
+          "en": "Check the Mathematics entrance exam requirement and registration details."
+        },
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/commerce-and-marketing-bsc",
+            "quote": "Further information about the entrance exams can be found through the following website: Learn more about our entrance exams"
+          }
+        ]
+      }
+    ]
+  }
+}

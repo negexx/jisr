@@ -1,0 +1,42 @@
+{
+  "slug": "hu-university-of-public-service-baja-water-operation-engineer-sf523",
+  "programmePage": "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-water-operation-engineering",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-water-operation-engineering",
+          "quote": "The aim of the 6 semester is to train water operation engineers"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-stipendium-hungaricum",
+      "evidence": [
+        {
+          "url": "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-water-operation-engineering",
+          "quote": "Scholarship opportunities: Applicants interested in scholarship opportunities are kindly requested to apply through the official scholarship websites: Stipendium Hungaricum Scholarship Programme, Hungarian Diaspora Scholarship, and Scholarship Programme for Christian Young People."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez sur les sites officiels des bourses (Stipendium Hungaricum, Hungarian Diaspora Scholarship, Scholarship Programme for Christian Young People) les conditions d'éligibilité et les dates limites de candidature.",
+          "en": "Check the official scholarship websites (Stipendium Hungaricum, Hungarian Diaspora Scholarship, Scholarship Programme for Christian Young People) for eligibility requirements and application deadlines."
+        },
+        "evidence": [
+          {
+            "url": "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-water-operation-engineering",
+            "quote": "Please also check the application deadlines and eligibility requirements on the respective scholarship websites."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The page gives no self-financed application channel: it only points scholarship-seekers to the official scholarship websites, so applicationChannel is recorded as hu-stipendium-hungaricum. No tuition figure, teaching language, intake dates or document list for international applicants appears on this page. Scholarship opportunities are not tuition of 0."
+}

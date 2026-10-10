@@ -1,0 +1,87 @@
+{
+  "slug": "hu-university-of-debrecen-debrecen-biochemical-engineering-sf112",
+  "programmePage": null,
+  "facts": {
+    "documents": {
+      "value": [
+        {
+          "slug": "valid-passport",
+          "name": {
+            "fr": "Passeport en cours de validité",
+            "en": "Valid passport"
+          },
+          "quotedAs": "valid passport",
+          "translationRequired": null
+        },
+        {
+          "slug": "certificate-of-admission",
+          "name": {
+            "fr": "Certificat d’admission délivré par l’établissement d’enseignement",
+            "en": "Certificate of admission issued by the educational institution"
+          },
+          "quotedAs": "certificate of admission",
+          "translationRequired": null
+        },
+        {
+          "slug": "proof-of-tuition-payment",
+          "name": {
+            "fr": "Preuve du paiement des frais de scolarité",
+            "en": "Proof of payment of tuition fees"
+          },
+          "quotedAs": "proof of payment of tuition fees",
+          "translationRequired": null
+        },
+        {
+          "slug": "proof-of-means-of-subsistence",
+          "name": {
+            "fr": "Preuve de ressources suffisantes pour la subsistance et le séjour",
+            "en": "Proof of sufficient means of subsistence"
+          },
+          "quotedAs": "means of subsistence",
+          "translationRequired": null
+        },
+        {
+          "slug": "comprehensive-health-insurance",
+          "name": {
+            "fr": "Assurance maladie couvrant l’ensemble des soins de santé",
+            "en": "Comprehensive health insurance covering all healthcare services"
+          },
+          "quotedAs": "comprehensive health insurance services",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://oif.gov.hu/factsheets/residence-of-the-student-pupil",
+          "quote": "What are the mandatory attachments/enclosures of an application?"
+        },
+        {
+          "url": "https://oif.gov.hu/factsheets/residence-of-the-student-pupil",
+          "quote": "The purpose of residence may be verified by: – a certificate of admission from the relevant educational institution"
+        },
+        {
+          "url": "https://oif.gov.hu/factsheets/residence-of-the-student-pupil",
+          "quote": "Linguistic knowledge required for the pursuit of studies may be verified by: – a language certificate in proof of language proficiency examination"
+        },
+        {
+          "url": "https://oif.gov.hu/factsheets/residence-of-the-student-pupil",
+          "quote": "The application must be accompanied by proof of payment of tuition fees"
+        },
+        {
+          "url": "https://oif.gov.hu/factsheets/residence-of-the-student-pupil",
+          "quote": "Documents in proof of means of subsistence in Hungary"
+        },
+        {
+          "url": "https://oif.gov.hu/factsheets/residence-of-the-student-pupil",
+          "quote": "Documentary evidence must be submitted as proof that the applicant has access to comprehensive health insurance services"
+        },
+        {
+          "url": "https://oif.gov.hu/factsheets/residence-of-the-student-pupil",
+          "quote": "– a valid passport, –"
+        }
+      ],
+      "infoKind": "guidance"
+    }
+  },
+  "notes": "National Directorate-General for Aliens Policing (OIF), factsheet 'Residence of the student, pupil': the documents required for the study residence permit (the visa/residence-permit file a non-EU student must submit). infoKind is guidance: these are the immigration documents, not the university's own admission requirements, and the university may ask for different or additional documents. The page states the purpose of residence may be verified by 'a certificate of admission from the relevant educational institution', that 'the application must be accompanied by proof of payment of tuition fees', the language proof, the means-of-subsistence evidence and comprehensive health-insurance cover, and lists 'a valid passport' among the exit-condition documents. Accommodation is not an attached document (the page says it is declared on the form, no separate document). No quote ties a translation to a named document, so no item carries translationRequired. Study Finder (Tempus Public Foundation) pages are deliberately not cited: its written permission is not yet received."
+}

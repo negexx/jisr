@@ -1,0 +1,106 @@
+{
+  "slug": "hu-eotvos-lorand-university-budapest-finance-and-accounting-sf284",
+  "programmePage": "https://www.elte.hu/en/finance-and-accounting",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/finance-and-accounting",
+          "quote": "Duration 7 semesters (3.5 years)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/finance-and-accounting",
+          "quote": "Language of instruction English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 360000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/finance-and-accounting",
+          "quote": "Tuition fee/semester 2700 EUR 3600 EUR"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": "2027-09-01",
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 2
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/finance-and-accounting",
+          "quote": "Start program 1 September 2027"
+        },
+        {
+          "url": "https://www.elte.hu/en/finance-and-accounting",
+          "quote": "Deadline for applications – September intake 2 May 2027"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/how-to-apply",
+          "quote": "You need to submit your application via the online application system."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que votre diplôme de fin d'études secondaires permet l'accès à l'université et consultez la liste des certificats acceptés et non acceptés.",
+          "en": "Check that your secondary school diploma allows direct access to tertiary education and review the list of accepted and non-accepted certificates."
+        },
+        "evidence": [
+          {
+            "url": "https://www.elte.hu/en/finance-and-accounting",
+            "quote": "the application of those prospective students is welcome who have completed their secondary school studies and can provide proof of this by presenting a secondary or high school diploma (or equivalent), which allows direct access to tertiary/higher education"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les examens en mathématiques, mathématiques approfondies, économie, études commerciales, comptabilité, informatique et histoire sont fortement souhaités; vérifiez les scores minimaux pour les examens équivalents (par ex. GED 175).",
+          "en": "Exams in Mathematics, Further Mathematics, Economics, Business studies, Accounting, Computer science and History are highly desirable; check minimum scores for equivalent exams (e.g. GED 175+)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.elte.hu/en/finance-and-accounting",
+            "quote": "exams in the following subjects are highly desirable: Mathematics, Further Mathematics, Economics, Business studies, Accounting, Computer science, History."
+          },
+          {
+            "url": "https://www.elte.hu/en/finance-and-accounting",
+            "quote": "for example, GED, the minimum required scores are 175+ to be considered as a potential applicant."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The programme page does not state an application deadline specifically for non-EU/foreign-qualification applicants; the deadline 2 May 2027 is listed without qualification, so it is recorded only as a recurring (month/day) deadline. The application channel hu-university-direct is inferred from the general admission page stating to submit the application via the online application system; the programme page itself does not name a platform. Tuition 3600 EUR is the Non-EU/EEA fee stated per semester on the programme page (evidence quote juxtaposes EU/EEA and non-EU/EEA fees; 3600 EUR is the non-EU/EEA figure)."
+}

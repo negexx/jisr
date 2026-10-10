@@ -1,0 +1,104 @@
+{
+  "slug": "hu-obuda-university-budapest-computer-science-enginee-sf554",
+  "programmePage": null,
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 320000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://uni-obuda.hu/tuition-fees/",
+          "quote": "Computer Science Engineering Cloud Service Technologies 2,000 EUR 3,200 EUR IT Security"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://uni-obuda.hu/application-deadlines/",
+          "quote": "has to be uploaded into the University’s online application system"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Certificat de fin d'études secondaires",
+            "en": "School Leaving Certificate"
+          },
+          "quotedAs": "Matriculation / School Leaving Certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://uni-obuda.hu/application-deadlines/",
+          "quote": "In the latter case, the Matriculation / School Leaving Certificate has to be uploaded into the University’s online application system by the 1st of August the year of application."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://uni-obuda.hu/application-deadlines/",
+            "quote": "Obuda University seeks students who possess a strong background and interest in STEM fields, a good command of English, and a strong motivation to study at Obuda University."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats doivent avoir au moins 18 ans avant le début de la période d'études du semestre d'automne de la 1ère année, c'est-à-dire avant fin septembre 2026. Vérifiez cette condition.",
+          "en": "Applicants must be at least 18 years old by the start of the study period in the Fall semester of Year 1, i.e., by the end of September 2026. Verify this condition."
+        },
+        "evidence": [
+          {
+            "url": "https://uni-obuda.hu/application-deadlines/",
+            "quote": "Applicants must be at least 18 years old by the start of the study period in the Fall semester of Year 1 at the University, i.e., by the end of September 2026."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats doivent avoir terminé le lycée/école secondaire ou être en dernière année. Dans ce cas, le certificat doit être téléchargé avant le 1er août. Vérifiez les documents originaux ou certifiés.",
+          "en": "Applicants must have completed high school or be in the last year. In the latter case, the certificate must be uploaded by 1 August. Check original or certified documents."
+        },
+        "evidence": [
+          {
+            "url": "https://uni-obuda.hu/application-deadlines/",
+            "quote": "Applicants are requested to either have completed high school/senior secondary school before the time of application, or to currently attend the last year of high school/secondary school."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Seuls les documents originaux ou certifiés (en anglais ou dans la langue originale avec traduction anglaise certifiée) sont acceptés. Vérifiez.",
+          "en": "Only original or certified documents (in English or in the original language with certified English translation) are accepted. Verify."
+        },
+        "evidence": [
+          {
+            "url": "https://uni-obuda.hu/application-deadlines/",
+            "quote": "Please note that only original or certified documents (original, or as certified copies, in English or in the original language with a certified English translation) are required to be uploaded to the online application system of Obuda University."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The tuition fee for Computer Science Engineering is 3,200 EUR per semester for non-EEA students, as stated in the tuition fees table. However, the quote is part of a table row and may not explicitly state 'non-EEA' within the same sentence; the table header indicates 'EU/EEA Non-EEA', so the 3,200 EUR is for non-EEA. The application deadline from the 'how-to-apply' page (31 May 2026) does not specify it is for international/non-EU applicants, so it is not included as a fact. The application channel is based on the quote about uploading documents to the University's online application system, which suggests direct application to the university, hence 'hu-university-direct'."
+}

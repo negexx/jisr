@@ -1,0 +1,137 @@
+{
+  "slug": "hu-university-of-miskolc-miskolc-business-administration-sf461",
+  "programmePage": "https://www.uni-miskolc.hu/en/business-administration-and-management-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.uni-miskolc.hu/en/business-administration-and-management-bsc",
+          "quote": "Duration: 8 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uni-miskolc.hu/en/business-administration-and-management-bsc",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 250000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.uni-miskolc.hu/en/business-administration-and-management-bsc",
+          "quote": "Tuition fee for non-EU students: 2500 EUR per year"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.uni-miskolc.hu/en/business-administration-and-management-bsc",
+          "quote": "apply directly to the University of Miskolc by filling in the online application form"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "school-leaving certificate",
+          "translationRequired": true
+        },
+        {
+          "slug": "transcript-of-records",
+          "name": {
+            "fr": "Relevé de notes",
+            "en": "Transcript of records"
+          },
+          "quotedAs": "transcript of records",
+          "translationRequired": true
+        },
+        {
+          "slug": "passport",
+          "name": {
+            "fr": "Passeport",
+            "en": "Passport"
+          },
+          "quotedAs": "passport",
+          "translationRequired": null
+        },
+        {
+          "slug": "medical-certificate",
+          "name": {
+            "fr": "Certificat médical",
+            "en": "Medical certificate"
+          },
+          "quotedAs": "medical certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uni-miskolc.hu/en/business-administration-and-management-bsc",
+          "quote": "Required documents: school-leaving certificate, transcript of records, passport, medical certificate. The school-leaving certificate and the transcript of records must be translated into English or Hungarian."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.uni-miskolc.hu/en/business-administration-and-management-bsc",
+            "quote": "Applicants must have a minimum level of English of B2, proven by IELTS or TOEFL certificate."
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.uni-miskolc.hu/en/business-administration-and-management-bsc",
+            "quote": "Applicants must have completed at least 12 years of schooling."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si un examen d'entrée ou un entretien est requis pour ce programme.",
+          "en": "Check if an entrance exam or interview is required for this programme."
+        },
+        "evidence": [
+          {
+            "url": "https://www.uni-miskolc.hu/en/business-administration-and-management-bsc",
+            "quote": "An entrance exam or interview may be required."
+          }
+        ]
+      }
+    ]
+  }
+}

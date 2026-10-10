@@ -1,0 +1,102 @@
+{
+  "slug": "hu-university-of-debrecen-debrecen-engineering-management-sf199",
+  "programmePage": "https://www.edu.unideb.hu/p/mechatronics-engineering-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+          "quote": "Engineering Management*"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/mechatronics-engineering-bsc",
+          "quote": "All courses are taught in English; therefore, a B2 level English proficiency is required."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 750000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+          "quote": "Mechatronics Engineering * 7 semesters 7,500 USD/year Mechanical Engineering * Engineering Management* Environmental Engineering*"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2027-05-15",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "Application deadlines for January/February 2027 intake (all programs): 1st November 2026 for September 2027 intake (all programs): 15th May 2027"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "The following documents need to be submitted during the application procedure by all applicants through our online application platform - that you can reach here:"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/mechatronics-engineering-bsc",
+            "quote": "Applicants must have an English proficiency of at least B2 level as the program is fully taught in English."
+          },
+          {
+            "url": "https://www.edu.unideb.hu/p/application-and-admission",
+            "quote": "The language proficiency of applicants must be proven with a standardized, at least upper-intermediate (B2) level language certificate, obtained at a proctored exam."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que vous avez bien un certificat de fin d'études secondaires et passez les examens d'entrée en mathématiques et en physique.",
+          "en": "Check that you have a high school certificate and pass the entrance exams in Mathematics and Physics."
+        },
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/mechatronics-engineering-bsc",
+            "quote": "Admission requires a high school certificate and passing entrance exams in Mathematics and Physics."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "La page du programme pour Mechatronics Engineering BSc et non pas pour Engineering Management. L'information sur les frais de scolarité pour Engineering Management provient de la page des frais de scolarité, qui mentionne le programme sous 'English non-medical programs'. Le montant de 7,500 USD par an est indiqué pour les programmes de 8 semestres, mais la page ne précise pas explicitement le montant pour Engineering Management. Les dates limites de candidature sont pour 2027 et sont indiquées comme 'all programs'. Le canal de candidature est 'hu-university-direct' car la page indique de postuler en ligne via la plateforme de candidature de l'université."
+}

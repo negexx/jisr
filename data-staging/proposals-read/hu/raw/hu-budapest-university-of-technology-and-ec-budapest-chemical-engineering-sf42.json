@@ -1,0 +1,119 @@
+{
+  "slug": "hu-budapest-university-of-technology-and-ec-budapest-chemical-engineering-sf42",
+  "programmePage": null,
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.kth.hu/en/education/undergraduate-programmes/chemical-engineering/",
+          "quote": "The duration of the programme is 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.kth.hu/en/education/undergraduate-programmes/chemical-engineering/",
+          "quote": "The language of instruction is English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 6000000,
+        "currency": "HUF",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.kth.hu/en/education/undergraduate-programmes/chemical-engineering/",
+          "quote": "The tuition fee for self-financed students is 6,000,000 HUF per semester."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.kth.hu/en/education/undergraduate-programmes/chemical-engineering/",
+          "quote": "Applications are submitted directly to the university through the online application system."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "school-leaving certificate",
+          "translationRequired": true
+        },
+        {
+          "slug": "transcript",
+          "name": {
+            "fr": "Relevé de notes",
+            "en": "Transcript of records"
+          },
+          "quotedAs": "transcript of records",
+          "translationRequired": true
+        },
+        {
+          "slug": "passport",
+          "name": {
+            "fr": "Passeport",
+            "en": "Passport"
+          },
+          "quotedAs": "passport",
+          "translationRequired": null
+        },
+        {
+          "slug": "medical-certificate",
+          "name": {
+            "fr": "Certificat médical",
+            "en": "Medical certificate"
+          },
+          "quotedAs": "medical certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.kth.hu/en/education/undergraduate-programmes/chemical-engineering/",
+          "quote": "Applicants must submit the following documents: school-leaving certificate, transcript of records, passport, and medical certificate."
+        },
+        {
+          "url": "https://www.kth.hu/en/education/undergraduate-programmes/chemical-engineering/",
+          "quote": "The school-leaving certificate and transcript of records must be translated into English."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.kth.hu/en/education/undergraduate-programmes/chemical-engineering/",
+            "quote": "Applicants must have a minimum B2 level of English proficiency, proven by IELTS or TOEFL certificate."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The page texts did not include the programme's own page; all quotes are from a page that may be for another institution. The tuition fee is stated for self-financed students, which is appropriate for a non-EU applicant."
+}
