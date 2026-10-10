@@ -88,7 +88,7 @@ export function SourceBadge({
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
         <span
           data-kind={kind}
-          className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-sm font-medium ${style.pill}`}
+          className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-sm font-medium shadow-sm ${style.pill}`}
         >
           {style.icon}
           {tKind(`${kind}.label`)}
