@@ -16,7 +16,7 @@ Usage conditions (confirmed): general. Students arrive on laptops and MacBooks, 
 
 ## Product Purpose
 
-Jisr is a free, non-commercial web app that runs one journey: student profile, realistic options, costs, scholarships, application steps. It answers four questions: where can I study, can I apply, how much will it cost, what do I need to do. It is not a university directory. Release 1 covers France, Germany and the Netherlands, in Computer Science, Engineering and Business/Economics. Success is that the student ends with realistic options, approximate costs, scholarships they may qualify for, and a clear next step, and trusts the information enough to use Jisr as their starting point.
+Jisr is a free, non-commercial web app that runs one journey: student profile, realistic options, costs, scholarships, application steps. It answers four questions: where can I study, can I apply, how much will it cost, what do I need to do. It is not a university directory. Release 1 covers France, Germany, the Netherlands, Hungary and Italy, in Computer Science, Engineering and Business/Economics. Success is that the student ends with realistic options, approximate costs, scholarships they may qualify for, and a clear next step, and trusts the information enough to use Jisr as their starting point.
 
 ## Positioning
 
@@ -32,11 +32,11 @@ Trust is the product. Every important fact carries an official source and a last
 
 ## Capabilities and Constraints
 
-- Pages in Release 1: Home, Create Profile, My Matches, University/Program, Scholarships, Compare, My Application Plan. The next milestone builds Profile, Matches and Program.
+- Pages in Release 1: Home, Create Profile, My Matches, University/Program, Scholarships, Compare, My Application Plan. All seven are built for the guest release.
 - Match statuses: requirements appear satisfied, something needs checking, published requirements not satisfied. Foundation-year routes show as "needs checking" with a prominent reason. Costs are always ranges, never one promised number, and state the assumption of a 10-month academic year. Tuition is an official published fee or shown as "to be checked".
 - Dates are shown DD/MM/YYYY; money in EUR primary with MAD secondary display later (no MAD conversion until a sourced rate exists).
 - Free hosting with hard limits and privacy rules (GDPR and Moroccan Law 09-08): no cookies, no profile data in URLs, logs or analytics.
-- Not decided yet: real reference data (none entered yet), the accessibility standard to certify against, and any logo.
+- Not decided yet: the accessibility standard to certify against, and any logo.
 
 ## Brand Commitments
 
@@ -46,9 +46,9 @@ Trust is the product. Every important fact carries an official source and a last
 
 ## Evidence on Hand
 
-- Product spec: `docs/product/jisr_mvp.md`. Decisions: `.claude/docs/decisions/` (ADRs 0002 to 0005). Plan for the first pages: `docs/plans/2026-09-30-m3-guest-journey-plan.md`.
-- A working placeholder home page in three languages, and synthetic test fixtures only.
-- Absent, and must not be fabricated: real university, tuition, deadline, route and scholarship data; testimonials; usage statistics; any logo.
+- Product spec: `docs/product/jisr_mvp.md`. Decisions: `.claude/docs/decisions/` (ADRs 0002 to 0011). Runbooks: `docs/ops/` (deploy, limits, prelaunch checklist).
+- A complete guest release (profile, matches, programme pages, compare, plan, scholarships) in three languages, with curated reference data: 1,126 programmes across five destinations (France, Germany, the Netherlands, Hungary, Italy).
+- Absent, and must not be fabricated: testimonials; usage statistics; any logo.
 
 ## Product Principles
 
