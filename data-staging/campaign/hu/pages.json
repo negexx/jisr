@@ -97,15 +97,9 @@
       "https://www.uni-corvinus.hu/post/landing-page/application/application-information/?lang=en",
       "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en"
     ],
-    "hu-dennis-gabor-university-budapest-business-informatics-sf347": [
-      "https://gde.hu/"
-    ],
-    "hu-dennis-gabor-university-budapest-computer-science-enginee-sf348": [
-      "https://gde.hu/"
-    ],
-    "hu-dennis-gabor-university-budapest-engineering-management-sf349": [
-      "https://gde.hu/"
-    ],
+    "hu-dennis-gabor-university-budapest-business-informatics-sf347": ["https://gde.hu/"],
+    "hu-dennis-gabor-university-budapest-computer-science-enginee-sf348": ["https://gde.hu/"],
+    "hu-dennis-gabor-university-budapest-engineering-management-sf349": ["https://gde.hu/"],
     "hu-eotvos-lorand-university-budapest-applied-economics-sf343": [],
     "hu-eotvos-jozsef-college-baja-business-administration-sf215": [
       "https://ejf.hu/en/business-and-management-ba",
