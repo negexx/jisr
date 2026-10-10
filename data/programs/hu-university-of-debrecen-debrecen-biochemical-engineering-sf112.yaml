@@ -41,8 +41,62 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: true
+    - slug: transcript
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Transcript
+          status: draft
+      translationRequired: null
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: medical-certificate
+      name:
+        fr:
+          text: Certificat médical
+          status: draft
+        en:
+          text: Medical Certificate
+          status: draft
+      translationRequired: null
+    - slug: application-fee-receipt
+      name:
+        fr:
+          text: Reçu de paiement des frais de dossier
+          status: draft
+        en:
+          text: Application fee receipt
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -95,3 +149,6 @@ sources:
   page-2:
     url: https://tempus.tpf.hu/studyfinder/index/show/112
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.edu.unideb.hu/p/application-and-admission
+    last_verified_at: 2026-10-10

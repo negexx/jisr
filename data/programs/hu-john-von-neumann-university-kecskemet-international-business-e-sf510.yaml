@@ -37,8 +37,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: hu-university-direct
+  source: page-3
   info_kind: official
 documents:
   value:

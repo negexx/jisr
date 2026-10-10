@@ -38,8 +38,71 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: application-form
+      name:
+        fr:
+          text: Formulaire de candidature
+          status: draft
+        en:
+          text: Application form
+          status: draft
+      translationRequired: null
+    - slug: passport-copy
+      name:
+        fr:
+          text: Copie du passeport
+          status: draft
+        en:
+          text: Passport copy
+          status: draft
+      translationRequired: null
+    - slug: secondary-school-reports
+      name:
+        fr:
+          text: Bulletins de l'enseignement secondaire
+          status: draft
+        en:
+          text: Secondary high school reports
+          status: draft
+      translationRequired: null
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary high school diploma
+          status: draft
+      translationRequired: true
+    - slug: transcripts
+      name:
+        fr:
+          text: Relevés de notes officiels
+          status: draft
+        en:
+          text: Official transcripts
+          status: draft
+      translationRequired: true
+    - slug: english-language-proficiency
+      name:
+        fr:
+          text: Preuve de compétence en langue anglaise
+          status: draft
+        en:
+          text: Proof of English language proficiency
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum vitae
+          status: draft
+        en:
+          text: Curriculum vitae
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -80,3 +143,6 @@ sources:
   programme:
     url: https://tempus.tpf.hu/studyfinder/index/show/41
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.vik.bme.hu/en/education/admission/
+    last_verified_at: 2026-10-10

@@ -41,8 +41,26 @@ applicationChannel:
   source: page-3
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary school leaving certificate
+          status: draft
+      translationRequired: true
+    - slug: transcript-of-records
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Transcript of Records
+          status: draft
+      translationRequired: true
+  source: page-4
   info_kind: official
 requirements:
   coverage: partial

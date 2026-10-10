@@ -26,7 +26,10 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 750000
+    currency: USD
+    period: year
   source: programme
   info_kind: official
 intakes:
