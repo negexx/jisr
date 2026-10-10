@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@scripts/*": ["./scripts/*"]
+      "@scripts/*": ["./scripts/*"],
+      "@content/*": ["./content/*"]
     },
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,

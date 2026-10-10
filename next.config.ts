@@ -1,3 +1,4 @@
+import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
@@ -9,6 +10,8 @@ import { SNAPSHOT_HEADER_RULES } from "./src/lib/snapshot-headers";
 const siteEnv = readSiteEnv();
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
+
+const withMDX = createMDX({});
 
 const nextConfig: NextConfig = {
   // `next dev` would otherwise write AGENTS.md and a root CLAUDE.md; project instructions live in .claude/.
@@ -24,4 +27,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withNextIntl(nextConfig);
+export default withNextIntl(withMDX(nextConfig));
