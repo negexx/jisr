@@ -1,0 +1,63 @@
+{
+  "slug": "it-bologna-bologna-business-and-economics-l18",
+  "programmePage": "https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/8965",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/8965",
+          "quote": "Duration 3 years"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/8965",
+          "quote": "Delivered entirely in English"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/enrolling-in-first-cycle-and-single-cycle-degree-programmes/enrolling-in-a-first-cycle-or-single-cycle-degree-programme-if-you-come-from-a-non-eu-country",
+          "quote": "If you need a visa to enter Italy: pre-enrol on Universitaly specifying the degree programme you wish to enrol in."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://corsi.unibo.it/1cycle/CLaBE/how-to-enrol",
+            "quote": "Qualification obtained abroad at the end of a school period of at least twelve years, granting access to university training in Italy in accordance with Italian regulations, current international agreements and the provisions of the MUR circular"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est subordonnée à un test d'entrée (SAT General test) et à un nombre limité de places; consultez l'appel à candidatures officiel pour les détails et les dates.",
+          "en": "Admission requires an entrance exam (SAT General test) and places are limited; check the official call for details and dates."
+        },
+        "evidence": [
+          {
+            "url": "https://corsi.unibo.it/1cycle/CLaBE/how-to-enrol",
+            "quote": "The selection of applicants is based on the SAT General test, which is an international test in English, completely managed by CollegeBoard and stands for “Scholastic Assessment Test.”"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition not extracted: the pages do not tie this programme to a specific fee group, and the reduced fixed fee for non-OECD countries is not used because no accepted quote ties Morocco (it is listed in the non-OECD annex PDF, but that annex is a country list, not a fee amount quote). The programme page states 'Restricted access - entrance exam (240 places available)' while the how-to-enrol page states 'Admission to the degree programme is limited to 190 places, 32 of which are reserved for non-EU citizens resident abroad and 13 to Special Programmes.' Application deadlines for the 2026/27 call are given for first selection '10 February 2026 to 4 May 2026, 1:00pm', but the page does not state these are for non-EU applicants residing abroad, so no intakes fact is included; more selection rounds exist."
+}

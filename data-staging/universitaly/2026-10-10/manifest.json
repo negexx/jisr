@@ -1,0 +1,214 @@
+{
+  "fetchedAt": "2026-10-10T13:11:27.549Z",
+  "userAgent": "jisr-data-importer/0.1 (+https://github.com/negexx/jisr; non-commercial, EU)",
+  "pages": [
+    {
+      "file": "EN-page-001.json",
+      "language": "EN",
+      "page": 1,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=1",
+      "sha256": "edaff1e7171eae2a573ff567bc7c6a39a9c16b8df12633ba57d78d4617d37acd",
+      "bytes": 27808
+    },
+    {
+      "file": "EN-page-002.json",
+      "language": "EN",
+      "page": 2,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=2",
+      "sha256": "4f1e505f4363105c55bb37e9ecccc1871f9199742a9e6c578f80dbf12df72937",
+      "bytes": 26601
+    },
+    {
+      "file": "EN-page-003.json",
+      "language": "EN",
+      "page": 3,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=3",
+      "sha256": "7f0499bcc77a14bb35031847f4a6a354025a988894a6669cead618fe7c7543da",
+      "bytes": 26781
+    },
+    {
+      "file": "EN-page-004.json",
+      "language": "EN",
+      "page": 4,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=4",
+      "sha256": "4612ba55c72cdbc7a34cd6b1cf3be465c2ef07ed37971501cd54f59f2df7b726",
+      "bytes": 25823
+    },
+    {
+      "file": "EN-page-005.json",
+      "language": "EN",
+      "page": 5,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=5",
+      "sha256": "ebf1ea60a5a332687fcf981ef2d6be46d15787138cad42c248bcbf0d5f7703d9",
+      "bytes": 22204
+    },
+    {
+      "file": "EN-page-006.json",
+      "language": "EN",
+      "page": 6,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=6",
+      "sha256": "628229ffa3fafec09650cf4fd9ef6caf23a2349eef37b3288da13121c8c37ac0",
+      "bytes": 15678
+    },
+    {
+      "file": "EN-page-007.json",
+      "language": "EN",
+      "page": 7,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=7",
+      "sha256": "bb7a1baa20ecfef6dd003669c89a1c82d3ffdf52343ecc45ce0e234bffb30da6",
+      "bytes": 16061
+    },
+    {
+      "file": "EN-page-008.json",
+      "language": "EN",
+      "page": 8,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=8",
+      "sha256": "e273745fe8695626fb86dac9ee461d8c667d450e3287b87a199811b74538f7bc",
+      "bytes": 16324
+    },
+    {
+      "file": "EN-page-009.json",
+      "language": "EN",
+      "page": 9,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=9",
+      "sha256": "68904e7ce94074958530ed1f69f4f37dd8f77d723c74546efbe7b82bab25ed83",
+      "bytes": 15863
+    },
+    {
+      "file": "EN-page-010.json",
+      "language": "EN",
+      "page": 10,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=10",
+      "sha256": "6c03248f78e4192a700d12f6ef4c8b03de7b6600b49feb5172c20824eb0ea12f",
+      "bytes": 16217
+    },
+    {
+      "file": "EN-page-011.json",
+      "language": "EN",
+      "page": 11,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=11",
+      "sha256": "ca7e1f602228768b2dc30c28378c73fa6d931b482976a26e414e8418a9c5be3c",
+      "bytes": 15935
+    },
+    {
+      "file": "EN-page-012.json",
+      "language": "EN",
+      "page": 12,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=12",
+      "sha256": "299bbc8d78e09efd2b052347a34d8487d7a2b94a16ac218ebab9f7b581298015",
+      "bytes": 15707
+    },
+    {
+      "file": "EN-page-013.json",
+      "language": "EN",
+      "page": 13,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=13",
+      "sha256": "12dbf049e3a96bb304af4a56fe44bea5dc285270dd7e8fb815ee3a432c0eb7c3",
+      "bytes": 16113
+    },
+    {
+      "file": "EN-page-014.json",
+      "language": "EN",
+      "page": 14,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=14",
+      "sha256": "ff24f669b78b3a95fb7decea2b3d0223461f9dbe334286ddc99aacdeae5ad873",
+      "bytes": 15972
+    },
+    {
+      "file": "EN-page-015.json",
+      "language": "EN",
+      "page": 15,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=15",
+      "sha256": "b267f0038f7be25d04a13b1ce4ae4af34ccf1c25229cb7d660d6b21202901f91",
+      "bytes": 15918
+    },
+    {
+      "file": "EN-page-016.json",
+      "language": "EN",
+      "page": 16,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=16",
+      "sha256": "fadb894c6d929e41fb5dd88f5e521534a209ccdfac18ac2ca78d4fe745a3f509",
+      "bytes": 16190
+    },
+    {
+      "file": "EN-page-017.json",
+      "language": "EN",
+      "page": 17,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=17",
+      "sha256": "906fdebae89daf477003a022fcba0f987fd8632a1bec87b82ed1f7340f04276a",
+      "bytes": 16257
+    },
+    {
+      "file": "EN-page-018.json",
+      "language": "EN",
+      "page": 18,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=18",
+      "sha256": "b448aa2ad6910410e2d92749d80c694180837046f5ac6807f916817d8e45aebb",
+      "bytes": 16088
+    },
+    {
+      "file": "EN-page-019.json",
+      "language": "EN",
+      "page": 19,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=19",
+      "sha256": "5b93a3f69b0234a043cda63d9d2e0715cf6f9bbe04b6ba53d14d70e734a47a71",
+      "bytes": 16140
+    },
+    {
+      "file": "EN-page-020.json",
+      "language": "EN",
+      "page": 20,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=20",
+      "sha256": "56da9b377437d9fd3a069d70b92ad943a37dbc8c8d813e3d7875a44ad1894dfa",
+      "bytes": 15686
+    },
+    {
+      "file": "EN-page-021.json",
+      "language": "EN",
+      "page": 21,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=21",
+      "sha256": "8638fcd799961e5fb1e99acb5308b02c422b1d89980d199d79aadd8a1a3d94e2",
+      "bytes": 16324
+    },
+    {
+      "file": "EN-page-022.json",
+      "language": "EN",
+      "page": 22,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=22",
+      "sha256": "eb1dd02f4befe96d301e9e02c74f8c13976688832ccfaec6d92a6e4ddcca7466",
+      "bytes": 15950
+    },
+    {
+      "file": "EN-page-023.json",
+      "language": "EN",
+      "page": 23,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=23",
+      "sha256": "ce019a48c244a6b36508488781040426e1800bd6e26fb2f1005a23202e2968ba",
+      "bytes": 16696
+    },
+    {
+      "file": "EN-page-024.json",
+      "language": "EN",
+      "page": 24,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=24",
+      "sha256": "9002884b12b02217b2928bad4d2ebb1dfdcf4d76332f5bddeb72ff2a878205e2",
+      "bytes": 16257
+    },
+    {
+      "file": "EN-page-025.json",
+      "language": "EN",
+      "page": 25,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=EN&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=25",
+      "sha256": "efe834a4d60f57025d012d3e0431f69f69005db8d63d4eacb08a60b819f8444f",
+      "bytes": 5010
+    },
+    {
+      "file": "IT-page-001.json",
+      "language": "IT",
+      "page": 1,
+      "url": "https://universitaly-backend.cineca.it/api/offerta-formativa/cerca-corsi?searchText=&area=&tipoLaurea=1&tipoClasse=0&durata=&lingua=IT&tipoAccesso=&modalitaErogazione=&order=ASC&provincia=&provinciaSigla=&page=1",
+      "sha256": "108b1e063fad2617f9315925656738cd0b005832f0805931782b73d4addaa5db",
+      "bytes": 27950
+    }
+  ]
+}

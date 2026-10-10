@@ -1,0 +1,37 @@
+{
+  "source": "data-staging/universitaly/2026-10-10/candidates.json",
+  "fetchedAt": "2026-10-10T13:11:27.549Z",
+  "academicYear": "2026/2027",
+  "note": "No new English-taught L-31 (computer-science) candidate exists in this discovery run: the two EN L-31 courses (Sapienza 1630622 Applied Computer Science and AI, Pavia 1632480 Artificial Intelligence) are already in data/, and the four remaining L-31 courses are mixed-language (lingua=mu) and excluded by classify(). Per the brief fall-back, the chosen ids are the only genuinely new-university (possiblyOurs empty) engineering/business candidates the report clearly lists. The 16 other 'new universities' programmes are duplicates of programmes already in data/ (Bologna, LUM, Luiss, Bocconi, Marche) and would be refused by data:it-stage.",
+  "ids": [1625456, 1625723],
+  "programmes": [
+    {
+      "portalId": 1625456,
+      "university": "Università degli Studi del PIEMONTE ORIENTALE",
+      "name": "Management for Sustainability",
+      "classCode": "L-18",
+      "classCodes": ["L-18"],
+      "field": "business-economics",
+      "confidence": "high",
+      "durationYears": 3,
+      "delivery": "blended",
+      "url": "https://disste.uniupo.it/en/university-studies/course/management-sustainability-online-degree-program-ay-20262027",
+      "academicYear": "2026/2027",
+      "possiblyOurs": []
+    },
+    {
+      "portalId": 1625723,
+      "university": "Università degli Studi di GENOVA",
+      "name": "Computer Engineering",
+      "classCode": "L-8",
+      "classCodes": ["L-8"],
+      "field": "engineering",
+      "confidence": "low",
+      "durationYears": 3,
+      "delivery": "conventional",
+      "url": "https://corsi.unige.it/corsi/12133",
+      "academicYear": "2026/2027",
+      "possiblyOurs": []
+    }
+  ]
+}

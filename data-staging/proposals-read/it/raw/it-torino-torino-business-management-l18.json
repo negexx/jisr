@@ -1,0 +1,66 @@
+{
+  "slug": "it-torino-torino-business-management-l18",
+  "programmePage": "https://en.unito.it/studying-unito/programs/degree-programs/business-management",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://en.unito.it/studying-unito/programs/degree-programs/business-management",
+          "quote": "Language English Duration 3 years Headquarter TORINO"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://en.unito.it/studying-unito/programs/degree-programs/business-management",
+          "quote": "Language English Duration 3 years Headquarter TORINO"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://en.unito.it/studying-unito/international-degree-seeking-students/application-international-students",
+          "quote": "Non-EU students requiring a visa need to submit the pre-enrolment visa application for the a.y. 2026-2027 on the Universitaly platform within July 15th, 2026."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission à Business & Management est à nombre programmé : il faut passer le SAT Suite puis participer au concours d'admission (classement sur la base du score SAT).",
+          "en": "Admission to Business & Management is capped: you must take the SAT Suite and then enter the admission competition (ranking based on the SAT score)."
+        },
+        "evidence": [
+          {
+            "url": "https://en.unito.it/studying-unito/programs/degree-programs/business-management",
+            "quote": "To enrol in the Business & Management degree programme, you must take the SAT."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez la procédure Apply@UniTo : les candidats titulaires d'un diplôme étranger doivent postuler sur Apply@UniTo (frais de 60 euros, jusqu'à deux programmes).",
+          "en": "Check the Apply@UniTo procedure: applicants holding a foreign qualification must apply on Apply@UniTo (60 euro fee, up to two programmes)."
+        },
+        "evidence": [
+          {
+            "url": "https://en.unito.it/studying-unito/international-degree-seeking-students/application-international-students",
+            "quote": "All students holding a foreign qualification must submit their application on Apply@UniTo."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition left out: the pages give an ISEE/PIL pro-capite PPA-based contributo onnicomprensivo unico (a multi-row income-band table, not one lowest and one highest fee for this student), and no quote ties this programme's degree class/department to a group figure for a non-EU student with household abroad, nor names Morocco in a country-group list for a fee. Application deadlines: the Universitaly pre-enrolment window for non-EU applicants residing abroad closes 15 July 2026 (opening date not stated on the pages); the Apply@UniTo second call (19 February – 15 April 2026) is the undergraduate international application round, but more rounds/calls exist (first call and reserved calls)."
+}

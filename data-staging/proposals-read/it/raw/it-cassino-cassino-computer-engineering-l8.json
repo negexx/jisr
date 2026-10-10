@@ -1,0 +1,87 @@
+{
+  "slug": "it-cassino-cassino-computer-engineering-l8",
+  "programmePage": "https://www.unicas.it/computer-engineering/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.unicas.it/computer-engineering/",
+          "quote": "Duration: 3 years Language of instruction: ENG"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unicas.it/computer-engineering/",
+          "quote": "Language of instruction: ENG"
+        },
+        {
+          "url": "https://www.unicas.it/computer-engineering/",
+          "quote": "The Bachelor’s Degree in Computer Engineering is an open-admission, fully English-taught program designed for both Italian and international students."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/",
+          "quote": "2.1 APPLY IN UNIVERSITALY Register (click on \"Credenziali personale” and \"Registrati\") and then apply!"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.unicas.it/computer-engineering/",
+            "quote": "English language proficiency at B2 level (CEFR)."
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": [
+          "mathematics"
+        ],
+        "mode": "any",
+        "evidence": [
+          {
+            "url": "https://www.unicas.it/computer-engineering/",
+            "quote": "Adequate preparation in mathematics, logic, and basic sciences;"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est subordonnée au test TOLC-I (Ingénierie) organisé par CISIA. Une pré-admission est requise pour ceux qui ne détiennent pas un diplôme d'études secondaires italien.",
+          "en": "Admission requires the TOLC-I (Engineering) test organised by CISIA. A pre-admission application is required for those who do not hold an Italian high-school diploma."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unicas.it/computer-engineering/",
+            "quote": "Initial preparation is assessed through the TOLC-I (Engineering) test, organized by CISIA."
+          },
+          {
+            "url": "https://www.unicas.it/computer-engineering/",
+            "quote": "A pre-admission application is required to those not holding and Italian high-school diploma."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Le page du programme (unicas.it/computer-engineering) ne donne pas de montant de frais de scolarité pour ce cursus : aucun chiffre de tuition n'a été extrait. Le règlement des taxes 2026/2027 donne, pour les étudiants internationaux (citoyenneté non italienne), un « Contributo omnicomprensivo annuale » dépendant du groupe de pays de citoyenneté (600€ pour le groupe A, qui inclut le Morocco) ; mais la phrase d'ancrage « Morocco » figure dans une liste de pays du groupe A et le montant 600€ apparaît dans la même ligne de tableau, non dans une citation continue exploitable ; en outre le programme Computer Engineering n'est rattaché à aucun « groupe » de cursus par une citation. La tuition a donc été laissée de côté. Les délais de pré-admission (février à juin, « usually between February and June ») ne mentionnent pas l'année et ne sont pas spécifiques aux candidats non-UE résidant à l'étranger : aucune date d'intake n'a été retenue. Les dates d'inscription (31 mars 2027, 15 octobre 2026) sont des échéances d'immatriculation, pas de candidature. Les documents listés proviennent de la page internationale (diplôme, DOV, passeport) et ne constituent pas une liste exhaustive propre à ce programme ; la page du programme exige aussi le TOLC-I et mentionne le DOV. La page « admission » citée concerne le cursus Economics with Data Science et n'a pas été utilisée pour les faits de ce programme."
+}

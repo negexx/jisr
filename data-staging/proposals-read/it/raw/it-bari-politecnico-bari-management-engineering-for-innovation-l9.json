@@ -1,0 +1,70 @@
+{
+  "slug": "it-bari-politecnico-bari-management-engineering-for-innovation-l9",
+  "programmePage": "https://orientami.poliba.it/bachelor-degree-in-management-engineering-for-innovation-polytechnic-university-of-bari/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://orientami.poliba.it/bachelor-degree-in-management-engineering-for-innovation-polytechnic-university-of-bari/",
+          "quote": "The expected duration for completing the course is 3 years."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://orientami.poliba.it/bachelor-degree-in-management-engineering-for-innovation-polytechnic-university-of-bari/",
+          "quote": "Lectures, seminars, and laboratory sessions are taught in English."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://web.poliba.it/it/didattica/test-ammissione-ingegneria-al-1%C2%B0-anno-aa-20262027",
+          "quote": "Se sei un candidato extracomunitario che necessita di un VISTO PER MOTIVI DI STUDIO, devi inoltre seguire le procedure di candidatura che verranno stabilite dal Ministero dell'Università e della Ricerca per l'ingresso, la residenza e l'iscrizione agli istituti di istruzione superiore per gli studenti che richiedono visti per i corsi di istruzione superiore in Italia, inviando la richiesta di pre-iscrizione tramite Universitaly (www.universitaly.it)."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est subordonnée à la réussite du test CEnT ou du TOLC-I (score minimum 18/50 pour la session précoce, 12/50 pour les autres sessions).",
+          "en": "Admission is subject to passing the CEnT or TOLC-I test (minimum score 18/50 for the early session, 12/50 for the other sessions)."
+        },
+        "evidence": [
+          {
+            "url": "https://orientami.poliba.it/bachelor-degree-in-management-engineering-for-innovation-polytechnic-university-of-bari/",
+            "quote": "Admission is subject to passing the CEnT (CISIA English Test) or the TOLC-I (CISIA Online Test for Engineering)"
+          },
+          {
+            "url": "https://orientami.poliba.it/tolc-i-test-ammissione/",
+            "quote": "Il punteggio minimo per essere ammessi è di 18/50 per le prove della sessione anticipata mentre scende a 12/50 per le prove della sessione standard e straordinaria."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Pour les candidats non-UE nécessitant un visa d'études, une pré-inscription sur le portail Universitaly est requise.",
+          "en": "For non-EU candidates needing a study visa, a pre-enrolment on the Universitaly portal is required."
+        },
+        "evidence": [
+          {
+            "url": "https://web.poliba.it/it/didattica/test-ammissione-ingegneria-al-1%C2%B0-anno-aa-20262027",
+            "quote": "Se sei un candidato extracomunitario che necessita di un VISTO PER MOTIVI DI STUDIO, devi inoltre seguire le procedure di candidatura che verranno stabilite dal Ministero dell'Università e della Ricerca per l'ingresso, la residenza e l'iscrizione agli istituti di istruzione superiore per gli studenti che richiedono visti per i corsi di istruzione superiore in Italia, inviando la richiesta di pre-iscrizione tramite Universitaly (www.universitaly.it)."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition: no fee for this programme could be extracted. The contribution regulation (https://web.poliba.it/sites/default/files/didattica/regolamento_contribuzione_studentesca_politecnico_di_bari_25_26.pdf) is an institution-wide ISEE-band table for A.A. 2025/2026; no quote states one lowest and one highest fee applying to a non-EU applicant whose household is abroad, and no quote ties Morocco to a country group or this programme to a fee group. Programme page lists a maximum of 50 places for \"Management Engineering for Innovation (English)\". Intakes: no intake with a dated deadline for non-EU applicants was found; the CEnT guide lists competition windows for all applicants (e.g. 1st early session from 03.02.2026 to 25.06.2026) without stating they are for non-EU applicants, so no intake is given. More rounds exist for the CEnT/TOLC-I competition."
+}

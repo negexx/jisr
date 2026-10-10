@@ -1,0 +1,106 @@
+{
+  "slug": "it-bologna-forli-management-and-economics-l18",
+  "programmePage": "https://corsi.unibo.it/1cycle/Management/how-to-enrol",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/5892",
+          "quote": "Laurea (First cycle degree/Bachelor - 180 ECTS) in Management and Economics"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/5892",
+          "quote": "Language English"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": "2026-02-10",
+          "applicationDeadline": "2026-05-04",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://corsi.unibo.it/1cycle/Management/how-to-enrol",
+          "quote": "Plese note that non-EU citizens residing abroad can participate to the 1st intake only."
+        },
+        {
+          "url": "https://corsi.unibo.it/1cycle/Management/how-to-enrol",
+          "quote": "First selection: From 10/February/2026 to 04/May/2026 at 1:00 p.m."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://corsi.unibo.it/1cycle/Management/how-to-enrol",
+          "quote": "After you have passed the entrance exam, if you have not already done so, submit the pre-enrolment application online on Universitaly."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary school diploma"
+          },
+          "quotedAs": "diploma from an upper secondary education institute",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://corsi.unibo.it/1cycle/Management/how-to-enrol",
+          "quote": "A diploma from an upper secondary education institute following five years of study"
+        },
+        {
+          "url": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/enrolling-in-first-cycle-and-single-cycle-degree-programmes/enrolling-in-a-first-cycle-or-single-cycle-degree-programme-if-you-come-from-a-non-eu-country",
+          "quote": "your qualification in order to translate, legalise and authenticate it, if necessary and if the service is provided"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://corsi.unibo.it/1cycle/Management/how-to-enrol",
+            "quote": "Qualification obtained abroad at the end of a school period of at least twelve years"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Concours d'entrée : le SAT (général) est obligatoire, inscription sur CollegeBoard et envoi du score à l'Unibo (code 6993). Vérifiez les dates et les épreuves dans l'appel à candidatures.",
+          "en": "Entrance exam: the SAT (General) is required, registration on CollegeBoard and sending the score to Unibo (code 6993). Check dates and tests in the call for applications."
+        },
+        "evidence": [
+          {
+            "url": "https://corsi.unibo.it/1cycle/Management/how-to-enrol",
+            "quote": "The selection of applicants is based on the SAT test, which is an international test in English, managed by CollegeBoard and stands for “Scholastic Assessment Test.”"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "More application rounds exist: the first selection (10/February/2026-04/May/2026) is the only one open to non-EU citizens residing abroad. Tuition not extracted: the several quote shows a fixed tuition from €157.04 to a maximum that varies depending on the programme, but no quote ties this programme to a group whose fee applies to this student; the reduced flat fee of €1,000 + €157.04 for non-OECD citizens (Morocco is listed) could not be tied to this programme with the required second quote in the same academic year, so it was left out. Language requirement not extracted for English. Translation/legalisation of the qualification may be required for the visa and for fee exemption documents, but this is not stated as an enrolment document requirement, so translationRequired for the diploma is given as true only via the visa documents quote; verify with the programme page."
+}

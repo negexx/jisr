@@ -1,0 +1,185 @@
+{
+  "slug": "it-milano-milano-economics-behavior-data-and-policy-l33",
+  "programmePage": "https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy",
+          "quote": "The Bachelor's Degree Programme in Economics: Behavior, Data and Policy is a three-year programme, entirely taught in English"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy",
+          "quote": "The Bachelor's Degree Programme in Economics: Behavior, Data and Policy is a three-year programme, entirely taught in English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 320400,
+        "maxAmountMinor": 410112,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.unimi.it/en/study/bachelor-and-master-study/fees-and-how-pay-them/fees-2026/2027",
+          "quote": "Second instalment Students enrolled from the academic year 2026/2027 Degree programmes are divided into two tuition areas. The amount of the second instalment varies depending on the student's country of origin and degree programme. Country group Programmes under tuition area A Programmes under tuition area B Group A €200.00 €256.00 Group B €910.00 €1,164.00 Group C €3,204.00 €4,101.12"
+        },
+        {
+          "url": "https://www.unimi.it/en/study/bachelor-and-master-study/fees-and-how-pay-them/fees-2026/2027",
+          "quote": "For students enrolled in Bachelor's, Master's and single-cycle degree programmes, tuition fees are to be paid in two instalments"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": "2026-03-12",
+          "applicationDeadline": "2026-07-06",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy",
+          "quote": "Application for admission: from 12/03/2026 to 06/07/2026"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://apps.unimi.it/files/bandi/bando-2027-1-economics-behavior-data-and-policy-(classe-l-33-r).pdf?24-APR-26=",
+          "quote": "All students falling under this category are required to submit an application for pre- enrolment through Universitaly platform by 31 July 2026."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "high-school-diploma",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "High school diploma"
+          },
+          "quotedAs": "High school diploma",
+          "translationRequired": true
+        },
+        {
+          "slug": "identity-document",
+          "name": {
+            "fr": "Document d'identité",
+            "en": "Identity Document"
+          },
+          "quotedAs": "Identity Document",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport-picture",
+          "name": {
+            "fr": "Photo d'identité",
+            "en": "Passport picture"
+          },
+          "quotedAs": "Passport picture",
+          "translationRequired": null
+        },
+        {
+          "slug": "cimea-statements",
+          "name": {
+            "fr": "Déclarations de comparabilité et de vérification CIMEA",
+            "en": "Comparability and Verification Statements issued by CIMEA"
+          },
+          "quotedAs": "Comparability and Verification Statements issued by CIMEA",
+          "translationRequired": null
+        },
+        {
+          "slug": "language-proficiency-certificate",
+          "name": {
+            "fr": "Certificat de compétence linguistique",
+            "en": "Language certificate"
+          },
+          "quotedAs": "language certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unimi.it/sites/default/files/2026-07/Documenti%20Universitaly%2026-27%20ENG.pdf",
+          "quote": "High School Diploma translated in Italian by an official translator and legalized by the authorities of the Country issuing the degree"
+        },
+        {
+          "url": "https://www.unimi.it/sites/default/files/2026-07/Documenti%20Universitaly%2026-27%20ENG.pdf",
+          "quote": "Identity Document"
+        },
+        {
+          "url": "https://www.unimi.it/sites/default/files/2026-07/Documenti%20Universitaly%2026-27%20ENG.pdf",
+          "quote": "Passport picture"
+        },
+        {
+          "url": "https://www.unimi.it/sites/default/files/2026-07/Documenti%20Universitaly%2026-27%20ENG.pdf",
+          "quote": "Comparability and Verification Statements issued by CIMEA"
+        },
+        {
+          "url": "https://www.unimi.it/sites/default/files/2026-07/Documenti%20Universitaly%2026-27%20ENG.pdf",
+          "quote": "A B2 level certificate of Italian or English language proficiency (according to the language of the degree programme) among those accepted by our University or MOI (Medium of Instruction) certificate."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy",
+            "quote": "prospective students must hold an upper secondary school diploma or equivalent qualification obtained abroad after at least 12 years of schooling"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Admission sur test d'entrée en ligne CEnT-S (CISIA), en anglais ; classement basé sur les sections Mathématiques et Raisonnement sur textes et données.",
+          "en": "Admission via the CEnT-S online admission test (CISIA), in English; ranking based on the Mathematics and Reasoning on texts and data sections."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy",
+            "quote": "Assessment of basic knowledge and skills will be ascertained through an online admission test, held in English language - CISIA English Test - Sciences (CEnT-S) admission test"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy",
+            "quote": "To be able to sit the exams included in the degree programme, students are required to have a B2 level of proficiency according to the Common European Framework of Reference for Languages (CEFR)."
+          },
+          {
+            "url": "https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy",
+            "quote": "by submitting a language certificate at B2 level or higher, issued no more than three years before the submission date"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition: no quote ties this programme to tuition area A or B, and no quote names Morocco in the country groups, so the FALLBACK range (lowest to highest) of the second-installment figures applying to a non-EU student with household income/assets abroad (country group C) is given: €3,204.00 (area A) to €4,101.12 (area B) per year, from the 2026/2027 fees page. First instalment of €146 and the regional tax (€130–€190) are separate fees, not tuition. The country-group list (allegato 2) was not found among the pages, so the group C membership of Morocco could not be quoted. Intakes: the admission application window 12/03/2026–06/07/2026 is the general single-session call for this programme; the 31/07/2026 Universitaly pre-enrolment deadline is the visa pre-enrolment deadline, not the admission deadline. More rounds of rankings and enrolments exist (see the Call)."
+}

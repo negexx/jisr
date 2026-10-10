@@ -1,0 +1,68 @@
+{
+  "slug": "it-firenze-firenze-sustainable-business-for-societal-challe-l18",
+  "programmePage": "https://www.unifi.it/en/study-us/degree-programs/first-cycle-degree/sustainable-business-societal-challenges",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.unifi.it/en/study-us/degree-programs/first-cycle-degree/sustainable-business-societal-challenges",
+          "quote": "Access mode Restricted Duration 3 years Location FIRENZE"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unifi.it/en/study-us/degree-programs/first-cycle-degree/sustainable-business-societal-challenges",
+          "quote": "Degree class Degree classL-18-R - Business administration Language English Delivery modeBlended"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2026-05-11",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.economia.unifi.it/vp-631-call-for-applications-sustainable-business-for-societal-challenges.html",
+          "quote": "First call Application deadline: May 11, 2026"
+        },
+        {
+          "url": "https://www.economia.unifi.it/vp-631-call-for-applications-sustainable-business-for-societal-challenges.html",
+          "quote": "50 positions for non-EU students (2 of which are reserved for part-time enrolment)"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: no accepted quote ties this programme to a fee group or names Morocco in a country-group list, and no quote shows the university contribution for this student; the €140 regional tax and €16 stamp duty are separate, not tuition. Admission: restricted-access programme; positions for non-EU students. Only the first round is given; more rounds exist, but the second and third calls are for EU and EU-equivalent students only. No application channel quote was found: no page names Universitaly or a university application portal/form for this programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est subordonnée à un test d'aptitude portant sur les mathématiques et le raisonnement sur textes et données, organisé pour les candidats non-UE résidant à l'étranger lors d'une session unique en mai 2026. Consultez l'appel à candidatures.",
+          "en": "Admission requires an aptitude test on Mathematics and Reasoning on texts and data, held for non-EU candidates residing abroad in a single session in May 2026. Check the call for applications."
+        },
+        "evidence": [
+          {
+            "url": "https://www.susbus.unifi.it/vp-144-how-to-enroll.html",
+            "quote": "The new required test focuses on Mathematics and Reasoning on texts and data."
+          },
+          {
+            "url": "https://www.susbus.unifi.it/vp-144-how-to-enroll.html",
+            "quote": "Non-EU candidates residing abroad will have a single dedicated session in May 2026."
+          }
+        ]
+      }
+    ]
+  }
+}
