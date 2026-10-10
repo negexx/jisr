@@ -1,4 +1,19 @@
 {
+  "legal": {
+    "updated": "Last updated: 10/10/2026",
+    "privacy": {
+      "meta": {
+        "title": "Privacy notice",
+        "description": "How Jisr handles your data: what stays in your browser, what our host and analytics see, and your rights under the GDPR and Moroccan Law 09-08."
+      }
+    },
+    "terms": {
+      "meta": {
+        "title": "Terms of use",
+        "description": "The rules for using Jisr: a free, informational service with no account, no fees and no warranty, governed by Italian law."
+      }
+    }
+  },
   "metadata": {
     "title": "Jisr | Study in Europe after the Bac",
     "description": "Find realistic Bachelor's programmes in France, Germany, the Netherlands, Hungary and Italy, with costs, scholarships and application steps."
@@ -47,7 +62,9 @@
   "footer": {
     "privacy": "Your profile, saved programs and plan progress stay on this device. Jisr uses no cookies.",
     "privacyLogs": "As on any website, our host sees the pages you open. To show your results and your plan, your browser also downloads data files whose names include your diploma's country, destination countries and fields: the ones you chose and those of the programs you open or save. Your grades, your nationality and the programs on your saved list are never sent.",
-    "sources": "Data and sources are checked by hand; every fact shows its source."
+    "sources": "Data and sources are checked by hand; every fact shows its source.",
+    "privacyLink": "Privacy",
+    "termsLink": "Terms"
   },
   "clearData": {
     "trigger": "Clear my data",

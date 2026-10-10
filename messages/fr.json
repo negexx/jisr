@@ -1,4 +1,19 @@
 {
+  "legal": {
+    "updated": "Dernière mise à jour : 10/10/2026",
+    "privacy": {
+      "meta": {
+        "title": "Politique de confidentialité",
+        "description": "Comment Jisr traite vos données : ce qui reste dans votre navigateur, ce que voient notre hébergeur et nos statistiques, et vos droits au titre du RGPD et de la loi marocaine 09-08."
+      }
+    },
+    "terms": {
+      "meta": {
+        "title": "Conditions d'utilisation",
+        "description": "Les règles d'utilisation de Jisr : un service gratuit et informatif, sans compte, sans frais et sans engagement, régi par le droit italien."
+      }
+    }
+  },
   "metadata": {
     "title": "Jisr | Étudier en Europe après le Bac",
     "description": "Trouvez des licences réalistes en France, en Allemagne, aux Pays-Bas, en Hongrie et en Italie, avec les coûts, les bourses et les étapes pour candidater."
@@ -47,7 +62,9 @@
   "footer": {
     "privacy": "Votre profil, vos programmes enregistrés et votre progression dans le plan restent sur cet appareil. Jisr n'utilise aucun cookie.",
     "privacyLogs": "Comme sur tout site, notre hébergeur voit les pages que vous ouvrez. Pour afficher vos résultats et votre plan, votre navigateur télécharge aussi des fichiers de données dont le nom indique le pays de votre diplôme, des pays de destination et des domaines : ceux que vous avez choisis et ceux des programmes que vous ouvrez ou enregistrez. Vos notes, votre nationalité et les programmes de votre liste enregistrée ne sont jamais envoyés.",
-    "sources": "Les données et les sources sont vérifiées à la main ; chaque fait indique sa source."
+    "sources": "Les données et les sources sont vérifiées à la main ; chaque fait indique sa source.",
+    "privacyLink": "Confidentialité",
+    "termsLink": "Conditions d'utilisation"
   },
   "clearData": {
     "trigger": "Effacer mes données",

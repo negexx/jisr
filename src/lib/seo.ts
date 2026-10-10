@@ -8,7 +8,13 @@ import type { SiteEnv } from "./site-env";
 // are static shells around a personal client island: thin content, so they are noindex (ADR 0011).
 export type LocalePath = "" | `/${string}`;
 
-export const INDEXABLE_PATHS: readonly LocalePath[] = ["", "/profile", "/scholarships"];
+export const INDEXABLE_PATHS: readonly LocalePath[] = [
+  "",
+  "/profile",
+  "/scholarships",
+  "/privacy",
+  "/terms",
+];
 
 const SITE_NAME = "Jisr";
 
