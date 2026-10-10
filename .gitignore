@@ -23,6 +23,9 @@ test-results/
 # Subagent-driven-development scratch (briefs, reports, ledger)
 .superpowers/
 
+# Agent harness scratch (run-continuation state)
+.omo/
+
 # Next.js scaffold extras
 /build
 .pnp
