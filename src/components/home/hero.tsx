@@ -49,7 +49,7 @@ export function Hero({
   demo,
 }: HeroProps) {
   return (
-    <section className="relative isolate -mx-4 overflow-hidden bg-background pt-14 pb-10 text-start md:-mx-6 md:pt-20 md:pb-14">
+    <section className="relative isolate mx-[calc(50%_-_50vw)] w-screen max-w-none overflow-hidden bg-background pt-14 pb-10 text-start md:pt-20 md:pb-14">
       <style>{MESH_CSS}</style>
       <div
         aria-hidden="true"

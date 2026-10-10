@@ -34,7 +34,7 @@ export default async function HomePage({ params }: Props) {
   const t = await getTranslations("home");
   const tKind = await getTranslations("domain.infoKind");
   return (
-    <div className="flex flex-col">
+    <div className="-my-8 md:-my-12">
       <Hero
         eyebrow={t("hero.eyebrow")}
         titleLead={t("hero.titleLead")}

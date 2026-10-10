@@ -14,7 +14,7 @@ export function Questions({ kicker, title, items }: QuestionsProps) {
   return (
     <section
       aria-labelledby="questions"
-      className="-mx-4 bg-secondary py-20 text-start md:-mx-6 md:py-24"
+      className="mx-[calc(50%_-_50vw)] w-screen max-w-none bg-secondary py-20 text-start md:py-24"
     >
       <div className="mx-auto w-full max-w-5xl px-4 md:px-6">
         <span className="text-sm font-semibold tracking-[0.06em] text-primary uppercase">

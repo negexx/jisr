@@ -1,27 +1,5 @@
-import { Calculator, Info, ShieldCheck } from "lucide-react";
-import type { ReactNode } from "react";
-
+import { type FactKind, KindPill } from "@/components/kind-pill";
 import { MatchStatusBadge } from "@/components/match-status-badge";
-import { cn } from "@/lib/utils";
-
-type FactKind = "official" | "estimate" | "guidance";
-
-// The same kind -> icon -> pill mapping SourceBadge renders, so the legend cannot drift from the
-// real treatment. Label text comes from the page (domain.infoKind.*.label).
-const KIND_PILL: Record<FactKind, { icon: ReactNode; pill: string }> = {
-  official: {
-    icon: <ShieldCheck aria-hidden="true" className="size-4 shrink-0" />,
-    pill: "bg-kind-official text-kind-official-bg",
-  },
-  estimate: {
-    icon: <Calculator aria-hidden="true" className="size-4 shrink-0" />,
-    pill: "border border-dashed border-kind-estimate bg-kind-estimate-bg text-kind-estimate",
-  },
-  guidance: {
-    icon: <Info aria-hidden="true" className="size-4 shrink-0" />,
-    pill: "border border-kind-guidance/40 bg-kind-guidance-bg text-kind-guidance",
-  },
-};
 
 const FACT_KINDS: readonly FactKind[] = ["official", "estimate", "guidance"];
 
@@ -45,7 +23,7 @@ export function TrustBand({
   return (
     <section
       aria-labelledby="trust-heading"
-      className="relative isolate -mx-4 overflow-hidden bg-navy py-20 text-start md:-mx-6 md:py-24"
+      className="relative isolate mx-[calc(50%_-_50vw)] w-screen max-w-none overflow-hidden bg-navy py-20 text-start md:py-24"
     >
       <div
         aria-hidden="true"
@@ -74,15 +52,7 @@ export function TrustBand({
               key={kind}
               className="flex flex-wrap items-center gap-3.5 rounded-2xl border border-white/12 bg-white/5 px-4 py-3.5 backdrop-blur-sm"
             >
-              <span
-                className={cn(
-                  "inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-sm font-medium shadow-sm",
-                  KIND_PILL[kind].pill,
-                )}
-              >
-                {KIND_PILL[kind].icon}
-                {labels[kind]}
-              </span>
+              <KindPill kind={kind}>{labels[kind]}</KindPill>
               <span className="text-sm text-[oklch(0.8_0.04_275)]">{legend[kind]}</span>
             </div>
           ))}
