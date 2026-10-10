@@ -25,8 +25,14 @@
     "ctaNote": "Your answers stay on this device.",
     "matchesCta": "See my matches",
     "scholarshipsCta": "Browse scholarships",
+    "hero": {
+      "eyebrow": "Bac 2026 · 5 countries · 3 fields",
+      "titleLead": "Study in Europe",
+      "titleAccent": "after the Bac"
+    },
     "questionsTitle": "What Jisr helps you find out",
     "questions": {
+      "kicker": "How it works",
       "where": {
         "title": "Where can I study?",
         "body": "Bachelor's programmes in France, Germany, the Netherlands, Hungary and Italy, sorted by what looks realistic for your profile."
@@ -42,6 +48,41 @@
       "next": {
         "title": "What do I do next?",
         "body": "Deadlines, documents and steps in order, with the official link for each."
+      }
+    },
+    "trust": {
+      "kicker": "Trust first",
+      "titleLead": "Every fact shows",
+      "titleAccent": "its source and date",
+      "body": "Official figures, estimates and advice never look alike. Nothing is rounded up to a \"yes\".",
+      "legend": {
+        "official": "Requirement published by the university",
+        "estimate": "Range we calculated",
+        "guidance": "General guidance, not a rule"
+      }
+    },
+    "demo": {
+      "title": "Try it: one profile, one result",
+      "illustrative": "Illustrative example: results vary with the profile.",
+      "averageLabel": "Average",
+      "track": {
+        "maths": "Maths Sciences",
+        "physicsChemistry": "PC",
+        "lifeAndEarthSciences": "SVT"
+      },
+      "field": {
+        "computerScience": "Computer Science",
+        "engineering": "Engineering",
+        "business": "Business"
+      },
+      "reason": {
+        "met": "Status: published requirements appear met. Everything we published for this programme seems to match your profile.",
+        "missingSubject": "Status: to check. The programme requires a subject your track does not cover. Check the official page.",
+        "averageBelow": "Status: published requirements not met. Your average is below the published minimum for this programme."
+      },
+      "fact": {
+        "teachingLanguage": "Teaching language",
+        "tuition": "Tuition"
       }
     }
   },
