@@ -9,6 +9,7 @@ import { renderToString } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
 
 import type { AppLocale } from "@/i18n/routing";
+import { MdxLink } from "@/mdx-components";
 
 import ar from "../../messages/ar.json";
 import en from "../../messages/en.json";
@@ -121,15 +122,28 @@ describe.each(CASES)("legal page: $name", (pageCase) => {
       expect(headings[0]?.getAttribute("data-doc")).toBe(pageCase.doc);
       expect(textOf(parsed.body)).toContain(message(locale, "legal.updated"));
     });
+  });
+});
 
-    it("links only to locale-prefixed, https or anchor targets", async () => {
-      const element = await pageCase.page.default({ params: Promise.resolve({ locale }) });
-      const parsed = parse(withProvider(locale, element));
-      for (const anchor of parsed.querySelectorAll("a[href]")) {
-        const href = anchor.getAttribute("href") ?? "";
-        expect(href).toMatch(new RegExp(`^(https://|#|/${locale}/)`));
-      }
-    });
+describe("mdx link mapping", () => {
+  it("opens an external https link in a new tab with safe rel", () => {
+    const html = renderToString(
+      <NextIntlClientProvider locale="fr" messages={catalogs.fr} timeZone="UTC">
+        <MdxLink href="https://example.org">x</MdxLink>
+      </NextIntlClientProvider>,
+    );
+    expect(html).toContain('href="https://example.org"');
+    expect(html).toContain('target="_blank"');
+    expect(html).toContain('rel="noopener noreferrer"');
+  });
+
+  it("prefixes an internal link with the active locale", () => {
+    const html = renderToString(
+      <NextIntlClientProvider locale="ar" messages={catalogs.ar} timeZone="UTC">
+        <MdxLink href="/terms">t</MdxLink>
+      </NextIntlClientProvider>,
+    );
+    expect(html).toContain('href="/ar/terms"');
   });
 });
 

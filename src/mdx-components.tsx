@@ -1,7 +1,16 @@
 import type { MDXComponents } from "mdx/types";
+import type { ReactNode } from "react";
 
 import { ExternalLink } from "@/components/external-link";
 import { Link } from "@/i18n/navigation";
+
+export function MdxLink({ href, children }: { href?: string; children?: ReactNode }) {
+  return typeof href === "string" && /^https?:\/\//.test(href) ? (
+    <ExternalLink href={href}>{children}</ExternalLink>
+  ) : (
+    <Link href={typeof href === "string" ? href : "#"}>{children}</Link>
+  );
+}
 
 const components: MDXComponents = {
   h1: ({ children }) => (
@@ -24,12 +33,7 @@ const components: MDXComponents = {
   ),
   li: ({ children }) => <li className="leading-relaxed">{children}</li>,
   strong: ({ children }) => <strong className="font-semibold text-foreground">{children}</strong>,
-  a: ({ href, children }) =>
-    typeof href === "string" && /^https?:\/\//.test(href) ? (
-      <ExternalLink href={href}>{children}</ExternalLink>
-    ) : (
-      <Link href={typeof href === "string" ? href : "#"}>{children}</Link>
-    ),
+  a: MdxLink,
 };
 
 export function useMDXComponents(): MDXComponents {
