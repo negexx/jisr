@@ -1,0 +1,62 @@
+{
+  "slug": "it-napoli-federico-ii-napoli-electrical-engineering-and-information-t-l8",
+  "programmePage": "https://eeit.dieti.unina.it/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 15600,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://eeit.dieti.unina.it/index.php/admission/tuition-fees",
+          "quote": "The University of Naples Federico II encourages and supports international non-EU students with very affordable (almost null) tuition fees: €140/year regional tax (compulsory) + €16,00 legal stamp (compulsory)."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": "2026-01-01",
+          "applicationDeadline": "2026-05-31",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://eeit.dieti.unina.it/index.php/admission/admission-schedule",
+          "quote": "Non-EU students who require a study visa for Italy Selection for pre-admission: Expected start: January 2026. Expected closing date: 31 May 2026."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.international.unina.it/education/admission-regulation/",
+          "quote": "The pre-enrolment application is made exclusively through the Universitaly portal (visit https://www.universitaly.it/studenti-stranieri)."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://eeit.dieti.unina.it/",
+            "quote": "Candidate students should provide evidence of English language proficiency at B2 or higher (CEFR level)."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition: no page ties this programme to a group, and no quote names Morocco, so no group or country-group figure could be used. The only figure stated for a non-EU student is €140 regional tax + €16 legal stamp = €156/year, which the source page itself calls the tuition fees for international non-EU students ('very affordable (almost null) tuition fees'). It is kept because the page presents it as the tuition for this group of students at this programme. The English B2 language requirement is worded 'should provide evidence', which is soft wording; it is recorded as a rule but should be verified with the programme. More application rounds may exist beyond the non-EU visa-requiring round listed here."
+}

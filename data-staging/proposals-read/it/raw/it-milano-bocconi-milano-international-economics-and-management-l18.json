@@ -1,0 +1,160 @@
+{
+  "slug": "it-milano-bocconi-milano-international-economics-and-management-l18",
+  "programmePage": "https://www.unibocconi.it/en/programs/bachelor-science/management",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.unibocconi.it/en/programs/bachelor-science/management",
+          "quote": "3 yrs English, Italian 180 CFU"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unibocconi.it/en/programs/bachelor-science/management",
+          "quote": "The BSc in Management is taught in English."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 1,
+            "day": 26
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unibocconi.it/en/programs/bachelor-science/application-and-admission/selection-process",
+          "quote": "International applicants may participate in the following selection rounds, which differ from those available to Italian applicants (please refer to the dedicated webpage): Early Session (September 2–29, 2026, 3:00 p.m. Italian time) Winter Session (November 25, 2026 – January 26, 2027, 3:00 p.m. Italian time)"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "id-or-passport",
+          "name": {
+            "fr": "Carte d'identité ou passeport",
+            "en": "ID or passport"
+          },
+          "quotedAs": "ID or passport (if you are extra-EU)",
+          "translationRequired": null
+        },
+        {
+          "slug": "transcripts",
+          "name": {
+            "fr": "Relevés de notes des 3e et 2e dernières années",
+            "en": "3rd-last and 2nd-last year transcripts"
+          },
+          "quotedAs": "3rd-last and 2nd-last year transcripts",
+          "translationRequired": null
+        },
+        {
+          "slug": "test-score-report",
+          "name": {
+            "fr": "Rapport de score du test",
+            "en": "Test score report"
+          },
+          "quotedAs": "Test score report (at least one)",
+          "translationRequired": null
+        },
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary school diploma"
+          },
+          "quotedAs": "valid secondary school diploma",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admissions",
+          "quote": "ID or passport (if you are extra-EU)"
+        },
+        {
+          "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admissions",
+          "quote": "3rd-last and 2nd-last year transcripts"
+        },
+        {
+          "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admissions",
+          "quote": "Test score report (at least one)"
+        },
+        {
+          "url": "https://www.unibocconi.it/en/programs/bachelor-science/application-and-admission/enrollment-1",
+          "quote": "To complete their enrollment, admitted students must provide a valid secondary school diploma (national or international) suitable for access to 1st cycle academic studies (i.e. Bachelor programs) in the country to which the school’s educational system belongs."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des précisions peuvent être demandées : les diplômes délivrés après moins de 12 ans de scolarité ou sans les exigences spécifiques doivent être intégrés (années d'université ou foundation course).",
+          "en": "Integrations may be required: diplomas awarded after fewer than 12 years of schooling or without specific requirements must be integrated (university years or foundation course)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unibocconi.it/en/programs/bachelor-science/application-and-admission/enrollment-1",
+            "quote": "Diplomas that do not meet the requirements listed above or in the specific diploma requirements below"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Documents : ID/passeport, relevés de notes des 3e et 2e dernières années, rapport de score du test.",
+          "en": "Documents: ID/passport, 3rd-last and 2nd-last year transcripts, test score report."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admissions",
+            "quote": "ID or passport (if you are extra-EU)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test de sélection (Bocconi online test, SAT ou ACT) doit être passé avant de postuler et un score minimum de 17 est requis au Bocconi online test.",
+          "en": "A selection test (Bocconi online test, SAT or ACT) must be taken before applying and a minimum score of 17 is required on the Bocconi online test."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unibocconi.it/en/programs/bachelor-science/application-and-admission/selection-process",
+            "quote": "Applicants who receive a total score (penalties included) lower than 17 will not be considered in the selection process."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/results-and-enrollment",
+            "quote": "Bocconi English language proficiency test with level B2 or higher"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The programme's own page is the Management BSc page; the task names \"International Economics and Management\" (class L-18). The pages supplied do not contain a dedicated page for a programme called \"International Economics and Management\"; the closest content is the Management BSc page (class L-18). Second selection round (Early Session, 2–29 September 2026) also exists for international applicants. Tuition left out: the Fees page gives an institution-wide figure of € 17,700 per year for first-year BSc/Law students, and the income-based ISU/Bocconi4Access ISEE thresholds (ISEE/ISEEU parificato no higher than € 26.887,93) are exemption limits, not a fee; no accepted quote states a fee specifically for a non-EU applicant with household abroad (Morocco) for this programme's group, and no quote names Morocco in a country-group fee list. Application channel left out: the pages name the Apply2B portal, not Universitaly, and do not state a Universitaly pre-enrolment for non-EU applicants (an immigration/student visa page is mentioned but not supplied)."
+}

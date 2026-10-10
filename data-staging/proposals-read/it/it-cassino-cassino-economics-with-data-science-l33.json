@@ -1,0 +1,130 @@
+{
+  "slug": "it-cassino-cassino-economics-with-data-science-l33",
+  "programmePage": "https://www.eds.unicas.it/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.eds.unicas.it/",
+          "quote": "Duration: 3 years"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://eds.unicas.it/admission/enrollment",
+          "quote": "fill in the \"pre-enrolment application\" at UniversItaly (the official web portal of the Italian Ministry of University and Research for international students)"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "high-school-transcript",
+          "name": {
+            "fr": "Relevé de notes du lycée",
+            "en": "High school transcript"
+          },
+          "quotedAs": "high school transcript",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "Curriculum vitae",
+            "en": "Curriculum vitae"
+          },
+          "quotedAs": "curriculum vitae",
+          "translationRequired": null
+        },
+        {
+          "slug": "motivation-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Motivation letter"
+          },
+          "quotedAs": "motivation letter",
+          "translationRequired": null
+        },
+        {
+          "slug": "english-proficiency-certificate",
+          "name": {
+            "fr": "Certificat de compétence en anglais",
+            "en": "Certificate of proficiency in English"
+          },
+          "quotedAs": "certificate of proficiency in English",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport-or-id",
+          "name": {
+            "fr": "Passeport ou carte d'identité",
+            "en": "Passport or identity card"
+          },
+          "quotedAs": "current (valid) passport or identity card",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://eds.unicas.it/admission/enrollment",
+          "quote": "The following documents must be provided: high school transcript; curriculum vitae; motivation letter; certificate of proficiency in English; current (valid) passport or identity card."
+        }
+      ]
+    }
+  },
+  "notes": "La page d'admission de ce programme indique que les pré-admissions pour l'année académique 2026/27 sont maintenant fermées, avec une réouverture prévue aux alentours de janvier 2027 pour l'année suivante. Aucune date limite exacte n'était fournie, j'ai donc laissé la date limite vide et j'ai inclus une citation indiquant que la fenêtre était fermée. Les frais de scolarité n'ont pas été indiqués car les informations tarifaires de l'université pour les étudiants internationaux sont basées sur le pays de citoyenneté et les frais du programme dépendent de l'ISEE, et le texte fourni ne précisait pas de montant applicable aux étudiants non-UE résidant au Maroc ou de plage de frais répondant aux critères requis.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://eds.unicas.it/admission/enrollment",
+            "quote": "English Certificate (B2 or equivalent is required)"
+          },
+          {
+            "url": "https://www.eds.unicas.it/admission/admission-criteria",
+            "quote": "an officially recognized English certificate with a B2 grade (TOEFL=50/59; TOEFL iBt=72/94; TOEFL iBt (new 2026 scale) 4; Duolingo>=100; IELTS=5.5; Pearson PTE >=46; Oxford Test of English >110)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Moyenne générale du lycée d'au moins 70 %, avec une note de mathématiques d'au moins 70 %. Les dossiers doivent être vérifiés manuellement.",
+          "en": "Overall high school grade point average of at least 70%, with a math grade of at least 70%. Files must be checked manually."
+        },
+        "evidence": [
+          {
+            "url": "https://eds.unicas.it/admission/enrollment",
+            "quote": "overall high school grade point average (minimum requirement: 70%) with an emphasis on math, the grade of which must not be less than 70%"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le diplôme de fin d'études secondaires ne doit pas avoir plus de 5 ans.",
+          "en": "The high school diploma must not be older than 5 years."
+        },
+        "evidence": [
+          {
+            "url": "https://eds.unicas.it/admission/enrollment",
+            "quote": "a high school diploma or a bachelor older than 5 years will not be considered"
+          }
+        ]
+      }
+    ]
+  }
+}

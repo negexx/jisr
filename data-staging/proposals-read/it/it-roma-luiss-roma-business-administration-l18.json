@@ -1,0 +1,83 @@
+{
+  "slug": "it-roma-luiss-roma-business-administration-l18",
+  "programmePage": "https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration",
+          "quote": "Credits 180 ECTS Duration 3 Years Language English Year 2027/2028"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration",
+          "quote": "Credits 180 ECTS Duration 3 Years Language English Year 2027/2028"
+        }
+      ]
+    }
+  },
+  "notes": "Durée : la page indique « 180 ECTS » et « 3 Years », donc 3 ans. Langue d'enseignement : « Language English ». Frais : Luiss applique un « single fee » (pas de tranches de revenu) ; la même page lie ce montant aux Bachelor's degrees et confirme « The one-off annual contribution is €15,000 for the first year. » pour les non-EU. Le tarif réduit de 20 % pour fratrie n'est pas un tarif pour l'étudiant seul. Dates : la sélection par certifications pour les non-EU/Schengen (2027/2028) est la première session : candidatures d'octobre 2026 au 10 février 2027, inscription jusqu'au 4 mai 2027, mais ces dates ne sont pas dans une citation d'une phrase et la page dit que l'avis complet sera publié en octobre 2026 : à vérifier par l'auditeur. Aucune date d'ouverture/fermeture n'est extraite car aucune citation ne réunit la date complète et l'étudiant non-EU. Il existe aussi une voie « Luiss extra-EU test » ; platform de candidature non nommée, donc applicationChannel déduit de « dedicated platform » et à confirmer.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Diplôme de fin d'études secondaires valable pour l'admission aux universités italiennes. La vérification se fait à l'inscription, pas à la sélection.",
+          "en": "Secondary school diploma valid for admission to Italian universities. Verification happens at enrolment, not at selection."
+        },
+        "evidence": [
+          {
+            "url": "https://www.luiss.it/en/orientation-and-admissions/admission-procedures/admission-to-bachelor's-degrees-and-the-single-cycle-law-degree/non-eu-schengen-students/direct-admission-to-bachelor's-and-master's-degrees-for-non-eu-students-with-certificates",
+            "quote": "Students with non-EU or non-Schengen citizenship who hold, or will obtain by the specified deadlines, a secondary school diploma valid for admission to Italian universities are eligible to apply."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Fournir une certification reconnue : SAT (min. 1200/1600), LSAT (min. 160/180), ACT (min. 25/36) ou IB Diploma/Predicted Grade (min. 36/45).",
+          "en": "Provide one recognised certification: SAT (min. 1200/1600), LSAT (min. 160/180), ACT (min. 25/36) or IB Diploma/Predicted Grade (min. 36/45)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.luiss.it/en/orientation-and-admissions/admission-procedures/admission-to-bachelor's-degrees-and-the-single-cycle-law-degree/non-eu-schengen-students/direct-admission-to-bachelor's-and-master's-degrees-for-non-eu-students-with-certificates",
+            "quote": "Certification Minimum score SAT – Total Score 1200/1600 LSAT – Total Score 160/180 ACT – Total Score 25/36 IB Diploma / Predicted Grade 36/45"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Frais de participation non remboursables de 150 euros à payer en complétant la candidature.",
+          "en": "Non-refundable participation fee of 150 euros to complete the application."
+        },
+        "evidence": [
+          {
+            "url": "https://www.luiss.it/en/orientation-and-admissions/admission-procedures/admission-to-bachelor's-degrees-and-the-single-cycle-law-degree/non-eu-schengen-students/direct-admission-to-bachelor's-and-master's-degrees-for-non-eu-students-with-certificates",
+            "quote": "To complete the process, you must pay a non-refundable participation fee of 150 euros."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les résultats sont communiqués selon le calendrier de l'Admission Notice ; une interview d'évaluation est possible.",
+          "en": "Results are communicated according to the Admission Notice schedule; an assessment interview may be held."
+        },
+        "evidence": [
+          {
+            "url": "https://www.luiss.it/en/orientation-and-admissions/admission-procedures/admission-to-bachelor's-degrees-and-the-single-cycle-law-degree/non-eu-schengen-students/direct-admission-to-bachelor's-and-master's-degrees-for-non-eu-students-with-certificates",
+            "quote": "The Commission assesses applications, taking into account: the certification submitted; the documentation attached to the application; any assessment interview."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "it-napoli-federico-ii-napoli-electrical-engineering-and-information-t-l8",
+  "programmePage": "https://eeit.dieti.unina.it/",
+  "facts": {
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.international.unina.it/education/admission-regulation/",
+          "quote": "The pre-enrolment application is made exclusively through the Universitaly portal (visit https://www.universitaly.it/studenti-stranieri)."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: no page ties this programme to a group, and no quote names Morocco, so no group or country-group figure could be used. The only figure stated for a non-EU student is €140 regional tax + €16 legal stamp = €156/year, which the source page itself calls the tuition fees for international non-EU students ('very affordable (almost null) tuition fees'). It is kept because the page presents it as the tuition for this group of students at this programme. The English B2 language requirement is worded 'should provide evidence', which is soft wording; it is recorded as a rule but should be verified with the programme. More application rounds may exist beyond the non-EU visa-requiring round listed here."
+}

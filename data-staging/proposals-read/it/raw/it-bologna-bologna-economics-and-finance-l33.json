@@ -1,0 +1,128 @@
+{
+  "slug": "it-bologna-bologna-economics-and-finance-l33",
+  "programmePage": "https://corsi.unibo.it/1cycle/EconomicsFinance/how-to-enrol",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://corsi.unibo.it/1cycle/EconomicsFinance/preparing-the-study-plan",
+          "quote": "you are not allowed to take electives before your third year;"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://corsi.unibo.it/1cycle/EconomicsFinance/preparing-the-study-plan",
+          "quote": "No English exams are included in the list, as CLEF is taught in such language."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": "2026-02-10",
+          "applicationDeadline": "2026-05-04",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://corsi.unibo.it/1cycle/EconomicsFinance/how-to-enrol",
+          "quote": "1st intake: 50 places for EU and EU-assimilated citizens + 40 places for non-EU citizens residing outside of Italy;"
+        },
+        {
+          "url": "https://corsi.unibo.it/1cycle/EconomicsFinance/how-to-enrol",
+          "quote": "First selection (intake): from 10 February 2026 to 4 May 2026, 1:00 PM"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://corsi.unibo.it/1cycle/EconomicsFinance/how-to-enrol",
+          "quote": "Pre-enrolment on Universitaly After you have passed the entrance exam, if you have not already done so, submit the pre-enrolment application online on Universitaly."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "school-leaving certificate"
+          },
+          "quotedAs": "your qualification in order to translate, legalise and authenticate it",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://corsi.unibo.it/1cycle/EconomicsFinance/how-to-enrol",
+          "quote": "your qualification in order to translate, legalise and authenticate it, if required and when the service is provided"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://corsi.unibo.it/1cycle/EconomicsFinance/how-to-enrol",
+            "quote": "Qualification obtained abroad at the end of a school period of at least twelve years, granting access to university training in Italy in accordance with Italian regulations, current international agreements and the provisions of the MUR circular \"Procedures for entry, stay and enrolment of international students and the relative recognition of qualifications, for academic Higher Education courses published on the Universitaly website."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission se fait sur concours d'entrée : test SAT (CollegeBoard), en présence. Inscrivez-vous sur Studenti Online et payez 20 €. Score minimum non exigé ; départage par âge.",
+          "en": "Admission is by entrance exam: the SAT (CollegeBoard) test, taken in person. Register on Studenti Online and pay €20. No minimum score is required; ties are broken by age."
+        },
+        "evidence": [
+          {
+            "url": "https://corsi.unibo.it/1cycle/EconomicsFinance/how-to-enrol",
+            "quote": "The selection of applicants is based on the SAT General test, which is an international test in English, managed by CollegeBoard and stands for “Scholastic Assessment Test.”"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Places limitées : 130 au total, dont 40 réservées aux citoyens non-UE résidant hors d'Italie, en première sélection. Consultez le Bando pour le nombre final de places.",
+          "en": "Places are limited: 130 in total, 40 of which are reserved for non-EU citizens residing outside Italy in the first selection. Check the Bando for the final number of places."
+        },
+        "evidence": [
+          {
+            "url": "https://corsi.unibo.it/1cycle/EconomicsFinance/how-to-enrol",
+            "quote": "Admission to the degree programme is limited to 130 places, 40 of which are reserved for NON-EU citizens resident abroad."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le diplôme étranger doit être vérifié et validé : téléversez les documents sur Studenti Online (appel « Matriculation 26_27 - document upload for international students with foreign qualifications ») puis prenez rendez-vous.",
+          "en": "The foreign qualification must be checked and validated: upload the documents on Studenti Online (call \"Matriculation for the 26_27 - document upload for international students with foreign qualifications\") then book an appointment."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/enrolling-in-first-cycle-and-single-cycle-degree-programmes/enrolling-in-a-first-cycle-or-single-cycle-degree-programme-if-you-come-from-a-non-eu-country",
+            "quote": "Upload all required documents. The International Student Administration Office will review the documents."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition left out: the supplied fee pages give only income-based ISEE bands, exemption thresholds and reduced flat fees for country groups, and none ties Morocco to a group nor ties this programme to a fee group; the only amounts quoted for first-cycle students are the fixed first instalment of €157.04 (regional tax, stamp duty and insurance, not tuition). More selection rounds exist: a second intake from 5 May 2026 to 3 July 2026 and an extraordinary selection from 3 September 2026 to 11 September 2026. Documents: the pages do not give a clear list, only a requirement to translate/legalise/authenticate the qualification."
+}

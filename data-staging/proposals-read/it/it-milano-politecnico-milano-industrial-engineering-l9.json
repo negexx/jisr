@@ -1,0 +1,122 @@
+{
+  "slug": "it-milano-politecnico-milano-industrial-engineering-l9",
+  "programmePage": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/industrial-engineering",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/industrial-engineering",
+          "quote": "Level Bachelor of Science Duration 3 Years Language English Campus Piacenza"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/industrial-engineering",
+          "quote": "Entirely taught in English and located in one of Italy’s most vibrant production ecosystems"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Final secondary school diploma"
+          },
+          "quotedAs": "Final secondary school diploma",
+          "translationRequired": true
+        },
+        {
+          "slug": "school-grades-last-three-years",
+          "name": {
+            "fr": "Relevés de notes des trois dernières années d'études secondaires",
+            "en": "Detailed grades from the last three years of school"
+          },
+          "quotedAs": "Detailed grades from the last three years of school",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/necessary-documents-for-enrolment",
+          "quote": "Detailed grades from the last three years of school, with the stamp and signature of the competent office"
+        },
+        {
+          "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/necessary-documents-for-enrolment",
+          "quote": "Both documents must be accompanied by an official translation if they are not available in English, French or Spanish."
+        },
+        {
+          "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/how-to-apply-for-a-student-visa",
+          "quote": "your final diploma accompanied by an official translation if not available in English, French or Spanish"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: no accepted quote states a tuition fee for a non-EU applicant with a foreign qualification and household outside Italy for the 2026/2027 academic year; the ISEE/ISEEU parificato amount is given only for Master's programmes, and the amount for non-EU students not resident in Italy is not stated. Admission test: the TOL is administered in Italian; the CEnT-S and SAT are administered in English. Application deadlines: the pages of the supplied set do not state an application deadline for non-EU applicants residing abroad for 2026/27 or 2027/28 (only the visa deadline of 31 August 2026 for the visa application on Universitaly); the call for admission contains the non-EU rules (Art. 7) but the text supplied is cut and no specific deadline for non-EU applicants residing abroad can be quoted. English language requirement: the pages do not state a CEFR level for admission, only the list of accepted certificates; IELTS is accepted with a score ≥ 5, TOEFL with Internet Based Score ≥ 59, and other certificates are named on the page. Documents: the deadline to upload the final secondary school diploma is 10 September 2026, and the deadline for the Declaration of Value, the CIMEA Statement of Comparability or the Statement of Correspondence is 31 October 2026. The final diploma must be accompanied by an official translation if not available in English, French or Spanish; translations in Italian (preferred), English, French and Spanish are accepted.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Il faut passer un test d'admission (TOL ou équivalent: TOLC-I, CEnT-S, SAT). Le score minimal d'admission est de 30/100.",
+          "en": "An admission test is required (TOL or equivalent: TOLC-I, CEnT-S, SAT). The minimum admission score is 30/100."
+        },
+        "evidence": [
+          {
+            "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/engineering",
+            "quote": "Requirements for Admission to Bachelor of Science programmes of Engineering schools"
+          },
+          {
+            "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/engineering",
+            "quote": "The minimum TOL score for admission, rounded to the nearest whole number, must be equal to or greater than 30/100 (thirty) points."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Si l'inscription se fait avec le diplôme de fin d'études secondaires, celui-ci doit être accompagné d'une traduction officielle, d'une déclaration de valeur et d'une authentification.",
+          "en": "When enrolling with the final secondary school diploma, it must be accompanied by an official translation, a declaration of value and authentication."
+        },
+        "evidence": [
+          {
+            "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/necessary-documents-for-enrolment",
+            "quote": "Final secondary school diploma, with the stamp and signature of the competent office"
+          },
+          {
+            "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/necessary-documents-for-enrolment",
+            "quote": "Issued in the original language accompanied by an official translation if it is not available in English, French and Spanish."
+          },
+          {
+            "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/necessary-documents-for-enrolment",
+            "quote": "Declaration of Value, issued by the Italian Diplomatic Representative in the country where the qualification was awarded"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La vérification des documents et le résultat du test décident de l'admission et de l'inscription ; des places réservées existent pour les étudiants internationaux.",
+          "en": "Document verification and the test result determine admission and enrolment; reserved places exist for international students."
+        },
+        "evidence": [
+          {
+            "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/students-with-a-foreign-degree",
+            "quote": "Students must upload the following documents during the test registration phase"
+          },
+          {
+            "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/necessary-documents-for-enrolment",
+            "quote": "If the required documents cannot be verified, Politecnico di Milano may cancel the enrolment."
+          }
+        ]
+      }
+    ]
+  }
+}

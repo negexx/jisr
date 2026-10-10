@@ -1,0 +1,117 @@
+{
+  "slug": "it-pisa-pisa-management-for-business-and-economics-l18",
+  "programmePage": "https://mbe.ec.unipi.it/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.unipi.it/en/education/courses/bachelor-and-single-cycle-master-degree/management-for-business-and-economics-mber-l-en/",
+          "quote": "Duration: 3 years"
+        },
+        {
+          "url": "https://mbe.ec.unipi.it/",
+          "quote": "is a 3-year undergraduate program created by the University of Pisa to train young people in the business and economics fields"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unipi.it/en/education/courses/bachelor-and-single-cycle-master-degree/management-for-business-and-economics-mber-l-en/",
+          "quote": "The course is delivered entirely in English and involves the participation of international lecturers."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 58000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.unipi.it/wp-content/uploads/tabella_estero_2026_2027.pdf",
+          "quote": "Morocco Lower middle income 0,2 Morocco 580 €"
+        },
+        {
+          "url": "https://www.unipi.it/en/education/registration/fees/tuition-fees-for-degree-courses/",
+          "quote": "For the 2026/2027 academic year, students with income and/or assets abroad are automatically assigned a flat-rate tuition contribution."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2026-07-05",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://mbe.ec.unipi.it/application-procedure/",
+          "quote": "Application deadlines for non-EU citizens residing abroad and applying for Study VISA: until July, 05th, 2026, H. 11.59 PM."
+        },
+        {
+          "url": "https://alboufficiale.unipi.it/wp-content/uploads/2026/05/Bando-MBE-202627-ENG-rettificato-1-1.pdf",
+          "quote": "Non-EU citizens residing abroad applying for a student VISA single 25* Concurrent with the publication of the call 5th of July 2026"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://alboufficiale.unipi.it/wp-content/uploads/2026/05/Bando-MBE-202627-ENG-rettificato-1-1.pdf",
+          "quote": "Non-EU citizens residing abroad applying for a student VISA who wish to be included in the reserved final ranking must have submitted the pre-enrolment application on the Universitaly portal by the selection deadline stated in this call."
+        }
+      ]
+    }
+  },
+  "notes": "Le programme est à accès limité. Le délai du 5 juillet 2026 concerne les candidats non-UE résidant à l'étranger et demandant un visa; il y a plusieurs sessions. Les frais de scolarité sont un montant fixe basé sur la Banque mondiale pour le Maroc (580 € par an), plus une taxe régionale de 140 € et un timbre de 16 €. Les documents listés sont ceux requis pour la validation de la préinscription sur Universitaly.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.unipi.it/en/education/courses/bachelor-and-single-cycle-master-degree/management-for-business-and-economics-mber-l-en/",
+            "quote": "Proficient knowledge of English at least at level B2, according to the Common European Framework of Reference for Languages, is also required"
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.unipi.it/en/education/registration/enrolment-and-registration/enrolment-for-international-students/pre-registration-on-universitaly/",
+            "quote": "Eligible High School qualification obtained after at least 12 years of schooling"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est conditionnée par la réussite d'un test d'admission parmi: CEnT, TOLC-E, SAT, GMAT, ACT, avec un score minimum d'éligibilité de 10. Vérifiez les modalités et les scores requis.",
+          "en": "Admission requires passing one admission test among CEnT, TOLC-E, SAT, GMAT, ACT with a minimum eligibility score of 10. Check the procedures and required scores."
+        },
+        "evidence": [
+          {
+            "url": "https://alboufficiale.unipi.it/wp-content/uploads/2026/05/Bando-MBE-202627-ENG-rettificato-1-1.pdf",
+            "quote": "To be included in the ranking list, candidates must have taken one among these tests and achieved a minimum eligibility score of 10"
+          }
+        ]
+      }
+    ]
+  }
+}
