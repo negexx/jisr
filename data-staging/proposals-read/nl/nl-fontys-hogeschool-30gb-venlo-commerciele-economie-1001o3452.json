@@ -1,0 +1,57 @@
+{
+  "slug": "nl-fontys-hogeschool-30gb-venlo-commerciele-economie-1001o3452",
+  "programmePage": "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+          "quote": "Opleidingsduur 4 jaar"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+          "quote": "Taal Nederlands"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition left out: the institution-wide pages state the instellingscollegegeld (for students from outside the EEA) is set by the College van Bestuur and varies per programme, without giving one amount for bachelor full-time programmes, so no single non-EU figure could be quoted. The programme's own page only points to the collegegeldmeter. The application deadline of 1 May 2027 is a general deadline on the programme page; it does not say it is only for non-EU/international applicants, so it should be verified for the Moroccan applicant.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission pour les diplômes étrangers (diplôme marocain) sur la page 'Toelating' de Fontys.",
+          "en": "Check the admission requirements for foreign diplomas (Moroccan diploma) on Fontys' 'Toelating' page."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+            "quote": "Heb je je vooropleiding buiten Nederland gehaald? Ga naar aanmelden internationaal."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le taux d'instellingscollegegeld pour les étudiants hors EEE est déterminé par le College van Bestuur et varie par programme ; vérifiez le montant exact via le collegegeldmeter.",
+          "en": "The instellingscollegegeld rate for non-EEA students is set by the College van Bestuur and varies per programme; check the exact amount via the collegegeldmeter."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+            "quote": "De hoogte van het instellingscollegegeld wordt vastgesteld door het College van Bestuur en varieert per opleiding of per groep studenten."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "nl-capabel-hogeschool-30hc-rotterdam-ict-1001o8912",
+  "programmePage": "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict",
+          "quote": "Studieduur en collegetijden De studieduur is 4 jaar."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict",
+          "quote": "Inschrijven Schrijf je nu in Direct inschrijven"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "copy-relevant-diploma",
+          "name": {
+            "fr": "Copie du diplôme pertinent",
+            "en": "Copy of relevant diploma"
+          },
+          "quotedAs": "Kopie relevant diploma",
+          "translationRequired": null
+        },
+        {
+          "slug": "copy-id",
+          "name": {
+            "fr": "Copie de la pièce d'identité",
+            "en": "Copy of ID"
+          },
+          "quotedAs": "Kopie ID",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict",
+          "quote": "Voor toelating tot de opleiding zijn de volgende documenten nodig: Kopie relevant diploma Kopie ID"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme HAVO, VWO ou MBO 4 est exigé. Si vous ne répondez pas à cette condition et avez 21 ans ou plus, un test d'admission 21+ est possible.",
+          "en": "A HAVO, VWO or MBO 4 diploma is required. If you do not meet this and are 21 or older, a 21+ admission assessment is possible."
+        },
+        "evidence": [
+          {
+            "url": "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict",
+            "quote": "Voor het volgen van deze opleiding is minimaal een HAVO, VWO of MBO 4-diploma vereist."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "No tuition fee for non-EU students is stated on the programme page. The programme page lists only 'Lesgeld' amounts apparently for EU/EEA students; no institution-wide page with an instellingscollegegeld for non-EU bachelor students was provided, so tuition is left out."
+}

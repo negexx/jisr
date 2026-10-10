@@ -1,0 +1,78 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-accountancy-1001o3549",
+  "programmePage": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar, Amsterdam en Rotterdam taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar, Amsterdam en Rotterdam taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1066500,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Voldoe je niet aan de voorwaarden voor het wettelijk collegegeld dan betaal je het instellingscollegegeld."
+        },
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Studiejaar 2027-2028 Start 1 september 2027 Wettelijk collegegeld* Voltijd, duaal of master: € 2.771 Deeltijd: € 2.317 Instellingscollegegeld* Voltijd en duaal: € 10.665 Deeltijd: € 10.260"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the amount € 10.665 (instellingscollegegeld, voltijd en duaal, studiejaar 2027-2028) comes from the institution-wide collegegeld page, not the programme page. The programme page does not state a fee. The quote 'Voldoe je niet aan de voorwaarden voor het wettelijk collegegeld dan betaal je het instellingscollegegeld.' says who pays it (those who do not meet the statutory-fee conditions, which covers non-EU/EEA students). The duration of 4 years and language 'Nederlands' are taken from the programme's own page. Intakes could not be extracted: the pages give application deadlines (1 May, 15 January) without a year or without a non-EU-specific quote, or with years that belong to other study years, so they are omitted. Documents are omitted because the pages do not give a document list for this programme (only general mention of diploma, transcript, identity document and residence permit).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+            "quote": "Als je jouw diploma van je vooropleiding in het buitenland behaald hebt, dien je aan te tonen dat je de taal waarin de opleiding gegeven wordt, voldoende beheerst."
+          },
+          {
+            "url": "https://www.inholland.nl/media/geyk1hwr/csa-gids-2022-2023-21042022.pdf",
+            "quote": "Indien het in paragraaf 1.1 onder e, f en g genoemde diploma in het buitenland is behaald, kan pas inschrijving voor een opleiding in de Nederlandse taal plaatsvinden nadat je hebt aangetoond dat je de Nederlandse taal beheerst op niveau B2 van het Gemeenschappelijk Europees Referentiekader (Common European Framework of Reference)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Votre diplôme étranger doit être validé par Inholland (équivalence au HAVO/VWO/MBO-4). Envoyez diplôme, relevé de notes et traduction assermentée avant le 1 mai.",
+          "en": "Your foreign diploma must be validated by Inholland (equivalence to HAVO/VWO/MBO-4). Send diploma, transcript and sworn translation before 1 May."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+            "quote": "De CSA beoordeelt alleen diploma’s nadat je een aanmelding via Studielink hebt gedaan en je diploma, cijferlijst, en, indien nodig, een vertaling van een beëdigd vertaler, hebt geüpload in Selfservice. Doe dit voor 1 mei 2025 zodat je, wanneer je niet aan de vereisten voldoet, kan deelnemen aan de toelatingstoets als dat nog mogelijk is."
+          }
+        ]
+      }
+    ]
+  }
+}

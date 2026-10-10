@@ -1,0 +1,66 @@
+{
+  "slug": "nl-hogeschool-rotterdam-22oj-accountancy-1001o3536",
+  "programmePage": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/accountancy/voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/accountancy/voltijd/",
+          "quote": "Duur en startmoment 4 jaar, september"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/accountancy/voltijd/",
+          "quote": "Opleidingstype Voltijd Bachelor Taal Nederlands"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/accountancy/voltijd/",
+          "quote": "Geef jezelf de beste start – meld je uiterlijk op 1 mei aan via Studielink!"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the programme page gives no non-EU fee, so the institution-wide instellingscollegegeld is used. The quoted amount sits in the row for 'Associate degrees, bachelor- en masteropleidingen (m.u.v. de onderstaande opleidingen)'; Accountancy full-time is not among the listed exceptions. The page does not literally say non-EU/EEA students pay it, only that the statutory fee requires conditions (nationality among them); the 2026-2027 amount EUR 10,684 is the one tied to full-time and part-time bachelor programmes. Intake: the page states a 1 May application deadline via Studielink but without a year, so it is recorded as recurring.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme étranger doit être jugé équivalent au havo, vwo ou mbo niveau 4 néerlandais. Vérifiez la procédure et les documents auprès du Studenten Service Center.",
+          "en": "A foreign diploma must be assessed as equivalent to the Dutch havo, vwo or mbo level 4 diploma. Check the procedure and documents with the Studenten Service Center."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hogeschoolrotterdam.nl/voorlichting/toelatingsvoorwaarden/toelating-met-een-buitenlands-diploma/",
+            "quote": "Dan moet je aantonen dat dat gelijkwaardig is aan het vereiste Nederlandse havo-, vwo- of mbo-niveau 4-diploma."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.hogeschoolrotterdam.nl/voorlichting/toelatingsvoorwaarden/toelating-met-een-buitenlands-diploma/",
+            "quote": "Voor een Nederlandstalige hbo-opleiding moet je de Nederlandse taal op niveau B2 van het Europees Referentie Kader beheersen."
+          }
+        ]
+      }
+    ]
+  }
+}

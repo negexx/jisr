@@ -1,0 +1,115 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-alkmaar-accountancy-1001o3549",
+  "programmePage": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+          "quote": "locatie Alkmaar, Amsterdam en Rotterdam taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1066500,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Voldoe je niet aan de voorwaarden voor het wettelijk collegegeld dan betaal je het instellingscollegegeld."
+        },
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Studiejaar 2027-2028 Start 1 september 2027 Wettelijk collegegeld* Voltijd, duaal of master: € 2.771 Deeltijd: € 2.317 Instellingscollegegeld* Voltijd en duaal: € 10.665 Deeltijd: € 10.260"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "school-leaving certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "final-transcript",
+          "name": {
+            "fr": "Relevé de notes final",
+            "en": "final transcript"
+          },
+          "quotedAs": "final transcript",
+          "translationRequired": null
+        },
+        {
+          "slug": "identity-document",
+          "name": {
+            "fr": "Pièce d'identité",
+            "en": "identity document"
+          },
+          "quotedAs": "identiteitsbewijs",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/inhollandcom/degree-programmes/information-technology-eng-full-time/entry-requirements/",
+          "quote": "If you would like to apply, please send us copies of your diploma and your final transcript."
+        },
+        {
+          "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+          "quote": "Als je persoonsgegevens nog niet zijn geverifieerd in Studielink dan moet je een kopie van je identiteitsbewijs uploaden via Selfservice."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee proposed is the institution-wide institutional fee (instellingscollegegeld) for full-time (voltijd) students in 2027-2028, for students who do not meet the conditions for the statutory fee (EU/EEA/Swiss/Surinamese nationality). The programme's own page does not state a tuition fee. The applying student is a non-EU Moroccan with a foreign diploma, so this institutional fee is the relevant one. The pages do not state a programme-specific application deadline for non-EU applicants; the general deadline 1 May 2025 in the In- en uitschrijfregels is for 2025-2026 and not clearly tied to this programme, so no intake fact is included. Documents: the identity document requirement is an enrolment condition; a school-leaving certificate and final transcript are requested for international diploma applicants. The Dutch language requirement B2 is stated on the Creative Business English entry requirements page and in the In- en uitschrijfregels (par. 2.12) applies to Dutch-taught programmes; for this Dutch-taught Accountancy programme it is relevant.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+            "quote": "Students who have completed their prior education abroad must therefore demonstrate Dutch language proficiency at B2 level (Common European Framework of Reference for Languages)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme étranger doit être évalué par le CSA d'Inholland pour vérifier son équivalence avec un diplôme néerlandais (havo, vwo ou mbo-4) ; envoyez votre diplôme et votre relevé de notes avant le 1 mai 2025.",
+          "en": "A foreign diploma must be evaluated by Inholland's CSA to verify equivalence with a Dutch diploma (havo, vwo or mbo-4); send your diploma and transcript before 1 May 2025."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+            "quote": "Heb je een diploma buiten Nederland behaald dan moet onder meer worden beoordeeld of dit gelijkwaardig is aan een Nederlands havo-, vwo- of mbo-diploma niveau 4."
+          }
+        ]
+      }
+    ]
+  }
+}

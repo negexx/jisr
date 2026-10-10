@@ -1,0 +1,96 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-alkmaar-bouwkunde-1001o3064",
+  "programmePage": "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+          "quote": "duur 4 jaar"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+          "quote": "taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1066500,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Voldoe je niet aan de voorwaarden voor het wettelijk collegegeld dan betaal je het instellingscollegegeld."
+        },
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Studiejaar 2027-2028 Start 1 september 2027 Wettelijk collegegeld* Voltijd, duaal of master: € 2.771 Deeltijd: € 2.317 Instellingscollegegeld* Voltijd en duaal: € 10.665 Deeltijd: € 10.260"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/media/geyk1hwr/csa-gids-2022-2023-21042022.pdf",
+          "quote": "meld je je voor minimaal 1 opleiding uiterlijk op 1 mei voorafgaand het betreffende studiejaar aan via Studielink"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/geyk1hwr/csa-gids-2022-2023-21042022.pdf",
+            "quote": "kan pas inschrijving voor een opleiding in de Nederlandse taal plaatsvinden nadat je hebt aangetoond dat je de Nederlandse taal beheerst op niveau B2 van het Gemeenschappelijk Europees Referentiekader"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme étranger doit être jugé équivalent à un diplôme néerlandais HAVO/VWO/MBO-4 ; envoyez les copies du diplôme et du relevé de notes.",
+          "en": "Foreign diploma must be deemed equivalent to a Dutch HAVO/VWO/MBO-4 diploma; send copies of your diploma and final transcript."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/geyk1hwr/csa-gids-2022-2023-21042022.pdf",
+            "quote": "het bezit van een al dan niet in Nederland afgegeven diploma, dat naar het oordeel van de Centrale Studentenadministratie namens het College van Bestuur ten minste gelijkwaardig is aan een diploma als bedoeld onder a, b, of c."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Si vous avez 21 ans ou plus et ne répondez pas aux exigences d'admission, vous pouvez être admis en réussissant l'examen d'entrée (21+ toets).",
+          "en": "If you are 21 or older and do not meet the entry requirements, you can be admitted by passing the entrance exam (21+ toets)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/geyk1hwr/csa-gids-2022-2023-21042022.pdf",
+            "quote": "Als je niet voldoet aan de gestelde vooropleidingseis kun je daarvan vrijgesteld worden als je door deelname aan een toelatingstoets, ook genaamd de 21+ toets, hebt aangetoond geschikt te zijn voor de opleiding waarvoor je je wilt inschrijven."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition: the institution-wide page states the 2027-2028 instellingscollegegeld of € 10,665 for voltijd en duaal; the programme's own page states no tuition fee. Intakes: no dated or recurring application deadline for non-EU/international applicants for this programme was found."
+}

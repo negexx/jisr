@@ -1,0 +1,84 @@
+{
+  "slug": "nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046",
+  "programmePage": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+          "quote": "Studieduur 4 jaar"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": "2027-09-06",
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 1
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+          "quote": "Startmoment 6 september 2027."
+        },
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+          "quote": "Aanmelden het liefst vóór 1 mei (uiterlijk 31 augustus) via Studielink"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+          "quote": "Aanmelden het liefst vóór 1 mei (uiterlijk 31 augustus) via Studielink"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "foreign-diploma",
+          "name": {
+            "fr": "Diplôme étranger équivalent",
+            "en": "Foreign diploma equivalent to havo, vwo or mbo-4"
+          },
+          "quotedAs": "diploma dat gelijkwaardig is aan een havo-, vwo- of mbo-4 diploma",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+          "quote": "Je bent toelaatbaar met een diploma dat gelijkwaardig is aan een havo-, vwo- of mbo-4 diploma."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+            "quote": "Daarnaast moet je voldoen aan de taaleisen."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "No page states a tuition fee for non-EU/EEA students for this programme. The programme page and the institution-wide study costs page only mention the statutory (wettelijk) collegegeld, which is the EU/EEA rate, so tuition is left out. The language requirement quote does not state a CEFR level or specific tests, so it is recorded as a rule with no minimum and no accepted tests. The only document named for foreign-diploma applicants is a diploma equivalent to havo/vwo/mbo-4; no translation requirement is stated."
+}

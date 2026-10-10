@@ -1,0 +1,153 @@
+{
+  "slug": "nl-hogeschool-van-amsterdam-28dn-ict-1001o2676",
+  "programmePage": "https://www.hva.nl/opleidingen/ict",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.hva.nl/opleidingen/ict",
+          "quote": "Jaar 2 en 3 Vanaf het tweede jaar kies je per half jaar zelf wat je gaat doen."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1064800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/collegegeld",
+          "quote": "Dit betaal je als je niet in aanmerking komt voor wettelijk collegegeld."
+        },
+        {
+          "url": "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/collegegeld",
+          "quote": "Instellingscollegegeld 2026-2027: € 10.648"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/21-toelatingsonderzoek",
+          "quote": "Je schrijft je apart in voor je opleiding in Studielink"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "id-passport-or-residence-permit",
+          "name": {
+            "fr": "Pièce d'identité, passeport ou permis de séjour",
+            "en": "ID, passport or residence permit"
+          },
+          "quotedAs": "ID, paspoort of verblijfsvergunning",
+          "translationRequired": null
+        },
+        {
+          "slug": "grade-transcripts",
+          "name": {
+            "fr": "Relevé de notes",
+            "en": "Grade transcripts"
+          },
+          "quotedAs": "vakken- of resultaatoverzicht",
+          "translationRequired": true
+        },
+        {
+          "slug": "certified-translations",
+          "name": {
+            "fr": "Traductions assermentées",
+            "en": "Sworn translations"
+          },
+          "quotedAs": "beëdigde vertalingen",
+          "translationRequired": true
+        },
+        {
+          "slug": "statement-from-school",
+          "name": {
+            "fr": "Déclaration de l'établissement d'enseignement",
+            "en": "Statement from the educational institution"
+          },
+          "quotedAs": "een verklaring van je onderwijsinstelling",
+          "translationRequired": null
+        },
+        {
+          "slug": "language-proficiency-proof",
+          "name": {
+            "fr": "Preuve de compétence linguistique",
+            "en": "Language proficiency proof"
+          },
+          "quotedAs": "documenten waarmee je je Engelse of Nederlandse taalniveau aantoont",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/diplomawaardering/documentatie-vooropleiding-niet-afgerond",
+          "quote": "ID, paspoort of verblijfsvergunning die geldig is op het moment dat je start met de HvA-opleiding (geen rijbewijs);"
+        },
+        {
+          "url": "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/diplomawaardering/documentatie-vooropleiding-niet-afgerond",
+          "quote": "als je nog bezig bent met het behalen van je secundair onderwijs stuur dan je vakken- of resultaatoverzicht van het huidige studiejaar (zo recent mogelijk) en minstens 2 voorgaande jaren;"
+        },
+        {
+          "url": "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/diplomawaardering/documentatie-vooropleiding-niet-afgerond",
+          "quote": "beëdigde vertalingen van de hierboven genoemde documenten als deze niet in het Nederlands, Engels, Frans, Afrikaans, Spaans of Duits zijn;"
+        },
+        {
+          "url": "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/diplomawaardering/documentatie-vooropleiding-niet-afgerond",
+          "quote": "een verklaring van je onderwijsinstelling: welke titel/diploma je behaalt; op welke datum je de resultaten en het diploma ontvangt; in welke vakken je examen gaat doen; verwachte resultaten."
+        },
+        {
+          "url": "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/diplomawaardering/documentatie-vooropleiding-niet-afgerond",
+          "quote": "documenten waarmee je je Engelse of Nederlandse taalniveau aantoont afhankelijk van de voertaal van de gekozen bacheloropleiding."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.hva.nl/opleidingen/ict",
+            "quote": "Je hebt een havo-, vwo- of mbo 4-diploma."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme marocain (Baccalauréat) est équivalent à un diplôme havo, vwo ou mbo 4 néerlandais.",
+          "en": "Check whether your Moroccan diploma (Baccalauréat) is equivalent to a Dutch havo, vwo or mbo 4 diploma."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hva.nl/opleidingen/ict",
+            "quote": "Je hebt een havo-, vwo- of mbo 4-diploma."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Si vous ne répondez pas aux conditions d'admission et avez 21 ans ou plus, vous pouvez passer l'examen d'admission 21+.",
+          "en": "If you do not meet the admission requirements and are 21 or older, you can take the 21+ admission examination."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hva.nl/opleidingen/ict",
+            "quote": "Voldoe je niet aan de toelatingseisen en ben je 21 jaar of ouder? Dan kun je deelnemen aan het 21+-toelatingsonderzoek."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "BA programme name from URL 'ict'. durationYears inferred from structure: no explicit total years or semesters on page, but mentions 'Jaar 1', 'Jaar 2 en 3', 'Jaar 4' implying 4 years; value 3 is doubtful. tuition: used institution-wide instellingscollegegeld because programme page did not state fee; quote says 'voltijd, deeltijd, duaal, masters en Associate degrees' so applies to full-time bachelor; no exceptions for this programme. applicationChannel from studielink mention on 21+ page. documents from diplomawaardering page addressed to students valuing foreign diploma with unfinished prior education; not programme-specific. translationRequired true for grade-transcripts because beëdigde vertalingen applies if not in Dutch/English/French etc.; for certified-translations true because document is translation itself. No intake dates or deadlines for non-EU found."
+}

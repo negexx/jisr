@@ -1,0 +1,107 @@
+{
+  "slug": "nl-fontys-hogeschool-30gb-accountancy-1001o3555",
+  "programmePage": "https://www.fontys.nl/Opleidingen/Accountancy-bachelor-voltijd.htm",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Accountancy-bachelor-voltijd.htm",
+          "quote": "Opleidingsduur 4 jaar Taal Nederlands"
+        },
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Accountancy-bachelor-voltijd.htm",
+          "quote": "De voltijd hbo-opleiding Accountancy duurt 4 jaar."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Accountancy-bachelor-voltijd.htm",
+          "quote": "Opleidingsduur 4 jaar Taal Nederlands"
+        },
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Accountancy-bachelor-voltijd.htm",
+          "quote": "Accountancy 4 jaar Bachelor Voltijd Start september Nederlands Eindhoven"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2027-05-01",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Accountancy-bachelor-voltijd.htm",
+          "quote": "1 mei 2027 Meld je uiterlijk 1 mei aan via Studielink."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Accountancy-bachelor-voltijd.htm",
+          "quote": "Meld je uiterlijk 1 mei aan via Studielink."
+        },
+        {
+          "url": "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+          "quote": "Aanmelden voor een Bachelor, Master of Associate Degree doe je via Studielink."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les éventuelles exigences d'admission supplémentaires (profils havo/vwo, diplôme étranger) via les pages 'Toelating' de Fontys.",
+          "en": "Check any additional admission requirements (havo/vwo profiles, foreign diploma) via Fontys' 'Toelating' pages."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Opleidingen/Accountancy-bachelor-voltijd.htm",
+            "quote": "Voor bepaalde havo- en vwo-profielen gelden aanvullende toelatingseisen."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme havo, vwo ou mbo niveau 4 est requis, mais d'autres cas peuvent être admis; faites vérifier votre baccalauréat marocain par Fontys.",
+          "en": "A havo, vwo or mbo level 4 diploma is required, but other cases may be admitted; have your Moroccan Baccalauréat assessed by Fontys."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Opleidingen/Accountancy-bachelor-voltijd.htm",
+            "quote": "Met een havo-, vwo-, of mbo-diploma (niveau 4) word je toegelaten."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le paiement du collegegeld doit être réglé dans Studielink au plus tard avant le 1er septembre.",
+          "en": "Payment of the tuition fee must be arranged in Studielink no later than 1 September."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+            "quote": "Je regelt de machtiging voor de betaling van je collegegeld uiterlijk vóór 1 september."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition: the programme's own page only points to the collegegeldmeter and does not state an amount; the institution-wide pages do not state a single non-EU amount for bachelor/full-time 2026-2027 (they say the instellingscollegegeld 'varieert per opleiding of per groep studenten'), so tuition is left out. Documents: no page given lists documents for this programme. Deadlines: only the general Studielink deadline of 1 May is given (no separate non-EU deadline stated)."
+}

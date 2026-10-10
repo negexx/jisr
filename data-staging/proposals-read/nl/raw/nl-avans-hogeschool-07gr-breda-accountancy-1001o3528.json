@@ -1,0 +1,104 @@
+{
+  "slug": "nl-avans-hogeschool-07gr-breda-accountancy-1001o3528",
+  "programmePage": "https://www.avans.nl/studeren/opleidingen/bachelor/accountancy-voltijd",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/accountancy-voltijd",
+          "quote": "Duur 4 jaar, voltijd bachelor"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/accountancy-voltijd",
+          "quote": "Taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1030800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+          "quote": "Non-EEA nationality (institutional tuition fee) €10,308,-"
+        },
+        {
+          "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+          "quote": "The following tuition fees apply for the 2026-2027 academic year."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/praktische-zaken/aanmelden",
+          "quote": "Meld je aan in Studielink"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission : la page indique qu'il faut un diplôme havo, vwo ou mbo niveau 4, et 'Kijk bij de opleiding welke eisen voor jou van toepassing zijn'.",
+          "en": "Check the admission requirements: the page states you need a havo, vwo or mbo level 4 diploma, and says to check the programme page for the requirements that apply to you."
+        },
+        "evidence": [
+          {
+            "url": "https://www.avans.nl/studeren/praktische-zaken/aanmelden/toelating",
+            "quote": "Dat kan alleen als je een havo-, vwo- of mbo niveau 4-diploma hebt."
+          },
+          {
+            "url": "https://www.avans.nl/studeren/praktische-zaken/aanmelden/toelating",
+            "quote": "Kijk bij de opleiding welke eisen voor jou van toepassing zijn."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Pour les étudiants non-EEE, le 'studiekeuzecheck' (intake) est obligatoire.",
+          "en": "For non-EEA students, the 'studiekeuzecheck' (intake) is compulsory."
+        },
+        "evidence": [
+          {
+            "url": "https://www.avans.nl/studeren/praktische-zaken/aanmelden",
+            "quote": "Voor NON-EER studenten is de studiekeuzecheck verplicht."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les étudiants de nationalité non-EEE doivent postuler avant le 1er mai et payer les frais de scolarité avant le début de l'année académique (paiement complet avant le 15 juin).",
+          "en": "Students with a non-EEA nationality must apply by May 1st and pay tuition fees in full before the start of the academic year (full payment by June 15)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+            "quote": "Students with a non-EEA nationality are required to apply by May 1st and to pay their tuition fees in full prior to the start of the academic year."
+          },
+          {
+            "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+            "quote": "If the full amount is not received by Avans University of Applied Sciences before June 15, your application will automatically be canceled."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "No documents were named for this programme. The programme page gives a Dutch-language tuition fee node in Dutch (wettelijk collegegeld / instellingscollegegeld) but no amount; the institutional fee used here comes from the institution-wide English page (€10,308 for 2026-2027), which is for bachelor's and master's degree students and applicable to non-EEA students. The deadline of 1 May for non-EEA applicants is mentioned in the tuition-fees page for the programme; the specific application deadline (year) is not shown on the supplied pages, so it is left out as a fixed date and treated as a manual check."
+}

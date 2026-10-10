@@ -1,0 +1,61 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-velsen-noord-werktuigbouwkunde-1001o3209",
+  "programmePage": "https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1066500,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Voldoe je niet aan de voorwaarden voor het wettelijk collegegeld dan betaal je het instellingscollegegeld."
+        },
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Instellingscollegegeld* Voltijd en duaal: € 10.665"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the programme's own page does not state a fee; the institution-wide page states the instellingscollegegeld (institutional fee) for Voltijd en duaal: € 10.665 for study year 2027-2028, which applies to this full-time bachelor. The quote for who pays it is general (does not name EU/EEA explicitly). No intake deadlines are stated for the non-EU applicant: the 1 May and 15 January dates appear in institution-wide regulations about Studielink application, not tied to non-EU applicants, so intakes were left out. Language: the programme page lists Dutch as the language (taal Nederlands); the CSA guide states non-EU applicants with a foreign diploma need Dutch at B2 level for a Dutch-taught programme. Documents were not extracted: no programme-specific document list mentioning documents for this programme was found; the visa document list concerns Surinamese students only.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le diplôme étranger (Bac marocain) doit être validé par Inholland pour vérifier qu'il équivaut à un diplôme néerlandais havo/vwo ou mbo-4. Envoyez votre diplôme et relevé de notes avant le 1 mai.",
+          "en": "Your foreign diploma (Moroccan Bac) must be validated by Inholland to check equivalence to a Dutch havo/vwo or mbo-4 diploma. Send your diploma and transcript before 1 May."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+            "quote": "Heb je een diploma buiten Nederland behaald dan moet onder meer worden beoordeeld of dit gelijkwaardig is aan een Nederlands havo-, vwo- of mbo-diploma niveau 4."
+          }
+        ]
+      }
+    ]
+  }
+}
