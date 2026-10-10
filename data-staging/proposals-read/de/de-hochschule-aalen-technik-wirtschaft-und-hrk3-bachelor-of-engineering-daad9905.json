@@ -1,0 +1,112 @@
+{
+  "slug": "de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad9905",
+  "programmePage": "https://www.hs-aalen.de/en/courses/142",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9905/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-aalen.de/en/courses/142",
+          "quote": "Language English Degree Bachelor of Engineering, B. Eng."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9905/",
+          "quote": "Tuition fees per semester The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+          "quote": "The document recognizing your academic qualifications is a mandatory part of your application. To do so, you must apply to Uni Assist for a preliminary review documentation (Vorprüfungsdokumentation - VPD which assesses your eligibility for university admission in Germany)."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Certificat de fin d'études secondaires",
+            "en": "school-leaving certificate"
+          },
+          "quotedAs": "school-leaving certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport-copy",
+          "name": {
+            "fr": "Copie du passeport",
+            "en": "passport copy"
+          },
+          "quotedAs": "passport copy",
+          "translationRequired": null
+        },
+        {
+          "slug": "language-certificate",
+          "name": {
+            "fr": "Certificat de langue",
+            "en": "language certificate"
+          },
+          "quotedAs": "language certificate(s)",
+          "translationRequired": null
+        },
+        {
+          "slug": "vpd-certificate",
+          "name": {
+            "fr": "Certificat VPD (Vorprüfungsdokumentation)",
+            "en": "VPD-Certificate"
+          },
+          "quotedAs": "VPD-Certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+          "quote": "These include your entrance qualification, language certificate(s), the VPD-Certificate from uni-assist, passport picture and a passport copy."
+        }
+      ]
+    }
+  },
+  "notes": "The tuition fee of 1,500 EUR comes from the DAAD page's tuition fees per semester for applicants from non-EU countries. The fee is per semester, not per year. No documents list is explicitly named on the programme page; the documents listed here are from the general application process page for English-taught programmes at the university. The application deadline of 03.12.2026 is for the summer term 27 and is specific to this programme. Evidence for English language proficiency requirements accepted tests should include the specific test list from the DAAD page, which lists TOEFL iBT only. The DAAD page list of accepted tests is incomplete; the university page lists additional tests. The DAAD page mentions TOEFL iBT scores with reading, listening, speaking, writing sub-scores. The university page lists a minimum overall score of 72 and other tests. The acceptedTests list here combines both pages. The application channel is de-uni-assist-vpd because international applicants with foreign diplomas need a VPD from uni-assist. There is also an aptitude test requirement that may be suspended for summer semester 2027; that is a manual check. The German language skills are not required for this English-taught programme. The DAAD page says 'German language skills No minimum language level required'. The translation requirement for documents is not stated for each document; the university page says 'officially certified documents' must be sent by postal mail, which implies translation/certification may be required, but the exact quote does not specify translation for individual documents. Therefore translationRequired is null.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien d'admission est requis : TestAS (score minimum de 100), SAT (minimum 1050) ou ACT (minimum 20). Vérifiez si l'exigence de test d'aptitude est suspendue pour votre semestre.",
+          "en": "An admission test is required: TestAS (score of at least 100), SAT (minimum of 1050) or ACT (score of at least 20). Check whether the aptitude test requirement is suspended for your semester."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+            "quote": "This proof can be provided as follows: TestAS (paper-based or digital) core test and subject-specific engineering module with a score of at least 100 SAT with a minimum of 1050 points or ACT with a score of at least 20. Please note: The aptitude test requirement is being suspended for the application period for summer semester 2027."
+          }
+        ]
+      }
+    ]
+  }
+}

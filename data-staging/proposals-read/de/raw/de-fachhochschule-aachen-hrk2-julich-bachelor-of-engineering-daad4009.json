@@ -1,0 +1,70 @@
+{
+  "slug": "de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad4009",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4009/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4009/",
+          "quote": "Programme duration 6 semesters, 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4009/",
+          "quote": "The course of study is conducted in German."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4009/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4009/",
+          "quote": "Deadlines: 15 July for international applicants (only through uni-assist)"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4009/",
+          "quote": "Please apply via uni-assist."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4009/",
+            "quote": "German language skills B2 required, please provide an official language certificate, e.g.: telc Deutsch: telc Deutsch B2"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The programme duration is given as 6 or 7 semesters; the value 3.5 years is the longest option (7 semesters). The tuition quote says \"Tuition fees per semester None\", so the amount is 0 EUR per semester. The application deadlines (15 July for international applicants, 31 August for Abitur applicants) are given without a year, so they could not be recorded as dated intakes; 15 July applies to international applicants via uni-assist. No document list is provided on the page."
+}

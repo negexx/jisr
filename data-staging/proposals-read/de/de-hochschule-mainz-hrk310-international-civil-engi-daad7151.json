@@ -1,0 +1,163 @@
+{
+  "slug": "de-hochschule-mainz-hrk310-international-civil-engi-daad7151",
+  "programmePage": "https://www.hs-mainz.de/en/academics/degree-programs/engineering/international-civil-engineering-beng/overview/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7151/",
+          "quote": "Programme duration 7 semesters"
+        },
+        {
+          "url": "https://www.hs-mainz.de/en/academics/degree-programs/engineering/international-civil-engineering-beng/overview/",
+          "quote": "Standard period of study: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7151/",
+          "quote": "During the first two years, courses are mainly taught in German, but one course per semester is taught in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7151/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.hs-mainz.de/fileadmin/Hochschule/International/uni-assist-info_English.pdf",
+          "quote": "International applicants can only apply to Mainz University of Applied Sciences by sending their application for admission to uni-assist e.V."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "secondary-school-certificate",
+          "name": {
+            "fr": "Bulletins et documents de l'enseignement secondaire",
+            "en": "Reports and documents from secondary school"
+          },
+          "quotedAs": "Reports and documents from secondary school up to and including your current educational background",
+          "translationRequired": true
+        },
+        {
+          "slug": "passport-copy",
+          "name": {
+            "fr": "Copie certifiée du passeport",
+            "en": "Certified copy of a valid passport"
+          },
+          "quotedAs": "Certified copy of a valid passport",
+          "translationRequired": null
+        },
+        {
+          "slug": "photo",
+          "name": {
+            "fr": "Photo",
+            "en": "Photo"
+          },
+          "quotedAs": "Photo",
+          "translationRequired": null
+        },
+        {
+          "slug": "german-language-certificate",
+          "name": {
+            "fr": "Certificat de compétence en allemand",
+            "en": "Certificate of German language proficiency"
+          },
+          "quotedAs": "Certificate of German language proficiency",
+          "translationRequired": null
+        },
+        {
+          "slug": "bank-transfer-receipt",
+          "name": {
+            "fr": "Copie du virement bancaire",
+            "en": "Copy of bank transfer"
+          },
+          "quotedAs": "Copy of bank transfer indicating date and amount of money transferred to uni-assist",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-mainz.de/fileadmin/Hochschule/International/uni-assist-info_English.pdf",
+          "quote": "Reports and documents from secondary school up to and including your current educational background."
+        },
+        {
+          "url": "https://www.hs-mainz.de/fileadmin/Hochschule/International/uni-assist-info_English.pdf",
+          "quote": "Submit all requested documents as officially certified copies and in sworn translation."
+        },
+        {
+          "url": "https://www.hs-mainz.de/fileadmin/Hochschule/International/uni-assist-info_English.pdf",
+          "quote": "Certified copy of a valid passport (only the page with personal data)"
+        },
+        {
+          "url": "https://www.hs-mainz.de/fileadmin/Hochschule/International/uni-assist-info_English.pdf",
+          "quote": "• Photo"
+        },
+        {
+          "url": "https://www.hs-mainz.de/fileadmin/Hochschule/International/uni-assist-info_English.pdf",
+          "quote": "Certificate of German language proficiency"
+        },
+        {
+          "url": "https://www.hs-mainz.de/fileadmin/Hochschule/International/uni-assist-info_English.pdf",
+          "quote": "Copy of bank transfer indicating date and amount of money transferred to uni-assist."
+        }
+      ]
+    }
+  },
+  "notes": "The university's own programme page states 'Language requirements: German B2 / English', but the DAAD page and the uni-assist PDF both say German B1 (with official certificate) and English B1 recommended. The application process for international applicants is through uni-assist. A semester fee of approximately 350 EUR per semester (per DAAD) or 352 EUR (per programme page) applies, but this is not tuition. DAAD page states 'Tuition fees per semester None' for this programme. Deadlines: For winter semester 2026/2027, application ends July 15th, 2026; for summer semester 2026, application ends January 15th, 2026. The summer semester 2026 date is marked as 'Estimated' and may change. The application portal is uni-assist for applicants with foreign qualifications. The documents list is from the uni-assist information PDF, which applies to international applicants with foreign educational qualifications.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "B1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7151/",
+            "quote": "German language B1 level (for details, see below)"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7151/",
+            "quote": "German language skills B1 required, please provide an official language certificate, e.g.: telc Deutsch: telc Deutsch B1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le programme d'études exige une qualification d'entrée à l'université. Vérifiez que votre baccalauréat marocain équivaut à un diplôme d'études secondaires terminal.",
+          "en": "The programme requires a university entrance qualification. Check whether your Moroccan Baccalauréat is equivalent to a secondary school diploma."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-mainz.de/en/academics/degree-programs/engineering/international-civil-engineering-beng/how-to-apply/",
+            "quote": "Admissions requirements University entrance qualification in accordance with § 65 of the Higher Education Act."
+          }
+        ]
+      }
+    ]
+  }
+}

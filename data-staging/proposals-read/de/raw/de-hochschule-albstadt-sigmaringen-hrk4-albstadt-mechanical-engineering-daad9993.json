@@ -1,0 +1,131 @@
+{
+  "slug": "de-hochschule-albstadt-sigmaringen-hrk4-albstadt-mechanical-engineering-daad9993",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9993/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9993/",
+          "quote": "The programme spans seven semesters"
+        },
+        {
+          "url": "https://www.hs-albsig.de/studienangebot/bachelorstudiengaenge/maschinenbau/",
+          "quote": "Die Regelstudienzeit beträgt beim Vollzeitstudium sieben Semester."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9993/",
+          "quote": "Courses are held in German (80%) and English (20%)."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9993/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 1,
+            "day": 15
+          }
+        },
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-albsig.de/studienangebot/bachelorstudiengaenge/maschinenbau/",
+          "quote": "Bewerbungsschluss für das Sommersemester ist der 15. Januar und für das Wintersemester der 15. Juli eines jeden Jahres."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.hs-albsig.de/studienangebot/bachelorstudiengaenge/maschinenbau/",
+          "quote": "Jetzt bewerben!"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "testdaf"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9993/",
+            "quote": "German language skills B2 required, please provide an official language certificate, e.g.: UNIcert® Deutsch: UNIcert® II"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9993/",
+            "quote": "TestDaF: TDN 3"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Faites reconnaître vos diplômes étrangers par le Studienkolleg Konstanz (procédure de reconnaissance des certificats) avant de candidater.",
+          "en": "Have your foreign certificates recognized by Studienkolleg Konstanz (certificate recognition procedure) before applying."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9993/",
+            "quote": "Have your home certificates transferred to the German grading system by Studienkolleg Konstanz"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez sur le site de l'université la procédure de candidature exacte pour les diplômes étrangers (portail HisinOne ou autre).",
+          "en": "Check the university website for the exact application procedure for foreign diplomas (HisinOne portal or other)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9993/",
+            "quote": "Submit application via Please check this website."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Le DAAD indique pour ce programme que les candidats non-UE paient 1 500 EUR par semestre (et non par an). Aucune page ne nomme un document précis à fournir ni ne nomme uni-assist, Parcoursup, Campus France ou Studielink pour ce programme; le canal « de-university-direct » n'est qu'une hypothèse à partir du lien « Jetzt bewerben » de la page du programme, à vérifier. Les conditions d'accès (Hochschulreife/Fachhochschulreife) ne sont pas transposables au Bac marocain; à contrôler manuellement."
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "de-technische-hochschule-ulm-hrk260-electrical-engineering-a-daad9157",
+  "programmePage": "https://www.thu.de/en/Pages/Studiengang_EET.aspx",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.thu.de/en/Pages/Studiengang_EET.aspx",
+          "quote": "The Electrical Engineering and Information Technology course lasts seven semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.thu.de/en/Pages/Studiengang_EET.aspx",
+          "quote": "Will the program be held completely in English?"
+        }
+      ]
+    }
+  },
+  "notes": "The applicationChannel is de-university-direct because the THU application portal is the stated route. No explicit statement that foreign applicants must use uni-assist. Tuition quotation is for non-EU applicants only and cost 650 EUR per semester. The DAAD page mentions non-EU tuition fees but conflicts with the university page which says 1500 EUR per semester for international students. The DAAD quote is programme-specific and chosen. Duration is 7 semesters = 3.5 years. Teaching language is English. Documents list includes school-leaving certificate (as named in the page). Other documents (statement of purpose, resume, passport, English certificate) are mentioned but not quoted as required documents for this programme in the provided pages, except via the general application page. Soft wording not used as requirements.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme étranger doit être validé par le Studienkolleg Konstanz.",
+          "en": "Check whether your foreign certificate needs to be validated by Studienkolleg Konstanz."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9157/",
+            "quote": "Entrance qualification for a university of applied sciences (foreign certificates to be validated by Studienkolleg Konstanz)"
+          }
+        ]
+      }
+    ]
+  }
+}

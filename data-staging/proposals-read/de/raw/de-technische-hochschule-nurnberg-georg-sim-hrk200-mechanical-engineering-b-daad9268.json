@@ -1,0 +1,191 @@
+{
+  "slug": "de-technische-hochschule-nurnberg-georg-sim-hrk200-mechanical-engineering-b-daad9268",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9268/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9268/",
+          "quote": "Full-time / part-time full-time Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9268/",
+          "quote": "Teaching language English Languages English is the language of instruction."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 100000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.th-nuernberg.de/internationales/ohm-international-school/internationale-semesterbeitraege/",
+          "quote": "Die Studiengebühr beträgt 1.000,00 Euro pro Semester für Studierende, die sich ab Wintersemester 2026/2027 neu in einen grundständigen Studiengang einschreiben."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9268/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,000 EUR"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9268/",
+          "quote": "For the winter semester, starting on 1 October: 2 May - 15 July"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "motivation-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Motivation letter"
+          },
+          "quotedAs": "Motivation letter",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "Curriculum vitae",
+            "en": "Curriculum vitae"
+          },
+          "quotedAs": "Curriculum vitae",
+          "translationRequired": null
+        },
+        {
+          "slug": "scholastic-aptitude-test",
+          "name": {
+            "fr": "Test d'aptitude scolaire (SAT ou TestAS)",
+            "en": "Scholastic aptitude test (SAT or TestAS)"
+          },
+          "quotedAs": "Scholastic aptitude test: SAT or TestAS (Core Test and Engineering Module) with a specific score.",
+          "translationRequired": null
+        },
+        {
+          "slug": "german-language-certificate",
+          "name": {
+            "fr": "Certificat de langue allemande (niveau A1)",
+            "en": "German language certificate (level A1)"
+          },
+          "quotedAs": "German language skills A1 required, please provide an official language certificate, e.g.:",
+          "translationRequired": null
+        },
+        {
+          "slug": "english-language-certificate",
+          "name": {
+            "fr": "Certificat de langue anglaise (niveau B2)",
+            "en": "English language certificate (level B2)"
+          },
+          "quotedAs": "English language skills B2 required, please provide an official language certificate, e.g.:",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9268/",
+          "quote": "Additionally, for applicants from outside of the European Economic Area (EEA) and without a German higher education entrance qualification: Motivation letter in the English language Curriculum vitae in tabulated format, written in the English language Scholastic aptitude test: SAT or TestAS (Core Test and Engineering Module) with a specific score."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9268/",
+          "quote": "German language skills A1 required, please provide an official language certificate, e.g.: telc Deutsch: telc Deutsch A1 ÖSD Zertifikat: A1 Goethe-Zertifikat: Goethe-Zertifikat A1 English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 6 TOEFL iBT (since 2026): 4.5 TOEFL iBT (before 2026): 80 PTE Academic: 65 TOEIC: 850 Language requirements exemptions Please find details on the course website."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9268/",
+            "quote": "German language skills A1 required, please provide an official language certificate, e.g.:"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9268/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 6 TOEFL iBT (since 2026): 4.5 TOEFL iBT (before 2026): 80 PTE Academic: 65 TOEIC: 850"
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9268/",
+            "quote": "A higher education entrance qualification for German universities is required (\"Hochschulzugangsberechtigung (HZB)\")"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats hors EEE sans diplôme d'accès allemand doivent fournir un SAT ou TestAS (Core Test et module Engineering) avec un score spécifique. Le score exigé n'est pas précisé.",
+          "en": "Non-EEA applicants without a German higher education entrance qualification must provide SAT or TestAS (Core Test and Engineering Module) with a specific score. The required score is not specified."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9268/",
+            "quote": "Scholastic aptitude test: SAT or TestAS (Core Test and Engineering Module) with a specific score."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les diplômes obtenus hors d'Allemagne doivent être reconnus ; vérifiez la procédure de reconnaissance et si votre Bac marocain est équivalent au baccalauréat bavarois.",
+          "en": "Diplomas obtained outside Germany must be recognized; check the recognition procedure and whether your Moroccan Baccalaureate is equivalent to the Bavarian Abitur."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9268/",
+            "quote": "For academic credentials (certificates) obtained outside of Germany, a successful recognition is necessary."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "La TH Nürnberg ne dit pas dans ces pages si les candidats étrangers doivent passer par uni-assist (VPD) ou postuler directement ; aucune chaîne 'applicationChannel' n'a donc été fournie (les pages renvoient à « Please check this website » / StudyOhm). Les frais de scolarité de 1 000 EUR/semestre (2 000 EUR/an) proviennent de la page générale de la TH Nürnberg sur les frais pour étudiants non-EEE et sont aussi indiqués dans la fiche DAAD comme tarif non-UE ; la fiche DAAD les donne par semestre. La date limite de candidature du 15 juillet est générale (semestre d'hiver) et non explicitement réservée aux candidats internationaux ; elle est donc donnée en recurringDeadline sans année. Les tests de langue acceptés cités (IELTS Academic 6, TOEFL iBT 80 / 4.5, PTE Academic 65, TOEIC 850) sont listés dans la fiche DAAD. Les pages mentionnent aussi des frais de service étudiant d'environ 82 EUR par semestre (Semester contribution), à vérifier séparément."
+}

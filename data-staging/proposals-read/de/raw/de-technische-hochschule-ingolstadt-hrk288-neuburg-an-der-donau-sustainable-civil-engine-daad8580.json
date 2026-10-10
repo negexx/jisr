@@ -1,0 +1,145 @@
+{
+  "slug": "de-technische-hochschule-ingolstadt-hrk288-neuburg-an-der-donau-sustainable-civil-engine-daad8580",
+  "programmePage": "https://www.thi.de/en/faculties/sustainable-infrastructure/degree-programmes/sustainable-civil-engineering-beng/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/",
+          "quote": "Programme duration 8 semesters"
+        },
+        {
+          "url": "https://www.thi.de/en/faculties/sustainable-infrastructure/degree-programmes/sustainable-civil-engineering-beng/",
+          "quote": "Duration 8 Semesters"
+        },
+        {
+          "url": "https://www.thi.de/en/faculties/sustainable-infrastructure/degree-programmes/sustainable-civil-engineering-beng/",
+          "quote": "ECTS 210 Application period for the 2027 summer term: 15 October 2026 to 15 January 2027"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.thi.de/en/faculties/sustainable-infrastructure/degree-programmes/sustainable-civil-engineering-beng/",
+          "quote": "In the first few semesters, you will study in English and can simultaneously develop your German language skills to at least B2 level to enhance your career prospects. From the fifth semester onwards, teaching is predominantly in German."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/",
+          "quote": "From the fifth semester onwards, German-speaking and international students study together in German as modules are mainly taught in German."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 80000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 800 EUR"
+        },
+        {
+          "url": "https://www.thi.de/en/faculties/sustainable-infrastructure/degree-programmes/sustainable-civil-engineering-beng/",
+          "quote": "THI charges tuition fees of 800 euros per semester (for Bachelor’s programmes)"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 1,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.thi.de/en/faculties/sustainable-infrastructure/degree-programmes/sustainable-civil-engineering-beng/",
+          "quote": "For applicants who obtained their higher secondary school certificate outside of Germany, uni-assist has to verify their eligibility to study in Germany and to convert school grades to the German grade system. Applicants will have to submit all required documents online to uni-assist prior to their application at THI. The process takes four to six weeks (VPD)."
+        },
+        {
+          "url": "https://www.thi.de/en/faculties/sustainable-infrastructure/degree-programmes/sustainable-civil-engineering-beng/",
+          "quote": "Application period for the 2027 summer term: 15 October 2026 to 15 January 2027"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.thi.de/en/faculties/sustainable-infrastructure/degree-programmes/sustainable-civil-engineering-beng/",
+          "quote": "For applicants who obtained their higher secondary school certificate outside of Germany, uni-assist has to verify their eligibility to study in Germany and to convert school grades to the German grade system. Applicants will have to submit all required documents online to uni-assist prior to their application at THI. The process takes four to six weeks (VPD)."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.:"
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.thi.de/en/faculties/sustainable-infrastructure/degree-programmes/sustainable-civil-engineering-beng/",
+            "quote": "Requirements include a valid university entrance qualification (\"Hochschulzugangsberechtigung\"). This is a secondary school certificate that entitles you to study at a German university."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le programme commence en anglais mais passe progressivement à l'allemand : prévoyez d'atteindre le niveau B2 en allemand avant le 5e semestre.",
+          "en": "The programme starts in English but gradually transitions to German: plan to reach German level B2 before the 5th semester."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/",
+            "quote": "However, it is expected that you have already achieved German language proficiency at level A1 by the start of studies and have reached level A2 by the second semester and B2 by the fifth semester."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un certificat de langue anglaise officiel (niveau B2) est exigé ; vérifiez les tests acceptés sur le site du programme.",
+          "en": "An official English language certificate (level B2) is required; check the accepted tests on the programme website."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.:"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Extraction marquée par plusieurs problèmes majeurs dans les pages fournies. 1) La durée et le diplôme: la page THI indique 'ECTS 210' et 'Duration 8 Semesters' mais le calcul standard (210 ECTS / 60 = 3,5 ans) contredit 8 semestres (4 ans). J'ai reporté durationYears=4 en me basant sur '8 semesters' et 'Duration 8 Semesters'; l'auditeur doit vérifier cette incohérence (la formation semble inclure un stage intégré de 18 semaines et un semestre supplémentaire). 2) Langues d'enseignement: les pages décrivent une transition de l'anglais vers l'allemand, mais la mention 'mainly taught in German' et 'allemand prédominant dès le 5e semestre' suggère que l'allemand est bien une langue d'enseignement; j'ai inclus ['en','de']. 3) Le 'recurringDeadline' de l'intake a été placé mais sans date de début ni d'ouverture, ce qui n'est pas idéal. Le seul intake complet avec dates (startDate 2027 summer) n'a pas pu être extrait car le champ 'startDate' attend une date de début de programme et la page ne fournit pas de date de début explicite, seulement la période de candidature. J'ai mis une recurringDeadline (15 janvier) pour le summer term, sans année, ce qui est correct selon les règles. 4) Le channel 'de-uni-assist-vpd' a été choisi car la page programme (THI) indique explicitement que les candidats avec diplôme étranger doivent soumettre leurs documents à uni-assist pour obtenir un VPD. 5) Les documents ne sont pas listés car les pages ne donnent pas de liste claire des documents à soumettre (la page mentionne 'all required documents' mais sans énumération). 6) La tuition est bien 800 EUR/semestre pour les non-EU au niveau Bachelor, extrait de deux sources concordantes. 7) Les frais de candidature uni-assist ou autres frais ne sont pas inclus. 8) La note sur la langue allemande (A1 attendu, B2 au 5e semestre) est un 'manual_check' car il s'agit d'attente (wording soft). 9) Le test d'anglais B2 est requis avec certificat, les tests acceptés incluent IELTS et TOEFL; j'ai listé uniquement ceux explicitement nommés dans les pages DAAD. 10) Le diplôme d'entrée (Hochschulzugangsberechtigung) correspond à 12 ans de scolarité, j'ai utilisé 'prior_study_years_min' avec 12, mais c'est une interprétation; à vérifier par l'auditeur. 11) Aucune information sur traduction de documents n'a été trouvée. 12) Le programme débute en hiver et en été. 13) Les dates de candidature complètes (2 mai - 31 août 2026 pour hiver 2026/27, 15 oct 2026 - 15 janv 2027 pour été 2027, 1 avr - 15 juil 2027 pour hiver 2027/28) ne sont pas toutes rattachées à la session été 2027, et certaines années sont différentes; j'ai retenu la session été 2027 avec recurringDeadline 15 janvier car c'est la seule période explicitement liée à 'summer term' sur la page THI programme, et le DAAD page ne donne pas la même date pour la session 'summer semester 2027' (15 janvier 2027). J'ai donc évité de mettre une année pour recurringDeadline, ce qui est contradictoire avec la présence d'une année dans la citation; l'auditeur doit noter que la page THI programme liste explicitement '15 January 2027' pour summer term 2027, donc le recurringDeadline sans année est sous-optimal mais prudent. En réalité, la règle interdit d'inférer une année; ici l'année est explicite (2027) dans le texte fourni, mais comme la date est dans une phrase qui liste plusieurs sessions, j'ai préféré la forme récurrente. Une correction possible serait applicationDeadline 2027-01-15, mais il faudrait que la citation cible explicitement les candidats internationaux, ce qui n'est pas le cas ici (la phrase parle de tous les candidats)."
+}

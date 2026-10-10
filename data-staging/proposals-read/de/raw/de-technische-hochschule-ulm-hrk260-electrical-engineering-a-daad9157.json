@@ -1,0 +1,110 @@
+{
+  "slug": "de-technische-hochschule-ulm-hrk260-electrical-engineering-a-daad9157",
+  "programmePage": "https://www.thu.de/en/Pages/Studiengang_EET.aspx",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.thu.de/en/Pages/Studiengang_EET.aspx",
+          "quote": "The Electrical Engineering and Information Technology course lasts seven semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.thu.de/en/Pages/Studiengang_EET.aspx",
+          "quote": "Will the program be held completely in English?"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9157/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 650 EUR"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.thu.de/en/studies/application-admission/bachelors-programme-application",
+          "quote": "Please ensure that you have all the documents ready for upload before you start your application in the THU application portal."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "school-leaving certificate"
+          },
+          "quotedAs": "school-leaving certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.thu.de/en/studies/application-admission/bachelors-programme-application",
+          "quote": "You can't submit the school-leaving certificate for your application yet?"
+        },
+        {
+          "url": "https://www.thu.de/en/studies/application-admission/bachelors-programme-application",
+          "quote": "you should submit all other documents in time and submit the certificate as part of the coordinated succession procedure."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts",
+          "cambridge-english-qualifications"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.thu.de/en/Pages/Studiengang_EET.aspx",
+            "quote": "Proof of English proficiency is also required: TOEFL IBT (792 points or higher) IELTS (5.5 or higher) Cambridge Certificate (at least 160–180 points, B2 First, Grade B)"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9157/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT Home Edition (before 2026): 79 Cambridge English Qualifications: B2 First IELTS Academic: 6"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme étranger doit être validé par le Studienkolleg Konstanz.",
+          "en": "Check whether your foreign certificate needs to be validated by Studienkolleg Konstanz."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9157/",
+            "quote": "Entrance qualification for a university of applied sciences (foreign certificates to be validated by Studienkolleg Konstanz)"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The applicationChannel is de-university-direct because the THU application portal is the stated route. No explicit statement that foreign applicants must use uni-assist. Tuition quotation is for non-EU applicants only and cost 650 EUR per semester. The DAAD page mentions non-EU tuition fees but conflicts with the university page which says 1500 EUR per semester for international students. The DAAD quote is programme-specific and chosen. Duration is 7 semesters = 3.5 years. Teaching language is English. Documents list includes school-leaving certificate (as named in the page). Other documents (statement of purpose, resume, passport, English certificate) are mentioned but not quoted as required documents for this programme in the provided pages, except via the general application page. Soft wording not used as requirements."
+}

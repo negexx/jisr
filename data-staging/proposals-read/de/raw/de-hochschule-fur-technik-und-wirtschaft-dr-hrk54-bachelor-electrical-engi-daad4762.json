@@ -1,0 +1,125 @@
+{
+  "slug": "de-hochschule-fur-technik-und-wirtschaft-dr-hrk54-bachelor-electrical-engi-daad4762",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/",
+          "quote": "Programme duration 8 semesters"
+        },
+        {
+          "url": "https://www.htw-dresden.de/en/university/faculties/electrical-engineering/studies/bachelor-electrical-engineering",
+          "quote": "ECTS credits 180 Period of study 8 Semester(s)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/",
+          "quote": "Teaching language German English"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/",
+          "quote": "English (first to fourth semesters) and German (partially in the third semester and fourth semester, completely in the fifth to eighth semesters)"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 6,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/",
+          "quote": "Application periods International applicants: 15 June"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/",
+          "quote": "Submit application via Please apply via uni-assist."
+        },
+        {
+          "url": "https://www.htw-dresden.de/en/university/faculties/electrical-engineering/studies/bachelor-electrical-engineering",
+          "quote": "Application International applicants must apply via uni assist."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "Secondary school leaving certificate",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/",
+          "quote": "Academic admission requirements Secondary school leaving certificate (verified copy of the original with a verified English or German translation of the original)"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts",
+          "toeic"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEIC: 785 Reading: 385 Listening: 400 Speaking: 160 Writing: 150 TOEFL iBT (before 2026): 80 Reading: 20 Listening: 20 Speaking: 20 Writing: 20 TOEFL iBT Home Edition (before 2026): 80 Reading: 20 Listening: 20 Speaking: 20 Writing: 20 IELTS Academic: 6"
+          },
+          {
+            "url": "https://www.htw-dresden.de/en/university/faculties/electrical-engineering/studies/bachelor-electrical-engineering",
+            "quote": "Requirements English language skills are at least at level B2 of the Common European Framework of Reference for Languages (CEFR). We accept the following examinations, among others: TOEFL Internet-based (iBT) with at least 80 points IELTS (International English Language Testing System) at least at band 6.0 Test of English for International Communication (TOEIC) Cambridge English (ESOL)"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The pages do not state a tuition fee for non-EU students; the only fee statement is 'Tuition fees per semester None' and a semester contribution of approx. 350 EUR (which is not tuition). The German-language deadline '15 June' for international applicants has no year, so it is recorded as a recurring deadline. The application deadline quote is for international applicants. The programme page's own URL is the DAAD page; the HTW Dresden page provides additional confirmation. A semester contribution of 364.03 EUR (part-time 137.23 EUR) is stated for re-registration, not as tuition."
+}

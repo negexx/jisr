@@ -1,0 +1,82 @@
+{
+  "slug": "de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken-international-business-a-daad9036",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9036/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9036/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9036/",
+          "quote": "Teaching language German English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-kl.de/en/international/from-abroad/costs",
+          "quote": "Tuition fees You do not have to pay any tuition fees in Rheinland-Pfalz."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.hs-kl.de/en/studying/application/apply-from-abroad",
+          "quote": "Applications with foreign academic qualifications must be submitted via the uni-assist platform."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "testdaf"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9036/",
+            "quote": "German language skills B2 required, please provide an official language certificate, e.g.: TestDaF: TDN 3"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme marocain (Baccalauréat) est reconnu pour accéder à l'université en Allemagne (base de données DAAD).",
+          "en": "Check whether your Moroccan Baccalauréat is recognised as a university entrance qualification in Germany (DAAD admissions database)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-kl.de/en/studying/application/apply-from-abroad",
+            "quote": "First, check whether your school or university qualification is recognised in Germany and whether you can provide evidence of the required language skills."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Programme is taught in German with English (DAAD: 'Courses are held in German and English'); teachingLanguages de/en. English has no minimum requirement on the DAAD page ('English language skills No minimum language level required'), so no English rule was added. Tuition: the DAAD programme page says 'Tuition fees per semester None' and the university's own From abroad/Costs pages say no tuition fees in Rheinland-Pfalz (applies to all students, including non-EU); the 139 EUR per semester is a Semesterbeitrag (social contribution), not tuition. No dated international application deadline is stated for this Bachelor programme: the programme page gives '31 August for winter semester / 28./29. February for summer semester' without a year, and the university deadlines page says 'There are no special deadlines in place for foreign applicants', so no intake was recorded. Application channel: this university's international pages state foreign-qualification applicants apply via uni-assist (not a VPD/preliminary review), hence de-uni-assist."
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "de-technische-hochschule-deggendorf-hrk284-electromobility-autonomo-daad9073",
+  "programmePage": "https://www.th-deg.de/emi-b-en",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/emi-b-en",
+          "quote": "Duration 8 semesters (4 years)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/emi-b-en",
+          "quote": "Taught in 1st - 3rd semester: English, German language courses for A2 through B2 part of curriculum From the 4th semester: German"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/en/apply",
+          "quote": "If you are interested in applying to our university, choose what you aim to study and apply directly to DIT via our own online application portal, Primuss."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.th-deg.de/emi-b-en",
+            "quote": "Language requirements German A1 (to be submitted by March 14 at the latest)"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.th-deg.de/emi-b-en",
+            "quote": "Language requirements German A1 (to be submitted by March 14 at the latest) English B2 (e.g. certificate from the educational institution that courses and examinations were held exclusively in English)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'admission écrit (option en ligne) en mathématiques et physique doit être réussi.",
+          "en": "A written admission test (online option available) in mathematics and physics must be passed."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9073/",
+            "quote": "Applicants must successfully complete a written assessment test (online option available). The test consists of tasks in mathematics and physics."
+          }
+        ]
+      }
+    ]
+  }
+}

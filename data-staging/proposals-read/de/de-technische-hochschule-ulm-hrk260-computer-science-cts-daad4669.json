@@ -1,0 +1,57 @@
+{
+  "slug": "de-technische-hochschule-ulm-hrk260-computer-science-cts-daad4669",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4669/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4669/",
+          "quote": "Programme duration 8 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4669/",
+          "quote": "Teaching language English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 65000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4669/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 650 EUR"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune date de candidature avec année n'est indiquée pour ce programme : la page DAAD dit « This programme has no deadline listed. » et la page THU indique « Application period 28. April - 15. Juli » sans année (donc à confirmer, mais pas de règle d'admission formelle). Le portail de candidature (THU-Bewerbungsportal) est mentionné pour le Bachelor en général, mais la page pour les étudiants internationaux n'a pas été fournie pour confirmer le canal exact (uni-assist VPD vs direct). Aucun document précis n'est listé dans les pages fournies. Des frais de dossier semestriels (Semesterbeitrag ~182 EUR) s'ajoutent aux frais de scolarité. Des exceptions aux frais pour étudiants internationaux existent (Landeshochschulgebührengesetz), à vérifier.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Si vous avez un diplôme étranger, celui-ci doit être reconnu par le Studienkolleg Konstanz. Vérifiez cette procédure auprès de l'université.",
+          "en": "If you have a foreign school-leaving qualification, it must be recognized by the Studienkolleg Konstanz. Check this procedure with the university."
+        },
+        "evidence": [
+          {
+            "url": "https://www.thu.de/cts",
+            "quote": "If you have a foreign school-leaving qualification, this must be recognized by the Studienkolleg Konstanz."
+          }
+        ]
+      }
+    ]
+  }
+}

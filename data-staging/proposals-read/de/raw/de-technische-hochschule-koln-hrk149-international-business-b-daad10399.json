@@ -1,0 +1,123 @@
+{
+  "slug": "de-technische-hochschule-koln-hrk149-international-business-b-daad10399",
+  "programmePage": "https://www.th-koeln.de/en/academics/international-business-bachelor_5826.php",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.th-koeln.de/en/academics/international-business-bachelor_5826.php",
+          "quote": "Program duration 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10399/",
+          "quote": "The programme is fully taught in English."
+        },
+        {
+          "url": "https://www.th-koeln.de/en/academics/international-business-bachelor_5826.php",
+          "quote": "Language of instruction English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10399/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.th-koeln.de/en/academics/international-business-bachelor--how-to-apply_5823.php",
+          "quote": "b) Application process for - applicants not mentioned in a) You are required to apply through uni-assist."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.th-koeln.de/en/academics/international-business-bachelor--how-to-apply_5823.php",
+            "quote": "Secondary school diploma \"Fachhochschulreife\" (academic and practical part) or \"Abitur\" or an equivalent (international) degree"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "B1",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "testdaf"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.th-koeln.de/en/academics/international-business-bachelor--how-to-apply_5823.php",
+            "quote": "Applicants need to submit evidence of their German language proficiency (at least level B1 according to the Common European Framework of Reference for Languages (CEFR)) by submitting one of the following documents:"
+          },
+          {
+            "url": "https://www.th-koeln.de/en/academics/international-business-bachelor--how-to-apply_5823.php",
+            "quote": "TestDaF (Test Deutsch als Fremdsprache): at least three points in each part"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.th-koeln.de/en/academics/international-business-bachelor--how-to-apply_5823.php",
+            "quote": "Applicants need to submit evidence of their English language proficiency (at least CEFR level B2) by the time of enrollment at the latest."
+          },
+          {
+            "url": "https://www.th-koeln.de/en/academics/international-business-bachelor--how-to-apply_5823.php",
+            "quote": "IELTS (International English Language Testing System): at least 6.0 points"
+          },
+          {
+            "url": "https://www.th-koeln.de/en/academics/international-business-bachelor--how-to-apply_5823.php",
+            "quote": "TOEFL (Test of English as a Foreign Language ibt): tests taken before January 21, 2026: 80 points; tests taken on or after January 21, 2026: 4.0"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats titulaires d'un diplôme étranger doivent lire les informations sur les conditions d'admission pour les diplômes internationaux. Vérifiez si votre Baccalauréat marocain est reconnu comme équivalent au 'Abitur' ou à la 'Fachhochschulreife'.",
+          "en": "Applicants with a degree obtained outside Germany must read the information on admission requirements for international qualifications. Check whether your Moroccan Baccalauréat is recognised as equivalent to the 'Abitur' or 'Fachhochschulreife'."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-koeln.de/en/academics/international-business-bachelor--how-to-apply_5823.php",
+            "quote": "Applicants with degrees obtained outside of Germany: please note the information on admission requirements."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "This programme is restricted admission ('Restricted admission Yes'). The DAAD page states 'Tuition fees per semester None' for this programme; the TH Köln semester contribution (approx. 352.70 EUR for winter semester 2026/2027) is an administrative/semester fee, not tuition, and is not entered as tuition. English proficiency can alternatively be proven by a B2 confirmation on the school-leaving certificate or by other certificates (TELC, ISE, UNIcert, PTE Academic) or a personal interview; German B1 can also be proven by other certificates listed on the page. The pre-semester application periods on the DAAD page ('Early April – 15 June' for applicants not mentioned in a) and the 'Application period: Early April - June 15, 2026' on the how-to-apply page do not state that they specifically apply to non-EU or foreign-qualification applicants, so no intake was included."
+}

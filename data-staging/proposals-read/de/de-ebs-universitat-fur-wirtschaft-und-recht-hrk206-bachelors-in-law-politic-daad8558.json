@@ -1,0 +1,73 @@
+{
+  "slug": "de-ebs-universitat-fur-wirtschaft-und-recht-hrk206-bachelors-in-law-politic-daad8558",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8558/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8558/",
+          "quote": "The programme comprises three years of study and is divided into law, political science and business administration."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8558/",
+          "quote": "The programme follows international standards and is therefore 100% in English."
+        }
+      ]
+    }
+  },
+  "notes": "The tuition fee quote is from the EBS Fees Schedule for the Bachelor in Law, Politics and Economics. The amount is per semester; the annual cost is EUR 14,680. The application process is not via uni-assist; the university's own application portal is used, as indicated by the German page.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8558/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 5.5 Cambridge English Qualifications: B2 First TOEFL iBT (before 2026): 72 Reading: 18 Listening: 17 Speaking: 20 Writing: 17"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test de connaissances et un test de personnalité sont requis pour l'admission.",
+          "en": "A knowledge test and a personality test are required for admission."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8558/",
+            "quote": "We use the knowledge test to assess your mathematical and logical-analytical abilities as well as your problem-solving skills, which are necessary for successfully completing your studies. This part of the selection procedure takes about 30 minutes. The personality test is a self-assessment of your suitability for the business or law degree programme at EBS Universität."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien de sélection personnel de 30 minutes est requis.",
+          "en": "A 30-minute personal selection interview is required."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8558/",
+            "quote": "Personal selection interview In order to get to know you personally and to be able to assess you even better, we conduct a 30-minute individual interview."
+          }
+        ]
+      }
+    ]
+  }
+}

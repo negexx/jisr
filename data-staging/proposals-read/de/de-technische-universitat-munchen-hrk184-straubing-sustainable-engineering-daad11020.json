@@ -1,0 +1,59 @@
+{
+  "slug": "de-technische-universitat-munchen-hrk184-straubing-sustainable-engineering-daad11020",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11020/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11020/",
+          "quote": "Programme duration 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11020/",
+          "quote": "The degree programme is taught in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 200000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11020/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 2,000 EUR"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11020/",
+          "quote": "The following is valid for applicants from: all countries For the winter semester: 15 May - 15 July"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the DAAD programme page states 2,000 EUR per semester for applicants from non-EU countries; TUM central pages state the general bachelor's range of 2,000 or 3,000 euros per semester, which is not programme-specific. Intake: deadline stated as \"15 May - 15 July\" without a year and for applicants from all countries, recorded as a recurring deadline; applicationChannel not extracted because no supplied page states the application route for this bachelor's programme (the VPD/uni-assist statement appears on a master's programme page)."
+}
