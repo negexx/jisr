@@ -280,7 +280,7 @@ OKLCH is the canonical format (it is what `src/app/globals.css` defines); the he
 
 **The Isolated Latin Rule.** Official names, URLs, hostnames, currency codes and amounts sit in `<bdi>` (amounts and URLs with `dir="ltr"`) so Arabic sentences never reorder them. Digits are always Latin.
 
-**The Arabic Leading Rule.** Under `lang="ar"` the root scales to 106.25% and line heights rise to 1.75 (1.6 and 1.5 for the two largest steps). Tap targets grow with the root; the target is 48px.
+**The Arabic Leading Rule.** Under `lang="ar"` the root scales to 106.25% and line heights rise to 1.75, easing to 1.6 and 1.5 across the three largest steps (xl 1.6, 2xl and display 1.5); the display step also resets its letter-spacing to zero, because cursive Arabic never takes negative tracking. Tap targets grow with the root; the target is 48px.
 
 ## 4. Elevation
 

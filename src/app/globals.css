@@ -165,6 +165,8 @@ html[lang="ar"] {
   --text-lg--line-height: 1.75;
   --text-xl--line-height: 1.6;
   --text-2xl--line-height: 1.5;
+  --text-display--line-height: 1.5;
+  --text-display--letter-spacing: 0;
 }
 
 html[lang="ar"] body {
