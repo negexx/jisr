@@ -1,0 +1,81 @@
+{
+  "slug": "fr-i-u-t-de-valenciennes-0593052x-but-techniques-de-commercialisat-6963",
+  "programmePage": "https://formations.uphf.fr/fr/formations/bachelor-universitaire-de-technologie-but/but-techniques-de-commercialisation-L02KIJ50.html",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://formations.uphf.fr/fr/formations/bachelor-universitaire-de-technologie-but/but-techniques-de-commercialisation-L02KIJ50.html",
+          "quote": "Niveau d'étude visé BAC +3\nECTS 180 crédits\nDurée 6 semestres"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://formations.uphf.fr/fr/formations/bachelor-universitaire-de-technologie-but/but-techniques-de-commercialisation-L02KIJ50.html",
+          "quote": "Composante\nIUT - Institut Universitaire de Technologie\nLangue(s) d'enseignement\nFrançais"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des droits différenciés pour un étudiant extra-communautaire est donné par deux pages de l'UPHF : 2 895 €/an (année 2025-2026, page anglaise) et 2 902 €/an en 1er cycle, BUT inclus (année 2026-2027, page française). Seul le montant le plus récent (2 902 €) est retenu dans tuition ; le tarif de 2 895 € est conservé en seconde preuve. Une exonération partielle (178 €) peut s'appliquer à certaines nationalités (pays les moins avancés) ; le Maroc n'est pas cité pour le 1er cycle. Le marocain titulaire d'un Bac marocain candidatant en BUT doit passer par Études en France (voir https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut) ; la fiche Parcoursup et les pages « apply on Parcoursup » concernent les bacs français/européens. Aucune date d'ouverture ou de deadline d'un an précis n'est donnée pour cette formation sur les pages fournies. La mention « 50 % minimum de cours en anglais » du groupe EURO (fiche Parcoursup) ne fait pas du programme un programme enseigné en anglais ; la langue d'enseignement indiquée est le français. Les documents listés proviennent de la procédure de candidature en laboratoire/projet pour étudiants en échange : à vérifier pour une candidature en 1re année de BUT via Études en France.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "tcf",
+          "delf-dalf"
+        ],
+        "evidence": [
+          {
+            "url": "https://formations.uphf.fr/fr/formations/bachelor-universitaire-de-technologie-but/but-techniques-de-commercialisation-L02KIJ50.html",
+            "quote": "Cours dispensés en français - Niveau requis : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Admission sélective : dossier et entretien de motivation (les candidats doivent être titulaires d'un Bac ou équivalent).",
+          "en": "Selective admission: application file and motivation interview (candidates must hold a Baccalauréat or equivalent)."
+        },
+        "evidence": [
+          {
+            "url": "https://formations.uphf.fr/fr/formations/bachelor-universitaire-de-technologie-but/but-techniques-de-commercialisation-L02KIJ50.html",
+            "quote": "Le Bachelor Universitaire de Technologie est une filière sélective qui recrute sur dossier et entretien."
+          },
+          {
+            "url": "https://formations.uphf.fr/fr/formations/bachelor-universitaire-de-technologie-but/but-techniques-de-commercialisation-L02KIJ50.html",
+            "quote": "Mode de sélection\nDossier\nEntretien"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La lettre de motivation et la qualité du dossier comptent ; les notes de français, économie, sciences de gestion, langues et mathématiques sont examinées.",
+          "en": "The motivation letter and the quality of the file count; grades in French, economics, management sciences, languages and mathematics are examined."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6963&typeBac=0&originePc=0",
+            "quote": "Une motivation argumentée pour la formation exprimée dans la lettre de motivation est aussi un facteur important dans les décisions de sélection."
+          }
+        ]
+      }
+    ]
+  }
+}

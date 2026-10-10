@@ -3,7 +3,9 @@
   "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43262&typeBac=0&originePc=0",
   "facts": {
     "teachingLanguages": {
-      "value": ["fr"],
+      "value": [
+        "fr"
+      ],
       "evidence": [
         {
           "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43262&typeBac=0&originePc=0",

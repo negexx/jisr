@@ -1,0 +1,77 @@
+{
+  "slug": "fr-i-u-t-de-dijon-0211139z-but-informatique-3236",
+  "programmePage": "https://formations.ube.fr/fr/offre-de-formation/but-BUT/but-informatique-info-LMGC21RY.html",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://formations.ube.fr/fr/offre-de-formation/but-BUT/but-informatique-info-LMGC21RY.html",
+          "quote": "Le Bachelor Universitaire de Technologie en Informatique (BUT Informatique) de l'IUT de Dijon est une formation en trois ans, accessible après le bac."
+        },
+        {
+          "url": "https://formations.ube.fr/fr/offre-de-formation/but-BUT/but-informatique-info-LMGC21RY.html",
+          "quote": "ECTS 180 crédits Durée 3 ans"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://formations.ube.fr/fr/offre-de-formation/but-BUT/but-informatique-info-LMGC21RY.html",
+          "quote": "Langue(s) d'enseignement Français"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 290200,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.ube.fr/international-forthem/etudiants-internationaux/obtenir-un-diplome/je-minscris-a-luniversite/",
+          "quote": "À titre indicatif voici les frais différenciés en 2026/2027 Licence, cycle préparatoire ingénieur, BUT : 2902 euros"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "tcf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3236&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3236&typeBac=0&originePc=0",
+            "quote": "non titulaire ou ne préparant pas un baccalauréat français ou un baccalauréat européen"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Le montant de 2 902 euros correspond aux frais différenciés 2026/2027 au niveau licence/BUT publiés par l'université pour l'étudiant non-UE ; la page programme Parcoursup n'indique que 178 euros par an (tarif national de base, vraisemblablement pour les étudiants français/UE) : à vérifier. Le niveau B2 figure sur la fiche Parcoursup du programme, mais Parcoursup concerne en principe les titulaires du bac français/européen ; la certification de français (TCF, DELF B2, DALF) est exigée par Campus France Maroc pour la procédure Études en France, sauf dispense. Aucune date d'ouverture/clôture de candidature spécifique à ce BUT pour un candidat non-UE n'est publiée (l'université renvoie à la scolarité de l'IUT concerné)."
+}

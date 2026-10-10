@@ -1,0 +1,69 @@
+{
+  "slug": "fr-universite-clermont-auvergne-0632084y-licence-economie-7621",
+  "programmePage": "https://economie.uca.fr/formation/licence",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://economie.uca.fr/formation/licence",
+          "quote": "D'une durée de 3 ans, elle peut se poursuivre par une licence professionnelle après la L2"
+        },
+        {
+          "url": "https://economie.uca.fr/formation/licence",
+          "quote": "Durée de la formation 3 ans"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://economie.uca.fr/formation/licence",
+          "quote": "Langues d'enseignement Français"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://economie.uca.fr/formation/licence",
+            "quote": "En français, un niveau B2 est exigé."
+          },
+          {
+            "url": "https://www.uca.fr/international/mobilites-internationales-et-bourses/venir-a-l-uca/je-suis-etudiant/etudier-hors-programme-dechange/comment-candidater-a-luca/titulaire-dun-diplome-etranger",
+            "quote": "Important : le niveau de français minimum requis pour intégrer une formation à l’UCA est le niveau B2."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Prérequis : spécialité Sciences économiques au bac, appétence pour les mathématiques et la statistique, niveau correct en anglais (B1). Le niveau d'anglais B1 et les attendus sont des recommandations, à vérifier avec l'établissement.",
+          "en": "Prerequisites: bac specialty in Economics, aptitude for mathematics and statistics, reasonable level in English (B1). The B1 English level and expectations are recommendations; verify with the institution."
+        },
+        "evidence": [
+          {
+            "url": "https://economie.uca.fr/formation/licence",
+            "quote": "Spécialité Sciences économiques"
+          },
+          {
+            "url": "https://economie.uca.fr/formation/licence",
+            "quote": "Des connaissances satisfaisantes et une appétence aux mathématiques et à la statistique sont aussi souhaitables ainsi qu'un niveau correct en anglais (B1)."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Application channel omitted: the TASK states a foreign-diploma applicant applies through Etudes en France / Campus France (set separately). Tuition for non-EU students: the programme's own page and the Parcoursup fiche show only the 178 €/year rate (as the differentiated fee applies from 2027-2028 and UCA applies the national rate for 2025-2026), which is stated for national/EU students; the 178 € figure quoted on the Parcoursup fiche is not explicitly for non-EU applicants, so no tuition fact is extracted. Deadline evidence found (DAP: 1 October to 15 December 2026) applies to first-year bachelor (DAP) applications, not specifically to this Licence Economie via the stated route, and no intake is stated for this programme on its own page, so no intakes fact is extracted. Teaching language fact taken from the programme page ('Langues d'enseignement Français'); note some courses are taught in English in the third year and the International track, but the programme is taught in French."
+}

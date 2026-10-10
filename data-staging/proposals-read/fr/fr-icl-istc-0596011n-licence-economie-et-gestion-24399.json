@@ -1,0 +1,61 @@
+{
+  "slug": "fr-icl-istc-0596011n-licence-economie-et-gestion-24399",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24399&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24399&typeBac=0&originePc=0",
+          "quote": "La Licence Droit Économie et Gestion-ISTC-parcours Communication, diplôme national de Licence en 3 ans"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24399&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+        }
+      ]
+    }
+  },
+  "notes": "Le tarif de 8 095 €/an est le tarif affiché pour tous les candidats (ligne « Par année 8 095 € » dans la rubrique Frais de scolarité) ; la réduction à 6 780 € concerne les étudiants boursiers. Les dates d'inscription sur Parcoursup (calendrier national) ne sont pas mentionnées sur la fiche et ne sont donc pas reprises. Cette fiche Parcoursup décrit la procédure pour les titulaires d'un bac français ou européen ; pour un candidat marocain titulaire du Bac marocain, la candidature passe par Études en France / Campus France (non extrait ici, conformément à la consigne).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24399&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sélection sur dossier (notes de Première et Terminale, épreuves anticipées du Bac) puis entretien de sélection ; des frais d'entretien de 80 € sont demandés aux candidats non boursiers.",
+          "en": "Selection is based on the application file (Première and Terminale grades, early Bac exams) and a selection interview; a €80 interview fee applies to non-scholarship applicants."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24399&typeBac=0&originePc=0",
+            "quote": "Les épreuves orales ou l'entretien auront lieu : Du lundi 27 avril 2026 au mercredi 13 mai 2026"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24399&typeBac=0&originePc=0",
+            "quote": "Frais d'entretien 80,00 € (candidats non boursiers)"
+          }
+        ]
+      }
+    ]
+  }
+}

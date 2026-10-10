@@ -1,0 +1,83 @@
+{
+  "slug": "fr-universite-lumiere-lyon-2-0691775e-licence-economie-et-gestion-43543",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43543&typeBac=0&originePc=0",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 290200,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.univ-lyon2.fr/formation/inscriptions/droits-et-montants-d-inscription",
+          "quote": "Montants des droits d'inscription pour les étudiantes et étudiants extracommunautaires (Hors UE) 2026 / 2027 Niveau de formation Montant Tarif réduit (s'applique uniquement dans certaines conditions : double licence, cursus multiple, césure) Licence 2 902 € 1 934 €"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune date limite de candidature n'est donnée pour ce programme dans les pages fournies. Le tarif réduit (1 934 €) ne s'applique que dans certaines conditions (double licence, cursus multiple, césure).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "delf-dalf",
+          "tcf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43543&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le recrutement est sélectif : résultats scolaires 65 %, méthode de travail 10 %, savoir-être 5 %, motivation 15 %, engagement 5 % ; examen du dossier par une commission.",
+          "en": "Admission is selective: academic results 65%, work methods 10%, soft skills 5%, motivation 15%, engagement 5%; application reviewed by a panel."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43543&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 65 %"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Diplôme requis : baccalauréat (ou diplôme étranger équivalent). Les candidats non ressortissants de l'UE titulaires d'un diplôme équivalent au bac passent par la procédure DAP.",
+          "en": "Required diploma: baccalauréat (or equivalent foreign diploma). Non-EU applicants with an equivalent diploma apply via the DAP procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43543&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La demande de bourse est possible via le dossier social étudiant après inscription ; les droits différenciés peuvent être réduits ou exonérés selon la situation.",
+          "en": "A scholarship can be requested via the student social file after enrolment; differentiated fees may be reduced or waived depending on the situation."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43543&typeBac=0&originePc=0",
+            "quote": "L’inscription dans cette formation permet de demander une bourse sous conditions de critères sociaux à l’aide du dossier social étudiant."
+          }
+        ]
+      }
+    ]
+  }
+}

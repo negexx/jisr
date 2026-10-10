@@ -1,0 +1,115 @@
+{
+  "slug": "fr-campus-des-comtes-de-champagne-urca-0101037y-licence-economie-43262",
+  "programmePage": null,
+  "facts": {
+    "documents": {
+      "value": [
+        {
+          "slug": "passport-photo",
+          "name": {
+            "fr": "Photo d’identité",
+            "en": "Identity photo"
+          },
+          "quotedAs": "photo d’identité",
+          "translationRequired": null
+        },
+        {
+          "slug": "identity-document",
+          "name": {
+            "fr": "Pièce d’identité (carte nationale, passeport, carte de séjour ou récépissé)",
+            "en": "Identity document (national ID card, passport, residence permit or receipt)"
+          },
+          "quotedAs": "pièce d’identité",
+          "translationRequired": null
+        },
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme du Bac (si vous avez déjà eu le Bac)",
+            "en": "Baccalaureate diploma (if you already hold the Bac)"
+          },
+          "quotedAs": "diplôme",
+          "translationRequired": null
+        },
+        {
+          "slug": "transcript-of-secondary-school-studies",
+          "name": {
+            "fr": "Relevés de notes (national et régional si vous avez le Bac ; sinon tronc commun, puis première année du Bac et régional)",
+            "en": "Grade transcripts (national and regional if you hold the Bac; otherwise common core, then first year of the Bac and regional)"
+          },
+          "quotedAs": "relevé de notes",
+          "translationRequired": null
+        },
+        {
+          "slug": "school-enrolment-certificate",
+          "name": {
+            "fr": "Certificat de scolarité de l’année en cours (si vous êtes encore au lycée ou dans une formation)",
+            "en": "School or programme enrolment certificate for the current year (if you are still at the lycée or in a programme)"
+          },
+          "quotedAs": "certificat de scolarité",
+          "translationRequired": null
+        },
+        {
+          "slug": "french-language-certificate",
+          "name": {
+            "fr": "Certification de français (TCF, DELF B2 ou DALF), sauf cas de dispense ; la convocation à une session est acceptée",
+            "en": "French language certificate (TCF, DELF B2 or DALF), unless exempt; a convocation to a session is accepted"
+          },
+          "quotedAs": "certification de français",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Joindre une photo d’identité"
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Renseignez votre identité en joignant une pièce d’identité (carte nationale, passeport, carte de séjour ou récépissé"
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Tous les documents doivent être en français ou traduits en français auprès d’un traducteur assermenté."
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Un relevé de notes bilingue est accepté."
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Si vous avez déjà eu le Bac : 1 - Sélectionnez « Bac ou équivalent » et joindre le diplôme, le relevé de notes du national et du régional."
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Si vous êtes un futur bachelier : Vous devez renseigner une ligne par année : 1 - Sélectionnez la ligne « Une année de lycée » et joindre les relevés de notes du tronc commun"
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Sélectionnez une autre ligne « Une année de lycée » et joindre les relevés de notes de la première année du bac et du régional"
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Sélectionnez une autre ligne « Bac ou équivalent » et joindre le certificat de scolarité de l’année en cours."
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Si vous suivez actuellement une formation : joindre le certificat de scolarité de l’année en cours."
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Les convocations aux sessions de TCF TP ou DELF B2/DALF sont acceptées."
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/la-procedure-de-candidature-sur-etudes-en-france-de-campus-france",
+          "quote": "La procédure de candidature en ligne de Campus France sur la plateforme Études en France s'adresse aux étudiants non européens*, résidents au Maroc ET issus de l'enseignement marocain (y compris le bac international)"
+        }
+      ]
+    }
+  },
+  "notes": "Platform dossier of Études en France (Campus France Maroc, non-EU applicants resident in Morocco). Every document in the 'Parcours et diplômes' section must be in French or translated by a sworn translator; a bilingual grade transcript is accepted, which is why no item claims a translation. The list is the minimum for an applicant coming straight from the lycée: other cases (previous higher-education years or diplomas, years without a supporting document that need a 'lettre explicative') have additional pieces that are not listed. The CV is stated as not mandatory. Minors may attach the birth certificate extract with a parent's identity document (page: \"Pour les mineurs, vous pouvez joindre l'extrait d'acte de naissance avec la pièce d'identité d'un des parents\"); not an item. The motivations of the DAP blanche are typed in step 3 of the platform ('La saisie du panier de formations et des motivations'), not attached; the Campus France interview and the application fees are steps, not documents; CVEC is not covered by this page. Each programme may ask for more."
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "fr-universite-paris-pantheon-assas-0756305w-licence-economie-et-gestion-39332",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39332&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39332&typeBac=0&originePc=0",
+          "quote": "Les enseignements du Collège se déroulent sur trois ans et sont dispensés sous forme de séminaires avec de petits effectifs."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39332&typeBac=0&originePc=0",
+          "quote": "Certains cours sont dispensés en anglais."
+        },
+        {
+          "url": "https://www.assas-universite.fr/fr/international/venir-etudier-luniversite/diplome/candidatures",
+          "quote": "Certificat de langue française (pour les formations dispensées en français) : niveau de langue française requis."
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39332&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 289500,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.assas-universite.fr/fr/droits-applicables-aux-etudiants-etrangers-primo-entrants",
+          "quote": "Droits d'inscription pour l'année 2025-2026 : Droits classiques Droits différenciés Licence 178 € 2 895 € Master 254 € 3 940 € Doctorat et HDR 397 € 397 €"
+        },
+        {
+          "url": "https://www.assas-universite.fr/fr/international/venir-etudier-luniversite/diplome/frais-dinscription-aides-financieres",
+          "quote": "Les étudiants non ressortissants de l'Union européenne, de l'Espace economique européen, de la Confédération suisse, de Monaco, d'Andorre ou de la province du Québec au Canada sont généralement soumis aux droits d'inscription différenciés qui s'échelonnent selon la formation préparée entre 2 902€ (licence) et 3 950€ (master) annuels."
+        }
+      ]
+    }
+  }
+}

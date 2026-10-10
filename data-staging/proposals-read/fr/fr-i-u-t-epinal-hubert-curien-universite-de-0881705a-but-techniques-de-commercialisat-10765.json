@@ -1,0 +1,57 @@
+{
+  "slug": "fr-i-u-t-epinal-hubert-curien-universite-de-0881705a-but-techniques-de-commercialisat-10765",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10765&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10765&typeBac=0&originePc=0",
+          "quote": "Le Bachelor Universitaire de Technologie TC est un diplôme d'Etat de niveau BAC+3 (grade de Licence, 180 ECTS)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10765&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "The Parcoursup page is for French and European Bac holders; foreign-diploma applicants apply via Etudes en France / Campus France, so the application deadline is not extracted. The tuition fee of 178 euros per year on the page applies to EU students; the differentiated fee for non-EU students (2,902 to 3,950 euros per year depending on cycle) comes from an institution-wide page (maroc.campusfrance.org), not the programme page, so it is not stated as a fact for this programme. A document list is given only for the French national platform Parcoursup (CV); it may not exactly match the Campus France document list for non-EU applicants.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10765&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La commission peut convoquer un entretien selon l'évaluation du dossier.",
+          "en": "The commission may invite you to an interview based on the assessment of your application."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10765&typeBac=0&originePc=0",
+            "quote": "Selon l'évaluation du dossier, la commission de recrutement peut convoquer un candidat pour un entretien."
+          }
+        ]
+      }
+    ]
+  }
+}

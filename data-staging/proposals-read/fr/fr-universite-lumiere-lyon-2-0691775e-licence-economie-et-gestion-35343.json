@@ -1,0 +1,70 @@
+{
+  "slug": "fr-universite-lumiere-lyon-2-0691775e-licence-economie-et-gestion-35343",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35343&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35343&typeBac=0&originePc=0",
+          "quote": "Le Plan Réussite Licence, sur les 3 années, permet de personnaliser les poursuites d’études par des choix d'options et des projets individuels ou collectifs accompagnés"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35343&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 290200,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.univ-lyon2.fr/formation/inscriptions/droits-et-montants-d-inscription",
+          "quote": "Montants des droits d'inscription pour les étudiantes et étudiants extracommunautaires (Hors UE) 2026 / 2027 Niveau de formation Montant Tarif réduit (s'applique uniquement dans certaines conditions : double licence, cursus multiple, césure) Licence 2 902 € 1 934 €"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune mention de dates de candidature ni de liste de documents spécifiques pour ce programme n'a été trouvée dans les pages. La procédure Études en France / Campus France est renvoyée séparément (hors Parcoursup pour les titulaires d'un bac étranger hors UE).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35343&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le choix définitif entre Licence Économie-Gestion et Licence Sociologie peut dépendre de l'avis pédagogique et des places disponibles après le 1er semestre.",
+          "en": "The final choice between the Economics-Management track and the Sociology track may depend on pedagogical advice and available places after the first semester."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35343&typeBac=0&originePc=0",
+            "quote": "À l'issue du 1er semestre, il/elle peut poursuivre en Licence Économie-Gestion uniquement ou, avec avis pédagogique et en fonction des places disponibles"
+          }
+        ]
+      }
+    ]
+  }
+}

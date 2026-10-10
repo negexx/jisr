@@ -1,0 +1,91 @@
+{
+  "slug": "fr-universite-clermont-auvergne-0632084y-licence-economie-27507",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=27507&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=27507&typeBac=0&originePc=0",
+          "quote": "Ce parcours confère un niveau bac+3 aux étudiants des IUT."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1465000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+          "quote": "2 902 euros pour une année en cycle de Licence"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "secondary-school-leaving-diploma",
+          "name": {
+            "fr": "diplôme de fin d'études secondaires",
+            "en": "secondary school leaving diploma"
+          },
+          "quotedAs": "diplôme de fin d’études secondaires",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uca.fr/international/mobilites-internationales-et-bourses/venir-a-l-uca/je-suis-etudiant/etudier-hors-programme-dechange/comment-candidater-a-luca/titulaire-dun-diplome-etranger",
+          "quote": "Vous préparez ou avez obtenu un diplôme de fin d’études secondaires à l’étranger"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.uca.fr/international/mobilites-internationales-et-bourses/venir-a-l-uca/je-suis-etudiant/etudier-hors-programme-dechange/comment-candidater-a-luca/titulaire-dun-diplome-etranger",
+            "quote": "le niveau de français minimum requis pour intégrer une formation à l’UCA est le niveau B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La formation est sélective : vérifier les notes en mathématiques, sciences économiques et sociales, français et langues, ainsi que la lettre de motivation.",
+          "en": "The programme is selective: check grades in mathematics, economics and social sciences, French and languages, as well as the motivation letter."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=27507&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidatures sont analysées par une commission d'examen des vœux selon des critères publiés ; consultez la fiche Parcoursup pour les détails.",
+          "en": "Applications are reviewed by an admissions committee according to published criteria; see the Parcoursup page for details."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=27507&typeBac=0&originePc=0",
+            "quote": "Les formations analysent les candidatures en avril-mai 2026 à partir des critères qu’elles ont définis et de leur niveau d’importance."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Cette licence est sélective. Les bacheliers étrangers hors UE résidant dans un pays concerné par la procédure Études en France doivent candidater sur cette plateforme, et non sur Parcoursup (voir la page UCA « Les procédures d’admission - étudiants internationaux »). Les frais de scolarité de 2 902 €/an pour les étudiants extra-communautaires proviennent de la page générale Campus France Maroc sur le coût des études en France, et non d’une page propre au programme. La page de l’UCA sur les frais de scolarité indique que pour 2025/2026 les étudiants non-UE paient les mêmes frais que les étudiants nationaux et européens, mais le montant exact n’est pas précisé pour cette année-là. Aucun test d’anglais n’est exigé par la page du programme. Le niveau de français B2 est requis pour s’inscrire à l’UCA ; se renseigner auprès de l’établissement pour les certifications acceptées."
+}
