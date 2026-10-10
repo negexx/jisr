@@ -5,9 +5,11 @@ import * as layout from "@/app/[locale]/layout";
 import * as matches from "@/app/[locale]/matches/page";
 import * as home from "@/app/[locale]/page";
 import * as plan from "@/app/[locale]/plan/page";
+import * as privacy from "@/app/[locale]/privacy/page";
 import * as profile from "@/app/[locale]/profile/page";
 import * as program from "@/app/[locale]/programs/[slug]/page";
 import * as scholarships from "@/app/[locale]/scholarships/page";
+import * as terms from "@/app/[locale]/terms/page";
 import type { AppLocale } from "@/i18n/routing";
 
 // Wiring only: the page copy is covered by each page's own test. Here the translations are stubs so the
@@ -29,6 +31,11 @@ vi.mock("@/lib/snapshot/server", () => ({
       ? { program: { name: "XX Program", summary: null }, institution: null, text: () => null }
       : null,
 }));
+
+vi.mock("@/lib/legal/documents", () => {
+  const Doc = () => null;
+  return { PRIVACY: { en: Doc, fr: Doc, ar: Doc }, TERMS: { en: Doc, fr: Doc, ar: Doc } };
+});
 
 const SITE = "https://x.test";
 const LOCALES: readonly AppLocale[] = ["fr", "ar"];
@@ -52,6 +59,12 @@ const indexablePages: Array<[string, string, MetadataOf]> = [
     "/scholarships",
     (locale) => scholarships.generateMetadata({ params: Promise.resolve({ locale }) }),
   ],
+  [
+    "privacy",
+    "/privacy",
+    (locale) => privacy.generateMetadata({ params: Promise.resolve({ locale }) }),
+  ],
+  ["terms", "/terms", (locale) => terms.generateMetadata({ params: Promise.resolve({ locale }) })],
   [
     "program",
     `/programs/${SLUG}`,

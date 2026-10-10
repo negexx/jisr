@@ -27,8 +27,8 @@ describe("localizedUrl", () => {
 });
 
 describe("INDEXABLE_PATHS", () => {
-  it("lists the home, profile and scholarships routes", () => {
-    expect([...INDEXABLE_PATHS]).toEqual(["", "/profile", "/scholarships"]);
+  it("lists the home, profile, scholarships, privacy and terms routes", () => {
+    expect([...INDEXABLE_PATHS]).toEqual(["", "/profile", "/scholarships", "/privacy", "/terms"]);
   });
 });
 
@@ -63,7 +63,7 @@ describe("buildSitemap", () => {
   const sitemap = buildSitemap(INDEXABLE, ["a", "b"]);
 
   it("has one entry per path and programme in each locale", () => {
-    expect(sitemap).toHaveLength((3 + 2) * 3);
+    expect(sitemap).toHaveLength((5 + 2) * 3);
     const urls = sitemap.map((entry) => entry.url);
     expect(new Set(urls).size).toBe(urls.length);
     expect(urls).toContain("https://x.test/fr");
