@@ -41,10 +41,11 @@ export function NavLinks({ label, items }: { label: string; items: readonly NavI
                 }
                 aria-current={current ? "page" : undefined}
                 className={cn(
-                  "inline-flex min-h-12 items-center whitespace-nowrap border-b-2 px-2 text-base font-medium transition-colors md:px-3",
+                  "relative inline-flex min-h-12 items-center whitespace-nowrap rounded-md px-2 text-base font-medium transition-colors md:px-3",
+                  "after:pointer-events-none after:absolute after:inset-x-2 after:bottom-2 after:h-0.5 after:rounded-full after:bg-primary after:transition-opacity md:after:inset-x-3",
                   current
-                    ? "border-primary text-primary"
-                    : "border-transparent text-muted-foreground hover:text-foreground",
+                    ? "text-foreground after:opacity-100"
+                    : "text-muted-foreground after:opacity-0 hover:bg-canvas-soft hover:text-foreground",
                 )}
               >
                 {itemLabel}

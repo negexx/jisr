@@ -12,9 +12,9 @@ export async function SiteHeader({ locale }: { locale: AppLocale }) {
   // Read raw: the `{count}` placeholder is filled in the browser, once the saved list is known.
   const savedCountTemplate: unknown = tNav.raw("savedCount");
   return (
-    <header className="border-b border-border">
+    <header className="sticky top-0 z-50 border-b border-border bg-white/70 backdrop-blur">
       <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-x-4 px-4 md:px-6 lg:flex-nowrap">
-        <Link href="/" className="flex min-h-12 items-center gap-2 text-lg font-semibold">
+        <Link href="/" className="flex min-h-16 items-center gap-2 text-lg font-semibold">
           <bdi>{t("siteName")}</bdi>
           <span lang="ar" className="font-normal text-muted-foreground">
             {t("siteNameArabic")}
