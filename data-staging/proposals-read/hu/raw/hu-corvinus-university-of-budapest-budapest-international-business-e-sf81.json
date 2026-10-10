@@ -1,0 +1,98 @@
+{
+  "slug": "hu-corvinus-university-of-budapest-budapest-international-business-e-sf81",
+  "programmePage": null,
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+          "quote": "English language proficiency Corvinus accepts the following proof of English language proficiency (minimum equivalent B2 level) submitted no later than 1 August:"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 700000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en",
+          "quote": "International Business 1 980 000 Ft 7 000 €"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.uni-corvinus.hu/post/landing-page/application/application-information/?lang=en",
+          "quote": "To apply as an international student, choose your application route and apply online on the dedicated platform as per below."
+        },
+        {
+          "url": "https://www.uni-corvinus.hu/post/landing-page/application/application-information/?lang=en",
+          "quote": "Step 1 Submit the online application form on DreamApply and pay the application fee (100 Euro)."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+            "quote": "English language proficiency Corvinus accepts the following proof of English language proficiency (minimum equivalent B2 level) submitted no later than 1 August:"
+          },
+          {
+            "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+            "quote": "IELTS language certificate, minimum score: 6.0"
+          },
+          {
+            "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+            "quote": "TOEFL language certificate, minimum score: 65"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Pour les candidats payants, un examen écrit de mathématiques en ligne peut être exigé; il comporte 26 questions et dure 60 minutes.",
+          "en": "Fee-paying applicants may need to take an online written mathematics exam; it has 26 questions and lasts 60 minutes."
+        },
+        "evidence": [
+          {
+            "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+            "quote": "If you do not or will not have any of these qualifications by the time of enrolment, you can take the Corvinus mathematics entrance exam instead."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un score seuil (points) est fixé par le doyen; les candidats au-dessus du seuil sont acceptés conditionnellement, les seuils variant chaque année.",
+          "en": "A points threshold is set by the Dean; applicants scoring above it are conditionally accepted, and thresholds vary from year-to-year."
+        },
+        "evidence": [
+          {
+            "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+            "quote": "For each programme, the Dean will set a points threshold. Applicants scoring above the points threshold will be conditionally accepted – the points thresholds can vary from year-to-year and programme-to-programme."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The programme's own page was not supplied, so programmePage is null. Tuition: the fees table lists the amount for non-EEA applicants in EUR (7 000 €) for the named bachelor's programme; the EEA figure (1 980 000 Ft) does not apply to a Moroccan applicant. Intakes and deadlines: pages state that applications for the 2027/28 academic year open in October 2026, but no deadline for non-EU / foreign-qualification applicants is given, so no intake was recorded."
+}

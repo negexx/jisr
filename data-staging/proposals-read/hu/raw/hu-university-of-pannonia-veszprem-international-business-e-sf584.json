@@ -1,0 +1,73 @@
+{
+  "slug": "hu-university-of-pannonia-veszprem-international-business-e-sf584",
+  "programmePage": "https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/",
+          "quote": "For those who begin their studies in 2020 or later: 6+1+1 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/",
+          "quote": "Language and form of training English Full time"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 400000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/",
+          "quote": "The tuition fee for NON EU Students is 4000 EUR/Academic year (2 semesters)"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/",
+            "quote": "B2 level English language certificate (TOEFL/IELTS/ESOL/BEC/ECL/PTE/FCE/CAE/TELC/TOEIC/Euroexam)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les conditions d'admission pour les candidats internationaux (diplôme de fin d'études secondaires) sur la page d'admission du programme.",
+          "en": "Check the admission requirements for international applicants (completed secondary school studies) on the programme's admission page."
+        },
+        "evidence": [
+          {
+            "url": "https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/",
+            "quote": "Entry requirements Finished secondary school studies."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The admission page shows the admission period 'between 15th of August and 15th of October' for Spring 2027, but it lists only Master's programmes as available courses, not this Bachelor programme, so no intake dates were extracted for it. The programme page only says 'Admission is closed'. No document list is given on the pages."
+}

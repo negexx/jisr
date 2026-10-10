@@ -1,0 +1,108 @@
+{
+  "slug": "hu-university-of-pecs-pecs-computer-science-sf643",
+  "programmePage": "https://www.ttk.pte.hu/en/admission/english-degree-programs/bsc-study-programs/computer-science-bsc/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.ttk.pte.hu/en/admission/english-degree-programs/bsc-study-programs/computer-science-bsc/",
+          "quote": "Duration of training: Full-time 3 years/6 semesters (180 Credits)"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 500000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.ttk.pte.hu/en/admission/english-degree-programs/bsc-study-programs/computer-science-bsc/",
+          "quote": "Tuition Fee: 5000 Euro/academic year (2 semesters)"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 6,
+            "day": 30
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.ttk.pte.hu/en/admission/english-degree-programs/bsc-study-programs/computer-science-bsc/",
+          "quote": "Deadline of application: 30th of June"
+        },
+        {
+          "url": "https://www.ttk.pte.hu/en/admission",
+          "quote": "Fee-paying applicants: 1st of December - 30th of June (PhD: 31st of May)"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.ttk.pte.hu/en/admission",
+          "quote": "Fee-paying: apply.pte.hu"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.ttk.pte.hu/en/admission/english-degree-programs/bsc-study-programs/computer-science-bsc/",
+            "quote": "Demonstrated evidence of an adequate level of English proficiency – B2 intermediate level"
+          },
+          {
+            "url": "https://www.ttk.pte.hu/en/admission/english-degree-programs/bsc-study-programs/computer-science-bsc/",
+            "quote": "English: good understanding and adequate level of communication are needed (B2 level)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée est exigé : test écrit de mathématiques (Moodle, 45 min) puis examen oral (Teams) si le test est réussi.",
+          "en": "An entrance exam is required: written mathematics test (Moodle, 45 min), then oral exam (Teams) if the written test is passed."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ttk.pte.hu/en/admission/english-degree-programs/bsc-study-programs/computer-science-bsc/",
+            "quote": "Entrance exam 2 parts: Written part: Pre-admission Mathematics test: A written test, conducted online, on Moodle platform"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le candidat doit avoir 18 ans ou plus le jour de l'inscription au programme BSc.",
+          "en": "The applicant must be 18 or older by the day of enrolment to the BSc programme."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ttk.pte.hu/en/admission/english-degree-programs/bsc-study-programs/computer-science-bsc/",
+            "quote": "The applicant must turn 18 years old or should be older by the day of enrolment to the current BSc study program"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "teachingLanguages : la page du programme ne dit pas explicitement la langue d'enseignement (elle mentionne seulement 'Ungarian language' comme cours) ; non inclus. Les frais de dossier (140 EUR) sont non remboursables et ne sont pas des frais de scolarité. La date limite du 30 juin est mensuelle sans année sur la page programme ; la page admission donne aussi une période '1st of December - 30th of June' pour les candidats payants."
+}

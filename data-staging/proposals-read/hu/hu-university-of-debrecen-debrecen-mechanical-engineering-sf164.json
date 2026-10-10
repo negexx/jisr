@@ -1,0 +1,57 @@
+{
+  "slug": "hu-university-of-debrecen-debrecen-mechanical-engineering-sf164",
+  "programmePage": "https://www.edu.unideb.hu/p/mechanical-engineering-bsc",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/mechanical-engineering-bsc",
+          "quote": "Language requirements: All courses are taught in English; therefore, a B2 level English proficiency is required."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 750000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/mechanical-engineering-bsc",
+          "quote": "The tuition fee is 7,500 USD / year for this program."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "The following documents need to be submitted during the application procedure by all applicants through our online application platform"
+        }
+      ]
+    }
+  },
+  "notes": "The quoted fee is in USD, not EUR or HUF; it is the fee the programme's own page states for this programme. An institution-wide tuition table also lists Mechanical Engineering * 7 semesters 7,500 USD/year. The application deadline '15th June' carries no year, so it is recorded as a recurring deadline; the page also says the programme starts in September of each year. The entrance exam requirement is recorded as a manual_check because the pages do not state numeric grade thresholds.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Admission requires a high school certificate and passing entrance exams in Mathematics and Physics.",
+          "en": "Admission requires a high school certificate and passing entrance exams in Mathematics and Physics."
+        },
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/mechanical-engineering-bsc",
+            "quote": "Admission requires a high school certificate and passing entrance exams in Mathematics and Physics."
+          }
+        ]
+      }
+    ]
+  }
+}

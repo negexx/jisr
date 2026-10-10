@@ -1,0 +1,55 @@
+{
+  "slug": "hu-john-von-neumann-university-kecskemet-vehicle-engineering-sf505",
+  "programmePage": null,
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://nje.hu/en/international-students/admission/tuition-fees-and-refund-policy",
+          "quote": "Vehicle Engineering BSc EUR 3,000 7"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 300000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://nje.hu/en/international-students/admission/tuition-fees-and-refund-policy",
+          "quote": "Vehicle Engineering BSc EUR 3,000 7"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://nje.hu/en/education/application-guideline",
+          "quote": "Register and complete the online application form on our application portal: John von Neumann University - Apply Online."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Après présélection, entretien en ligne portant sur la motivation et les compétences en anglais ; certains programmes peuvent inclure un test de mathématiques de niveau lycée.",
+          "en": "After preselection, an online interview about motivation and English skills; some programmes may include a test at high-school-level mathematics."
+        },
+        "evidence": [
+          {
+            "url": "https://nje.hu/en/education/application-guideline",
+            "quote": "If your application meets the initial requirements, you will be invited for an online interview."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "No page supplied is the programme's own page. Duration: the tuition table lists 'Vehicle Engineering BSc EUR 3,000 7', i.e. a semester fee and 7 semesters (3.5 years); the general 'Semesters' column is used for the year count. Tuition here is the per-semester fee for this programme as shown in the institution's tuition table for international students; the 'NEW PROGRAMME! MECHANICAL ENGINEERING BSc' deadline (30 July) is about Mechanical Engineering, not this programme, and has no year, so no intake is given. The application guideline page describes applying to the university online ('our application portal'), hence hu-university-direct for a self-financed applicant. Stipendium Hungaricum is mentioned only as a scholarship programme, not as the route for self-financed admission."
+}

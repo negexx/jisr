@@ -1,0 +1,94 @@
+{
+  "slug": "hu-university-of-debrecen-debrecen-vehicle-engineering-sf181",
+  "programmePage": "https://www.edu.unideb.hu/p/vehicle-engineering-bsc",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/vehicle-engineering-bsc",
+          "quote": "All courses are taught in English; therefore, a B2 level English proficiency is required."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 700000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/vehicle-engineering-bsc",
+          "quote": "The tuition fee for this program is 7,000 USD/Year"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "The following documents need to be submitted during the application procedure by all applicants through our online application platform - that you can reach here:"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des frais de scolarité indiqué (7 000 USD/an) figure sur la page du programme et sur la page des frais de scolarité (7 000 USD/year). La page d'admission générale indique que la candidature se fait via la plateforme en ligne de l'université, mais elle ne précise pas de date limite pour les candidats internationaux ; la date du 15 mai 2027 concerne l'intake de septembre 2027. La page d'admission mentionne aussi que les frais de dossier (150 USD) et d'examen d'entrée (350 USD) doivent être payés. La langue d'enseignement est l'anglais. Le programme dure 3,5 ans (7 semestres, 210 ECTS).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/vehicle-engineering-bsc",
+            "quote": "Applicants must have an English proficiency of at least B2 level as the program is fully taught in English."
+          },
+          {
+            "url": "https://www.edu.unideb.hu/p/vehicle-engineering-bsc",
+            "quote": "a TOEFL test with a minimum score of 513 (Paper-Based)"
+          },
+          {
+            "url": "https://www.edu.unideb.hu/p/vehicle-engineering-bsc",
+            "quote": "an IELTS test with a minimum score of 5.5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée en ligne en mathématiques et en physique est requis.",
+          "en": "An online entrance exam in Mathematics and Physics is required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/vehicle-engineering-bsc",
+            "quote": "Yes, admission is based on a high school certificate and online entrance exams in Mathematics and Physics."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des frais de dossier de 150 USD et des frais d'examen d'entrée de 350 USD sont à payer.",
+          "en": "An application fee of 150 USD and an entrance procedure fee of 350 USD must be paid."
+        },
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/vehicle-engineering-bsc",
+            "quote": "This is supplemented by the application fee of $150 USD (one-time) and the entrance procedure fee of $350 USD that covers the examination and interview."
+          }
+        ]
+      }
+    ]
+  }
+}

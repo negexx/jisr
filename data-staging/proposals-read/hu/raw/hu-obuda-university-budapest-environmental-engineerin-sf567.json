@@ -1,0 +1,37 @@
+{
+  "slug": "hu-obuda-university-budapest-environmental-engineerin-sf567",
+  "programmePage": null,
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 290000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://uni-obuda.hu/tuition-fees/",
+          "quote": "Environmental Engineering Sustainable Energy Management 2,000 EUR 2,900 EUR"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Aucune condition d'admission specifique (niveau de langue, matieres, notes) n'est indiquee pour ce programme sur les pages fournies ; verifier aupres de l'universite.",
+          "en": "No programme-specific admission condition (language level, subjects, grades) is stated for this programme on the supplied pages; check with the university."
+        },
+        "evidence": [
+          {
+            "url": "https://uni-obuda.hu/admission/",
+            "quote": "ADMISSION AVAILABLE PROGRAMS APPLICATION DEADLINES REQUIRED DOCUMENTS Tuition fees"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The supplied pages are institution-wide (home, tuition fees, application deadlines, how to apply); no page is specific to the Environmental Engineering BSc programme. Tuition: the fee table lists Environmental Engineering (specialisation Sustainable Energy Management) at 2,900 EUR/semester for Non-EEA students; the same row pairs it with 2,000 EUR/semester for EU/EEA, which is not used. Application deadline 31 May 2026 is on the general \"How to apply\" page without saying it is for non-EU/foreign-qualification applicants, so it is omitted. No duration, teaching language, application channel or document list could be quoted for this programme."
+}

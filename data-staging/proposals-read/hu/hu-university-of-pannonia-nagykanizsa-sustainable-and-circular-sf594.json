@@ -1,0 +1,60 @@
+{
+  "slug": "hu-university-of-pannonia-nagykanizsa-sustainable-and-circular-sf594",
+  "programmePage": "https://pen.uni-pannon.hu/en/sustainable-and-circular-economy-based-tourism/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://pen.uni-pannon.hu/en/sustainable-and-circular-economy-based-tourism/",
+          "quote": "Duration: 8 semester (6 semesters of academic studies and 2 semesters of professional internship)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://pen.uni-pannon.hu/en/sustainable-and-circular-economy-based-tourism/",
+          "quote": "Special features: Full-time program in English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 160000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://pen.uni-pannon.hu/en/sustainable-and-circular-economy-based-tourism/",
+          "quote": "for non-EU students: 1,600 EUR/semester"
+        }
+      ]
+    }
+  },
+  "notes": "The documents fact value is invalid and must be ignored: the supplied pages do NOT name it. Evidence quote 'high school certificate' was not found in any supplied page text. No documents list appears anywhere in the supplied pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://pen.uni-pannon.hu/en/sustainable-and-circular-economy-based-tourism/",
+            "quote": "Language requirements: English proficiency at CEFR level B2 or above, demonstrated by Cambridge B2 First (FCE) or C1 Advanced (CAE), IELTS 5.5 or above, TOEFL iBT 4 or above."
+          }
+        ]
+      }
+    ]
+  }
+}

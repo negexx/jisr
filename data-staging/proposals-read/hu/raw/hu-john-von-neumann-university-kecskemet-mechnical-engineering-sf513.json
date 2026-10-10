@@ -1,0 +1,154 @@
+{
+  "slug": "hu-john-von-neumann-university-kecskemet-mechnical-engineering-sf513",
+  "programmePage": "https://nje.hu/en/international-students/admission/tuition-fees-and-refund-policy",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://nje.hu/en/international-students/admission/tuition-fees-and-refund-policy",
+          "quote": "NEW PROGRAMME! MECHANICAL ENGINEERING BSc- tuition fee: EUR 3000/semester, duration: 7 semesters"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 300000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://nje.hu/en/international-students/admission/tuition-fees-and-refund-policy",
+          "quote": "NEW PROGRAMME! MECHANICAL ENGINEERING BSc- tuition fee: EUR 3000/semester, duration: 7 semesters"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 30
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://nje.hu/en/international-students/admission/tuition-fees-and-refund-policy",
+          "quote": "The deadline for the application for the first year of the course is 30 July at the latest."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://nje.hu/en/education/application-guideline",
+          "quote": "Register and complete the online application form on our application portal: John von Neumann University - Apply Online."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Certificat/Diplôme d'études secondaires avec résultats d'examen finaux",
+            "en": "Secondary school certificate/diploma with final exam results"
+          },
+          "quotedAs": "Copy of your secondary school certificate/diploma with final exam results",
+          "translationRequired": true
+        },
+        {
+          "slug": "school-transcript",
+          "name": {
+            "fr": "Relevé de notes du secondaire",
+            "en": "Secondary school transcript"
+          },
+          "quotedAs": "Copy of your secondary school transcript",
+          "translationRequired": true
+        },
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV",
+            "en": "CV"
+          },
+          "quotedAs": "CV and motivation letter",
+          "translationRequired": null
+        },
+        {
+          "slug": "motivation-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Motivation letter"
+          },
+          "quotedAs": "CV and motivation letter",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport",
+          "name": {
+            "fr": "Copie de la page photo du passeport valide",
+            "en": "Copy of the photo page(s) of valid passport"
+          },
+          "quotedAs": "Copy of the photo page(s) of your valid passport (must be valid for at least 6 months)",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://nje.hu/en/education/application-guideline",
+          "quote": "Copy of your secondary school certificate/diploma with final exam results (original and translated if not in English or Hungarian)."
+        },
+        {
+          "url": "https://nje.hu/en/education/application-guideline",
+          "quote": "Copy of your secondary school transcript (original and translated if not in English or Hungarian)."
+        },
+        {
+          "url": "https://nje.hu/en/education/application-guideline",
+          "quote": "CV and motivation letter."
+        },
+        {
+          "url": "https://nje.hu/en/education/application-guideline",
+          "quote": "Copy of the photo page(s) of your valid passport (must be valid for at least 6 months)."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Après l'acceptation initiale, un entretien en ligne est prévu pour discuter de votre motivation et de votre niveau d'anglais. Préparez-vous.",
+          "en": "After initial acceptance, an online interview is planned to discuss your motivation and your English language skills. Be prepared."
+        },
+        "evidence": [
+          {
+            "url": "https://nje.hu/en/education/application-guideline",
+            "quote": "If your application meets the initial requirements, you will be invited for an online interview. Be prepared to discuss your motivation and your English language skills."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Certains programmes peuvent inclure un test, souvent axé sur les mathématiques au niveau du lycée. Vérifiez si c'est le cas pour ce programme.",
+          "en": "Some programmes may also include a test, often focusing on high school-level mathematics. Check whether this applies to this programme."
+        },
+        "evidence": [
+          {
+            "url": "https://nje.hu/en/education/application-guideline",
+            "quote": "Some programs may also include a test, often focusing on high school-level mathematics."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Durée et frais de scolarité du Mechanical Engineering BSc trouvés uniquement sur la page des frais de scolarité. La date limite du 30 juillet est indiquée comme sans année; elle est donc enregistrée comme échéance récurrente. Les frais de dossier (EUR 200) et les frais de dortoir ne sont pas inclus dans les frais de scolarité."
+}

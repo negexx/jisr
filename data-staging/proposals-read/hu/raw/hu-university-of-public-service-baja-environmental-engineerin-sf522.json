@@ -1,0 +1,46 @@
+{
+  "slug": "hu-university-of-public-service-baja-environmental-engineerin-sf522",
+  "programmePage": "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-environmental-engineering",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-environmental-engineering",
+          "quote": "The aim of the 7-semester course is to train environmental engineers"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez sur le site si des frais de scolarité s'appliquent ; la page ne donne aucun montant pour les étudiants auto-financés.",
+          "en": "Check the site whether tuition fees apply; the page gives no amount for self-financed students."
+        },
+        "evidence": [
+          {
+            "url": "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-environmental-engineering",
+            "quote": "You can apply as a TUITION FEE PAYING student by clicking here."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La date limite du 2 février 2026 concerne la Diaspora Scholarship ; vérifiez la procédure pour les candidats auto-financés.",
+          "en": "The 2 February 2026 deadline applies to the Diaspora Scholarship; check the procedure for self-financed applicants."
+        },
+        "evidence": [
+          {
+            "url": "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-environmental-engineering",
+            "quote": "Diaspora Scholarship - Application is open! Application deadline: 02 February 2026"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "No tuition amount, language of instruction, intake dates for self-financed applicants, application channel, or document list for self-financed international applicants is stated on the supplied page. The only dated deadline (02 February 2026) is tied to the Diaspora Scholarship. Stipendium Hungaricum and other scholarship application periods are stated as ended."
+}

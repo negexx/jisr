@@ -1,0 +1,60 @@
+{
+  "slug": "hu-budapest-metropolitan-university-budapest-commerce-and-marketing-sf473",
+  "programmePage": "https://www.metubudapest.hu/programs/commerce-and-marketing-bsc",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.metubudapest.hu/programs/commerce-and-marketing-bsc",
+          "quote": "Course language English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 350000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.metubudapest.hu/programs/commerce-and-marketing-bsc",
+          "quote": "3500 EUR/semester for non-EU students"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier que la moyenne du lycée et de l'examen final est supérieure à 50 %.",
+          "en": "Check that the secondary school GPA and final exam average are above 50%."
+        },
+        "evidence": [
+          {
+            "url": "https://www.metubudapest.hu/programs/commerce-and-marketing-bsc",
+            "quote": "GPA: above 50% - annually and in the final exam"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier que la note de mathématiques au lycée est supérieure à 60 %.",
+          "en": "Check that the high school math grade is above 60%."
+        },
+        "evidence": [
+          {
+            "url": "https://www.metubudapest.hu/programs/commerce-and-marketing-bsc",
+            "quote": "For BSc programs: high school math grade above 60%"
+          }
+        ]
+      }
+    ]
+  }
+}

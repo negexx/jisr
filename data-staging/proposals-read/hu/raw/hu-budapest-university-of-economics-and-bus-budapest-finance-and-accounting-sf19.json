@@ -1,0 +1,57 @@
+{
+  "slug": "hu-budapest-university-of-economics-and-bus-budapest-finance-and-accounting-sf19",
+  "programmePage": "https://uni-bge.hu/en/finance-and-accounting-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://uni-bge.hu/en/finance-and-accounting-bsc",
+          "quote": "Finance and Accounting Bsc 7 semesters 690,000 HUF 3000 EUR"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://uni-bge.hu/en/finance-and-accounting-bsc",
+          "quote": "The programme taught at our campus in Zugló and is also offered full-time in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 300000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://uni-bge.hu/en/finance-and-accounting-bsc",
+          "quote": "Finance and Accounting Bsc 7 semesters 690,000 HUF 3000 EUR"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission sur le site de l'université : la page « How to apply? » ne donne aucune procédure.",
+          "en": "Check the admission requirements on the university website: the 'How to apply?' page gives no procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://uni-bge.hu/en/how-to-apply",
+            "quote": "How to apply? How to apply?"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Le tableau des frais de scolarité indique 3000 EUR par semestre pour les étudiants non-UE (colonne « Tuition fee for non-EU students per semester »). Aucune date de candidature n'est donnée. Aucune plateforme de candidature n'est nommée sur les pages fournies, donc applicationChannel est laissé de côté."
+}

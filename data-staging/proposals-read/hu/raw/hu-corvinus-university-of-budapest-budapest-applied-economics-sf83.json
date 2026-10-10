@@ -1,0 +1,169 @@
+{
+  "slug": "hu-corvinus-university-of-budapest-budapest-applied-economics-sf83",
+  "programmePage": null,
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 700000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en",
+          "quote": "Applied Economics 1 980 000 Ft 7 000 €"
+        },
+        {
+          "url": "https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en",
+          "quote": "Corvinus offers affordable tuition fees for self-funded degree seeking international students, which remain the same for the duration of studies."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": "2026-10-01",
+          "applicationDeadline": null,
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uni-corvinus.hu/post/landing-page/application/application-information/?lang=en",
+          "quote": "The online admission platform for the Academic year 2027/28 will open in October 2026."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.uni-corvinus.hu/post/landing-page/application/application-information/?lang=en",
+          "quote": "Submit the online application form on DreamApply and pay the application fee (100 Euro)."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "passport",
+          "name": {
+            "fr": "Passeport valide ou carte d'identité nationale",
+            "en": "Valid passport or national ID"
+          },
+          "quotedAs": "Valid passport or national ID",
+          "translationRequired": null
+        },
+        {
+          "slug": "secondary-education-certificate",
+          "name": {
+            "fr": "Preuve d'études secondaires : relevés de notes et certificat final originaux et traduits",
+            "en": "Proof of secondary education: original and translated transcripts and final certificate"
+          },
+          "quotedAs": "Proof of secondary education: original and translated transcripts and final certificate",
+          "translationRequired": true
+        },
+        {
+          "slug": "application-fee",
+          "name": {
+            "fr": "Frais de candidature",
+            "en": "Application fee"
+          },
+          "quotedAs": "Application fee (only for fee-paying applicants)",
+          "translationRequired": null
+        },
+        {
+          "slug": "motivation-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Letter of motivation"
+          },
+          "quotedAs": "Letter of motivation (only for Stipendium Hungaricum or Hungarian Diaspora scholarship applicants)",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+          "quote": "Valid passport or national ID (EU applicants)"
+        },
+        {
+          "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+          "quote": "Proof of secondary education: original and translated transcripts and final certificate."
+        },
+        {
+          "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+          "quote": "Application fee (only for fee-paying applicants)"
+        },
+        {
+          "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+          "quote": "Letter of motivation (only for Stipendium Hungaricum or Hungarian Diaspora scholarship applicants)"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+            "quote": "Corvinus accepts the following proof of English language proficiency (minimum equivalent B2 level) submitted no later than 1 August:"
+          },
+          {
+            "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+            "quote": "IELTS language certificate, minimum score: 6.0"
+          },
+          {
+            "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+            "quote": "TOEFL language certificate, minimum score: 65"
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": [
+          "mathematics"
+        ],
+        "mode": "all",
+        "evidence": [
+          {
+            "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+            "quote": "If you are an applicant for one of the following, you will be required to meet the Mathematics requirements:"
+          },
+          {
+            "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+            "quote": "BSc Applied Economics"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Si vous n'avez pas de qualification en mathématiques acceptée, vous pouvez passer l'examen d'entrée écrit de mathématiques de Corvinus. Chaque programme a un seuil de points fixé par le doyen.",
+          "en": "If you do not have an accepted mathematics qualification, you can take the Corvinus online written mathematics entrance exam. Each programme has a points threshold set by the Dean."
+        },
+        "evidence": [
+          {
+            "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+            "quote": "If you do not or will not have any of these qualifications by the time of enrolment, you can take the Corvinus mathematics entrance exam instead."
+          },
+          {
+            "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+            "quote": "For each programme, the Dean will set a points threshold."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The pages do not contain a dedicated page for the Applied Economics programme; programmePage is null. Duration and teaching language are not stated in the supplied pages. The only tuition figure for Applied Economics is the non-EEA (EUR) fee of 7 000 €/year; the same table shows 1 980 000 Ft for EEA applicants. An English B2 certificate is required for this Bachelor's programme; accepted tests also include Cambridge FCE, TOEFL iBT (72), TOEIC (785), Duolingo (100), SkillCert EGP (96), A-level/IB, Hungarian advanced Matura, GCSE/IGCSE, and INTO/Study Group/Kaplan/Navitas/Corvinus Preparatory. The application platform is DreamApply, which is not one of the allowed channel codes; hu-university-direct was chosen because the page says to apply online on the university's dedicated platform."
+}

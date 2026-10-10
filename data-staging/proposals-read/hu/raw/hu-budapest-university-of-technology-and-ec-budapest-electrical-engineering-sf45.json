@@ -1,0 +1,156 @@
+{
+  "slug": "hu-budapest-university-of-technology-and-ec-budapest-electrical-engineering-sf45",
+  "programmePage": "https://www.vik.bme.hu/en/education/programs/",
+  "facts": {
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "All applications must be submitted on-line (please follow the instructions under the link)."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "application-form",
+          "name": {
+            "fr": "Formulaire de candidature",
+            "en": "Application form"
+          },
+          "quotedAs": "application form",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport-copy",
+          "name": {
+            "fr": "Copie du passeport",
+            "en": "Passport copy"
+          },
+          "quotedAs": "passport copy",
+          "translationRequired": null
+        },
+        {
+          "slug": "secondary-high-school-reports",
+          "name": {
+            "fr": "Bulletins de l'enseignement secondaire",
+            "en": "Secondary high school reports"
+          },
+          "quotedAs": "secondary high school reports",
+          "translationRequired": true
+        },
+        {
+          "slug": "general-certificate-of-education",
+          "name": {
+            "fr": "Certificat général d'éducation (G.C.E.) ou diplôme équivalent",
+            "en": "General Certificate of Education (G.C.E.) or any equivalent secondary high school diploma"
+          },
+          "quotedAs": "general certificate of education - G.C.E. or any equivalent secondary high school diploma",
+          "translationRequired": true
+        },
+        {
+          "slug": "transcripts-degrees-diplomas",
+          "name": {
+            "fr": "Relevés de notes officiels, grades/diplômes de tout enseignement supérieur déjà complété",
+            "en": "Official transcripts, degrees/diplomas of any higher education already completed"
+          },
+          "quotedAs": "official transcripts, degrees/diplomas of any higher education already completed",
+          "translationRequired": true
+        },
+        {
+          "slug": "proof-of-english-language-proficiency",
+          "name": {
+            "fr": "Preuve de compétence en langue anglaise",
+            "en": "Proof of English language proficiency"
+          },
+          "quotedAs": "Proof of English language proficiency",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "Curriculum vitae (autobiographie/résumé)",
+            "en": "Curriculum vitae (autobiography/résumé)"
+          },
+          "quotedAs": "curriculum vitae (autobiography/résumé)",
+          "translationRequired": null
+        },
+        {
+          "slug": "two-letters-of-recommendation",
+          "name": {
+            "fr": "Deux lettres de recommandation",
+            "en": "Two letters of recommendation"
+          },
+          "quotedAs": "two letters of recommendation",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "application form"
+        },
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "passport copy"
+        },
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "secondary high school reports"
+        },
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "general certificate of education - G.C.E. or any equivalent secondary high school diploma"
+        },
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "official transcripts, degrees/diplomas of any higher education already completed"
+        },
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "Proof of English language proficiency"
+        },
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "curriculum vitae (autobiography/résumé)"
+        },
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "two letters of recommendation"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test de placement en mathématiques, physique et anglais est obligatoire pour tous les candidats au BSc.",
+          "en": "A placement test in Mathematics, Physics, and English is mandatory for all BSc applicants."
+        },
+        "evidence": [
+          {
+            "url": "https://www.vik.bme.hu/en/education/admission/",
+            "quote": "The placement test is mandatory for all applicants who wish to enter into a BSc degree program at BME VIK."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un certificat d'anglais est recommandé pour le BSc (niveau non précisé).",
+          "en": "An English certificate is recommended for BSc (level not specified)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.vik.bme.hu/en/education/admission/",
+            "quote": "Proof of English language proficiency: TOEFL iBT score of 4.0, or PBT score 550 or Cambridge First Certificate \"B\" or IELTS score of 5.0 (recommended for BSc, required for MSc and PhD) or Pearson PTE min. 51"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "No tuition fee is stated on the supplied pages."
+}

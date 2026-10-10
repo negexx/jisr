@@ -1,0 +1,50 @@
+{
+  "slug": "hu-university-of-nyiregyhaza-nyiregyhaza-computer-science-sf536",
+  "programmePage": null,
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 245000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://english.nye.hu/en/node/319",
+          "quote": "Computer Science BSc 6 2450 EUR *** 1800 EUR ***"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition fee quote is programme-specific and lists both the non-EU fee (2450 EUR/semester) and the EU/EEA/Türkiye fee; the non-EU figure is given. The application deadline shown for the September 2026 intake (30 June 2026) is general and no year is stated for a non-EU-specific deadline for the September 2027 intake, so only the opening in December 2026 is recorded; the entry requirement details (language level, subject prerequisites) are not given on these pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Frais de dossier : 100 EUR, non remboursables, à joindre à la candidature.",
+          "en": "Application fee: 100 EUR, non-refundable, to be submitted with the application."
+        },
+        "evidence": [
+          {
+            "url": "https://english.nye.hu/en/node/30",
+            "quote": "Proof of application fee payment slip (100 EUR, non-refundable)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Entretien oral en ligne (Microsoft Teams) sur les compétences en anglais, l'orientation professionnelle et la motivation.",
+          "en": "Short oral interview via internet (Microsoft Teams) to check English skills, professional orientation and motivation."
+        },
+        "evidence": [
+          {
+            "url": "https://english.nye.hu/en/node/30",
+            "quote": "Entrance exam: Short oral interview via internet (platform: Microsoft Teams) to check the English skills, professional orientation and motivation)"
+          }
+        ]
+      }
+    ]
+  }
+}

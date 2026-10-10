@@ -1,0 +1,184 @@
+{
+  "slug": "hu-university-of-debrecen-debrecen-electrical-engineering-sf146",
+  "programmePage": "https://www.edu.unideb.hu/p/electrical-engineering-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/electrical-engineering-bsc",
+          "quote": "Duration of the program: This is a 3.5-year program consisting of 7 academic semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/electrical-engineering-bsc",
+          "quote": "All courses are taught in English; therefore, a B2 level English proficiency is required."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 700000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/electrical-engineering-bsc",
+          "quote": "The tuition fee for this program is 7,000 USD/Year"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2027-05-15",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "for September 2027 intake (all programs): 15th May 2027"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "The following documents need to be submitted during the application procedure by all applicants through our online application platform - that you can reach here:"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "application-form",
+          "name": {
+            "fr": "Formulaire de candidature rempli",
+            "en": "Filled-in application form"
+          },
+          "quotedAs": "Valid, filled-in application form",
+          "translationRequired": null
+        },
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Certificat de fin d'études secondaires",
+            "en": "Certificate of education"
+          },
+          "quotedAs": "certificate of education",
+          "translationRequired": true
+        },
+        {
+          "slug": "passport",
+          "name": {
+            "fr": "Passeport",
+            "en": "Passport"
+          },
+          "quotedAs": "Certificate or proof of citizenship and/or permanent residence (e.g. passport)",
+          "translationRequired": null
+        },
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV court",
+            "en": "Short resume/CV"
+          },
+          "quotedAs": "Short Resume/CV",
+          "translationRequired": null
+        },
+        {
+          "slug": "medical-certificate",
+          "name": {
+            "fr": "Certificat médical",
+            "en": "Medical certificate"
+          },
+          "quotedAs": "Medical Certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "application-fee-receipt",
+          "name": {
+            "fr": "Reçu de paiement des frais de dossier",
+            "en": "Bank receipt for the application fee"
+          },
+          "quotedAs": "Bank receipt about the transfer of the application fee of 150 USD",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "Valid, filled-in application form (to be filled online here);"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/electrical-engineering-bsc",
+            "quote": "a TOEFL test with a minimum score of 513 (Paper-Based)."
+          },
+          {
+            "url": "https://www.edu.unideb.hu/p/electrical-engineering-bsc",
+            "quote": "an IELTS test with a minimum score of 5.5."
+          },
+          {
+            "url": "https://www.edu.unideb.hu/p/electrical-engineering-bsc",
+            "quote": "The language proficiency of applicants must be proven with a standardized, at least intermediate (B2) level language certificate, obtained at a proctored exam."
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": [
+          "mathematics",
+          "physics-chemistry"
+        ],
+        "mode": "all",
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/electrical-engineering-bsc",
+            "quote": "Admission requires a high school certificate and passing entrance exams in Mathematics and Physics."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Contrôle manuel : Les candidats doivent passer des examens d'entrée en mathématiques et en physique ; pour plus d'informations, consultez le site web de l'université.",
+          "en": "Manual check: Applicants must pass entrance exams in Mathematics and Physics; for further information, see the university website."
+        },
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/electrical-engineering-bsc",
+            "quote": "Yes, admission is based on a high school certificate and online entrance exams in mathematics and Physics."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition and fees are quoted in USD, which is outside the standard currency list; the pages state \"7,000 USD/Year\" directly, so no conversion was made. The generic deadline \"for September 2027 intake (all programs): 15th May 2027\" was used as no programme-specific date with a year is given (the programme page states \"The application deadline is 15th June.\" without year)."
+}
