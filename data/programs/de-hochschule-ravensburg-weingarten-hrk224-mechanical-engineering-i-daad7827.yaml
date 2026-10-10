@@ -34,9 +34,12 @@ tuition:
   source: daad
   info_kind: official
 intakes:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - startDate: null
+      applicationOpens: 2026-12-01
+      applicationDeadline: 2027-01-15
+  source: page-1
+  info_kind: official
 applicationChannel:
   value: de-university-direct
   source: page-1

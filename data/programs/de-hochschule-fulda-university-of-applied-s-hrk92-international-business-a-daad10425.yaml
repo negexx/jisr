@@ -27,9 +27,12 @@ teachingLanguages:
   source: daad
   info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-3
+  info_kind: official
 intakes:
   value:
     - startDate: null
@@ -124,3 +127,6 @@ sources:
   page-2:
     url: https://www.uni-assist.de/en/tools/info-country-by-country/details-country/country/ma/
     last_verified_at: 2026-10-09
+  page-3:
+    url: https://www.hs-fulda.de/en/international/costs-and-funding
+    last_verified_at: 2026-10-10

@@ -47,7 +47,52 @@ applicationChannel:
   source: page-3
   info_kind: official
 documents:
-  value: null
+  value:
+    - slug: application-form
+      name:
+        fr:
+          text: Formulaire de candidature signé (original)
+          status: draft
+        en:
+          text: Signed application form (original)
+          status: draft
+      translationRequired: null
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Copie certifiée conforme du certificat d'accès à l'enseignement supérieur
+          status: draft
+        en:
+          text: Certified copy of the university entrance certificate
+          status: draft
+      translationRequired: null
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Certificat de compétence en anglais (TOEFL iBT ou IELTS)
+          status: draft
+        en:
+          text: English language certificate (TOEFL iBT or IELTS)
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum vitae (CV)
+          status: draft
+        en:
+          text: Curriculum vitae (CV)
+          status: draft
+      translationRequired: null
+    - slug: passport-copy
+      name:
+        fr:
+          text: Copie du passeport
+          status: draft
+        en:
+          text: Copy of passport
+          status: draft
+      translationRequired: null
   source: programme
   info_kind: official
 requirements:

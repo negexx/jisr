@@ -34,9 +34,12 @@ tuition:
   source: page-1
   info_kind: official
 intakes:
-  value: null
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-09-28
   source: daad
-  info_kind: guidance
+  info_kind: official
 applicationChannel:
   value: de-uni-assist-vpd
   source: page-3

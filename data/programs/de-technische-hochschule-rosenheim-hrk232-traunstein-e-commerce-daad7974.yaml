@@ -19,16 +19,19 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 3.5
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
     - en
   source: daad
   info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 50000
+    currency: EUR
+    period: semester
+  source: page-3
+  info_kind: official
 intakes:
   value:
     - startDate: null
@@ -72,3 +75,6 @@ sources:
   page-2:
     url: https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme
     last_verified_at: 2026-10-04
+  page-3:
+    url: https://www.th-rosenheim.de/studium-und-weiterbildung/vor-dem-studium/was-kostet-das-studium-studierendenwerksbeitrag-und-studiengebuehren
+    last_verified_at: 2026-10-10

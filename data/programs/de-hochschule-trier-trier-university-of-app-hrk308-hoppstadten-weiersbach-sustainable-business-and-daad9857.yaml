@@ -18,13 +18,13 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9857/
 durationYears:
   value: 3
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 tuition:
   value:
     amountMinor: 0

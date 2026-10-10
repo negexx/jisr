@@ -33,8 +33,14 @@ tuition:
   source: page-1
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 7
+        day: 15
+  source: page-4
   info_kind: official
 applicationChannel:
   value: de-uni-assist
@@ -123,3 +129,6 @@ sources:
   page-3:
     url: https://www.hochschule-rhein-waal.de/en/academics/prospective-students/current-application-period/bachelors-programmes
     last_verified_at: 2026-10-04
+  page-4:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4229/
+    last_verified_at: 2026-10-10

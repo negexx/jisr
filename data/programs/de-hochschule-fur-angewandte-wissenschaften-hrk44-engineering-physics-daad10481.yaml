@@ -33,8 +33,11 @@ tuition:
   source: programme
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-09-30
+  source: page-2
   info_kind: official
 applicationChannel:
   value: de-uni-assist-vpd
@@ -119,3 +122,6 @@ sources:
   page-1:
     url: https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/21/
     last_verified_at: 2026-10-09
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10481/
+    last_verified_at: 2026-10-10
