@@ -1,0 +1,80 @@
+{
+  "slug": "nl-avans-hogeschool-07gr-bouwkunde-1001o3048",
+  "programmePage": "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+          "quote": "Duur 4 jaar, voltijd bachelor"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+          "quote": "Taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1030800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+          "quote": "Non-EEA nationality (institutional tuition fee) €10,308,-"
+        },
+        {
+          "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+          "quote": "The following tuition fees apply for the 2026-2027 academic year."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "digid",
+          "name": {
+            "fr": "DigiD",
+            "en": "DigiD"
+          },
+          "quotedAs": "DigiD",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/praktische-zaken/aanmelden",
+          "quote": "Stap 1: Vraag op tijd je DigiD aan Je hebt je DigiD nodig om je aan te melden voor een opleiding."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les étudiants non-EEE doivent s'inscrire avant le 1er mai.",
+          "en": "Non-EEA students must apply by May 1st."
+        },
+        "evidence": [
+          {
+            "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+            "quote": "Students with a non-EEA nationality are required to apply by May 1st and to pay their tuition fees in full prior to the start of the academic year."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition: The Dutch page 'Studiekosten' (https://www.avans.nl/studeren/praktische-zaken/studiekosten) lists tuition of €2,694 (wettelijk) and €10,308 (instellingscollegegeld) for 2026-2027 without tying the amount to full-time bachelor or non-EU; because the English page (https://www.avans.nl/en/int/studying/practical-information/tuition-fees) explicitly identifies €10,308 as the institutional fee for Non-EEA nationality for bachelor's and master's degree students in 2026-2027, that amount was used. Programme duration: The programme page states 'Duur 4 jaar, voltijd bachelor', so durationYears is 4. Teaching language: The programme page states 'Taal Nederlands', so teachingLanguages is ['nl']. Documents: Only the DigiD registration is required; the pages do not list specific academic documents for international applicants. Intakes: The programme page states 'Startmaand September' but no year, so no intake dates are given. Application channel: The pages mention Studielink for enrollment but do not specify it as the application channel for international applicants."
+}

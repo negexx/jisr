@@ -1,0 +1,138 @@
+{
+  "slug": "nl-de-haagse-hogeschool-27um-accountancy-1001o3550",
+  "programmePage": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+          "quote": "Duration 4 jaar"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+          "quote": "Taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1052800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld",
+          "quote": "Voldoe je niet aan bovenstaande voorwaarden, dan betaal je het instellingscollegegeld."
+        },
+        {
+          "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld",
+          "quote": "Instellingscollegegeld € 10.164,- € 10.528,-"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+          "quote": "Je aanmelden voor een opleiding doe je via Studielink."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "buitenlands of internationaal diploma",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+          "quote": "Met een buitenlands of internationaal diploma kun je toegelaten worden, mits dit diploma toelating biedt tot hbo en je een bewijs hebt van voldoende beheersing van de Nederlandse taal."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+            "quote": "Vooropleiding Vereiste profiel Havo C&M E&M N&G N&T Vwo C&M E&M N&G N&T Mbo Niveau 4, middenkader- of specialistenopleiding"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme marocain est équivalent à un diplôme néerlandais donnant accès à l'enseignement supérieur professionnel.",
+          "en": "Check if your Moroccan diploma is equivalent to a Dutch diploma granting access to higher professional education."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "De Centrale Studenten Inschrijving bepaalt of jouw buitenlandse diploma ten minste gelijkwaardig is aan dat van een (toelatinggevend) Nederlands diploma."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+            "quote": "Met een buitenlands of internationaal diploma kun je toegelaten worden, mits dit diploma toelating biedt tot hbo en je een bewijs hebt van voldoende beheersing van de Nederlandse taal."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Prouvez votre maîtrise du néerlandais avec le Staatsexamen NT2 programme II (4 compétences) ou un certificat CNaVT.",
+          "en": "Prove your Dutch proficiency with the Staatsexamen NT2 programme II (4 components) or a CNaVT certificate."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "Je toont aan dat je voldoet aan de taaleis Nederlands via een staatsexamen Nederlands als Tweede Taal, programma II met alle vier de onderdelen lezen, spreken, schrijven en luisteren."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Si vous n'avez pas de diplôme donnant accès, vous pouvez faire le Toelatingsonderzoek 21+ (si vous avez 21 ans ou plus).",
+          "en": "If you do not have a diploma granting access, you can take the 21+ Toelatingsonderzoek (if you are 21 or older)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+            "quote": "Heb je geen diploma dat toelating biedt en ben je met ingang van het nieuwe schooljaar 21 jaar of ouder, dan kun je alsnog worden toegelaten als je slaagt voor het Toelatingsonderzoek 21+."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Le montant du collegegeld (frais de scolarité) est tiré de la page institutionnelle des frais de scolarité, car la page propre du programme ne donne pas de montant. La page institutionnelle indique que les étudiants qui ne remplissent pas les conditions pour le tarif légal paient le tarif institutionnel, et le montant pour 2026-2027 est de 10 528 € pour les programmes de bachelor (plein temps). Aucune exception ne s'applique à ce programme. Les documents requis ne sont pas énumérés pour ce programme spécifique ; la page du programme mentionne seulement un 'diplôme étranger ou international' sans préciser de liste. Par conséquent, un seul document est proposé. Les conditions d'admission spécifiques (profil, notes) sont laissées en manual_check."
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-haarlem-business-studies-1001o2990",
+  "programmePage": "https://www.inholland.nl/opleidingen/business-studies-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/business-studies-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/business-studies-voltijd/",
+          "quote": "taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1066500,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Voldoe je niet aan de voorwaarden voor het wettelijk collegegeld dan betaal je het instellingscollegegeld."
+        },
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Studiejaar 2027-2028 Start 1 september 2027 Wettelijk collegegeld* Voltijd, duaal of master: € 2.771 Deeltijd: € 2.317 Instellingscollegegeld* Voltijd en duaal: € 10.665"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+          "quote": "Via Studielink kun je je aanmelden voor een opleiding bij Hogeschool Inholland."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Votre diplôme étranger doit être jugé équivalent à un diplôme néerlandais havo, vwo ou mbo-4. La CSA évalue votre dossier via Studielink.",
+          "en": "Your foreign diploma must be assessed as equivalent to a Dutch havo, vwo or mbo-4 diploma. The CSA evaluates your file via Studielink."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+            "quote": "Heb je een diploma buiten Nederland behaald dan moet onder meer worden beoordeeld of dit gelijkwaardig is aan een Nederlands havo-, vwo- of mbo-diploma niveau 4."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vous devez démontrer votre maîtrise du néerlandais au niveau B2 (CEFR) si votre diplôme a été obtenu à l'étranger, car cette formation est en néerlandais.",
+          "en": "You must demonstrate Dutch proficiency at B2 level (CEFR) if your diploma was obtained abroad, since this programme is taught in Dutch."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/geyk1hwr/csa-gids-2022-2023-21042022.pdf",
+            "quote": "Indien het in paragraaf 1.1 onder e, f en g genoemde diploma in het buitenland is behaald, kan pas inschrijving voor een opleiding in de Nederlandse taal plaatsvinden nadat je hebt aangetoond dat je de Nederlandse taal beheerst op niveau B2 van het Gemeenschappelijk Europees Referentiekader (Common European Framework of Reference)."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The programme page (https://www.inholland.nl/opleidingen/business-studies-voltijd/) states duration 4 jaar and language Nederlands, but the main text is in Dutch and may be for the Dutch-taught variant. The institution-wide tuition page gives instellingscollegegeld for 2027-2028 as € 10.665 for voltijd; this is the rate for students who do not meet the statutory fee conditions (non-EU/EEA). Quotes cannot be combined into a range. Documents are not listed specifically for this programme; the general requirements mention identification, diploma and language proof, but no explicit document list for international applicants to this programme was found."
+}

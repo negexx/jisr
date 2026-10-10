@@ -1,0 +1,23 @@
+{
+  "slug": "nl-hogeschool-leiden-21ri-bio-informatica-1001o5219",
+  "programmePage": "https://www.hsleiden.nl/opleiding/bio-informatica",
+  "facts": {},
+  "notes": "The deadline of 1 May has no year in the quotes; it is given as recurringDeadline. Tuition is from the institution-wide page, as the programme page only mentions the statutory fee (wettelijk collegegeld). The institution-wide page does not state that the institutional fee applies to non-EU/EEA students in one sentence, but the definition of who does not qualify for the statutory fee (no EU/EEA/Swiss etc. nationality and no Dutch study-financing residence permit) covers a Moroccan applicant. The amount used is for 2027-2028, full-time; the same page also lists 2026-2027 (€ 9,556). Language proficiency: the programme is taught in Dutch; the B2-level certificate is one of the accepted proofs, but the page also mentions other possibilities (state exam NT2, TUL advanced) that are not listed as acceptedTests.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Si vous n'avez pas de diplôme néerlandais, vérifiez l'admission avec un diplôme étranger : une évaluation du diplôme par Nuffic est faite et des conditions supplémentaires peuvent s'appliquer.",
+          "en": "If you do not have a Dutch diploma, check admission with a foreign diploma: a Nuffic credential evaluation is made and additional conditions may apply."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hsleiden.nl/studeren/inschrijven/toelating",
+            "quote": "Als je een niet-Nederlands diploma hebt, beoordeelt Hogeschool Leiden je diploma op toelaatbaarheid aan de hand van een diplomawaardering van Nuffic."
+          }
+        ]
+      }
+    ]
+  }
+}

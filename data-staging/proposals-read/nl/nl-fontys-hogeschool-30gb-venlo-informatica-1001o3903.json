@@ -1,0 +1,42 @@
+{
+  "slug": "nl-fontys-hogeschool-30gb-venlo-informatica-1001o3903",
+  "programmePage": "https://www.fontys.nl/Opleidingen/Informatica-bachelor-voltijd.htm",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Informatica-bachelor-voltijd.htm",
+          "quote": "Opleidingsduur 4 jaar"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Informatica-bachelor-voltijd.htm",
+          "quote": "Meld je uiterlijk 1 mei aan via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Teaching languages omitted: no quote about this programme's teaching language. Documents omitted: no document list. Tuition omitted: the institution-wide collegegeld page does not state a specific non-EU amount for bachelor full-time programmes; it only says the amount varies per programme or group.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme marocain (Baccalauréat) est admissible ; la page mentionne havo/vwo/mbo-niveau 4. Consultez la page 'Toelating' pour les diplômes étrangers.",
+          "en": "Check whether your Moroccan Baccalauréat is admissible; the page mentions havo/vwo/mbo level 4. See the 'Toelating' page for foreign diplomas."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Opleidingen/Informatica-bachelor-voltijd.htm",
+            "quote": "Met een havo-, vwo-, of mbo-diploma (niveau 4) ben je direct toelaatbaar."
+          }
+        ]
+      }
+    ]
+  }
+}

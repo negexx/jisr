@@ -1,0 +1,90 @@
+{
+  "slug": "nl-fontys-hogeschool-30gb-venlo-industrieel-product-ontw-1001o3309",
+  "programmePage": "https://www.fontys.nl/Opleidingen/Industrieel-Product-Ontwerpen-bachelor-voltijd.htm",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Industrieel-Product-Ontwerpen-bachelor-voltijd.htm",
+          "quote": "Opleidingsduur 4 jaar"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Industrieel-Product-Ontwerpen-bachelor-voltijd.htm",
+          "quote": "De opleiding wordt zowel in het Nederlands als in het Engels gegeven."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": "2027-09-06",
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 1
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Industrieel-Product-Ontwerpen-bachelor-voltijd.htm",
+          "quote": "1 mei 2027 Meld je uiterlijk 1 mei aan via Studielink."
+        },
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Industrieel-Product-Ontwerpen-bachelor-voltijd.htm",
+          "quote": "6 september 2027 Start eerste lesweek"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+          "quote": "Aanmelden voor een Bachelor, Master of Associate Degree doe je via Studielink."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission complètes sur la page 'Toelatingseisen' : un diplôme havo, vwo ou mbo (niveau 4) donne un accès direct, mais d'autres cas peuvent être admis.",
+          "en": "Check the full admission requirements on the 'Toelatingseisen' page: a havo, vwo or mbo (level 4) diploma gives direct access, but other cases may also be admitted."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Opleidingen/Industrieel-Product-Ontwerpen-bachelor-voltijd.htm",
+            "quote": "Met een havo-, vwo-, of mbo-diploma (niveau 4) ben je direct toelaatbaar."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Diplôme obtenu hors des Pays-Bas : consultez la page 'aanmelden internationaal' pour connaître la procédure et les documents requis.",
+          "en": "Diploma obtained outside the Netherlands: consult the 'aanmelden internationaal' page for the procedure and required documents."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+            "quote": "Heb je je vooropleiding buiten Nederland gehaald? Ga naar aanmelden internationaal."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition fee left out: the programme's own page does not state an amount, and the institution-wide Collegegeld page gives no concrete non-EU/instellingscollegegeld amount for bachelor full-time study year 2026-2027 (it only says the amount 'varieert per opleiding of per groep studenten' and refers to the collegegeldmeter), so no quotable figure is available. The programme's own page also states 'Taal Nederlands' in its summary, which conflicts with the sentence that the programme is taught in both Dutch and English; both quotes are reported. The deadline '1 mei 2027' is stated on the programme page as a general Studielink deadline for this programme and is not explicitly labelled for non-EU applicants; the page points foreign-diploma holders to the 'aanmelden internationaal' page, which is not supplied."
+}

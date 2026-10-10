@@ -1,0 +1,65 @@
+{
+  "slug": "nl-christelijke-hogeschool-ede-25ba-ict-1001o2670",
+  "programmePage": "https://che.nl/opleidingen/ict/bachelor/ict",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://che.nl/opleidingen/ict/bachelor/ict",
+          "quote": "Studieduur De opleiding ICT duurt 4 jaar."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 1
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://che.nl/opleidingen/ict/bachelor/ict",
+          "quote": "Voor aanmelden bij de opleiding ICT geldt: Meld je aan voor 1 mei."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://che.nl/opleidingen/ict/bachelor/ict",
+            "quote": "Dan ben je alleen toelaatbaar met een diploma Nt2 (programma B2) of CNaVT (programma B2 of C1)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme marocain (baccalauréat) est considéré comme équivalent à havo, vwo, mbo niveau 4 ; sinon, un examen d'admission pour les 21 ans et plus peut s'appliquer.",
+          "en": "Check whether your Moroccan baccalauréat is considered equivalent to havo, vwo, mbo level 4; otherwise an admission examination for applicants aged 21 and over may apply."
+        },
+        "evidence": [
+          {
+            "url": "https://che.nl/opleidingen/ict/bachelor/ict",
+            "quote": "Toelatingseisen Havo, vwo, mbo (niveau 4) of een vergelijkbaar diploma. Beschik je niet over de vereiste vooropleiding, maar ben je 21 jaar of ouder? Dan kan je deelnemen aan het toelatingsonderzoek."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "applicationChannel: the pages do not name Studielink or any application platform, so it is left out. tuition: no tuition amount is stated on this programme's own page or elsewhere in the supplied texts, so it is left out. intakes: the deadline '1 mei' has no year and is not stated to be for non-EU/international applicants, so it is recorded as a recurring deadline; treat with caution."
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "nl-christelijke-hogeschool-windesheim-01vu-accountancy-1001o3525",
+  "programmePage": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/accountancy",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/accountancy",
+          "quote": "Studieduur 4 jaar"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/accountancy",
+          "quote": "Aanmelden via Studielink(opent in nieuw tabblad)"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the programme page states a single collegegeld amount (€ 2.694,-) but does not say whether it is the statutory (EU/EEA) fee or the institutional fee for non-EU/EEA students. The institution-wide studiekosten page only says that students who do not meet the criteria for the statutory fee 'may' pay a higher institutional fee and does not state a concrete amount for non-EU/EEA students nor tie one to 2026-2027; therefore the amount in this JSON is not established as the non-EU/EEA rate and should be checked by a human. Evidence quotes: 'Het collegegeld is € 2.694,- in 2026 - 2027.' (programme page); 'Collegegeld 2026-2027 Het collegegeld in studiejaar 2026-2027 is € 2.694,-.' (studiekosten page). No NL ECTS/measure was used.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme étranger équivalent à un diplôme néerlandais de havo, vwo ou mbo-4 est requis.",
+          "en": "A foreign diploma equivalent to a Dutch havo, vwo or mbo-4 diploma is required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/accountancy",
+            "quote": "Je bent toelaatbaar met een diploma dat gelijkwaardig is aan een havo-, vwo- of mbo-4 diploma. Daarnaast moet je voldoen aan de taaleisen."
+          }
+        ]
+      }
+    ]
+  }
+}

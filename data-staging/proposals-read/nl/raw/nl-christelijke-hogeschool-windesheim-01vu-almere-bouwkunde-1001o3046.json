@@ -1,0 +1,89 @@
+{
+  "slug": "nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046",
+  "programmePage": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+          "quote": "Studieduur 4 jaar"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": "2027-09-06",
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 1
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+          "quote": "Startmoment 6 september 2027."
+        },
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+          "quote": "Aanmelden het liefst vóór 1 mei (uiterlijk 31 augustus) via Studielink"
+        },
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+          "quote": "Ik heb een buitenlands diploma. Je bent toelaatbaar met een diploma dat gelijkwaardig is aan een havo-, vwo- of mbo-4 diploma."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+          "quote": "Aanmelden via Studielink"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.windesheim.nl/getmedia/eec791c7-b1fa-46ce-be54-109f7ba721aa/Besluit-2025-043-Instellingsdeel-OER-Ad-en-Bachelor-Eigen-Leerroute-2026-2027.pdf",
+            "quote": "In plaats van het gestelde in lid 4 geldt voor kandidaten met een buiten Nederland of Vlaanderen afgegeven diploma die volledig Engelstalig onderwijs gaan volgen dat moet zijn voldaan aan:"
+          },
+          {
+            "url": "https://www.windesheim.nl/getmedia/eec791c7-b1fa-46ce-be54-109f7ba721aa/Besluit-2025-043-Instellingsdeel-OER-Ad-en-Bachelor-Eigen-Leerroute-2026-2027.pdf",
+            "quote": "een Cambridge certificaat FCE (B2), of CAE (C1), of CPE (C2) van maximaal twee jaar oud;"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Votre diplôme marocain doit être jugé équivalent à un diplôme néerlandais havo, vwo ou mbo-4 ; cette équivalence est évaluée par l'établissement.",
+          "en": "Your Moroccan diploma must be assessed as equivalent to a Dutch havo, vwo or mbo-4 diploma; this equivalence is evaluated by the institution."
+        },
+        "evidence": [
+          {
+            "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+            "quote": "Je bent toelaatbaar met een diploma dat gelijkwaardig is aan een havo-, vwo- of mbo-4 diploma. Daarnaast moet je voldoen aan de taaleisen."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition not stated: the programme page only gives the statutory fee (EU rate) \"Het collegegeld is € 2.694,- in 2026 - 2027.\"; the institution-wide studiekosten page states no non-EU/instellingscollegegeld amount for bachelor programmes, so no tuition fact is included. The English B2 language rule is in the institution-wide OER PDF for Windesheim bachelor programmes (also applicable to this programme per the programme page's \"Daarnaast moet je voldoen aan de taaleisen\"); it is phrased there for candidates following fully English-taught education, while this programme's teaching language is not stated on its own page (only Dutch text)."
+}
