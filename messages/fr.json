@@ -14,6 +14,66 @@
       }
     }
   },
+  "guides": {
+    "meta": {
+      "title": "Guides pour étudier en Europe",
+      "description": "Des guides clairs et sourcés pour préparer une licence en Europe après le bac marocain."
+    },
+    "index": {
+      "title": "Guides",
+      "lead": "Des repères pour comprendre la candidature en Europe, écrits pour un lycéen et appuyés sur des sources officielles."
+    },
+    "read": "Lire le guide",
+    "sourceLabel": "Source principale de ce guide",
+    "related": "Où aller ensuite",
+    "cta": {
+      "profile": "Créer mon profil",
+      "matches": "Voir mes résultats",
+      "scholarships": "Voir les bourses",
+      "plan": "Mon plan de candidature"
+    },
+    "backToGuides": "Retour aux guides",
+    "studying-in-europe": {
+      "title": "Étudier en Europe après le bac marocain",
+      "lead": "Les cinq pays suivis par Jisr, le parcours d'une candidature et la façon de lire chaque source.",
+      "meta": {
+        "title": "Étudier en Europe après le bac marocain",
+        "description": "Un guide d'ensemble sur la candidature en licence en Europe après un bac marocain, avec les sources officielles."
+      }
+    },
+    "bac-and-european-universities": {
+      "title": "Le bac marocain et l'accès aux universités européennes",
+      "lead": "Ce guide décrit la façon dont le baccalauréat marocain est reconnu pour entrer en licence en France, en Allemagne, aux Pays-Bas, en Hongrie et en Italie.",
+      "meta": {
+        "title": "Le bac marocain et l'accès aux universités européennes",
+        "description": "Comment le bac marocain est reconnu pour entrer en licence en France, en Allemagne, aux Pays-Bas, en Hongrie et en Italie, pays par pays."
+      }
+    },
+    "documents-and-legalisation": {
+      "title": "Documents, traductions et légalisation",
+      "lead": "Ce guide décrit les documents qu'une candidature en licence demande souvent, la traduction assermentée au Maroc et la façon dont un document devient valable à l'étranger.",
+      "meta": {
+        "title": "Documents, traductions et légalisation",
+        "description": "Les documents qu'une candidature en licence demande souvent, la traduction assermentée au Maroc et la validation des documents à l'étranger."
+      }
+    },
+    "scholarships-for-moroccan-students": {
+      "title": "Bourses pour les étudiants marocains",
+      "lead": "Ce guide rassemble les bourses de niveau licence qu'un étudiant marocain peut réellement demander pour étudier en Europe.",
+      "meta": {
+        "title": "Bourses pour les étudiants marocains",
+        "description": "Les bourses de niveau licence qu'un étudiant marocain peut demander pour étudier en Europe, pays par pays et montant par montant."
+      }
+    },
+    "common-mistakes": {
+      "title": "Erreurs courantes à éviter",
+      "lead": "Ce guide rassemble les erreurs qui coûtent une année, et parfois un visa.",
+      "meta": {
+        "title": "Erreurs courantes à éviter",
+        "description": "Les erreurs qui coûtent une année ou un visa dans une candidature en Europe, et la règle officielle derrière chaque point."
+      }
+    }
+  },
   "metadata": {
     "title": "Jisr | Étudier en Europe après le Bac",
     "description": "Trouvez des licences réalistes en France, en Allemagne, aux Pays-Bas, en Hongrie et en Italie, avec les coûts, les bourses et les étapes pour candidater."
@@ -116,7 +176,8 @@
     "privacyLogs": "Comme sur tout site, notre hébergeur voit les pages que vous ouvrez. Pour afficher vos résultats et votre plan, votre navigateur télécharge aussi des fichiers de données dont le nom indique le pays de votre diplôme, des pays de destination et des domaines : ceux que vous avez choisis et ceux des programmes que vous ouvrez ou enregistrez. Vos notes, votre nationalité et les programmes de votre liste enregistrée ne sont jamais envoyés.",
     "sources": "Les données et les sources sont vérifiées à la main ; chaque fait indique sa source.",
     "privacyLink": "Confidentialité",
-    "termsLink": "Conditions d'utilisation"
+    "termsLink": "Conditions d'utilisation",
+    "guidesLink": "Guides"
   },
   "clearData": {
     "trigger": "Effacer mes données",
