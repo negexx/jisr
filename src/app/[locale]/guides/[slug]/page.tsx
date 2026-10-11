@@ -47,7 +47,7 @@ export default async function GuidePage({ params }: Props) {
     source_url: guide.frontmatter.source_url,
     info_kind: guide.frontmatter.info_kind,
     last_verified_at: guide.frontmatter.last_verified_at,
-    class: "stable",
+    class: "volatile",
   };
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-col gap-8 px-4 py-10 md:px-6 md:py-14">
