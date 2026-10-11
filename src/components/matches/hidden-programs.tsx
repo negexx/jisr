@@ -40,7 +40,7 @@ export function HiddenPrograms({
       <details
         open={defaultOpen}
         className={cn(
-          "rounded-xl border border-border bg-muted px-4",
+          "rounded-xl border border-border bg-secondary px-4",
           defaultOpen && "border-2 border-primary/40",
         )}
       >

@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import { displayNumber } from "./display-number";
 import { PagedList } from "./paged-list";
 
-const HEADING_CLASS = "text-xl font-semibold text-balance";
+const HEADING_CLASS = "text-2xl font-light tracking-tight text-balance";
 
 function Cards({
   cards,

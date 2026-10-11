@@ -1,6 +1,5 @@
 "use client";
 
-import { ArrowDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { type ReactNode, useEffect, useMemo, useState } from "react";
 
@@ -12,14 +11,14 @@ import { todayIso } from "@/lib/clock";
 import { buildMatchesView, MATCH_GROUPS, type MatchesView } from "@/lib/journey/matches-view";
 import { useProfile } from "@/lib/profile/use-profile";
 import type { SnapshotBundle, SnapshotClient } from "@/lib/snapshot/client";
-import { shardsForMatches } from "@/lib/snapshot/plan";
-import { type SnapshotRequest, useSnapshotBundle } from "@/lib/snapshot/use-snapshot";
+import { useSnapshotBundle } from "@/lib/snapshot/use-snapshot";
 
 import { CompareLink } from "./compare-link";
 import { displayNumber } from "./display-number";
-import { GroupSection, groupHeadingId } from "./group-section";
+import { GroupSection } from "./group-section";
 import { HiddenPrograms } from "./hidden-programs";
 import { MatchesLayout } from "./matches-layout";
+import { matchesRequest } from "./matches-request";
 import { MatchesSkeleton } from "./matches-skeleton";
 import {
   AllHiddenState,
@@ -38,12 +37,6 @@ type Outcome =
   | { status: "failed" }
   | { status: "view"; view: MatchesView; bundle: SnapshotBundle };
 
-// The plan reads only the credential country and the fields, so the key changes with exactly those.
-// It stays in memory: never sent, logged or put in a URL.
-function planKey(profile: Profile): string {
-  return JSON.stringify([profile.credential.country, [...profile.fields].sort()]);
-}
-
 function Loading() {
   return (
     <div aria-busy="true">
@@ -52,39 +45,8 @@ function Loading() {
   );
 }
 
-// Real in-page anchors (the ids hold no profile value): a phone shows the four groups one scroll
-// apart, so the counts double as the way to jump to one.
-function CountsNav({ view, locale }: { view: OkView; locale: AppLocale }) {
-  const t = useTranslations("matches.counts");
-  const groups = MATCH_GROUPS.filter((group) => view.counts[group] > 0);
-  if (groups.length === 0) return null;
-  return (
-    <nav aria-label={t("navLabel")}>
-      <ul className="flex flex-wrap gap-2">
-        {groups.map((group) => (
-          <li key={group}>
-            <a
-              href={`#${groupHeadingId(group)}`}
-              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border bg-card px-4 text-base font-medium text-primary hover:bg-muted"
-            >
-              <span className="underline underline-offset-4">
-                {t(group, {
-                  n: view.counts[group],
-                  count: displayNumber(view.counts[group], locale),
-                })}
-              </span>
-              <ArrowDown aria-hidden="true" className="size-4 shrink-0" />
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  );
-}
-
 function Results({ view, profile, locale }: { view: OkView; profile: Profile; locale: AppLocale }) {
   const t = useTranslations("matches.states.allHidden");
-  const tPage = useTranslations("matches");
   const shown = MATCH_GROUPS.reduce((sum, group) => sum + view.counts[group], 0);
   const budgetProvided = profile.budget !== null;
   useEffect(() => {
@@ -100,11 +62,7 @@ function Results({ view, profile, locale }: { view: OkView; profile: Profile; lo
           })}
         />
       ) : (
-        <>
-          <p className="max-w-prose text-sm text-muted-foreground">{tPage("lead")}</p>
-          <CompareLink locale={locale} />
-          <CountsNav view={view} locale={locale} />
-        </>
+        <CompareLink locale={locale} />
       )}
       {MATCH_GROUPS.map((group) =>
         view.groups[group].length === 0 ? null : (
@@ -137,13 +95,7 @@ export function MatchesClient({ locale, client }: { locale: AppLocale; client?: 
     setNow(todayIso());
   }, []);
 
-  const request: SnapshotRequest | null =
-    profile === null
-      ? null
-      : {
-          key: planKey(profile),
-          plan: (manifest) => shardsForMatches(profile, manifest),
-        };
+  const request = matchesRequest(profile);
   const { state, retry } = useSnapshotBundle(request, locale, client);
 
   const outcome = useMemo<Outcome>(() => {

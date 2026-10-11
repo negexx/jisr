@@ -4,7 +4,9 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 
 import { MatchesClient } from "@/components/matches/matches-client";
+import { MatchesSummary } from "@/components/matches/matches-summary";
 import { MATCHES_MESSAGE_NAMESPACES } from "@/components/matches/namespaces";
+import { PageBand } from "@/components/page-band";
 import { routing } from "@/i18n/routing";
 import { pickMessages } from "@/lib/i18n/client-messages";
 import { pageMetadata } from "@/lib/seo";
@@ -32,13 +34,17 @@ export default async function MatchesPage({ params }: Props) {
   setRequestLocale(locale);
   const [messages, t] = await Promise.all([getMessages(), getTranslations("matches")]);
   return (
-    <div className="flex flex-col gap-6">
-      <h1 className="text-2xl font-bold tracking-tight text-balance">{t("title")}</h1>
+    <div className="-mt-8 md:-mt-12">
       <NextIntlClientProvider
         locale={locale}
         messages={pickMessages(messages, MATCHES_MESSAGE_NAMESPACES)}
       >
-        <MatchesClient locale={locale} />
+        <PageBand title={t("title")} lead={t("lead")}>
+          <MatchesSummary locale={locale} />
+        </PageBand>
+        <div className="pt-8 md:pt-12">
+          <MatchesClient locale={locale} />
+        </div>
       </NextIntlClientProvider>
     </div>
   );
