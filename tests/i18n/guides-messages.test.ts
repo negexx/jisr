@@ -74,4 +74,12 @@ describe("guides messages: language rules", () => {
       expect(catalog.footer.guidesLink).toBeTruthy();
     }
   });
+
+  it("translates the guides namespace into Arabic rather than copying French", () => {
+    const frMessages = namespaceMessages("fr", ["guides"]);
+    const arMessages = namespaceMessages("ar", ["guides"]);
+    for (const key of ["guides.meta.description", "guides.index.title"]) {
+      expect(arMessages.get(key), key).not.toBe(frMessages.get(key));
+    }
+  });
 });
