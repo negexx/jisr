@@ -90,7 +90,7 @@ function ReasonItem({
     <li data-outcome={reason.outcome} data-code={reason.code} className="flex flex-col gap-2 py-3">
       <div className="flex flex-col gap-1">
         <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
-          <span className="inline-flex items-center gap-1.5 rounded-md border border-border px-2 py-0.5 text-sm font-medium text-muted-foreground">
+          <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-secondary px-2 py-0.5 text-sm font-medium text-muted-foreground">
             {OUTCOME_ICON[reason.outcome]}
             {tReason(`domain.reason.outcome.${reason.outcome}`)}
           </span>

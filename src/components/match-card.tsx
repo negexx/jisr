@@ -92,7 +92,7 @@ export function MatchCard({
       aria-labelledby={titleId}
       data-group={model.group}
       data-slug={model.slug}
-      className="flex flex-col gap-4 rounded-xl border border-border bg-card p-4 text-card-foreground md:p-6"
+      className="flex flex-col gap-4 rounded-xl border border-border bg-card p-4 text-card-foreground shadow-sm transition-shadow hover:shadow-md md:p-6"
     >
       <header className="flex flex-col gap-1.5">
         <h3 id={titleId} className="text-lg font-semibold">
@@ -167,10 +167,13 @@ export function MatchCard({
             </>
           )}
         </Fact>
-        <Fact label={t("facts.deadline")}>
+        <Fact
+          label={t("facts.deadline")}
+          className="border-t border-border pt-3 md:border-t-0 md:pt-0"
+        >
           <DeadlineStatus intake={model.intake} />
         </Fact>
-        <Fact label={t("facts.application")} className="md:col-span-2">
+        <Fact label={t("facts.application")} className="border-t border-border pt-3 md:col-span-2">
           {channel === null ? (
             <ToCheck>{tCost("missingLine")}</ToCheck>
           ) : (
@@ -196,7 +199,10 @@ export function MatchCard({
             </>
           )}
         </Fact>
-        <Fact label={t("facts.estimatedCost")} className="md:col-span-2">
+        <Fact
+          label={t("facts.estimatedCost")}
+          className="border-t border-border pt-3 md:col-span-2"
+        >
           <CostBreakdown
             cost={model.cost}
             budgetProvided={budgetProvided}

@@ -49,7 +49,7 @@ function LineRow({
         {CATEGORIES_WITH_NOTE.includes(line.category) ? (
           <a
             href={`#${noteId}`}
-            className="flex min-h-11 w-fit items-center text-sm font-normal text-primary underline underline-offset-4 md:min-h-8"
+            className="flex min-h-11 w-fit items-center text-sm font-medium text-primary underline underline-offset-4 md:min-h-8"
           >
             {t("seeNote")}
           </a>
@@ -107,7 +107,7 @@ function TotalRows({ cost }: { cost: CostEstimate }) {
   const several = cost.totals.length > 1;
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 rounded-xl bg-secondary p-4">
       {cost.totals.map((total) => (
         <p
           key={total.currency}
