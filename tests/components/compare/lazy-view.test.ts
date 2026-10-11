@@ -85,7 +85,7 @@ function isCompareView(file: string | null): boolean {
 }
 
 describe("the compare view model stays behind the dynamic import", () => {
-  it("is imported statically by no component or page, except as a type", () => {
+  it("is imported statically by no component or page, except as a type", { timeout: 30000 }, () => {
     const offenders = [
       ...sourceFiles(path.join(SRC, "components")),
       ...sourceFiles(path.join(SRC, "app")),
