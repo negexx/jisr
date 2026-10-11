@@ -1,9 +1,0 @@
-url	kind	year	university	reason	programme
-https://international.unicatt.it/ucscinternational-admission-and-tuition-application-timeline-9269	admissions	2025/26	Università Cattolica del "Sacro Cuore"	year	
-https://en.unimib.it/study/information-international-students/pre-enrolment-language-proficiency-and-enrolment	admissions	2025/26	Università degli studi di Milano-Bicocca	year	
-https://www.unite.it/English/Engine/RAServeFile.php/f/news/GUIDELINES_International_students_UNITE_AY_2025-2026.pdf	admissions	2025/26	Università degli studi di Teramo	year	
-https://www.lum.it/en/admissions/	admissions	2022/23	Libera Università Mediterranea "Giuseppe Degennaro"	year	
-https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/fees-and-funding-wbb	other	2025/26	Università commerciale Luigi Bocconi di Milano	year	it-milano-bocconi-milano-business-world-bachelor-in-business-l18
-https://www.uniud.it/en/uniud-international/International_Students/ammissione-non-ue/prima-arrivo-ue/iscrizioni-con-titolo-di-studio-estero	admissions	2025/26	Università degli studi di Udine	year	
-https://eeit.dieti.unina.it/index.php/admission/educational-requisite	admissions	2025/26	Università degli studi di Napoli Federico II	year	it-napoli-federico-ii-napoli-electrical-engineering-and-information-t-l8
-https://biotech-engineering.unisi.it/sites/cl92/files/mediaroot/2025_06_22_eng_bando_di_ammissione_biotech_engineering_for_health_def.pdf	other	2025/26	Università degli studi di Siena	year	it-siena-siena-biotech-engineering-for-health-l8
