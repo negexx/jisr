@@ -57,11 +57,13 @@ export type JsBudget = { initial: number; untilIdle: number };
 // 215.1 to 216.27 depending on timing) until idle 216 -> 217. Nothing else moved.
 // 2026-10-07 (scholarships page): new page, 170.2 KB initial, 221.4 KB until idle (fixture build); ratchet is measured rounded up plus 3 KB. The header's fourth item added 0.0 to 0.1 KB to the other rows, all inside their existing values.
 // 2026-10-11 (product-surfaces redesign, ADR 0008): the four product surfaces gained their page
-// band, the matches band status summary and three new band strings (profile.ctaNote,
-// scholarshipsPage.eyebrow, plan.eyebrow), all client-reachable, so the prefetched page chunks grew
-// about 0.5 KB and the until-idle rows moved just past their ratchets (fixture build: /fr 218.6,
-// profile 218.6, matches 218.6, plan 245.7, compare 253.4). The initial rows did not move. Owner
-// decision (this session): raise the affected until-idle rows by 1 KB. Nothing else moved.
+// band and the matches band status summary (client), and profile.ctaNote is a client-reachable string.
+// The band's other two new strings, scholarshipsPage.eyebrow and plan.eyebrow, render in the
+// server-rendered band and add no client JS. The prefetched page chunks grew about 0.5 KB, so the
+// until-idle rows moved just past their ratchets (fixture build: /fr 218.6, profile 218.6, matches
+// 218.6, plan 245.7, compare 253.4); the initial rows did not move. Owner decision (this session):
+// raise the affected until-idle rows by 1 KB, the /ar rows by symmetry with /fr (same pages). Nothing
+// else moved.
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/fr": { initial: 170, untilIdle: 219 },
   "/ar": { initial: 170, untilIdle: 219 },

@@ -165,7 +165,7 @@ components:
     textColor: "{colors.navy-ink}"
     borderColor: "{colors.hairline}"
     typography: "{typography.display}"
-    padding: "40px 24px 32px"
+    padding: "40px 16px 32px"
   status-summary:
     textColor: "{colors.navy-ink}"
     typography: "{typography.label}"
@@ -180,11 +180,10 @@ components:
   empty-state:
     backgroundColor: "{colors.canvas-soft}"
     textColor: "{colors.navy-ink}"
-    typography: "{typography.headline}"
+    typography: "{typography.title}"
     padding: "40px 0"
   skeleton:
     backgroundColor: "{colors.canvas-soft}"
-    borderColor: "{colors.hairline}"
     rounded: "{rounded.xl}"
   feature-card:
     backgroundColor: "{colors.canvas}"
@@ -285,10 +284,10 @@ OKLCH is the canonical format (it is what `src/app/globals.css` defines); the he
 **Character:** One humanist-geometric sans, hierarchy from size, weight and tracking. The display tier is thin (300) with tight negative tracking — the world's typographic signature. Arabic reads about 1px larger (root 106.25%) with 1.75 leading. No second typeface, no new font file, no new font dependency.
 
 ### Hierarchy
-- **Display** (300, 3.5rem / 56px, 1.05, tracking `-0.03em`; `--text-display`): The hero headline. One per page.
-- **Headline** (300, 1.75rem / 28px, 1.25, tracking `-0.03em`): Section openers and page titles.
+- **Display** (300, 3.5rem / 56px, 1.05, tracking `-0.03em`; `--text-display`): The hero headline and every product page's band title. One per page.
+- **Headline** (300, 1.75rem / 28px, 1.25, tracking `-0.03em`): Section openers and group/section headings (the Matches groups, Scholarships country headings and the Plan program heading).
 - **Title** (600, 1.4375rem / 23px, 1.35): Section and empty-state headings.
-- **Subtitle** (600, 1.1875rem / 19px, 1.5): Card titles, group headings, wordmark.
+- **Subtitle** (600, 1.1875rem / 19px, 1.5): Card titles, wordmark.
 - **Body** (400 to 500, 1rem / 16px, 1.5): Everything readable; inputs never below 16px. Prose capped at `max-w-prose`.
 - **Label** (500, 0.875rem / 14px, 1.5): Badges, source lines, hints, fact captions. `tabular-nums` for money.
 
