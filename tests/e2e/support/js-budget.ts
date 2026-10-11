@@ -1,3 +1,9 @@
+// 2026-10-11 (Stripe-world redesign, ADR 0008): the redesign's shared client chunks grew about 0.6 KB,
+// pushing the matches initial and the profile/plan/matches until-idle rows just past their ratchets. Owner
+// decision (ruling R10): raise only the affected rows by 1 KB. matches initial 193 -> 194, until idle
+// 217 -> 218; profile until idle 217 -> 218 (initial 187 unchanged); plan until idle 244 -> 245 (initial
+// 189 unchanged). The home rows stay 170 initial / 217 until idle. No other row moves.
+//
 // Regression ratchet, NOT the ADR 0004 target. Each value is what the page cost when the ratchet was
 // set (gzip-transferred script bytes in Chromium against `next start`), rounded up to a whole KB,
 // plus 3 KB of headroom. It only ever goes down: lower a value when a page gets lighter; raise one
@@ -50,12 +56,12 @@ export type JsBudget = { initial: number; untilIdle: number };
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/fr": { initial: 170, untilIdle: 217 },
   "/ar": { initial: 170, untilIdle: 217 },
-  "/fr/profile": { initial: 187, untilIdle: 217 },
-  "/ar/profile": { initial: 187, untilIdle: 217 },
-  "/fr/matches": { initial: 193, untilIdle: 217 },
-  "/ar/matches": { initial: 193, untilIdle: 217 },
-  "/fr/plan": { initial: 189, untilIdle: 244 },
-  "/ar/plan": { initial: 189, untilIdle: 244 },
+  "/fr/profile": { initial: 187, untilIdle: 218 },
+  "/ar/profile": { initial: 187, untilIdle: 218 },
+  "/fr/matches": { initial: 194, untilIdle: 218 },
+  "/ar/matches": { initial: 194, untilIdle: 218 },
+  "/fr/plan": { initial: 189, untilIdle: 245 },
+  "/ar/plan": { initial: 189, untilIdle: 245 },
   "/fr/compare": { initial: 190, untilIdle: 253 },
   "/ar/compare": { initial: 190, untilIdle: 253 },
   "/fr/scholarships": { initial: 174, untilIdle: 225 },

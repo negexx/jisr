@@ -29,6 +29,7 @@ vi.mock("next-intl/server", async () => {
       const namespace = typeof arg === "string" ? arg : arg.namespace;
       return translator({ locale, messages: messages[locale], namespace: namespace as never });
     },
+    getMessages: async () => messages[request.locale as AppLocale],
   };
 });
 

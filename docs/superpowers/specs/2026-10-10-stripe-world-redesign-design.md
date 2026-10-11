@@ -1,7 +1,7 @@
 # Stripe-world redesign — home + global shell — design spec
 
 **Date:** 2026-10-10
-**Status:** Approved (design). Implementation to follow via `writing-plans`.
+**Status:** Implemented.
 **Owner decisions:** world = adopt Stripe (B); scope = home + global shell (B); interactivity = hero mini-demo + journey micro-interactions (A+C); palette = full Stripe, teal reserved for "official" (A); typography = Geist at thin weights (A); approach = Gradient-First (1).
 
 ## Goal
