@@ -36,7 +36,12 @@ export function Fact({
     >
       <div className="max-w-prose text-base text-foreground">{children}</div>
       <div className="mt-2">
-        <SourceBadge meta={meta} basisText={basis} />
+        {/* A supplied basis is only rendered by SourceBadge's full variant (the "how we estimated" disclosure). */}
+        <SourceBadge
+          meta={meta}
+          variant={basis === undefined ? "compact" : "full"}
+          basisText={basis}
+        />
       </div>
     </div>
   );
