@@ -4,6 +4,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { renderToString } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
+import { MatchesClient } from "@/components/matches/matches-client";
+import { foldMatchesCounts, publishMatchesCounts } from "@/components/matches/matches-counts";
 import { MatchesSummary } from "@/components/matches/matches-summary";
 import type { AppLocale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
@@ -50,6 +52,7 @@ beforeEach(() => {
 
 afterEach(() => {
   cleanup();
+  publishMatchesCounts(null);
   profileStore.clear();
   window.localStorage.clear();
   vi.useRealTimers();
@@ -96,11 +99,42 @@ describe.each(routing.locales)("My Matches: the page band (%s)", (locale) => {
 
 describe("MatchesSummary: the band's status summary", () => {
   it("renders nothing before hydration: no chips and no count in the static output", () => {
-    const html = renderToString(<MatchesSummary locale="fr" />);
+    const html = renderToString(<MatchesSummary />);
     expect(html).toBe("");
   });
 
-  it("folds the foundation year into to-check and counts each status once hydrated", async () => {
+  it("folds the foundation year into the to-check count", () => {
+    expect(foldMatchesCounts({ ok: 2, check: 3, foundation: 4, failed: 1 })).toEqual({
+      ok: 2,
+      check: 7,
+      failed: 1,
+    });
+  });
+
+  it("shows the published counts as chips, and nothing when the island has none", async () => {
+    publishMatchesCounts({ ok: 2, check: 3, failed: 0 });
+    const { container } = render(
+      <Providers locale="fr">
+        <MatchesSummary />
+      </Providers>,
+    );
+    const chips = [...container.querySelectorAll('[data-slot="status-summary-chip"]')];
+    expect(
+      chips.map((chip) => ({
+        group: chip.querySelector("[data-group]")?.getAttribute("data-group"),
+        count: chip.querySelector("bdi")?.textContent,
+      })),
+    ).toEqual([
+      { group: "ok", count: "2" },
+      { group: "check", count: "3" },
+    ]);
+    expect(container.querySelector('[data-group="foundation"]')).toBeNull();
+
+    publishMatchesCounts(null);
+    await waitFor(() => expect(container.querySelector('[data-slot="status-summary"]')).toBeNull());
+  });
+
+  it("reads the counts the matches island publishes, from one snapshot load", async () => {
     profileStore.save(E2E_PROFILE);
     const bundle = await fixture
       .client()
@@ -110,7 +144,8 @@ describe("MatchesSummary: the band's status summary", () => {
 
     const { container } = render(
       <Providers locale="fr">
-        <MatchesSummary locale="fr" client={fixture.client()} />
+        <MatchesSummary />
+        <MatchesClient locale="fr" client={fixture.client()} />
       </Providers>,
     );
     await waitFor(() =>
@@ -131,6 +166,8 @@ describe("MatchesSummary: the band's status summary", () => {
       })),
     ).toEqual(expected.map(([group, count]) => ({ group, count: String(count) })));
     // The foundation programs are amber "to check" here; they stay distinct in the sections below.
-    expect(container.querySelector('[data-group="foundation"]')).toBeNull();
+    expect(
+      container.querySelector('[data-slot="status-summary"] [data-group="foundation"]'),
+    ).toBeNull();
   });
 });

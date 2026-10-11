@@ -17,6 +17,7 @@ import { CompareLink } from "./compare-link";
 import { displayNumber } from "./display-number";
 import { GroupSection } from "./group-section";
 import { HiddenPrograms } from "./hidden-programs";
+import { foldMatchesCounts, publishMatchesCounts } from "./matches-counts";
 import { MatchesLayout } from "./matches-layout";
 import { matchesRequest } from "./matches-request";
 import { MatchesSkeleton } from "./matches-skeleton";
@@ -112,6 +113,20 @@ export function MatchesClient({ locale, client }: { locale: AppLocale; client?: 
       return { status: "failed" };
     }
   }, [profile, now, state, locale]);
+
+  // The band's summary (a sibling island) reads these through the store: one snapshot load for the
+  // whole page, so a shard-404 recovery re-reads the manifest once, not once per island.
+  const counts = useMemo(
+    () =>
+      outcome.status === "view" && outcome.view.kind === "ok"
+        ? foldMatchesCounts(outcome.view.counts)
+        : null,
+    [outcome],
+  );
+  useEffect(() => {
+    publishMatchesCounts(counts);
+    return () => publishMatchesCounts(null);
+  }, [counts]);
 
   function body(): { loading: boolean; node: ReactNode } {
     if (profileState.status === "unhydrated") return { loading: true, node: <Loading /> };

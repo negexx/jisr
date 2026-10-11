@@ -40,7 +40,7 @@ export default async function MatchesPage({ params }: Props) {
         messages={pickMessages(messages, MATCHES_MESSAGE_NAMESPACES)}
       >
         <PageBand title={t("title")} lead={t("lead")}>
-          <MatchesSummary locale={locale} />
+          <MatchesSummary />
         </PageBand>
         <div className="pt-8 md:pt-12">
           <MatchesClient locale={locale} />
