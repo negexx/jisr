@@ -3,6 +3,9 @@
 // decision (ruling R10): raise only the affected rows by 1 KB. matches initial 193 -> 194, until idle
 // 217 -> 218; profile until idle 217 -> 218 (initial 187 unchanged); plan until idle 244 -> 245 (initial
 // 189 unchanged). The home rows stay 170 initial / 217 until idle. No other row moves.
+// 2026-10-11 (Stripe-world redesign, ADR 0008): the owner also approved raising the home until-idle rows /fr and
+// /ar 217 -> 218, because the mounted hero demo left only ~0.6 KB headroom and the home row flaked under CI=true
+// (failOnFlakyTests). Home initial stays 170.
 //
 // Regression ratchet, NOT the ADR 0004 target. Each value is what the page cost when the ratchet was
 // set (gzip-transferred script bytes in Chromium against `next start`), rounded up to a whole KB,
@@ -54,8 +57,8 @@ export type JsBudget = { initial: number; untilIdle: number };
 // 215.1 to 216.27 depending on timing) until idle 216 -> 217. Nothing else moved.
 // 2026-10-07 (scholarships page): new page, 170.2 KB initial, 221.4 KB until idle (fixture build); ratchet is measured rounded up plus 3 KB. The header's fourth item added 0.0 to 0.1 KB to the other rows, all inside their existing values.
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
-  "/fr": { initial: 170, untilIdle: 217 },
-  "/ar": { initial: 170, untilIdle: 217 },
+  "/fr": { initial: 170, untilIdle: 218 },
+  "/ar": { initial: 170, untilIdle: 218 },
   "/fr/profile": { initial: 187, untilIdle: 218 },
   "/ar/profile": { initial: 187, untilIdle: 218 },
   "/fr/matches": { initial: 194, untilIdle: 218 },
