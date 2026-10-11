@@ -1,49 +1,13 @@
 // Shared, no "use client": needs the namespaces sourceBadge, externalLink, domain.infoKind and domain.freshness (a client tree passes them through pickMessages); the only client part is FreshnessMark, which gets its strings as props.
-import { Calculator, ChevronDown, Info, ShieldCheck } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import type { ReactNode } from "react";
 
 import type { FactMeta } from "@/data-schema/resolved";
 import type { FactRef } from "@/domain/types";
 import { formatDate } from "@/lib/format";
 import { ExternalLink, sourceHostname } from "./external-link";
 import { FreshnessMark } from "./freshness-mark";
-
-type Kind = FactMeta["info_kind"];
-
-// Three treatments that differ in icon, label and shape (filled, dashed, plain), so colour never carries the difference.
-const KIND_STYLE: Record<Kind, { icon: ReactNode; pill: string }> = {
-  official: {
-    icon: (
-      <ShieldCheck
-        aria-hidden="true"
-        data-testid="source-kind-icon-official"
-        className="size-4 shrink-0"
-      />
-    ),
-    pill: "bg-kind-official text-kind-official-bg",
-  },
-  estimate: {
-    icon: (
-      <Calculator
-        aria-hidden="true"
-        data-testid="source-kind-icon-estimate"
-        className="size-4 shrink-0"
-      />
-    ),
-    pill: "border border-dashed border-kind-estimate bg-kind-estimate-bg text-kind-estimate",
-  },
-  guidance: {
-    icon: (
-      <Info
-        aria-hidden="true"
-        data-testid="source-kind-icon-guidance"
-        className="size-4 shrink-0"
-      />
-    ),
-    pill: "border border-kind-guidance/40 bg-kind-guidance-bg text-kind-guidance",
-  },
-};
+import { KindPill } from "./kind-pill";
 
 // Only what freshness is computed from crosses into the client leaf: a FactRef's stored `freshness` was stamped at some other `now` (for a static page, a build-time value) and must never ship.
 function factMetaOf(meta: FactMeta | FactRef): FactMeta {
@@ -73,7 +37,6 @@ export function SourceBadge({
   const tKind = useTranslations("domain.infoKind");
   const tFreshness = useTranslations("domain.freshness");
   const kind = meta.info_kind;
-  const style = KIND_STYLE[kind];
   const hostname = sourceHostname(meta.source_url);
   const full = variant === "full";
   const groupProps = label === undefined ? {} : { role: "group", "aria-label": label };
@@ -86,13 +49,7 @@ export function SourceBadge({
       className="flex flex-col gap-1.5"
     >
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
-        <span
-          data-kind={kind}
-          className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-sm font-medium ${style.pill}`}
-        >
-          {style.icon}
-          {tKind(`${kind}.label`)}
-        </span>
+        <KindPill kind={kind}>{tKind(`${kind}.label`)}</KindPill>
         <bdi className="text-muted-foreground">
           <time dateTime={meta.last_verified_at}>
             {tFreshness("verifiedOn", { date: formatDate(meta.last_verified_at, locale) })}

@@ -43,7 +43,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const t = await getTranslations({ locale, namespace: "shell" });
   return (
     <html lang={locale} dir={dir} className={fontVariables}>
-      <body className="flex min-h-dvh flex-col antialiased">
+      <body className="flex min-h-dvh flex-col overflow-x-clip antialiased">
         {/*
           No catalogue at the root: the shell's client leaves get formatted strings as props (about
           2 KB gzipped less than shipping the shell namespaces). A page that needs many client

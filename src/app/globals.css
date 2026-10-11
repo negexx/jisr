@@ -16,6 +16,16 @@
   --text-xl--line-height: 1.35;
   --text-2xl: 1.75rem;
   --text-2xl--line-height: 1.25;
+  /* Display step: the thin, tightly tracked hero headline. */
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.03em;
+
+  /* Soft-shadow vocabulary. Navy-tinted so depth stays warm-cool, never grey. */
+  --shadow-sm: 0 1px 2px rgba(13, 37, 61, 0.08), 0 1px 1px rgba(13, 37, 61, 0.04);
+  --shadow-md: 0 12px 30px -12px rgba(13, 37, 61, 0.22), 0 2px 6px rgba(13, 37, 61, 0.06);
+  --shadow-lg: 0 30px 60px -24px rgba(28, 30, 84, 0.35), 0 6px 16px rgba(13, 37, 61, 0.08);
+
   --default-transition-duration: 150ms;
 }
 
@@ -60,6 +70,8 @@
   --color-kind-estimate-bg: var(--kind-estimate-bg);
   --color-kind-guidance: var(--kind-guidance);
   --color-kind-guidance-bg: var(--kind-guidance-bg);
+  --color-navy: var(--navy);
+  --color-canvas-soft: var(--canvas-soft);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -70,51 +82,55 @@
 }
 
 /*
- * Light theme only. Warm neutrals (hue 90) and one deep teal-ink accent (hue 205), used for primary
- * actions, the current nav item, links and focus. Status colours are for match status only and
- * never carry meaning alone. tests/design/tokens.test.ts asserts the contrast of every pair.
+ * Light theme only. The Stripe world: navy ink on a cool near-white canvas, one electric-indigo
+ * accent for actions, the current nav item, links and focus, and soft navy-tinted depth. Status
+ * colours are for match status only and never carry meaning alone. Teal is reserved for the
+ * official fact-kind. tests/design/tokens.test.ts asserts the contrast and OKLab separation of
+ * every pair below.
  */
 :root {
-  --background: oklch(0.985 0.006 90);
-  --foreground: oklch(0.22 0.02 215);
-  --card: oklch(0.995 0.003 90);
-  --card-foreground: oklch(0.22 0.02 215);
-  --popover: oklch(0.995 0.003 90);
-  --popover-foreground: oklch(0.22 0.02 215);
-  --primary: oklch(0.4 0.075 205);
-  --primary-foreground: oklch(0.985 0.006 90);
-  --secondary: oklch(0.955 0.008 90);
-  --secondary-foreground: oklch(0.22 0.02 215);
-  --muted: oklch(0.955 0.008 90);
-  --muted-foreground: oklch(0.45 0.02 215);
-  --accent: oklch(0.95 0.02 205);
-  --accent-foreground: oklch(0.3 0.06 205);
-  --destructive: oklch(0.45 0.16 25);
-  --destructive-bg: oklch(0.95 0.025 25);
-  --border: oklch(0.9 0.01 90);
-  --input: oklch(0.62 0.02 215);
-  --ring: oklch(0.55 0.1 205);
+  --background: oklch(0.995 0.002 250); /* near-white canvas (#ffffff intent; never pure white) */
+  --foreground: oklch(0.2591 0.0544 250.72); /* navy ink #0d253d */
+  --card: oklch(0.995 0.002 250);
+  --card-foreground: oklch(0.2591 0.0544 250.72);
+  --popover: oklch(0.995 0.002 250);
+  --popover-foreground: oklch(0.2591 0.0544 250.72);
+  --primary: oklch(0.5211 0.2679 277.43); /* electric indigo #533afd */
+  --primary-foreground: oklch(0.995 0.002 250);
+  --secondary: oklch(0.9807 0.0051 247.88); /* soft #f6f9fc */
+  --secondary-foreground: oklch(0.3405 0.0485 255.87); /* #273951 */
+  --muted: oklch(0.9807 0.0051 247.88);
+  --muted-foreground: oklch(0.4968 0.0408 260.28); /* #55637a */
+  --accent: oklch(0.9684 0.016 289.93); /* indigo wash #f4f3ff */
+  --accent-foreground: oklch(0.4621 0.23 276.92); /* indigo deep #4434d4 */
+  --destructive: oklch(0.5433 0.174 29.7); /* #c0392b */
+  --destructive-bg: oklch(0.956 0.0187 25.6); /* #fdecea */
+  --border: oklch(0.9289 0.0097 252.81); /* hairline #e3e8ee */
+  --input: oklch(0.5552 0.0435 259.24); /* control slate #64748d */
+  --ring: oklch(0.5211 0.2679 277.43);
+  --canvas-soft: oklch(0.9807 0.0051 247.88); /* #f6f9fc */
+  --navy: oklch(0.2701 0.0962 276.24); /* dark band #1c1e54 */
   --radius: 0.75rem;
 
-  --status-ok: oklch(0.5 0.11 155);
-  --status-ok-fg: oklch(0.4 0.09 155);
-  --status-ok-bg: oklch(0.96 0.03 155);
-  --status-ok-border: oklch(0.58 0.11 155);
-  --status-check: oklch(0.52 0.11 70);
-  --status-check-fg: oklch(0.42 0.09 70);
-  --status-check-bg: oklch(0.96 0.04 85);
-  --status-check-border: oklch(0.6 0.12 75);
-  --status-fail: oklch(0.5 0.16 25);
-  --status-fail-fg: oklch(0.43 0.15 25);
-  --status-fail-bg: oklch(0.955 0.03 25);
-  --status-fail-border: oklch(0.58 0.15 25);
+  --status-ok: oklch(0.528 0.1208 155); /* #1a7f4b */
+  --status-ok-fg: oklch(0.475 0.115 155); /* #076e3e */
+  --status-ok-bg: oklch(0.9612 0.0173 159.12); /* #e9f6ee */
+  --status-ok-border: oklch(0.528 0.1208 155);
+  --status-check: oklch(0.5553 0.1455 49); /* #b45309 */
+  --status-check-fg: oklch(0.5553 0.1455 49);
+  --status-check-bg: oklch(0.9685 0.0203 74.66); /* #fdf3e6 */
+  --status-check-border: oklch(0.5553 0.1455 49);
+  --status-fail: oklch(0.5433 0.174 29.7); /* #c0392b */
+  --status-fail-fg: oklch(0.5003 0.1821 29.51); /* #b42318 */
+  --status-fail-bg: oklch(0.956 0.0187 25.6); /* #fdecea */
+  --status-fail-border: oklch(0.5433 0.174 29.7);
 
-  --kind-official: oklch(0.36 0.075 205);
-  --kind-official-bg: oklch(0.95 0.02 205);
-  --kind-estimate: oklch(0.42 0.06 310);
-  --kind-estimate-bg: oklch(0.92 0.04 300);
-  --kind-guidance: oklch(0.42 0.01 90);
-  --kind-guidance-bg: oklch(0.95 0.005 90);
+  --kind-official: oklch(0.5109 0.0861 186.39); /* teal #0f766e, reserved for "official" */
+  --kind-official-bg: oklch(0.942 0.034 189); /* pale teal wash */
+  --kind-estimate: oklch(0.4469 0.0845 75.89); /* #6f4d13 */
+  --kind-estimate-bg: oklch(0.925 0.075 88); /* dashed cream */
+  --kind-guidance: oklch(0.4968 0.0408 260.28); /* #55637a */
+  --kind-guidance-bg: oklch(0.9807 0.0051 247.88); /* soft #f6f9fc */
 }
 
 @layer base {
@@ -149,6 +165,8 @@ html[lang="ar"] {
   --text-lg--line-height: 1.75;
   --text-xl--line-height: 1.6;
   --text-2xl--line-height: 1.5;
+  --text-display--line-height: 1.5;
+  --text-display--letter-spacing: 0;
 }
 
 html[lang="ar"] body {

@@ -15,24 +15,36 @@ export function LocaleSwitcher({ current, label, names }: Props) {
   const pathname = usePathname();
   return (
     <nav aria-label={label}>
-      <ul className="flex gap-1">
-        {routing.locales.map((locale) => (
-          <li key={locale}>
-            <Button asChild size="sm" variant={locale === current ? "secondary" : "ghost"}>
-              <Link
-                href={pathname}
-                locale={locale}
-                lang={locale}
-                hrefLang={locale}
-                // The current-locale link points at this very page; prefetching it only downloads the page again.
-                prefetch={locale === current ? false : undefined}
-                aria-current={locale === current ? "true" : undefined}
+      <ul className="flex gap-0.5 rounded-full border border-border bg-canvas-soft p-0.5">
+        {routing.locales.map((locale) => {
+          const isCurrent = locale === current;
+          return (
+            <li key={locale}>
+              <Button
+                asChild
+                size="sm"
+                variant="ghost"
+                className={
+                  isCurrent
+                    ? "bg-background text-foreground shadow-sm"
+                    : "text-muted-foreground hover:bg-background/70 hover:text-foreground"
+                }
               >
-                {names[locale]}
-              </Link>
-            </Button>
-          </li>
-        ))}
+                <Link
+                  href={pathname}
+                  locale={locale}
+                  lang={locale}
+                  hrefLang={locale}
+                  // The current-locale link points at this very page; prefetching it only downloads the page again.
+                  prefetch={isCurrent ? false : undefined}
+                  aria-current={isCurrent ? "true" : undefined}
+                >
+                  {names[locale]}
+                </Link>
+              </Button>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

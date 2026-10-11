@@ -25,8 +25,14 @@
     "ctaNote": "Vos réponses restent sur cet appareil.",
     "matchesCta": "Voir mes résultats",
     "scholarshipsCta": "Voir les bourses",
+    "hero": {
+      "eyebrow": "Bac 2026 · 5 pays · 3 domaines",
+      "titleLead": "Étudier en Europe",
+      "titleAccent": "après le Bac"
+    },
     "questionsTitle": "Ce que Jisr vous aide à savoir",
     "questions": {
+      "kicker": "Comment ça marche",
       "where": {
         "title": "Où puis-je étudier ?",
         "body": "Des licences en France, en Allemagne, aux Pays-Bas, en Hongrie et en Italie, classées selon ce qui semble réaliste pour votre profil."
@@ -42,6 +48,52 @@
       "next": {
         "title": "Que dois-je faire ensuite ?",
         "body": "Les dates limites, les documents et les étapes dans l'ordre, avec le lien officiel pour chacune."
+      }
+    },
+    "trust": {
+      "kicker": "La confiance d'abord",
+      "titleLead": "Chaque fait indique",
+      "titleAccent": "sa source et sa date",
+      "body": "Les chiffres officiels, les estimations et les conseils ne se ressemblent jamais. Rien n'est arrondi à un « oui ».",
+      "legend": {
+        "official": "Exigence publiée par l'université",
+        "estimate": "Fourchette calculée par nos soins",
+        "guidance": "Aide générale, pas une règle"
+      }
+    },
+    "demo": {
+      "title": "Essayez : un profil, un résultat",
+      "illustrative": "Exemple illustratif : les résultats varient selon le profil.",
+      "averageLabel": "Moyenne",
+      "fieldLabel": "Domaine",
+      "levelLabel": "Niveau de langue",
+      "level": {
+        "a2": "A2",
+        "b2": "B2"
+      },
+      "track": {
+        "maths": "Sciences Maths",
+        "physicsChemistry": "PC",
+        "lifeAndEarthSciences": "SVT"
+      },
+      "field": {
+        "computerScience": "Informatique",
+        "engineering": "Ingénierie",
+        "business": "Gestion"
+      },
+      "reason": {
+        "met": "Statut : les conditions publiées semblent remplies. Tout ce que nous avons publié pour ce programme semble correspondre à votre profil.",
+        "missingSubject": "Statut : à vérifier. Le programme exige une matière que votre filière ne couvre pas. Consultez la page officielle.",
+        "averageBelow": "Statut : conditions publiées non remplies. Votre moyenne est sous le minimum publié pour ce programme.",
+        "nonOfficial": "Statut : à vérifier. Une information de cette comparaison n'est pas officielle. Consultez la page officielle du programme.",
+        "notMet": "Statut : conditions publiées non remplies. Votre profil ne remplit pas une condition publiée pour ce programme.",
+        "toCheck": "Statut : à vérifier. Une condition publiée reste à confirmer. Consultez la page officielle du programme."
+      },
+      "fact": {
+        "teachingLanguage": "Langue d'enseignement",
+        "tuition": "Frais de scolarité",
+        "institution": "Établissement",
+        "toCheck": "À vérifier"
       }
     }
   },
