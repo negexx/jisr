@@ -110,10 +110,12 @@ export function HeroDemoCard({ field, level, copy, locale }: HeroDemoCardProps) 
     <div className="flex flex-col gap-3.5 rounded-2xl border border-border bg-card p-4">
       <div>
         <p className="text-lg leading-snug font-semibold tracking-tight text-accent-foreground">
-          {program.name}
+          <bdi>{program.name}</bdi>
         </p>
         <p className="mt-0.5 text-sm text-muted-foreground">
-          {institution === null ? program.city : `${institution.name} · ${institution.city.name}`}
+          <bdi>
+            {institution === null ? program.city : `${institution.name} · ${institution.city.name}`}
+          </bdi>
         </p>
       </div>
       <MatchStatusBadge group={groupOf(match)} />
@@ -130,7 +132,10 @@ export function HeroDemoCard({ field, level, copy, locale }: HeroDemoCardProps) 
         />
         <Fact label={copy.fact.tuition} value={tuition} meta={program.tuition} />
       </div>
-      <p className="border-t border-border pt-3 text-sm text-muted-foreground">
+      <p
+        data-testid="hero-demo-reason"
+        className="border-t border-border pt-3 text-sm text-muted-foreground"
+      >
         {reasonLine(dominant?.code, copy)}
       </p>
     </div>

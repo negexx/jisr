@@ -17,6 +17,8 @@ afterEach(cleanup);
 const ARABIC_INDIC_DIGIT = /[٠-٩۰-۹]/u;
 const FR_LICENCE = "Licence - Sciences pour l'ingénieur - Portail Marie Curie";
 const DE_SOFTWARE = "Software Design International";
+const DIRECT_ROUTE_CLAIM =
+  /accès direct|direct access|directement|route officielle|official route/i;
 
 // Collapses ordinary and no-break spaces alike, so a French message with a no-break space before ":"
 // compares to the text a Testing Library query normalizes it to.
@@ -146,6 +148,25 @@ describe("hero match demo: real matching", () => {
 
     const badge = container.querySelector('[data-group="ok"]');
     expect(badge?.textContent?.trim()).toBe(catalogs.fr.domain.status.satisfied);
+  });
+
+  it("never reads the German route as official or direct access", async () => {
+    const user = userEvent.setup();
+    const { copy, container } = renderDemo("fr");
+    await user.click(fieldButton(copy, "engineering"));
+    await screen.findByText(FR_LICENCE);
+
+    await user.click(fieldButton(copy, "computerScience"));
+    await screen.findByText(DE_SOFTWARE);
+    const warning = container.querySelector('[data-testid="hero-demo-reason"]')?.textContent ?? "";
+    expect(warning).toBe(copy.reason.nonOfficial);
+    expect(warning).not.toMatch(DIRECT_ROUTE_CLAIM);
+
+    await user.click(levelButton(copy, "a2"));
+    await waitFor(() => expect(groupOf(container)).toBe("failed"));
+    const failure = container.querySelector('[data-testid="hero-demo-reason"]')?.textContent ?? "";
+    expect(failure).toBe(copy.reason.notMet);
+    expect(failure).not.toMatch(DIRECT_ROUTE_CLAIM);
   });
 });
 
