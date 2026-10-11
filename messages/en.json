@@ -1035,6 +1035,7 @@
       "description": "The scholarships listed on Jisr, with amounts, what they cover, deadlines and official sources."
     },
     "title": "Scholarships",
+    "eyebrow": "Help with funding",
     "intro": "Scholarships we have listed for Bachelor's students, by country. Each fact shows its source and the date it was checked. Where the sources we read do not publish a value, we say so instead of guessing.",
     "jump": {
       "label": "Countries"

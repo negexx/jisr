@@ -2,9 +2,11 @@ import "server-only";
 
 import { useLocale, useTranslations } from "next-intl";
 
+import { DISCLOSURE_SUMMARY_CLASS, DisclosureChevron } from "@/components/disclosure-chevron";
 import { Link } from "@/i18n/navigation";
 import { formatList, formatNumber } from "@/lib/journey/reasons";
 import type { ProgramScope } from "@/lib/scholarships/sections";
+import { cn } from "@/lib/utils";
 
 export function ScholarshipProgrammes({
   scope,
@@ -18,11 +20,15 @@ export function ScholarshipProgrammes({
   const tProgram = useTranslations("program");
 
   return (
-    <details data-testid="scholarship-programmes" className="group border-t border-border py-1">
-      <summary className="flex min-h-11 cursor-pointer items-center text-base font-medium">
-        {t("summary")}
+    <details
+      data-testid="scholarship-programmes"
+      className="rounded-xl border border-border bg-secondary px-4"
+    >
+      <summary className={cn(DISCLOSURE_SUMMARY_CLASS, "min-h-11 w-full py-2")}>
+        <DisclosureChevron />
+        <span className="text-base font-medium">{t("summary")}</span>
       </summary>
-      <div className="flex flex-col gap-3 pb-3">
+      <div className="flex flex-col gap-3 pb-4 pt-1">
         {scope.kind === "country" ? (
           <>
             <p className="max-w-prose text-base">

@@ -4,6 +4,7 @@ import { CircleHelp } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 
+import { DISCLOSURE_SUMMARY_CLASS, DisclosureChevron } from "@/components/disclosure-chevron";
 import { ExternalLink } from "@/components/external-link";
 import { LocalizedDataText } from "@/components/localized-data-text";
 import { sameSource } from "@/components/program/program-sections";
@@ -13,6 +14,7 @@ import { formatList, type Params } from "@/lib/journey/reasons";
 import { describeRule } from "@/lib/journey/requirements";
 import type { ScholarshipEntry } from "@/lib/scholarships/sections";
 import type { ScholarshipsPageData } from "@/lib/snapshot/server";
+import { cn } from "@/lib/utils";
 
 import { NationalityCheck } from "./nationality-check";
 import { ScholarshipProgrammes } from "./scholarship-programmes";
@@ -72,7 +74,7 @@ export function ScholarshipCard({
     <li
       id={`scholarship-${scholarship.slug}`}
       data-testid="scholarship-card"
-      className="flex scroll-mt-6 flex-col gap-3 py-5"
+      className="flex scroll-mt-6 flex-col gap-3 rounded-xl border border-border bg-card p-4 shadow-sm transition-shadow hover:shadow-md md:p-6"
     >
       <div className="flex flex-col gap-1">
         <h3 className="text-lg font-semibold text-balance">
@@ -150,11 +152,12 @@ export function ScholarshipCard({
         {tProg("link")}
       </ExternalLink>
 
-      <details className="group border-t border-border py-1">
-        <summary className="flex min-h-11 cursor-pointer items-center text-base font-medium">
-          {t("details.summary")}
+      <details className="rounded-xl border border-border bg-secondary px-4">
+        <summary className={cn(DISCLOSURE_SUMMARY_CLASS, "min-h-11 w-full py-2")}>
+          <DisclosureChevron />
+          <span className="text-base font-medium">{t("details.summary")}</span>
         </summary>
-        <div className="flex flex-col gap-5 pb-3">
+        <div className="flex flex-col gap-5 pb-4 pt-1">
           <section className="flex flex-col gap-2">
             <h4 className="text-base font-semibold">{t("details.requirements")}</h4>
             {requirements.rules.length === 0 ? (

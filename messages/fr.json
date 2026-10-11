@@ -1035,6 +1035,7 @@
       "description": "Les bourses répertoriées sur Jisr, avec montants, ce qu'elles couvrent, dates limites et sources officielles."
     },
     "title": "Bourses",
+    "eyebrow": "Aide au financement",
     "intro": "Les bourses que nous avons répertoriées pour les études de licence, par pays. Chaque information indique sa source et la date de sa vérification. Quand les sources que nous avons lues ne publient pas une valeur, nous l'indiquons au lieu de deviner.",
     "jump": {
       "label": "Pays"
