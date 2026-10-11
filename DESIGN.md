@@ -160,13 +160,32 @@ components:
     typography: "{typography.body}"
     rounded: "{rounded.md}"
     padding: "6px 12px"
+  page-band:
+    backgroundColor: "{colors.indigo-wash}"
+    textColor: "{colors.navy-ink}"
+    borderColor: "{colors.hairline}"
+    typography: "{typography.display}"
+    padding: "40px 24px 32px"
+  status-summary:
+    textColor: "{colors.navy-ink}"
+    typography: "{typography.label}"
   match-card:
     backgroundColor: "{colors.canvas}"
     textColor: "{colors.navy-ink}"
     borderColor: "{colors.hairline}"
+    typography: "{typography.subtitle}"
     rounded: "{rounded.xl}"
     padding: "24px"
     shadow: "{shadows.sm}"
+  empty-state:
+    backgroundColor: "{colors.canvas-soft}"
+    textColor: "{colors.navy-ink}"
+    typography: "{typography.headline}"
+    padding: "40px 0"
+  skeleton:
+    backgroundColor: "{colors.canvas-soft}"
+    borderColor: "{colors.hairline}"
+    rounded: "{rounded.xl}"
   feature-card:
     backgroundColor: "{colors.canvas}"
     textColor: "{colors.navy-ink}"
@@ -319,8 +338,20 @@ The trust surface. Every fact line carries: a kind pill (Official filled teal wi
 ### Match Status Badge
 The one place a match group becomes icon, colour and wording. Bordered, 9.6px radius, 16px text, wash fill, `-fg` text colour, 16px icon in the status base colour. Groups: appears met (circle-check, green), to check (triangle-alert, amber), foundation year (triangle-alert, amber, own wording), not met (circle-x, red). Never colour alone.
 
+### Status Summary
+The at-a-glance count row in a product page band. One chip per non-zero group: a `sm` MatchStatusBadge beside the count, and the count is visible Latin digits in a `<bdi className="tabular-nums">`. The One Mapping Rule holds: the chip renders the badge, never its own icon, colour or wording. A zero count renders no chip, and an all-zero summary renders nothing. Number and wording travel together, so the count never rests on colour alone.
+
+### Page Band
+The full-bleed header band of the Profile, Matches, Scholarships and Plan pages: the hero's breakout (`w-screen max-w-none` with `mx-[calc(50%-50vw)]`) inside the constrained main, a radial wash from Indigo Wash through Canvas Soft into Canvas carried as a CSS custom property (no image asset), a hairline bottom border, an optional uppercase indigo eyebrow, the page's one `text-display` h1, an optional Ink Secondary lead capped near 52ch, and a children slot for the status summary or actions. It is a server component that takes every string as a prop: no client JS, and no freshness, clock or profile claim of its own.
+
+### Empty States
+A canvas-soft panel at the card radius, centred on phone and start-aligned from md: a muted icon (alert triangle and `role="alert"` in the error tone, loader in the loading tone), a title in the thin headline step, a short muted description in a prose-width column, then one action. No illustration. An empty, error or loading state never borrows match-status colours or wording, and never rounds missing or stale information into a verdict.
+
+### Skeletons
+Decorative blocks that reserve the layout's height while data loads, inside the `aria-busy` container; the live loading text is a separate `output`, so the skeleton itself is hidden from assistive tech. Card-shaped blocks take the card vocabulary (`rounded-xl border border-border bg-card`); inner blocks take Canvas Soft. The pulse is `motion-safe:` only, and `prefers-reduced-motion` cuts it.
+
 ### Cards / Containers
-- **Feature / match card:** Canvas fill, 1px Hairline border, 16.8px radius, `shadow-sm` at rest and `shadow-md` on hover. Text-first: title link in Indigo (19px semibold), institution and city in Ink Muted, status badge, then a captioned fact list with a source badge under each fact, reasons, and an outline "See details" button. The title is the primary link; the card is not clickable.
+- **Feature / match card:** Canvas fill, 1px Hairline border, 16.8px radius, `shadow-sm` at rest and `shadow-md` on hover; 16px padding on phone, 24px from md. Text-first: the program name is the primary link in Indigo (19px semibold) with the institution and city in Ink Muted beside the match status badge, then a hairline-divided label-and-value fact list (teaching language, tuition, application channel, estimated cost) with a SourceBadge under every recorded fact, the reason list, and an outline "See details" button plus the save control. The title is the primary link; the card is not clickable, and no card nests inside another. The Source-Always Rule holds inside the card: kind, verified date and source link stay with each fact, and estimates and guidance are never restyled as official requirements.
 - **Hero demo panel:** The single `shadow-lg` surface. A near-white card floating at the gradient's edge, containing the segmented controls and the live match card.
 - **Dark band:** Navy Band fill with an atmospheric indigo gradient, light text; carries the trust story and the fact-kind/status legend only.
 - **Profile strip / notices:** Canvas Soft fill, 16.8px radius; chips are pills with a Hairline border and Canvas fill.
