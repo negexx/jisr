@@ -178,7 +178,7 @@ export function StepRow({
   return (
     <li
       data-step={step.id}
-      className="flex flex-col gap-2 border-t border-border py-4 first:border-t-0 first:pt-0"
+      className="flex flex-col gap-2 rounded-xl border border-border bg-card p-4 shadow-sm transition-shadow hover:shadow-md"
     >
       <label className="flex min-h-11 cursor-pointer items-start gap-3">
         <input

@@ -32,7 +32,7 @@ export function EmptyState({
     <div
       role={tone === "error" ? "alert" : "status"}
       data-tone={tone}
-      className="flex flex-col items-center gap-4 py-10 text-center md:items-start md:text-start"
+      className="flex flex-col items-center gap-4 rounded-xl bg-secondary px-6 py-10 text-center md:items-start md:px-8 md:text-start"
     >
       {icon ?? DEFAULT_ICON[tone]}
       <div className="flex max-w-prose flex-col gap-2">

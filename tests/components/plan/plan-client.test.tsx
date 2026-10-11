@@ -179,7 +179,8 @@ describe.each(LOCALES)("My plan: a saved program (%s)", (locale) => {
     for (const step of todo) {
       expect(within(list).getByRole("checkbox", { name: stepTitle(locale, step.id) })).toBeTruthy();
     }
-    expect(screen.getByText(t.lead)).toBeTruthy();
+    // The static lead lives in the page band; the island must not repeat it.
+    expect(screen.queryByText(t.lead)).toBeNull();
 
     const details = container.querySelector<HTMLDetailsElement>(
       "details[data-slot='skipped-steps']",
@@ -412,14 +413,12 @@ describe.each(LOCALES)("My plan: compare entry point (%s)", (locale) => {
     expect(html).not.toContain(t.compare.hint);
   });
 
-  it("puts the entry above the switcher and below the lead, with a phone-sized tap target", async () => {
+  it("puts the entry above the switcher, with a phone-sized tap target", async () => {
     seedProfile();
     seedSaved(PROGRAMS.ok, PROGRAMS.stale);
     renderPlan(locale, fixture.client());
     const link = await screen.findByRole("link", { name: t.compare.action });
-    const lead = screen.getByText(t.lead);
     const switcher = screen.getByRole("navigation");
-    expect(lead.compareDocumentPosition(link) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     expect(link.compareDocumentPosition(switcher) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     expect(link.className).toMatch(/\bmin-h-1[12]\b/);
     expectNoPhysicalDirection(link);

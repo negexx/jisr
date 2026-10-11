@@ -49,7 +49,6 @@ describe.each(LOCALES)("My plan page (%s)", (locale) => {
     expect(html).toContain('aria-busy="true"');
     // Nothing that depends on the profile, the saved list, the clock or the data.
     for (const text of [
-      t("lead"),
       t("empty.title"),
       t("noProfile.title"),
       t("storage.notice"),
@@ -65,6 +64,33 @@ describe.each(LOCALES)("My plan page (%s)", (locale) => {
     expect(html).not.toMatch(/<ol|<input|<details|<time/);
     expect(html).not.toMatch(/\d{2}\/\d{2}\/\d{4}/);
     expect(html).not.toMatch(/xx-test|jisr\./);
+  });
+
+  it("opens with the band: eyebrow, the one h1 and the static lead", async () => {
+    state.locale = locale;
+    const element = await page.default({ params: Promise.resolve({ locale }) });
+    const parsed = document.implementation.createHTMLDocument("");
+    parsed.body.innerHTML = renderToString(element);
+
+    const headings = parsed.querySelectorAll("h1");
+    expect(headings).toHaveLength(1);
+    expect(headings[0]?.textContent).toBe(t("title"));
+    expect(headings[0]?.className).toContain("text-display");
+    expect(headings[0]?.className).toContain("font-light");
+    expect(parsed.body.textContent).toContain(t("eyebrow"));
+    expect(parsed.body.textContent).toContain(t("lead"));
+  });
+
+  it("cancels only the top padding of the main column and pads the island", async () => {
+    state.locale = locale;
+    const element = await page.default({ params: Promise.resolve({ locale }) });
+    const parsed = document.implementation.createHTMLDocument("");
+    parsed.body.innerHTML = renderToString(element);
+
+    const wrapper = parsed.body.firstElementChild;
+    expect(wrapper?.className).toContain("-mt-8");
+    expect(wrapper?.className).toContain("md:-mt-12");
+    expect(wrapper?.querySelector(":scope > div.pt-8")?.className).toContain("pt-8 md:pt-12");
   });
 
   it("gives its nested provider an explicit locale", async () => {

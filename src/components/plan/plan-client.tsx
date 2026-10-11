@@ -175,7 +175,6 @@ export function PlanClient({ locale, client }: { locale: AppLocale; client?: Sna
       loading: false,
       node: (
         <>
-          <p className="max-w-prose text-base text-muted-foreground">{t("lead")}</p>
           <CompareEntry count={items.length} />
           <PlanLayout
             aside={

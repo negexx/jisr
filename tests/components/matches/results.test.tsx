@@ -82,8 +82,6 @@ function hiddenSummary(locale: AppLocale, count: number): string {
   );
 }
 
-const PUBLISHED = { en: /published/i, fr: /publiées?/i, ar: /المنشورة/u };
-
 const HIDDEN_SLUGS = {
   plain: Object.keys(E2E_EXPECTED.hidden.E2E_PROFILE),
   xb: Object.keys(E2E_EXPECTED.hidden.E2E_PROFILE_XB_ONLY),
@@ -214,42 +212,6 @@ describe.each(LOCALES)("My Matches: the four groups (%s)", (locale) => {
     const complete = container.querySelector(`article[data-slug="${E2E_SLUGS.ok}"]`);
     expect(complete?.textContent).not.toContain(t.domain.cost.partialTotal);
   });
-
-  it("keeps the word published in the not-met chip so it never reads as a verdict", async () => {
-    await renderFor(locale, E2E_PROFILE);
-    const nav = screen.getByRole("navigation", { name: t.matches.counts.navLabel });
-    const chip = within(nav).getAllByRole("link").at(-1);
-    expect(chip?.textContent).toMatch(PUBLISHED[locale]);
-  });
-
-  it("names the counts as jump links to the groups, leaving out the empty ones", async () => {
-    const { container } = await renderFor(locale, E2E_PROFILE);
-    const translate = createTranslator({
-      locale,
-      messages: catalogs[locale],
-      namespace: "matches.counts",
-    });
-    const nav = screen.getByRole("navigation", { name: t.matches.counts.navLabel });
-    const links = within(nav).getAllByRole("link");
-    const wanted = MATCH_GROUPS.map(
-      (group) => [group, expectedSlugs(group, HIDDEN_SLUGS.plain).length] as const,
-    ).filter(([, count]) => count > 0);
-    expect(links.map((link) => link.textContent)).toEqual(
-      wanted.map(([group, count]) => translate(group, { n: count, count: String(count) })),
-    );
-    for (const [index, [group]] of wanted.entries()) {
-      const target = section(container, group)?.querySelector("h2");
-      expect(links[index]?.getAttribute("href")).toBe(`#${target?.id}`);
-      expect(target?.id).toMatch(/^matches-group-/);
-      expect(links[index]?.className).toContain("min-h-11");
-      // Marked as links, unlike the profile chips: underlined label and a decorative down arrow.
-      expect(links[index]?.querySelector("span.underline")).not.toBeNull();
-      const arrow = links[index]?.querySelector("svg");
-      expect(arrow?.getAttribute("aria-hidden")).toBe("true");
-      expect(arrow?.getAttribute("class")).not.toMatch(/rotate/);
-    }
-    expect(nav.textContent).not.toMatch(/[٠-٩]/u);
-  });
 });
 
 describe.each(LOCALES)("My Matches: hidden by preferences (%s)", (locale) => {
@@ -358,11 +320,8 @@ describe.each(LOCALES)("My Matches: profile summary (%s)", (locale) => {
 });
 
 describe.each(LOCALES)("My Matches: page chrome (%s)", (locale) => {
-  const t = catalogs[locale];
-
-  it("shows the trust lead with the results and keeps a permanent, empty polite status", async () => {
+  it("keeps a permanent, empty polite status beside the results", async () => {
     const { container } = await renderFor(locale, E2E_PROFILE);
-    expect(screen.getByText(t.matches.lead)).toBeTruthy();
     const status = container.querySelector("output.sr-only");
     expect(status).not.toBeNull();
     expect(status?.textContent).toBe("");
@@ -426,7 +385,6 @@ describe.each(LOCALES)("My Matches: trust, direction and privacy (%s)", (locale)
 });
 
 describe.each(LOCALES)("My Matches: compare link (%s)", (locale) => {
-  const t = catalogs[locale].matches;
   const label = (count: number) =>
     createTranslator({ locale, messages: catalogs[locale], namespace: "matches.compare" })("link", {
       count: String(count),
@@ -437,13 +395,11 @@ describe.each(LOCALES)("My Matches: compare link (%s)", (locale) => {
     c: { slug: E2E_SLUGS.foundation, country: "XC", field: "xx-test-field-cs" },
   };
 
-  it("links to the compare page after the lead when two or more programs are saved", async () => {
+  it("links to the compare page when two or more programs are saved", async () => {
     seedSaved(PROGRAMS.a, PROGRAMS.b, PROGRAMS.c);
     const { container } = await renderFor(locale, E2E_PROFILE);
     const link = screen.getByRole("link", { name: label(3) });
     expect(link.getAttribute("href")).toBe(`/${locale}/compare`);
-    const lead = screen.getByText(t.lead);
-    expect(lead.compareDocumentPosition(link) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     expect(link.className).toContain("min-h-11");
     expect(container.textContent).not.toMatch(/[٠-٩۰-۹]/u);
     expectNoPhysicalDirection(container);

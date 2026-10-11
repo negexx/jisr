@@ -15,7 +15,7 @@ const STEP_COUNT = 4;
 export function StepHeader({ stepIndex, label }: { stepIndex: number; label: string }) {
   return (
     <div className="flex flex-col gap-2">
-      <p className="text-base font-medium">{label}</p>
+      <p className="text-sm font-medium text-muted-foreground">{label}</p>
       <div aria-hidden="true" className="flex gap-1.5">
         {Array.from({ length: STEP_COUNT }, (_, index) => (
           <span
@@ -83,7 +83,7 @@ export function Notice({
   onDismiss?: () => void;
 }) {
   return (
-    <output className="flex items-start gap-3 rounded-lg border border-border bg-muted px-4 py-3">
+    <output className="flex items-start gap-3 rounded-xl bg-secondary px-4 py-3">
       <InfoIcon className="mt-1 size-5 shrink-0 text-muted-foreground" />
       <p className="flex-1 pt-0.5 text-base">{children}</p>
       {onDismiss === undefined ? null : (
@@ -103,13 +103,3 @@ export function Notice({
 }
 export const PAGE_GRID =
   "lg:grid lg:grid-cols-[minmax(0,40rem)_minmax(0,16rem)] lg:justify-center lg:gap-12";
-
-// "neutral" is what the server renders: it does not yet know whether a profile is saved.
-export function PageTitle({ mode }: { mode: "create" | "edit" | "neutral" }) {
-  const t = useTranslations("profile.title");
-  return (
-    <h1 id="profile-title" className="text-2xl font-bold tracking-tight text-balance">
-      {t(mode)}
-    </h1>
-  );
-}

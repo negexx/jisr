@@ -1,6 +1,6 @@
 import { MatchesLayout } from "./matches-layout";
 
-const BLOCK = "rounded-lg bg-muted motion-safe:animate-pulse";
+const BLOCK = "rounded-xl bg-secondary motion-safe:animate-pulse";
 
 function CardSkeleton() {
   return (

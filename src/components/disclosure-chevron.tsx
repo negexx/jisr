@@ -17,4 +17,4 @@ export function DisclosureChevron() {
 }
 
 export const DISCLOSURE_SUMMARY_CLASS =
-  "flex min-h-11 w-fit cursor-pointer list-none items-center gap-1.5 text-primary md:min-h-8 [&::-webkit-details-marker]:hidden";
+  "flex min-h-11 w-fit cursor-pointer list-none items-center gap-1.5 text-primary font-medium md:min-h-8 [&::-webkit-details-marker]:hidden";

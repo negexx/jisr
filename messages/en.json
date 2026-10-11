@@ -436,6 +436,7 @@
       "edit": "Edit your profile",
       "neutral": "Your profile"
     },
+    "ctaNote": "Your answers stay on this device.",
     "intro": "Four short steps, then a last check. Every question is required unless it says optional.",
     "progress": {
       "step": "Step {current} of {total}: {title}",
@@ -941,6 +942,7 @@
       "description": "Your checklist for each saved program: documents, deadlines and next steps."
     },
     "title": "My application plan",
+    "eyebrow": "Your application",
     "lead": "Tick off each step as you complete it. Your progress stays on this device.",
     "loading": "Loading your plan",
     "compare": {
@@ -1095,6 +1097,7 @@
       "description": "The scholarships listed on Jisr, with amounts, what they cover, deadlines and official sources."
     },
     "title": "Scholarships",
+    "eyebrow": "Help with funding",
     "intro": "Scholarships we have listed for Bachelor's students, by country. Each fact shows its source and the date it was checked. Where the sources we read do not publish a value, we say so instead of guessing.",
     "jump": {
       "label": "Countries"

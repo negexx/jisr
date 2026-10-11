@@ -19,7 +19,7 @@ import { getLocalStorage } from "@/lib/profile/storage";
 import { useProfile } from "@/lib/profile/use-profile";
 import type { TextLookup } from "@/lib/snapshot/text";
 
-import { ErrorSummary, Notice, PAGE_GRID, PageTitle, StepHeader } from "./chrome";
+import { ErrorSummary, Notice, PAGE_GRID, StepHeader } from "./chrome";
 import { ArrowIcon, ChevronDownIcon } from "./icons";
 import { initialWizardState } from "./initial-state";
 import { groupKeyForPath, type ShownIssue, shownIssues } from "./issues";
@@ -241,12 +241,9 @@ function WizardBody({ core, text, locale, onCleared }: WizardProps & { onCleared
         onSubmit={onSubmit}
         className="flex min-w-0 flex-col gap-6"
       >
-        <div className="flex flex-col gap-2">
-          <PageTitle mode={mode} />
-          {stepIndex === 0 ? (
-            <p className="max-w-[65ch] text-base text-muted-foreground">{t("intro")}</p>
-          ) : null}
-        </div>
+        {stepIndex === 0 ? (
+          <p className="max-w-[65ch] text-base text-muted-foreground">{t("intro")}</p>
+        ) : null}
 
         {showReset ? (
           <Notice dismissLabel={t("common.dismiss")} onDismiss={dismissReset}>
@@ -281,7 +278,7 @@ function WizardBody({ core, text, locale, onCleared }: WizardProps & { onCleared
             >
               {stepTitle(stepId)}
             </h2>
-            <details className="group rounded-lg border border-border lg:hidden">
+            <details className="group rounded-xl bg-secondary lg:hidden">
               <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-2 px-4 text-base font-medium [&::-webkit-details-marker]:hidden">
                 {t("aside.whyPhone")}
                 <ChevronDownIcon className="size-4 transition-transform group-open:rotate-180" />

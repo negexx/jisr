@@ -56,7 +56,7 @@ export function ProfileSummary({
   return (
     <aside
       aria-labelledby={headingId}
-      className="flex flex-wrap items-center gap-2 rounded-xl bg-muted p-3 lg:grid lg:grid-cols-1 lg:gap-y-3 lg:p-4"
+      className="flex flex-wrap items-center gap-2 rounded-xl bg-secondary p-3 lg:grid lg:grid-cols-1 lg:gap-y-3 lg:p-4"
     >
       <h2 id={headingId} className="sr-only text-base font-semibold lg:not-sr-only">
         {t("title")}

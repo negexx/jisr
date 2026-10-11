@@ -97,7 +97,7 @@ export function StepBudget() {
 
       <output className="block">
         {budget.currency === "MAD" ? (
-          <p className="max-w-[65ch] rounded-lg bg-muted px-4 py-3 text-base">
+          <p className="max-w-[65ch] rounded-xl bg-secondary px-4 py-3 text-base">
             {t("fields.budget.madNote")}
           </p>
         ) : null}

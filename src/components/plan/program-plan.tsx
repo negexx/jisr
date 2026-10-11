@@ -56,7 +56,7 @@ export function ProgramPlan({
           id={headingId}
           data-slot="plan-heading"
           tabIndex={-1}
-          className="text-2xl font-semibold outline-none"
+          className="text-2xl font-light tracking-tight outline-none"
         >
           <bdi>{program.name}</bdi>
         </h2>
@@ -68,7 +68,7 @@ export function ProgramPlan({
         <MatchStatusBadge group={program.group} />
       </header>
 
-      <div className="grid gap-4 rounded-xl bg-muted p-4 sm:grid-cols-2">
+      <div className="grid gap-4 rounded-xl bg-secondary p-4 sm:grid-cols-2">
         <div data-slot="next-step" className="flex flex-col gap-1">
           <p className="text-sm text-muted-foreground">{t("program.nextStep")}</p>
           <p className="text-lg font-semibold">
@@ -91,7 +91,7 @@ export function ProgramPlan({
 
       <div className="flex flex-col gap-2">
         <h3 className="text-lg font-semibold">{t("steps.heading")}</h3>
-        <ol data-slot="steps" className="flex flex-col">
+        <ol data-slot="steps" className="flex flex-col gap-3">
           {todo.map((step) => (
             <StepRow
               key={step.id}

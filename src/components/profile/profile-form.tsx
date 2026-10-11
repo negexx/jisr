@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { lazy, type ReactNode, Suspense } from "react";
 
+import { PageBand } from "@/components/page-band";
 import { Button } from "@/components/ui/button";
 import type { AppLocale } from "@/i18n/routing";
 import { useProfile } from "@/lib/profile/use-profile";
@@ -10,7 +11,7 @@ import type { SnapshotClient } from "@/lib/snapshot/client";
 import { shardsForProfileForm } from "@/lib/snapshot/plan";
 import { type SnapshotRequest, useSnapshotBundle } from "@/lib/snapshot/use-snapshot";
 
-import { PAGE_GRID, PageTitle } from "./chrome";
+import { PAGE_GRID } from "./chrome";
 import { AlertIcon } from "./icons";
 import { ProfileWizard } from "./profile-wizard";
 
@@ -24,20 +25,17 @@ const EmptyState = lazy(() =>
 const REQUEST: SnapshotRequest = { key: "profile-form", plan: shardsForProfileForm() };
 
 // Same grid as the wizard, so nothing moves when the form replaces a placeholder.
-function Shell({ mode, children }: { mode: "create" | "edit" | "neutral"; children: ReactNode }) {
+function Shell({ children }: { children: ReactNode }) {
   return (
     <div className={PAGE_GRID}>
-      <div className="flex min-w-0 flex-col gap-6">
-        <PageTitle mode={mode} />
-        {children}
-      </div>
+      <div className="flex min-w-0 flex-col gap-6">{children}</div>
       <aside className="hidden lg:block" />
     </div>
   );
 }
 
 function FormSkeleton({ label }: { label: string }) {
-  const block = "rounded-lg bg-muted motion-safe:animate-pulse";
+  const block = "rounded-xl bg-secondary motion-safe:animate-pulse";
   return (
     <output aria-busy="true" className="flex flex-col gap-6">
       <span className="sr-only">{label}</span>
@@ -62,9 +60,15 @@ export function ProfileForm({ locale, client }: { locale: AppLocale; client?: Sn
   const mode =
     profile.status === "unhydrated" ? "neutral" : profile.status === "ok" ? "edit" : "create";
 
+  let content = (
+    <Shell>
+      <FormSkeleton label={t("states.loading")} />
+    </Shell>
+  );
+
   if (snapshot.status === "error") {
-    return (
-      <Shell mode={mode}>
+    content = (
+      <Shell>
         <div role="alert" className="flex flex-col items-start gap-4 py-10">
           <AlertIcon className="size-10 text-destructive" />
           <div className="flex max-w-prose flex-col gap-2">
@@ -77,13 +81,11 @@ export function ProfileForm({ locale, client }: { locale: AppLocale; client?: Sn
         </div>
       </Shell>
     );
-  }
-
-  if (snapshot.status === "ready") {
+  } else if (snapshot.status === "ready") {
     const { core, text } = snapshot.bundle;
     if (core === undefined || core.credentialTypes.length === 0) {
-      return (
-        <Shell mode={mode}>
+      content = (
+        <Shell>
           <Suspense fallback={null}>
             <EmptyState
               title={t("states.unavailable.title")}
@@ -92,15 +94,15 @@ export function ProfileForm({ locale, client }: { locale: AppLocale; client?: Sn
           </Suspense>
         </Shell>
       );
-    }
-    if (profile.status !== "unhydrated") {
-      return <ProfileWizard core={core} text={text} locale={locale} />;
+    } else if (profile.status !== "unhydrated") {
+      content = <ProfileWizard core={core} text={text} locale={locale} />;
     }
   }
 
   return (
-    <Shell mode={mode}>
-      <FormSkeleton label={t("states.loading")} />
-    </Shell>
+    <div className="-mt-8 md:-mt-12">
+      <PageBand id="profile-title" title={t(`title.${mode}`)} lead={t("ctaNote")} />
+      <div className="pt-8 md:pt-12">{content}</div>
+    </div>
   );
 }
