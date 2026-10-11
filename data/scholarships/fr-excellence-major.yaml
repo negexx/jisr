@@ -41,22 +41,4 @@ officialUrl: https://aefe.gouv.fr/fr/enseignement-francais/poursuite-des-etudes-
 sources:
   page-1:
     url: https://aefe.gouv.fr/fr/enseignement-francais/poursuite-des-etudes-dans-le-superieur/devenir-boursier-france-excellence-major
-    last_verified_at: null
-_review:
-  kind: scholarships
-  slug: fr-excellence-major
-  name: France Excellence-Major
-  preparedBy: assistant
-  preparedAt: 2026-10-10
-  officialUrl: https://aefe.gouv.fr/fr/enseignement-francais/poursuite-des-etudes-dans-le-superieur/devenir-boursier-france-excellence-major
-  evidence:
-    - fact: eligibility
-      url: https://aefe.gouv.fr/fr/enseignement-francais/poursuite-des-etudes-dans-le-superieur/devenir-boursier-france-excellence-major
-      quote: Ces bourses permettent aux meilleurs bacheliers étrangers d'un lycée français du monde de poursuivre un cursus de haut niveau dans l'enseignement supérieur français.
-    - fact: level
-      url: https://ressources.campusfrance.org/publications/fiches_boursiers/fr/bourses_aefe_fr.pdf
-      quote: "Plus de la moitié des boursiers Excellence-Major sont en premier cycle : 21 % sont en cycle court (157 étudiants dont 80 % sont en classes préparatoires) et 30 % en licence (225 étudiants)."
-    - fact: howToApply
-      url: https://aefe.gouv.fr/fr/enseignement-francais/poursuite-des-etudes-dans-le-superieur/devenir-boursier-france-excellence-major
-      quote: Les élèves de terminale souhaitant déposer leur candidature doivent être présélectionnés par le proviseur ou la proviseure du lycée français à l'étranger.
-  todo: "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+    last_verified_at: 2026-10-10
