@@ -20,10 +20,7 @@ export function Questions({ kicker, title, items }: QuestionsProps) {
         <span className="text-sm font-semibold tracking-[0.06em] text-primary uppercase">
           {kicker}
         </span>
-        <h2
-          id="questions"
-          className="mt-3 text-2xl font-light tracking-tight text-balance md:text-3xl"
-        >
+        <h2 id="questions" className="mt-3 text-2xl font-light tracking-tight text-balance">
           {title}
         </h2>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

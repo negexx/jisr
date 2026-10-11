@@ -73,7 +73,7 @@ export function Hero({
           <span className="inline-flex items-center rounded-full border border-primary/25 bg-background/70 px-3.5 py-2 text-sm font-medium text-accent-foreground backdrop-blur">
             {eyebrow}
           </span>
-          <h1 className="mt-5 text-display font-light tracking-tight text-balance">
+          <h1 className="mt-5 text-display font-light text-balance">
             {titleLead} <b className="font-semibold">{titleAccent}</b>
           </h1>
           <p className="mt-4 max-w-[46ch] text-lg text-secondary-foreground">{lead}</p>
@@ -87,7 +87,7 @@ export function Hero({
             <HomeMatchesLink label={matchesCta} />
           </div>
           <p className="mt-3.5 flex items-center gap-2 text-sm text-muted-foreground">
-            <span aria-hidden="true" className="size-1.5 rounded-full bg-status-ok" />
+            <span aria-hidden="true" className="size-1.5 rounded-full bg-primary" />
             {ctaNote}
           </p>
           <p className="mt-2">

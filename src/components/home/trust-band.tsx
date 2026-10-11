@@ -40,7 +40,7 @@ export function TrustBand({
           </span>
           <h2
             id="trust-heading"
-            className="mt-3.5 text-2xl leading-tight font-light tracking-tight text-balance text-[oklch(0.95_0.02_275)] md:text-3xl"
+            className="mt-3.5 text-2xl leading-tight font-light tracking-tight text-balance text-[oklch(0.95_0.02_275)]"
           >
             {titleLead} <b className="font-semibold">{titleAccent}</b>
           </h2>
