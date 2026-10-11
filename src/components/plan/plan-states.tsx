@@ -6,7 +6,7 @@ import { EmptyState } from "@/components/empty-state";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 
-const BLOCK = "rounded-lg bg-muted motion-safe:animate-pulse";
+const BLOCK = "rounded-xl bg-secondary motion-safe:animate-pulse";
 
 // The switcher comes first in the DOM so a phone shows it above the plan and the tab order is the
 // same in every direction; from lg it becomes a sticky rail in the first column.
@@ -92,7 +92,7 @@ export function ErrorState({ onRetry }: { onRetry?: () => void }) {
 export function StorageNotice() {
   const t = useTranslations("plan.storage");
   return (
-    <output className="flex items-start gap-3 rounded-lg border border-border bg-muted px-4 py-3">
+    <output className="flex items-start gap-3 rounded-xl bg-secondary px-4 py-3">
       <Info aria-hidden="true" className="mt-1 size-5 shrink-0 text-muted-foreground" />
       <p className="flex-1 pt-0.5 text-base">{t("notice")}</p>
     </output>
@@ -102,7 +102,7 @@ export function StorageNotice() {
 export function ResetNotice({ onDismiss }: { onDismiss: () => void }) {
   const t = useTranslations("plan.reset");
   return (
-    <output className="flex items-start gap-3 rounded-lg border border-border bg-muted px-4 py-3">
+    <output className="flex items-start gap-3 rounded-xl bg-secondary px-4 py-3">
       <Info aria-hidden="true" className="mt-1 size-5 shrink-0 text-muted-foreground" />
       <p className="flex-1 pt-0.5 text-base">{t("notice")}</p>
       <Button

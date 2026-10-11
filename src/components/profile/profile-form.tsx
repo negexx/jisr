@@ -37,7 +37,7 @@ function Shell({ mode, children }: { mode: "create" | "edit" | "neutral"; childr
 }
 
 function FormSkeleton({ label }: { label: string }) {
-  const block = "rounded-lg bg-muted motion-safe:animate-pulse";
+  const block = "rounded-xl bg-secondary motion-safe:animate-pulse";
   return (
     <output aria-busy="true" className="flex flex-col gap-6">
       <span className="sr-only">{label}</span>
