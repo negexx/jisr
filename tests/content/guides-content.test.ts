@@ -34,6 +34,102 @@ vi.mock("@content/ar/guides/studying-in-europe.mdx", () => ({
     last_verified_at: "2026-10-11",
   },
 }));
+vi.mock("@content/fr/guides/bac-and-european-universities.mdx", () => ({
+  default: () => null,
+  frontmatter: {
+    source_url: "https://example.org/guide",
+    info_kind: "guidance",
+    last_verified_at: "2026-10-11",
+  },
+}));
+vi.mock("@content/en/guides/bac-and-european-universities.mdx", () => ({
+  default: () => null,
+  frontmatter: {
+    source_url: "https://example.org/guide",
+    info_kind: "guidance",
+    last_verified_at: "2026-10-11",
+  },
+}));
+vi.mock("@content/ar/guides/bac-and-european-universities.mdx", () => ({
+  default: () => null,
+  frontmatter: {
+    source_url: "https://example.org/guide",
+    info_kind: "guidance",
+    last_verified_at: "2026-10-11",
+  },
+}));
+vi.mock("@content/fr/guides/documents-and-legalisation.mdx", () => ({
+  default: () => null,
+  frontmatter: {
+    source_url: "https://example.org/guide",
+    info_kind: "guidance",
+    last_verified_at: "2026-10-11",
+  },
+}));
+vi.mock("@content/en/guides/documents-and-legalisation.mdx", () => ({
+  default: () => null,
+  frontmatter: {
+    source_url: "https://example.org/guide",
+    info_kind: "guidance",
+    last_verified_at: "2026-10-11",
+  },
+}));
+vi.mock("@content/ar/guides/documents-and-legalisation.mdx", () => ({
+  default: () => null,
+  frontmatter: {
+    source_url: "https://example.org/guide",
+    info_kind: "guidance",
+    last_verified_at: "2026-10-11",
+  },
+}));
+vi.mock("@content/fr/guides/scholarships-for-moroccan-students.mdx", () => ({
+  default: () => null,
+  frontmatter: {
+    source_url: "https://example.org/guide",
+    info_kind: "guidance",
+    last_verified_at: "2026-10-11",
+  },
+}));
+vi.mock("@content/en/guides/scholarships-for-moroccan-students.mdx", () => ({
+  default: () => null,
+  frontmatter: {
+    source_url: "https://example.org/guide",
+    info_kind: "guidance",
+    last_verified_at: "2026-10-11",
+  },
+}));
+vi.mock("@content/ar/guides/scholarships-for-moroccan-students.mdx", () => ({
+  default: () => null,
+  frontmatter: {
+    source_url: "https://example.org/guide",
+    info_kind: "guidance",
+    last_verified_at: "2026-10-11",
+  },
+}));
+vi.mock("@content/fr/guides/common-mistakes.mdx", () => ({
+  default: () => null,
+  frontmatter: {
+    source_url: "https://example.org/guide",
+    info_kind: "guidance",
+    last_verified_at: "2026-10-11",
+  },
+}));
+vi.mock("@content/en/guides/common-mistakes.mdx", () => ({
+  default: () => null,
+  frontmatter: {
+    source_url: "https://example.org/guide",
+    info_kind: "guidance",
+    last_verified_at: "2026-10-11",
+  },
+}));
+vi.mock("@content/ar/guides/common-mistakes.mdx", () => ({
+  default: () => null,
+  frontmatter: {
+    source_url: "https://example.org/guide",
+    info_kind: "guidance",
+    last_verified_at: "2026-10-11",
+  },
+}));
 
 const LOCALES = ["en", "fr", "ar"] as const;
 

@@ -40,6 +40,38 @@
         "title": "Studying in Europe after the Moroccan bac",
         "description": "An overview guide to applying for a Bachelor's in Europe after a Moroccan bac, with official sources."
       }
+    },
+    "bac-and-european-universities": {
+      "title": "The Moroccan bac and access to European universities",
+      "lead": "This guide describes how the Moroccan baccalaureate is recognised for entry to a Bachelor's degree in France, Germany, the Netherlands, Hungary and Italy.",
+      "meta": {
+        "title": "The Moroccan bac and access to European universities",
+        "description": "How the Moroccan baccalaureate is recognised for entry to a Bachelor's degree in France, Germany, the Netherlands, Hungary and Italy, country by country."
+      }
+    },
+    "documents-and-legalisation": {
+      "title": "Documents, translations and legalisation",
+      "lead": "This guide describes the documents a Bachelor's application often asks for, sworn translation in Morocco, and how a document is made valid abroad.",
+      "meta": {
+        "title": "Documents, translations and legalisation",
+        "description": "The documents a Bachelor's application often asks for, sworn translation in Morocco, and how a document is made valid abroad."
+      }
+    },
+    "scholarships-for-moroccan-students": {
+      "title": "Scholarships for Moroccan students",
+      "lead": "This guide gathers the Bachelor's-level scholarships a Moroccan student can apply to for studying in Europe.",
+      "meta": {
+        "title": "Scholarships for Moroccan students",
+        "description": "Bachelor's-level scholarships a Moroccan student can apply to for studying in Europe, with official sources for each amount and level."
+      }
+    },
+    "common-mistakes": {
+      "title": "Common mistakes to avoid",
+      "lead": "This guide gathers the mistakes that cost a year, and sometimes a visa.",
+      "meta": {
+        "title": "Common mistakes to avoid",
+        "description": "The mistakes that cost a year or a visa in a European application, and the official rule behind each point."
+      }
     }
   },
   "metadata": {

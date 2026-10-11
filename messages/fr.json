@@ -40,6 +40,38 @@
         "title": "Étudier en Europe après le bac marocain",
         "description": "Un guide d'ensemble sur la candidature en licence en Europe après un bac marocain, avec les sources officielles."
       }
+    },
+    "bac-and-european-universities": {
+      "title": "Le bac marocain et l'accès aux universités européennes",
+      "lead": "Ce guide décrit la façon dont le baccalauréat marocain est reconnu pour entrer en licence en France, en Allemagne, aux Pays-Bas, en Hongrie et en Italie.",
+      "meta": {
+        "title": "Le bac marocain et l'accès aux universités européennes",
+        "description": "Comment le bac marocain est reconnu pour entrer en licence en France, en Allemagne, aux Pays-Bas, en Hongrie et en Italie, pays par pays."
+      }
+    },
+    "documents-and-legalisation": {
+      "title": "Documents, traductions et légalisation",
+      "lead": "Ce guide décrit les documents qu'une candidature en licence demande souvent, la traduction assermentée au Maroc et la façon dont un document devient valable à l'étranger.",
+      "meta": {
+        "title": "Documents, traductions et légalisation",
+        "description": "Les documents qu'une candidature en licence demande souvent, la traduction assermentée au Maroc et la validation des documents à l'étranger."
+      }
+    },
+    "scholarships-for-moroccan-students": {
+      "title": "Bourses pour les étudiants marocains",
+      "lead": "Ce guide rassemble les bourses de niveau licence qu'un étudiant marocain peut réellement demander pour étudier en Europe.",
+      "meta": {
+        "title": "Bourses pour les étudiants marocains",
+        "description": "Les bourses de niveau licence qu'un étudiant marocain peut demander pour étudier en Europe, pays par pays et montant par montant."
+      }
+    },
+    "common-mistakes": {
+      "title": "Erreurs courantes à éviter",
+      "lead": "Ce guide rassemble les erreurs qui coûtent une année, et parfois un visa.",
+      "meta": {
+        "title": "Erreurs courantes à éviter",
+        "description": "Les erreurs qui coûtent une année ou un visa dans une candidature en Europe, et la règle officielle derrière chaque point."
+      }
     }
   },
   "metadata": {
