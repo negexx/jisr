@@ -189,7 +189,7 @@ export function StepReview() {
 
       <section
         aria-labelledby="review-save-title"
-        className="flex flex-col gap-2 rounded-lg bg-muted px-4 py-4"
+        className="flex flex-col gap-2 rounded-xl bg-secondary px-4 py-4"
       >
         <h3 id="review-save-title" className="text-lg font-semibold">
           {t("review.saveTitle")}

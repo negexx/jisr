@@ -375,6 +375,7 @@
       "edit": "Modifier mon profil",
       "neutral": "Votre profil"
     },
+    "ctaNote": "Vos réponses restent sur cet appareil.",
     "intro": "Quatre étapes courtes, puis une dernière vérification. Toutes les questions sont obligatoires, sauf celles marquées facultatives.",
     "progress": {
       "step": "Étape {current} sur {total} : {title}",

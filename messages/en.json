@@ -375,6 +375,7 @@
       "edit": "Edit your profile",
       "neutral": "Your profile"
     },
+    "ctaNote": "Your answers stay on this device.",
     "intro": "Four short steps, then a last check. Every question is required unless it says optional.",
     "progress": {
       "step": "Step {current} of {total}: {title}",
