@@ -12,6 +12,7 @@ export const INDEXABLE_PATHS: readonly LocalePath[] = [
   "",
   "/profile",
   "/scholarships",
+  "/guides",
   "/privacy",
   "/terms",
 ];
@@ -46,12 +47,17 @@ export function buildRobots(env: SiteEnv): MetadataRoute.Robots {
   return { rules: { userAgent: "*", allow: "/" }, sitemap: `${env.siteUrl}/sitemap.xml` };
 }
 
-export function buildSitemap(env: SiteEnv, programSlugs: readonly string[]): MetadataRoute.Sitemap {
+export function buildSitemap(
+  env: SiteEnv,
+  programSlugs: readonly string[],
+  guidePaths: readonly LocalePath[] = [],
+): MetadataRoute.Sitemap {
   const { siteUrl } = env;
   if (!env.indexable || siteUrl === null) return [];
   const paths: LocalePath[] = [
     ...INDEXABLE_PATHS,
     ...programSlugs.map((slug): LocalePath => `/programs/${slug}`),
+    ...guidePaths,
   ];
   return paths.flatMap((path) => {
     const languages = languageUrls(siteUrl, path);

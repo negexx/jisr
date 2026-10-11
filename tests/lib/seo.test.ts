@@ -27,8 +27,15 @@ describe("localizedUrl", () => {
 });
 
 describe("INDEXABLE_PATHS", () => {
-  it("lists the home, profile, scholarships, privacy and terms routes", () => {
-    expect([...INDEXABLE_PATHS]).toEqual(["", "/profile", "/scholarships", "/privacy", "/terms"]);
+  it("lists the home, profile, scholarships, guides, privacy and terms routes", () => {
+    expect([...INDEXABLE_PATHS]).toEqual([
+      "",
+      "/profile",
+      "/scholarships",
+      "/guides",
+      "/privacy",
+      "/terms",
+    ]);
   });
 });
 
@@ -63,12 +70,22 @@ describe("buildSitemap", () => {
   const sitemap = buildSitemap(INDEXABLE, ["a", "b"]);
 
   it("has one entry per path and programme in each locale", () => {
-    expect(sitemap).toHaveLength((5 + 2) * 3);
+    expect(sitemap).toHaveLength((6 + 2) * 3);
     const urls = sitemap.map((entry) => entry.url);
     expect(new Set(urls).size).toBe(urls.length);
     expect(urls).toContain("https://x.test/fr");
     expect(urls).toContain("https://x.test/ar/scholarships");
     expect(urls).toContain("https://x.test/en/programs/b");
+  });
+
+  it("includes guide paths when provided, in every locale", () => {
+    const guidePaths = ["/guides/studying-in-europe"] as const;
+    const withGuides = buildSitemap(INDEXABLE, ["a"], guidePaths);
+    expect(withGuides).toHaveLength((6 + 1 + 1) * 3);
+    const urls = withGuides.map((entry) => entry.url);
+    expect(urls).toContain("https://x.test/fr/guides/studying-in-europe");
+    expect(urls).toContain("https://x.test/ar/guides/studying-in-europe");
+    expect(urls).toContain("https://x.test/en/guides/studying-in-europe");
   });
 
   it("maps fr, en, ar and x-default on every entry, x-default being the fr URL", () => {

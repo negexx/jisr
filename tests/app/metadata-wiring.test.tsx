@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import * as compare from "@/app/[locale]/compare/page";
+import * as guides from "@/app/[locale]/guides/page";
 import * as layout from "@/app/[locale]/layout";
 import * as matches from "@/app/[locale]/matches/page";
 import * as home from "@/app/[locale]/page";
@@ -37,6 +38,13 @@ vi.mock("@/lib/legal/documents", () => {
   return { PRIVACY: { en: Doc, fr: Doc, ar: Doc }, TERMS: { en: Doc, fr: Doc, ar: Doc } };
 });
 
+// The guides index reads the catalog, which imports MDX bodies Vitest cannot transform.
+vi.mock("@/lib/guides/catalog", () => ({
+  GUIDES: [],
+  GUIDE_SLUGS: [],
+  guideBySlug: () => undefined,
+}));
+
 const SITE = "https://x.test";
 const LOCALES: readonly AppLocale[] = ["fr", "ar"];
 const SLUG = "xx-test-program";
@@ -58,6 +66,11 @@ const indexablePages: Array<[string, string, MetadataOf]> = [
     "scholarships",
     "/scholarships",
     (locale) => scholarships.generateMetadata({ params: Promise.resolve({ locale }) }),
+  ],
+  [
+    "guides",
+    "/guides",
+    (locale) => guides.generateMetadata({ params: Promise.resolve({ locale }) }),
   ],
   [
     "privacy",

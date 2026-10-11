@@ -14,6 +14,34 @@
       }
     }
   },
+  "guides": {
+    "meta": {
+      "title": "Guides to studying in Europe",
+      "description": "Clear, sourced guides to preparing a Bachelor's in Europe after the Moroccan bac."
+    },
+    "index": {
+      "title": "Guides",
+      "lead": "Plain explanations of applying in Europe, written for a school-leaver and built on official sources."
+    },
+    "read": "Read the guide",
+    "sourceLabel": "Main source for this guide",
+    "related": "Where to go next",
+    "cta": {
+      "profile": "Create my profile",
+      "matches": "See my matches",
+      "scholarships": "See scholarships",
+      "plan": "My application plan"
+    },
+    "backToGuides": "Back to guides",
+    "studying-in-europe": {
+      "title": "Studying in Europe after the Moroccan bac",
+      "lead": "The five countries Jisr follows, the shape of the journey and how to read every source.",
+      "meta": {
+        "title": "Studying in Europe after the Moroccan bac",
+        "description": "An overview guide to applying for a Bachelor's in Europe after a Moroccan bac, with official sources."
+      }
+    }
+  },
   "metadata": {
     "title": "Jisr | Study in Europe after the Bac",
     "description": "Find realistic Bachelor's programmes in France, Germany, the Netherlands, Hungary and Italy, with costs, scholarships and application steps."
@@ -116,7 +144,8 @@
     "privacyLogs": "As on any website, our host sees the pages you open. To show your results and your plan, your browser also downloads data files whose names include your diploma's country, destination countries and fields: the ones you chose and those of the programs you open or save. Your grades, your nationality and the programs on your saved list are never sent.",
     "sources": "Data and sources are checked by hand; every fact shows its source.",
     "privacyLink": "Privacy",
-    "termsLink": "Terms"
+    "termsLink": "Terms",
+    "guidesLink": "Guides"
   },
   "clearData": {
     "trigger": "Clear my data",
