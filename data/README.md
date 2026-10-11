@@ -46,7 +46,7 @@ pnpm data:build              # publish immutable JSON snapshots (runs after data
 
 ## Importing candidates (`data-staging/`)
 
-Official bulk datasets are pulled into `data-staging/`, never straight into `data/`. A staged record has the exact shape of a `data/` record, plus a `_review` block, and every `last_verified_at` is `null`. Any fact the importer could not read (and any value it only guessed, such as a website from Wikidata) carries `info_kind: TODO_read_source`, which is deliberately not valid: `data:promote` refuses the record until a human has read the source and chosen a value, or an explicit `null` for "not published". `data-staging/` is committed as the review queue; it is not read by `data:check` or the build.
+Official bulk datasets are pulled into `data-staging/`, never straight into `data/`. A staged record has the exact shape of a `data/` record, plus a `_review` block, and every `last_verified_at` is `null`. Any fact the importer could not read (and any value it only guessed, such as a website from Wikidata) carries `info_kind: TODO_read_source`, which is deliberately not valid: `data:promote` refuses the record until a human has read the source and chosen a value, or an explicit `null` for "not published". `data-staging/` is a local review queue (gitignored, not committed); it is not read by `data:check` or the build.
 
 ```
 pnpm data:import france          # Parcoursup open data (Licence + BUT, CS/engineering/business) + institutions

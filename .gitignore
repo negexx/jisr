@@ -54,8 +54,6 @@ yarn-error.log*
 
 # Importer HTTP cache (pnpm data:import)
 /.cache/
-# Output of data:read and data:bakeoff runs (calls.jsonl, proposals): re-creatable, not data
-/data-staging/bakeoff/
-/data-staging/proposals-read/
-# Output of data:translate-ar export and review: re-creatable, not data
-/data-staging/translations/
+# The candidate review queue (pnpm data:import, data:read, data:evidence, data:translate-ar): a
+# local, re-creatable staging area, not source. Promoted records live in data/.
+data-staging/
