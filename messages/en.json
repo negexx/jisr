@@ -881,6 +881,7 @@
       "description": "Your checklist for each saved program: documents, deadlines and next steps."
     },
     "title": "My application plan",
+    "eyebrow": "Your application",
     "lead": "Tick off each step as you complete it. Your progress stays on this device.",
     "loading": "Loading your plan",
     "compare": {

@@ -881,6 +881,7 @@
       "description": "Votre liste d'étapes pour chaque programme enregistré : documents, échéances et prochaines étapes."
     },
     "title": "Mon plan de candidature",
+    "eyebrow": "Votre candidature",
     "lead": "Cochez chaque étape une fois terminée. Votre progression reste sur cet appareil.",
     "loading": "Chargement de votre plan",
     "compare": {

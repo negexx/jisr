@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 
+import { PageBand } from "@/components/page-band";
 import { PLAN_MESSAGE_NAMESPACES } from "@/components/plan/namespaces";
 import { PlanClient } from "@/components/plan/plan-client";
 import { routing } from "@/i18n/routing";
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-// Static: it holds the title and a neutral skeleton only. The saved list, the profile and the clock
+// Static: the band carries the title and the lead only. The saved list, the profile and the clock
 // are read in the browser by the island, so no claim about the student is in the HTML.
 export default async function PlanPage({ params }: Props) {
   const { locale } = await params;
@@ -34,14 +35,16 @@ export default async function PlanPage({ params }: Props) {
   setRequestLocale(locale);
   const [messages, t] = await Promise.all([getMessages(), getTranslations("plan")]);
   return (
-    <div className="flex flex-col gap-6">
-      <h1 className="text-2xl font-bold tracking-tight text-balance">{t("title")}</h1>
-      <NextIntlClientProvider
-        locale={locale}
-        messages={pickMessages(messages, PLAN_MESSAGE_NAMESPACES)}
-      >
-        <PlanClient locale={locale} />
-      </NextIntlClientProvider>
+    <div className="-mt-8 md:-mt-12">
+      <PageBand eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
+      <div className="pt-8 md:pt-12">
+        <NextIntlClientProvider
+          locale={locale}
+          messages={pickMessages(messages, PLAN_MESSAGE_NAMESPACES)}
+        >
+          <PlanClient locale={locale} />
+        </NextIntlClientProvider>
+      </div>
     </div>
   );
 }
