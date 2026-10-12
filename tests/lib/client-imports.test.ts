@@ -217,6 +217,9 @@ function sourceFiles(dir: string): string[] {
   return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) return sourceFiles(full);
+    // boundary.test.ts writes transient `__canary__` files into src/; a parallel worker can list one
+    // and then find it deleted, so the synthetic canaries are never scanned (as boundary.test does).
+    if (entry.name.startsWith("__canary__")) return [];
     return SOURCE_EXTENSION.test(entry.name) ? [full] : [];
   });
 }

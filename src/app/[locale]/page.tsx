@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import { hasLocale } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { DEMO_NAMESPACES } from "@/components/home/demo-namespaces";
 import { Hero } from "@/components/home/hero";
 import { HeroDemo } from "@/components/home/hero-demo";
 import { Questions } from "@/components/home/questions";
 import { TrustBand } from "@/components/home/trust-band";
 import { routing } from "@/i18n/routing";
-import { pickMessages } from "@/lib/i18n/client-messages";
 import { pageMetadata } from "@/lib/seo";
 import { readSiteEnv } from "@/lib/site-env";
 
@@ -34,8 +32,7 @@ export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
-  const [messages, t, tKind] = await Promise.all([
-    getMessages(),
+  const [t, tKind] = await Promise.all([
     getTranslations("home"),
     getTranslations("domain.infoKind"),
   ]);
@@ -51,36 +48,27 @@ export default async function HomePage({ params }: Props) {
         matchesCta={t("matchesCta")}
         scholarshipsCta={t("scholarshipsCta")}
         demo={
-          <NextIntlClientProvider
+          <HeroDemo
+            copy={{
+              title: t("demo.title"),
+              illustrative: t("demo.illustrative"),
+              profile: {
+                heading: t("demo.profile.heading"),
+                nationality: t("demo.profile.nationality"),
+                diploma: t("demo.profile.diploma"),
+                field: t("demo.profile.field"),
+                language: t("demo.profile.language"),
+                values: {
+                  nationality: t("demo.profile.values.nationality"),
+                  diploma: t("demo.profile.values.diploma"),
+                  field: t("demo.profile.values.field"),
+                  language: t("demo.profile.values.language"),
+                },
+              },
+              match: { teachingLanguage: t("demo.match.teachingLanguage") },
+            }}
             locale={locale}
-            messages={pickMessages(messages, DEMO_NAMESPACES)}
-          >
-            <HeroDemo
-              copy={{
-                title: t("demo.title"),
-                illustrative: t("demo.illustrative"),
-                fieldLabel: t("demo.fieldLabel"),
-                levelLabel: t("demo.levelLabel"),
-                field: {
-                  computerScience: t("demo.field.computerScience"),
-                  engineering: t("demo.field.engineering"),
-                },
-                level: { a2: t("demo.level.a2"), b2: t("demo.level.b2") },
-                fact: {
-                  institution: t("demo.fact.institution"),
-                  teachingLanguage: t("demo.fact.teachingLanguage"),
-                  tuition: t("demo.fact.tuition"),
-                  toCheck: t("demo.fact.toCheck"),
-                },
-                reason: {
-                  met: t("demo.reason.met"),
-                  notMet: t("demo.reason.notMet"),
-                  nonOfficial: t("demo.reason.nonOfficial"),
-                  toCheck: t("demo.reason.toCheck"),
-                },
-              }}
-            />
-          </NextIntlClientProvider>
+          />
         }
       />
       <Questions

@@ -109,7 +109,8 @@ describe.each(["fr", "en", "ar"] as const)("home page sections (%s)", (locale) =
 
   it("renders the status legend as three real match-status badges", async () => {
     const { document: page } = await renderHome(locale);
-    const groups = [...page.querySelectorAll("[data-group]")].map((el) =>
+    const trust = page.querySelector('section[aria-labelledby="trust-heading"]');
+    const groups = [...(trust?.querySelectorAll("[data-group]") ?? [])].map((el) =>
       el.getAttribute("data-group"),
     );
     expect(groups.sort()).toEqual(["check", "failed", "ok"]);

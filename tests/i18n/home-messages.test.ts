@@ -54,22 +54,6 @@ describe.each(LOCALES)("home page messages (%s)", (locale) => {
       expect(t(key.replace(/^home\./, ""), params), key).not.toMatch(ARABIC_INDIC_DIGIT);
     }
   });
-
-  it("names the status in words in the demo reason lines and never promises admission", () => {
-    const statusWord = {
-      fr: { met: /remplies/, missingSubject: /vérifier/, averageBelow: /non remplies/ },
-      en: { met: /appear met/, missingSubject: /to check/i, averageBelow: /not met/ },
-      ar: { met: /مستوفاة/, missingSubject: /للتحقق/, averageBelow: /غير مستوفاة/ },
-    }[locale];
-    expect(messages.get("home.demo.reason.met"), "home.demo.reason.met").toMatch(statusWord.met);
-    expect(
-      messages.get("home.demo.reason.missingSubject"),
-      "home.demo.reason.missingSubject",
-    ).toMatch(statusWord.missingSubject);
-    expect(messages.get("home.demo.reason.averageBelow"), "home.demo.reason.averageBelow").toMatch(
-      statusWord.averageBelow,
-    );
-  });
 });
 
 describe("home page messages: language rules", () => {

@@ -122,38 +122,23 @@
       }
     },
     "demo": {
-      "title": "Try it: one profile, one result",
+      "title": "One profile, one result",
       "illustrative": "Illustrative example: results vary with the profile.",
-      "averageLabel": "Average",
-      "fieldLabel": "Field",
-      "levelLabel": "Language level",
-      "level": {
-        "a2": "A2",
-        "b2": "B2"
+      "profile": {
+        "heading": "Profile",
+        "nationality": "Nationality",
+        "diploma": "Diploma",
+        "field": "Field",
+        "language": "Language",
+        "values": {
+          "nationality": "Morocco",
+          "diploma": "Bac Sciences Maths",
+          "field": "Engineering, Computer Science",
+          "language": "French B2, English B2"
+        }
       },
-      "track": {
-        "maths": "Maths Sciences",
-        "physicsChemistry": "PC",
-        "lifeAndEarthSciences": "SVT"
-      },
-      "field": {
-        "computerScience": "Computer Science",
-        "engineering": "Engineering",
-        "business": "Business"
-      },
-      "reason": {
-        "met": "Status: published requirements appear met. Everything we published for this programme seems to match your profile.",
-        "missingSubject": "Status: to check. The programme requires a subject your track does not cover. Check the official page.",
-        "averageBelow": "Status: published requirements not met. Your average is below the published minimum for this programme.",
-        "nonOfficial": "Status: to check. One piece of this comparison is not official. Check the programme's official page.",
-        "notMet": "Status: published requirements not met. Your profile does not meet a published requirement for this programme.",
-        "toCheck": "Status: to check. A published requirement still needs confirming. Check the programme's official page."
-      },
-      "fact": {
-        "teachingLanguage": "Teaching language",
-        "tuition": "Tuition",
-        "institution": "Institution",
-        "toCheck": "To check"
+      "match": {
+        "teachingLanguage": "Teaching language"
       }
     }
   },

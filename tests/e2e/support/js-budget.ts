@@ -64,9 +64,15 @@ export type JsBudget = { initial: number; untilIdle: number };
 // 218.6, plan 245.7, compare 253.4); the initial rows did not move. Owner decision (this session):
 // raise the affected until-idle rows by 1 KB, the /ar rows by symmetry with /fr (same pages). Nothing
 // else moved.
+// 2026-10-12 (home hero demo): the hero's interactive "try it" demo became a server-rendered,
+// self-running reveal, so the home no longer ships its lazy client island and the shared chunks
+// re-partitioned. On the fixture build the home initial measured 170.2 (ratchet 170) and the program
+// page until-idle 242.5 (ratchet 240), deterministically and within the 5% browser-vs-build
+// cross-check. Owner decision: raise only the affected rows -- home initial 170 -> 172 and program
+// until-idle 240 -> 244, in /fr and /ar by symmetry. Nothing else moved.
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
-  "/fr": { initial: 170, untilIdle: 219 },
-  "/ar": { initial: 170, untilIdle: 219 },
+  "/fr": { initial: 172, untilIdle: 219 },
+  "/ar": { initial: 172, untilIdle: 219 },
   "/fr/profile": { initial: 187, untilIdle: 219 },
   "/ar/profile": { initial: 187, untilIdle: 219 },
   "/fr/matches": { initial: 194, untilIdle: 219 },
@@ -77,6 +83,6 @@ export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/ar/compare": { initial: 190, untilIdle: 254 },
   "/fr/scholarships": { initial: 174, untilIdle: 225 },
   "/ar/scholarships": { initial: 174, untilIdle: 225 },
-  "/fr/programs/xx-test-prog-ok": { initial: 185, untilIdle: 240 },
-  "/ar/programs/xx-test-prog-ok": { initial: 185, untilIdle: 240 },
+  "/fr/programs/xx-test-prog-ok": { initial: 185, untilIdle: 244 },
+  "/ar/programs/xx-test-prog-ok": { initial: 185, untilIdle: 244 },
 };
