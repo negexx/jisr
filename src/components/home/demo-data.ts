@@ -303,12 +303,15 @@ export const DEMO_PROGRAMS: Program[] = [
       value: ["fr"],
     },
     tuition: {
-      source_url:
-        "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39236&typeBac=0&originePc=0",
+      source_url: "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
       info_kind: "official",
-      last_verified_at: "2026-10-01",
+      last_verified_at: "2026-10-12",
       class: "volatile",
-      value: null,
+      value: {
+        amountMinor: 290200,
+        currency: "EUR",
+        period: "year",
+      },
     },
     intakes: {
       source_url:
