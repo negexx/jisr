@@ -1,0 +1,5 @@
+slug: pharmacy
+name:
+  fr: { text: Pharmacie, status: draft }
+  en: { text: Pharmacy, status: draft }
+  ar: { text: الصيدلة, status: draft }

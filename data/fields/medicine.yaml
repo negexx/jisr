@@ -1,0 +1,5 @@
+slug: medicine
+name:
+  fr: { text: Médecine, status: draft }
+  en: { text: Medicine, status: draft }
+  ar: { text: الطب, status: draft }
