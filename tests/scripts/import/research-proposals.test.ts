@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { rowsToProposals, type ResearchRow } from "../../../scripts/import/research-proposals";
+import { type ResearchRow, rowsToProposals } from "../../../scripts/import/research-proposals";
 
 const row = (r: Partial<ResearchRow>): ResearchRow => ({
   slug: "x",
