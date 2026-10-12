@@ -47,12 +47,12 @@ Biomedical Sciences and Biotechnology are **science** degrees: they go to `allie
 | `scripts/import/sources/daad.ts` | `classifyDaad` name regexes (DE, English) | add health patterns |
 | `scripts/import/sources/studyfinder.ts` | `fieldOfBranch` branch → field map (HU) | add health branches |
 | `scripts/import/sources/ba.ts` | Studiensuche SFE study-field table (DE, German-taught) | **deferred** (German-taught, not English-first) |
-| `scripts/import/evidence.ts` (~L764) | per-field name regex used when verifying a page states the field | add entries for the new fields |
 | `scripts/import/it-stage-candidates.ts` (~L14) | `z.enum([...])` of fields | widen |
-| `tests/fixtures/data/e2e-journey/fields/*` | synthetic field fixtures | add one health field |
-| `messages/{en,fr,ar}.json` | one example string lists the fields ("Engineering, Computer Science") | update |
 
-The profile field selector, matcher (`src/domain/filter.ts`), snapshot and labels are data-driven (field names come from the record) — confirm and change only if a test or message hard-codes three.
+Note: `scripts/import/evidence.ts`'s `SUBJECT_WORDS` is the **school-subject** vocabulary used by credential rules (mathematics, SVT, computer-science…), **not** the programme-field classifier — it needs no change. `scripts/import/sources/universitaly.ts` reuses `fieldOfClass` and inherits the IT change.
+| `tests/fixtures/data/e2e-journey/fields/*` | synthetic field fixtures | add one health field |
+
+App surfaces are **data-driven**: the profile selector (`fieldOptions(core)` returns `core.fields`), the matcher (`src/domain/filter.ts` uses `program.field`) and the field labels (from the `LocalizedText` name) need **no change**. The only hard-coded field names outside `data/` are in the illustrative home demo (`src/components/home/demo-data.ts`, `hero-demo-card.tsx`) — out of scope.
 
 ## Code changes (per classifier) — proposed mappings
 
@@ -78,8 +78,8 @@ New records carry `source_url`, `info_kind` and `last_verified_at` like every ot
 
 ## App, i18n and fixtures
 
-- Add the three field records (fr reviewed where a human reads them; en; ar draft).
-- Update the one message string that lists fields; no other i18n change (field names render from the record).
+- Add the three field records (fr/en/ar; the owner marks them `reviewed`).
+- No i18n change: field names render from the record and the profile/matcher are data-driven (verified).
 - Add the new field(s) to the synthetic fixture and a health programme, so `typecheck`/`test`/`lint` cover the new field path.
 
 ## Trust rules (unchanged)
