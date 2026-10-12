@@ -46,8 +46,26 @@ applicationChannel:
   source: page-3
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: diploma
+      name:
+        fr:
+          text: Diplôme
+          status: draft
+        en:
+          text: Diploma
+          status: draft
+      translationRequired: null
+    - slug: transcript
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Transcript
+          status: draft
+      translationRequired: null
+  source: page-4
   info_kind: official
 requirements:
   coverage: partial
@@ -68,3 +86,6 @@ sources:
   page-3:
     url: https://www.studyinnl.org/plan-your-stay/how-to-apply
     last_verified_at: 2026-10-09
+  page-4:
+    url: https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf
+    last_verified_at: 2026-10-12

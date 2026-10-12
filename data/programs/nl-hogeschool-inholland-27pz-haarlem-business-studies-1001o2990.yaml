@@ -26,8 +26,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 1036000
+    currency: EUR
+    period: year
+  source: page-4
   info_kind: official
 intakes:
   value:
@@ -108,3 +111,6 @@ sources:
   page-3:
     url: https://www.studyinnl.org/plan-your-stay/how-to-apply
     last_verified_at: 2026-10-09
+  page-4:
+    url: https://www.inholland.nl/inschrijven/collegegeld/
+    last_verified_at: 2026-10-12

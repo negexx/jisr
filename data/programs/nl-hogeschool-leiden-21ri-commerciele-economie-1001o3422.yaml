@@ -25,8 +25,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 977500
+    currency: EUR
+    period: year
+  source: page-3
   info_kind: official
 intakes:
   value: null
@@ -96,3 +99,6 @@ sources:
   page-1:
     url: https://www.hsleiden.nl/studeren/inschrijven/studenten-uit-het-buitenland
     last_verified_at: 2026-10-02
+  page-3:
+    url: https://www.hsleiden.nl/studeren/inschrijven/kosten
+    last_verified_at: 2026-10-12
