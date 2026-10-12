@@ -42,53 +42,71 @@ applicationChannel:
   info_kind: official
 documents:
   value:
-    - slug: valid-passport
+    - slug: application-form
       name:
         fr:
-          text: Passeport en cours de validité
+          text: Formulaire de candidature
           status: draft
         en:
-          text: Valid passport
+          text: Application form
           status: draft
       translationRequired: null
-    - slug: certificate-of-admission
+    - slug: high-school-diploma
       name:
         fr:
-          text: Certificat d’admission délivré par l’établissement d’enseignement
+          text: Diplôme de fin d'études secondaires
           status: draft
         en:
-          text: Certificate of admission issued by the educational institution
+          text: High school diploma
           status: draft
-      translationRequired: null
-    - slug: proof-of-tuition-payment
+      translationRequired: true
+    - slug: transcripts
       name:
         fr:
-          text: Preuve du paiement des frais de scolarité
+          text: Relevés de notes
           status: draft
         en:
-          text: Proof of payment of tuition fees
+          text: Transcripts
           status: draft
       translationRequired: null
-    - slug: proof-of-means-of-subsistence
+    - slug: passport
       name:
         fr:
-          text: Preuve de ressources suffisantes pour la subsistance et le séjour
+          text: Preuve de citoyenneté (par ex. passeport)
           status: draft
         en:
-          text: Proof of sufficient means of subsistence
+          text: Proof of citizenship (e.g. passport)
           status: draft
       translationRequired: null
-    - slug: comprehensive-health-insurance
+    - slug: cv
       name:
         fr:
-          text: Assurance maladie couvrant l’ensemble des soins de santé
+          text: CV
           status: draft
         en:
-          text: Comprehensive health insurance covering all healthcare services
+          text: CV
           status: draft
       translationRequired: null
-  source: page-1
-  info_kind: guidance
+    - slug: medical-certificate
+      name:
+        fr:
+          text: Certificat médical
+          status: draft
+        en:
+          text: Medical certificate
+          status: draft
+      translationRequired: null
+    - slug: application-fee-receipt
+      name:
+        fr:
+          text: Reçu de paiement des frais de candidature
+          status: draft
+        en:
+          text: Bank receipt for the application fee
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
 requirements:
   coverage: partial
   source: programme

@@ -42,53 +42,71 @@ applicationChannel:
   info_kind: official
 documents:
   value:
-    - slug: valid-passport
+    - slug: application-form
       name:
         fr:
-          text: Passeport en cours de validité
+          text: Formulaire de candidature
           status: draft
         en:
-          text: Valid passport
+          text: Application form
           status: draft
       translationRequired: null
-    - slug: certificate-of-admission
+    - slug: secondary-school-certificate
       name:
         fr:
-          text: Certificat d’admission délivré par l’établissement d’enseignement
+          text: Copie certifiée conforme du diplôme d'études secondaires
           status: draft
         en:
-          text: Certificate of admission issued by the educational institution
+          text: Officially certified copy of secondary school certificate
           status: draft
       translationRequired: null
-    - slug: proof-of-tuition-payment
+    - slug: transcript-of-records
       name:
         fr:
-          text: Preuve du paiement des frais de scolarité
+          text: Copie certifiée conforme du relevé de notes
           status: draft
         en:
-          text: Proof of payment of tuition fees
+          text: Officially certified copy of the transcript of records
           status: draft
       translationRequired: null
-    - slug: proof-of-means-of-subsistence
+    - slug: english-language-certificate
       name:
         fr:
-          text: Preuve de ressources suffisantes pour la subsistance et le séjour
+          text: Certificat de compétence en anglais
           status: draft
         en:
-          text: Proof of sufficient means of subsistence
+          text: Certificate of English language proficiency
           status: draft
       translationRequired: null
-    - slug: comprehensive-health-insurance
+    - slug: passport
       name:
         fr:
-          text: Assurance maladie couvrant l’ensemble des soins de santé
+          text: Copie du passeport valide
           status: draft
         en:
-          text: Comprehensive health insurance covering all healthcare services
+          text: Copy of valid passport
           status: draft
       translationRequired: null
-  source: page-1
-  info_kind: guidance
+    - slug: cv
+      name:
+        fr:
+          text: CV en anglais
+          status: draft
+        en:
+          text: CV in English
+          status: draft
+      translationRequired: null
+    - slug: bank-transfer-verification
+      name:
+        fr:
+          text: Justificatif du virement des frais d'inscription
+          status: draft
+        en:
+          text: Verification of the bank transfer of the registration fee
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
   source: programme
