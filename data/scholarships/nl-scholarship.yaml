@@ -1,0 +1,68 @@
+slug: nl-scholarship
+name: NL Scholarship
+provider: Dutch Ministry of Education, Culture and Science and the participating Dutch institutions (Study in NL / Nuffic)
+destinations:
+  - NL
+eligibleNationalities: []
+fields: []
+institutions:
+  - nl-breda-university-of-applied-sciences-21ui
+  - nl-de-haagse-hogeschool-27um
+  - nl-de-haagse-hogeschool-27um-delft
+  - nl-de-haagse-hogeschool-27um-zoetermeer
+  - nl-fontys-hogeschool-30gb
+  - nl-fontys-hogeschool-30gb-tilburg
+  - nl-fontys-hogeschool-30gb-venlo
+  - nl-hogeschool-rotterdam-22oj
+  - nl-hogeschool-utrecht-25dw
+  - nl-hogeschool-van-amsterdam-28dn
+  - nl-hogeschool-van-arnhem-en-nijmegen-25kb
+level: bachelor
+summary:
+  fr:
+    text: "Bourse nationale neerlandaise (ex-Holland Scholarship), financee par le ministere de l'Education et les etablissements participants : 5 000 EUR verses la premiere annee d'etudes, en licence. Reservee aux etudiants venant de hors de l'EEE admis dans un etablissement participant ; ce n'est pas une bourse qui couvre la totalite des frais de scolarite."
+    status: draft
+  en:
+    text: "Dutch national scholarship (formerly the Holland Scholarship), funded by the Ministry of Education and the participating institutions: EUR 5,000 paid in the first year of Bachelor studies. For students from outside the EEA admitted to a participating institution; it does not cover full tuition."
+    status: draft
+  ar:
+    text: "منحة هولندية وطنية (كانت تُعرف سابقاً بمنحة هولندا)، تموّلها وزارة التعليم والمؤسسات المشاركة: 5 000 EUR تُدفع في السنة الأولى من الإجازة. مخصّصة للطلبة القادمين من خارج المنطقة الاقتصادية الأوروبية المقبولين في مؤسسة مشاركة؛ ولا تغطي كامل الرسوم الدراسية."
+    status: draft
+support:
+  value:
+    amount:
+      min: 500000
+      max: 500000
+      currency: EUR
+      per: once
+    covers: []
+  source: page-1
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-1
+  info_kind: official
+  rules: []
+documents:
+  value: null
+  source: page-1
+  info_kind: official
+howToApply:
+  fr:
+    text: Verifiez les criteres sur le site de l'etablissement participant que vous visez, postulez a votre programme, puis suivez la procedure de bourse de cet etablissement (chaque etablissement fixe sa propre date limite).
+    status: draft
+  en:
+    text: Check the criteria on the website of the participating institution you choose, apply to your programme, then follow that institution's scholarship procedure (each institution sets its own closing date).
+    status: draft
+  ar:
+    text: تحقق من الشروط على موقع المؤسسة المشاركة التي تستهدفها، وقدّم طلبك إلى برنامجك، ثم اتبع إجراء المنحة الخاص بتلك المؤسسة (كل مؤسسة تحدّد موعدها النهائي).
+    status: draft
+officialUrl: https://www.studyinnl.org/finances/nl-scholarship
+sources:
+  page-1:
+    url: https://www.studyinnl.org/finances/nl-scholarship
+    last_verified_at: 2026-10-12
