@@ -1,159 +1,112 @@
-"use client";
+// The self-running hero demo: a server component that plays a profile -> matches reveal once on load
+// and holds the final state. No client JS: the only client leaf below is FreshnessMark, which
+// SourceBadge renders and which handles its own mount. Every string arrives as a prop (`copy`), and
+// the match statuses are fixed, illustrative markup (the trust-band precedent), never a computed
+// result: nothing here runs src/domain or reads the clock.
+import type { CSSProperties } from "react";
 
-// The interactive hero demo: a client leaf that runs the REAL src/domain matching on the Task 6
-// fixture. Every shell string arrives as a prop (`copy`); the domain, the fixture and the card (with
-// MatchStatusBadge/SourceBadge) are imported only on the first control interaction, so the home's
-// initial JS stays in budget. The server renders a neutral, height-reserving placeholder labelled
-// "illustrative" that makes no status, freshness, clock or profile claim.
-import { useLocale } from "next-intl";
-import { type ComponentType, useState } from "react";
-
+import type { Program } from "@/data-schema/resolved";
 import type { AppLocale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
-export type DemoField = "computerScience" | "engineering";
-export type DemoLevel = "A2" | "B2";
+import { DEMO_PROGRAMS } from "./demo-data";
+import { HeroDemoCard } from "./hero-demo-card";
 
-// Every user-facing string the demo shows. The badges (MatchStatusBadge, SourceBadge) read their own
-// namespaces through the provider the caller wraps around HeroDemo (see DEMO_NAMESPACES).
+// The fixture ships one engineering programme (shown as appears-met) and one computer-science
+// programme (shown as to-check); bind by field so a fixture reorder cannot silently swap the two.
+function demoProgram(field: string): Program {
+  const program = DEMO_PROGRAMS.find((candidate) => candidate.field === field);
+  if (program === undefined) throw new Error("hero demo: the fixture is missing a programme");
+  return program;
+}
+
+// Every user-facing string the demo shows. The shared trust components (MatchStatusBadge, SourceBadge)
+// resolve their own namespaces server-side from the request locale, so this island needs no provider.
 export type HeroDemoCopy = {
   title: string;
   illustrative: string;
-  fieldLabel: string;
-  levelLabel: string;
-  field: Record<DemoField, string>;
-  level: Record<"a2" | "b2", string>;
-  fact: {
-    institution: string;
-    teachingLanguage: string;
-    tuition: string;
-    toCheck: string;
+  profile: {
+    heading: string;
+    nationality: string;
+    diploma: string;
+    field: string;
+    language: string;
+    values: { nationality: string; diploma: string; field: string; language: string };
   };
-  reason: {
-    met: string;
-    notMet: string;
-    nonOfficial: string;
-    toCheck: string;
-  };
+  match: { teachingLanguage: string };
 };
 
-export type HeroDemoCardProps = {
-  field: DemoField;
-  level: DemoLevel;
-  copy: HeroDemoCopy;
-  locale: AppLocale;
-};
-
-type SegmentedOption<T extends string> = { value: T; label: string };
-
-function Segmented<T extends string>({
-  label,
-  options,
-  selected,
-  onSelect,
-}: {
-  label: string;
-  options: readonly SegmentedOption<T>[];
-  selected: T;
-  onSelect: (value: T) => void;
-}) {
-  return (
-    <fieldset
-      aria-label={label}
-      className="flex min-w-0 gap-0.5 rounded-full border border-border bg-secondary p-0.5"
-    >
-      {options.map((option) => {
-        const active = option.value === selected;
-        return (
-          <button
-            key={option.value}
-            type="button"
-            aria-pressed={active}
-            onClick={() => onSelect(option.value)}
-            className={cn(
-              "flex-1 rounded-full px-3 py-2 text-sm font-medium transition-colors duration-150 ease-[cubic-bezier(.2,.8,.2,1)] motion-reduce:transition-none",
-              active
-                ? "bg-card text-accent-foreground shadow-sm"
-                : "text-secondary-foreground hover:text-foreground",
-            )}
-          >
-            {option.label}
-          </button>
-        );
-      })}
-    </fieldset>
-  );
+// Component-scoped keyframes, like hero.tsx's mesh CSS. All animation sits behind
+// prefers-reduced-motion: no-preference, so the plain base state is the visible end state: the rows
+// and cards are opaque and the bar is full before the first painted frame, with or without JS. The
+// reveal plays exactly once (no `infinite`) and finishes well under the 5s WCAG 2.2.2 budget.
+const DEMO_CSS = `
+.jisr-demo-bar{transform-origin:left center}
+[dir="rtl"] .jisr-demo-bar{transform-origin:right center}
+@keyframes jisr-reveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes jisr-bar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion: no-preference){
+  .jisr-demo-reveal{animation:jisr-reveal .45s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--d)}
+  .jisr-demo-bar{animation:jisr-bar .95s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--d)}
 }
+`;
 
-function Placeholder() {
-  return (
-    <div
-      aria-hidden="true"
-      className="flex flex-col gap-3 rounded-2xl border border-border bg-card p-4"
-    >
-      <span className="h-4 w-3/4 rounded bg-secondary" />
-      <span className="h-3 w-1/2 rounded bg-secondary" />
-      <span className="h-6 w-40 rounded bg-secondary" />
-      <span className="h-3 w-full rounded bg-secondary" />
-    </div>
-  );
-}
-
-export function HeroDemo({ copy }: { copy: HeroDemoCopy }) {
-  const locale = useLocale() as AppLocale;
-  const [field, setField] = useState<DemoField>("engineering");
-  const [level, setLevel] = useState<DemoLevel>("B2");
-  const [Card, setCard] = useState<ComponentType<HeroDemoCardProps> | null>(null);
-
-  const loadCard = () => {
-    if (Card !== null) return;
-    void import("./hero-demo-card").then((module) => {
-      setCard(() => module.HeroDemoCard);
-    });
-  };
-  const chooseField = (value: DemoField) => {
-    setField(value);
-    loadCard();
-  };
-  const chooseLevel = (value: DemoLevel) => {
-    setLevel(value);
-    loadCard();
-  };
+export function HeroDemo({ copy, locale }: { copy: HeroDemoCopy; locale: AppLocale }) {
+  const rows = [
+    { label: copy.profile.nationality, value: copy.profile.values.nationality, delay: "0s" },
+    { label: copy.profile.diploma, value: copy.profile.values.diploma, delay: ".16s" },
+    { label: copy.profile.field, value: copy.profile.values.field, delay: ".32s" },
+    { label: copy.profile.language, value: copy.profile.values.language, delay: ".48s" },
+  ];
 
   return (
     <div className="relative rounded-3xl border border-border bg-card p-5 shadow-lg">
-      <div className="mb-1 flex items-baseline justify-between gap-3">
-        <span className="text-sm font-semibold tracking-[0.02em] text-muted-foreground uppercase">
-          {copy.title}
-        </span>
-      </div>
+      <style>{DEMO_CSS}</style>
+      <span className="text-sm font-semibold tracking-[0.02em] text-muted-foreground uppercase">
+        {copy.title}
+      </span>
       <p className="mb-4 text-sm text-muted-foreground">{copy.illustrative}</p>
-      <div className="mb-4 grid gap-2.5">
-        <Segmented
-          label={copy.fieldLabel}
-          selected={field}
-          onSelect={chooseField}
-          options={[
-            { value: "engineering", label: copy.field.engineering },
-            { value: "computerScience", label: copy.field.computerScience },
-          ]}
-        />
-        <Segmented
-          label={copy.levelLabel}
-          selected={level}
-          onSelect={chooseLevel}
-          options={[
-            { value: "B2", label: copy.level.b2 },
-            { value: "A2", label: copy.level.a2 },
-          ]}
-        />
+      <div className="rounded-2xl border border-border bg-secondary p-4">
+        <p className="mb-2 text-xs font-semibold tracking-[0.04em] text-muted-foreground uppercase">
+          {copy.profile.heading}
+        </p>
+        <div className="flex flex-col">
+          {rows.map((row, index) => (
+            <div
+              key={row.label}
+              className={cn(
+                "jisr-demo-reveal flex items-center justify-between gap-3 py-1.5 text-sm",
+                index > 0 && "border-t border-border/70",
+              )}
+              style={{ "--d": row.delay } as CSSProperties}
+            >
+              <span className="text-muted-foreground">{row.label}</span>
+              <bdi className="font-medium text-foreground">{row.value}</bdi>
+            </div>
+          ))}
+        </div>
+        <div aria-hidden="true" className="mt-2.5 h-1 overflow-hidden rounded-full bg-primary/15">
+          <span
+            className="jisr-demo-bar block h-full w-full rounded-full bg-linear-to-r from-primary to-accent-foreground"
+            style={{ "--d": ".10s" } as CSSProperties}
+          />
+        </div>
       </div>
-      <div data-testid="hero-demo-slot" style={{ minHeight: "13rem" }}>
-        {Card === null ? (
-          <Placeholder />
-        ) : (
-          <Card field={field} level={level} copy={copy} locale={locale} />
-        )}
+      <div className="mt-3 flex flex-col gap-3">
+        <HeroDemoCard
+          program={demoProgram("engineering")}
+          group="ok"
+          delay="1.15s"
+          copy={copy}
+          locale={locale}
+        />
+        <HeroDemoCard
+          program={demoProgram("computer-science")}
+          group="check"
+          delay="1.40s"
+          copy={copy}
+          locale={locale}
+        />
       </div>
     </div>
   );
