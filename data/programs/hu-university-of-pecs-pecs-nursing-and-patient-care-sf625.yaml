@@ -1,0 +1,125 @@
+slug: hu-university-of-pecs-pecs-nursing-and-patient-care-sf625
+institution: hu-university-of-pecs-pecs
+country: HU
+city: pecs
+field: allied-health
+level: bachelor
+name: Nursing and Patient Care [Nurse]
+summary:
+  fr:
+    text: Nursing and Patient Care [Nurse], University of Pécs (Pécs). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Nursing and Patient Care [Nurse], University of Pécs (Pécs). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Nursing and Patient Care [Nurse], University of Pécs (Pécs). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://international.pte.hu/study_programs/bsc_nursing
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 290000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien Skype d'au moins 15 minutes, basé sur un certain protocole, permet de vérifier vos compétences linguistiques.
+          status: draft
+        en:
+          text: A min 15 minute long Skype interview, based on a certain protocol, to ascertain your competencies in the language
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Examen d'entrée oral en ligne : la moyenne des notes de biologie et d'une autre matière choisie compte dans la moyenne des notes du lycée."
+          status: draft
+        en:
+          text: "Online oral entrance examination: the mean of grades from Biology and one other subject chosen by the student counts in the average of the high school grades."
+          status: draft
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Des frais de candidature (200 EUR) et de dossier (100 EUR) sont demandés et doivent être payés pour que l'évaluation de votre dossier commence.
+          status: draft
+        en:
+          text: An application fee (EUR 200) and registration fee (EUR 100) are required and must be paid so the evaluation of your application can start.
+          status: draft
+    - id: req-5
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Votre demande est évaluée après réception des frais de candidature ; si vous réussissez l'entretien/examen, vous recevez une lettre d'acceptation conditionnelle.
+          status: draft
+        en:
+          text: Your application is evaluated after the application fee is received; if you pass the entrance exam/Skype interview, you receive a Conditional Acceptance Letter.
+          status: draft
+    - id: req-6
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Après réception des frais de scolarité, la lettre d'admission est délivrée et vous pouvez organiser votre voyage à Pécs.
+          status: draft
+        en:
+          text: After the tuition fee is received, the Letter of Admission is issued and you can start arranging your travel to Pécs.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://international.pte.hu/study_programs/bsc_nursing
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/625
+    last_verified_at: 2026-10-12
+  page-3:
+    url: https://international.pte.hu/admission/how-apply
+    last_verified_at: 2026-10-12

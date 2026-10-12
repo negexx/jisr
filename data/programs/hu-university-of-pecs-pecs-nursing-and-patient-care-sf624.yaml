@@ -1,0 +1,100 @@
+slug: hu-university-of-pecs-pecs-nursing-and-patient-care-sf624
+institution: hu-university-of-pecs-pecs
+country: HU
+city: pecs
+field: allied-health
+level: bachelor
+name: Nursing and Patient Care [Midwife]
+summary:
+  fr:
+    text: Nursing and Patient Care [Midwife], University of Pécs (Pécs). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Nursing and Patient Care [Midwife], University of Pécs (Pécs). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Nursing and Patient Care [Midwife], University of Pécs (Pécs). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/624
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+    - slug: medical-certificate
+      name:
+        fr:
+          text: Certificat médical
+          status: draft
+        en:
+          text: Medical certificate
+          status: draft
+      translationRequired: null
+    - slug: language-exam-certificate
+      name:
+        fr:
+          text: Certificat d'examen de langue
+          status: draft
+        en:
+          text: Language exam certificate
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation letter
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien oral (Skype, min. 15 minutes) est requis pour vérifier les compétences linguistiques; la moyenne des notes de biologie et d'une autre matière est prise en compte.
+          status: draft
+        en:
+          text: An oral interview (Skype, min. 15 minutes) is required to verify language competencies; the mean of grades from Biology and one other subject is taken into account.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/624
+    last_verified_at: 2026-10-12

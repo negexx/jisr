@@ -1,0 +1,75 @@
+slug: hu-university-of-debrecen-debrecen-health-care-and-disease-sf157
+institution: hu-university-of-debrecen-debrecen
+country: HU
+city: debrecen
+field: allied-health
+level: bachelor
+name: Health Care and Disease Prevention [Public Health Supervisor]
+summary:
+  fr:
+    text: Health Care and Disease Prevention [Public Health Supervisor], University of Debrecen (Debrecen). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Health Care and Disease Prevention [Public Health Supervisor], University of Debrecen (Debrecen). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Health Care and Disease Prevention [Public Health Supervisor], University of Debrecen (Debrecen). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/157
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien d'admission oral est obligatoire (en ligne ou en personne) pour évaluer l'anglais, la motivation et la communication.
+          status: draft
+        en:
+          text: A compulsory oral entrance interview (online or in person) assesses English, motivation and communication skills.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La faculté évalue d'abord le niveau, les matières et les résultats des études précédentes pour décider de l'éligibilité.
+          status: draft
+        en:
+          text: The Faculty first examines the documents of previous studies (level, subjects, results) to decide on eligibility.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/157
+    last_verified_at: 2026-10-12

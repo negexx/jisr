@@ -1,0 +1,138 @@
+slug: hu-university-of-szeged-szeged-nursing-and-patient-care-sf1138
+institution: hu-university-of-szeged-szeged
+country: HU
+city: szeged
+field: allied-health
+level: bachelor
+name: Nursing and Patient care [Nurse]
+summary:
+  fr:
+    text: Nursing and Patient care [Nurse], University of Szeged (Szeged). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Nursing and Patient care [Nurse], University of Szeged (Szeged). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Nursing and Patient care [Nurse], University of Szeged (Szeged). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://apply.u-szeged.hu/en_GB/courses/course/266-bscn-nurse
+durationYears:
+  value: 4
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-3
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 350000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+    - slug: high-school-diploma
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: High School Diploma
+          status: draft
+      translationRequired: null
+    - slug: certificate-of-subjects-and-grades
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Certificate listing all the subjects taken and grades achieved
+          status: draft
+      translationRequired: null
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation Letter
+          status: draft
+      translationRequired: null
+    - slug: statement-of-representation
+      name:
+        fr:
+          text: Déclaration de représentation
+          status: draft
+        en:
+          text: Statement of Representation
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien de motivation peut être requis.
+          status: draft
+        en:
+          text: A motivational interview might be required.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les documents de qualification doivent être envoyés par courrier postal uniquement après l'admission.
+          status: draft
+        en:
+          text: Qualification documents must be sent by postal mail only after acceptance.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://apply.u-szeged.hu/en_GB/courses/course/266-bscn-nurse
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://etszk.u-szeged.hu/english/nurse/nursing-and-patient-care
+    last_verified_at: 2026-10-12
+  page-3:
+    url: https://tempus.tpf.hu/studyfinder/index/show/1138
+    last_verified_at: 2026-10-12

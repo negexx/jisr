@@ -1,0 +1,63 @@
+slug: hu-university-of-debrecen-debrecen-nursing-and-patient-care-sf171
+institution: hu-university-of-debrecen-debrecen
+country: HU
+city: debrecen
+field: allied-health
+level: bachelor
+name: Nursing and Patient Care [Physiotherapist]
+summary:
+  fr:
+    text: Nursing and Patient Care [Physiotherapist], University of Debrecen (Debrecen). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Nursing and Patient Care [Physiotherapist], University of Debrecen (Debrecen). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Nursing and Patient Care [Physiotherapist], University of Debrecen (Debrecen). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/171
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien d'admission obligatoire est requis (oral, en ligne ou en personne), évaluant l'anglais, la motivation et la communication.
+          status: draft
+        en:
+          text: A compulsory entrance interview is required (oral, online or in person), assessing English, motivation and communication skills.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/171
+    last_verified_at: 2026-10-12
