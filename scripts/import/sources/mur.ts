@@ -123,6 +123,13 @@ const CLASS_FIELD: Record<string, string> = {
   "L-18": "business-economics",
   "L-33": "business-economics",
   "L-41": "business-economics",
+  "L/SNT1": "allied-health",
+  "L/SNT2": "allied-health",
+  "L/SNT3": "allied-health",
+  "L/SNT4": "allied-health",
+  "L-2": "allied-health",
+  "L-13": "allied-health",
+  "L-29": "pharmacy",
 };
 
 export function fieldOfClass(classCode: string, name: string): FieldMatch | null {

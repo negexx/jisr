@@ -11,7 +11,14 @@ const CandidateSchema = z.object({
   name: z.string(),
   classCode: z.string(),
   classCodes: z.array(z.string()),
-  field: z.enum(["computer-science", "engineering", "business-economics"]),
+  field: z.enum([
+    "computer-science",
+    "engineering",
+    "business-economics",
+    "medicine",
+    "pharmacy",
+    "allied-health",
+  ]),
   confidence: z.enum(["high", "low"]),
   durationYears: z.number().nullable(),
   url: z

@@ -524,11 +524,7 @@ describe("our institutions", () => {
 
 describe("candidates.json shape", () => {
   it("rejects an unknown field and a non-http url", async () => {
-    for (const bad of [
-      { field: "medicine" },
-      { url: "ftp://x.example/y" },
-      { url: "javascript:1" },
-    ]) {
+    for (const bad of [{ field: "law" }, { url: "ftp://x.example/y" }, { url: "javascript:1" }]) {
       const f = await fixture({
         newUniversities: [],
         newProgrammes: [candidate(bad)],

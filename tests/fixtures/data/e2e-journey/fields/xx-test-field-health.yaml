@@ -1,0 +1,5 @@
+slug: xx-test-field-health
+name:
+  fr: { text: Santé test, status: reviewed }
+  en: { text: Test health, status: reviewed }
+  ar: { text: العلوم الصحية للاختبار, status: draft }

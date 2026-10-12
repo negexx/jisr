@@ -122,8 +122,8 @@ describe("fieldOfClass", () => {
     });
   });
 
-  it("is null for a class outside the three fields", () => {
-    expect(fieldOfClass("L-2", "Biotechnology")).toBeNull();
+  it("is null for a class outside the classified fields", () => {
+    expect(fieldOfClass("L-36", "Political Science")).toBeNull();
     expect(fieldOfClass("L-1", "Cultural Heritage")).toBeNull();
     expect(fieldOfClass("L-P03", "Professioni tecniche")).toBeNull();
   });
@@ -202,13 +202,13 @@ describe("buildItalyRecords", () => {
     expect(progs[0]?.review.todo).toMatch(/L-9/);
   });
 
-  it("keeps the latest year, Laurea only, English only, three fields only", () => {
+  it("keeps the latest year, Laurea only, English only, classified fields only", () => {
     const { records, report } = build(
       row(),
       row({ year: 2024, name: "Old year" }),
       row({ type: "Laurea Magistrale", name: "Master" }),
       row({ language: "Italiano", name: "Italian taught" }),
-      row({ cls: "L-2", className: "Biotecnologie", name: "Biotech" }),
+      row({ cls: "L-36", className: "Scienze politiche", name: "Political Science" }),
     );
     expect(programmes(records)).toHaveLength(1);
     expect(report).toMatchObject({
@@ -329,5 +329,18 @@ describe("buildItalyRecords", () => {
         twin,
       ),
     ).toThrow(/same slug/);
+  });
+});
+
+describe("fieldOfClass health classes", () => {
+  it("maps the nursing and rehabilitation classes to allied-health", () => {
+    expect(fieldOfClass("L/SNT1", "Nursing")?.field).toBe("allied-health");
+    expect(fieldOfClass("L/SNT2", "Physiotherapy")?.field).toBe("allied-health");
+  });
+  it("maps applied pharmaceutical sciences to pharmacy", () => {
+    expect(fieldOfClass("L-29", "Applied Pharmaceutical Sciences")?.field).toBe("pharmacy");
+  });
+  it("leaves the single-cycle medicine class out", () => {
+    expect(fieldOfClass("LM-13", "Medicine and Surgery")).toBeNull();
   });
 });
