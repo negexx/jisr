@@ -42,53 +42,71 @@ applicationChannel:
   info_kind: official
 documents:
   value:
-    - slug: valid-passport
+    - slug: application-form
       name:
         fr:
-          text: Passeport en cours de validité
+          text: Formulaire de candidature
           status: draft
         en:
-          text: Valid passport
+          text: Application form
           status: draft
       translationRequired: null
-    - slug: certificate-of-admission
+    - slug: school-leaving-certificate
       name:
         fr:
-          text: Certificat d’admission délivré par l’établissement d’enseignement
+          text: Certificat de fin d'études secondaires
           status: draft
         en:
-          text: Certificate of admission issued by the educational institution
+          text: School-leaving certificate
           status: draft
-      translationRequired: null
-    - slug: proof-of-tuition-payment
+      translationRequired: true
+    - slug: transcripts
       name:
         fr:
-          text: Preuve du paiement des frais de scolarité
+          text: Relevés de notes
           status: draft
         en:
-          text: Proof of payment of tuition fees
+          text: Transcripts
           status: draft
       translationRequired: null
-    - slug: proof-of-means-of-subsistence
+    - slug: passport
       name:
         fr:
-          text: Preuve de ressources suffisantes pour la subsistance et le séjour
+          text: Passeport
           status: draft
         en:
-          text: Proof of sufficient means of subsistence
+          text: Passport
           status: draft
       translationRequired: null
-    - slug: comprehensive-health-insurance
+    - slug: cv
       name:
         fr:
-          text: Assurance maladie couvrant l’ensemble des soins de santé
+          text: CV
           status: draft
         en:
-          text: Comprehensive health insurance covering all healthcare services
+          text: CV
           status: draft
       translationRequired: null
-  source: page-1
-  info_kind: guidance
+    - slug: medical-certificate
+      name:
+        fr:
+          text: Certificat médical
+          status: draft
+        en:
+          text: Medical Certificate
+          status: draft
+      translationRequired: null
+    - slug: bank-receipt
+      name:
+        fr:
+          text: Reçu bancaire
+          status: draft
+        en:
+          text: Bank receipt
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
 requirements:
   coverage: partial
   source: programme
@@ -129,3 +147,6 @@ sources:
   page-1:
     url: https://oif.gov.hu/factsheets/residence-of-the-student-pupil
     last_verified_at: 2026-10-10
+  page-3:
+    url: https://www.edu.unideb.hu/p/application-and-admission
+    last_verified_at: 2026-10-12

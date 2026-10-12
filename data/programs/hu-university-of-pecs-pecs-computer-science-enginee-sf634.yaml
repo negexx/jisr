@@ -42,53 +42,89 @@ applicationChannel:
   info_kind: official
 documents:
   value:
-    - slug: valid-passport
+    - slug: passport-photo
       name:
         fr:
-          text: Passeport en cours de validité
+          text: Photo d'identité format passeport
           status: draft
         en:
-          text: Valid passport
+          text: Passport sized photo
           status: draft
       translationRequired: null
-    - slug: certificate-of-admission
+    - slug: passport-copy
       name:
         fr:
-          text: Certificat d’admission délivré par l’établissement d’enseignement
+          text: Copie de la page photo du passeport
           status: draft
         en:
-          text: Certificate of admission issued by the educational institution
+          text: Copy of the photo-page(s) of your passport
           status: draft
       translationRequired: null
-    - slug: proof-of-tuition-payment
+    - slug: high-school-diploma
       name:
         fr:
-          text: Preuve du paiement des frais de scolarité
+          text: Diplôme d'études secondaires
           status: draft
         en:
-          text: Proof of payment of tuition fees
+          text: High School Diploma
           status: draft
       translationRequired: null
-    - slug: proof-of-means-of-subsistence
+    - slug: transcript-of-records
       name:
         fr:
-          text: Preuve de ressources suffisantes pour la subsistance et le séjour
+          text: Relevé de notes
           status: draft
         en:
-          text: Proof of sufficient means of subsistence
+          text: Transcript of Records
           status: draft
       translationRequired: null
-    - slug: comprehensive-health-insurance
+    - slug: medical-certificate
       name:
         fr:
-          text: Assurance maladie couvrant l’ensemble des soins de santé
+          text: Certificat médical
           status: draft
         en:
-          text: Comprehensive health insurance covering all healthcare services
+          text: Medical Certificate
           status: draft
       translationRequired: null
-  source: page-1
-  info_kind: guidance
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: CV en anglais
+          status: draft
+        en:
+          text: Curriculum Vitae in English
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation Letter
+          status: draft
+      translationRequired: null
+    - slug: portfolio
+      name:
+        fr:
+          text: Portfolio
+          status: draft
+        en:
+          text: Portfolio
+          status: draft
+      translationRequired: null
+    - slug: recommendation-letters
+      name:
+        fr:
+          text: Lettres de recommandation
+          status: draft
+        en:
+          text: Recommendation letters
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
   source: programme

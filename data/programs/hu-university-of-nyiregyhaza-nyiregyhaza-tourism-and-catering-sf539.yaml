@@ -34,8 +34,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: hu-university-direct
+  source: page-1
   info_kind: official
 documents:
   value:
@@ -116,3 +116,6 @@ sources:
   page-2:
     url: https://english.nye.hu/en/node/30
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://applicationform.nye.hu/
+    last_verified_at: 2026-10-12
