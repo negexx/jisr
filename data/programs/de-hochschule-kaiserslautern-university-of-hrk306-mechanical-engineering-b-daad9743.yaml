@@ -51,65 +51,50 @@ documents:
     - slug: school-leaving-certificate
       name:
         fr:
-          text: Certificat de fin d’études secondaires (diplôme du Baccalauréat)
+          text: Certificat de fin d'études secondaires
           status: draft
         en:
-          text: School leaving certificate (Baccalauréat certificate / diploma)
-          status: draft
-        ar:
-          text: شهادة نهاية الدراسة الثانوية (شهادة البكالوريا)
+          text: School-leaving certificate
           status: draft
       translationRequired: null
-    - slug: transcript-of-secondary-school-studies
+    - slug: certified-translations
       name:
         fr:
-          text: "Relevé de notes du Baccalauréat (« Relevé de Notes » : aperçu des matières et des notes)"
+          text: Traductions certifiées
           status: draft
         en:
-          text: 'Baccalauréat grade transcript ("Relevé de Notes": overview of subjects and grades)'
+          text: Certified translations
           status: draft
-        ar:
-          text: "كشف نقاط البكالوريا («Relevé de Notes»: لمحة عن المواد والعلامات)"
-          status: draft
-      translationRequired: null
-    - slug: degree-certificate
+      translationRequired: true
+    - slug: language-proficiency-proof
       name:
         fr:
-          text: Diplôme universitaire (seulement si vous avez un diplôme d’une université marocaine)
+          text: Preuve de compétence linguistique
           status: draft
         en:
-          text: Degree certificate (only if you hold a degree from a Moroccan university)
-          status: draft
-        ar:
-          text: شهادة جامعية (فقط إذا كانت لديك شهادة من جامعة مغربية)
+          text: Proof of language proficiency
           status: draft
       translationRequired: null
-    - slug: university-transcript-of-records
+    - slug: passport
       name:
         fr:
-          text: Relevé de notes universitaire complet, avec toutes les matières et notes, délivré par l’université (si vous avez déjà étudié dans une université)
+          text: Copie du passeport
           status: draft
         en:
-          text: Complete university transcript of all subjects and grades, issued by your university (if you have studied at a university)
-          status: draft
-        ar:
-          text: كشف نقاط جامعي كامل يتضمن جميع المواد والعلامات، صادر عن الجامعة (إذا سبق لك أن درست في جامعة)
+          text: Passport copy
           status: draft
       translationRequired: null
-    - slug: preparatory-classes-transcript
+    - slug: statement-of-purpose
       name:
         fr:
-          text: Relevé de notes des classes préparatoires (seulement si vous avez suivi des classes préparatoires)
+          text: Lettre de motivation
           status: draft
         en:
-          text: Transcript of records of the classes préparatoires (only if you took classes préparatoires)
-          status: draft
-        ar:
-          text: كشف نقاط الأقسام التحضيرية (فقط إذا درست في الأقسام التحضيرية)
+          text: Statement of purpose
           status: draft
       translationRequired: null
-  source: page-1
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -123,3 +108,6 @@ sources:
   page-1:
     url: https://www.uni-assist.de/en/tools/info-country-by-country/details-country/country/ma/
     last_verified_at: 2026-10-09
+  page-2:
+    url: https://www.hs-kl.de/en/studying/application/apply-from-abroad
+    last_verified_at: 2026-10-12

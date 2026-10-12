@@ -47,9 +47,18 @@ applicationChannel:
   source: daad
   info_kind: guidance
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: qualification d'entrée dans l'enseignement supérieur
+          status: draft
+        en:
+          text: higher education entrance qualification
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
 requirements:
   coverage: partial
   source: daad

@@ -34,7 +34,10 @@ tuition:
   source: programme
   info_kind: official
 intakes:
-  value: null
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-09-28
   source: programme
   info_kind: official
 applicationChannel:

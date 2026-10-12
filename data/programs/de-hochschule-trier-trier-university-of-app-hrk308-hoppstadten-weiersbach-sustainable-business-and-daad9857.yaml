@@ -44,9 +44,18 @@ applicationChannel:
   source: daad
   info_kind: guidance
 documents:
-  value: null
+  value:
+    - slug: higher-education-entrance-qualification
+      name:
+        fr:
+          text: Diplôme d'accès à l'enseignement supérieur
+          status: draft
+        en:
+          text: Higher education entrance qualification
+          status: draft
+      translationRequired: null
   source: daad
-  info_kind: guidance
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
