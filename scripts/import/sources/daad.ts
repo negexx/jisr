@@ -94,7 +94,7 @@ export function isTaughtAbroad(city: string | null): boolean {
 
 // --- field -------------------------------------------------------------------------------------
 // Decided by the programme's name only: the subject tag is a secondary label and put nursing,
-// forestry and applied mathematics into the three fields. A clear field word is `high`; a vague
+// forestry and applied mathematics into the wrong fields. A clear field word is `high`; a vague
 // one ("management" alone, "technology") is a judgement call (`low`).
 const CS_STRONG =
   /computer science|computer engineering|computing|informatik|informatics|data science|artificial intelligence|machine learning|\bsoftware|cyber|information systems/i;
@@ -107,13 +107,15 @@ const BUS_STRONG =
 const BUS_WEAK = /management|administration|logistics/i;
 const NOT_CS = /linguistic/i;
 // Health names, evaluated only after the strong CS/engineering/business branches: "Medical
-// Engineering" stays engineering and "Health Economics" stays business-economics. The weak
-// patterns below do not get a say, so "Pharmaceutical Biotechnology" is pharmacy, not engineering
-// via ENG_WEAK's "technology".
-const MED_STRONG = /\bmedizin|molecular medicine|human medicine|medical sciences?\b/i;
+// Engineering" stays engineering and "Health Economics" stays business-economics. A weak business
+// word or a German "technik" compound also keeps them out ("Pharmaceutical Management" is
+// business-economics, "Medizintechnik" is engineering); ENG_WEAK does not get a say, so
+// "Pharmaceutical Biotechnology" is pharmacy, not engineering via ENG_WEAK's "technology".
+const MED_STRONG =
+  /\bmedizin|\bhumanmedizin|molecular medicine|human medicine|medical sciences?\b/i;
 const PHARM_STRONG = /pharmaz|pharmaceutical|pharmatechnik|pharmacy/i;
 const ALLIED_STRONG =
-  /\bnursing\b|\bpflege|physiotherap|biomedical|biomedizin|\bhealth sciences?\b|public health|nutrition|ernährung/i;
+  /\bnursing\b|\bpflege|physiotherap|biomedical|biomedizin|biotechnolog|gesundheit|\bhealth sciences?\b|public health|nutrition|ernährung/i;
 
 export function classifyDaad(
   name: string,
@@ -136,7 +138,13 @@ export function classifyDaad(
     };
   }
   if (BUS_STRONG.test(name)) return { field: "business-economics", confidence: "high" };
-  if (!csStrong && !engStrong) {
+  const healthBlocked =
+    csStrong ||
+    engStrong ||
+    BUS_STRONG.test(name) ||
+    BUS_WEAK.test(name) ||
+    /technik\b/i.test(name);
+  if (!healthBlocked) {
     if (MED_STRONG.test(name)) return { field: "medicine", confidence: "high" };
     if (PHARM_STRONG.test(name)) return { field: "pharmacy", confidence: "high" };
     if (ALLIED_STRONG.test(name)) return { field: "allied-health", confidence: "high" };

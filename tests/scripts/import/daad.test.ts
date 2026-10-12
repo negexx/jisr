@@ -498,4 +498,15 @@ describe("classifyDaad health names", () => {
     expect(classifyDaad("Medical Engineering", null)?.field).toBe("engineering");
     expect(classifyDaad("Health Economics", null)?.field).toBe("business-economics");
   });
+  it("routes a weak business word and a German technik compound away from health", () => {
+    expect(classifyDaad("Pharmaceutical Management", null)?.field).toBe("business-economics");
+    expect(classifyDaad("Medizintechnik", null)?.field).toBe("engineering");
+    expect(classifyDaad("Biomedizinische Technik", null)?.field).toBe("engineering");
+  });
+  it("maps biotechnology and health-science names to allied-health, after pharmacy", () => {
+    expect(classifyDaad("Biotechnology", null)?.field).toBe("allied-health");
+    expect(classifyDaad("Molecular Biotechnology", null)?.field).toBe("allied-health");
+    expect(classifyDaad("Gesundheitswissenschaften", null)?.field).toBe("allied-health");
+    expect(classifyDaad("Pharmaceutical Biotechnology", null)?.field).toBe("pharmacy");
+  });
 });
