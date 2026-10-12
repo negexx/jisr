@@ -41,9 +41,18 @@ applicationChannel:
   source: daad
   info_kind: guidance
 documents:
-  value: null
+  value:
+    - slug: university-entrance-qualification
+      name:
+        fr:
+          text: Qualification d'entrée à l'université
+          status: draft
+        en:
+          text: University entrance qualification
+          status: draft
+      translationRequired: null
   source: daad
-  info_kind: guidance
+  info_kind: official
 requirements:
   coverage: partial
   source: daad

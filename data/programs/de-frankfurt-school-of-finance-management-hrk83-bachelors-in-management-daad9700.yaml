@@ -26,9 +26,12 @@ teachingLanguages:
   source: daad
   info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 860000
+    currency: EUR
+    period: semester
+  source: page-1
+  info_kind: official
 intakes:
   value:
     - startDate: 2027-09-01

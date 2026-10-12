@@ -24,8 +24,8 @@ teachingLanguages:
   value:
     - de
     - en
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 tuition:
   value:
     amountMinor: 150000

@@ -33,8 +33,14 @@ tuition:
   source: page-2
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 7
+        day: 15
+  source: page-6
   info_kind: official
 applicationChannel:
   value: de-uni-assist-vpd
@@ -128,3 +134,6 @@ sources:
   page-5:
     url: https://www.hs-heilbronn.de/en/application-for-international-applicants-2628bd72c149a41d
     last_verified_at: 2026-10-10
+  page-6:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3930/
+    last_verified_at: 2026-10-12
