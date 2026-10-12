@@ -19,7 +19,7 @@
 - Branches and PRs only; **never commit or push to `main`**.
 - Per-lane budgets: reader `--max-usd 2`, search `--max-queries 300`, `--concurrency 8`. A lane that hits its cap stops; it produces only what fits.
 - `--verified-on YYYY-MM-DD` is the day the owner reads the sample; never a future date.
-- Respect source licences; the Study Finder (HU) written permission is not yet received, so new HU Study-Finder-derived facts are out of scope until it arrives.
+- Respect source licences; the Study Finder (HU) written permission was obtained 2026-10-12, so new HU Study-Finder-derived facts are in scope.
 
 ## Review Focus
 

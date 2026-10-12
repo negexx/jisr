@@ -36,7 +36,7 @@ Data health: `data:check` green (0 errors, 1 cosmetic warning); 0 aging/stale; A
 - Facts carry `source_url` + `info_kind` (`official|estimate|guidance`) + `last_verified_at`. Tuition is **official only** (never an estimate; ranges need one quote).
 - Deadlines: a dated deadline only when the quote states the year; a `recurringDeadline {month, day}` when it states day+month, no year; never both. **Every deadline needs an accepted quote naming international/non-EU applicants** (ADR 0009).
 - Scholarships and official cost profiles are **100 % audited** (never waivable). Register-listing / machine-quoted / identical-national batches may be `owner-waived`.
-- Source licences are tracked (`data/README.md` licence table); some sources need written permission (Study Finder/HU permission still pending — HU work must respect it).
+- Source licences are tracked (`data/README.md` licence table); some sources need written permission (Study Finder/HU permission obtained 2026-10-12).
 - Do not rename slugs. `data:check` must stay green. Work happens on branches; **never push to `main` directly** (PRs only).
 - The app is `pnpm typecheck`/`pnpm test`/`pnpm lint` green; data PRs additionally need `pnpm data:check`.
 
@@ -98,7 +98,7 @@ New IT programmes stage first (`data:it-stage`) and then flow through the same r
 - **Unverifiable facts are dropped** → expected; they stay `null`. Budgets cap spend; `--dry-run` first.
 - **Wrong pages found by search** → cost tokens only; the reader must quote and the verifier must find the quote.
 - **HU has no dedicated deadline tool and Hungarian pages may not state international deadlines** → generic read only; low yield is acceptable, unknown stays unknown.
-- **Study Finder (HU) written permission not yet received** → do not republish new HU studyfinder-derived facts until it arrives; HU lane may be blocked on this — record it, do not guess.
+- **Study Finder (HU) written permission obtained (2026-10-12)** → new HU studyfinder-derived facts may now be published.
 - **Model/key spend or rate limits** → per-lane `--max-usd` and `--max-queries`; lanes are independent.
 - **Ledger corruption by parallel writers** → eliminated: only Phase 0/2 write ledgers, one writer at a time.
 
