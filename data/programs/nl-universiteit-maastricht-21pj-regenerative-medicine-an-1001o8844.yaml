@@ -1,0 +1,58 @@
+slug: nl-universiteit-maastricht-21pj-regenerative-medicine-an-1001o8844
+institution: nl-universiteit-maastricht-21pj
+country: NL
+city: maastricht
+field: medicine
+level: bachelor
+name: Regenerative Medicine and Technology
+summary:
+  fr:
+    text: Regenerative Medicine and Technology (Regenerative Medicine and Technology), Universiteit Maastricht (Maastricht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Regenerative Medicine and Technology (Regenerative Medicine and Technology), Universiteit Maastricht (Maastricht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Regenerative Medicine and Technology (Regenerative Medicine and Technology), Universiteit Maastricht (Maastricht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.maastrichtuniversity.nl/nl/onderwijs/bachelor/programmas/regenerative-medicine-and-technology
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 4
+        day: 1
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.maastrichtuniversity.nl/nl/onderwijs/bachelor/programmas/regenerative-medicine-and-technology
+    last_verified_at: 2026-10-12

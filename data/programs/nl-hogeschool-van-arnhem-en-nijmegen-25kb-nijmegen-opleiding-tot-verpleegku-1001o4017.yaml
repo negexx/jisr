@@ -1,0 +1,58 @@
+slug: nl-hogeschool-van-arnhem-en-nijmegen-25kb-nijmegen-opleiding-tot-verpleegku-1001o4017
+institution: nl-hogeschool-van-arnhem-en-nijmegen-25kb-nijmegen
+country: NL
+city: nijmegen
+field: allied-health
+level: bachelor
+name: Opleiding tot Verpleegkundige
+summary:
+  fr:
+    text: Opleiding tot Verpleegkundige (Nursing), Hogeschool van Arnhem en Nijmegen (Nijmegen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding tot Verpleegkundige (Nursing), Hogeschool van Arnhem en Nijmegen (Nijmegen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding tot Verpleegkundige (Nursing), Hogeschool van Arnhem en Nijmegen (Nijmegen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.han.nl/opleidingen/hbo/verpleegkunde/deeltijd/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-02-01
+      applicationOpens: null
+      applicationDeadline: null
+    - startDate: 2027-09-01
+      applicationOpens: null
+      applicationDeadline: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.han.nl/opleidingen/hbo/verpleegkunde/deeltijd/
+    last_verified_at: 2026-10-12

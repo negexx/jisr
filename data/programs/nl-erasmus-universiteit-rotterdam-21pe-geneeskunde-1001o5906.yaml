@@ -1,0 +1,67 @@
+slug: nl-erasmus-universiteit-rotterdam-21pe-geneeskunde-1001o5906
+institution: nl-erasmus-universiteit-rotterdam-21pe
+country: NL
+city: rotterdam
+field: medicine
+level: bachelor
+name: Geneeskunde
+summary:
+  fr:
+    text: Geneeskunde (Medicine), Erasmus Universiteit Rotterdam (Rotterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Geneeskunde (Medicine), Erasmus Universiteit Rotterdam (Rotterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Geneeskunde (Medicine), Erasmus Universiteit Rotterdam (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.eur.nl/bachelor/geneeskunde
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 3220000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: nl
+      minCefr: null
+      certificateRequired: null
+      acceptedTests: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.eur.nl/bachelor/geneeskunde
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.eur.nl/onderwijs/praktische-zaken/inschrijving/collegegeld/collegegeldtarieven-2026-2027
+    last_verified_at: 2026-10-12

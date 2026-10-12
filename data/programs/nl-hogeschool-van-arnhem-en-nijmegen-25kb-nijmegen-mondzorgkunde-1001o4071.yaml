@@ -1,0 +1,78 @@
+slug: nl-hogeschool-van-arnhem-en-nijmegen-25kb-nijmegen-mondzorgkunde-1001o4071
+institution: nl-hogeschool-van-arnhem-en-nijmegen-25kb-nijmegen
+country: NL
+city: nijmegen
+field: allied-health
+level: bachelor
+name: Mondzorgkunde
+summary:
+  fr:
+    text: Mondzorgkunde (Dental Hygiene), Hogeschool van Arnhem en Nijmegen (Nijmegen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Mondzorgkunde (Dental Hygiene), Hogeschool van Arnhem en Nijmegen (Nijmegen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Mondzorgkunde (Dental Hygiene), Hogeschool van Arnhem en Nijmegen (Nijmegen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.han.nl/opleidingen/hbo/mondzorgkunde/voltijd/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-09-01
+      applicationOpens: null
+      applicationDeadline: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: identity-proof
+      name:
+        fr:
+          text: Copie d'une pièce d'identité valide (passeport ou carte d'identité)
+          status: draft
+        en:
+          text: Copy of a valid identity document (passport or identity card)
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez sur la page des conditions d'admission si votre diplôme marocain (Baccalauréat) est reconnu et si des exigences de profil ou de matières s'appliquent.
+          status: draft
+        en:
+          text: Check the admission requirements page whether your Moroccan diploma (Baccalauréat) is recognised and whether profile or subject requirements apply.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.han.nl/opleidingen/hbo/mondzorgkunde/voltijd/
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.han.nl/opleidingen/associate-degree/bedrijfskunde-sustainable-international-business/voltijd/praktische-info/Voltijd-Ad-Bedrijfskunde-Inschrijvingsreglement-2024-2025.pdf
+    last_verified_at: 2026-10-12

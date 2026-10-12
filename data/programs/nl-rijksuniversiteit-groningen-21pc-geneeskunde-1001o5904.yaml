@@ -1,0 +1,94 @@
+slug: nl-rijksuniversiteit-groningen-21pc-geneeskunde-1001o5904
+institution: nl-rijksuniversiteit-groningen-21pc
+country: NL
+city: groningen
+field: medicine
+level: bachelor
+name: Geneeskunde
+summary:
+  fr:
+    text: Geneeskunde (Medicine), Rijksuniversiteit Groningen (Groningen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Geneeskunde (Medicine), Rijksuniversiteit Groningen (Groningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Geneeskunde (Medicine), Rijksuniversiteit Groningen (Groningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.rug.nl/bachelors/medicine/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 3200000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-09-01
+      applicationOpens: null
+      applicationDeadline: 2027-01-15
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: nl
+      minCefr: B1
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: subject_taken
+      subjects:
+        - mathematics
+        - physics-chemistry
+        - life-earth-sciences
+        - english
+      mode: all
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez la procédure de sélection : le programme a un numerus fixus de 400 places; consultez https://www.rug.nl/umcg/education/geneeskunde/selectie/"
+          status: draft
+        en:
+          text: "Check the selection procedure: the programme has a numerus fixus of 400 places; see https://www.rug.nl/umcg/education/geneeskunde/selectie/"
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.rug.nl/bachelors/medicine/
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.rug.nl/education/application-enrolment-tuition-fees/tuition-fee/bachelor
+    last_verified_at: 2026-10-12
+  page-3:
+    url: https://www.rug.nl/education/application-enrolment-tuition-fees/admission/non-dutch-qualification/bachelor-non-dutch-qualification
+    last_verified_at: 2026-10-12

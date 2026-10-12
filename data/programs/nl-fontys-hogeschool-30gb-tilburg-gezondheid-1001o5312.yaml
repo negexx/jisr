@@ -1,0 +1,64 @@
+slug: nl-fontys-hogeschool-30gb-tilburg-gezondheid-1001o5312
+institution: nl-fontys-hogeschool-30gb-tilburg
+country: NL
+city: tilburg
+field: allied-health
+level: bachelor
+name: Gezondheid
+summary:
+  fr:
+    text: Gezondheid (Health), Fontys Hogeschool (Tilburg). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Gezondheid (Health), Fontys Hogeschool (Tilburg). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Gezondheid (Health), Fontys Hogeschool (Tilburg). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.fontys.nl/Opleidingen/Gezondheid-bachelor-voltijd.htm
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez les conditions d'admission : un diplôme havo, vwo ou mbo niveau 4 donne un accès direct ; d'autres voies d'admission existent."
+          status: draft
+        en:
+          text: "Check admission requirements: a havo, vwo or mbo level 4 diploma gives direct access; other admission routes exist."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.fontys.nl/Opleidingen/Gezondheid-bachelor-voltijd.htm
+    last_verified_at: 2026-10-12

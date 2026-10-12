@@ -1,0 +1,71 @@
+slug: it-roma-la-sapienza-roma-bioinformatics-l2
+institution: it-roma-la-sapienza-roma
+country: IT
+city: roma
+field: allied-health
+level: bachelor
+name: Bioinformatics
+summary:
+  fr:
+    text: Bioinformatics, Università degli studi di Roma La Sapienza (Roma). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Bioinformatics, Università degli studi di Roma La Sapienza (Roma). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Bioinformatics, Università degli studi di Roma La Sapienza (Roma). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://corsidilaurea.uniroma1.it/it/course/33455
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Ce programme est à accès restreint : il y a un test d'admission obligatoire (prova di ammissione). Consultez le bando pour les modalités et les dates."
+          status: draft
+        en:
+          text: "This programme has restricted access: a mandatory admission test (prova di ammissione). Check the Call for Applications for details and dates."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://corsidilaurea.uniroma1.it/it/course/33455
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.uniroma1.it/en/pagina/international-student-office
+    last_verified_at: 2026-10-12

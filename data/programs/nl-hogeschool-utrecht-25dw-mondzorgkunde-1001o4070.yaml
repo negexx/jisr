@@ -1,0 +1,116 @@
+slug: nl-hogeschool-utrecht-25dw-mondzorgkunde-1001o4070
+institution: nl-hogeschool-utrecht-25dw
+country: NL
+city: utrecht
+field: allied-health
+level: bachelor
+name: Mondzorgkunde
+summary:
+  fr:
+    text: Mondzorgkunde (Dental Hygiene), Hogeschool Utrecht (Utrecht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Mondzorgkunde (Dental Hygiene), Hogeschool Utrecht (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Mondzorgkunde (Dental Hygiene), Hogeschool Utrecht (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hu.nl/voltijd-opleidingen/mondzorgkunde
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1074700
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez les conditions d'admission : diplôme havo, vwo ou mbo-4 requis. Si vous ne l'avez pas et avez 21 ans ou plus, un toelatingsonderzoek est nécessaire."
+          status: draft
+        en:
+          text: "Check admission requirements: havo, vwo or mbo-4 diploma required. If you do not have this and are 21 or older, a toelatingsonderzoek is required."
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Cette formation a un numerus fixus : places limitées et procédure de sélection. Inscrivez-vous avant le 15 janvier."
+          status: draft
+        en:
+          text: "This programme has a numerus fixus: limited places and a selection procedure. Apply before 15 January."
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Pour les candidats avec un diplôme étranger, la procédure d'admission est différente et les délais peuvent varier. Consultez la page Admissions pour les étudiants internationaux.
+          status: draft
+        en:
+          text: For applicants with a foreign qualification, the application procedure is different and deadlines may vary. Check the Admissions page for international students.
+          status: draft
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: L'inscription se fait via Studielink et nécessite un DigiD. Le DigiD peut prendre jusqu'à 3 jours ouvrables après la demande.
+          status: draft
+        en:
+          text: Registration is done via Studielink and requires DigiD. DigiD may take up to 3 working days after applying.
+          status: draft
+    - id: req-5
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les exigences linguistiques en néerlandais, car les cours sont dispensés en néerlandais et une bonne maîtrise est indispensable.
+          status: draft
+        en:
+          text: Check Dutch language requirements, as the programme is taught in Dutch and a good command is essential.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hu.nl/voltijd-opleidingen/mondzorgkunde
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.hu.nl/collegegeld-en-betalen
+    last_verified_at: 2026-10-12
+  page-3:
+    url: https://www.hu.nl/aanmelden
+    last_verified_at: 2026-10-12

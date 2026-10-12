@@ -1,0 +1,69 @@
+slug: nl-universiteit-maastricht-21pj-geneeskunde-1001o5907
+institution: nl-universiteit-maastricht-21pj
+country: NL
+city: maastricht
+field: medicine
+level: bachelor
+name: Geneeskunde
+summary:
+  fr:
+    text: Geneeskunde (Medicine), Universiteit Maastricht (Maastricht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Geneeskunde (Medicine), Universiteit Maastricht (Maastricht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Geneeskunde (Medicine), Universiteit Maastricht (Maastricht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.maastrichtuniversity.nl/nl/onderwijs/bachelor/programmas/geneeskunde
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 1
+        day: 15
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifie les conditions d'admission pour les diplômes étrangers (Bac marocain) et la procédure de sélection (numerus fixus) sur la page du programme.
+          status: draft
+        en:
+          text: Check the admission requirements for foreign diplomas (Moroccan Baccalaureate) and the selection procedure (numerus fixus) on the programme page.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.maastrichtuniversity.nl/nl/onderwijs/bachelor/programmas/geneeskunde
+    last_verified_at: 2026-10-12

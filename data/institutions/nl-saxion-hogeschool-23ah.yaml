@@ -1,0 +1,14 @@
+slug: nl-saxion-hogeschool-23ah
+name: Saxion Hogeschool
+country: NL
+city:
+  slug: enschede
+  name: Enschede
+type: null
+website: https://www.saxion.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.saxion.nl/
+    last_verified_at: 2026-10-12

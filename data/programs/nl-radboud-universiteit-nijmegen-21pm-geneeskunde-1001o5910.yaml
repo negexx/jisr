@@ -1,0 +1,64 @@
+slug: nl-radboud-universiteit-nijmegen-21pm-geneeskunde-1001o5910
+institution: nl-radboud-universiteit-nijmegen-21pm
+country: NL
+city: nijmegen
+field: medicine
+level: bachelor
+name: Geneeskunde
+summary:
+  fr:
+    text: Geneeskunde (Medicine), Radboud Universiteit Nijmegen (Nijmegen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Geneeskunde (Medicine), Radboud Universiteit Nijmegen (Nijmegen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Geneeskunde (Medicine), Radboud Universiteit Nijmegen (Nijmegen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.ru.nl/opleidingen/bachelors/geneeskunde
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez votre admissibilité avec votre diplôme marocain : des conditions supplémentaires peuvent s'appliquer ; consultez la page d'admission et contactez l'université."
+          status: draft
+        en:
+          text: "Check your eligibility with your Moroccan diploma: additional conditions may apply; see the admission page and contact the university."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.ru.nl/opleidingen/bachelors/geneeskunde
+    last_verified_at: 2026-10-12

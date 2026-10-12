@@ -1,0 +1,14 @@
+slug: nl-hogeschool-van-arnhem-en-nijmegen-25kb-nijmegen
+name: Hogeschool van Arnhem en Nijmegen
+country: NL
+city:
+  slug: nijmegen
+  name: Nijmegen
+type: null
+website: https://www.han.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.han.nl/
+    last_verified_at: 2026-10-12

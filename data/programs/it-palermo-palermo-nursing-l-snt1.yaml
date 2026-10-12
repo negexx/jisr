@@ -1,0 +1,82 @@
+slug: it-palermo-palermo-nursing-l-snt1
+institution: it-palermo-palermo
+country: IT
+city: palermo
+field: allied-health
+level: bachelor
+name: Nursing
+summary:
+  fr:
+    text: Nursing, Università degli studi di Palermo (Palermo). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Nursing, Università degli studi di Palermo (Palermo). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Nursing, Università degli studi di Palermo (Palermo). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unipa.it/dipartimenti/promise/cds/nursing2233/en/?pagina=presentazione
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Si vous avez suivi moins de 12 années de scolarité, fournissez un document attestant que vous comblez la différence (relevés d'examens universitaires, diplôme italien de foundation, ou qualification post-secondaire de 1/2 ans).
+          status: draft
+        en:
+          text: If you have completed fewer than 12 years of schooling, provide a document covering the gap (university transcripts, an Italian foundation course qualification, or a 1/2-year post-secondary qualification).
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Ce programme est à accès programmé (numéro limité) : consultez le bando de participation et réussissez le test d'admission. Le diplôme de fin d'études secondaires doit être reconnu valable pour l'accès à l'enseignement supérieur dans le pays où il a été obtenu."
+          status: draft
+        en:
+          text: "This programme has limited access (numero programmato): check the call for participation and pass the admission test. Your secondary school leaving qualification must be recognised as valid for access to further academic studies in the country where it was awarded."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.unipa.it/dipartimenti/promise/cds/nursing2233/en/?pagina=presentazione
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.unipa.it/mobilita/en/new-students/new-students---enrolment/enrolment-procedures-for-extra-eu-foreign-students/bachelors-degree-/
+    last_verified_at: 2026-10-12

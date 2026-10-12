@@ -1,0 +1,14 @@
+slug: nl-has-green-academy-21cw
+name: HAS green academy
+country: NL
+city:
+  slug: s-hertogenbosch
+  name: "'s-Hertogenbosch"
+type: null
+website: https://www.has.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.has.nl/
+    last_verified_at: 2026-10-12

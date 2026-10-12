@@ -1,0 +1,14 @@
+slug: de-hochschule-fresenius-hrk271
+name: Hochschule Fresenius
+country: DE
+city:
+  slug: idstein
+  name: Idstein
+type: private
+website: https://www.hs-fresenius.de/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.hs-fresenius.de/
+    last_verified_at: 2026-10-12

@@ -1,0 +1,67 @@
+slug: nl-vrije-universiteit-amsterdam-21pl-farmaceutische-wetenscha-1001o6202
+institution: nl-vrije-universiteit-amsterdam-21pl
+country: NL
+city: amsterdam
+field: pharmacy
+level: bachelor
+name: Farmaceutische Wetenschappen
+summary:
+  fr:
+    text: Farmaceutische Wetenschappen (Pharmaceutical Sciences), Vrije Universiteit Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Farmaceutische Wetenschappen (Pharmaceutical Sciences), Vrije Universiteit Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Farmaceutische Wetenschappen (Pharmaceutical Sciences), Vrije Universiteit Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://vu.nl/nl/onderwijs/bachelor/farmaceutische-wetenschappen
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Cette filière applique une date limite stricte de 1 mai ; les candidats non-UE doivent s'inscrire au plus tard le 1 avril.
+          status: draft
+        en:
+          text: This programme applies a strict 1 May deadline; non-EU applicants must register by 1 April.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://vu.nl/nl/onderwijs/bachelor/farmaceutische-wetenschappen
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://vu.nl/nl/onderwijs/meer-over/aanmelden-bacheloropleiding
+    last_verified_at: 2026-10-12

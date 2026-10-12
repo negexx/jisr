@@ -1,0 +1,75 @@
+slug: nl-hanzehogeschool-groningen-25be-voeding-en-dietetiek-1001o4087
+institution: nl-hanzehogeschool-groningen-25be
+country: NL
+city: groningen
+field: allied-health
+level: bachelor
+name: Voeding en Diëtetiek
+summary:
+  fr:
+    text: Voeding en Diëtetiek (Nutrition and Dietetics), Hanzehogeschool Groningen (Groningen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Voeding en Diëtetiek (Nutrition and Dietetics), Hanzehogeschool Groningen (Groningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Voeding en Diëtetiek (Nutrition and Dietetics), Hanzehogeschool Groningen (Groningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/voeding-en-dietetiek
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez que votre diplôme étranger est équivalent au HAVO, VWO ou MBO niveau 4 néerlandais.
+          status: draft
+        en:
+          text: Check that your foreign diploma is equivalent to the Dutch HAVO, VWO or MBO level 4.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le test de choix d'étude (studiekeuzecheck) est obligatoire si vous postulez après le 1er mai.
+          status: draft
+        en:
+          text: The study choice check is mandatory if you apply after 1 May.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/voeding-en-dietetiek
+    last_verified_at: 2026-10-12

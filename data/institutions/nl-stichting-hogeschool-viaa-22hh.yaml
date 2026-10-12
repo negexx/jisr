@@ -1,0 +1,14 @@
+slug: nl-stichting-hogeschool-viaa-22hh
+name: Stichting Hogeschool Viaa
+country: NL
+city:
+  slug: zwolle
+  name: Zwolle
+type: null
+website: https://www.viaa.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.viaa.nl/
+    last_verified_at: 2026-10-12

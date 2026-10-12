@@ -1,0 +1,53 @@
+slug: nl-erasmus-universiteit-rotterdam-21pe-gezondheidswetenschappen-1001o5911
+institution: nl-erasmus-universiteit-rotterdam-21pe
+country: NL
+city: rotterdam
+field: allied-health
+level: bachelor
+name: Gezondheidswetenschappen
+summary:
+  fr:
+    text: Gezondheidswetenschappen, Erasmus Universiteit Rotterdam (Rotterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Gezondheidswetenschappen, Erasmus Universiteit Rotterdam (Rotterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Gezondheidswetenschappen, Erasmus Universiteit Rotterdam (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.eur.nl/bachelor/gezondheidswetenschappen-beleid-management-gezondheidszorg-bmg
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.eur.nl/bachelor/gezondheidswetenschappen-beleid-management-gezondheidszorg-bmg
+    last_verified_at: 2026-10-12

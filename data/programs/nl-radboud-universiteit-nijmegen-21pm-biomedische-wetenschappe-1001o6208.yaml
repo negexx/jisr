@@ -1,0 +1,123 @@
+slug: nl-radboud-universiteit-nijmegen-21pm-biomedische-wetenschappe-1001o6208
+institution: nl-radboud-universiteit-nijmegen-21pm
+country: NL
+city: nijmegen
+field: allied-health
+level: bachelor
+name: Biomedische Wetenschappen
+summary:
+  fr:
+    text: Biomedische Wetenschappen (Biomedical Sciences), Radboud Universiteit Nijmegen (Nijmegen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Biomedische Wetenschappen (Biomedical Sciences), Radboud Universiteit Nijmegen (Nijmegen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Biomedische Wetenschappen (Biomedical Sciences), Radboud Universiteit Nijmegen (Nijmegen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.ru.nl/opleidingen/bachelors/biomedische-wetenschappen
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport valide ou carte d'identité européenne
+          status: draft
+        en:
+          text: Valid passport or European ID card
+          status: draft
+      translationRequired: null
+    - slug: statement-of-education
+      name:
+        fr:
+          text: Formulaire Radboud Statement of Education
+          status: draft
+        en:
+          text: Radboud Statement of Education form
+          status: draft
+      translationRequired: null
+    - slug: personal-statement
+      name:
+        fr:
+          text: Déclaration personnelle
+          status: draft
+        en:
+          text: Personal statement
+          status: draft
+      translationRequired: null
+    - slug: cv
+      name:
+        fr:
+          text: Aperçu de la formation et de l'expérience (CV)
+          status: draft
+        en:
+          text: Overview of prior education and experience (CV)
+          status: draft
+      translationRequired: null
+    - slug: language-proficiency-proof
+      name:
+        fr:
+          text: Preuve de compétence linguistique
+          status: draft
+        en:
+          text: Proof of language proficiency
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les exigences d'admission (diplôme, matières, notes) pour cette licence sur la page 'Toelating en inschrijving' avant de postuler.
+          status: draft
+        en:
+          text: Check the admission requirements (diploma, subjects, grades) for this bachelor on the 'Toelating en inschrijving' page before applying.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Des frais de dossier non remboursables de 100 euros s'appliquent aux candidats titulaires d'un diplôme international; à payer avant le traitement de la candidature.
+          status: draft
+        en:
+          text: A non-refundable application fee of 100 euros applies to applicants with an international diploma; pay it before your application is processed.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.ru.nl/opleidingen/bachelors/biomedische-wetenschappen
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.ru.nl/opleidingen/aanmelding-en-toelating/aanmeldprocedure-bachelors/aanmelden-met-een-internationale-vooropleiding/aanmelden-voor-reguliere-bacheloropleidingen
+    last_verified_at: 2026-10-12

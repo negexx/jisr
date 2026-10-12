@@ -1,0 +1,95 @@
+slug: de-hochschule-fulda-university-of-applied-s-hrk92-industrial-biotechnology-daad10426
+institution: de-hochschule-fulda-university-of-applied-s-hrk92
+country: DE
+city: fulda
+field: allied-health
+level: bachelor
+name: Industrial Biotechnology
+summary:
+  fr:
+    text: Industrial Biotechnology, Hochschule Fulda - University of Applied Sciences (Fulda). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Industrial Biotechnology, Hochschule Fulda - University of Applied Sciences (Fulda). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Industrial Biotechnology, Hochschule Fulda - University of Applied Sciences (Fulda). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10426/
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+    - de
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 7
+        day: 15
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: de-uni-assist
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si votre Baccalauréat marocain est reconnu comme HZB (Hochschulzugangsberechtigung) pour les universités allemandes.
+          status: draft
+        en:
+          text: Check whether your Moroccan Baccalauréat is recognised as a HZB (university entrance qualification) for German universities.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un stage industriel de huit semaines minimum doit être effectué avant le début du quatrième semestre.
+          status: draft
+        en:
+          text: A minimum eight-week industrial internship must be completed before the beginning of the fourth semester.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10426/
+    last_verified_at: 2026-10-12

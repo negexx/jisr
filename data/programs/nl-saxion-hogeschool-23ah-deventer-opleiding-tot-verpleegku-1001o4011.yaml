@@ -1,0 +1,101 @@
+slug: nl-saxion-hogeschool-23ah-deventer-opleiding-tot-verpleegku-1001o4011
+institution: nl-saxion-hogeschool-23ah-deventer
+country: NL
+city: deventer
+field: allied-health
+level: bachelor
+name: Opleiding tot Verpleegkundige
+summary:
+  fr:
+    text: Opleiding tot Verpleegkundige (Nursing), Saxion Hogeschool (Deventer). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding tot Verpleegkundige (Nursing), Saxion Hogeschool (Deventer). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding tot Verpleegkundige (Nursing), Saxion Hogeschool (Deventer). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.saxion.nl/opleidingen/voltijd/bachelor/verpleegkunde
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 936000
+    currency: EUR
+    period: year
+  source: page-3
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: diploma
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: nl
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme étranger doit être jugé équivalent à un diplôme néerlandais havo, vwo ou mbo-4 par le Studentregistratie de Saxion.
+          status: draft
+        en:
+          text: A foreign diploma must be assessed as equivalent to a Dutch havo, vwo or mbo-4 diploma by Saxion Studentregistratie.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Aucune date limite d'inscription pour les candidats internationaux n'est indiquée sur ces pages ; vérifiez auprès du Servicepoint.
+          status: draft
+        en:
+          text: No application deadline for international applicants is stated on these pages; check with the Servicepoint.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.saxion.nl/opleidingen/voltijd/bachelor/verpleegkunde
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.saxion.nl/studeren-bij/ik-wil-mij-inschrijven/toelating
+    last_verified_at: 2026-10-12
+  page-3:
+    url: https://www.saxion.nl/studeren-bij/opleidingskosten/collegegeld
+    last_verified_at: 2026-10-12

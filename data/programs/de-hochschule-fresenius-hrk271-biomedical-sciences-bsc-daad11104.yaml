@@ -1,0 +1,77 @@
+slug: de-hochschule-fresenius-hrk271-biomedical-sciences-bsc-daad11104
+institution: de-hochschule-fresenius-hrk271
+country: DE
+city: idstein
+field: medicine
+level: bachelor
+name: Biomedical Sciences (BSc)
+summary:
+  fr:
+    text: Biomedical Sciences (BSc), Hochschule Fresenius (Idstein). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Biomedical Sciences (BSc), Hochschule Fresenius (Idstein). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Biomedical Sciences (BSc), Hochschule Fresenius (Idstein). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11104/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 612000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Une qualification d'entrée à l'université (Hochschulzugangsberechtigung) est requise ; vérifiez la reconnaissance de votre Baccalauréat marocain.
+          status: draft
+        en:
+          text: A university entrance qualification is required; check whether your Moroccan Baccalaureate is recognised.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11104/
+    last_verified_at: 2026-10-12

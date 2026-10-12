@@ -1,0 +1,66 @@
+slug: nl-universiteit-maastricht-21pj-gezondheidswetenschappen-1001o5913
+institution: nl-universiteit-maastricht-21pj
+country: NL
+city: maastricht
+field: allied-health
+level: bachelor
+name: Gezondheidswetenschappen
+summary:
+  fr:
+    text: Gezondheidswetenschappen (Health Sciences), Universiteit Maastricht (Maastricht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Gezondheidswetenschappen (Health Sciences), Universiteit Maastricht (Maastricht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Gezondheidswetenschappen (Health Sciences), Universiteit Maastricht (Maastricht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.maastrichtuniversity.nl/nl/onderwijs/bachelor/programmas/gezondheidswetenschappen
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les conditions d'admission pour les diplômés étrangers (baccalauréat marocain) sur la page 'Toelatingseisen' du programme.
+          status: draft
+        en:
+          text: Check the admission requirements for foreign diploma holders (Moroccan Baccalaureate) on the programme's 'Toelatingseisen' page.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.maastrichtuniversity.nl/nl/onderwijs/bachelor/programmas/gezondheidswetenschappen
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.maastrichtuniversity.nl/study/admission-enrolment/applying-maastricht-university
+    last_verified_at: 2026-10-12

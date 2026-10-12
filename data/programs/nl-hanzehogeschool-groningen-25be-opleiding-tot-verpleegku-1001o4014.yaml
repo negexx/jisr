@@ -1,0 +1,72 @@
+slug: nl-hanzehogeschool-groningen-25be-opleiding-tot-verpleegku-1001o4014
+institution: nl-hanzehogeschool-groningen-25be
+country: NL
+city: groningen
+field: allied-health
+level: bachelor
+name: Opleiding tot Verpleegkundige
+summary:
+  fr:
+    text: Opleiding tot Verpleegkundige (Nursing), Hanzehogeschool Groningen (Groningen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding tot Verpleegkundige (Nursing), Hanzehogeschool Groningen (Groningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding tot Verpleegkundige (Nursing), Hanzehogeschool Groningen (Groningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/verpleegkunde-hbo-v
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: nl
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez l'équivalence de votre baccalauréat marocain avec un diplôme néerlandais havo ou vwo (avec les profils requis) ou mbo niveau 4.
+          status: draft
+        en:
+          text: Check whether your Moroccan Baccalaureate is equivalent to a Dutch havo or vwo diploma (with the required profiles) or mbo level 4.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/verpleegkunde-hbo-v
+    last_verified_at: 2026-10-12

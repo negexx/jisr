@@ -1,0 +1,81 @@
+slug: it-bologna-bologna-genomics-l2
+institution: it-bologna-bologna
+country: IT
+city: bologna
+field: allied-health
+level: bachelor
+name: Genomics
+summary:
+  fr:
+    text: Genomics, Università degli studi di Bologna (Bologna). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Genomics, Università degli studi di Bologna (Bologna). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Genomics, Università degli studi di Bologna (Bologna). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/9211
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Accès restreint avec examen d'entrée TOLC-I EN et 60 places disponibles : vérifiez les modalités et les dates de sélection."
+          status: draft
+        en:
+          text: "Restricted access with TOLC-I EN entrance exam and 60 places available: check the selection methods and dates."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/9211
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero
+    last_verified_at: 2026-10-12

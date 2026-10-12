@@ -1,0 +1,14 @@
+slug: nl-hogeschool-van-hall-larenstein-30hd
+name: Hogeschool Van Hall Larenstein
+country: NL
+city:
+  slug: velp
+  name: Velp
+type: null
+website: https://www.hvhl.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.hvhl.nl/
+    last_verified_at: 2026-10-12

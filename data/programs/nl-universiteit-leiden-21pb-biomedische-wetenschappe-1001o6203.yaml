@@ -1,0 +1,78 @@
+slug: nl-universiteit-leiden-21pb-biomedische-wetenschappe-1001o6203
+institution: nl-universiteit-leiden-21pb
+country: NL
+city: leiden
+field: allied-health
+level: bachelor
+name: Biomedische Wetenschappen
+summary:
+  fr:
+    text: Biomedische Wetenschappen, Universiteit Leiden (Leiden). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Biomedische Wetenschappen, Universiteit Leiden (Leiden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Biomedische Wetenschappen, Universiteit Leiden (Leiden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.universiteitleiden.nl/onderwijs/opleidingen/bachelor/biomedische-wetenschappen
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si vous devez suivre la procédure de sélection et de placement (numerus fixus) pour cette formation.
+          status: draft
+        en:
+          text: Check whether you must follow the selection and placement procedure (numerus fixus) for this programme.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les frais de dossier de 100 € s'appliquent aux programmes de licence et ne sont pas remboursables.
+          status: draft
+        en:
+          text: The €100 application fee applies to degree programmes and is non-refundable.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.universiteitleiden.nl/onderwijs/opleidingen/bachelor/biomedische-wetenschappen
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.universiteitleiden.nl/en/education/admission-and-application/bachelors/application-procedure
+    last_verified_at: 2026-10-12

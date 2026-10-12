@@ -1,0 +1,88 @@
+slug: it-napoli-federico-ii-napoli-biology-for-one-health-l13
+institution: it-napoli-federico-ii-napoli
+country: IT
+city: napoli
+field: allied-health
+level: bachelor
+name: Biology for One-health
+summary:
+  fr:
+    text: Biology for One-health, Università degli studi di Napoli Federico II (Napoli). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Biology for One-health, Università degli studi di Napoli Federico II (Napoli). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Biology for One-health, Università degli studi di Napoli Federico II (Napoli). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.scuolapsb.unina.it/en/degrees/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier sur le site du cursus et le bando d'admission les conditions d'accès (test d'admission, connaissances de base) pour ce diplôme ; la page ne les précise pas.
+          status: draft
+        en:
+          text: Check the programme website and the admission call (bando) for entry requirements (admission test, basic knowledge) for this degree; the pages do not specify them.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Si vous choisissez ce cursus en italien, un niveau B2 d'italien est exigé ; il est attesté par une certification CLIQ (niveau B2) ou par un test d'italien. Vérifier la langue d'enseignement du cursus.
+          status: draft
+        en:
+          text: If you choose this programme taught in Italian, a B2 level of Italian is required; it must be shown with a CLIQ B2 certification or an Italian language test. Check the programme's teaching language.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les étudiants non-UE résidant à l'étranger doivent d'abord faire la pré-inscription sur le portail Universitaly ; cette pré-inscription ne donne pas à elle seule l'admission.
+          status: draft
+        en:
+          text: Non-EU students residing abroad must first pre-enrol on the Universitaly portal; pre-enrolment alone does not grant admission.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.scuolapsb.unina.it/en/degrees/
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.international.unina.it/education/admission-regulation/
+    last_verified_at: 2026-10-12

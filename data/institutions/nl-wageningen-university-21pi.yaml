@@ -1,0 +1,14 @@
+slug: nl-wageningen-university-21pi
+name: Wageningen University
+country: NL
+city:
+  slug: wageningen
+  name: Wageningen
+type: null
+website: https://www.wur.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.wur.nl/
+    last_verified_at: 2026-10-12

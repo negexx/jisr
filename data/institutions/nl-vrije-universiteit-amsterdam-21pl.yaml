@@ -1,0 +1,14 @@
+slug: nl-vrije-universiteit-amsterdam-21pl
+name: Vrije Universiteit Amsterdam
+country: NL
+city:
+  slug: amsterdam
+  name: Amsterdam
+type: null
+website: https://vu.nl/nl
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://vu.nl/nl
+    last_verified_at: 2026-10-12

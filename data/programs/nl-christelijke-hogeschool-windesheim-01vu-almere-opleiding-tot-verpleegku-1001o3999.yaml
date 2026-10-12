@@ -1,0 +1,63 @@
+slug: nl-christelijke-hogeschool-windesheim-01vu-almere-opleiding-tot-verpleegku-1001o3999
+institution: nl-christelijke-hogeschool-windesheim-01vu-almere
+country: NL
+city: almere
+field: allied-health
+level: bachelor
+name: Opleiding tot Verpleegkundige
+summary:
+  fr:
+    text: Opleiding tot Verpleegkundige (Nursing), Christelijke Hogeschool Windesheim (Almere). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding tot Verpleegkundige (Nursing), Christelijke Hogeschool Windesheim (Almere). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding tot Verpleegkundige (Nursing), Christelijke Hogeschool Windesheim (Almere). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.windesheim.nl/opleidingen/voltijd/bachelor/verpleegkunde-zwolle
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les exigences linguistiques pour les diplômes étrangers (niveau de néerlandais ou d'anglais requis).
+          status: draft
+        en:
+          text: Check language requirements for international diplomas (required Dutch or English level).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.windesheim.nl/opleidingen/voltijd/bachelor/verpleegkunde-zwolle
+    last_verified_at: 2026-10-12

@@ -1,0 +1,63 @@
+slug: nl-christelijke-hogeschool-windesheim-01vu-opleiding-voor-logopedie-1001o4074
+institution: nl-christelijke-hogeschool-windesheim-01vu
+country: NL
+city: zwolle
+field: allied-health
+level: bachelor
+name: Opleiding voor Logopedie
+summary:
+  fr:
+    text: Opleiding voor Logopedie (Speech and Language Therapy), Christelijke Hogeschool Windesheim (Zwolle). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding voor Logopedie (Speech and Language Therapy), Christelijke Hogeschool Windesheim (Zwolle). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding voor Logopedie (Speech and Language Therapy), Christelijke Hogeschool Windesheim (Zwolle). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.windesheim.nl/opleidingen/deeltijd/bachelor/logopedie-almere
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Votre diplôme étranger doit être jugé équivalent à un diplôme néerlandais de havo, vwo ou mbo-4. Faites évaluer cette équivalence.
+          status: draft
+        en:
+          text: Your foreign diploma must be assessed as equivalent to a Dutch havo, vwo or mbo-4 diploma. Have this equivalence assessed.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.windesheim.nl/opleidingen/deeltijd/bachelor/logopedie-almere
+    last_verified_at: 2026-10-12

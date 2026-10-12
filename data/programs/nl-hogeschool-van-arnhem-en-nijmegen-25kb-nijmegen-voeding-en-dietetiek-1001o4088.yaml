@@ -1,0 +1,52 @@
+slug: nl-hogeschool-van-arnhem-en-nijmegen-25kb-nijmegen-voeding-en-dietetiek-1001o4088
+institution: nl-hogeschool-van-arnhem-en-nijmegen-25kb-nijmegen
+country: NL
+city: nijmegen
+field: allied-health
+level: bachelor
+name: Voeding en Diëtetiek
+summary:
+  fr:
+    text: Voeding en Diëtetiek (Nutrition and Dietetics), Hogeschool van Arnhem en Nijmegen (Nijmegen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Voeding en Diëtetiek (Nutrition and Dietetics), Hogeschool van Arnhem en Nijmegen (Nijmegen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Voeding en Diëtetiek (Nutrition and Dietetics), Hogeschool van Arnhem en Nijmegen (Nijmegen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.han.nl/opleidingen/hbo/voeding-dietetiek/voltijd/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.han.nl/opleidingen/hbo/voeding-dietetiek/voltijd/
+    last_verified_at: 2026-10-12

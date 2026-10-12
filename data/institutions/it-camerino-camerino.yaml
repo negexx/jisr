@@ -1,0 +1,14 @@
+slug: it-camerino-camerino
+name: Università degli studi di Camerino
+country: IT
+city:
+  slug: camerino
+  name: Camerino
+type: public
+website: https://international.unicam.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://international.unicam.it/
+    last_verified_at: 2026-10-12

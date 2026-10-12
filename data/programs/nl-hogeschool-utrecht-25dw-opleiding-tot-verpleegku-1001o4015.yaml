@@ -1,0 +1,72 @@
+slug: nl-hogeschool-utrecht-25dw-opleiding-tot-verpleegku-1001o4015
+institution: nl-hogeschool-utrecht-25dw
+country: NL
+city: utrecht
+field: allied-health
+level: bachelor
+name: Opleiding tot Verpleegkundige
+summary:
+  fr:
+    text: Opleiding tot Verpleegkundige (Nursing), Hogeschool Utrecht (Utrecht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding tot Verpleegkundige (Nursing), Hogeschool Utrecht (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding tot Verpleegkundige (Nursing), Hogeschool Utrecht (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hu.nl/voltijd-opleidingen/verpleegkunde
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1074700
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez les conditions d'admission complètes : l'école indique qu'il faut un diplôme havo, vwo ou mbo-4, ou un test d'admission pour les 21 ans et plus."
+          status: draft
+        en:
+          text: "Check the full admission requirements: the school states you need a havo, vwo or mbo-4 diploma, or an admission assessment if you are 21 or older."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hu.nl/voltijd-opleidingen/verpleegkunde
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.hu.nl/collegegeld-en-betalen
+    last_verified_at: 2026-10-12
+  page-3:
+    url: https://www.hu.nl/aanmelden
+    last_verified_at: 2026-10-12

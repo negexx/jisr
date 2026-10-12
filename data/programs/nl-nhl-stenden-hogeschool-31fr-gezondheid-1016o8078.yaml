@@ -1,0 +1,55 @@
+slug: nl-nhl-stenden-hogeschool-31fr-gezondheid-1016o8078
+institution: nl-nhl-stenden-hogeschool-31fr
+country: NL
+city: leeuwarden
+field: allied-health
+level: bachelor
+name: Gezondheid
+summary:
+  fr:
+    text: Gezondheid (Health), NHL Stenden Hogeschool (Leeuwarden). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Gezondheid (Health), NHL Stenden Hogeschool (Leeuwarden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Gezondheid (Health), NHL Stenden Hogeschool (Leeuwarden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.nhlstenden.com/evenementen/warm-welkom-bachelor-gezondheid
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.nhlstenden.com/evenementen/warm-welkom-bachelor-gezondheid
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.nhlstenden.com/studeren-bij-nhl-stenden/toelatingseisen/21-plus-toelatingsonderzoek
+    last_verified_at: 2026-10-12

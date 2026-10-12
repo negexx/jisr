@@ -1,0 +1,111 @@
+slug: nl-hogeschool-leiden-21ri-opleiding-tot-verpleegku-1001o4006
+institution: nl-hogeschool-leiden-21ri
+country: NL
+city: leiden
+field: allied-health
+level: bachelor
+name: Opleiding tot Verpleegkundige
+summary:
+  fr:
+    text: Opleiding tot Verpleegkundige (Nursing), Hogeschool Leiden (Leiden). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding tot Verpleegkundige (Nursing), Hogeschool Leiden (Leiden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding tot Verpleegkundige (Nursing), Hogeschool Leiden (Leiden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hsleiden.nl/opleiding/verpleegkunde-voltijd
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 977500
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-3
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: true
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: language_proficiency
+      language: nl
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Votre diplôme marocain doit être comparable à un diplôme néerlandais havo, vwo ou mbo-4. Une évaluation du diplôme (diplomawaardering via Nuffic) est requise.
+          status: draft
+        en:
+          text: Your Moroccan diploma must be comparable to a Dutch havo, vwo or mbo-4 diploma. A diploma evaluation (diplomawaardering via Nuffic) is required.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien de sélection (studiekeuzecheck) obligatoire fait partie de l'admission à cette formation.
+          status: draft
+        en:
+          text: A compulsory selection interview (studiekeuzecheck) is part of admission to this programme.
+          status: draft
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un avis d'études contraignant (BSA) est délivré après la première année : 50 à 60 EC et tous les éléments obligatoires réussis sont nécessaires."
+          status: draft
+        en:
+          text: "A binding study advice (BSA) is issued after year 1: 50 to 60 EC and all compulsory components passed are required."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hsleiden.nl/opleiding/verpleegkunde-voltijd
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.hsleiden.nl/studeren/inschrijven/kosten
+    last_verified_at: 2026-10-12
+  page-3:
+    url: https://www.hsleiden.nl/studeren/inschrijven/studenten-uit-het-buitenland
+    last_verified_at: 2026-10-12

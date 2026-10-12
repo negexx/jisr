@@ -1,0 +1,58 @@
+slug: nl-saxion-hogeschool-23ah-opleiding-tot-verpleegku-1001o4011
+institution: nl-saxion-hogeschool-23ah
+country: NL
+city: enschede
+field: allied-health
+level: bachelor
+name: Opleiding tot Verpleegkundige
+summary:
+  fr:
+    text: Opleiding tot Verpleegkundige (Nursing), Saxion Hogeschool (Enschede). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding tot Verpleegkundige (Nursing), Saxion Hogeschool (Enschede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding tot Verpleegkundige (Nursing), Saxion Hogeschool (Enschede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.saxion.nl/opleidingen/voltijd/bachelor/verpleegkunde
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 936000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.saxion.nl/opleidingen/voltijd/bachelor/verpleegkunde
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.saxion.nl/studeren-bij/opleidingskosten/collegegeld
+    last_verified_at: 2026-10-12

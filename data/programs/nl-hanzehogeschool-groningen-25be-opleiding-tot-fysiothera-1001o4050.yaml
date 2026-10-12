@@ -1,0 +1,53 @@
+slug: nl-hanzehogeschool-groningen-25be-opleiding-tot-fysiothera-1001o4050
+institution: nl-hanzehogeschool-groningen-25be
+country: NL
+city: groningen
+field: allied-health
+level: bachelor
+name: Opleiding tot Fysiotherapeut
+summary:
+  fr:
+    text: Opleiding tot Fysiotherapeut (Physiotherapy), Hanzehogeschool Groningen (Groningen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding tot Fysiotherapeut (Physiotherapy), Hanzehogeschool Groningen (Groningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding tot Fysiotherapeut (Physiotherapy), Hanzehogeschool Groningen (Groningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/fysiotherapie
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/fysiotherapie
+    last_verified_at: 2026-10-12

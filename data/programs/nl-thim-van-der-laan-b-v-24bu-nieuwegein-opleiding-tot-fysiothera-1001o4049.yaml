@@ -1,0 +1,110 @@
+slug: nl-thim-van-der-laan-b-v-24bu-nieuwegein-opleiding-tot-fysiothera-1001o4049
+institution: nl-thim-van-der-laan-b-v-24bu-nieuwegein
+country: NL
+city: nieuwegein
+field: allied-health
+level: bachelor
+name: Opleiding tot Fysiotherapeut
+summary:
+  fr:
+    text: Opleiding tot Fysiotherapeut, Thim van der Laan B.V. (Nieuwegein). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding tot Fysiotherapeut, Thim van der Laan B.V. (Nieuwegein). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding tot Fysiotherapeut, Thim van der Laan B.V. (Nieuwegein). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://nl.thim.nl/physiotherapy-deeltijd/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Copie certifiée du diplôme
+          status: draft
+        en:
+          text: certified copy of the diploma
+          status: draft
+      translationRequired: null
+    - slug: transcript-of-records
+      name:
+        fr:
+          text: Copie certifiée du relevé de notes
+          status: draft
+        en:
+          text: certified copy of the transcript of records
+          status: draft
+      translationRequired: null
+    - slug: passport-copy
+      name:
+        fr:
+          text: Copie du passeport
+          status: draft
+        en:
+          text: copy of the passport
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: nl
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Votre diplôme étranger doit être évalué par Nuffic pour vérifier qu'il est comparable au diplôme néerlandais requis (HAVO ou MBO4).
+          status: draft
+        en:
+          text: Your foreign diploma must be evaluated by Nuffic to confirm it is comparable to the required Dutch diploma (HAVO or MBO4).
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme HAVO ou MBO4 (ou une équivalence) est requis. Les candidats de 21 ans ou plus sans diplôme adéquat peuvent éventuellement passer un test d'admission 21+.
+          status: draft
+        en:
+          text: A HAVO or MBO4 diploma (or equivalent) is required. Applicants aged 21 or older without the right diploma may possibly take a 21+ admission test.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://nl.thim.nl/physiotherapy-deeltijd/
+    last_verified_at: 2026-10-12

@@ -1,0 +1,53 @@
+slug: it-padova-padova-biology-of-human-and-environmental-healt-l13
+institution: it-padova-padova
+country: IT
+city: padova
+field: allied-health
+level: bachelor
+name: Biology of Human and Environmental Health
+summary:
+  fr:
+    text: Biology of Human and Environmental Health, Università degli studi di Padova (Padova). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Biology of Human and Environmental Health, Università degli studi di Padova (Padova). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Biology of Human and Environmental Health, Università degli studi di Padova (Padova). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.biomed.unipd.it/en/courses/first-cycle-degrees/biology-human-and-environmental-health-offered-english
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.biomed.unipd.it/en/courses/first-cycle-degrees/biology-human-and-environmental-health-offered-english
+    last_verified_at: 2026-10-12

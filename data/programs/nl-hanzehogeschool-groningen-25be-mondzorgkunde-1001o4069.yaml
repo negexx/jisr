@@ -1,0 +1,75 @@
+slug: nl-hanzehogeschool-groningen-25be-mondzorgkunde-1001o4069
+institution: nl-hanzehogeschool-groningen-25be
+country: NL
+city: groningen
+field: allied-health
+level: bachelor
+name: Mondzorgkunde
+summary:
+  fr:
+    text: Mondzorgkunde (Dental Hygiene), Hanzehogeschool Groningen (Groningen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Mondzorgkunde (Dental Hygiene), Hanzehogeschool Groningen (Groningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Mondzorgkunde (Dental Hygiene), Hanzehogeschool Groningen (Groningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/mondzorgkunde
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez la reconnaissance de votre diplôme marocain : il doit être équivalent à havo/vwo (avec les profils requis) ou mbo-4. Consultez la page 'buitenlands diploma'."
+          status: draft
+        en:
+          text: "Check recognition of your Moroccan diploma: it must be equivalent to Dutch havo/vwo (with the required subject clusters) or mbo level 4. See the 'foreign diploma' page."
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La sélection (numerus fixus) impose de s'inscrire avant le 15 janvier via Studielink et de participer à la procédure de sélection.
+          status: draft
+        en:
+          text: Selection (numerus fixus) requires applying before 15 January via Studielink and taking part in the selection procedure.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/mondzorgkunde
+    last_verified_at: 2026-10-12

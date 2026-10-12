@@ -1,0 +1,14 @@
+slug: nl-universiteit-utrecht-21pd
+name: Universiteit Utrecht
+country: NL
+city:
+  slug: utrecht
+  name: Utrecht
+type: null
+website: https://www.uu.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.uu.nl/
+    last_verified_at: 2026-10-12

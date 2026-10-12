@@ -1,0 +1,87 @@
+slug: nl-universiteit-utrecht-21pd-farmacie-1001o5868
+institution: nl-universiteit-utrecht-21pd
+country: NL
+city: utrecht
+field: pharmacy
+level: bachelor
+name: Farmacie
+summary:
+  fr:
+    text: Farmacie (Pharmacy), Universiteit Utrecht (Utrecht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Farmacie (Pharmacy), Universiteit Utrecht (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Farmacie (Pharmacy), Universiteit Utrecht (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.uu.nl/bachelors/farmacie
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 2940000
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 4
+        day: 1
+  source: page-2
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si votre diplôme étranger est jugé équivalent au VWO néerlandais; c'est l'International Student Admissions qui le détermine.
+          status: draft
+        en:
+          text: Check whether your foreign diploma is considered equivalent to a Dutch VWO diploma; International Student Admissions determines this.
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: null
+      acceptedTests: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.uu.nl/bachelors/farmacie
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.uu.nl/en/bachelors/economics-and-business-economics/application-and-admission
+    last_verified_at: 2026-10-12
+  page-3:
+    url: https://www.uu.nl/en/bachelors/english-language-and-culture/application-and-admission
+    last_verified_at: 2026-10-12
