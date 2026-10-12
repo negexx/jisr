@@ -1,0 +1,66 @@
+slug: nl-hogeschool-van-arnhem-en-nijmegen-25kb-mondzorgkunde-1001o4071
+institution: nl-hogeschool-van-arnhem-en-nijmegen-25kb
+country: NL
+city: arnhem
+field: allied-health
+level: bachelor
+name: Mondzorgkunde
+summary:
+  fr:
+    text: Mondzorgkunde (Dental Hygiene), Hogeschool van Arnhem en Nijmegen (Arnhem). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Mondzorgkunde (Dental Hygiene), Hogeschool van Arnhem en Nijmegen (Arnhem). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Mondzorgkunde (Dental Hygiene), Hogeschool van Arnhem en Nijmegen (Arnhem). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.han.nl/opleidingen/hbo/mondzorgkunde/voltijd/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "La Mondzorgkunde est une formation à numerus fixus : l'inscription se fait avant le 15 janvier et une procédure de sélection s'applique."
+          status: draft
+        en:
+          text: "Mondzorgkunde is a numerus fixus programme: application is due before 15 January and a selection procedure applies."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.han.nl/opleidingen/hbo/mondzorgkunde/voltijd/
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.han.nl/opleidingen/associate-degree/bedrijfskunde-sustainable-international-business/voltijd/praktische-info/Voltijd-Ad-Bedrijfskunde-Inschrijvingsreglement-2024-2025.pdf
+    last_verified_at: 2026-10-12

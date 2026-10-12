@@ -1,0 +1,60 @@
+slug: nl-hogeschool-van-hall-larenstein-30hd-voedingsmiddelentechnolo-1001o4416
+institution: nl-hogeschool-van-hall-larenstein-30hd
+country: NL
+city: velp
+field: allied-health
+level: bachelor
+name: Voedingsmiddelentechnologie
+summary:
+  fr:
+    text: Voedingsmiddelentechnologie (Food Technology), Hogeschool Van Hall Larenstein (Velp). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Voedingsmiddelentechnologie (Food Technology), Hogeschool Van Hall Larenstein (Velp). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Voedingsmiddelentechnologie (Food Technology), Hogeschool Van Hall Larenstein (Velp). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hvhl.nl/opleidingen/hbo/voedingsmiddelen-technologie/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 995000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.hvhl.nl/opleidingen/hbo/voedingsmiddelen-technologie/
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.hvhl.nl/aanmelden-en-inschrijven/kosten-hbo-opleiding-collegegeld/
+    last_verified_at: 2026-10-12

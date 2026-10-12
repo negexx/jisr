@@ -1,0 +1,14 @@
+slug: nl-thim-van-der-laan-b-v-24bu-nieuwegein
+name: Thim van der Laan B.V.
+country: NL
+city:
+  slug: nieuwegein
+  name: Nieuwegein
+type: null
+website: https://www.thim.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.thim.nl/
+    last_verified_at: 2026-10-12

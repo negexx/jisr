@@ -1,0 +1,100 @@
+slug: nl-universiteit-van-amsterdam-21pk-geneeskunde-1001o5908
+institution: nl-universiteit-van-amsterdam-21pk
+country: NL
+city: amsterdam
+field: medicine
+level: bachelor
+name: Geneeskunde
+summary:
+  fr:
+    text: Geneeskunde (Medicine), Universiteit van Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Geneeskunde (Medicine), Universiteit van Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Geneeskunde (Medicine), Universiteit van Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.uva.nl/programmas/bachelors/geneeskunde/geneeskunde.html
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 3450000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: diploma
+      name:
+        fr:
+          text: Diplôme et relevé de notes
+          status: draft
+        en:
+          text: Diploma(s) and transcript(s) of grades
+          status: draft
+      translationRequired: null
+    - slug: english-language-proficiency-test-certificate
+      name:
+        fr:
+          text: Certificat de compétence en anglais
+          status: draft
+        en:
+          text: English language proficiency test certificate
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: Curriculum vitae / resume
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les dates limites exactes pour les candidats avec un diplôme international, y compris la date limite finale du 1 mai et les délais pour le certificat de langue.
+          status: draft
+        en:
+          text: Check the exact deadlines for applicants with an international diploma, including the final 1 May deadline and language certificate deadlines.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.uva.nl/programmas/bachelors/geneeskunde/geneeskunde.html
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.uva.nl/onderwijs/praktische-informatie/collegegeld/collegegeld.html
+    last_verified_at: 2026-10-12
+  page-3:
+    url: https://www.uva.nl/en/education/admissions/bachelors/applying-for-a-bachelors-programme.html
+    last_verified_at: 2026-10-12

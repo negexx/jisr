@@ -1,0 +1,61 @@
+slug: nl-universiteit-maastricht-21pj-european-public-health-1001o5673
+institution: nl-universiteit-maastricht-21pj
+country: NL
+city: maastricht
+field: allied-health
+level: bachelor
+name: European Public Health
+summary:
+  fr:
+    text: European Public Health (European Public Health), Universiteit Maastricht (Maastricht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: European Public Health (European Public Health), Universiteit Maastricht (Maastricht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: European Public Health (European Public Health), Universiteit Maastricht (Maastricht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.maastrichtuniversity.nl/nl/onderwijs/bachelor/programmas/european-public-health
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 4
+        day: 1
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.maastrichtuniversity.nl/nl/onderwijs/bachelor/programmas/european-public-health
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.maastrichtuniversity.nl/study/admission-enrolment/applying-maastricht-university
+    last_verified_at: 2026-10-12

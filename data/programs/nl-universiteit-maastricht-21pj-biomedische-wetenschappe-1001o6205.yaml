@@ -1,0 +1,52 @@
+slug: nl-universiteit-maastricht-21pj-biomedische-wetenschappe-1001o6205
+institution: nl-universiteit-maastricht-21pj
+country: NL
+city: maastricht
+field: allied-health
+level: bachelor
+name: Biomedische Wetenschappen
+summary:
+  fr:
+    text: Biomedische Wetenschappen (Biomedical Sciences), Universiteit Maastricht (Maastricht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Biomedische Wetenschappen (Biomedical Sciences), Universiteit Maastricht (Maastricht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Biomedische Wetenschappen (Biomedical Sciences), Universiteit Maastricht (Maastricht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.maastrichtuniversity.nl/nl/onderwijs/bachelor/programmas/biomedical-sciences/vakken-en-curriculum
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.maastrichtuniversity.nl/nl/onderwijs/bachelor/programmas/biomedical-sciences/vakken-en-curriculum
+    last_verified_at: 2026-10-12

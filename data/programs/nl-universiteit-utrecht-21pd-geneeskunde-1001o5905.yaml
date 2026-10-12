@@ -1,0 +1,59 @@
+slug: nl-universiteit-utrecht-21pd-geneeskunde-1001o5905
+institution: nl-universiteit-utrecht-21pd
+country: NL
+city: utrecht
+field: medicine
+level: bachelor
+name: Geneeskunde
+summary:
+  fr:
+    text: Geneeskunde (Medicine), Universiteit Utrecht (Utrecht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Geneeskunde (Medicine), Universiteit Utrecht (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Geneeskunde (Medicine), Universiteit Utrecht (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.uu.nl/bachelors/geneeskunde
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 2940000
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.uu.nl/bachelors/geneeskunde
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.uu.nl/en/bachelors/economics-and-business-economics/application-and-admission
+    last_verified_at: 2026-10-12

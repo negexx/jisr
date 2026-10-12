@@ -1,0 +1,14 @@
+slug: nl-universiteit-leiden-21pb
+name: Universiteit Leiden
+country: NL
+city:
+  slug: leiden
+  name: Leiden
+type: null
+website: https://www.universiteitleiden.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.universiteitleiden.nl/
+    last_verified_at: 2026-10-12

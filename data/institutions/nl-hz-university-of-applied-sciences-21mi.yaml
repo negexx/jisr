@@ -1,0 +1,14 @@
+slug: nl-hz-university-of-applied-sciences-21mi
+name: HZ University of Applied Sciences
+country: NL
+city:
+  slug: vlissingen
+  name: Vlissingen
+type: null
+website: https://hz.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://hz.nl/
+    last_verified_at: 2026-10-12

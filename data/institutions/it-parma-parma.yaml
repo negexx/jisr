@@ -1,0 +1,14 @@
+slug: it-parma-parma
+name: Università degli studi di Parma
+country: IT
+city:
+  slug: parma
+  name: Parma
+type: public
+website: https://www.unipr.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unipr.it/
+    last_verified_at: 2026-10-12

@@ -1,0 +1,14 @@
+slug: nl-universiteit-maastricht-21pj
+name: Universiteit Maastricht
+country: NL
+city:
+  slug: maastricht
+  name: Maastricht
+type: null
+website: https://www.maastrichtuniversity.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.maastrichtuniversity.nl/
+    last_verified_at: 2026-10-12

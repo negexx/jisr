@@ -1,0 +1,72 @@
+slug: nl-hogeschool-utrecht-25dw-opleiding-voor-logopedie-1001o4078
+institution: nl-hogeschool-utrecht-25dw
+country: NL
+city: utrecht
+field: allied-health
+level: bachelor
+name: Opleiding voor Logopedie
+summary:
+  fr:
+    text: Opleiding voor Logopedie (Speech and Language Therapy), Hogeschool Utrecht (Utrecht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding voor Logopedie (Speech and Language Therapy), Hogeschool Utrecht (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding voor Logopedie (Speech and Language Therapy), Hogeschool Utrecht (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hu.nl/voltijd-opleidingen/logopedie
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1074700
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme néerlandais havo, vwo ou mbo-4 est requis. Vérifiez si votre Baccalauréat marocain est accepté, ou passez le test 21+ si vous avez 21 ans ou plus.
+          status: draft
+        en:
+          text: A Dutch havo, vwo or mbo-4 diploma is required. Check whether your Moroccan Baccalauréat is accepted, or take the 21+ admission test if you are 21 or older.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hu.nl/voltijd-opleidingen/logopedie
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.hu.nl/collegegeld-en-betalen
+    last_verified_at: 2026-10-12
+  page-3:
+    url: https://www.hu.nl/aanmelden
+    last_verified_at: 2026-10-12

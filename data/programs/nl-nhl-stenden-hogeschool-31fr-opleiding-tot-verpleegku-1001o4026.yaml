@@ -1,0 +1,63 @@
+slug: nl-nhl-stenden-hogeschool-31fr-opleiding-tot-verpleegku-1001o4026
+institution: nl-nhl-stenden-hogeschool-31fr
+country: NL
+city: leeuwarden
+field: allied-health
+level: bachelor
+name: Opleiding tot Verpleegkundige
+summary:
+  fr:
+    text: Opleiding tot Verpleegkundige (Nursing), NHL Stenden Hogeschool (Leeuwarden). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding tot Verpleegkundige (Nursing), NHL Stenden Hogeschool (Leeuwarden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding tot Verpleegkundige (Nursing), NHL Stenden Hogeschool (Leeuwarden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.nhlstenden.com/hbo-opleidingen/verpleegkunde/inschrijven
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si vous avez un diplôme/niveau requis pour l'admission, car la page de candidature exige un contrôle des conditions d'admission.
+          status: draft
+        en:
+          text: Check whether you hold a required diploma/profile for admission, as the application page requires checking the admission requirements.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.nhlstenden.com/hbo-opleidingen/verpleegkunde/inschrijven
+    last_verified_at: 2026-10-12

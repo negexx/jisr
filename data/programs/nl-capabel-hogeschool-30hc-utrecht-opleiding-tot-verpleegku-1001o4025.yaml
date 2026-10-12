@@ -1,0 +1,78 @@
+slug: nl-capabel-hogeschool-30hc-utrecht-opleiding-tot-verpleegku-1001o4025
+institution: nl-capabel-hogeschool-30hc-utrecht
+country: NL
+city: utrecht
+field: allied-health
+level: bachelor
+name: Opleiding tot Verpleegkundige
+summary:
+  fr:
+    text: Opleiding tot Verpleegkundige (Nursing), Capabel Hogeschool (Utrecht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding tot Verpleegkundige (Nursing), Capabel Hogeschool (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding tot Verpleegkundige (Nursing), Capabel Hogeschool (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.capabel.nl/opleidingen/zorg-welzijn/hbo-bachelor-verpleegkundige
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2026-11-24
+      applicationOpens: null
+      applicationDeadline: null
+    - startDate: 2027-03-15
+      applicationOpens: null
+      applicationDeadline: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: nl
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme HAVO, VWO ou MBO 4 est requis ; si vous ne l'avez pas mais avez 21 ans ou plus, un test d'admission 21+ est possible.
+          status: draft
+        en:
+          text: A HAVO, VWO or MBO 4 diploma is required; if you do not have one but are 21 or older, a 21+ admission test is possible.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.capabel.nl/opleidingen/zorg-welzijn/hbo-bachelor-verpleegkundige
+    last_verified_at: 2026-10-12

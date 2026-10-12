@@ -1,0 +1,67 @@
+slug: nl-hanzehogeschool-groningen-25be-opleiding-voor-logopedie-1001o4077
+institution: nl-hanzehogeschool-groningen-25be
+country: NL
+city: groningen
+field: allied-health
+level: bachelor
+name: Opleiding voor Logopedie
+summary:
+  fr:
+    text: Opleiding voor Logopedie (Speech and Language Therapy), Hanzehogeschool Groningen (Groningen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding voor Logopedie (Speech and Language Therapy), Hanzehogeschool Groningen (Groningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding voor Logopedie (Speech and Language Therapy), Hanzehogeschool Groningen (Groningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://catalogue.hanze.nl/nl/Programme/2024/ECTSLOD24
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les conditions d'admission pour les titulaires d'un diplôme étranger (équivalence avec le HAVO/VWO/MBO niveau 4) auprès de l'établissement.
+          status: draft
+        en:
+          text: Check admission requirements for foreign-diploma holders (equivalence with Dutch HAVO/VWO/MBO level 4) with the institution.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://catalogue.hanze.nl/nl/Programme/2024/ECTSLOD24
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.hanze.nl/nl/opleidingen/en/full-time/bachelor/international-business-4-year
+    last_verified_at: 2026-10-12

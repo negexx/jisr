@@ -1,0 +1,104 @@
+slug: de-technische-hochschule-deggendorf-hrk284-nursing-bsc-daad10429
+institution: de-technische-hochschule-deggendorf-hrk284
+country: DE
+city: deggendorf
+field: allied-health
+level: bachelor
+name: Nursing (BSc)
+summary:
+  fr:
+    text: Nursing (BSc), Technische Hochschule Deggendorf (Deggendorf). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Nursing (BSc), Technische Hochschule Deggendorf (Deggendorf). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Nursing (BSc), Technische Hochschule Deggendorf (Deggendorf). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10429/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+    - de
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: L'admission exige un contrat d'apprentissage avec une institution partenaire (hôpital, maison de soins ou service ambulatoire).
+          status: draft
+        en:
+          text: Admission requires an apprenticeship contract with a partner institution (hospital, care facility or outpatient service).
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Payer les frais de candidature uniques de 60 EUR avant l'examen de tes documents.
+          status: draft
+        en:
+          text: Pay the one-time application fee of EUR 60 before your documents are checked.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: En tant qu'étudiant non-UE, tu paies 500 EUR de frais de service par semestre à l'inscription.
+          status: draft
+        en:
+          text: As a non-EU student you pay EUR 500 service fee per semester upon enrolment.
+          status: draft
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Aucun NC ni GPA spécifique : il n'y a pas de note minimale exigée pour l'admission."
+          status: draft
+        en:
+          text: "No specific GPA or NC: no minimum grade is required for admission."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10429/
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.th-deg.de/en/students/documents/application-and-service-fees
+    last_verified_at: 2026-10-12
+  page-3:
+    url: https://th-deg.de/en/apply
+    last_verified_at: 2026-10-12

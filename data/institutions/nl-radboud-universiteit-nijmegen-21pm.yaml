@@ -1,0 +1,14 @@
+slug: nl-radboud-universiteit-nijmegen-21pm
+name: Radboud Universiteit Nijmegen
+country: NL
+city:
+  slug: nijmegen
+  name: Nijmegen
+type: null
+website: https://www.ru.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.ru.nl/
+    last_verified_at: 2026-10-12

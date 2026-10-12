@@ -1,0 +1,94 @@
+slug: it-roma-la-sapienza-latina-molecular-biology-medicinal-chemistry-an-l29
+institution: it-roma-la-sapienza-latina
+country: IT
+city: latina
+field: pharmacy
+level: bachelor
+name: Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications
+summary:
+  fr:
+    text: Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications, Università degli studi di Roma La Sapienza (Latina). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications, Università degli studi di Roma La Sapienza (Latina). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications, Università degli studi di Roma La Sapienza (Latina). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://corsidilaurea.uniroma1.it/en/course/33457
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Ce programme est à accès programmé : vérifiez le bando d'admission (test d'entrée) dans le catalogue des cours."
+          status: draft
+        en:
+          text: "This programme has restricted access: check the admission call (entrance test) in the Course Catalogue."
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Pré-sélection en ligne sur MoveIN requise si indiquée dans les exigences d'admission du programme.
+          status: draft
+        en:
+          text: Online pre-selection on MoveIN required if indicated in the programme's admission requirements.
+          status: draft
+    - id: req-4
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un quota de places est réservé aux étudiants non-UE résidant à l'étranger pour les programmes à accès programmé.
+          status: draft
+        en:
+          text: A quota of places is reserved for non-EU students residing abroad in restricted access programmes.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://corsidilaurea.uniroma1.it/en/course/33457
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.uniroma1.it/en/pagina/international-student-office
+    last_verified_at: 2026-10-12

@@ -1,0 +1,66 @@
+slug: nl-vrije-universiteit-amsterdam-21pl-geneeskunde-1001o5909
+institution: nl-vrije-universiteit-amsterdam-21pl
+country: NL
+city: amsterdam
+field: medicine
+level: bachelor
+name: Geneeskunde
+summary:
+  fr:
+    text: Geneeskunde (Medicine), Vrije Universiteit Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Geneeskunde (Medicine), Vrije Universiteit Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Geneeskunde (Medicine), Vrije Universiteit Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://vu.nl/nl/onderwijs/bachelor/geneeskunde
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "La sélection pour Geneeskunde : consultez les critères de sélection et les modalités sur la page 'selectie'."
+          status: draft
+        en:
+          text: "Selection for Geneeskunde: check the selection criteria and procedure on the 'selectie' page."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://vu.nl/nl/onderwijs/bachelor/geneeskunde
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://vu.nl/nl/onderwijs/meer-over/aanmelden-bacheloropleiding
+    last_verified_at: 2026-10-12

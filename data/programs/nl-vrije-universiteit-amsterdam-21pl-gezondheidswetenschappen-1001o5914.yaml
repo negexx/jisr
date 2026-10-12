@@ -1,0 +1,53 @@
+slug: nl-vrije-universiteit-amsterdam-21pl-gezondheidswetenschappen-1001o5914
+institution: nl-vrije-universiteit-amsterdam-21pl
+country: NL
+city: amsterdam
+field: allied-health
+level: bachelor
+name: Gezondheidswetenschappen
+summary:
+  fr:
+    text: Gezondheidswetenschappen (Health Sciences), Vrije Universiteit Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Gezondheidswetenschappen (Health Sciences), Vrije Universiteit Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Gezondheidswetenschappen (Health Sciences), Vrije Universiteit Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://vu.nl/nl/onderwijs/bachelor/gezondheidswetenschappen
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://vu.nl/nl/onderwijs/bachelor/gezondheidswetenschappen
+    last_verified_at: 2026-10-12

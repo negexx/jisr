@@ -1,0 +1,85 @@
+slug: nl-capabel-hogeschool-30hc-amsterdam-opleiding-tot-verpleegku-1001o4025
+institution: nl-capabel-hogeschool-30hc-amsterdam
+country: NL
+city: amsterdam
+field: allied-health
+level: bachelor
+name: Opleiding tot Verpleegkundige
+summary:
+  fr:
+    text: Opleiding tot Verpleegkundige (Nursing), Capabel Hogeschool (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding tot Verpleegkundige (Nursing), Capabel Hogeschool (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding tot Verpleegkundige (Nursing), Capabel Hogeschool (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.capabel.nl/opleidingen/zorg-welzijn/verkorte-hbo-bachelor-verpleegkundige-2-jaar
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme MBO 4 Verpleegkunde ou Inservice et une inscription BIG active sont requis.
+          status: draft
+        en:
+          text: An MBO 4 Nursing or Inservice diploma and an active BIG registration are required.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Diplôme étranger : évaluation Nuffic (contenu et niveau NLQF 4) et exigences linguistiques et mathématiques (niveau 3F) requises."
+          status: draft
+        en:
+          text: "Foreign diploma: Nuffic evaluation (content and NLQF level 4) and language and mathematics requirements (level 3F) required."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le programme passerelle Verkort Verpleegkunde fait partie de la procédure d'admission.
+          status: draft
+        en:
+          text: The Verkort Verpleegkunde bridging programme is part of the admission procedure.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.capabel.nl/opleidingen/zorg-welzijn/verkorte-hbo-bachelor-verpleegkundige-2-jaar
+    last_verified_at: 2026-10-12

@@ -1,0 +1,67 @@
+slug: nl-de-haagse-hogeschool-27um-voeding-en-dietetiek-1001o4089
+institution: nl-de-haagse-hogeschool-27um
+country: NL
+city: s-gravenhage
+field: allied-health
+level: bachelor
+name: Voeding en Diëtetiek
+summary:
+  fr:
+    text: Voeding en Diëtetiek (Nutrition and Dietetics), De Haagse Hogeschool ('s-Gravenhage). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Voeding en Diëtetiek (Nutrition and Dietetics), De Haagse Hogeschool ('s-Gravenhage). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Voeding en Diëtetiek (Nutrition and Dietetics), De Haagse Hogeschool ('s-Gravenhage). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/voeding-en-dietetiek-voltijd
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si votre diplôme marocain est jugé équivalent et si vous devez fournir un test de langue néerlandaise.
+          status: draft
+        en:
+          text: Check whether your Moroccan diploma is deemed equivalent and whether you need to provide a Dutch language test.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/voeding-en-dietetiek-voltijd
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen
+    last_verified_at: 2026-10-12

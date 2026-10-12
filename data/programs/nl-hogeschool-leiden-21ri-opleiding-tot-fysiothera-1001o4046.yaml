@@ -1,0 +1,99 @@
+slug: nl-hogeschool-leiden-21ri-opleiding-tot-fysiothera-1001o4046
+institution: nl-hogeschool-leiden-21ri
+country: NL
+city: leiden
+field: allied-health
+level: bachelor
+name: Opleiding tot Fysiotherapeut
+summary:
+  fr:
+    text: Opleiding tot Fysiotherapeut (Physiotherapy), Hogeschool Leiden (Leiden). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding tot Fysiotherapeut (Physiotherapy), Hogeschool Leiden (Leiden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding tot Fysiotherapeut (Physiotherapy), Hogeschool Leiden (Leiden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hsleiden.nl/opleiding/fysiotherapie
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 977500
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+    - slug: grade-list
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Grade list
+          status: draft
+      translationRequired: null
+    - slug: diploma-valuation
+      name:
+        fr:
+          text: Évaluation du diplôme
+          status: draft
+        en:
+          text: Diploma valuation
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les conditions d'admission spécifiques à Fysiotherapie (profil, diplôme équivalent) sur la page de la formation.
+          status: draft
+        en:
+          text: Check the specific admission requirements for Fysiotherapie (profile, equivalent diploma) on the programme page.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hsleiden.nl/opleiding/fysiotherapie
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.hsleiden.nl/studeren/inschrijven/kosten
+    last_verified_at: 2026-10-12
+  page-3:
+    url: https://www.hsleiden.nl/studeren/inschrijven/studenten-uit-het-buitenland
+    last_verified_at: 2026-10-12

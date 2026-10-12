@@ -1,0 +1,76 @@
+slug: nl-avans-hogeschool-07gr-s-hertogenbosch-opleiding-tot-verpleegku-1001o4002
+institution: nl-avans-hogeschool-07gr-s-hertogenbosch
+country: NL
+city: s-hertogenbosch
+field: allied-health
+level: bachelor
+name: Opleiding tot Verpleegkundige
+summary:
+  fr:
+    text: Opleiding tot Verpleegkundige (Nursing), Avans Hogeschool ('s-Hertogenbosch). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding tot Verpleegkundige (Nursing), Avans Hogeschool ('s-Hertogenbosch). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding tot Verpleegkundige (Nursing), Avans Hogeschool ('s-Hertogenbosch). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.avans.nl/studeren/opleidingen/bachelor/hbo-verpleegkunde-voltijd
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1030800
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 5
+        day: 1
+  source: page-2
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez les conditions d'admission pour les diplômés étrangers (Bac marocain) auprès de l'établissement : les prérequis néerlandais (havo/vwo/mbo) ne s'appliquent pas directement."
+          status: draft
+        en:
+          text: Check admission requirements for foreign diploma holders (Moroccan Baccalaureate) with the institution; the Dutch havo/vwo/mbo entry requirements do not apply directly.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.avans.nl/studeren/opleidingen/bachelor/hbo-verpleegkunde-voltijd
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.avans.nl/en/int/studying/practical-information/tuition-fees
+    last_verified_at: 2026-10-12

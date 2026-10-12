@@ -1,0 +1,70 @@
+slug: nl-universiteit-utrecht-21pd-diergeneeskunde-1001o5919
+institution: nl-universiteit-utrecht-21pd
+country: NL
+city: utrecht
+field: medicine
+level: bachelor
+name: Diergeneeskunde
+summary:
+  fr:
+    text: Diergeneeskunde (Veterinary Medicine), Universiteit Utrecht (Utrecht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Diergeneeskunde (Veterinary Medicine), Universiteit Utrecht (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Diergeneeskunde (Veterinary Medicine), Universiteit Utrecht (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.uu.nl/bachelors/diergeneeskunde
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 2940000
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez sur le site officiel si des examens d'admission ou un entretien sont exigés pour les non-EU.
+          status: draft
+        en:
+          text: Check the official website to see if entrance exams or an interview are required for non-EU applicants.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.uu.nl/bachelors/diergeneeskunde
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.uu.nl/en/bachelors/english-language-and-culture/application-and-admission
+    last_verified_at: 2026-10-12

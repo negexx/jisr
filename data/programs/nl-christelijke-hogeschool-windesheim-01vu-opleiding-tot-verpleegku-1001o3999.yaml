@@ -1,0 +1,69 @@
+slug: nl-christelijke-hogeschool-windesheim-01vu-opleiding-tot-verpleegku-1001o3999
+institution: nl-christelijke-hogeschool-windesheim-01vu
+country: NL
+city: zwolle
+field: allied-health
+level: bachelor
+name: Opleiding tot Verpleegkundige
+summary:
+  fr:
+    text: Opleiding tot Verpleegkundige (Nursing), Christelijke Hogeschool Windesheim (Zwolle). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding tot Verpleegkundige (Nursing), Christelijke Hogeschool Windesheim (Zwolle). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding tot Verpleegkundige (Nursing), Christelijke Hogeschool Windesheim (Zwolle). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.windesheim.nl/opleidingen/voltijd/bachelor/verpleegkunde-zwolle
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-02-01
+      applicationOpens: null
+      applicationDeadline: null
+    - startDate: 2027-09-06
+      applicationOpens: null
+      applicationDeadline: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Avec un diplôme étranger : être admissible avec un diplôme équivalent à havo, vwo ou mbo-4 et satisfaire aux exigences linguistiques (voir taaleisen)."
+          status: draft
+        en:
+          text: "With a foreign diploma: admissible with a diploma equivalent to havo, vwo or mbo-4 and must meet the language requirements (see taaleisen)."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.windesheim.nl/opleidingen/voltijd/bachelor/verpleegkunde-zwolle
+    last_verified_at: 2026-10-12

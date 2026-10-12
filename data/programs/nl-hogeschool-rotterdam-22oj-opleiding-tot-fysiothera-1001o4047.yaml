@@ -1,0 +1,66 @@
+slug: nl-hogeschool-rotterdam-22oj-opleiding-tot-fysiothera-1001o4047
+institution: nl-hogeschool-rotterdam-22oj
+country: NL
+city: rotterdam
+field: allied-health
+level: bachelor
+name: Opleiding tot Fysiotherapeut
+summary:
+  fr:
+    text: Opleiding tot Fysiotherapeut (Physiotherapy), Hogeschool Rotterdam (Rotterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding tot Fysiotherapeut (Physiotherapy), Hogeschool Rotterdam (Rotterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding tot Fysiotherapeut (Physiotherapy), Hogeschool Rotterdam (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hogeschoolrotterdam.nl/globalassets/documenten/hogeschool/publicaties/hogeschoolgidsen/hogeschoolgids-bacheloropleidingen-ivg-2020-2021.pdf
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si un diplôme marocain (Baccalauréat) est reconnu comme équivalent au diplôme néerlandais requis (hbo-niveau); une évaluation peut être nécessaire.
+          status: draft
+        en:
+          text: Check whether a Moroccan Baccalauréat is recognised as equivalent to the required Dutch diploma (hbo level); an evaluation may be needed.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hogeschoolrotterdam.nl/globalassets/documenten/hogeschool/publicaties/hogeschoolgidsen/hogeschoolgids-bacheloropleidingen-ivg-2020-2021.pdf
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/
+    last_verified_at: 2026-10-12

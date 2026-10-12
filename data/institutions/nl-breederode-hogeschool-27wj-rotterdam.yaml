@@ -1,0 +1,14 @@
+slug: nl-breederode-hogeschool-27wj-rotterdam
+name: Breederode Hogeschool
+country: NL
+city:
+  slug: rotterdam
+  name: Rotterdam
+type: null
+website: https://www.breederode.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.breederode.nl/
+    last_verified_at: 2026-10-12

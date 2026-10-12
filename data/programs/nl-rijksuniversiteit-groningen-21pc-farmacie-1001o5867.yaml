@@ -1,0 +1,89 @@
+slug: nl-rijksuniversiteit-groningen-21pc-farmacie-1001o5867
+institution: nl-rijksuniversiteit-groningen-21pc
+country: NL
+city: groningen
+field: pharmacy
+level: bachelor
+name: Farmacie
+summary:
+  fr:
+    text: Farmacie (Pharmacy), Rijksuniversiteit Groningen (Groningen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Farmacie (Pharmacy), Rijksuniversiteit Groningen (Groningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Farmacie (Pharmacy), Rijksuniversiteit Groningen (Groningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.rug.nl/bachelors/pharmacy/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1980000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: nl
+      minCefr: null
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si votre diplôme est équivalent au VWO néerlandais ; consultez la liste des qualifications internationales.
+          status: draft
+        en:
+          text: Check whether your diploma is equivalent to the Dutch VWO; consult the list of international qualifications.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.rug.nl/bachelors/pharmacy/
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.rug.nl/education/application-enrolment-tuition-fees/tuition-fee/bachelor
+    last_verified_at: 2026-10-12
+  page-3:
+    url: https://www.rug.nl/education/application-enrolment-tuition-fees/admission/non-dutch-qualification/bachelor-non-dutch-qualification
+    last_verified_at: 2026-10-12

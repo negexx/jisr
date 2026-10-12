@@ -1,0 +1,53 @@
+slug: it-siena-siena-biotech-engineering-for-health-l2
+institution: it-siena-siena
+country: IT
+city: siena
+field: allied-health
+level: bachelor
+name: Biotech Engineering For Health
+summary:
+  fr:
+    text: Biotech Engineering For Health, Università degli studi di Siena (Siena). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Biotech Engineering For Health, Università degli studi di Siena (Siena). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Biotech Engineering For Health, Università degli studi di Siena (Siena). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://biotech-engineering.unisi.it/en/course/program-overview
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://biotech-engineering.unisi.it/en/course/program-overview
+    last_verified_at: 2026-10-12

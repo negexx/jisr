@@ -1,0 +1,90 @@
+slug: nl-capabel-hogeschool-30hc-rotterdam-opleiding-tot-verpleegku-1001o4025
+institution: nl-capabel-hogeschool-30hc-rotterdam
+country: NL
+city: rotterdam
+field: allied-health
+level: bachelor
+name: Opleiding tot Verpleegkundige
+summary:
+  fr:
+    text: Opleiding tot Verpleegkundige (Nursing), Capabel Hogeschool (Rotterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Opleiding tot Verpleegkundige (Nursing), Capabel Hogeschool (Rotterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Opleiding tot Verpleegkundige (Nursing), Capabel Hogeschool (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.capabel.nl/opleidingen/zorg-welzijn/hbo-bachelor-verpleegkundige
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: diploma
+      name:
+        fr:
+          text: Copie du diplôme pertinent
+          status: draft
+        en:
+          text: Copy of relevant diploma
+          status: draft
+      translationRequired: null
+    - slug: id
+      name:
+        fr:
+          text: Copie de la pièce d'identité
+          status: draft
+        en:
+          text: Copy of ID
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: nl
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez les conditions d'admission: HAVO, VWO ou MBO 4, ou test 21+."
+          status: draft
+        en:
+          text: "Check admission requirements: HAVO, VWO or MBO 4, or 21+ test."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.capabel.nl/opleidingen/zorg-welzijn/hbo-bachelor-verpleegkundige
+    last_verified_at: 2026-10-12

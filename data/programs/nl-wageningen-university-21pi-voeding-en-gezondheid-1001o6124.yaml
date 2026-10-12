@@ -1,0 +1,95 @@
+slug: nl-wageningen-university-21pi-voeding-en-gezondheid-1001o6124
+institution: nl-wageningen-university-21pi
+country: NL
+city: wageningen
+field: allied-health
+level: bachelor
+name: Voeding en Gezondheid
+summary:
+  fr:
+    text: Voeding en Gezondheid (Nutrition and Health), Wageningen University (Wageningen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Voeding en Gezondheid (Nutrition and Health), Wageningen University (Wageningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Voeding en Gezondheid (Nutrition and Health), Wageningen University (Wageningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.wur.nl/nl/onderwijs/bachelor/bachelor-voeding-en-gezondheid
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1830000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier que votre diplôme de fin d'études secondaires est au moins équivalent au VWO néerlandais et consulter la liste d'équivalence des diplômes.
+          status: draft
+        en:
+          text: Check that your secondary school diploma is at least equal to the Dutch pre-university VWO level and consult the diploma equivalency list.
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier les matières obligatoires pour votre diplôme et un éventuel examen complémentaire de niveau VWO.
+          status: draft
+        en:
+          text: Check the mandatory subjects for your diploma and any additional VWO-level exams.
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vous devez satisfaire aux exigences linguistiques en anglais et en néerlandais pour les programmes enseignés en néerlandais.
+          status: draft
+        en:
+          text: You must meet both the English and Dutch language requirements for Dutch taught bachelor's programmes.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.wur.nl/nl/onderwijs/bachelor/bachelor-voeding-en-gezondheid
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.wur.nl/nl/onderwijs/bachelor/studiekosten-bachelor/collegegeld-en-studiefinanciering
+    last_verified_at: 2026-10-12
+  page-3:
+    url: https://www.wur.nl/en/education/bachelor/application-admission-bachelors/apply-bachelors-programme/international-prior-education
+    last_verified_at: 2026-10-12

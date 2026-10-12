@@ -1,0 +1,14 @@
+slug: nl-hanzehogeschool-groningen-25be
+name: Hanzehogeschool Groningen
+country: NL
+city:
+  slug: groningen
+  name: Groningen
+type: null
+website: https://www.hanze.nl/nl
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.hanze.nl/nl
+    last_verified_at: 2026-10-12

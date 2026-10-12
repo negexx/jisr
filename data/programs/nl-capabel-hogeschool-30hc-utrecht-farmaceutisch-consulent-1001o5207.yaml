@@ -1,0 +1,74 @@
+slug: nl-capabel-hogeschool-30hc-utrecht-farmaceutisch-consulent-1001o5207
+institution: nl-capabel-hogeschool-30hc-utrecht
+country: NL
+city: utrecht
+field: pharmacy
+level: bachelor
+name: Farmaceutisch Consulent
+summary:
+  fr:
+    text: Farmaceutisch Consulent, Capabel Hogeschool (Utrecht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Farmaceutisch Consulent, Capabel Hogeschool (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Farmaceutisch Consulent, Capabel Hogeschool (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.capabel.nl/opleidingen/zorg-welzijn/verkorte-hbo-bachelor-farmaceutisch-consulent-3-jaar
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le diplôme MBO-4 Apothekersassistent est requis pour cette formation raccourcie.
+          status: draft
+        en:
+          text: An MBO-4 Apothekersassistent diploma is required for this shortened programme.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Au moins 2 ans d'expérience professionnelle comme apothécaire assistant après le diplôme sont requis.
+          status: draft
+        en:
+          text: At least 2 years of work experience as a pharmacy assistant after graduation is required.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.capabel.nl/opleidingen/zorg-welzijn/verkorte-hbo-bachelor-farmaceutisch-consulent-3-jaar
+    last_verified_at: 2026-10-12

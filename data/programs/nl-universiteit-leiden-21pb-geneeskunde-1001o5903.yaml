@@ -1,0 +1,56 @@
+slug: nl-universiteit-leiden-21pb-geneeskunde-1001o5903
+institution: nl-universiteit-leiden-21pb
+country: NL
+city: leiden
+field: medicine
+level: bachelor
+name: Geneeskunde
+summary:
+  fr:
+    text: Geneeskunde (Medicine), Universiteit Leiden (Leiden). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Geneeskunde (Medicine), Universiteit Leiden (Leiden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Geneeskunde (Medicine), Universiteit Leiden (Leiden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.universiteitleiden.nl/onderwijs/opleidingen/bachelor/geneeskunde
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.universiteitleiden.nl/onderwijs/opleidingen/bachelor/geneeskunde
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.universiteitleiden.nl/en/education/admission-and-application/bachelors/application-procedure
+    last_verified_at: 2026-10-12

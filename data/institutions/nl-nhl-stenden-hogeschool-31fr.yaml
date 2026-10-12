@@ -1,0 +1,14 @@
+slug: nl-nhl-stenden-hogeschool-31fr
+name: NHL Stenden Hogeschool
+country: NL
+city:
+  slug: leeuwarden
+  name: Leeuwarden
+type: null
+website: https://www.nhlstenden.com/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.nhlstenden.com/
+    last_verified_at: 2026-10-12

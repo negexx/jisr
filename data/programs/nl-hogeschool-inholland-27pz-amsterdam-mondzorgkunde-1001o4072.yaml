@@ -1,0 +1,81 @@
+slug: nl-hogeschool-inholland-27pz-amsterdam-mondzorgkunde-1001o4072
+institution: nl-hogeschool-inholland-27pz-amsterdam
+country: NL
+city: amsterdam
+field: allied-health
+level: bachelor
+name: Mondzorgkunde
+summary:
+  fr:
+    text: Mondzorgkunde (Dental Hygiene), Hogeschool Inholland (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Mondzorgkunde (Dental Hygiene), Hogeschool Inholland (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Mondzorgkunde (Dental Hygiene), Hogeschool Inholland (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.inholland.nl/opleidingen/mondzorgkunde-voltijd/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: L'anglais n'est pas votre langue maternelle ? Prouvez votre niveau d'anglais (IELTS 6.0, TOEFL 80, Cambridge CAE/CPE/FCE) si vous postulez à une formation en anglais.
+          status: draft
+        en:
+          text: English is not your first language? Prove your English proficiency (IELTS 6.0, TOEFL 80, Cambridge CAE/CPE/FCE) for an English-taught programme.
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme étranger doit être validé par la Centrale Studentenadministratie (CSA) pour vérifier son équivalence avec un diplôme néerlandais.
+          status: draft
+        en:
+          text: A foreign diploma must be validated by the Centrale Studentenadministratie (CSA) to check equivalence with a Dutch diploma.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.inholland.nl/opleidingen/mondzorgkunde-voltijd/
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/
+    last_verified_at: 2026-10-12
+  page-3:
+    url: https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf
+    last_verified_at: 2026-10-12

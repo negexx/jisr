@@ -1,0 +1,14 @@
+slug: nl-universiteit-van-amsterdam-21pk
+name: Universiteit van Amsterdam
+country: NL
+city:
+  slug: amsterdam
+  name: Amsterdam
+type: null
+website: https://www.uva.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.uva.nl/
+    last_verified_at: 2026-10-12
