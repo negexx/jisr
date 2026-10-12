@@ -1,0 +1,64 @@
+slug: hu-semmelweis-university-budapest-health-care-and-disease-sf1016
+institution: hu-semmelweis-university-budapest
+country: HU
+city: budapest
+field: allied-health
+level: bachelor
+name: Health Care and Disease Prevention [Health Visitor]
+summary:
+  fr:
+    text: Health Care and Disease Prevention [Health Visitor], Semmelweis University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Health Care and Disease Prevention [Health Visitor], Semmelweis University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Health Care and Disease Prevention [Health Visitor], Semmelweis University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/1016
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée oral est requis ; les examens ont lieu en ligne via Zoom.
+          status: draft
+        en:
+          text: An oral entrance examination is required; exams take place online via Zoom.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/1016
+    last_verified_at: 2026-10-12

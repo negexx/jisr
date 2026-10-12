@@ -1,0 +1,86 @@
+slug: hu-university-of-miskolc-miskolc-nursing-and-patient-care-sf459
+institution: hu-university-of-miskolc-miskolc
+country: HU
+city: miskolc
+field: allied-health
+level: bachelor
+name: Nursing and Patient Care [Nurse]
+summary:
+  fr:
+    text: Nursing and Patient Care [Nurse], University of Miskolc (Miskolc). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Nursing and Patient Care [Nurse], University of Miskolc (Miskolc). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Nursing and Patient Care [Nurse], University of Miskolc (Miskolc). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/459
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Diplôme de fin d'études secondaires (high school final exam certificate) requis, en anglais. Un certificat d'anglais B2 est accepté mais pas obligatoire.
+          status: draft
+        en:
+          text: High school final exam certificate required, in English. A B2 English certificate is accepted but not mandatory.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Concours d'entrée oral en ligne, plus évaluation des documents (lettre de motivation, CV en anglais). Score minimum de 70 points pour être admis.
+          status: draft
+        en:
+          text: Online oral entrance examination, plus document evaluation (motivation letter, CV in English). Minimum score of 70 points to be admitted.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Documents médicaux à fournir : certificat médical général, résultats HIV/AIDS, hépatite B et C, radiographie pulmonaire, carte de vaccination hépatite B."
+          status: draft
+        en:
+          text: "Medical documents to submit: general medical certificate, HIV/AIDS, hepatitis B and C, chest X-ray results, hepatitis B vaccination card."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/459
+    last_verified_at: 2026-10-12

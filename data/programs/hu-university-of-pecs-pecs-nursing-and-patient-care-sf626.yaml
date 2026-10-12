@@ -1,0 +1,89 @@
+slug: hu-university-of-pecs-pecs-nursing-and-patient-care-sf626
+institution: hu-university-of-pecs-pecs
+country: HU
+city: pecs
+field: allied-health
+level: bachelor
+name: Nursing and Patient Care [Physiotherapist]
+summary:
+  fr:
+    text: Nursing and Patient Care [Physiotherapist], University of Pécs (Pécs). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Nursing and Patient Care [Physiotherapist], University of Pécs (Pécs). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Nursing and Patient Care [Physiotherapist], University of Pécs (Pécs). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://international.pte.hu/study_programs/bsc_physiotherapy
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 290000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée (oral, en ligne via Skype) est requis.
+          status: draft
+        en:
+          text: An entrance examination (oral, online via Skype) is required.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La moyenne des notes de biologie et d'une autre matière est pondérée.
+          status: draft
+        en:
+          text: The mean of grades from Biology and one other subject chosen by the student counts weighted.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://international.pte.hu/study_programs/bsc_physiotherapy
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/626
+    last_verified_at: 2026-10-12

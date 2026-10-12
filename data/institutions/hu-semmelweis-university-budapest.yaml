@@ -1,0 +1,14 @@
+slug: hu-semmelweis-university-budapest
+name: Semmelweis University
+country: HU
+city:
+  slug: budapest
+  name: Budapest
+type: null
+website: https://semmelweis.hu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://semmelweis.hu/
+    last_verified_at: 2026-10-12

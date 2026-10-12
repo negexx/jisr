@@ -1,0 +1,64 @@
+slug: hu-semmelweis-university-budapest-nursing-and-patient-care-sf1013
+institution: hu-semmelweis-university-budapest
+country: HU
+city: budapest
+field: allied-health
+level: bachelor
+name: Nursing and Patient Care [Nurse]
+summary:
+  fr:
+    text: Nursing and Patient Care [Nurse], Semmelweis University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Nursing and Patient Care [Nurse], Semmelweis University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Nursing and Patient Care [Nurse], Semmelweis University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://semmelweis.hu/admission/programs/nursing/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Examen d'entrée oral obligatoire (en ligne) portant sur le domaine d'études ; les candidats ayant les meilleurs résultats sont admis.
+          status: draft
+        en:
+          text: Mandatory oral entrance examination (online) on the field of study; applicants with the best entrance exam results are admitted.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://semmelweis.hu/admission/programs/nursing/
+    last_verified_at: 2026-10-12

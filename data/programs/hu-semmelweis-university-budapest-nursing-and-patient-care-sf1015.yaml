@@ -1,0 +1,112 @@
+slug: hu-semmelweis-university-budapest-nursing-and-patient-care-sf1015
+institution: hu-semmelweis-university-budapest
+country: HU
+city: budapest
+field: allied-health
+level: bachelor
+name: Nursing and Patient Care [Midwife]
+summary:
+  fr:
+    text: Nursing and Patient Care [Midwife], Semmelweis University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Nursing and Patient Care [Midwife], Semmelweis University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Nursing and Patient Care [Midwife], Semmelweis University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://semmelweis.hu/admission/programs/midwifery/
+durationYears:
+  value: 4
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary School Leaving Certificate
+          status: draft
+      translationRequired: null
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Certificat de langue anglaise
+          status: draft
+        en:
+          text: English language certificate
+          status: draft
+      translationRequired: null
+    - slug: medical-report
+      name:
+        fr:
+          text: Rapport médical
+          status: draft
+        en:
+          text: Medical report
+          status: draft
+      translationRequired: null
+    - slug: passport-id-copy
+      name:
+        fr:
+          text: Copie du passeport / de la carte d'identité
+          status: draft
+        en:
+          text: Copy of Passport/ID card
+          status: draft
+      translationRequired: null
+    - slug: payment-certificate
+      name:
+        fr:
+          text: Certificat de paiement
+          status: draft
+        en:
+          text: Payment Certificate
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée oral est obligatoire.
+          status: draft
+        en:
+          text: An oral entrance examination is required.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://semmelweis.hu/admission/programs/midwifery/
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/1015
+    last_verified_at: 2026-10-12

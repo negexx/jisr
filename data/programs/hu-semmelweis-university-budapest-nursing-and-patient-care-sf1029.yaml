@@ -1,0 +1,87 @@
+slug: hu-semmelweis-university-budapest-nursing-and-patient-care-sf1029
+institution: hu-semmelweis-university-budapest
+country: HU
+city: budapest
+field: allied-health
+level: bachelor
+name: Nursing and Patient Care [Dietitian]
+summary:
+  fr:
+    text: Nursing and Patient Care [Dietitian], Semmelweis University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Nursing and Patient Care [Dietitian], Semmelweis University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Nursing and Patient Care [Dietitian], Semmelweis University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/1029
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary school leaving certificate
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée écrit est exigé; la sélection se fait sur les meilleurs résultats à cet examen.
+          status: draft
+        en:
+          text: A written entrance examination is required; selection is based on the best entrance exam results.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "L'inscription s'effectue via le portail d'admission en ligne de l'université (SEMAPHOR) : créez un compte et soumettez votre candidature."
+          status: draft
+        en:
+          text: "You apply through the university's online admission portal (SEMAPHOR): register and submit your application there."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/1029
+    last_verified_at: 2026-10-12
+  page-2:
+    url: https://semmelweis.hu/admission/process/online-application/
+    last_verified_at: 2026-10-12

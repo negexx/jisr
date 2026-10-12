@@ -1,0 +1,64 @@
+slug: hu-semmelweis-university-budapest-nursing-and-patient-care-sf1011
+institution: hu-semmelweis-university-budapest
+country: HU
+city: budapest
+field: allied-health
+level: bachelor
+name: Nursing and Patient Care [Physiotherapist]
+summary:
+  fr:
+    text: Nursing and Patient Care [Physiotherapist], Semmelweis University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Nursing and Patient Care [Physiotherapist], Semmelweis University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Nursing and Patient Care [Physiotherapist], Semmelweis University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://semmelweis.hu/admission/programs/physiotherapy/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée oral est obligatoire (examens en ligne via Zoom, de février à mi-août). Préparez-vous aux matières et livres recommandés.
+          status: draft
+        en:
+          text: An oral entrance examination is required (online via Zoom, from February to mid-August). Prepare using the recommended subjects and books.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://semmelweis.hu/admission/programs/physiotherapy/
+    last_verified_at: 2026-10-12
