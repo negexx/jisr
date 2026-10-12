@@ -222,6 +222,7 @@ describe("fields", () => {
     expect(fieldOptions(realCore()).map((field) => field.slug)).toEqual([
       "xx-test-field-cs",
       "xx-test-field-eng",
+      "xx-test-field-health",
     ]);
   });
 });
