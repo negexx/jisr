@@ -5,6 +5,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { describeStop, parseArgs, runDiscovery } from "../../../scripts/import/it-discovery";
+import { readCandidates } from "../../../scripts/import/it-stage-candidates";
 import { PortalStopError } from "../../../scripts/import/sources/universitaly-fetch";
 
 import { course, page } from "./universitaly-helpers";
@@ -171,6 +172,34 @@ describe("runDiscovery", () => {
     ).rejects.toThrow(TypeError);
     expect(calls).toHaveLength(1);
     await expect(readFile(path.join(out, "2026-10-08", "manifest.json"), "utf8")).rejects.toThrow();
+  });
+});
+
+describe("readCandidates", () => {
+  it("accepts a candidate in a health field", async () => {
+    const runDir = await mkdtemp(path.join(tmpdir(), "uni-run-"));
+    await writeFile(
+      path.join(runDir, "candidates.json"),
+      JSON.stringify({
+        newProgrammes: [
+          {
+            portalId: 1,
+            university: "Università degli Studi di Milano",
+            name: "Nursing",
+            classCode: "L-SNT/1",
+            classCodes: ["L-SNT/1"],
+            field: "allied-health",
+            confidence: "high",
+            durationYears: 3,
+            url: "https://example.com",
+            academicYear: "2026/2027",
+            delivery: "conventional",
+          },
+        ],
+      }),
+    );
+    const { byId } = await readCandidates(runDir);
+    expect(byId.get(1)?.field).toBe("allied-health");
   });
 });
 
