@@ -123,7 +123,7 @@ describe("parseSfDetail", () => {
 });
 
 describe("fieldOfBranch, semestersToYears, languageCodesOf", () => {
-  it("maps only the three Release 1 branches", () => {
+  it("maps a branch of science to its field and leaves an unknown one null", () => {
     expect(fieldOfBranch("Computer Science and Information Technology")).toBe("computer-science");
     expect(fieldOfBranch("Engineering Science")).toBe("engineering");
     expect(fieldOfBranch("Economic Science")).toBe("business-economics");
@@ -273,5 +273,12 @@ describe("parseSfTotal", () => {
     expect(parseSfTotal("<b>1 result:</b>")).toBe(1);
     expect(parseSfTotal("<b>No results...</b>")).toBe(0);
     expect(parseSfTotal("<html></html>")).toBeNull();
+  });
+});
+
+describe("fieldOfBranch health", () => {
+  it("maps both Study Finder health branches to allied-health", () => {
+    expect(fieldOfBranch("Health Science")).toBe("allied-health");
+    expect(fieldOfBranch("Medical and Health Science")).toBe("allied-health");
   });
 });

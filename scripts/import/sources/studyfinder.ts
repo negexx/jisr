@@ -17,11 +17,16 @@ const SEARCH = `${BASE}/index/search/`;
 const SHOW = `${BASE}/index/show`;
 const PAUSE_MS = 1000;
 
-// The Study Finder's own branches of science for the three Release 1 fields.
+// The Study Finder's own branches of science for the Release 1 fields and the health family.
+// Its bachelor health offer sits under two branch labels: "Health Science" (health sciences, public
+// health, nursing) and "Medical and Health Science" (nursing and physiotherapy at Szeged).
+// Medicine and pharmacy are one-tier (never "Bachelor") and stay out.
 const BRANCH_FIELD: Record<string, string> = {
   "Computer Science and Information Technology": "computer-science",
   "Engineering Science": "engineering",
   "Economic Science": "business-economics",
+  "Health Science": "allied-health",
+  "Medical and Health Science": "allied-health",
 };
 export const BRANCHES = Object.keys(BRANCH_FIELD);
 const LANGUAGES = ["English", "English and Hungarian", "Hungarian/English", "Hungarian, English"];
