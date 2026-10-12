@@ -38,12 +38,14 @@ export type HeroDemoCopy = {
 
 // Component-scoped keyframes, like hero.tsx's mesh CSS. All animation sits behind
 // prefers-reduced-motion: no-preference, so the plain base state is the visible end state: the rows
-// and cards are opaque and the bar is full before the first painted frame, with or without JS. The
-// reveal plays exactly once (no `infinite`) and finishes well under the 5s WCAG 2.2.2 budget.
+// and cards are already opaque and the bar is full before the first painted frame, with or without
+// JS. The reveal moves on the transform axis only (no opacity fade), so an axe scan that catches it
+// mid-flight still measures full-contrast text; it plays exactly once (no `infinite`) and finishes
+// well under the 5s WCAG 2.2.2 budget.
 const DEMO_CSS = `
 .jisr-demo-bar{transform-origin:left center}
 [dir="rtl"] .jisr-demo-bar{transform-origin:right center}
-@keyframes jisr-reveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes jisr-reveal{from{transform:translateY(10px)}to{transform:none}}
 @keyframes jisr-bar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @media (prefers-reduced-motion: no-preference){
   .jisr-demo-reveal{animation:jisr-reveal .45s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--d)}
