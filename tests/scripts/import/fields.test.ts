@@ -25,4 +25,13 @@ describe("classifyDutchProgramme health names", () => {
       classifyDutchProgramme("NATUUR", "Biomedische wetenschappen", "Biomedical Sciences")?.field,
     ).toBe("allied-health");
   });
+  it("does not steal names whose degree is another field", () => {
+    expect(
+      classifyDutchProgramme("TECHNIEK", "Biomedische Technologie", "Biomedical Engineering")
+        ?.field,
+    ).toBe("engineering");
+    expect(
+      classifyDutchProgramme("ECONOMIE", "Gezondheidseconomie", "Health Economics")?.field,
+    ).toBe("business-economics");
+  });
 });

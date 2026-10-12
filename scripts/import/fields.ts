@@ -84,8 +84,9 @@ const NL_ENGINEERING =
   /techniek|engineering|ingenieur|werktuig|elektro|bouwkunde|civiel|civil|mechat|luchtvaart|aerospace|technische|industrieel|industrial|chemische|chemical|mechanical|electrical|maritime|scheeps|energy|materials/;
 const NL_MEDICINE = /geneeskunde|\bmedicine\b/;
 const NL_PHARMACY = /farmacie|pharmacy|farmaceut/;
-const NL_ALLIED =
-  /gezondheid|verpleegkund|fysiotherap|biomedisch|biomedical|voeding|mondzorg|logopedie|\bhealth\b/;
+const NL_ALLIED_HIGH =
+  /gezondheid|verpleegkund|fysiotherap|biomedisch|biomedical|voeding|mondzorg|logopedie/;
+const NL_ALLIED_LOW = /\bhealth\b/;
 
 export function classifyDutchProgramme(
   sector: string,
@@ -96,10 +97,6 @@ export function classifyDutchProgramme(
   // Teacher training is not a stand-alone Bachelor's in the field (same rule as the German Lehramt).
   if (sector === "ONDERWIJS" || /leraar|leraren|lerarenopleiding|teacher education/.test(text))
     return null;
-  if (NL_MEDICINE.test(text)) return { field: "medicine", confidence: "high" };
-  if (NL_PHARMACY.test(text)) return { field: "pharmacy", confidence: "high" };
-  if (NL_ALLIED.test(text))
-    return { field: "allied-health", confidence: NL_ALLIED.test(text) ? "high" : "low" };
   // A computer-science name outside the technical sectors (humanities, cross-sector) is a judgement call.
   if (NL_CS_HIGH.test(text)) {
     const technical = sector === "TECHNIEK" || sector === "NATUUR" || sector === "ECONOMIE";
@@ -114,5 +111,9 @@ export function classifyDutchProgramme(
   }
   if (NL_BUSINESS.test(text)) return { field: "business-economics", confidence: "low" };
   if (/engineering|ingenieur/.test(text)) return { field: "engineering", confidence: "low" };
+  if (NL_MEDICINE.test(text)) return { field: "medicine", confidence: "high" };
+  if (NL_PHARMACY.test(text)) return { field: "pharmacy", confidence: "high" };
+  if (NL_ALLIED_HIGH.test(text)) return { field: "allied-health", confidence: "high" };
+  if (NL_ALLIED_LOW.test(text)) return { field: "allied-health", confidence: "low" };
   return null;
 }
