@@ -266,9 +266,8 @@ describe("classifyDaad: wrong-field cases found in review", () => {
       "engineering",
     );
   });
-  it("does not read a subject tag, and skips linguistics and health programmes", () => {
+  it("does not read a subject tag, and skips linguistics and unmapped health names", () => {
     expect(classifyDaad("Computational Linguistics", "Computer Science")).toBeNull();
-    expect(classifyDaad("Nursing (BSc)", "Health Management")).toBeNull();
     expect(classifyDaad("BSc in Applied Mathematics", "Engineering and Management")).toBeNull();
     expect(classifyDaad("Life Science and International Health", "Engineering")).toBeNull();
   });
@@ -483,5 +482,20 @@ describe("fetchDaadBachelors completeness checks", () => {
     ];
     const all = await fetchDaadBachelors(serve(pages), 0);
     expect(all).toHaveLength(250);
+  });
+});
+
+describe("classifyDaad health names", () => {
+  it("maps medicine and pharmacy", () => {
+    expect(classifyDaad("Molecular Medicine", null)?.field).toBe("medicine");
+    expect(classifyDaad("Pharmaceutical Biotechnology", null)?.field).toBe("pharmacy");
+  });
+  it("maps nursing/health sciences to allied-health", () => {
+    expect(classifyDaad("Nursing", null)?.field).toBe("allied-health");
+    expect(classifyDaad("Health Sciences", null)?.field).toBe("allied-health");
+  });
+  it("does not read engineering or economics as medicine", () => {
+    expect(classifyDaad("Medical Engineering", null)?.field).toBe("engineering");
+    expect(classifyDaad("Health Economics", null)?.field).toBe("business-economics");
   });
 });

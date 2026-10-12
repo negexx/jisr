@@ -106,6 +106,14 @@ const BUS_STRONG =
   /business|economics|finance|accounting|marketing|commerce|entrepreneur|betriebswirtschaft|wirtschaft/i;
 const BUS_WEAK = /management|administration|logistics/i;
 const NOT_CS = /linguistic/i;
+// Health names, evaluated only after the strong CS/engineering/business branches: "Medical
+// Engineering" stays engineering and "Health Economics" stays business-economics. The weak
+// patterns below do not get a say, so "Pharmaceutical Biotechnology" is pharmacy, not engineering
+// via ENG_WEAK's "technology".
+const MED_STRONG = /\bmedizin|molecular medicine|human medicine|medical sciences?\b/i;
+const PHARM_STRONG = /pharmaz|pharmaceutical|pharmatechnik|pharmacy/i;
+const ALLIED_STRONG =
+  /\bnursing\b|\bpflege|physiotherap|biomedical|biomedizin|\bhealth sciences?\b|public health|nutrition|ernährung/i;
 
 export function classifyDaad(
   name: string,
@@ -128,6 +136,11 @@ export function classifyDaad(
     };
   }
   if (BUS_STRONG.test(name)) return { field: "business-economics", confidence: "high" };
+  if (!csStrong && !engStrong) {
+    if (MED_STRONG.test(name)) return { field: "medicine", confidence: "high" };
+    if (PHARM_STRONG.test(name)) return { field: "pharmacy", confidence: "high" };
+    if (ALLIED_STRONG.test(name)) return { field: "allied-health", confidence: "high" };
+  }
   if (IT_WORD.test(name)) return { field: "computer-science", confidence: "high" };
   if (ENG_WEAK.test(name)) return { field: "engineering", confidence: "low" };
   if (BUS_WEAK.test(name)) return { field: "business-economics", confidence: "low" };
