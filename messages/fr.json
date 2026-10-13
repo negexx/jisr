@@ -35,7 +35,7 @@
     "backToGuides": "Retour aux guides",
     "studying-in-europe": {
       "title": "Étudier en Europe après le bac marocain",
-      "lead": "Les cinq pays suivis par Jisr, le parcours d'une candidature et la façon de lire chaque source.",
+      "lead": "Les six pays suivis par Jisr, le parcours d'une candidature et la façon de lire chaque source.",
       "meta": {
         "title": "Étudier en Europe après le bac marocain",
         "description": "Un guide d'ensemble sur la candidature en licence en Europe après un bac marocain, avec les sources officielles."
@@ -43,10 +43,10 @@
     },
     "bac-and-european-universities": {
       "title": "Le bac marocain et l'accès aux universités européennes",
-      "lead": "Ce guide décrit la façon dont le baccalauréat marocain est reconnu pour entrer en licence en France, en Allemagne, aux Pays-Bas, en Hongrie et en Italie.",
+      "lead": "Ce guide décrit la façon dont le baccalauréat marocain est reconnu pour entrer en licence en France, en Allemagne, aux Pays-Bas, en Hongrie, en Italie et en Espagne.",
       "meta": {
         "title": "Le bac marocain et l'accès aux universités européennes",
-        "description": "Comment le bac marocain est reconnu pour entrer en licence en France, en Allemagne, aux Pays-Bas, en Hongrie et en Italie, pays par pays."
+        "description": "Comment le bac marocain est reconnu pour entrer en licence en France, en Allemagne, aux Pays-Bas, en Hongrie, en Italie et en Espagne, pays par pays."
       }
     },
     "documents-and-legalisation": {
@@ -76,7 +76,7 @@
   },
   "metadata": {
     "title": "Jisr | Étudier en Europe après le Bac",
-    "description": "Trouvez des licences réalistes en France, en Allemagne, aux Pays-Bas, en Hongrie et en Italie, avec les coûts, les bourses et les étapes pour candidater."
+    "description": "Trouvez des licences réalistes en France, en Allemagne, aux Pays-Bas, en Hongrie, en Italie et en Espagne, avec les coûts, les bourses et les étapes pour candidater."
   },
   "home": {
     "title": "Étudier en Europe après le Bac",
@@ -86,7 +86,7 @@
     "matchesCta": "Voir mes résultats",
     "scholarshipsCta": "Voir les bourses",
     "hero": {
-      "eyebrow": "Bac 2026 · 5 pays · 3 domaines",
+      "eyebrow": "Bac 2026 · 6 pays · 3 domaines",
       "titleLead": "Étudier en Europe",
       "titleAccent": "après le Bac"
     },
@@ -95,7 +95,7 @@
       "kicker": "Comment ça marche",
       "where": {
         "title": "Où puis-je étudier ?",
-        "body": "Des licences en France, en Allemagne, aux Pays-Bas, en Hongrie et en Italie, classées selon ce qui semble réaliste pour votre profil."
+        "body": "Des licences en France, en Allemagne, aux Pays-Bas, en Hongrie, en Italie et en Espagne, classées selon ce qui semble réaliste pour votre profil."
       },
       "apply": {
         "title": "Puis-je candidater ?",
