@@ -8,6 +8,7 @@ import {
   isUniversityName,
   nextRuctPageUrl,
   parseRuctDegree,
+  parseRuctDegreePage,
   parseRuctTitles,
   parseRuctUniversities,
   parseRuctUniversityDetail,
@@ -142,6 +143,26 @@ describe("parseRuctDegree", () => {
     });
   });
 
+  it("reads the real CS campo of an RD 822/2021 degree and maps it to computer-science", () => {
+    const degree = parseRuctDegree(fixture("degree-2504640.html"));
+    expect(degree.campo).toBe("Ingeniería informática y de sistemas");
+    expect(fieldOfCampo(degree.campo, degree.name)).toEqual({
+      field: "computer-science",
+      confidence: "high",
+    });
+  });
+
+  it("reads the real engineering campo of an RD 822/2021 degree and maps it to engineering", () => {
+    const degree = parseRuctDegree(fixture("degree-2502144.html"));
+    expect(degree.campo).toBe(
+      "Ingeniería eléctrica, ingeniería electrónica e ingeniería de la telecomunicación",
+    );
+    expect(fieldOfCampo(degree.campo, degree.name)).toEqual({
+      field: "engineering",
+      confidence: "high",
+    });
+  });
+
   it("returns null for a field the page omits and [] when it lists no centre", () => {
     const html = [
       "<h2><strong>Graduado o Graduada en Ejemplo</strong></h2>",
@@ -171,6 +192,26 @@ describe("parseRuctDegree", () => {
       "<tbody><tr><td>CUNEF Universidad</td><td>28054956</td><td>Escuela Politécnica Superior</td></tr></tbody></table>",
     ].join("");
     expect(() => parseRuctDegree(html)).toThrow(/RUCT/);
+  });
+});
+
+describe("parseRuctDegreePage", () => {
+  it("parses a real degree page", () => {
+    expect(parseRuctDegreePage(fixture("degree-2504640.html"))?.code).toBe("2504640");
+  });
+
+  it("returns null for a page with no degree content: the register's list-only gap", () => {
+    const body =
+      "<html><body>Se ha producido una excepción al intentar mostrar la página.</body></html>";
+    expect(parseRuctDegreePage(body)).toBeNull();
+  });
+
+  it("throws when the page has content but the degree shape changed", () => {
+    const body = [
+      "<h2><strong>Graduado o Graduada en Ejemplo</strong></h2>",
+      '<span id="estudio_descripcionTipo">Grado - RD 822/2021 (2)</span>',
+    ].join("");
+    expect(() => parseRuctDegreePage(body)).toThrow(/RUCT/);
   });
 });
 

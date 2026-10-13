@@ -161,6 +161,15 @@ export function parseRuctDegree(html: string): RuctDegree {
   };
 }
 
+// One degree's fetched page. A page with none of the degree's own content is the register's gap
+// (a title it lists but serves an empty/exception page for, e.g. 2501078): that one is skipped by
+// the caller. Any other page is parsed, so a shape change throws and stops the run instead of being
+// counted as merely unreadable.
+export function parseRuctDegreePage(body: string): RuctDegree | null {
+  if (!body.includes("estudio_codigoEstudio") && !DEGREE_NAME.test(body)) return null;
+  return parseRuctDegree(body);
+}
+
 // The name is the third cell. A page that lists no centre (no table) yields []; a table that exists
 // with an unrecognised header is a changed shape and throws, so the header row can never leak.
 function parseRuctCentres(html: string): string[] {
@@ -351,6 +360,13 @@ const RUMP = (body: string, marker: string, what: string): void => {
 const titlesOf = (html: string): RuctTitle[] =>
   html.includes('id="estudio"') ? parseRuctTitles(html) : [];
 
+// The live register staged 842 Grado programmes (2026-10-13). The "estudio" table lives on the
+// Grado-filtered title page, so a global rename/drop there makes every university yield zero titles
+// — and a university with no Grado serves no table either, so no per-university check can tell the
+// two apart. A count far below the baseline therefore fails the run closed instead of staging an
+// institution-only result.
+const MIN_SPAIN_PROGRAMMES = 400;
+
 export async function importSpain(): Promise<StagedRecord[]> {
   const listPages = await fetchRuctPages(
     RUCT_UNIVERSITIES_URL,
@@ -372,6 +388,7 @@ export async function importSpain(): Promise<StagedRecord[]> {
   const records: StagedRecord[] = [];
   let degreePages = 0;
   let unreadable = 0;
+  let absent = 0;
   for (const u of universities) {
     const detail = parseRuctUniversityDetail(
       await fetchText(ructUniversityUrl(u.code), {
@@ -395,27 +412,33 @@ export async function importSpain(): Promise<StagedRecord[]> {
     for (const title of titles) {
       if (!title.level.startsWith("Grado")) continue;
       degreePages++;
-      // The register lists some titles whose detail page is missing or of another shape: skip that
-      // one programme with a clear message (never stage a wrong record), but a real block (403/429)
-      // still stops the run.
+      let body: string;
       try {
-        degrees.set(
-          title.code,
-          parseRuctDegree(
-            await fetchText(ructDegreeUrl(title.code), {
-              accept: "text/html",
-              encoding: "iso-8859-15",
-              validate: (body) => RUMP(body, "estudio_codigoEstudio", "a degree page"),
-            }),
-          ),
-        );
+        body = await fetchText(ructDegreeUrl(title.code), {
+          accept: "text/html",
+          encoding: "iso-8859-15",
+        });
       } catch (error) {
+        // A block (403/429) or a server error stops the run at once; a network/timeout failure is
+        // counted and only tolerated up to the percentage backstop below.
         if (error instanceof HttpStatusError) throw error;
         unreadable++;
         console.warn(
           `RUCT ${u.code}: skipping degree ${title.code} ${title.name}: ${error instanceof Error ? error.message : error}`,
         );
+        continue;
       }
+      // The register's own gap (a listed title it serves no page for) is skipped; any other page that
+      // does not parse is a shape change and throws here, stopping the run.
+      const degree = parseRuctDegreePage(body);
+      if (degree === null) {
+        absent++;
+        console.warn(
+          `RUCT ${u.code}: degree ${title.code} ${title.name}: the register serves no detail page`,
+        );
+        continue;
+      }
+      degrees.set(title.code, degree);
     }
 
     const staged = buildSpainRecords({
@@ -435,7 +458,12 @@ export async function importSpain(): Promise<StagedRecord[]> {
   }
   const programmes = records.filter((r) => r.collection === "programs").length;
   console.log(
-    `RUCT: ${programmes} Grado programme(s) staged from ${universities.length} universities (${unreadable} degree page(s) skipped)`,
+    `RUCT: ${programmes} Grado programme(s) staged from ${universities.length} universities (${unreadable} unreadable, ${absent} with no detail page)`,
   );
+  if (programmes < MIN_SPAIN_PROGRAMMES) {
+    throw new Error(
+      `RUCT: only ${programmes} Grado programme(s) staged (the live register staged about 840): the titles table is missing or incomplete`,
+    );
+  }
   return records;
 }
