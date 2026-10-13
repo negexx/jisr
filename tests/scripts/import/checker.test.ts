@@ -238,6 +238,12 @@ describe("checker instruction", () => {
   it("does not let an optional module in another language add a teaching language", () => {
     expect(CHECKER_INSTRUCTION).toMatch(/elective|optional/i);
   });
+
+  it("lets the checker read an ECTS or semester quote as a duration", () => {
+    expect(CHECKER_INSTRUCTION).toMatch(/ECTS/i);
+    expect(CHECKER_INSTRUCTION).toMatch(/semester/i);
+    expect(CHECKER_INSTRUCTION).toMatch(/60/);
+  });
 });
 
 describe("checking requirement rules", () => {

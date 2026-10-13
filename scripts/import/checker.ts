@@ -174,6 +174,7 @@ Answer with:
 - "contradicts": the excerpt states something different.
 - "unclear": the excerpt does not settle it: it is about something else, about everyone in general, ambiguous, or the claim needs more than the excerpt says.
 A language claim is supported only for the language the programme is taught in: an elective, an optional module or a higher-semester option in another language does not make the programme taught in that language.
+A duration claim is supported when the excerpt states the years, or when it states the programme's total ECTS or its number of semesters and the years follow by the usual arithmetic: ECTS / 60 (240 ECTS = 4 years) or semesters / 2 (8 semesters = 4 years). That arithmetic is not outside knowledge; nothing else is.
 Be strict: when in doubt, answer "unclear". Never use outside knowledge.
 
 Output only a JSON array, one object per claim: [{"id":1,"verdict":"supports","reason":"<at most 12 words>"}]`;
