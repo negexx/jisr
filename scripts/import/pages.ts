@@ -81,6 +81,14 @@ export function mergePages(found: {
   ];
 }
 
+// A programme's curated officialUrl is its own page: it leads the pages the reader reads, so a
+// country with no register page and no institution website (Spain's RUCT lists none) is still read.
+// Strictly additive: the found pages follow, once each.
+export function seedOfficialUrl(officialUrl: unknown, pages: readonly string[]): string[] {
+  if (typeof officialUrl !== "string" || officialUrl.length === 0) return [...pages];
+  return [...new Set([officialUrl, ...pages])];
+}
+
 // One fetch per url for the whole run: the programmes of one institution share its fee pages. A
 // failed fetch is forgotten, so a later programme can try again.
 export function memoizeFetch(
@@ -212,7 +220,7 @@ async function main(argv: readonly string[]): Promise<void> {
         if (found.programme !== null) stat.programme++;
         if (found.fees.length > 0) stat.fees++;
         if (found.admission.length > 0) stat.admission++;
-        programmes[slug] = mergePages({ register, ...found });
+        programmes[slug] = seedOfficialUrl(record.officialUrl, mergePages({ register, ...found }));
         return;
       }
       const sources = (record.sources ?? {}) as Record<string, { url?: string }>;
@@ -235,26 +243,32 @@ async function main(argv: readonly string[]): Promise<void> {
         if (found.fees.length > 0) stat.fees++;
         if (found.admission.length > 0) stat.admission++;
         // the Parcoursup fiche stays the first page of a French programme
-        programmes[slug] = mergePages({
-          register: country === "FR" && typeof fiche === "string" ? fiche : null,
-          ...found,
-        });
+        programmes[slug] = seedOfficialUrl(
+          record.officialUrl,
+          mergePages({
+            register: country === "FR" && typeof fiche === "string" ? fiche : null,
+            ...found,
+          }),
+        );
         return;
       }
       if (country === "FR" && typeof fiche === "string") {
         stat.programme++;
-        programmes[slug] = [fiche];
+        programmes[slug] = seedOfficialUrl(record.officialUrl, [fiche]);
         return;
       }
       if (website === null) {
-        programmes[slug] = [];
+        programmes[slug] = seedOfficialUrl(record.officialUrl, []);
         return;
       }
       const found = await discover({ website, name: meta.name });
       if (found.programme !== null) stat.programme++;
       if (found.fees.length > 0) stat.fees++;
       if (found.admission.length > 0) stat.admission++;
-      programmes[slug] = mergePages({ register: null, ...found });
+      programmes[slug] = seedOfficialUrl(
+        record.officialUrl,
+        mergePages({ register: null, ...found }),
+      );
     });
     if (useTopics) {
       await pool(slugs, Number(flag("concurrency") ?? 4), async (slug) => {
