@@ -79,6 +79,57 @@ const de = (over: Record<string, unknown> = {}) => ({
   _review: { sourceId: "hrk:1", todo: 'listed as "http://www.uni-b.example"' },
   ...over,
 });
+const es = (over: Record<string, unknown> = {}) => ({
+  slug: "es-uni-c",
+  name: "Universidad C",
+  country: "ES",
+  city: { slug: "madrid", name: "Madrid" },
+  type: "public",
+  website: null,
+  source: "ruct",
+  info_kind: READ_SOURCE,
+  sources: {
+    ruct: {
+      url: "https://www.educacion.gob.es/ruct/universidad.action?codigoUniversidad=1",
+      last_verified_at: null,
+    },
+  },
+  _review: { sourceId: "ruct:1", todo: "" },
+  ...over,
+});
+
+const ES_SLUG = "es-uni-c-grado-informatica-2500001";
+const ES_URL = "https://www.uni-c.example/grado-informatica";
+const esProgramme = (over: Record<string, unknown> = {}) => ({
+  slug: ES_SLUG,
+  institution: "es-uni-c",
+  country: "ES",
+  city: "madrid",
+  field: "computer-science",
+  level: "bachelor",
+  name: "Grado en Ingeniería Informática",
+  summary: {
+    fr: { text: "Grado en Ingeniería Informática, Universidad C (Madrid).", status: "draft" },
+  },
+  officialUrl: null,
+  durationYears: { value: null, source: "ruct", info_kind: READ_SOURCE },
+  teachingLanguages: { value: null, source: "ruct", info_kind: READ_SOURCE },
+  tuition: { value: null, source: "ruct", info_kind: READ_SOURCE },
+  intakes: { value: null, source: "ruct", info_kind: READ_SOURCE },
+  applicationChannel: { value: null, source: "ruct", info_kind: READ_SOURCE },
+  documents: { value: null, source: "ruct", info_kind: READ_SOURCE },
+  requirements: { coverage: "partial", source: "ruct", info_kind: READ_SOURCE, rules: [] },
+  scholarships: [],
+  sources: {
+    ruct: {
+      url: "https://www.educacion.gob.es/ruct/estudio.action?CodigoEstudio=2500001",
+      last_verified_at: null,
+    },
+  },
+  _review: { sourceId: "ruct:1:2500001", confidence: "high", todo: "" },
+  ...over,
+});
+const esList = (...entries: [string, string][]) => new Map(entries);
 
 describe("listingInstitution", () => {
   it("lists a register institution, with the website only when the ministry's register confirmed it", () => {
@@ -104,6 +155,16 @@ describe("listingInstitution", () => {
   it("never lists an institution that is not from an official register entry", () => {
     expect(listingInstitution(de({ _review: { sourceId: "daad:9", todo: "" } }), DATE)).toBeNull();
     expect(listingInstitution(fr({ _review: { sourceId: "rio:1", todo: "" } }), DATE)).toBeNull();
+  });
+
+  it("lists a RUCT institution as official, with no website (the register states none)", () => {
+    expect(listingInstitution(es(), DATE)).toMatchObject({
+      type: "public",
+      website: null,
+      info_kind: "official",
+      sources: { ruct: { last_verified_at: DATE } },
+    });
+    expect(listingInstitution(es({ country: "FR" }), DATE)).toBeNull();
   });
 });
 
@@ -149,6 +210,47 @@ describe("listingProgramme", () => {
         DATE,
       ),
     ).toBeNull();
+  });
+});
+
+describe("listingProgramme (Spain)", () => {
+  it("lists a RUCT programme whose slug is in the registry, with the curated page and every fact to be checked", () => {
+    const p = listingProgramme(esProgramme(), DATE, esList([ES_SLUG, ES_URL]));
+    expect(p).toMatchObject({
+      country: "ES",
+      officialUrl: ES_URL,
+      durationYears: { value: null, info_kind: "official" },
+      teachingLanguages: { value: null, info_kind: "official" },
+      tuition: { value: null, info_kind: "official" },
+      intakes: { value: null, info_kind: "official" },
+      applicationChannel: { value: null, info_kind: "official" },
+      documents: { value: null, info_kind: "official" },
+      requirements: { coverage: "partial", info_kind: "official", rules: [] },
+      sources: { ruct: { last_verified_at: DATE } },
+    });
+    expect(JSON.stringify(p)).not.toContain("_review");
+    expect(JSON.stringify(p)).not.toContain(READ_SOURCE);
+  });
+
+  it("never lists an ES programme whose slug is not in the registry, and never guesses one", () => {
+    expect(listingProgramme(esProgramme(), DATE, esList(["es-other", ES_URL]))).toBeNull();
+    expect(listingProgramme(esProgramme(), DATE)).toBeNull();
+  });
+
+  it("skips an ES programme whose field confidence is not high", () => {
+    const low = esProgramme({ _review: { sourceId: "ruct:1:2500001", confidence: "low" } });
+    expect(listingProgramme(low, DATE, esList([ES_SLUG, ES_URL]))).toBeNull();
+  });
+
+  it("rejects a registry URL that is not https or is not a URL, and a non-kebab slug", async () => {
+    const { EsListingRegistrySchema } = await import("../../../scripts/import/listing");
+    const ok = (officialUrl: string, slug = "es-x") =>
+      EsListingRegistrySchema.safeParse({ entries: [{ slug, officialUrl }] }).success;
+    expect(ok("http://www.uni-c.example/x")).toBe(false);
+    expect(ok("/grado/informatica")).toBe(false);
+    expect(ok("not a url")).toBe(false);
+    expect(ok("https://www.uni-c.example/x", "ES X")).toBe(false);
+    expect(ok("https://www.uni-c.example/x")).toBe(true);
   });
 });
 
@@ -210,5 +312,38 @@ describe("promoteListing", () => {
     const result = await promoteListing({ date: DATE, stagingDir, dataDir });
     expect(result.programmes).toBe(0);
     expect(result.skipped["institution not from an official register"]).toBe(1);
+  });
+
+  it("promotes an ES listing from an inline registry and records the register-listing tier", async () => {
+    await put("institutions", "es-uni-c", es());
+    await put("programs", ES_SLUG, esProgramme());
+    const esListingPath = path.join(root, "es-listing.json");
+    await writeFile(
+      esListingPath,
+      JSON.stringify({ entries: [{ slug: ES_SLUG, officialUrl: ES_URL }] }),
+    );
+    const result = await promoteListing({ date: DATE, stagingDir, dataDir, esListingPath });
+    expect(result).toMatchObject({ programmes: 1, institutions: 1 });
+    expect(readFileSync(path.join(dataDir, "programs", `${ES_SLUG}.yaml`), "utf8")).toContain(
+      ES_URL,
+    );
+    const ledger = parseCsv(readFileSync(path.join(stagingDir, "PROMOTED.csv"), "utf8"));
+    expect(ledger.map((r) => [r.collection, r.level])).toEqual([
+      ["institutions", LISTING_LEVEL],
+      ["programs", LISTING_LEVEL],
+    ]);
+  });
+
+  it("keeps an ES programme staged when no registry entry names its slug", async () => {
+    await put("institutions", "es-uni-c", es());
+    await put("programs", ES_SLUG, esProgramme());
+    const esListingPath = path.join(root, "es-listing.json");
+    await writeFile(
+      esListingPath,
+      JSON.stringify({ entries: [{ slug: "es-somewhere-else", officialUrl: ES_URL }] }),
+    );
+    const result = await promoteListing({ date: DATE, stagingDir, dataDir, esListingPath });
+    expect(result.programmes).toBe(0);
+    expect(existsSync(path.join(stagingDir, "programs", `${ES_SLUG}.yaml`))).toBe(true);
   });
 });
