@@ -3,7 +3,9 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
 import {
+  fieldOfCampo,
   isUniversityName,
+  parseRuctDegree,
   parseRuctTitles,
   parseRuctUniversities,
 } from "../../../scripts/import/sources/ruct";
@@ -107,6 +109,101 @@ describe("parseRuctTitles", () => {
 
   it("throws when the title table is missing: the page changed shape", () => {
     expect(() => parseRuctTitles("<html><body>no table here</body></html>")).toThrow(/RUCT/);
+  });
+});
+
+const ade = parseRuctDegree(fixture("degree-2504059.html"));
+
+describe("parseRuctDegree", () => {
+  it("reads the title name, level, rama, campo and centres of a Grado", () => {
+    expect(ade).toEqual({
+      code: "2504059",
+      name: "Graduado o Graduada en Administración y Dirección de Empresas por la CUNEF Universidad",
+      nivel: "Grado - RD 822/2021 (2)",
+      rama: "Ciencias Sociales y Jurídicas",
+      campo:
+        "Ciencias económicas, administración y dirección de empresas, márquetin, comercio, contabilidad y turismo",
+      centres: ["Facultad de Empresa, Economía y Derecho"],
+    });
+  });
+
+  it("leaves campo null when the page omits it (an RD 1393/2007 degree)", () => {
+    const degree = parseRuctDegree(fixture("degree-2504068.html"));
+    expect(degree).toEqual({
+      code: "2504068",
+      name: "Graduado o Graduada en Ingeniería Informática por la CUNEF Universidad",
+      nivel: "Grado - RD 1393/2007 (1)",
+      rama: "Ingeniería y Arquitectura",
+      campo: null,
+      centres: ["Escuela Politécnica Superior"],
+    });
+  });
+
+  it("returns null for a field the page omits and [] when it lists no centre", () => {
+    const html = [
+      "<h2><strong>Graduado o Graduada en Ejemplo</strong></h2>",
+      '<span id="estudio_codigoEstudio">2500000</span>',
+      '<span id="estudio_descripcionTipo">Grado - RD 822/2021 (2)</span>',
+    ].join("");
+    expect(parseRuctDegree(html)).toEqual({
+      code: "2500000",
+      name: "Graduado o Graduada en Ejemplo",
+      nivel: "Grado - RD 822/2021 (2)",
+      rama: null,
+      campo: null,
+      centres: [],
+    });
+  });
+
+  it("throws when the degree title and description are missing: the page changed shape", () => {
+    expect(() => parseRuctDegree("<html><body>no degree here</body></html>")).toThrow(/RUCT/);
+  });
+});
+
+describe("fieldOfCampo", () => {
+  it("maps each Release-1 campo to its field at high confidence", () => {
+    const cases: [string, string, { field: string; confidence: string }][] = [
+      [
+        "Ingeniería informática y de sistemas",
+        "Graduado o Graduada en Inteligencia Artificial / Bachelor in Artificial Intelligence por la CUNEF Universidad",
+        { field: "computer-science", confidence: "high" },
+      ],
+      [
+        "Ingeniería industrial, ingeniería mecánica, ingeniería automática, ingeniería de la organización industrial e ingeniería de la navegación",
+        "Graduado o Graduada en Ingeniería Mecánica por la Universidad de Zaragoza",
+        { field: "engineering", confidence: "high" },
+      ],
+      [
+        "Ciencias económicas, administración y dirección de empresas, márquetin, comercio, contabilidad y turismo",
+        "Graduado o Graduada en Administración y Dirección de Empresas por la CUNEF Universidad",
+        { field: "business-economics", confidence: "high" },
+      ],
+    ];
+    for (const [campo, name, expected] of cases) {
+      expect(fieldOfCampo(campo, name)).toEqual(expected);
+    }
+  });
+
+  it("returns null for a campo outside the three Release-1 fields", () => {
+    for (const campo of [
+      "Ciencias de la Salud",
+      "Historia del arte y de la expresión artística, y bellas artes",
+      "Matemáticas y estadística",
+      "Derecho y especialidades jurídicas",
+      "Ciencias sociales, trabajo social, relaciones laborales y recursos humanos, sociología, ciencia política y relaciones internacionales",
+      null,
+    ]) {
+      expect(fieldOfCampo(campo, "Graduado o Graduada en Derecho")).toBeNull();
+    }
+  });
+
+  it("drops confidence to low when the title name points to another field", () => {
+    expect(
+      fieldOfCampo(
+        "Ciencias económicas, administración y dirección de empresas, márquetin, comercio, contabilidad y turismo",
+        "Bachelor in Computer Science",
+      ),
+    ).toEqual({ field: "business-economics", confidence: "low" });
   });
 });
 
