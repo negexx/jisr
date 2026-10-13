@@ -17,8 +17,8 @@ summary:
     status: draft
 officialUrl: https://www.upm.es/estudiantes/estudios_titulaciones/estudiosoficialesgrado/articulosrelacionados?fmt=detail&id=CON09007
 durationYears:
-  value: null
-  source: ruct
+  value: 4
+  source: page-1
   info_kind: official
 teachingLanguages:
   value: null
@@ -49,4 +49,7 @@ scholarships: []
 sources:
   ruct:
     url: https://www.educacion.gob.es/ruct/estudio.action?codigoCiclo=SC&codigoTipo=G&CodigoEstudio=2502142&actual=estudios
+    last_verified_at: 2026-10-13
+  page-1:
+    url: https://www.upm.es/estudiantes/estudios_titulaciones/estudiosoficialesgrado/articulosrelacionados?fmt=detail&id=CON09007
     last_verified_at: 2026-10-13
