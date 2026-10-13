@@ -158,6 +158,17 @@ describe("parseRuctDegree", () => {
   it("throws when the degree title and description are missing: the page changed shape", () => {
     expect(() => parseRuctDegree("<html><body>no degree here</body></html>")).toThrow(/RUCT/);
   });
+
+  it("throws when the centres table exists but its header is unrecognised: the page changed shape", () => {
+    const html = [
+      "<h2><strong>Graduado o Graduada en Ejemplo</strong></h2>",
+      '<span id="estudio_codigoEstudio">2500000</span>',
+      '<span id="estudio_descripcionTipo">Grado - RD 822/2021 (2)</span>',
+      '<table id="centro"><thead><tr><th>University</th><th>Centre code</th><th>Centre</th></tr></thead>',
+      "<tbody><tr><td>CUNEF Universidad</td><td>28054956</td><td>Escuela Politécnica Superior</td></tr></tbody></table>",
+    ].join("");
+    expect(() => parseRuctDegree(html)).toThrow(/RUCT/);
+  });
 });
 
 describe("fieldOfCampo", () => {

@@ -109,18 +109,24 @@ export function parseRuctDegree(html: string): RuctDegree {
   };
 }
 
-// The name is the third cell; a page that lists no centre (no table) yields [] rather than a throw.
+// The name is the third cell. A page that lists no centre (no table) yields []; a table that exists
+// with an unrecognised header is a changed shape and throws, so the header row can never leak.
 function parseRuctCentres(html: string): string[] {
   const table = CENTRES_TABLE.exec(html)?.[1];
   if (table === undefined) return [];
   const centres: string[] = [];
+  let headerSeen = false;
   for (const row of table.matchAll(ROW)) {
     const cells = [...(row[1] ?? "").matchAll(CELL)].map((m) => cellText(m[1] ?? ""));
     if (cells.length < 3) continue;
-    if (cells[0] === "Universidad" && cells[1] === "Código de centro") continue;
+    if (cells[0] === "Universidad" && cells[1] === "Código de centro") {
+      headerSeen = true;
+      continue;
+    }
     const centre = cells[2] ?? "";
     if (centre !== "") centres.push(centre);
   }
+  if (!headerSeen) throw new Error("RUCT: the centres table header is missing: the page changed");
   return centres;
 }
 
