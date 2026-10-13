@@ -355,6 +355,15 @@ const RUMP = (body: string, marker: string, what: string): void => {
   if (!body.includes(marker)) throw new Error(`RUCT: ${what} looks wrong: the page changed`);
 };
 
+// The detail page's "Tipo :" label is what decides whether a university is kept: without it
+// parseRuctUniversityDetail cannot tell Pública from Privada and the caller would stage a private
+// university (out of scope) as a `type: null` candidate. The fetch rejects a page that drops the
+// label, so a changed shape stops the run rather than failing open.
+export function validateRuctUniversityPage(body: string): void {
+  RUMP(body, 'id="universidad"', "a university page");
+  RUMP(body, 'for="tipo_univ"', "the university's public/private status");
+}
+
 // A university with no Grado of its own serves the title page without the "estudio" table at all
 // (parseRuctTitles still throws on a table whose header changed, so a real shape change stops).
 const titlesOf = (html: string): RuctTitle[] =>
@@ -394,7 +403,7 @@ export async function importSpain(): Promise<StagedRecord[]> {
       await fetchText(ructUniversityUrl(u.code), {
         accept: "text/html",
         encoding: "iso-8859-15",
-        validate: (body) => RUMP(body, 'id="universidad"', "a university page"),
+        validate: validateRuctUniversityPage,
       }),
     );
     if (detail.type === "private") continue;

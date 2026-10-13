@@ -12,6 +12,7 @@ import {
   parseRuctTitles,
   parseRuctUniversities,
   parseRuctUniversityDetail,
+  validateRuctUniversityPage,
 } from "../../../scripts/import/sources/ruct";
 
 const FIXTURES = new URL("./fixtures/ruct/", import.meta.url);
@@ -299,6 +300,13 @@ describe("nextRuctPageUrl", () => {
 });
 
 describe("parseRuctUniversityDetail", () => {
+  it("reads the real public/private indicator and town of a captured register page", () => {
+    expect(parseRuctUniversityDetail(fixture("university-001.html"))).toEqual({
+      type: "public",
+      city: "San Vicente del Raspeig/Sant Vicent del Raspeig",
+    });
+  });
+
   it("reads the public/private indicator and the town from the register page", () => {
     const html = [
       '<label for="tipo_univ"><span class="label">Tipo :</span><span>P&uacute;blica</span></label>',
@@ -329,6 +337,18 @@ describe("parseRuctUniversityDetail", () => {
       type: null,
       city: null,
     });
+  });
+});
+
+describe("validateRuctUniversityPage", () => {
+  it("accepts the captured register page", () => {
+    expect(() => validateRuctUniversityPage(fixture("university-001.html"))).not.toThrow();
+  });
+
+  it("throws when the public/private status label is missing: the page changed shape", () => {
+    expect(() =>
+      validateRuctUniversityPage('<html><body><table id="universidad"></table></body></html>'),
+    ).toThrow(/RUCT/);
   });
 });
 
