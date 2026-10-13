@@ -10,6 +10,7 @@ import { collapseSpaces } from "../text";
 export type RuctUniversity = { code: string; name: string };
 
 const TABLE = /<table[^>]*\bid="universidad"[^>]*>([\s\S]*?)<\/table>/i;
+const TITLES_TABLE = /<table[^>]*\bid="estudio"[^>]*>([\s\S]*?)<\/table>/i;
 const ROW = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
 const CELL = /<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi;
 
@@ -36,6 +37,30 @@ export function parseRuctUniversities(html: string): RuctUniversity[] {
   if (!headerSeen)
     throw new Error("RUCT: the universities table header is missing: the page changed");
   return universities;
+}
+
+// One university's title list (listaestudiosuniversidad.action): one HTML table
+// (Código | Título | Nivel académico | Estado | empty) of the degrees the university is authorised to
+// teach. The page is paginated (10 rows a page); the parser reads the page it is given and leaves
+// pagination and the Grado filter to the caller.
+export type RuctTitle = { code: string; name: string; level: string };
+
+export function parseRuctTitles(html: string): RuctTitle[] {
+  const table = TITLES_TABLE.exec(html)?.[1];
+  if (table === undefined) throw new Error("RUCT: the titles table is missing: the page changed");
+  const titles: RuctTitle[] = [];
+  let headerSeen = false;
+  for (const row of table.matchAll(ROW)) {
+    const cells = [...(row[1] ?? "").matchAll(CELL)].map((m) => cellText(m[1] ?? ""));
+    if (cells.length < 4) continue;
+    if (cells[0] === "Código" && cells[1] === "Título") {
+      headerSeen = true;
+      continue;
+    }
+    titles.push({ code: cells[0] ?? "", name: cells[1] ?? "", level: cells[2] ?? "" });
+  }
+  if (!headerSeen) throw new Error("RUCT: the titles table header is missing: the page changed");
+  return titles;
 }
 
 // The register lists administrative categories alongside universities: every "Centros …" row is a
