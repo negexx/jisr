@@ -11,6 +11,7 @@ import {
   dryRunSummary,
   memoizeFetch,
   mergePages,
+  seedOfficialUrl,
   studyFinderRegisterUrl,
   syncSkippedListing,
 } from "../../../scripts/import/pages";
@@ -66,6 +67,32 @@ describe("mergePages", () => {
 
   it("leaves out what was not found", () => {
     expect(mergePages({ register: null, programme: null, fees: [], admission: [] })).toEqual([]);
+  });
+});
+
+describe("seedOfficialUrl", () => {
+  it("puts a programme's own officialUrl first, ahead of the pages found for it", () => {
+    expect(seedOfficialUrl("https://u.example/own", ["https://u.example/fees"])).toEqual([
+      "https://u.example/own",
+      "https://u.example/fees",
+    ]);
+  });
+
+  it("leaves a programme with no institution website and no search a single page, not empty", () => {
+    expect(seedOfficialUrl("https://u.example/own", [])).toEqual(["https://u.example/own"]);
+  });
+
+  it("does not repeat the officialUrl when it is already one of the pages", () => {
+    expect(
+      seedOfficialUrl("https://u.example/own", ["https://u.example/own", "https://u.example/fees"]),
+    ).toEqual(["https://u.example/own", "https://u.example/fees"]);
+  });
+
+  it("leaves the pages alone when the record carries no officialUrl", () => {
+    expect(seedOfficialUrl(undefined, ["https://u.example/fees"])).toEqual([
+      "https://u.example/fees",
+    ]);
+    expect(seedOfficialUrl(null, [])).toEqual([]);
   });
 });
 

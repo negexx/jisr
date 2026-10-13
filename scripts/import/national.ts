@@ -21,7 +21,7 @@ const Https = z.string().refine((u) => u.startsWith("https://") && URL.canParse(
 const Evidence = z.strictObject({ url: Https, quote: z.string().min(15) });
 
 export const SelectorSchema = z.strictObject({
-  country: z.enum(["FR", "DE", "NL", "IT", "HU"]),
+  country: z.enum(["FR", "DE", "NL", "IT", "HU", "ES"]),
   institutions: z.array(z.string()).min(1).optional(),
   programmes: z.array(z.string()).min(1).optional(),
   institutionType: z.enum(["public", "private"]).optional(),

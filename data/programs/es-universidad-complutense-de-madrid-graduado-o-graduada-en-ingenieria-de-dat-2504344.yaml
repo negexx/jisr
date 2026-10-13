@@ -1,0 +1,52 @@
+slug: es-universidad-complutense-de-madrid-graduado-o-graduada-en-ingenieria-de-dat-2504344
+institution: es-universidad-complutense-de-madrid
+country: ES
+city: madrid
+field: computer-science
+level: bachelor
+name: Graduado o Graduada en Ingeniería de Datos e Inteligencia Artificial por la Universidad Complutense de Madrid
+summary:
+  fr:
+    text: Graduado o Graduada en Ingeniería de Datos e Inteligencia Artificial por la Universidad Complutense de Madrid, Universidad Complutense de Madrid (Madrid). Programme recensé dans le registre espagnol des universités et des titres (RUCT).
+    status: draft
+  en:
+    text: Graduado o Graduada en Ingeniería de Datos e Inteligencia Artificial por la Universidad Complutense de Madrid, Universidad Complutense de Madrid (Madrid). Programme listed in the Spanish register of universities and degrees (RUCT).
+    status: draft
+  ar:
+    text: Graduado o Graduada en Ingeniería de Datos e Inteligencia Artificial por la Universidad Complutense de Madrid, Universidad Complutense de Madrid (Madrid). برنامج مدرج في السجل الإسباني للجامعات والشهادات (RUCT).
+    status: draft
+officialUrl: https://www.ucm.es/grado-en-ingenieria-de-datos-e-inteligencia-artificial
+durationYears:
+  value: null
+  source: ruct
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: ruct
+  info_kind: official
+tuition:
+  value: null
+  source: ruct
+  info_kind: official
+intakes:
+  value: null
+  source: ruct
+  info_kind: official
+applicationChannel:
+  value: null
+  source: ruct
+  info_kind: official
+documents:
+  value: null
+  source: ruct
+  info_kind: official
+requirements:
+  coverage: partial
+  source: ruct
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  ruct:
+    url: https://www.educacion.gob.es/ruct/estudio.action?codigoCiclo=SC&codigoTipo=G&CodigoEstudio=2504344&actual=estudios
+    last_verified_at: 2026-10-13

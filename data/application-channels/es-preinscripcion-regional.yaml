@@ -1,0 +1,22 @@
+slug: es-preinscripcion-regional
+name: Regional preinscripción
+country: ES
+kind: direct
+url: https://unedasiss.uned.es/paso_6
+accountRequired: null
+summary:
+  fr:
+    text: "La demande d'admission (préinscription) se fait auprès de l'université de destination, dans les délais fixés par celle-ci ; en 2026, les étudiants internationaux devaient déposer leur demande avant le 7 juillet."
+    status: draft
+  en:
+    text: "The admission application (preinscripción) is made at the destination university, within the deadlines it sets; in 2026, international students had to apply by 7 July."
+    status: draft
+  ar:
+    text: "يُقدَّم طلب القبول (التسجيل المسبق) لدى الجامعة المستقبِلة ضمن المواعيد التي تحدّدها؛ وفي 2026 كان على الطلبة الدوليين إيداع طلبهم قبل 7 يوليوز."
+    status: draft
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://unedasiss.uned.es/paso_6
+    last_verified_at: 2026-10-13

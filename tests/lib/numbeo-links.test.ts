@@ -9,9 +9,17 @@ describe("numbeoLinkFor", () => {
     ["NL", "Netherlands"],
     ["IT", "Italy"],
     ["HU", "Hungary"],
+    ["ES", "Spain"],
   ])("links the country page of %s when the city is not verified", (country, name) => {
     expect(numbeoLinkFor(country, "xx-unverified")).toEqual({
       url: `https://www.numbeo.com/cost-of-living/country_result.jsp?country=${name}`,
+      kind: "country",
+    });
+  });
+
+  it("falls back to the country page for an ES city with no verified page", () => {
+    expect(numbeoLinkFor("ES", "any-unverified-city")).toEqual({
+      url: "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Spain",
       kind: "country",
     });
   });

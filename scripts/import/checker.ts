@@ -39,6 +39,10 @@ const CHANNEL_TEXT: Record<string, string> = {
     "A non-EU applicant living abroad makes the pre-enrolment application on the Universitaly portal.",
   "it-university-direct":
     "Applications are made on the university's own application portal or form.",
+  "es-unedasiss":
+    "An international applicant must obtain the UNEDasiss credencial (acreditación), including the PCE grades, to apply.",
+  "es-preinscripcion-regional":
+    "The admission application (preinscripción) is made in the region's preinscripción system or on the university's own admission application.",
 };
 
 type Intake = {
@@ -170,6 +174,7 @@ Answer with:
 - "contradicts": the excerpt states something different.
 - "unclear": the excerpt does not settle it: it is about something else, about everyone in general, ambiguous, or the claim needs more than the excerpt says.
 A language claim is supported only for the language the programme is taught in: an elective, an optional module or a higher-semester option in another language does not make the programme taught in that language.
+A duration claim is supported when the excerpt states the years, or when it states the programme's total ECTS or its number of semesters and the years follow by the usual arithmetic: ECTS / 60 (240 ECTS = 4 years) or semesters / 2 (8 semesters = 4 years). That arithmetic is not outside knowledge; nothing else is.
 Be strict: when in doubt, answer "unclear". Never use outside knowledge.
 
 Output only a JSON array, one object per claim: [{"id":1,"verdict":"supports","reason":"<at most 12 words>"}]`;

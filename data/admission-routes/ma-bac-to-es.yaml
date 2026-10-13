@@ -1,0 +1,92 @@
+slug: ma-bac-to-es
+origin: MA
+credentialType: ma-bac
+destination: ES
+level: bachelor
+outcome: check
+conditions:
+  - id: homologacion-to-titulo-de-bachiller
+    kind: manual_check
+    source: homologacion
+    info_kind: official
+    note:
+      fr:
+        text: "Le ministère de l'Éducation, de la Formation professionnelle et des Sports traite l'homologation en Título de Bachiller des diplômes étrangers de fin d'études secondaires ; la procédure et les documents à fournir y sont décrits."
+        status: draft
+      en:
+        text: "The Ministry of Education, Vocational Training and Sports handles the homologación to the Spanish Título de Bachiller of foreign secondary-school diplomas; the procedure and the documents to submit are set out there."
+        status: draft
+      ar:
+        text: "تتولّى وزارة التربية والتكوين المهني والرياضة معادلة شهادات نهاية التعليم الثانوي الأجنبية بشهادة Título de Bachiller الإسبانية؛ وفيها يُوضَّح الإجراء والوثائق المطلوبة."
+        status: draft
+  - id: unedasiss-credencial-and-pce
+    kind: manual_check
+    source: unedasiss
+    info_kind: official
+    note:
+      fr:
+        text: "L'homologation du Título de Bachiller est un trámite obligatorio et indispensable pour obtenir l'accréditation, et UNEDasiss ne réalise pas l'homologation ; l'accès passe par une Acreditación UNEDasiss avec la Calificación de Acceso et les PCE (Pruebas de Competencias Específicas), au moins quatre matières étant recommandées."
+        status: draft
+      en:
+        text: "Homologación of the Título de Bachiller is a mandatory and indispensable step to obtain the accreditation, and UNEDasiss does not carry out the homologación; access goes through an Acreditación UNEDasiss with the Calificación de Acceso and the PCE (Pruebas de Competencias Específicas), with at least four subjects recommended."
+        status: draft
+      ar:
+        text: "تُعدّ معادلة شهادة Título de Bachiller إجراءً إلزاميًا ولا غنى عنه للحصول على الاعتماد، ولا تتولّى UNEDasiss المعادلة؛ ويمرّ الولوج عبر اعتماد UNEDasiss مع Calificación de Acceso واختبارات PCE، مع التوصية بأربع مواد على الأقل."
+        status: draft
+  - id: nota-de-corte
+    kind: manual_check
+    source: admission
+    info_kind: official
+    note:
+      fr:
+        text: "L'admission suit la note d'admission de chaque formation, dans la limite de ses places : la note du dernier candidat admis (nota de corte) varie chaque année et selon l'université, et il n'existe pas de liste nationale."
+        status: draft
+      en:
+        text: "Admission follows each programme's admission mark, within its number of places: the mark of the last applicant admitted (nota de corte) varies every year and by university, and no national list exists."
+        status: draft
+      ar:
+        text: "يتم القبول حسب علامة القبول لكل تكوين في حدود مقاعده: وتتغيّر علامة آخر مترشح قُبل (nota de corte) كل سنة ومن جامعة إلى أخرى، ولا توجد قائمة وطنية."
+        status: draft
+  - id: visa-proof-of-funds
+    kind: manual_check
+    source: visa
+    info_kind: official
+    note:
+      fr:
+        text: "Le visa d'études exige de prouver des moyens d'existence d'au moins 100 % de l'IPREM par mois (75 % ou 50 % pour un membre de la famille à charge), sauf si l'hébergement est payé d'avance pour toute la période, comme le fixe la réglementation sur l'immigration."
+        status: draft
+      en:
+        text: "The study visa requires proof of means of at least 100% of the IPREM per month (75% or 50% for a dependent family member), unless the accommodation is paid in advance for the whole period, as set by the immigration regulation."
+        status: draft
+      ar:
+        text: "تتطلب تأشيرة الدراسة إثبات موارد معيشية لا تقل عن 100% من IPREM شهريًا (75% أو 50% لأحد أفراد الأسرة المعالين)، إلا إذا كانت الإقامة مدفوعة مسبقًا لكامل المدة، وفق ما يحدّده نظام الهجرة."
+        status: draft
+note:
+  fr:
+    text: "Un baccalauréat marocain ne donne pas d'accès direct à une licence espagnole : l'homologation, l'accréditation UNEDasiss et la nota de corte s'appliquent, et chaque région et université décide. C'est la règle générale, pas une décision d'admission propre à un pays."
+    status: draft
+  en:
+    text: "A Moroccan baccalauréat does not give direct access to a Spanish Bachelor's degree: homologación, the UNEDasiss accreditation and the nota de corte apply, and each region and university decides. This is the general rule, not an admission decision specific to one country."
+    status: draft
+  ar:
+    text: "لا تمنح الباكالوريا المغربية ولوجًا مباشرًا إلى الإجازة الإسبانية: تُطبَّق المعادلة واعتماد UNEDasiss وnota de corte، وتقرّر كل جهة وجامعة. وهذه قاعدة عامة لا قرار قبول خاص ببلد معيّن."
+    status: draft
+applicationChannels: [es-unedasiss, es-preinscripcion-regional]
+source: procedures
+info_kind: official
+sources:
+  procedures:
+    url: https://unedasiss.uned.es/paso_6
+    last_verified_at: 2026-10-13
+  homologacion:
+    url: https://www.educacionfpydeportes.gob.es/mc/convalidacion-homologacion/convalidacion-no-universitaria/ensenanzas/homologacion-graduado.html
+    last_verified_at: 2026-10-13
+  unedasiss:
+    url: https://unedasiss.uned.es/faqs
+    last_verified_at: 2026-10-13
+  admission:
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2024-11858
+    last_verified_at: 2026-10-13
+  visa:
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2024-24099
+    last_verified_at: 2026-10-13

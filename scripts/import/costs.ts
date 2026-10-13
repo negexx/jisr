@@ -35,6 +35,7 @@ export const COUNTRY_NAMES: Record<string, string> = {
   NL: "Netherlands",
   IT: "Italy",
   HU: "Hungary",
+  ES: "Spain",
 };
 
 // Amounts keep the currency Numbeo is asked for; we never convert.

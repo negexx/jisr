@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  CHANNEL_SLUGS,
   checkChannel,
   checkDeadline,
   checkDuration,
@@ -74,6 +75,13 @@ describe("checkDuration", () => {
     expect(checkDuration(3.5, "7 semesters of study").ok).toBe(true);
     expect(checkDuration(3, "Durée : 3 ans").ok).toBe(true);
     expect(checkDuration(3, "Regelstudienzeit: 6 Semester").ok).toBe(true);
+  });
+  it("accepts Spanish credit and year units", () => {
+    expect(checkDuration(4, "Créditos totales: 240").ok).toBe(true);
+    expect(checkDuration(4, "240 créditos europeos").ok).toBe(true);
+    expect(checkDuration(4, "4 años").ok).toBe(true);
+    expect(checkDuration(4, "8 semestres").ok).toBe(true);
+    expect(checkDuration(5, "Créditos totales: 240").ok).toBe(false);
   });
   it("rejects a value the quote does not state", () => {
     expect(checkDuration(4, "Duration: 6 semesters").ok).toBe(false);
@@ -724,6 +732,50 @@ describe("checkChannel German wording", () => {
     expect(
       checkChannel("de-university-direct", "Apply in our application portal until 15 July.").ok,
     ).toBe(true);
+  });
+});
+
+describe("checkChannel Spanish wording", () => {
+  it("accepts the UNEDasiss credencial / PCE wording for es-unedasiss", () => {
+    for (const quote of [
+      "Los estudiantes internacionales deben solicitar la credencial UNEDasiss.",
+      "El estudiante debe realizar las Pruebas de Competencias Específicas (PCE) a través de UNEDasiss.",
+      "La acreditación de UNEDasiss permite participar en los procesos de admisión.",
+    ])
+      expect(checkChannel("es-unedasiss", quote).ok, quote).toBe(true);
+  });
+  it("accepts the regional preinscripción wording for es-preinscripcion-regional", () => {
+    for (const quote of [
+      "La preinscripción se realiza a través del Distrito Único Andaluz.",
+      "El estudiante presenta la solicitud de admisión en el Distrito Único Universitario.",
+      "La preinscripción se formaliza en la propia universidad.",
+    ])
+      expect(checkChannel("es-preinscripcion-regional", quote).ok, quote).toBe(true);
+  });
+  it("does not let one Spanish channel verify the other (cross-exclusion)", () => {
+    const unedasiss =
+      "Solicita la credencial UNEDasiss y realiza las Pruebas de Competencias Específicas (PCE).";
+    const preinscripcion =
+      "Realiza la preinscripción en el Distrito Único Andaluz antes del 7 de julio.";
+    expect(checkChannel("es-unedasiss", preinscripcion).ok).toBe(false);
+    expect(checkChannel("es-preinscripcion-regional", unedasiss).ok).toBe(false);
+    const both =
+      "Tras obtener la credencial UNEDasiss, realiza la preinscripción en el Distrito Único.";
+    expect(checkChannel("es-unedasiss", both).ok).toBe(false);
+    expect(checkChannel("es-preinscripcion-regional", both).ok).toBe(false);
+  });
+  it("fails both channels when a quote combines each channel's own terms (complementary excludes)", () => {
+    for (const quote of [
+      "La acreditación de UNED es obligatoria; presenta la solicitud de admisión.",
+      "The admission application requires the acreditación de UNED.",
+    ]) {
+      expect(checkChannel("es-unedasiss", quote).ok, quote).toBe(false);
+      expect(checkChannel("es-preinscripcion-regional", quote).ok, quote).toBe(false);
+    }
+  });
+  it("lists both Spanish slugs among the channels the verifier knows", () => {
+    expect(CHANNEL_SLUGS).toContain("es-unedasiss");
+    expect(CHANNEL_SLUGS).toContain("es-preinscripcion-regional");
   });
 });
 

@@ -963,7 +963,17 @@ describe("runCosts", () => {
 
   it("refuses a country code it has no name for", async () => {
     const f = fixture();
-    await expect(runCosts(options(f, { countries: ["ES"] }))).rejects.toThrow(/ES/);
+    await expect(runCosts(options(f, { countries: ["ZZ"] }))).rejects.toThrow(/ZZ/);
+  });
+
+  it("accepts ES and stages its Numbeo country profile", async () => {
+    const f = fixture();
+    const spainUrl = numbeoCountryUrl("Spain", "EUR");
+    f.pages.set(spainUrl, numbeoHtml({ footer: countryFooter, place: "Spain" }));
+    const outcome = await runCosts(options(f, { countries: ["ES"] }));
+    expect(outcome.ok).toBe(true);
+    expect(f.requested).toEqual([spainUrl]);
+    expect(await listStaged(stagingDir)).toEqual(["cost-profiles/es-numbeo"]);
   });
 
   it("identifies the project in the user agent it is given", () => {

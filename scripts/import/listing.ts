@@ -3,8 +3,10 @@ import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import { parse } from "yaml";
+import { z } from "zod";
 
 import { isValidIsoDate } from "@/data-schema/dates";
+import { HttpsUrlSchema } from "@/data-schema/primitives";
 import { COLLECTIONS } from "@/data-schema/records/collections";
 
 import {
@@ -45,18 +47,22 @@ export function listingInstitution(staged: Rec, date: string): Rec | null {
   const todo = str(review.todo) ?? "";
   const isFrance = country === "FR" && sourceId.startsWith("uai:");
   const isGermany = country === "DE" && sourceId.startsWith("hrk:");
-  if (!isFrance && !isGermany) return null;
+  const isSpain = country === "ES" && sourceId.startsWith("ruct:");
+  if (!isFrance && !isGermany && !isSpain) return null;
 
   const type = staged.type === "public" || staged.type === "private" ? staged.type : null;
   // France: the website is listed only when the ministry's own register confirmed it. Germany: the
-  // HRK homepage, unless https redirects to another domain (a possible different institution).
+  // HRK homepage, unless https redirects to another domain (a possible different institution). Spain:
+  // RUCT lists no website, so it stays null.
   const website = isFrance
     ? staged.info_kind === "official"
       ? https(staged.website)
       : null
-    : /redirects to a different domain/.test(todo)
-      ? null
-      : https(staged.website);
+    : isGermany
+      ? /redirects to a different domain/.test(todo)
+        ? null
+        : https(staged.website)
+      : null;
 
   const sources = asRec(staged.sources);
   const key = str(staged.source) ?? Object.keys(sources)[0] ?? null;
@@ -78,7 +84,41 @@ export function listingInstitution(staged: Rec, date: string): Rec | null {
 // --- programmes ----------------------------------------------------------------------------------
 const FACTS = ["tuition", "intakes", "applicationChannel", "documents"] as const;
 
-export function listingProgramme(staged: Rec, date: string): Rec | null {
+// --- Spain listing registry ----------------------------------------------------------------------
+// RUCT (unlike Parcoursup) is a title list with no programme page, so the importer leaves
+// `officialUrl` null. A human finds the programme's own page on the university's site and records it
+// here, keyed by the staged slug: that curated page is what makes a RUCT record promotable as a
+// listing. The file is created in Task 3; a missing registry lists nothing (never a guessed URL).
+export const ES_LISTING_PATH = path.join("scripts", "import", "registries", "es-listing.json");
+
+export const EsListingRegistrySchema = z
+  .strictObject({
+    entries: z.array(
+      z.strictObject({
+        slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "Expected a kebab-case slug"),
+        officialUrl: HttpsUrlSchema,
+      }),
+    ),
+  })
+  .strict();
+
+export async function readEsListing(file = ES_LISTING_PATH): Promise<Map<string, string>> {
+  if (!existsSync(file)) return new Map();
+  const parsed = EsListingRegistrySchema.safeParse(JSON.parse(await readFile(file, "utf8")));
+  if (!parsed.success) {
+    const issue = parsed.error.issues[0];
+    throw new Error(
+      `invalid ES listing registry ${file} at ${issue?.path.join(".") ?? "?"}: ${issue?.message ?? "bad shape"}`,
+    );
+  }
+  return new Map(parsed.data.entries.map((entry) => [entry.slug, entry.officialUrl]));
+}
+
+export function listingProgramme(
+  staged: Rec,
+  date: string,
+  esListing: ReadonlyMap<string, string> = new Map(),
+): Rec | null {
   const review = asRec(staged._review);
   const sourceId = str(review.sourceId) ?? "";
   // The field must be a confident classification, and nobody has touched the record yet.
@@ -86,12 +126,16 @@ export function listingProgramme(staged: Rec, date: string): Rec | null {
 
   const isFrance = sourceId.startsWith("parcoursup:");
   const isDaad = sourceId.startsWith("daad:");
-  if (!isFrance && !isDaad) return null;
+  const isSpain = staged.country === "ES" && sourceId.startsWith("ruct:");
+  if (!isFrance && !isDaad && !isSpain) return null;
 
   const sources = asRec(staged.sources);
-  const key = isFrance ? "fiche" : "daad";
-  const page = https(asRec(sources[key]).url);
-  if (page === null) return null;
+  const key = isSpain ? "ruct" : isFrance ? "fiche" : "daad";
+  const sourceUrl = https(asRec(sources[key]).url);
+  // France and Germany: the register page is the programme's official page. Spain: the register has
+  // no programme page, so `officialUrl` is the curated registry page for the staged slug.
+  const officialUrl = isSpain ? https(esListing.get(str(staged.slug) ?? "")) : sourceUrl;
+  if (sourceUrl === null || officialUrl === null) return null;
   const known = (value: unknown, kind: "guidance" | "official") => ({
     value,
     source: key,
@@ -101,12 +145,12 @@ export function listingProgramme(staged: Rec, date: string): Rec | null {
   // its values are guidance. Its deadline is not used: it may be the one for EU applicants.
   const daadDuration = asRec(staged.durationYears).value;
   const daadLanguages = asRec(staged.teachingLanguages).value;
-  const kind = isFrance ? "official" : "guidance";
+  const kind = isDaad ? "guidance" : "official";
 
   const { _review: _drop, ...rest } = staged;
   const record: Rec = {
     ...rest,
-    officialUrl: page,
+    officialUrl,
     durationYears: known(
       isDaad && typeof daadDuration === "number" && daadDuration > 0 ? daadDuration : null,
       kind,
@@ -116,7 +160,7 @@ export function listingProgramme(staged: Rec, date: string): Rec | null {
       kind,
     ),
     requirements: { coverage: "partial", source: key, info_kind: kind, rules: [] },
-    sources: { [key]: { url: page, last_verified_at: date } },
+    sources: { [key]: { url: sourceUrl, last_verified_at: date } },
   };
   for (const fact of FACTS) record[fact] = known(null, kind);
   return record;
@@ -150,9 +194,11 @@ export async function promoteListing(options: {
   stagingDir?: string;
   dataDir?: string;
   limit?: number;
+  esListingPath?: string;
 }): Promise<ListingResult> {
   const stagingDir = options.stagingDir ?? STAGING_DIR;
   const dataDir = options.dataDir ?? DATA_DIR;
+  const esListing = await readEsListing(options.esListingPath ?? ES_LISTING_PATH);
   const result: ListingResult = { institutions: 0, programmes: 0, skipped: {} };
   const skip = (reason: string) => {
     result.skipped[reason] = (result.skipped[reason] ?? 0) + 1;
@@ -178,7 +224,7 @@ export async function promoteListing(options: {
       skip("already in data/");
       continue;
     }
-    const record = listingProgramme(p.record, options.date);
+    const record = listingProgramme(p.record, options.date, esListing);
     if (record === null) {
       skip("not eligible (source, field confidence or page link)");
       continue;

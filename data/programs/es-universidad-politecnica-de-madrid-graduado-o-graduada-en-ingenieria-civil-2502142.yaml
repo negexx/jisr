@@ -1,0 +1,55 @@
+slug: es-universidad-politecnica-de-madrid-graduado-o-graduada-en-ingenieria-civil-2502142
+institution: es-universidad-politecnica-de-madrid
+country: ES
+city: madrid
+field: engineering
+level: bachelor
+name: Graduado o Graduada en Ingeniería Civil y Territorial por la Universidad Politécnica de Madrid
+summary:
+  fr:
+    text: Graduado o Graduada en Ingeniería Civil y Territorial por la Universidad Politécnica de Madrid, Universidad Politécnica de Madrid (Madrid). Programme recensé dans le registre espagnol des universités et des titres (RUCT).
+    status: draft
+  en:
+    text: Graduado o Graduada en Ingeniería Civil y Territorial por la Universidad Politécnica de Madrid, Universidad Politécnica de Madrid (Madrid). Programme listed in the Spanish register of universities and degrees (RUCT).
+    status: draft
+  ar:
+    text: Graduado o Graduada en Ingeniería Civil y Territorial por la Universidad Politécnica de Madrid, Universidad Politécnica de Madrid (Madrid). برنامج مدرج في السجل الإسباني للجامعات والشهادات (RUCT).
+    status: draft
+officialUrl: https://www.upm.es/estudiantes/estudios_titulaciones/estudiosoficialesgrado/articulosrelacionados?fmt=detail&id=CON09007
+durationYears:
+  value: 4
+  source: page-1
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: ruct
+  info_kind: official
+tuition:
+  value: null
+  source: ruct
+  info_kind: official
+intakes:
+  value: null
+  source: ruct
+  info_kind: official
+applicationChannel:
+  value: null
+  source: ruct
+  info_kind: official
+documents:
+  value: null
+  source: ruct
+  info_kind: official
+requirements:
+  coverage: partial
+  source: ruct
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  ruct:
+    url: https://www.educacion.gob.es/ruct/estudio.action?codigoCiclo=SC&codigoTipo=G&CodigoEstudio=2502142&actual=estudios
+    last_verified_at: 2026-10-13
+  page-1:
+    url: https://www.upm.es/estudiantes/estudios_titulaciones/estudiosoficialesgrado/articulosrelacionados?fmt=detail&id=CON09007
+    last_verified_at: 2026-10-13

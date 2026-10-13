@@ -1,0 +1,55 @@
+slug: es-universidad-de-granada-graduado-o-graduada-en-ingenieria-electr-2502550
+institution: es-universidad-de-granada
+country: ES
+city: granada
+field: engineering
+level: bachelor
+name: Graduado o Graduada en Ingeniería Electrónica Industrial por la Universidad de Granada
+summary:
+  fr:
+    text: Graduado o Graduada en Ingeniería Electrónica Industrial por la Universidad de Granada, Universidad de Granada (Granada). Programme recensé dans le registre espagnol des universités et des titres (RUCT).
+    status: draft
+  en:
+    text: Graduado o Graduada en Ingeniería Electrónica Industrial por la Universidad de Granada, Universidad de Granada (Granada). Programme listed in the Spanish register of universities and degrees (RUCT).
+    status: draft
+  ar:
+    text: Graduado o Graduada en Ingeniería Electrónica Industrial por la Universidad de Granada, Universidad de Granada (Granada). برنامج مدرج في السجل الإسباني للجامعات والشهادات (RUCT).
+    status: draft
+officialUrl: https://grados.ugr.es/ramas/ingenieria-arquitectura/grado-ingenieria-electronica-industrial
+durationYears:
+  value: 4
+  source: page-1
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: ruct
+  info_kind: official
+tuition:
+  value: null
+  source: ruct
+  info_kind: official
+intakes:
+  value: null
+  source: ruct
+  info_kind: official
+applicationChannel:
+  value: null
+  source: ruct
+  info_kind: official
+documents:
+  value: null
+  source: ruct
+  info_kind: official
+requirements:
+  coverage: partial
+  source: ruct
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  ruct:
+    url: https://www.educacion.gob.es/ruct/estudio.action?codigoCiclo=SC&codigoTipo=G&CodigoEstudio=2502550&actual=estudios
+    last_verified_at: 2026-10-13
+  page-1:
+    url: https://grados.ugr.es/ramas/ingenieria-arquitectura/grado-ingenieria-electronica-industrial
+    last_verified_at: 2026-10-13

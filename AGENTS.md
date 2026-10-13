@@ -25,7 +25,7 @@ The `oh-my-openagent` plugin provides the orchestration agents (`oracle`, `explo
 
 ## What Jisr is
 
-A free, non-commercial, trilingual (fr/en/ar RTL) web app that turns a Moroccan Bac graduate's profile into realistic, costed European Bachelor's options. One journey: profile → matches → costs → scholarships → application plan. Trust is the product: every fact carries an official source and a last-verified date. Release 1: France, Germany, the Netherlands, Hungary, Italy × Computer Science / Engineering / Business-Economics.
+A free, non-commercial, trilingual (fr/en/ar RTL) web app that turns a Moroccan Bac graduate's profile into realistic, costed European Bachelor's options. One journey: profile → matches → costs → scholarships → application plan. Trust is the product: every fact carries an official source and a last-verified date. Release 1: France, Germany, the Netherlands, Hungary, Italy, Spain × Computer Science / Engineering / Business-Economics.
 
 ## Stack and commands
 
