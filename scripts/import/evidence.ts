@@ -253,14 +253,17 @@ const fail = (reason: string): FactCheck => ({ ok: false, reason });
 
 export function checkDuration(years: number, quote: string): FactCheck {
   const q = normalizeForMatch(quote);
-  const yearUnits = "(?:year|years|an|ans|jahr|jahre|jahren|jaar|jaren|annee|années)";
+  const yearUnits = "(?:year|years|an|ans|jahr|jahre|jahren|jaar|jaren|annee|années|años?|anos?)";
   const semesterUnits = "(?:semesters?|semestres?|semester|semsters?)";
+  const creditUnits = "(?:ects|ec\\b|credits|crédits|créditos|studiepunten)";
   const patterns: RegExp[] = [];
   if (Number.isInteger(years))
     patterns.push(new RegExp(`\\b${numberRegex(years)}[ -]?${yearUnits}\\b`, "i"));
   if (Number.isInteger(years * 2))
     patterns.push(new RegExp(`\\b${numberRegex(years * 2)}\\s*${semesterUnits}`, "i"));
-  patterns.push(new RegExp(`\\b${years * 60}\\s*(?:ects|ec\\b|credits|crédits|studiepunten)`, "i"));
+  patterns.push(new RegExp(`\\b${years * 60}\\s*${creditUnits}`, "i"));
+  // Spanish writes the credit total with the unit before the count ("Créditos totales: 240")
+  patterns.push(new RegExp(`\\bcréditos?\\b[^0-9]{0,20}?${years * 60}(?![\\d.,])`, "i"));
   return patterns.some((pattern) => pattern.test(q))
     ? ok
     : fail(`the quote does not state ${years} years, ${years * 2} semesters or ${years * 60} ECTS`);

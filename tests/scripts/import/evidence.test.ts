@@ -76,6 +76,13 @@ describe("checkDuration", () => {
     expect(checkDuration(3, "Durée : 3 ans").ok).toBe(true);
     expect(checkDuration(3, "Regelstudienzeit: 6 Semester").ok).toBe(true);
   });
+  it("accepts Spanish credit and year units", () => {
+    expect(checkDuration(4, "Créditos totales: 240").ok).toBe(true);
+    expect(checkDuration(4, "240 créditos europeos").ok).toBe(true);
+    expect(checkDuration(4, "4 años").ok).toBe(true);
+    expect(checkDuration(4, "8 semestres").ok).toBe(true);
+    expect(checkDuration(5, "Créditos totales: 240").ok).toBe(false);
+  });
   it("rejects a value the quote does not state", () => {
     expect(checkDuration(4, "Duration: 6 semesters").ok).toBe(false);
     expect(checkDuration(3, "A degree in computer science").ok).toBe(false);
