@@ -1,0 +1,22 @@
+slug: es-unedasiss
+name: UNEDasiss
+country: ES
+kind: intermediary
+url: https://unedasiss.uned.es/home
+accountRequired: null
+summary:
+  fr:
+    text: "UNEDasiss (UNED) évalue les diplômes étrangers et délivre l'accréditation qui donne la note d'accès ; les candidats des systèmes hors UE passent aussi les Pruebas de Competencias Específicas (PCE). C'est une étape obligatoire avant de candidater dans une université espagnole, mais ce n'est pas l'admission."
+    status: draft
+  en:
+    text: "UNEDasiss (UNED) evaluates foreign diplomas and issues the accreditation that gives the access mark; applicants from non-EU systems also sit the Pruebas de Competencias Específicas (PCE). It is a mandatory step before applying to a Spanish university, but it is not the admission itself."
+    status: draft
+  ar:
+    text: "تقيّم UNEDasiss (جامعة UNED) الشهادات الأجنبية وتمنح الاعتماد الذي يحدّد علامة الولوج؛ ويجتاز الطلبة من الأنظمة خارج الاتحاد الأوروبي أيضًا اختبارات الكفايات الخاصة (PCE). وهي خطوة إلزامية قبل التقدّم إلى جامعة إسبانية، لكنها ليست القبول نفسه."
+    status: draft
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://unedasiss.uned.es/home
+    last_verified_at: 2026-10-13

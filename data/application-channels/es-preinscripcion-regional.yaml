@@ -1,0 +1,22 @@
+slug: es-preinscripcion-regional
+name: Regional preinscripción
+country: ES
+kind: direct
+url: https://unedasiss.uned.es/paso_6
+accountRequired: null
+summary:
+  fr:
+    text: "L'Espagne n'a pas de portail national : la demande d'admission se fait auprès de l'université de destination, dans le cadre du système de préinscription de sa région. La région et l'université fixent les dates et décident de l'admission."
+    status: draft
+  en:
+    text: "Spain has no national portal: the admission application is made at the destination university, through the pre-enrolment system of its region. The region and the university set the dates and decide on admission."
+    status: draft
+  ar:
+    text: "لا توجد في إسبانيا بوابة وطنية: يُقدَّم طلب القبول لدى الجامعة المستقبِلة ضمن نظام التسجيل المسبق الخاص بجهتها. وتحدّد الجهة والجامعة المواعيد وتقرّران القبول."
+    status: draft
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://unedasiss.uned.es/paso_6
+    last_verified_at: 2026-10-13

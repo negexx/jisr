@@ -1,0 +1,6 @@
+code: ES
+name:
+  fr: { text: Espagne, status: reviewed }
+  en: { text: Spain, status: reviewed }
+  ar: { text: إسبانيا, status: draft }
+currency: EUR
