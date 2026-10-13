@@ -5,19 +5,19 @@ destination: ES
 level: bachelor
 outcome: check
 conditions:
-  - id: homologacion-mandatory
+  - id: homologacion-to-titulo-de-bachiller
     kind: manual_check
     source: homologacion
     info_kind: official
     note:
       fr:
-        text: "Votre baccalauréat marocain doit d'abord être homologué en Título de Bachiller espagnol par le ministère de l'Éducation : c'est la procédure d'homologation des diplômes étrangers de fin d'études secondaires."
+        text: "Le ministère de l'Éducation, de la Formation professionnelle et des Sports traite l'homologation en Título de Bachiller des diplômes étrangers de fin d'études secondaires ; la procédure et les documents à fournir y sont décrits."
         status: draft
       en:
-        text: "Your Moroccan baccalauréat must first be homologated as the Spanish Título de Bachiller by the Ministry of Education: this is the procedure for homologating foreign secondary-school diplomas."
+        text: "The Ministry of Education, Vocational Training and Sports handles the homologación to the Spanish Título de Bachiller of foreign secondary-school diplomas; the procedure and the documents to submit are set out there."
         status: draft
       ar:
-        text: "يجب أولًا معادلة الباكالوريا المغربية بشهادة Título de Bachiller الإسبانية لدى وزارة التربية: وهو إجراء معادلة شهادات نهاية التعليم الثانوي الأجنبية."
+        text: "تتولّى وزارة التربية والتكوين المهني والرياضة معادلة شهادات نهاية التعليم الثانوي الأجنبية بشهادة Título de Bachiller الإسبانية؛ وفيها يُوضَّح الإجراء والوثائق المطلوبة."
         status: draft
   - id: unedasiss-credencial-and-pce
     kind: manual_check
@@ -25,13 +25,13 @@ conditions:
     info_kind: official
     note:
       fr:
-        text: "La voie d'accès passe par une Acreditación UNEDasiss avec une Calificación de Acceso, obtenue grâce aux PCE (Pruebas de Competencias Específicas) : au moins 4 matières. UNEDasiss évalue le dossier mais ne réalise pas l'homologation du diplôme."
+        text: "L'homologation du Título de Bachiller est un trámite obligatorio et indispensable pour obtenir l'accréditation, et UNEDasiss ne réalise pas l'homologation ; l'accès passe par une Acreditación UNEDasiss avec la Calificación de Acceso et les PCE (Pruebas de Competencias Específicas), au moins quatre matières étant recommandées."
         status: draft
       en:
-        text: "The access route goes through an Acreditación UNEDasiss with a Calificación de Acceso, obtained through the PCE (Pruebas de Competencias Específicas): at least 4 subjects. UNEDasiss assesses the record but does not carry out the homologación of the diploma."
+        text: "Homologación of the Título de Bachiller is a mandatory and indispensable step to obtain the accreditation, and UNEDasiss does not carry out the homologación; access goes through an Acreditación UNEDasiss with the Calificación de Acceso and the PCE (Pruebas de Competencias Específicas), with at least four subjects recommended."
         status: draft
       ar:
-        text: "يمرّ مسار الولوج عبر اعتماد UNEDasiss مع Calificación de Acceso يُحصل عليه عبر اختبارات PCE: أربع مواد على الأقل. وتقيّم UNEDasiss الملف لكنها لا تتولّى معادلة الشهادة."
+        text: "تُعدّ معادلة شهادة Título de Bachiller إجراءً إلزاميًا ولا غنى عنه للحصول على الاعتماد، ولا تتولّى UNEDasiss المعادلة؛ ويمرّ الولوج عبر اعتماد UNEDasiss مع Calificación de Acceso واختبارات PCE، مع التوصية بأربع مواد على الأقل."
         status: draft
   - id: nota-de-corte
     kind: manual_check
@@ -53,13 +53,13 @@ conditions:
     info_kind: official
     note:
       fr:
-        text: "Le visa d'études exige de prouver des moyens d'existence d'au moins 100 % de l'IPREM par mois, comme le fixe la réglementation sur l'immigration."
+        text: "Le visa d'études exige de prouver des moyens d'existence d'au moins 100 % de l'IPREM par mois (75 % ou 50 % pour un membre de la famille à charge), sauf si l'hébergement est payé d'avance pour toute la période, comme le fixe la réglementation sur l'immigration."
         status: draft
       en:
-        text: "The study visa requires proof of means of at least 100% of the IPREM per month, as set by the immigration regulation."
+        text: "The study visa requires proof of means of at least 100% of the IPREM per month (75% or 50% for a dependent family member), unless the accommodation is paid in advance for the whole period, as set by the immigration regulation."
         status: draft
       ar:
-        text: "تتطلب تأشيرة الدراسة إثبات موارد معيشية لا تقل عن 100% من IPREM شهريًا، وفق ما يحدّده نظام الهجرة."
+        text: "تتطلب تأشيرة الدراسة إثبات موارد معيشية لا تقل عن 100% من IPREM شهريًا (75% أو 50% لأحد أفراد الأسرة المعالين)، إلا إذا كانت الإقامة مدفوعة مسبقًا لكامل المدة، وفق ما يحدّده نظام الهجرة."
         status: draft
 note:
   fr:

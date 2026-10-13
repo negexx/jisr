@@ -2,21 +2,21 @@ slug: es-unedasiss
 name: UNEDasiss
 country: ES
 kind: intermediary
-url: https://unedasiss.uned.es/home
+url: https://unedasiss.uned.es/faqs
 accountRequired: null
 summary:
   fr:
-    text: "UNEDasiss (UNED) évalue les diplômes étrangers et délivre l'accréditation qui donne la note d'accès ; les candidats des systèmes hors UE passent aussi les Pruebas de Competencias Específicas (PCE). C'est une étape obligatoire avant de candidater dans une université espagnole, mais ce n'est pas l'admission."
+    text: "UNEDasiss (UNED) évalue les dossiers des étudiants internationaux et délivre l'Acreditación, un certificat numérique permettant de participer aux procédures d'admission à l'université espagnole, incluant les notes des PCE. Pour les systèmes hors UE, au moins quatre matières sont recommandées ; l'accréditation n'est pas acceptée par toutes les universités."
     status: draft
   en:
-    text: "UNEDasiss (UNED) evaluates foreign diplomas and issues the accreditation that gives the access mark; applicants from non-EU systems also sit the Pruebas de Competencias Específicas (PCE). It is a mandatory step before applying to a Spanish university, but it is not the admission itself."
+    text: "UNEDasiss (UNED) evaluates international students' academic records and issues the Acreditación, a digital certificate allowing participation in Spanish university admission processes and including the PCE grades. For non-EU systems, at least four subjects are recommended; the accreditation is not accepted by all universities."
     status: draft
   ar:
-    text: "تقيّم UNEDasiss (جامعة UNED) الشهادات الأجنبية وتمنح الاعتماد الذي يحدّد علامة الولوج؛ ويجتاز الطلبة من الأنظمة خارج الاتحاد الأوروبي أيضًا اختبارات الكفايات الخاصة (PCE). وهي خطوة إلزامية قبل التقدّم إلى جامعة إسبانية، لكنها ليست القبول نفسه."
+    text: "تقيّم UNEDasiss (جامعة UNED) ملفات الطلبة الدوليين وتمنح شهادة Acreditación، وهي شهادة رقمية تتيح المشاركة في مساطر القبول بالجامعات الإسبانية وتشمل علامات اختبارات PCE. وبالنسبة للأنظمة خارج الاتحاد الأوروبي يُوصى بتقديم أربع مواد على الأقل؛ ولا تقبل جميع الجامعات هذا الاعتماد."
     status: draft
 source: page
 info_kind: official
 sources:
   page:
-    url: https://unedasiss.uned.es/home
+    url: https://unedasiss.uned.es/faqs
     last_verified_at: 2026-10-13
