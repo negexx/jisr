@@ -331,6 +331,15 @@ describe("applicant context", () => {
     expect(user).toMatch(/EUR/);
   });
 
+  it("explains the Spanish channels and the fee audience in the task, after the pages", () => {
+    const { user } = buildPrompt({ ...meta, country: "ES", shared: [], own: [] });
+    expect(user).toMatch(/es-unedasiss/);
+    expect(user).toMatch(/es-preinscripcion-regional/);
+    expect(user).toMatch(/PCE/);
+    expect(user).toMatch(/EUR/);
+    expect(user).toMatch(/recurringDeadline/);
+  });
+
   describe("the Italian tuition text and the range rule", () => {
     const { user } = buildPrompt({ ...meta, country: "IT", shared: [], own: [] });
     it("allows a range when ONE quote states both a lowest and a highest fee for the student", () => {
@@ -498,6 +507,9 @@ describe("applicant context", () => {
   it("keeps the instruction identical across countries so it stays cacheable", () => {
     expect(buildPrompt({ ...meta, country: "FR", shared: [], own: [] }).system).toBe(
       buildPrompt({ ...meta, country: "DE", shared: [], own: [] }).system,
+    );
+    expect(buildPrompt({ ...meta, country: "ES", shared: [], own: [] }).system).toBe(
+      buildPrompt({ ...meta, country: "IT", shared: [], own: [] }).system,
     );
   });
 });

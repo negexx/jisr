@@ -403,6 +403,23 @@ describe("discoverBySearch", () => {
     expect(languages.every((l) => l === "it")).toBe(true);
   });
 
+  it("asks the institution-level questions in Spanish for Spain", async () => {
+    const log: string[] = [];
+    const languages: (string | undefined)[] = [];
+    const search: SearchProvider = {
+      name: "fake",
+      search: async (query, options) => {
+        log.push(query);
+        languages.push(options?.language);
+        return [];
+      },
+    };
+    await discoverBySearch({ ...input, country: "ES", search });
+    expect(log.some((q) => q.includes("tasas") && q.includes("tuition fees"))).toBe(true);
+    expect(log.some((q) => q.includes("preinscripción") && q.includes("admission"))).toBe(true);
+    expect(languages.every((l) => l === "es")).toBe(true);
+  });
+
   it("returns no programme page when no hit's page names the programme", async () => {
     const found = await discoverBySearch({
       ...input,

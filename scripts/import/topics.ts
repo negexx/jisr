@@ -18,6 +18,12 @@ const WORDS: Record<string, Record<Topic, string>> = {
     documents:
       "Bewerbungsunterlagen erforderliche Unterlagen international applicants required documents",
   },
+  ES: {
+    fees: "tasas académicas matrícula estudiantes internacionales no residentes tuition fees",
+    language: "idioma de impartición lengua de docencia language of instruction",
+    deadline: "plazo de preinscripción estudiantes internacionales application deadline",
+    documents: "documentos necesarios estudiantes internacionales admisión required documents",
+  },
   FR: {
     fees: "droits d'inscription étudiants internationaux",
     language: "langue d'enseignement enseigné en",
@@ -38,7 +44,7 @@ const WORDS: Record<string, Record<Topic, string>> = {
   },
 };
 
-const LANGUAGE: Record<string, string> = { DE: "de", FR: "fr", IT: "it", NL: "nl" };
+const LANGUAGE: Record<string, string> = { DE: "de", ES: "es", FR: "fr", IT: "it", NL: "nl" };
 
 const PATTERN: Record<Topic, RegExp> = {
   fees: /tuition|\bfees?\b|\bcosts?\b|gebu(?:e)?hr|studienbeitr|semesterbeitr|collegegeld|\btarie(?:f|ven)\b|kosten|droits?[ _-]d[ '_-]?inscription|frais[ _-]de[ _-]scolarit|droits[ _-]de[ _-]scolarit|\btasse\b|contribut[io]|\bretta\b|\bcosti\b/,

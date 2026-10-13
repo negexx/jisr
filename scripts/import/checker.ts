@@ -39,6 +39,10 @@ const CHANNEL_TEXT: Record<string, string> = {
     "A non-EU applicant living abroad makes the pre-enrolment application on the Universitaly portal.",
   "it-university-direct":
     "Applications are made on the university's own application portal or form.",
+  "es-unedasiss":
+    "An international applicant must obtain the UNEDasiss credencial (acreditación), including the PCE grades, to apply.",
+  "es-preinscripcion-regional":
+    "The admission application (preinscripción) is made in the region's preinscripción system or on the university's own admission application.",
 };
 
 type Intake = {

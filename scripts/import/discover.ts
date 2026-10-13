@@ -296,6 +296,11 @@ const WORDS: Record<string, { fees: string; admission: string; language: string 
     admission: "ammissione preiscrizione studenti internazionali admission requirements",
     language: "it",
   },
+  ES: {
+    fees: "tasas académicas matrícula estudiantes internacionales tuition fees",
+    admission: "admisión preinscripción estudiantes internacionales admission requirements",
+    language: "es",
+  },
   NL: {
     fees: "collegegeld niet-EU studenten tuition fees",
     admission: "toelating aanmelden internationale studenten admission requirements",

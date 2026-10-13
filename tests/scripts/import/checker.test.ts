@@ -29,6 +29,12 @@ describe("claimText", () => {
     expect(claimText("applicationChannel", "de-uni-assist-vpd")).toMatch(/uni-assist/i);
   });
 
+  it("names the Spanish channels instead of the generic fallback", () => {
+    expect(claimText("applicationChannel", "es-unedasiss")).toMatch(/UNEDasiss/);
+    expect(claimText("applicationChannel", "es-unedasiss")).not.toMatch(/^Application channel:/);
+    expect(claimText("applicationChannel", "es-preinscripcion-regional")).toMatch(/preinscripción/);
+  });
+
   it("states a fee range with both ends, and the income basis when there is one", () => {
     expect(
       claimText("tuition", {

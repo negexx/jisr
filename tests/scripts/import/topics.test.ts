@@ -209,6 +209,18 @@ describe("discoverTopicPages", () => {
     expect(search.languages).toEqual(["it", "it", "it", "it"]);
   });
 
+  it("asks four Spanish queries for Spain, in Spanish, with the search language es", async () => {
+    const search = provider(() => []);
+    await discoverTopicPages({ country: "ES", website: "https://www.uni-example.es/", search });
+    expect(search.queries).toHaveLength(4);
+    expect(search.queries.every((q) => q.startsWith("site:uni-example.es "))).toBe(true);
+    expect(search.queries.some((q) => q.includes("tasas académicas"))).toBe(true);
+    expect(search.queries.some((q) => q.includes("idioma de impartición"))).toBe(true);
+    expect(search.queries.some((q) => q.includes("plazo de preinscripción"))).toBe(true);
+    expect(search.queries.some((q) => q.includes("documentos necesarios"))).toBe(true);
+    expect(search.languages).toEqual(["es", "es", "es", "es"]);
+  });
+
   it("scores Italian fee, language, deadline and document pages", () => {
     const score = (url: string, text: string, topic: Topic) => scoreTopicLink({ url, text }, topic);
     expect(
