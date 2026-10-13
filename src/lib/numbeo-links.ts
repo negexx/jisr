@@ -52,6 +52,7 @@ const NUMBEO_COUNTRY_NAMES: Readonly<Record<string, string>> = {
   NL: "Netherlands",
   IT: "Italy",
   HU: "Hungary",
+  ES: "Spain",
 };
 
 export function numbeoLinkFor(country: string, citySlug: string): NumbeoLink | null {
