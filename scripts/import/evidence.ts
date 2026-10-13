@@ -29,6 +29,17 @@ const ENTITIES: Record<string, string> = {
   Uuml: "Ü",
   Ouml: "Ö",
   Auml: "Ä",
+  aacute: "á",
+  iacute: "í",
+  oacute: "ó",
+  uacute: "ú",
+  ntilde: "ñ",
+  Aacute: "Á",
+  Eacute: "É",
+  Iacute: "Í",
+  Oacute: "Ó",
+  Uacute: "Ú",
+  Ntilde: "Ñ",
   shy: "",
 };
 
