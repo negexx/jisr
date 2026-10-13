@@ -1,13 +1,16 @@
 import { readFileSync } from "node:fs";
 
 import { describe, expect, it } from "vitest";
-
+import type { RuctDegree, RuctTitle, RuctUniversity } from "../../../scripts/import/sources/ruct";
 import {
+  buildSpainRecords,
   fieldOfCampo,
   isUniversityName,
+  nextRuctPageUrl,
   parseRuctDegree,
   parseRuctTitles,
   parseRuctUniversities,
+  parseRuctUniversityDetail,
 } from "../../../scripts/import/sources/ruct";
 
 const FIXTURES = new URL("./fixtures/ruct/", import.meta.url);
@@ -232,5 +235,157 @@ describe("isUniversityName", () => {
   it("accepts a real university name", () => {
     expect(isUniversityName("CUNEF Universidad")).toBe(true);
     expect(isUniversityName("Universidad de Zaragoza")).toBe(true);
+  });
+});
+
+describe("nextRuctPageUrl", () => {
+  it("resolves the Siguiente link against the current page and decodes &amp;", () => {
+    const html =
+      '<a href="/ruct/listauniversidades;jsessionid=ABC?actual=universidades&amp;d-8320336-p=2">Siguiente</a>';
+    expect(
+      nextRuctPageUrl(
+        html,
+        "https://www.educacion.gob.es/ruct/listauniversidades.action?actual=universidades",
+      ),
+    ).toBe(
+      "https://www.educacion.gob.es/ruct/listauniversidades;jsessionid=ABC?actual=universidades&d-8320336-p=2",
+    );
+  });
+
+  it("returns null when the page has no Siguiente link (the last page)", () => {
+    expect(nextRuctPageUrl("<html></html>", "https://x/a")).toBeNull();
+  });
+});
+
+describe("parseRuctUniversityDetail", () => {
+  it("reads the public/private indicator and the town from the register page", () => {
+    const html = [
+      '<label for="tipo_univ"><span class="label">Tipo :</span><span>P&uacute;blica</span></label>',
+      '<label for="dloc"><span class="label">Localidad :</span><span>San Vicente del Raspeig/Sant Vicent del Raspeig</span></label>',
+    ].join("");
+    expect(parseRuctUniversityDetail(html)).toEqual({
+      type: "public",
+      city: "San Vicente del Raspeig/Sant Vicent del Raspeig",
+    });
+  });
+
+  it("reads a private university and falls back to the municipio for the town", () => {
+    const html = [
+      '<label for="tipo_univ"><span class="label">Tipo :</span><span>Privada</span></label>',
+      '<label for="dmunic"><span class="label">Municipio :</span><span>Madrid</span></label>',
+    ].join("");
+    expect(parseRuctUniversityDetail(html)).toEqual({ type: "private", city: "Madrid" });
+  });
+
+  it("reads a private university whose status carries a parenthetical", () => {
+    const html =
+      '<label for="tipo_univ"><span class="label">Tipo :</span><span>Privada (de la Iglesia Cat&oacute;lica)</span></label>';
+    expect(parseRuctUniversityDetail(html)).toEqual({ type: "private", city: null });
+  });
+
+  it("returns nulls when the register states neither status nor town", () => {
+    expect(parseRuctUniversityDetail("<html><body>no labels here</body></html>")).toEqual({
+      type: null,
+      city: null,
+    });
+  });
+});
+
+describe("buildSpainRecords", () => {
+  const university: RuctUniversity = {
+    code: "001",
+    name: "Universidad de Alicante",
+    type: "public",
+    city: "San Vicente del Raspeig",
+  };
+  const grado = (code: string, campo: string | null): RuctDegree => ({
+    code,
+    name: `Graduado o Graduada en Ejemplo ${code} por la Universidad de Alicante`,
+    nivel: "Grado - RD 822/2021 (2)",
+    rama: "Ingeniería y Arquitectura",
+    campo,
+    centres: ["Escuela Politécnica Superior"],
+  });
+  const titles: RuctTitle[] = [
+    {
+      code: "2500001",
+      name: "Graduado o Graduada en Ingeniería Informática por la Universidad de Alicante",
+      level: "Grado - RD 822/2021 (2)",
+    },
+    {
+      code: "2500002",
+      name: "Máster en Ingeniería Informática por la Universidad de Alicante",
+      level: "Máster - RD 822/2021",
+    },
+    {
+      code: "2500003",
+      name: "Graduado o Graduada en Derecho por la Universidad de Alicante",
+      level: "Grado - RD 822/2021 (2)",
+    },
+  ];
+  const degrees = new Map<string, RuctDegree>([
+    ["2500001", grado("2500001", "Ingeniería informática y de sistemas")],
+    ["2500002", grado("2500002", "Ingeniería informática y de sistemas")],
+    ["2500003", grado("2500003", "Derecho y especialidades jurídicas")],
+  ]);
+
+  const records = buildSpainRecords({ university, titles, degrees });
+  const institutions = records.filter((r) => r.collection === "institutions");
+  const programmes = records.filter((r) => r.collection === "programs");
+
+  it("stages the university under es-<slug(name)> with a stable source id", () => {
+    expect(institutions).toHaveLength(1);
+    expect(institutions[0]?.id).toBe("es-universidad-de-alicante");
+    expect(institutions[0]?.sourceId).toBe("ruct:001");
+    expect(institutions[0]?.data).toMatchObject({
+      slug: "es-universidad-de-alicante",
+      name: "Universidad de Alicante",
+      country: "ES",
+      type: "public",
+      info_kind: "TODO_read_source",
+    });
+  });
+
+  it("keeps only Grado titles whose campo maps to a Release-1 field", () => {
+    expect(programmes).toHaveLength(1);
+    const [programme] = programmes;
+    expect(programme?.data.field).toBe("computer-science");
+    expect(programme?.sourceId).toBe("ruct:001:2500001");
+    expect(programme?.data.institution).toBe("es-universidad-de-alicante");
+    expect(programme?.data.country).toBe("ES");
+    expect(programme?.data.level).toBe("bachelor");
+  });
+
+  it("leaves every unread fact to be read, with the placeholder and no official URL", () => {
+    const [programme] = programmes;
+    for (const key of [
+      "durationYears",
+      "teachingLanguages",
+      "tuition",
+      "intakes",
+      "applicationChannel",
+      "documents",
+    ]) {
+      expect(programme?.data[key]).toMatchObject({ value: null, info_kind: "TODO_read_source" });
+    }
+    expect(programme?.data.officialUrl).toBeNull();
+    expect(programme?.data.requirements).toMatchObject({
+      coverage: "partial",
+      source: "ruct",
+      info_kind: "TODO_read_source",
+      rules: [],
+    });
+  });
+
+  it("leaves type null with a review todo when the register states no public/private status", () => {
+    const unknown: RuctUniversity = { code: "777", name: "Universidad Sin Estado", city: "Madrid" };
+    const staged = buildSpainRecords({
+      university: unknown,
+      titles: [],
+      degrees: new Map(),
+    });
+    const [institution] = staged.filter((r) => r.collection === "institutions");
+    expect(institution?.data.type).toBeNull();
+    expect(institution?.review.todo).toMatch(/does not state/i);
   });
 });

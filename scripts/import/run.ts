@@ -8,6 +8,7 @@ import { importInstitutions } from "./sources/institutions";
 import { importItaly } from "./sources/mur";
 import { importFrance } from "./sources/parcoursup";
 import { importNetherlands } from "./sources/rio";
+import { importSpain } from "./sources/ruct";
 import { importHungary } from "./sources/studyfinder";
 import type { StagedRecord } from "./staging";
 import {
@@ -31,6 +32,7 @@ const SOURCES: Record<string, () => Promise<StagedRecord[]>> = {
   daad: importDaad,
   hungary: importHungary,
   italy: importItaly,
+  spain: importSpain,
 };
 
 async function main(argv: readonly string[]): Promise<void> {

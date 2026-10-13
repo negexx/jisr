@@ -17,7 +17,8 @@ export type SummarySource =
   | "studiensuche"
   | "studyfinder"
   | "mur"
-  | "universitaly";
+  | "universitaly"
+  | "ruct";
 
 const SOURCE_LINE: Record<SummarySource, { fr: string; en: string; ar: string }> = {
   parcoursup: {
@@ -54,6 +55,11 @@ const SOURCE_LINE: Record<SummarySource, { fr: string; en: string; ar: string }>
     fr: "Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.",
     en: "Programme listed in the Federal Employment Agency's Studiensuche.",
     ar: "برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.",
+  },
+  ruct: {
+    fr: "Programme recensé dans le registre espagnol des universités et des titres (RUCT).",
+    en: "Programme listed in the Spanish register of universities and degrees (RUCT).",
+    ar: "برنامج مدرج في السجل الإسباني للجامعات والشهادات (RUCT).",
   },
 };
 

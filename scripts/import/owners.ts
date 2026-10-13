@@ -9,4 +9,5 @@ export const OWNS: Record<string, (sourceId: string) => boolean> = {
   daad: (id) => /^daad(-academy)?:/.test(id),
   hungary: (id) => /^studyfinder(-institution)?:/.test(id),
   italy: (id) => /^mur(-institution)?:/.test(id),
+  spain: (id) => /^ruct:/.test(id),
 };

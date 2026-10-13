@@ -16,6 +16,8 @@ describe("source ownership", () => {
     ["daad-academy:srh-university@berlin", "daad"],
     ["studyfinder:116", "hungary"],
     ["studyfinder-institution:university-of-debrecen@debrecen", "hungary"],
+    ["ruct:001", "spain"],
+    ["ruct:001:2504059", "spain"],
   ];
 
   it("gives every source id to exactly one source", () => {
