@@ -757,6 +757,15 @@ describe("checkChannel Spanish wording", () => {
     expect(checkChannel("es-unedasiss", both).ok).toBe(false);
     expect(checkChannel("es-preinscripcion-regional", both).ok).toBe(false);
   });
+  it("fails both channels when a quote combines each channel's own terms (complementary excludes)", () => {
+    for (const quote of [
+      "La acreditación de UNED es obligatoria; presenta la solicitud de admisión.",
+      "The admission application requires the acreditación de UNED.",
+    ]) {
+      expect(checkChannel("es-unedasiss", quote).ok, quote).toBe(false);
+      expect(checkChannel("es-preinscripcion-regional", quote).ok, quote).toBe(false);
+    }
+  });
   it("lists both Spanish slugs among the channels the verifier knows", () => {
     expect(CHANNEL_SLUGS).toContain("es-unedasiss");
     expect(CHANNEL_SLUGS).toContain("es-preinscripcion-regional");

@@ -719,6 +719,13 @@ export function checkRecurringDeadline(month: number, day: number, quote: string
     : fail(`the quote does not state the day ${day} and the month ${month}`);
 }
 
+// The two Spanish channels: each channel's exclude set is exactly the OTHER channel's include regex,
+// so a quote that names both fails both and no quote can validate both channels.
+const ES_UNEDASISS_CHANNEL =
+  /\bUNEDasiss\b|\bcredencial\b|\bPCEs?\b|Pruebas de Competencias Espec[ií]ficas|acreditaci[oó]n de UNED/i;
+const ES_PREINSCRIPCION_CHANNEL =
+  /preinscripci[oó]n|distrito [uú]nico|distrito universitario|solicitud de admisi[oó]n|admission application/i;
+
 const CHANNEL_WORDS: Record<string, RegExp> = {
   "fr-parcoursup": /parcoursup/i,
   "fr-campus-france": /campus\s*france|[eé]tudes en france/i,
@@ -741,11 +748,9 @@ const CHANNEL_WORDS: Record<string, RegExp> = {
     /online application (?:form|system|portal|platform|site)|application (?:portal|platform|system)|apply online|application form[^.]{0,60}(?:university|ateneo)|apply (?:directly )?(?:online )?(?:on|at|to|through|via) the (?:website of the |own )?(?:university|ateneo)|(?:university|ateneo)'?s? (?:own )?(?:application|admission) (?:portal|platform|form|system)/i,
   // UNEDasiss: the route for a foreign-qualification applicant, via the credencial and the PCE
   // ("Pruebas de Competencias Específicas") that UNED runs.
-  "es-unedasiss":
-    /\bUNEDasiss\b|\bcredencial\b|\bPCEs?\b|Pruebas de Competencias Espec[ií]ficas|acreditaci[oó]n de UNED/i,
+  "es-unedasiss": ES_UNEDASISS_CHANNEL,
   // the region's preinscripción (Distrito Único) or the university's own admission application
-  "es-preinscripcion-regional":
-    /preinscripci[oó]n|distrito [uú]nico|distrito universitario|solicitud de admisi[oó]n|admission application/i,
+  "es-preinscripcion-regional": ES_PREINSCRIPCION_CHANNEL,
 };
 
 // A quote that names another channel is not evidence for this one, whatever else it says.
@@ -757,10 +762,9 @@ const CHANNEL_EXCLUDES: Record<string, RegExp> = {
   // not about a Moroccan applicant living abroad ("non-EU" is fine)
   "it-university-direct":
     /universitaly|(?<!non[- ])\bEU\b|italian (?:citizens|students|applicants)|(?:legally )?resid(?:ing|ent)s? in italy|\bEEA\b|italian (?:nationals|residents)|(?:living|already) in italy|cittadini italiani|comunitari/i,
-  // the two Spanish channels are mutually exclusive
-  "es-unedasiss": /preinscripci[oó]n|distrito [uú]nico|distrito universitario/i,
-  "es-preinscripcion-regional":
-    /\bUNEDasiss\b|\bcredencial\b|\bPCEs?\b|competencias espec[ií]ficas/i,
+  // the two Spanish channels are mutually exclusive: each excludes the other's full include set
+  "es-unedasiss": ES_PREINSCRIPCION_CHANNEL,
+  "es-preinscripcion-regional": ES_UNEDASISS_CHANNEL,
 };
 
 export function checkChannel(slug: string, quote: string): FactCheck {
