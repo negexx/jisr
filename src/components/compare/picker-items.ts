@@ -1,4 +1,5 @@
 import type { SnapshotBundle } from "@/lib/snapshot/client";
+import { resolveProgramSlug } from "@/lib/snapshot/resolve-program-slug";
 
 import type { PickerItem } from "./compare-picker";
 
@@ -13,7 +14,7 @@ export function pickerItems(bundle: SnapshotBundle, slugs: readonly string[]): P
     bundle.institutions.flatMap((shard) => shard.institutions).map((i) => [i.slug, i]),
   );
   return slugs.map((slug): PickerItem => {
-    const program = programs.get(slug);
+    const program = programs.get(resolveProgramSlug(slug, bundle));
     if (program === undefined) return { kind: "missing", slug };
     const institution = institutions.get(program.institution);
     return {

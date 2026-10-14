@@ -36,6 +36,7 @@ import {
 
 import { SnapshotError } from "./errors";
 import { checkShardShape, parseManifest, programShardsIn } from "./manifest";
+import { resolveProgramSlug } from "./resolve-program-slug";
 import { createTextLookup, type TextLookup } from "./text";
 
 // Build-time reader for the statically generated program pages. `pnpm build` runs data:build
@@ -154,14 +155,46 @@ async function programShards(snapshot: BuildSnapshot): Promise<ProgramsShard[]> 
   );
 }
 
+async function liveProgramSlugs(snapshot: BuildSnapshot): Promise<Set<string>> {
+  return new Set(
+    (await programShards(snapshot)).flatMap((shard) => shard.programs.map((p) => p.slug)),
+  );
+}
+
+// The alias map also holds former institution slugs: only a key that resolves to a live programme
+// is a programme alias.
+function programAliases(snapshot: BuildSnapshot, live: ReadonlySet<string>): Map<string, string> {
+  const found = new Map<string, string>();
+  for (const former of Object.keys(snapshot.manifest.aliases ?? {})) {
+    const target = resolveProgramSlug(former, snapshot.manifest);
+    if (live.has(target) && !live.has(former)) found.set(former, target);
+  }
+  return found;
+}
+
+// The slugs that have a programme page of their own, sorted: what the sitemap lists.
+export async function programSlugs(dir: string = DEFAULT_DIR): Promise<string[]> {
+  return [...(await liveProgramSlugs(await readBuildSnapshot(dir)))].sort();
+}
+
+// Live slugs plus former slugs: the page at a former slug is a redirect to the current one.
 export async function programStaticParams(
   dir: string = DEFAULT_DIR,
 ): Promise<Array<{ slug: string }>> {
   const snapshot = await readBuildSnapshot(dir);
-  const slugs = new Set(
-    (await programShards(snapshot)).flatMap((shard) => shard.programs.map((p) => p.slug)),
-  );
+  const live = await liveProgramSlugs(snapshot);
+  const slugs = new Set([...live, ...programAliases(snapshot, live).keys()]);
   return [...slugs].sort().map((slug) => ({ slug }));
+}
+
+// The slug a renamed programme is published under now, or null when `slug` is not a former
+// programme slug.
+export async function programAliasTarget(
+  slug: string,
+  dir: string = DEFAULT_DIR,
+): Promise<string | null> {
+  const snapshot = await readBuildSnapshot(dir);
+  return programAliases(snapshot, await liveProgramSlugs(snapshot)).get(slug) ?? null;
 }
 
 // Advice about the destination country's own student aid, from a route into that country. Shown on

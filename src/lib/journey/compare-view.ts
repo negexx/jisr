@@ -5,6 +5,7 @@ import { scholarshipsForProgram } from "@/domain/scholarships";
 import type { CostEstimate, FactRef, IntakeStatus } from "@/domain/types";
 import type { AppLocale } from "@/i18n/routing";
 import type { SnapshotBundle } from "@/lib/snapshot/client";
+import { resolveProgramSlug } from "@/lib/snapshot/resolve-program-slug";
 import type { DataText } from "@/lib/snapshot/text";
 import { COMPARE_ROWS, type CompareRowId } from "./compare-rows";
 import {
@@ -140,7 +141,7 @@ export function buildCompareView(input: CompareInput): CompareView {
   const programs: CompareProgram[] = [];
   const missing: string[] = [];
   for (const slug of slugs) {
-    const program = catalogue.find((p) => p.slug === slug);
+    const program = catalogue.find((p) => p.slug === resolveProgramSlug(slug, bundle));
     if (program === undefined) {
       missing.push(slug);
       continue;
@@ -151,7 +152,8 @@ export function buildCompareView(input: CompareInput): CompareView {
       (c) => c.slug === program.applicationChannel.value,
     );
     programs.push({
-      slug: program.slug,
+      // The requested slug, which the picker and the selection are keyed by.
+      slug,
       name: card.name,
       institutionName: card.institutionName,
       cityName: card.cityName,

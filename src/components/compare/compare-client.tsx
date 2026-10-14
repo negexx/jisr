@@ -17,6 +17,7 @@ import { useProfile } from "@/lib/profile/use-profile";
 import { useSaved } from "@/lib/saved/use-saved";
 import type { SnapshotClient } from "@/lib/snapshot/client";
 import { shardsForPlan } from "@/lib/snapshot/plan";
+import { resolveProgramSlug } from "@/lib/snapshot/resolve-program-slug";
 import { type SnapshotRequest, useSnapshotBundle } from "@/lib/snapshot/use-snapshot";
 import { CompareGrid, DifferencesSwitch } from "./compare-grid";
 import { ComparePicker } from "./compare-picker";
@@ -94,7 +95,9 @@ export function CompareClient({ locale, client }: { locale: AppLocale; client?: 
   const available = useMemo(() => {
     if (bundle === null) return [];
     const known = new Set(bundle.programs.flatMap((shard) => shard.programs.map((p) => p.slug)));
-    return items.map((item) => item.slug).filter((slug) => known.has(slug));
+    return items
+      .map((item) => item.slug)
+      .filter((slug) => known.has(resolveProgramSlug(slug, bundle)));
   }, [bundle, items]);
   const rows = useMemo(
     () =>

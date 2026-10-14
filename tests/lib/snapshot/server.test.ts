@@ -4,7 +4,13 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { type Manifest, shardNames } from "@/data-schema/snapshot";
 import { scholarshipsForProgram } from "@/domain/scholarships";
 import { SnapshotError } from "@/lib/snapshot/errors";
-import { loadProgramPageData, programStaticParams, readBuildSnapshot } from "@/lib/snapshot/server";
+import {
+  loadProgramPageData,
+  programAliasTarget,
+  programSlugs,
+  programStaticParams,
+  readBuildSnapshot,
+} from "@/lib/snapshot/server";
 
 import { E2E_PROFILE, E2E_SCHOLARSHIP_SLUGS, E2E_SLUGS } from "../../fixtures/e2e/profiles";
 import {
@@ -16,6 +22,8 @@ import {
   readManifest,
   removeTempDirs,
 } from "./fixture";
+
+const FORMER_SLUG = "xx-test-prog-old-ok";
 
 let base = "";
 let empty = "";
@@ -53,16 +61,58 @@ describe("readBuildSnapshot", () => {
 });
 
 describe("programStaticParams", () => {
-  it("lists every fixture program slug, sorted and unique", async () => {
+  it("lists every fixture program slug and every former slug, sorted and unique", async () => {
     expect(await programStaticParams(base)).toEqual(
-      Object.values(E2E_SLUGS)
-        .sort()
-        .map((slug) => ({ slug })),
+      [...Object.values(E2E_SLUGS), FORMER_SLUG].sort().map((slug) => ({ slug })),
     );
   });
 
   it("returns [] for an empty catalogue", async () => {
     expect(await programStaticParams(empty)).toEqual([]);
+  });
+});
+
+describe("programSlugs", () => {
+  it("lists the live slugs only, so a redirecting former slug stays out of the sitemap", async () => {
+    expect(await programSlugs(base)).toEqual(Object.values(E2E_SLUGS).sort());
+    expect(await programSlugs(empty)).toEqual([]);
+  });
+});
+
+describe("programAliasTarget", () => {
+  it("returns the current slug of a renamed programme", async () => {
+    expect(await programAliasTarget(FORMER_SLUG, base)).toBe(E2E_SLUGS.ok);
+  });
+
+  it.each([
+    ["a live slug", E2E_SLUGS.ok],
+    ["a slug that is neither live nor aliased", "xx-test-prog-never-existed"],
+  ])("returns null for %s", async (_name, slug) => {
+    expect(await programAliasTarget(slug, base)).toBeNull();
+  });
+
+  it("returns null for a former institution slug, which is not a programme", async () => {
+    const dir = buildVariant([
+      {
+        file: "institutions/xx-test-inst-pub-b.yaml",
+        from: "slug: xx-test-inst-pub-b\n",
+        to: "slug: xx-test-inst-pub-b\nformerSlugs: [xx-test-inst-old-b]\n",
+      },
+    ]);
+    expect((await readBuildSnapshot(dir)).manifest.aliases).toEqual({
+      [FORMER_SLUG]: E2E_SLUGS.ok,
+      "xx-test-inst-old-b": "xx-test-inst-pub-b",
+    });
+    expect(await programAliasTarget("xx-test-inst-old-b", dir)).toBeNull();
+    expect(await programStaticParams(dir)).not.toContainEqual({ slug: "xx-test-inst-old-b" });
+  });
+
+  it("returns null when the catalogue is empty", async () => {
+    expect(await programAliasTarget(FORMER_SLUG, empty)).toBeNull();
+  });
+
+  it("leaves the former slug itself without page data: the page redirects instead of rendering", async () => {
+    expect(await loadProgramPageData(FORMER_SLUG, "en", base)).toBeNull();
   });
 });
 

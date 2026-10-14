@@ -35,6 +35,8 @@ export type SnapshotBundle = {
   scholarships: ScholarshipsShard[];
   text: TextLookup;
   hasPrograms: boolean;
+  // Former programme slug to its current slug, from the manifest; see resolveProgramSlug.
+  aliases?: Readonly<Record<string, string>>;
 };
 
 export type SnapshotClient = {
@@ -101,6 +103,7 @@ function assembleBundle(manifest: Manifest, shards: readonly Shard[], locale: Ap
     costProfiles: [],
     scholarships: [],
     hasPrograms: programShardsIn(manifest).length > 0,
+    aliases: manifest.aliases ?? {},
   };
   const texts: TextShard[] = [];
   for (const shard of shards) {

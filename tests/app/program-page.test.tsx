@@ -33,6 +33,7 @@ vi.mock("@/lib/snapshot/server", async (importOriginal) => {
   return {
     ...actual,
     programStaticParams: () => actual.programStaticParams(snapshot.dir),
+    programAliasTarget: (slug: string) => actual.programAliasTarget(slug, snapshot.dir),
     loadProgramPageData: async (slug: string, locale: AppLocale) => {
       const data = await actual.loadProgramPageData(slug, locale, snapshot.dir);
       if (data === null) return data;
@@ -128,6 +129,7 @@ vi.mock("@/components/program/page-freshness-banner", async (importOriginal) => 
 const page = await import("@/app/[locale]/programs/[slug]/page");
 
 const SLUGS = Object.values(E2E_SLUGS);
+const FORMER_SLUG = "xx-test-prog-old-ok";
 const LOCALES: readonly AppLocale[] = ["fr", "en", "ar"];
 const OFFICIAL_WORD: Record<AppLocale, RegExp> = {
   en: /official/i,
@@ -198,9 +200,9 @@ describe("program page: static params and routing", () => {
     expect(page.dynamicParams).toBe(false);
   });
 
-  it("returns every fixture slug (the layout adds the locales)", async () => {
+  it("returns every fixture slug and the former slug of the renamed one (the layout adds the locales)", async () => {
     const params = await page.generateStaticParams();
-    expect(params.map((p) => p.slug).sort()).toEqual([...SLUGS].sort());
+    expect(params.map((p) => p.slug).sort()).toEqual([...SLUGS, FORMER_SLUG].sort());
   });
 
   it("returns no params, without throwing, for an empty catalogue", async () => {
@@ -220,6 +222,22 @@ describe("program page: static params and routing", () => {
     await expect(page.generateMetadata({ params })).rejects.toMatchObject({
       digest: expect.stringContaining("404"),
     });
+  });
+
+  it.each(
+    LOCALES,
+  )("redirects a former slug to the current slug, keeping the locale prefix (%s)", async (locale) => {
+    const params = Promise.resolve({ locale, slug: FORMER_SLUG });
+    await expect(page.default({ params })).rejects.toMatchObject({
+      digest: `NEXT_REDIRECT;replace;/${locale}/programs/${E2E_SLUGS.ok};307;`,
+    });
+  });
+
+  it("keeps a former slug out of the index", async () => {
+    const metadata = await page.generateMetadata({
+      params: Promise.resolve({ locale: "fr", slug: FORMER_SLUG }),
+    });
+    expect(metadata.robots).toEqual({ index: false });
   });
 
   it.each(LOCALES)("builds a title and description from the program (%s)", async (locale) => {

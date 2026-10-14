@@ -7,6 +7,7 @@ import { matchProgram } from "@/domain/match";
 import { scholarshipsForProgram } from "@/domain/scholarships";
 import type { ChecklistReasonCode, ChecklistStepId, FactRef, IntakeStatus } from "@/domain/types";
 import type { SnapshotBundle } from "@/lib/snapshot/client";
+import { resolveProgramSlug } from "@/lib/snapshot/resolve-program-slug";
 import type { DataText } from "@/lib/snapshot/text";
 
 import { groupOf, type MatchGroup, uniqueFacts } from "./matches-view";
@@ -67,7 +68,7 @@ export function buildPlanView({ profile, bundle, saved, now }: PlanInput): PlanV
   };
 
   const entries = saved.map((item): PlanProgram | PlanMissing => {
-    const program = programs.find((p) => p.slug === item.slug);
+    const program = programs.find((p) => p.slug === resolveProgramSlug(item.slug, bundle));
     if (program === undefined) return { kind: "missing", slug: item.slug };
 
     const match = matchProgram({ profile, program, routes, reference: core, now });
@@ -87,7 +88,8 @@ export function buildPlanView({ profile, bundle, saved, now }: PlanInput): PlanV
 
     return {
       kind: "program",
-      slug: program.slug,
+      // The saved slug, not the current one: the saved list and the ticked steps are keyed by it.
+      slug: item.slug,
       name: program.name,
       institutionName: institution?.name ?? program.institution,
       cityName: institution?.city.name ?? program.city,
