@@ -1,0 +1,6 @@
+code: XB
+name:
+  fr: { text: Pays test B, status: reviewed }
+  en: { text: Test country B, status: reviewed }
+  ar: { text: بلد الاختبار ب, status: reviewed }
+currency: XTS

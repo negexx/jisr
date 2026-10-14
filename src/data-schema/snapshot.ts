@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { type CountryCode, type Locale, LocaleSchema, type Slug } from "./primitives";
+import { type CountryCode, type Locale, LocaleSchema, type Slug, SlugSchema } from "./primitives";
 import type {
   AdmissionRoute,
   ApplicationChannel,
@@ -90,5 +90,7 @@ export const ManifestSchema = z.strictObject({
   generatedAt: z.string(), // ISO 8601 datetime; excluded from all hashes
   locales: z.array(LocaleSchema).min(1), // always ["fr","en","ar"]
   shards: z.record(z.string(), ManifestShardSchema),
+  // formerSlug -> current slug, absent while no record renames (ADR 0005 item 11).
+  aliases: z.record(SlugSchema, SlugSchema).optional(),
 });
 export type Manifest = z.infer<typeof ManifestSchema>;
