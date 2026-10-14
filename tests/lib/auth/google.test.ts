@@ -44,14 +44,14 @@ function base64url(value: unknown): string {
   return Buffer.from(JSON.stringify(value)).toString("base64url");
 }
 
-function unsignedIdToken(email: string): string {
+function unsignedIdToken(email: string, emailVerified: boolean): string {
   const nowS = Math.floor(Date.now() / 1000);
   const claims = {
     iss: "https://accounts.google.com",
     aud: GOOGLE_CLIENT_ID,
     sub: `google-sub-${email}`,
     email,
-    email_verified: true,
+    email_verified: emailVerified,
     name: "Student",
     iat: nowS,
     exp: nowS + 3600,
@@ -66,13 +66,24 @@ async function googleProvider() {
   return provider;
 }
 
-async function stubGoogleTokenExchange(email: string): Promise<void> {
+const RAW_ACCESS_TOKEN = "test-access-token";
+const RAW_REFRESH_TOKEN = "test-refresh-token";
+
+async function stubGoogleTokenExchange(email: string, emailVerified = true): Promise<void> {
   const provider = await googleProvider();
   vi.spyOn(provider, "validateAuthorizationCode").mockResolvedValue({
     tokenType: "Bearer",
-    accessToken: "test-access-token",
-    idToken: unsignedIdToken(email),
+    accessToken: RAW_ACCESS_TOKEN,
+    refreshToken: RAW_REFRESH_TOKEN,
+    idToken: unsignedIdToken(email, emailVerified),
   });
+}
+
+async function insertPending(email: string, consentVersion: string): Promise<void> {
+  await pool.query(
+    "insert into pending_signups (email, age_confirmed, consent_version, consented_at, expires_at) values ($1, true, $2, now(), $3)",
+    [email, consentVersion, new Date(Date.now() + 60 * 60 * 1000)],
+  );
 }
 
 function cookieHeader(response: Response): string {
@@ -112,8 +123,9 @@ async function finishGoogleSignIn({ state, cookie }: Started): Promise<Response>
 async function signInWithGoogle(
   email: string,
   additionalData?: Record<string, unknown>,
+  emailVerified = true,
 ): Promise<string | null> {
-  await stubGoogleTokenExchange(email);
+  await stubGoogleTokenExchange(email, emailVerified);
   const response = await finishGoogleSignIn(await startGoogleSignIn(additionalData));
   expect(response.status).toBe(302);
   const location = new URL(response.headers.get("location") ?? "", ORIGIN);
@@ -273,17 +285,75 @@ describe("google sign-up admission", () => {
     expect(rows).toEqual([{ user_id: "existing", provider_id: "google" }]);
   });
 
-  it("rejects a create outside the OAuth callback without reading OAuth state", async () => {
+  it("ignores a current pending row for the Google email when the OAuth state has no evidence", async () => {
+    // A pending row is typed by whoever submitted the signup form, possibly not the owner.
+    await insertPending("new@example.com", CURRENT_CONSENT_VERSION);
+    expect(await signInWithGoogle("new@example.com")).toBe("AGE_NOT_CONFIRMED");
+    expect(await count("user")).toBe(0);
+    expect(await count("account")).toBe(0);
+  });
+
+  it("does not let a pending row stamp consent the OAuth state lacks", async () => {
+    await insertPending("new@example.com", CURRENT_CONSENT_VERSION);
+    expect(await signInWithGoogle("new@example.com", { ageConfirmed: true })).toBeNull();
+    expect(await users()).toEqual([
+      { email: "new@example.com", consent_version: null, consented_at: null },
+    ]);
+  });
+
+  it.each([
+    ["Google's ID-token sign-in", { path: "/sign-in/social" }],
+    ["a server call with no request context", null],
+  ])("rejects a create from %s even with a current pending row", async (_label, ctx) => {
+    await insertPending("new@example.com", CURRENT_CONSENT_VERSION);
     const before = auth.options.databaseHooks?.user?.create?.before;
     if (!before) throw new Error("the create.before gate hook is not registered");
     await expect(
       before(
-        { email: "new@example.com", name: "Student" } as never,
-        {
-          path: "/sign-in/social",
-        } as never,
+        { email: "new@example.com", name: "Student", emailVerified: true } as never,
+        ctx as never,
       ),
     ).rejects.toMatchObject({ status: "BAD_REQUEST", body: { code: "AGE_NOT_CONFIRMED" } });
+    expect(await count("user")).toBe(0);
+  });
+
+  it("rejects the callback path uniformly when no OAuth state is in scope", async () => {
+    const before = auth.options.databaseHooks?.user?.create?.before;
+    if (!before) throw new Error("the create.before gate hook is not registered");
+    await expect(
+      before(
+        { email: "new@example.com", name: "Student", emailVerified: true } as never,
+        { path: "/callback/:id" } as never,
+      ),
+    ).rejects.toMatchObject({ status: "BAD_REQUEST", body: { code: "AGE_NOT_CONFIRMED" } });
+  });
+
+  it("creates no user for a Google identity whose email is not verified", async () => {
+    const error = await signInWithGoogle(
+      "new@example.com",
+      { ageConfirmed: true, consentVersion: CURRENT_CONSENT_VERSION },
+      false,
+    );
+    expect(error).toBe("OAUTH_EMAIL_NOT_VERIFIED");
+    expect(await count("user")).toBe(0);
+    expect(await count("account")).toBe(0);
+  });
+
+  it("stores the Google access and refresh tokens encrypted", async () => {
+    expect(
+      await signInWithGoogle("new@example.com", {
+        ageConfirmed: true,
+        consentVersion: CURRENT_CONSENT_VERSION,
+      }),
+    ).toBeNull();
+    const { rows } = await pool.query<{ access_token: string; refresh_token: string }>(
+      "select access_token, refresh_token from account",
+    );
+    expect(rows).toHaveLength(1);
+    expect(rows[0]?.access_token).toBeTruthy();
+    expect(rows[0]?.access_token).not.toContain(RAW_ACCESS_TOKEN);
+    expect(rows[0]?.refresh_token).toBeTruthy();
+    expect(rows[0]?.refresh_token).not.toContain(RAW_REFRESH_TOKEN);
   });
 });
 

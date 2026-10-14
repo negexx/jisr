@@ -23,17 +23,45 @@ import { readPendingSignup } from "./pending-signup";
 const MAGIC_LINK_EXPIRY_S = 15 * 60;
 
 const OAUTH_CALLBACK_PATH = "/callback/:id";
+const MAGIC_LINK_VERIFY_PATH = "/magic-link/verify";
 
-// Google sign-up evidence rides the OAuth state: the client's additionalData is stored server
-// side at /sign-in/social and parsed back on the callback, so it cannot be changed in between,
-// but it is still self-declared and confirmationFromOAuthState validates it strictly. Only the
-// callback has a parsed state; every other create path (magic link, the ID-token sign-in, server
-// calls) carries none and relies on the pending-signup row.
-async function admissionConfirmationFromHookContext(
+// getOAuthState throws outside a Better Auth request scope; that is simply "no evidence".
+async function readOAuthState(): Promise<unknown> {
+  try {
+    return await getOAuthState();
+  } catch {
+    return null;
+  }
+}
+
+function googleEmailNotVerifiedError(): APIError {
+  return new APIError("BAD_REQUEST", {
+    message: "Google has not verified this email address.",
+    code: "OAUTH_EMAIL_NOT_VERIFIED",
+  });
+}
+
+// Evidence is scoped to the path that creates the user (see admission.ts). Google evidence rides
+// the OAuth state: the client's additionalData is stored server side at /sign-in/social and parsed
+// back on the callback, so it cannot change in between, but it is self-declared and
+// confirmationFromOAuthState validates it strictly. The pending row is read only on the
+// magic-link verify, where following the emailed link proves the address. Every other path
+// (Google's ID-token sign-in, server calls) has no evidence and is rejected.
+async function admissionEvidence(
+  user: { email: string; emailVerified?: boolean },
   ctx: { path?: string } | null,
-): Promise<AdmissionConfirmation> {
-  if (ctx?.path !== OAUTH_CALLBACK_PATH) return { ageConfirmed: false, consentVersion: null };
-  return confirmationFromOAuthState(await getOAuthState());
+): Promise<AdmissionConfirmation | null> {
+  switch (ctx?.path) {
+    case OAUTH_CALLBACK_PATH:
+      // Without a verified address a Google identity could pre-create an account for an email it
+      // does not own, which the real owner would later be linked into.
+      if (user.emailVerified !== true) throw googleEmailNotVerifiedError();
+      return confirmationFromOAuthState(await readOAuthState());
+    case MAGIC_LINK_VERIFY_PATH:
+      return readPendingSignup(user.email);
+    default:
+      return null;
+  }
 }
 
 function accountsDisabledError(): APIError {
@@ -65,6 +93,8 @@ export const auth = betterAuth({
   // Project rule: never record IPs. Better Auth then also skips its IP-keyed rate limiter, so
   // throttling of auth emails must live in our own code (the email_cooldowns slot).
   advanced: { ipAddress: { disableIpTracking: true } },
+  // Encrypts the stored provider access and refresh tokens with the auth secret.
+  account: { encryptOAuthTokens: true },
   socialProviders: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID ?? "",
@@ -94,10 +124,8 @@ export const auth = betterAuth({
           // Defence in depth behind the accounts gate plugin: auth.api.* server calls and
           // anything else that skips the HTTP handler still cannot create a user while off.
           if (!accountsEnabled()) throw accountsDisabledError();
-          const pending = await readPendingSignup(user.email);
           const decision = evaluateAdmission(
-            await admissionConfirmationFromHookContext(ctx),
-            pending,
+            await admissionEvidence(user, ctx),
             new Date(),
             CURRENT_CONSENT_VERSION,
           );

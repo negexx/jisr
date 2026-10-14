@@ -3,13 +3,21 @@
 // src/lib/auth/server.ts (`databaseHooks.user.create.before`), which resolves the evidence
 // and defers every decision to `evaluateAdmission`.
 //
+// Evidence is scoped to the sign-in path, one source each, never combined:
+//   /callback/:id        (Google redirect) -> the OAuth state only
+//   /magic-link/verify   (magic link)      -> the pending-signup row only
+//   anything else, or no request context  -> no evidence, so the create is rejected
+// A pending row is typed by whoever submitted the signup form, so it must never vouch for an
+// account created through another path.
+//
 // Fixed outcomes (plan B1/B2):
 //   age >= 16 confirmation missing  -> reject (throw; no user row)
 //   age confirmed, consent missing  -> allow, consent fields NULL (features stay gated
 //                                      by the first-login "finish signup" gate until the
 //                                      student consents)
 //   age confirmed, consent present  -> allow, stamp consent_version + consented_at now
-//   consent naming another version  -> treated as missing (allow, NULL), never stamped
+//   consent not exactly the current -> treated as missing (allow, NULL), never stamped
+//   version (padding included)
 //
 // `validateUserInfo` runs BEFORE `databaseHooks.user.create.before` and `input: false`
 // keeps consent fields out of user input, so this gate only ever sees server-resolved
@@ -21,7 +29,7 @@ export type AdmissionConfirmation = {
   consentVersion: string | null;
 };
 
-/** A pending-signup row (magic link, keyed by email) or validated OAuth state (Google). */
+/** A pending-signup row: the magic-link evidence, keyed by email. */
 export type PendingSignup = {
   email: string;
   ageConfirmed: boolean;
@@ -32,28 +40,15 @@ export type AdmissionDecision =
   | { kind: "reject"; code: "age_not_confirmed" }
   | { kind: "allow"; consentVersion: string | null; consentedAt: Date | null };
 
-/** A consent version is present only as a non-empty, trimmed string; anything else is absent. */
-export function normalizeConsentVersion(value: unknown): string | null {
-  if (typeof value !== "string") return null;
-  const trimmed = value.trim();
-  return trimmed === "" ? null : trimmed;
-}
-
 export function evaluateAdmission(
-  confirmation: AdmissionConfirmation,
-  pendingSignup: PendingSignup | null,
+  evidence: AdmissionConfirmation | null,
   now: Date,
   currentVersion: string,
 ): AdmissionDecision {
-  const ageConfirmed = confirmation.ageConfirmed || pendingSignup?.ageConfirmed === true;
-  if (!ageConfirmed) return { kind: "reject", code: "age_not_confirmed" };
-
-  const evidence = [confirmation.consentVersion, pendingSignup?.consentVersion ?? null];
-  const consentsToCurrent = evidence.some(
-    (version) => normalizeConsentVersion(version) === currentVersion,
-  );
-  if (!consentsToCurrent) return { kind: "allow", consentVersion: null, consentedAt: null };
-
+  if (evidence?.ageConfirmed !== true) return { kind: "reject", code: "age_not_confirmed" };
+  if (evidence.consentVersion !== currentVersion) {
+    return { kind: "allow", consentVersion: null, consentedAt: null };
+  }
   return { kind: "allow", consentVersion: currentVersion, consentedAt: now };
 }
 
