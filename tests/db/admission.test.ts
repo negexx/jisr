@@ -55,11 +55,13 @@ function redirectLocation(error: unknown): string | null {
 // The real sign-in path: request a magic link, then follow it. Better Auth answers a verify
 // with a redirect; a gate rejection shows up as `?error=<code>` on the redirect target.
 async function signInWithMagicLink(email: string): Promise<{ error: string | null }> {
-  await auth.api.signInMagicLink({ body: { email }, headers: new Headers() });
+  const headers = () =>
+    new Headers({ "x-forwarded-for": "203.0.113.7", "user-agent": "jisr-test-agent" });
+  await auth.api.signInMagicLink({ body: { email }, headers: headers() });
   const link = sentLinks.at(-1);
   if (link?.to !== email) throw new Error("no magic link was sent");
   try {
-    await auth.api.magicLinkVerify({ query: { token: link.token }, headers: new Headers() });
+    await auth.api.magicLinkVerify({ query: { token: link.token }, headers: headers() });
   } catch (error) {
     const location = redirectLocation(error);
     if (location === null) throw error;
@@ -72,7 +74,8 @@ beforeAll(async () => {
   testDb = await startTestDatabase({ port: 0 });
   pool = new Pool({ connectionString: testDb.databaseUrl });
   // @/db builds its pool from DATABASE_URL at import time, so point it at the harness first.
-  process.env.DATABASE_URL = testDb.databaseUrl;
+  // The server asks for Asia/Tokyo at startup; the app pool must still end up on UTC.
+  process.env.DATABASE_URL = `${testDb.databaseUrl}&options=-c%20timezone%3DAsia%2FTokyo`;
   process.env.BETTER_AUTH_SECRET = "test-secret-test-secret-test-secret-0123";
   process.env.BETTER_AUTH_URL = "http://localhost:3000";
   ({ auth } = await import("@/lib/auth/server"));
@@ -85,6 +88,7 @@ beforeEach(async () => {
   sentLinks.length = 0;
   await pool.query('delete from "user"');
   await pool.query("delete from verification");
+  await pool.query("delete from session");
   await pool.query("delete from pending_signups");
 });
 
@@ -93,6 +97,14 @@ afterAll(async () => {
   await pool?.end();
   await testDb?.stop();
 }, TIMEOUT_MS);
+
+describe("app pool", () => {
+  it("pins the session time zone to UTC", async () => {
+    const { db } = await import("@/db");
+    const result = await db.$client.query<{ TimeZone: string }>("show timezone");
+    expect(result.rows[0]?.TimeZone).toBe("UTC");
+  });
+});
 
 describe("readPendingSignup", () => {
   it("finds a row by the normalised form of a messy address", async () => {
@@ -160,5 +172,20 @@ describe("admission gate against the database", () => {
     expect(rows).toHaveLength(1);
     expect(rows[0]?.consent_version).toBe("2026-10-14");
     expect(rows[0]?.consented_at).toBeInstanceOf(Date);
+  });
+
+  it("records no client IP on the session created by the magic-link flow", async () => {
+    await insertPending("new@example.com", {
+      expiresAt: IN_ONE_HOUR,
+      consentVersion: "2026-10-14",
+    });
+    // The request carries an x-forwarded-for header; with tracking disabled it must not land in the row.
+    expect(await signInWithMagicLink("new@example.com")).toEqual({ error: null });
+    const { rows } = await pool.query<{ ip_address: string | null }>(
+      "select ip_address from session",
+    );
+    expect(rows).toHaveLength(1);
+    // Better Auth writes "" rather than NULL when it has no address; either way no IP is stored.
+    expect([null, ""]).toContain(rows[0]?.ip_address);
   });
 });

@@ -11,10 +11,12 @@ import type { SavedList, SavedProgram } from "@/lib/saved/saved";
 // folder own the queries and call these at the edge.
 
 export type SavedProgramRow = typeof savedPrograms.$inferSelect;
+// created_at is set by the database, so it is not part of what the mappers write.
+export type SavedProgramInsert = Omit<SavedProgramRow, "createdAt">;
 export type ChecklistProgressRow = typeof checklistProgress.$inferSelect;
 export type ProfileRow = typeof profiles.$inferSelect;
 
-export function savedProgramToRow(userId: string, item: SavedProgram): SavedProgramRow {
+export function savedProgramToRow(userId: string, item: SavedProgram): SavedProgramInsert {
   return {
     userId,
     slug: item.slug,
@@ -25,10 +27,16 @@ export function savedProgramToRow(userId: string, item: SavedProgram): SavedProg
   };
 }
 
-// saved_at is a calendar date, so two saves on the same day tie; slug makes the order
-// deterministic (the original insertion order within a day is not stored).
+// saved_at is a calendar date, so same-day saves are ordered by created_at (insertion time);
+// slug is the final deterministic tie-break.
 export function rowsToSavedList(rows: readonly SavedProgramRow[]): SavedList {
-  const items = rows
+  const items = [...rows]
+    .sort(
+      (a, b) =>
+        a.savedAt.localeCompare(b.savedAt) ||
+        a.createdAt.getTime() - b.createdAt.getTime() ||
+        a.slug.localeCompare(b.slug),
+    )
     .map(
       (row): SavedProgram => ({
         slug: row.slug,
@@ -37,8 +45,7 @@ export function rowsToSavedList(rows: readonly SavedProgramRow[]): SavedList {
         snapshotVersion: row.snapshotVersion,
         savedAt: row.savedAt,
       }),
-    )
-    .sort((a, b) => a.savedAt.localeCompare(b.savedAt) || a.slug.localeCompare(b.slug));
+    );
   return { schemaVersion: SAVED_SCHEMA_VERSION, items };
 }
 

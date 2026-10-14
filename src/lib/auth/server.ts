@@ -27,6 +27,9 @@ export const auth = betterAuth({
   baseURL: process.env.BETTER_AUTH_URL,
   secret: process.env.BETTER_AUTH_SECRET,
   database: drizzleAdapter(db, { provider: "pg", schema }),
+  // Project rule: never record IPs. Better Auth then also skips its IP-keyed rate limiter, so
+  // throttling of auth emails must live in our own code (the pending_signups cooldown).
+  advanced: { ipAddress: { disableIpTracking: true } },
   socialProviders: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID ?? "",

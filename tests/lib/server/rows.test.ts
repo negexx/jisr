@@ -3,13 +3,14 @@ import { describe, expect, it } from "vitest";
 import { ProfileSchema } from "@/data-schema/profile";
 import { CHECKLIST_STEP_IDS } from "@/domain/types";
 import { type PlanProgress, parsePlanProgress } from "@/lib/plan/progress";
-import { parseSaved, type SavedList } from "@/lib/saved/saved";
+import { parseSaved, type SavedList, type SavedProgram } from "@/lib/saved/saved";
 import {
   planProgressToRows,
   profileToRow,
   rowsToPlanProgress,
   rowsToSavedList,
   rowToProfile,
+  type SavedProgramRow,
   savedProgramToRow,
 } from "@/lib/server/rows";
 
@@ -56,9 +57,17 @@ const PROFILE = ProfileSchema.parse({
   institutionType: "any",
 });
 
+// What the database returns: the insert shape plus created_at, `step` seconds after DONE_AT.
+function stored(item: SavedProgram, step = 0): SavedProgramRow {
+  return {
+    ...savedProgramToRow(USER_ID, item),
+    createdAt: new Date(DONE_AT.getTime() + step * 1000),
+  };
+}
+
 describe("saved programme rows", () => {
   it("round-trips a SavedList losslessly", () => {
-    const rows = SAVED.items.map((item) => savedProgramToRow(USER_ID, item));
+    const rows = SAVED.items.map((item) => stored(item));
     expect(rowsToSavedList(rows)).toEqual(SAVED);
   });
 
@@ -69,24 +78,36 @@ describe("saved programme rows", () => {
   });
 
   it("orders by saved_at ascending whatever order the rows arrive in", () => {
-    const rows = [...SAVED.items].reverse().map((item) => savedProgramToRow(USER_ID, item));
+    const rows = [...SAVED.items].reverse().map((item) => stored(item));
     expect(rowsToSavedList(rows).items.map((item) => item.slug)).toEqual([
       "xx-prog-a",
       "xx-prog-b",
     ]);
   });
 
-  it("breaks a same-day tie by slug so the order is deterministic", () => {
-    const sameDay = ["xx-prog-c", "xx-prog-a", "xx-prog-b"].map((slug) =>
-      savedProgramToRow(USER_ID, {
-        slug,
-        country: "FR",
-        field: "engineering",
-        snapshotVersion: "0123456789ab",
-        savedAt: "2026-09-01",
-      }),
-    );
-    expect(rowsToSavedList(sameDay).items.map((item) => item.slug)).toEqual([
+  const sameDayItem = (slug: string): SavedProgram => ({
+    slug,
+    country: "FR",
+    field: "engineering",
+    snapshotVersion: "0123456789ab",
+    savedAt: "2026-09-01",
+  });
+
+  it("keeps insertion order for two saves on the same day", () => {
+    const rows = [stored(sameDayItem("xx-prog-z"), 0), stored(sameDayItem("xx-prog-a"), 1)];
+    expect(rowsToSavedList(rows).items.map((item) => item.slug)).toEqual([
+      "xx-prog-z",
+      "xx-prog-a",
+    ]);
+    expect(rowsToSavedList([...rows].reverse()).items.map((item) => item.slug)).toEqual([
+      "xx-prog-z",
+      "xx-prog-a",
+    ]);
+  });
+
+  it("breaks a full tie (same day, same created_at) by slug so the order is deterministic", () => {
+    const rows = ["xx-prog-c", "xx-prog-a", "xx-prog-b"].map((slug) => stored(sameDayItem(slug)));
+    expect(rowsToSavedList(rows).items.map((item) => item.slug)).toEqual([
       "xx-prog-a",
       "xx-prog-b",
       "xx-prog-c",
@@ -94,7 +115,7 @@ describe("saved programme rows", () => {
   });
 
   it("returns what the client validator accepts", () => {
-    const rows = SAVED.items.map((item) => savedProgramToRow(USER_ID, item));
+    const rows = SAVED.items.map((item) => stored(item));
     expect(parseSaved(rowsToSavedList(rows))).toEqual(SAVED);
   });
 

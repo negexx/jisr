@@ -223,6 +223,21 @@ describe("user data schema on the harness", () => {
     expect(profileRow && rowToProfile(profileRow)).toEqual(PROFILE);
   });
 
+  it("keeps insertion order for two same-day saves read back through the mapper", async () => {
+    await insertUser("u-same-day");
+    // Alphabetical order is the reverse of insertion order, so only created_at can explain it.
+    await db.insert(schema.savedPrograms).values(savedRow("u-same-day", "xx-prog-z"));
+    await db.insert(schema.savedPrograms).values(savedRow("u-same-day", "xx-prog-a"));
+    const rows = await db
+      .select()
+      .from(schema.savedPrograms)
+      .where(eq(schema.savedPrograms.userId, "u-same-day"));
+    expect(rowsToSavedList(rows).items.map((item) => item.slug)).toEqual([
+      "xx-prog-z",
+      "xx-prog-a",
+    ]);
+  });
+
   it("rejects a duplicate (user_id, slug) saved programme", async () => {
     await insertUser("u-dup-saved");
     await db.insert(schema.savedPrograms).values(savedRow("u-dup-saved", "xx-prog-a"));
@@ -269,7 +284,9 @@ describe("user data schema on the harness", () => {
     ).toBe("23502");
   });
 
-  it("rejects a saved programme with a non-ISO or impossible saved_at", async () => {
+  // Postgres only rejects what it cannot parse as a date; it still accepts other layouts such
+  // as '10/14/2026'. Enforcing the ISO YYYY-MM-DD form is the Server Action's job (todo 13).
+  it("rejects an unparsable or impossible saved_at", async () => {
     await insertUser("u-bad-date");
     for (const savedAt of ["not-a-date", "2026-13-45", "2026-02-30"]) {
       const state = await sqlState(

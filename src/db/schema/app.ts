@@ -47,7 +47,7 @@ export const profiles = pgTable("profiles", {
   updatedAt: timestamptz("updated_at").notNull().defaultNow(),
 });
 
-// One row per saved programme. Order is saved_at ascending (rowsToSavedList).
+// One row per saved programme. Order is saved_at, then created_at, then slug (rowsToSavedList).
 export const savedPrograms = pgTable(
   "saved_programs",
   {
@@ -58,6 +58,8 @@ export const savedPrograms = pgTable(
     // Provenance, not a foreign key: the slug may stop existing in a newer snapshot.
     snapshotVersion: varchar("snapshot_version", { length: SNAPSHOT_VERSION_MAX_LENGTH }).notNull(),
     savedAt: date("saved_at", { mode: "string" }).notNull(),
+    // Orders same-day saves; clock_timestamp() (not now()) differs per row inside one transaction.
+    createdAt: timestamptz("created_at").notNull().default(sql`clock_timestamp()`),
   },
   (table) => [primaryKey({ columns: [table.userId, table.slug] })],
 );

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-
+import * as dbSchema from "@/db/schema";
 import { accountsEnabled } from "@/lib/auth/accounts-enabled";
 import { auth } from "@/lib/auth/server";
 
@@ -26,6 +26,21 @@ describe("better auth server config", () => {
     expect(fields.role.type).toBe("string");
     expect(fields.role.input).toBe(false);
     expect(fields.role.defaultValue).toBe("student");
+  });
+
+  it("maps every additional user field to a column of the generated user table", () => {
+    const fields = required(options.user?.additionalFields, "user.additionalFields");
+    const columns = Object.keys(dbSchema.user);
+    for (const name of Object.keys(fields)) {
+      expect(
+        columns,
+        `schema.user has no "${name}" column; regenerate src/db/schema/auth.ts`,
+      ).toContain(name);
+    }
+  });
+
+  it("disables IP tracking so session.ip_address is never filled", () => {
+    expect(options.advanced?.ipAddress?.disableIpTracking).toBe(true);
   });
 
   it("enables account deletion with a verification email callback", () => {

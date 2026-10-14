@@ -9,6 +9,7 @@
       "!node_modules",
       "!public/snapshots",
       "!src/db/schema/auth.ts",
+      "!drizzle",
       "!data-staging/proposals",
       "!data-staging/proposals-read",
       "!data-staging/proposals-enrich",

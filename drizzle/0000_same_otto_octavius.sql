@@ -42,6 +42,7 @@ CREATE TABLE "saved_programs" (
 	"field" text NOT NULL,
 	"snapshot_version" varchar(64) NOT NULL,
 	"saved_at" date NOT NULL,
+	"created_at" timestamp with time zone DEFAULT clock_timestamp() NOT NULL,
 	CONSTRAINT "saved_programs_user_id_slug_pk" PRIMARY KEY("user_id","slug")
 );
 --> statement-breakpoint
