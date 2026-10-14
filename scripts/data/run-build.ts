@@ -10,6 +10,7 @@ import {
   SNAPSHOT_FORMAT_VERSION,
 } from "@/data-schema/snapshot";
 
+import { aliasMapOf } from "./aliases";
 import { BuildError } from "./build-error";
 import { canonicalJson } from "./canonical-json";
 import { gzipSize, sha256Hex, shortHash } from "./hash";
@@ -18,7 +19,7 @@ import { loadData } from "./load-data";
 import { issueLine } from "./report";
 import { resolveCatalog } from "./resolve";
 import { buildShards } from "./shard";
-import { validateData } from "./validate";
+import { aliasRowsOf, validateData } from "./validate";
 
 export { BuildError } from "./build-error";
 
@@ -63,13 +64,16 @@ function invalidDataMessage(errors: readonly Issue[]): string {
   ].join("\n");
 }
 
-function renderShards(opts: BuildOptions): Rendered[] {
+function renderShards(opts: BuildOptions): {
+  rendered: Rendered[];
+  aliases: Record<string, string>;
+} {
   requireDataDir(opts.dataDir);
   const validation = validateData(loadData(opts.dataDir), { now: opts.now });
   if (validation.errors.length > 0) throw new BuildError(invalidDataMessage(validation.errors));
 
   const budget = opts.gzipBudgetBytes ?? SHARD_GZIP_BUDGET_BYTES;
-  return buildShards(resolveCatalog(validation.catalog)).map(({ name, shard }) => {
+  const rendered = buildShards(resolveCatalog(validation.catalog)).map(({ name, shard }) => {
     const bytes = Buffer.from(canonicalJson(shard), "utf8");
     const sha256 = sha256Hex(bytes);
     return {
@@ -80,9 +84,14 @@ function renderShards(opts: BuildOptions): Rendered[] {
       gzipBytes: assertShardBudget(name, bytes, budget),
     };
   });
+  return { rendered, aliases: aliasMapOf(aliasRowsOf(validation.catalog)) };
 }
 
-function manifestOf(rendered: readonly Rendered[], generatedAt: string): Manifest {
+function manifestOf(
+  rendered: readonly Rendered[],
+  generatedAt: string,
+  aliases: Record<string, string>,
+): Manifest {
   const snapshotVersion = shortHash(
     sha256Hex(canonicalJson(Object.fromEntries(rendered.map((r) => [r.name, r.sha256])))),
   );
@@ -97,13 +106,14 @@ function manifestOf(rendered: readonly Rendered[], generatedAt: string): Manifes
         { file: r.file, sha256: r.sha256, bytes: r.bytes.length, gzipBytes: r.gzipBytes },
       ]),
     ),
+    ...(Object.keys(aliases).length > 0 ? { aliases } : {}),
   });
 }
 
 export function runBuild(opts: BuildOptions): Manifest {
   // Everything that can fail runs before the out dir is touched.
-  const rendered = renderShards(opts);
-  const manifest = manifestOf(rendered, opts.generatedAt);
+  const { rendered, aliases } = renderShards(opts);
+  const manifest = manifestOf(rendered, opts.generatedAt, aliases);
 
   // The old manifest goes first: a crash mid-write must not leave it pointing at deleted shards.
   rmSync(path.join(opts.outDir, "manifest.json"), { force: true });

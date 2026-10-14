@@ -77,6 +77,38 @@ describe("buildPlanView", () => {
     ]);
   });
 
+  describe("renamed slugs", () => {
+    const FORMER = "xx-test-prog-old-ok";
+
+    it("builds a saved former slug from the programme it was renamed to, keeping the saved slug", () => {
+      expect(bundle.aliases).toEqual({ [FORMER]: E2E_SLUGS.ok });
+      const former = programEntry(FORMER);
+      const canonical = programEntry(E2E_SLUGS.ok);
+      expect(former.slug).toBe(FORMER);
+      expect({ ...former, slug: canonical.slug }).toEqual(canonical);
+    });
+
+    it("still reports a slug that is neither live nor aliased as missing", () => {
+      const view = buildPlanView({
+        profile: E2E_PROFILE,
+        bundle,
+        saved: [{ slug: "xx-test-prog-never-existed" }],
+        now: E2E_NOW,
+      });
+      expect(view.entries).toEqual([{ kind: "missing", slug: "xx-test-prog-never-existed" }]);
+    });
+
+    it("reports a former slug as missing when the map points at nothing in the bundle", () => {
+      const view = buildPlanView({
+        profile: E2E_PROFILE,
+        bundle: { ...bundle, aliases: { [FORMER]: "xx-test-prog-gone" } },
+        saved: [{ slug: FORMER }],
+        now: E2E_NOW,
+      });
+      expect(view.entries).toEqual([{ kind: "missing", slug: FORMER }]);
+    });
+  });
+
   it("returns no entries when nothing is saved", () => {
     expect(
       buildPlanView({ profile: E2E_PROFILE, bundle, saved: [], now: E2E_NOW }).entries,

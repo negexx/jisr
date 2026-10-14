@@ -1,0 +1,13 @@
+slug: xx-test-inst-d
+formerSlugs: [xx-test-inst-c]
+name: XX Test Institution D
+country: XB
+city: { slug: xx-test-city, name: XX Test City }
+type: public
+website: https://example.org/inst-d
+source: main
+info_kind: official
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01

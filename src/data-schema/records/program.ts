@@ -74,6 +74,9 @@ export const DocumentListSchema = z
 
 export const ProgramRecordSchema = z.strictObject({
   slug: SlugSchema,
+  // Slugs this program was published under before a rename; data:check keeps them disjoint from
+  // every live slug and the manifest alias map redirects them to the current slug (ADR 0005 item 11).
+  formerSlugs: z.array(SlugSchema).optional(),
   institution: SlugSchema,
   country: CountryCodeSchema,
   city: SlugSchema,

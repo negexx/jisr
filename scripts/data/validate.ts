@@ -7,6 +7,7 @@ import { COLLECTION_NAMES, COLLECTIONS } from "@/data-schema/records/collections
 import type { Freshness } from "@/data-schema/staleness";
 import { freshnessOf } from "@/data-schema/staleness";
 
+import { type AliasRow, checkAliases, type LiveId } from "./aliases";
 import type { FactUse } from "./facts";
 import { factUses, localizedTexts } from "./facts";
 import type { Issue, LoadedFile, LoadResult } from "./load-data";
@@ -113,6 +114,20 @@ function entriesOf(catalog: Catalog): Array<{
   return COLLECTION_NAMES.flatMap((collection) =>
     [...catalog[collection].values()].map((entry) => ({ collection, ...entry })),
   );
+}
+
+export function aliasRowsOf(catalog: Catalog): AliasRow[] {
+  return [...catalog.programs.values(), ...catalog.institutions.values()].map(
+    ({ file, record }) => ({ file, slug: record.slug, formerSlugs: record.formerSlugs ?? [] }),
+  );
+}
+
+function aliasIssues(catalog: Catalog): Issue[] {
+  const liveIds: LiveId[] = entriesOf(catalog).map(({ collection, file, record }) => ({
+    id: idOf(collection, record),
+    file,
+  }));
+  return checkAliases(aliasRowsOf(catalog), liveIds);
 }
 
 function provenance(
@@ -275,6 +290,7 @@ export function validateData(loaded: LoadResult, opts: { now: IsoDate }): Valida
       ...schemaErrors,
       ...prov.errors,
       ...checkReferences(catalog),
+      ...aliasIssues(catalog),
       ...productRuleErrors(catalog),
     ],
     warnings: [

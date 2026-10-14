@@ -20,6 +20,9 @@ import { SnapshotError } from "./errors";
 const SNAPSHOT_VERSION = /^[0-9a-f]{12}$/;
 const SHARD_FILE = /^s\/[A-Za-z0-9.-]+\.[0-9a-f]{12}\.json$/;
 const SHA256 = /^[0-9a-f]{64}$/;
+const COUNTRY = "[A-Z]{2}";
+const SLUG = "[a-z0-9]+(?:-[a-z0-9]+)*";
+const SLUG_ENTRY = new RegExp(`^${SLUG}$`);
 
 type ManifestShard = Manifest["shards"][string];
 
@@ -59,11 +62,33 @@ function parseShards(value: unknown): Manifest["shards"] | null {
   return shards;
 }
 
+// Same record semantics as parseShards, with a slug key and a slug value: Zod drops "__proto__"
+// keys without validating them and rejects a symbol key.
+function parseAliases(value: unknown): Manifest["aliases"] | null {
+  if (!isPlainObject(value)) return null;
+  const aliases: Record<string, string> = {};
+  for (const key of Reflect.ownKeys(value)) {
+    if (key === "__proto__" || !Object.prototype.propertyIsEnumerable.call(value, key)) continue;
+    if (typeof key !== "string") return null;
+    const entry = value[key];
+    if (!matches(key, SLUG_ENTRY) || !matches(entry, SLUG_ENTRY)) return null;
+    aliases[key] = entry;
+  }
+  return aliases;
+}
+
 // Throws a SnapshotError("format") without echoing anything from the input.
 export function parseManifest(json: unknown): Manifest {
   if (
     !isRecord(json) ||
-    !hasOnlyKeys(json, ["formatVersion", "snapshotVersion", "generatedAt", "locales", "shards"]) ||
+    !hasOnlyKeys(json, [
+      "formatVersion",
+      "snapshotVersion",
+      "generatedAt",
+      "locales",
+      "shards",
+      "aliases",
+    ]) ||
     json.formatVersion !== SNAPSHOT_FORMAT_VERSION
   ) {
     throw new SnapshotError("format");
@@ -71,20 +96,27 @@ export function parseManifest(json: unknown): Manifest {
   const { snapshotVersion, generatedAt } = json;
   const locales = parseEach(json.locales, parseLocale);
   const shards = parseShards(json.shards);
+  const aliases = json.aliases === undefined ? undefined : parseAliases(json.aliases);
   if (
     !matches(snapshotVersion, SNAPSHOT_VERSION) ||
     typeof generatedAt !== "string" ||
     locales === null ||
     locales.length < 1 ||
-    shards === null
+    shards === null ||
+    aliases === null
   ) {
     throw new SnapshotError("format");
   }
-  return { formatVersion: SNAPSHOT_FORMAT_VERSION, snapshotVersion, generatedAt, locales, shards };
+  return {
+    formatVersion: SNAPSHOT_FORMAT_VERSION,
+    snapshotVersion,
+    generatedAt,
+    locales,
+    shards,
+    ...(aliases !== undefined ? { aliases } : {}),
+  };
 }
 
-const COUNTRY = "[A-Z]{2}";
-const SLUG = "[a-z0-9]+(?:-[a-z0-9]+)*";
 const PROGRAMS_NAME = new RegExp(`^programs\\.(${COUNTRY})\\.(${SLUG})$`);
 const DESTINATION_NAME = new RegExp(`^(institutions|costs|scholarships)\\.(${COUNTRY})$`);
 const ROUTES_NAME = new RegExp(`^routes\\.(${COUNTRY})$`);

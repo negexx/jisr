@@ -153,7 +153,7 @@ const FORBIDDEN_IN_DOMAIN: ReadonlyArray<readonly [string, string]> = [
   ["@/db", importSource("@/db", "db")],
   ["@/db/schema/users", importSource("@/db/schema/users", "users")],
   ["@/lib/utils", importSource("@/lib/utils", "cn")],
-  ["@/lib/auth/server (multi-segment)", importSource("@/lib/auth/server", "auth")],
+  ["@/lib/auth/server (multi-segment)", importSource("@/lib/auth/server", "getAuth")],
   ["@/components/ui/button", importSource("@/components/ui/button", "Button")],
   ["@/app/page", importSource("@/app/page", "Page")],
   ["@/i18n/routing", importSource("@/i18n/routing", "routing")],

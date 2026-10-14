@@ -110,6 +110,65 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
 
+  # Race and transaction specs (tests/db-race/) need real concurrent connections, which the PGlite
+  # harness cannot give. They run against a throwaway Postgres service container; each spec works in
+  # its own `race_<random>` database. The password below is the container's throwaway one and guards
+  # nothing. The guard step fails the job if the JSON report shows any skipped spec, so this job can
+  # never pass by skipping (locally, without TEST_POSTGRES_URL, `pnpm test` skips them on purpose).
+  db-race:
+    name: Database race specs (Postgres service)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      TEST_POSTGRES_URL: postgres://postgres:postgres@localhost:5432/postgres
+    steps:
+      - name: Check out
+        uses: actions/checkout@v7
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run database race specs
+        run: pnpm test:db-race --reporter=default --reporter=json --outputFile.json=db-race-report.json
+
+      # The JSON reporter is minified: one `"status":"skipped"` per skipped test. At least one test
+      # must have passed too, so an empty or missing report cannot slip through.
+      - name: Fail if any race spec was skipped
+        run: |
+          if [ ! -s db-race-report.json ]; then
+            echo "::error::db-race-report.json is missing or empty"
+            exit 1
+          fi
+          if grep -Eq '"status":"(skipped|pending|todo|disabled)"' db-race-report.json; then
+            echo "::error::A spec in tests/db-race/ was skipped; the db-race job must run every spec against the Postgres service"
+            exit 1
+          fi
+          if ! grep -Eq '"numPassedTests":[1-9]' db-race-report.json; then
+            echo "::error::No race spec passed"
+            exit 1
+          fi
+
   # Production deploy. Runs only on a push to main, only after verify and e2e passed. Vercel's own
   # Git deployments of main are disabled in vercel.json (git.deploymentEnabled), so this is the only
   # path to production. Vercel's Git integration still builds PR previews; they are protected by

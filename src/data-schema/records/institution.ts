@@ -5,6 +5,9 @@ import { RecordProvenanceShape, SourcesSchema } from "../provenance";
 
 export const InstitutionRecordSchema = z.strictObject({
   slug: SlugSchema,
+  // Same alias mechanism as program formerSlugs: published into the manifest alias map, which is
+  // one namespace across collections, so data:check resolves renamed institutions too.
+  formerSlugs: z.array(SlugSchema).optional(),
   name: z.string().min(1),
   country: CountryCodeSchema,
   city: z.strictObject({ slug: SlugSchema, name: z.string().min(1) }),

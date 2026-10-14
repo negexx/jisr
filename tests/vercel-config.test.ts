@@ -1,4 +1,5 @@
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
+import { join, posix } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { describe, expect, it } from "vitest";
@@ -86,5 +87,75 @@ describe(".vercelignore", () => {
       const name = entry.replace(/^\//, "").replace(/\/$/, "");
       expect(needed).not.toContain(name);
     }
+  });
+});
+
+describe("build-included code and .vercelignore", () => {
+  const repoRoot = fileURLToPath(new URL("../", import.meta.url));
+  const ignoredFolders = readRepoFile(".vercelignore")
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => line.endsWith("/") && !line.startsWith("#"))
+    .map((line) => line.replace(/^\//, "").replace(/\/$/, ""));
+  const aliases: Record<string, string> = {
+    "@/": "src/",
+    "@scripts/": "scripts/",
+    "@content/": "content/",
+  };
+  const importPattern = /(?:\bfrom\s*|\bimport\s*\(?\s*|\brequire\s*\(\s*)["']([^"']+)["']/g;
+
+  function isInsideIgnoredFolder(repoRelativePath: string): boolean {
+    return ignoredFolders.some(
+      (folder) => repoRelativePath === folder || repoRelativePath.startsWith(`${folder}/`),
+    );
+  }
+
+  // Declaration files are skipped: next-env.d.ts points at .next/, which the build itself generates.
+  function typeScriptFilesOutsideIgnoredFolders(directory = ""): string[] {
+    const found: string[] = [];
+    for (const entry of readdirSync(join(repoRoot, directory), { withFileTypes: true })) {
+      const relative = directory === "" ? entry.name : `${directory}/${entry.name}`;
+      if (entry.name.startsWith(".") || isInsideIgnoredFolder(relative)) continue;
+      if (entry.isDirectory()) {
+        if (relative !== "public/snapshots")
+          found.push(...typeScriptFilesOutsideIgnoredFolders(relative));
+      } else if (/\.(?:ts|tsx|mts)$/.test(entry.name) && !entry.name.endsWith(".d.ts")) {
+        found.push(relative);
+      }
+    }
+    return found;
+  }
+
+  function resolveImport(importer: string, specifier: string): string | null {
+    for (const [prefix, target] of Object.entries(aliases)) {
+      if (specifier.startsWith(prefix)) return `${target}${specifier.slice(prefix.length)}`;
+    }
+    if (!specifier.startsWith(".")) return null;
+    return posix.normalize(posix.join(posix.dirname(importer), specifier));
+  }
+
+  it("type-checks every TypeScript file, so the include set covers the whole repository", () => {
+    const tsconfig: unknown = JSON.parse(readRepoFile("tsconfig.json"));
+    const include = isRecord(tsconfig) ? tsconfig.include : undefined;
+    expect(include).toContain("**/*.ts");
+    expect(include).toContain("**/*.tsx");
+  });
+
+  it("finds ignored folders to guard", () => {
+    expect(ignoredFolders).toContain("tests");
+  });
+
+  it("never imports a file that Vercel ignores", () => {
+    const offenders: string[] = [];
+    for (const file of typeScriptFilesOutsideIgnoredFolders()) {
+      const source = readFileSync(join(repoRoot, file), "utf8");
+      for (const match of source.matchAll(importPattern)) {
+        const resolved = resolveImport(file, match[1] ?? "");
+        if (resolved !== null && isInsideIgnoredFolder(resolved)) {
+          offenders.push(`${file} imports ${match[1]}`);
+        }
+      }
+    }
+    expect(offenders).toEqual([]);
   });
 });

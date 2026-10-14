@@ -8,6 +8,8 @@
       "!.next",
       "!node_modules",
       "!public/snapshots",
+      "!src/db/schema/auth.ts",
+      "!drizzle",
       "!data-staging/proposals",
       "!data-staging/proposals-read",
       "!data-staging/proposals-enrich",
@@ -53,6 +55,7 @@
         "src/app/sitemap.ts",
         "src/i18n/request.ts",
         "next.config.ts",
+        "drizzle.config.ts",
         "vitest.config.ts",
         "playwright.config.ts",
         "postcss.config.mjs"

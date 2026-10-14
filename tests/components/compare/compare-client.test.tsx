@@ -258,6 +258,15 @@ describe.each(LOCALES)("Compare: the comparison (%s)", (locale) => {
     );
   });
 
+  it("shows a renamed programme once when both its former and its current slug are saved", async () => {
+    seedAll({ ...REFS.ok, slug: "xx-test-prog-old-ok" }, REFS.stale, REFS.ok);
+    const { container } = renderCompare(locale, fixture.client());
+    await shown(container);
+    expect(comparedSlugs(container)).toEqual(["xx-test-prog-old-ok", REFS.stale.slug]);
+    expect(container.querySelectorAll("details li[data-slug]")).toHaveLength(2);
+    expect(container.querySelector(`details [data-slug="${REFS.ok.slug}"]`)).toBeNull();
+  });
+
   it("swaps a program in and out, keeps the saved order and announces the number compared", async () => {
     const user = userEvent.setup();
     seedAll(REFS.ok, REFS.stale, REFS.fail, REFS.check, REFS.private);

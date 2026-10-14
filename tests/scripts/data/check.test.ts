@@ -68,6 +68,24 @@ describe("data:check CLI", () => {
       ],
     },
     {
+      name: "invalid-alias-collision",
+      args: ["--data-dir", `${FIXTURES}/invalid-alias-collision`, "--now", NOW],
+      exit: 1,
+      stdout: ["data:check: FAILED"],
+      stderr: [
+        'ERROR institutions/xx-test-inst-a.yaml: formerSlugs.0: alias collision: former slug "xx-test-inst-b" is already a live slug (institutions/xx-test-inst-b.yaml)',
+      ],
+    },
+    {
+      name: "invalid-alias-cycle",
+      args: ["--data-dir", `${FIXTURES}/invalid-alias-cycle`, "--now", NOW],
+      exit: 1,
+      stdout: ["data:check: FAILED"],
+      stderr: [
+        "ERROR institutions/xx-test-inst-c.yaml: alias cycle: xx-test-inst-c -> xx-test-inst-d -> xx-test-inst-c",
+      ],
+    },
+    {
       name: "stale data is only a warning report",
       args: ["--data-dir", `${FIXTURES}/stale`, "--now", NOW],
       exit: 0,

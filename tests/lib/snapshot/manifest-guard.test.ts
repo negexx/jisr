@@ -29,6 +29,11 @@ const HAND_MADE: Record<string, unknown> = {
     },
   },
 };
+const ALIASES = { "old-prog": "new-prog", "old-inst": "new-inst" };
+const HAND_MADE_WITH_ALIASES: Record<string, unknown> = {
+  ...HAND_MADE,
+  aliases: { ...ALIASES },
+};
 
 let built: Record<string, unknown>;
 
@@ -66,6 +71,19 @@ function hasOwnProtoShard(input: unknown): boolean {
   if (typeof input !== "object" || input === null) return false;
   const shards: unknown = (input as { shards?: unknown }).shards;
   return typeof shards === "object" && shards !== null && Object.hasOwn(shards, "__proto__");
+}
+
+// JSON.parse makes "__proto__" an own key of the alias map, exactly as it reaches the client.
+function withProtoAlias(
+  entry: unknown,
+  base: Record<string, unknown> = HAND_MADE_WITH_ALIASES,
+): unknown {
+  const others = Object.keys((base.aliases ?? {}) as object).length > 0 ? "," : "";
+  const json = JSON.stringify(base).replace(
+    '"aliases":{',
+    `"aliases":{"__proto__":${JSON.stringify(entry)}${others}`,
+  );
+  return JSON.parse(json);
 }
 
 class ShardsClass {
@@ -114,6 +132,25 @@ const VALID: Array<[string, () => unknown]> = [
     () => edited((m) => (m.shards = Object.create({ core: ENTRY }))),
   ],
   ["class instance as the manifest", () => Object.assign(new (class Loaded {})(), HAND_MADE)],
+  ["manifest with an alias map", () => HAND_MADE_WITH_ALIASES],
+  ["empty alias map", () => edited((m) => (m.aliases = {}))],
+  ["alias map with one entry", () => edited((m) => (m.aliases = { "old-prog": "new-prog" }))],
+  ["aliases key present as undefined", () => edited((m) => (m.aliases = undefined))],
+  [
+    "aliases as a null-prototype object",
+    () => edited((m) => (m.aliases = Object.assign(Object.create(null), ALIASES))),
+  ],
+  [
+    "inherited alias map is read like the schema reads it",
+    () => Object.assign(Object.create({ aliases: { ...ALIASES } }), HAND_MADE),
+  ],
+  ["own __proto__ alias key with an invalid entry", () => withProtoAlias({ bad: 1 })],
+  ["own __proto__ alias key with a null entry", () => withProtoAlias(null)],
+  ["own __proto__ alias key with a valid entry", () => withProtoAlias("dropped-slug")],
+  [
+    "own __proto__ alias key beside an empty alias map",
+    () => withProtoAlias("dropped-slug", { ...HAND_MADE, aliases: {} }),
+  ],
 ];
 
 const INVALID: Array<[string, () => unknown]> = [
@@ -201,6 +238,29 @@ const INVALID: Array<[string, () => unknown]> = [
   ["gzipBytes float", () => withCore({ ...ENTRY, gzipBytes: 0.5 })],
   ["gzipBytes null", () => withCore({ ...ENTRY, gzipBytes: null })],
   ["gzipBytes missing", () => withCore({ file: ENTRY.file, sha256: SHA, bytes: 1 })],
+  ["aliases null", () => edited((m) => (m.aliases = null))],
+  ["aliases array", () => edited((m) => (m.aliases = []))],
+  ["aliases string", () => edited((m) => (m.aliases = "old-prog"))],
+  ["aliases number", () => edited((m) => (m.aliases = 1))],
+  ["alias key not kebab-case", () => edited((m) => (m.aliases = { "Old-Prog": "new-prog" }))],
+  ["alias key with a double dash", () => edited((m) => (m.aliases = { "old--prog": "new-prog" }))],
+  ["alias key empty", () => edited((m) => (m.aliases = { "": "new-prog" }))],
+  ["alias value not kebab-case", () => edited((m) => (m.aliases = { "old-prog": "New-Prog" }))],
+  ["alias value number", () => edited((m) => (m.aliases = { "old-prog": 1 }))],
+  ["alias entry undefined", () => edited((m) => (m.aliases = { "old-prog": undefined }))],
+  ["alias entry object", () => edited((m) => (m.aliases = { "old-prog": { slug: "new-prog" } }))],
+  [
+    "aliases with an enumerable symbol key",
+    () =>
+      edited((m) => {
+        m.aliases = { "old-prog": "new-prog" };
+        Object.defineProperty(m.aliases, Symbol("k"), {
+          value: "new-prog",
+          enumerable: true,
+        });
+      }),
+  ],
+  ["aliases as a class instance", () => edited((m) => (m.aliases = new ShardsClass() as never))],
 ];
 
 describe("parseManifest against ManifestSchema", () => {
@@ -295,6 +355,21 @@ describe("parseManifest against ManifestSchema", () => {
 
   it("agrees with the schema on 2000 seeded mutations of a hand-made manifest", () => {
     const tally = fuzz(ManifestSchema, attempt, HAND_MADE, 2000, 5);
+    expect(tally.disagreements).toEqual([]);
+    expect(tally.accepted).toBeGreaterThan(50);
+  });
+
+  it("round-trips an alias map identically through both parsers", () => {
+    const input = cloneValue(HAND_MADE_WITH_ALIASES);
+    const oracle = ManifestSchema.parse(input);
+    const twin = parseManifest(input);
+    expect(oracle.aliases).toEqual(ALIASES);
+    expect(twin.aliases).toEqual(ALIASES);
+    expect(twin).toEqual(oracle);
+  });
+
+  it("agrees with the schema on 2000 seeded mutations of a manifest with aliases", () => {
+    const tally = fuzz(ManifestSchema, attempt, HAND_MADE_WITH_ALIASES, 2000, 20261014);
     expect(tally.disagreements).toEqual([]);
     expect(tally.accepted).toBeGreaterThan(50);
   });

@@ -152,6 +152,24 @@ describe("buildCompareView", () => {
     expect(result.missing).toEqual(["xx-gone"]);
   });
 
+  describe("renamed slugs", () => {
+    const FORMER = "xx-test-prog-old-ok";
+
+    it("compares a former slug as the programme it was renamed to, keeping the requested slug", () => {
+      const former = programOf(FORMER);
+      const canonical = programOf(E2E_SLUGS.ok);
+      expect(former.slug).toBe(FORMER);
+      expect({ ...former, slug: canonical.slug }).toEqual(canonical);
+      expect(view([FORMER, E2E_SLUGS.check]).missing).toEqual([]);
+    });
+
+    it("still lists a slug that is neither live nor aliased as missing", () => {
+      expect(view([E2E_SLUGS.ok, "xx-test-prog-never-existed"]).missing).toEqual([
+        "xx-test-prog-never-existed",
+      ]);
+    });
+  });
+
   it("returns nothing, with every row equal, when no slug is given", () => {
     const result = view([]);
     expect(result.programs).toEqual([]);
