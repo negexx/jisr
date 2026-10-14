@@ -1126,5 +1126,62 @@
       "noProfile": "Create your profile to check your nationality",
       "caveat": "Based on the published nationality rule only. Check the other conditions on the official page."
     }
+  },
+  "signup": {
+    "meta": {
+      "title": "Sign in or create an account",
+      "description": "Create a free Jisr account to keep your profile, saved programmes and plan on all your devices."
+    },
+    "title": "Your Jisr account",
+    "lead": "An account is optional. Without one, everything keeps working and your data stays on this device. With one, your profile, saved programmes and plan follow you on all your devices.",
+    "modes": {
+      "label": "What do you want to do?",
+      "signup": "Create an account",
+      "signin": "I already have an account"
+    },
+    "email": {
+      "label": "Email address",
+      "hint": "We send you a link to sign in. No password."
+    },
+    "consent": {
+      "label": "I agree that Jisr keeps my email address, profile, saved programmes and plan progress to provide my account, as described in the privacy notice.",
+      "privacyLink": "Read the privacy notice"
+    },
+    "age": {
+      "label": "I am 16 or older.",
+      "hint": "Under 16? Keep using Jisr without an account: everything works, and your data stays on this device."
+    },
+    "required": "required",
+    "submit": "Email me a sign-in link",
+    "sending": "Sending the link…",
+    "or": "or",
+    "google": "Continue with Google",
+    "sent": {
+      "title": "Check your inbox",
+      "body": "We sent a sign-in link to {email}. It works for 15 minutes and only once. Open it on any device.",
+      "again": "Use another address"
+    },
+    "errors": {
+      "summary": "Check the form before continuing.",
+      "consentRequired": "To create an account, tick the box to agree to the privacy notice.",
+      "ageRequired": "To create an account, confirm that you are 16 or older.",
+      "emailInvalid": "Enter an email address such as name@example.com.",
+      "cooldown": "A link was sent to this address a moment ago. Wait a minute before asking for another.",
+      "disabled": "Accounts are not available yet. You can keep using Jisr without one.",
+      "failed": "The link could not be sent. Try again in a moment.",
+      "noAccount": "There is no account with this address yet. To create one, choose Create an account and tick both boxes.",
+      "linkFailed": "Sign-in did not work. The link may have expired or been used already: ask for a new one."
+    },
+    "gate": {
+      "titleNew": "Finish creating your account",
+      "titleChanged": "Our privacy notice has changed",
+      "bodyNew": "Before your account can keep your data, agree to the privacy notice. Until then, Jisr keeps working on this device as before.",
+      "bodyChanged": "We updated the privacy notice since you agreed to it. Read it and agree to the new version to keep using your account. Until then, Jisr keeps working on this device as before.",
+      "submit": "Continue",
+      "sending": "Saving…",
+      "required": "Tick the box to agree to the privacy notice.",
+      "signedOut": "You are signed out. Sign in again to continue.",
+      "failed": "Your answer could not be saved. Try again in a moment."
+    }
   }
 }

@@ -324,6 +324,7 @@ describe("google sign-up admission", () => {
         { path: "/callback/:id" } as never,
       ),
     ).rejects.toMatchObject({ status: "BAD_REQUEST", body: { code: "AGE_NOT_CONFIRMED" } });
+    expect(await count("user")).toBe(0);
   });
 
   it("creates no user for a Google identity whose email is not verified", async () => {

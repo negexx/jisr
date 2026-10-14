@@ -1126,5 +1126,62 @@
       "noProfile": "Créez votre profil pour vérifier votre nationalité",
       "caveat": "D'après la règle de nationalité publiée seulement. Vérifiez les autres conditions sur la page officielle."
     }
+  },
+  "signup": {
+    "meta": {
+      "title": "Se connecter ou créer un compte",
+      "description": "Créez un compte Jisr gratuit pour retrouver votre profil, vos programmes enregistrés et votre plan sur tous vos appareils."
+    },
+    "title": "Votre compte Jisr",
+    "lead": "Le compte est facultatif. Sans compte, tout continue de fonctionner et vos données restent sur cet appareil. Avec un compte, votre profil, vos programmes enregistrés et votre plan vous suivent sur tous vos appareils.",
+    "modes": {
+      "label": "Que voulez-vous faire ?",
+      "signup": "Créer un compte",
+      "signin": "J'ai déjà un compte"
+    },
+    "email": {
+      "label": "Adresse e-mail",
+      "hint": "Nous vous envoyons un lien pour vous connecter. Pas de mot de passe."
+    },
+    "consent": {
+      "label": "J'accepte que Jisr conserve mon adresse e-mail, mon profil, mes programmes enregistrés et ma progression dans le plan pour faire fonctionner mon compte, comme décrit dans la politique de confidentialité.",
+      "privacyLink": "Lire la politique de confidentialité"
+    },
+    "age": {
+      "label": "J'ai 16 ans ou plus.",
+      "hint": "Moins de 16 ans ? Continuez à utiliser Jisr sans compte : tout fonctionne et vos données restent sur cet appareil."
+    },
+    "required": "obligatoire",
+    "submit": "Recevoir un lien de connexion",
+    "sending": "Envoi du lien…",
+    "or": "ou",
+    "google": "Continuer avec Google",
+    "sent": {
+      "title": "Consultez votre boîte de réception",
+      "body": "Nous avons envoyé un lien de connexion à {email}. Il est valable 15 minutes et une seule fois. Ouvrez-le sur n'importe quel appareil.",
+      "again": "Utiliser une autre adresse"
+    },
+    "errors": {
+      "summary": "Vérifiez le formulaire avant de continuer.",
+      "consentRequired": "Pour créer un compte, cochez la case pour accepter la politique de confidentialité.",
+      "ageRequired": "Pour créer un compte, confirmez que vous avez 16 ans ou plus.",
+      "emailInvalid": "Saisissez une adresse e-mail comme nom@exemple.com.",
+      "cooldown": "Un lien vient d'être envoyé à cette adresse. Attendez une minute avant d'en demander un autre.",
+      "disabled": "Les comptes ne sont pas encore disponibles. Vous pouvez continuer à utiliser Jisr sans compte.",
+      "failed": "Le lien n'a pas pu être envoyé. Réessayez dans un instant.",
+      "noAccount": "Aucun compte n'existe encore avec cette adresse. Pour en créer un, choisissez Créer un compte et cochez les deux cases.",
+      "linkFailed": "La connexion n'a pas fonctionné. Le lien a peut-être expiré ou déjà servi : demandez-en un nouveau."
+    },
+    "gate": {
+      "titleNew": "Terminez la création de votre compte",
+      "titleChanged": "Notre politique de confidentialité a changé",
+      "bodyNew": "Pour que votre compte conserve vos données, acceptez la politique de confidentialité. D'ici là, Jisr continue de fonctionner sur cet appareil comme avant.",
+      "bodyChanged": "Nous avons mis à jour la politique de confidentialité depuis que vous l'avez acceptée. Lisez-la et acceptez la nouvelle version pour continuer à utiliser votre compte. D'ici là, Jisr continue de fonctionner sur cet appareil comme avant.",
+      "submit": "Continuer",
+      "sending": "Enregistrement…",
+      "required": "Cochez la case pour accepter la politique de confidentialité.",
+      "signedOut": "Vous êtes déconnecté. Reconnectez-vous pour continuer.",
+      "failed": "Votre réponse n'a pas pu être enregistrée. Réessayez dans un instant."
+    }
   }
 }

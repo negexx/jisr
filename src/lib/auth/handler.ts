@@ -29,13 +29,19 @@ function authMisconfigured(): Response {
 
 // Better Auth must not initialise while accounts are off, so while off this answers on its own
 // and never touches getAuth(). While on, the first request creates the instance; a missing
-// secret or base URL is a 500 with no detail, and is retried on the next request.
+// secret or a missing or malformed base URL is a 500 with no detail, and is retried on the next
+// request.
 async function handle(method: keyof Handlers, request: Request): Promise<Response> {
   if (!accountsEnabled()) return accountsOffResponse(request, AUTH_BASE_PATH);
   try {
     return await enabledHandlers()[method](request);
   } catch (error) {
-    if (error instanceof AuthMisconfiguredError) return authMisconfigured();
+    if (error instanceof AuthMisconfiguredError) {
+      // The message names the variables at fault, never their values, so the operator can fix
+      // the deployment without the response saying anything.
+      console.error(error.message);
+      return authMisconfigured();
+    }
     throw error;
   }
 }
