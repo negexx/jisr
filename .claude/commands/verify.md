@@ -44,4 +44,4 @@ Surface the actual error verbatim. Don't summarize away the useful detail. The u
 
 ## One more gate after this passes
 
-Passing `/verify` means the code works — it doesn't mean the task is done. Every task also needs an Opus 5.5 review at medium effort (the `reviewer` subagent) before it's marked complete; `/ship` runs that automatically, but if you're not shipping yet, dispatch it yourself.
+Passing `/verify` means the code works — it doesn't mean the task is done. Every task also needs a review before it's marked complete: the `reviewer` subagent (Sonnet 5.5, high), or `reviewer-complex` (Opus 5.5, medium) for high-complexity work; `/ship` runs that automatically, but if you're not shipping yet, dispatch it yourself.

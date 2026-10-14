@@ -29,7 +29,7 @@ The product brief is at `docs/product/jisr_mvp.md` (repo root, not in `.claude/`
 - Read `CLAUDE.md` first (it's auto-loaded anyway)
 - Consult `docs/conventions.md` before introducing new patterns
 - Use `/plan` for any change touching 3+ files
-- Use `/verify` before claiming a task is done — then get an Opus 5.5 review before calling it done
+- Use `/verify` before claiming a task is done — then get a review (`reviewer`, Sonnet 5.5 high; `reviewer-complex`, Opus 5.5, for high-complexity work) before calling it done
 - `settings.json`'s `hooks` key enforces things instructions can't guarantee (e.g. auto-format on save) — check it before assuming a step is optional
 - Drop session learnings into `memory/` as memory files
 

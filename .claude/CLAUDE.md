@@ -120,11 +120,12 @@ Pick the tier that matches the task's complexity, not the biggest model availabl
 | Implementation — low to medium complexity (DEFAULT for delegated coding) | Haiku 5.5 | max |
 | Implementation — medium to hard complexity | Sonnet 5.5 | high |
 | Planning, architecture, really long or complex implementation | Opus 5.5 | medium |
-| Review — every completed task, before it's marked done | Opus 5.5 (mandatory, not an escalation) | medium |
+| Review — every completed task, before it's marked done (mandatory) | Sonnet 5.5 | high |
+| Review — high complexity: security-critical, architectural, schema/migrations, concurrency, and the final whole-branch review of a PR | Opus 5.5 | medium |
 
 **Escalate** Haiku 5.5 → Sonnet 5.5 when the step carries real logic (matching, eligibility, costs, Zod schemas, importers), spans several modules, or Haiku has failed typecheck/tests twice on it. Sonnet 5.5 → Opus 5.5 when the task is architectural, security-critical, the approach is genuinely unclear, a wrong call is expensive to undo, or the work is long enough to need sustained design judgment. **Downgrade** once the approach is settled and the remaining work is mechanical.
 
-**Review is not optional.** Every task, whichever model implemented it, goes through an Opus 5.5 review (the `reviewer` subagent) at medium effort before it's marked done. The main session is the orchestrator (brainstorm, plan, dispatch, review reports) and runs on Opus 5.5 (`model` in `settings.json`; medium is its default effort, check with `/effort`); drop to Sonnet 5.5 with `/model` when only executing an already-approved plan. Haiku 5.5 works through the subagents below, never as the main session.
+**Review is not optional.** Every task, whichever model implemented it, goes through a review before it's marked done: the `reviewer` subagent (Sonnet 5.5, high) by default, and `reviewer-complex` (Opus 5.5, medium) for high-complexity work — auth, consent, sessions, account deletion/export, schema or migrations, concurrency/transactions, security boundaries, architectural changes — and for the final whole-branch review before a PR opens. Escalate a Sonnet review to Opus when the reviewer says it cannot judge the change with confidence. The main session is the orchestrator (brainstorm, plan, dispatch, review reports) and runs on Opus 5.5 (`model` in `settings.json`; medium is its default effort, check with `/effort`); drop to Sonnet 5.5 with `/model` when only executing an already-approved plan. Haiku 5.5 works through the subagents below, never as the main session.
 
 ## Available agents
 
@@ -133,7 +134,8 @@ Pick the tier that matches the task's complexity, not the biggest model availabl
 - **`implementer`** (Haiku 5.5, max): executes low-to-medium steps of a written plan
 - **`implementer-hard`** (Sonnet 5.5, high): executes medium-to-hard steps (domain logic, schemas, importers)
 - **`implementer-complex`** (Opus 5.5, medium): executes really long or complex steps once the plan is agreed
-- **`reviewer`** (Opus 5.5, medium): reviews changes for correctness, security, conventions before shipping
+- **`reviewer`** (Sonnet 5.5, high): default review of every completed task — correctness, security, conventions
+- **`reviewer-complex`** (Opus 5.5, medium): high-complexity reviews (security-critical, architectural, schema/migrations, concurrency) and the final whole-branch review before a PR
 
 ## Skills — when to invoke
 
@@ -172,7 +174,7 @@ This repo is indexed in the `codebase-memory-mcp` knowledge graph as project `ji
 3. `pnpm lint` passes (and `pnpm data:check` if `data/` changed)
 4. New behavior has a test (TDD for domain logic)
 5. UI changes: verified in a browser in **both `fr` (LTR) and `ar` (RTL)**, not just type-checked
-6. Reviewed by the `reviewer` subagent (Opus 5.5) — no task is marked done without this
+6. Reviewed by the `reviewer` subagent (Sonnet 5.5), or `reviewer-complex` (Opus 5.5) for high-complexity work — no task is marked done without this
 
 ## Don't
 
