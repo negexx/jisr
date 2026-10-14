@@ -5,7 +5,6 @@ import type { z } from "zod";
 import type { Profile } from "@/data-schema/profile";
 import { db } from "@/db";
 import type { ChecklistStepId } from "@/domain/types";
-import { isRecord } from "@/lib/guards";
 import type { SavedProgram } from "@/lib/saved/saved";
 
 import {
@@ -24,6 +23,7 @@ import {
   saveProfileFor,
   saveProgramFor,
   setStepDoneFor,
+  sqlState,
   unsaveProgramFor,
 } from "./account-store";
 import { requireAccountReady } from "./session";
@@ -35,16 +35,6 @@ export type {
   ProfileConflict,
   SaveProfileResult,
 } from "./account-store";
-
-const SQLSTATE = /^[0-9A-Z]{5}$/;
-
-// The driver error is the only source of a SQLSTATE; Drizzle wraps it as `cause`.
-function sqlState(error: unknown): string | null {
-  for (let at = error; isRecord(at); at = at.cause) {
-    if (typeof at.code === "string" && SQLSTATE.test(at.code)) return at.code;
-  }
-  return null;
-}
 
 // Drizzle puts the failed statement's parameters into the error message, and these actions
 // carry the profile, saved programmes and feedback notes: a query error must never reach a log
@@ -67,7 +57,8 @@ async function withReadyAccount<Input, Result>(
   input: unknown,
   run: (userId: string, input: Input) => Promise<Result>,
 ): Promise<Result | Refusal> {
-  const ready = await requireAccountReady();
+  // Inside guarded(): the session lookup is a query too, and its error would carry the token.
+  const ready = await guarded(action, requireAccountReady);
   if (!ready.ok) return ready;
   const parsed = schema.safeParse(input);
   if (!parsed.success) return { ok: false, error: "invalid" };

@@ -73,7 +73,8 @@ export function rowsToPlanProgress(rows: readonly ChecklistProgressRow[]): PlanP
   }
   const done = Object.fromEntries(
     [...bySlug]
-      .sort(([a], [b]) => a.localeCompare(b))
+      // Code-unit order, like Postgres C collation: the kept programmes never depend on the ICU locale.
+      .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
       .slice(0, MAX_PLAN_PROGRAMS)
       .map(([slug, steps]) => [slug, CHECKLIST_STEP_IDS.filter((stepId) => steps.has(stepId))]),
   );

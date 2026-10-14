@@ -189,6 +189,27 @@ describe("checklist progress rows", () => {
     );
   });
 
+  it("orders the kept programmes by code unit, not by the runtime locale", () => {
+    // localeCompare puts "Z-prog" after every lowercase slug; code-unit order puts it first.
+    const slugs = [
+      "Z-prog",
+      ...Array.from(
+        { length: MAX_PLAN_PROGRAMS },
+        (_, index) => `a-prog-${String(index).padStart(3, "0")}`,
+      ),
+    ];
+    const rows = slugs.map((programSlug) => ({
+      userId: USER_ID,
+      programSlug,
+      stepId: "visa",
+      doneAt: DONE_AT,
+    }));
+    const kept = Object.keys(rowsToPlanProgress(rows).done);
+    expect(kept).toHaveLength(MAX_PLAN_PROGRAMS);
+    expect(kept[0]).toBe("Z-prog");
+    expect(kept).not.toContain("a-prog-049");
+  });
+
   it("maps no rows to the empty record", () => {
     expect(rowsToPlanProgress([])).toEqual({ schemaVersion: 1, done: {} });
   });

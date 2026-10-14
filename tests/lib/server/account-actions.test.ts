@@ -646,3 +646,47 @@ describe("a failing query never leaks the profile", () => {
     expect(await count("profiles")).toBe(0);
   });
 });
+
+describe("a failing session lookup never leaks its parameters", () => {
+  const TOKEN = "tok_SECRET_session_0123456789";
+
+  it("surfaces only the fixed error and logs no token-like content", async () => {
+    const { getAuth } = await import("@/lib/auth/server");
+    vi.spyOn(getAuth().api, "getSession").mockRejectedValue(
+      new Error(`Failed query: select * from "session" where token = $1
+params: ${TOKEN}`),
+    );
+    const spies = (["log", "info", "warn", "error", "debug"] as const).map((method) =>
+      vi.spyOn(console, method).mockImplementation(() => undefined),
+    );
+    const failure = await actions.saveProgram(program("xx-prog-a")).then(
+      () => null,
+      (error: unknown) => error,
+    );
+    expect(failure).toBeInstanceOf(Error);
+    const output = `${(failure as Error).message}${(failure as Error).stack ?? ""}${JSON.stringify(
+      spies.flatMap((spy) => spy.mock.calls),
+    )}`;
+    expect(output).not.toContain(TOKEN);
+    expect(output).not.toContain("session");
+    expect(output).toContain("saveProgram");
+    expect(await totalRows()).toBe(0);
+  });
+});
+
+describe("saveProfile for an account deleted while its session was presented", () => {
+  async function storeDb() {
+    return (await import("@/db")).db;
+  }
+
+  it.each([
+    0, 3,
+  ])("returns unauthenticated for expected revision %i and writes nothing", async (revision) => {
+    const { saveProfileFor } = await import("@/lib/server/account-store");
+    expect(await saveProfileFor(await storeDb(), "deleted-user", PROFILE, revision)).toEqual({
+      ok: false,
+      error: "unauthenticated",
+    });
+    expect(await count("profiles")).toBe(0);
+  });
+});

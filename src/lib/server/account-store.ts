@@ -6,6 +6,7 @@ import type * as schema from "@/db/schema";
 import { checklistProgress, feedbackReports, profiles, savedPrograms, user } from "@/db/schema";
 import { CHECKLIST_STEP_IDS, type ChecklistStepId } from "@/domain/types";
 import { MAX_SAVED_PROGRAMS } from "@/lib/constants";
+import { isRecord } from "@/lib/guards";
 import { MAX_PLAN_PROGRAMS } from "@/lib/plan/progress";
 import type { SavedProgram } from "@/lib/saved/saved";
 
@@ -43,6 +44,17 @@ export type FeedbackInput = {
   snapshotVersion: string;
   note?: string | undefined;
 };
+
+const SQLSTATE = /^[0-9A-Z]{5}$/;
+const FOREIGN_KEY_VIOLATION = "23503";
+
+// The driver error is the only source of a SQLSTATE; Drizzle wraps it as `cause`.
+export function sqlState(error: unknown): string | null {
+  for (let at = error; isRecord(at); at = at.cause) {
+    if (typeof at.code === "string" && SQLSTATE.test(at.code)) return at.code;
+  }
+  return null;
+}
 
 function ok<T>(value: T): { ok: true; value: T } {
   return { ok: true, value };
@@ -165,7 +177,12 @@ async function conflictWithCurrent(db: AccountDb, userId: string): Promise<SaveP
   const [row] = await db.select().from(profiles).where(eq(profiles.userId, userId));
   // No row, or a document this build cannot read: there is no version to offer the student.
   const profile = row === undefined ? null : rowToProfile(row);
-  if (row === undefined || profile === null) return { ok: false, error: "invalid" };
+  if (row === undefined) {
+    // An account deleted while its session was still being presented has no row to offer either.
+    const [owner] = await db.select({ id: user.id }).from(user).where(eq(user.id, userId));
+    return { ok: false, error: owner === undefined ? "unauthenticated" : "invalid" };
+  }
+  if (profile === null) return { ok: false, error: "invalid" };
   return { ok: false, error: "conflict", current: { profile, revision: row.revision } };
 }
 
@@ -186,12 +203,18 @@ export async function saveProfileFor(
   if (updated !== undefined) return ok({ revision: updated.revision });
 
   if (expectedRevision === 0) {
-    const [created] = await db
-      .insert(profiles)
-      .values({ userId, data: profile, revision: 1 })
-      .onConflictDoNothing()
-      .returning({ revision: profiles.revision });
-    if (created !== undefined) return ok({ revision: created.revision });
+    try {
+      const [created] = await db
+        .insert(profiles)
+        .values({ userId, data: profile, revision: 1 })
+        .onConflictDoNothing()
+        .returning({ revision: profiles.revision });
+      if (created !== undefined) return ok({ revision: created.revision });
+    } catch (error) {
+      // The user row is gone (account deleted mid-session), as lockUser reports for the other actions.
+      if (sqlState(error) === FOREIGN_KEY_VIOLATION) return { ok: false, error: "unauthenticated" };
+      throw error;
+    }
   }
   return conflictWithCurrent(db, userId);
 }
