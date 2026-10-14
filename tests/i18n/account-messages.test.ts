@@ -26,6 +26,20 @@ describe.each(LOCALES)("account and welcome messages (%s)", (locale) => {
   });
 });
 
+// The signed-in Clear my data copy: same shape as the guest's, and parity across locales.
+describe.each(LOCALES)("clearDataAccount messages (%s)", (locale) => {
+  it("has the same keys as fr, without placeholders, dashes or TODO markers", () => {
+    const messages = namespaceMessages(locale, ["clearDataAccount"]);
+    const reference = namespaceMessages("fr", ["clearDataAccount"]);
+    expect([...messages.keys()].sort()).toEqual([...reference.keys()].sort());
+    for (const [key, value] of messages) {
+      expect(placeholderNames(value), key).toEqual([]);
+      expect(value, key).not.toMatch(/[–—]/);
+      expect(value, key).not.toContain("TODO-translate");
+    }
+  });
+});
+
 describe("account and welcome messages: language rules", () => {
   it("puts a no-break space before : ? ! ; in French", () => {
     for (const [key, value] of namespaceMessages("fr", NAMESPACES)) {

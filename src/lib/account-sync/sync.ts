@@ -73,6 +73,9 @@ export type AccountSync = {
   saveProfile: (profile: Profile) => void;
   resolveConflict: (choice: "server" | "mine") => void;
   hydrate: () => Promise<void>;
+  // A read that starts after a write made outside this layer (the guest import): a hydration
+  // already running may have read the account before it.
+  rehydrate: () => Promise<void>;
   // Forgets everything queued or held; called once the device is signed out.
   reset: () => void;
   dismissNotice: () => void;
@@ -395,6 +398,11 @@ export function createAccountSync(options: AccountSyncOptions): AccountSync {
     return run;
   }
 
+  async function rehydrate(): Promise<void> {
+    if (hydrating !== null) await hydrating;
+    return hydrate();
+  }
+
   return {
     toggleSaved(ref, snapshotVersion, today) {
       const list = saved.shown();
@@ -419,6 +427,7 @@ export function createAccountSync(options: AccountSyncOptions): AccountSync {
     saveProfile,
     resolveConflict,
     hydrate,
+    rehydrate,
     reset() {
       epoch += 1;
       saved.reset();

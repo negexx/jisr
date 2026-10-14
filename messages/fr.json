@@ -1202,7 +1202,18 @@
     "checking": "Vérification de votre connexion…",
     "finishing": "Retour à votre page…",
     "failed": "Impossible de vérifier votre connexion. Vérifiez votre réseau et réessayez.",
-    "retry": "Réessayer"
+    "retry": "Réessayer",
+    "import": {
+      "title": "Votre compte contient déjà des données",
+      "description": "Cet appareil a aussi un profil, des programmes enregistrés ou des étapes cochées d'avant votre connexion. Choisissez ce que votre compte garde. Les deux ne sont pas fusionnés.",
+      "keep": "Garder les données du compte",
+      "keepHint": "Les données de cet appareil y restent, et nous vous reposerons la question à votre prochaine connexion ici.",
+      "replace": "Remplacer par les données de cet appareil",
+      "replaceHint": "Le profil, les programmes enregistrés et les étapes cochées de votre compte sont supprimés et remplacés.",
+      "failed": "Impossible d'ajouter les données de cet appareil à votre compte. Elles sont toujours sur cet appareil.",
+      "retry": "Réessayer",
+      "continue": "Continuer sans elles"
+    }
   },
   "accountSync": {
     "conflictTitle": "Votre profil a été modifié sur un autre appareil",
@@ -1216,5 +1227,13 @@
     "consentRequired": "Terminez la création de votre compte pour enregistrer vos modifications. Cette modification a été annulée.",
     "profileReloaded": "Le profil de votre compte avait changé, il a donc été rechargé. Votre modification n'a pas été enregistrée, refaites-la.",
     "dismiss": "Fermer"
+  },
+  "clearDataAccount": {
+    "title": "Effacer les données de votre compte ?",
+    "description": "Cela supprime votre profil, vos programmes enregistrés et votre progression dans le plan de votre compte, sur tous vos appareils, ainsi que toutes les données Jisr de cet appareil. Vous restez connecté et votre compte n'est pas supprimé.",
+    "confirm": "Effacer mes données",
+    "working": "Effacement…",
+    "failed": "Impossible d'effacer les données de votre compte. Rien n'a été supprimé. Réessayez.",
+    "signedOut": "Vous n'êtes plus connecté, donc rien n'a été supprimé de votre compte. Confirmez à nouveau pour effacer les données de cet appareil uniquement."
   }
 }

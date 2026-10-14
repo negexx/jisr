@@ -45,7 +45,7 @@ export function subscribeAccountMode(listener: () => void): () => void {
   };
 }
 
-// Clear my data removes the hint along with every other `jisr.` key, and tells no one.
+// Clear my data and the guest import change keys in this tab, which fires no `storage` event.
 export function refreshAccountMode(): void {
   if (stopHint !== null) onHintChange();
 }

@@ -1202,7 +1202,18 @@
     "checking": "Checking your sign-in…",
     "finishing": "Taking you back…",
     "failed": "We could not check your sign-in. Check your connection and try again.",
-    "retry": "Try again"
+    "retry": "Try again",
+    "import": {
+      "title": "Your account already holds data",
+      "description": "This device also has a profile, saved programs or ticked steps from before you signed in. Choose which your account keeps. The two are not merged.",
+      "keep": "Keep my account's data",
+      "keepHint": "This device's data stays on it, and we will ask again the next time you sign in here.",
+      "replace": "Replace with this device's data",
+      "replaceHint": "Your account's profile, saved programs and ticked steps are deleted and replaced.",
+      "failed": "We could not bring this device's data into your account. It is still on this device.",
+      "retry": "Try again",
+      "continue": "Continue without it"
+    }
   },
   "accountSync": {
     "conflictTitle": "Your profile was changed on another device",
@@ -1216,5 +1227,13 @@
     "consentRequired": "Finish setting up your account to save changes. This change was undone.",
     "profileReloaded": "Your account's profile had changed, so it was loaded again. Your edit was not saved, so make it again.",
     "dismiss": "Dismiss"
+  },
+  "clearDataAccount": {
+    "title": "Clear your account's data?",
+    "description": "This removes your profile, your saved programs and your plan progress from your account, on all your devices, and all Jisr data from this device. You stay signed in and your account is not deleted.",
+    "confirm": "Clear my data",
+    "working": "Clearing…",
+    "failed": "We could not clear your account's data. Nothing was removed. Try again.",
+    "signedOut": "You are no longer signed in, so nothing was removed from your account. Confirm again to clear this device only."
   }
 }

@@ -226,12 +226,15 @@ describe("with the sign-in hint", () => {
     expect(window.localStorage.getItem(SAVED_KEY)).toBe(GUEST_SAVED);
   });
 
-  it("follows clear my data, which removes the hint without telling anyone", () => {
+  it("follows clear my data, which empties the account cache and the guest keys but keeps the hint", () => {
     const { result } = renderHook(() => useSaved());
     act(() => {
       clearAllLocalData();
     });
-    expect(window.localStorage.getItem(AUTH_HINT_KEY)).toBeNull();
+    // The hint is managed only by sign-in, sign-out and account deletion: still signed in.
+    expect(window.localStorage.getItem(AUTH_HINT_KEY)).toBe("true");
+    expect(window.localStorage.getItem(ACCOUNT_SAVED_KEY)).toBeNull();
+    expect(window.localStorage.getItem(SAVED_KEY)).toBeNull();
     expect(result.current.items).toEqual([]);
     expect(profileStore.getSnapshot()).toMatchObject({ status: "none" });
   });

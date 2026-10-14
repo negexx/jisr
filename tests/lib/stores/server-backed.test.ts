@@ -479,6 +479,34 @@ describe("hydration", () => {
     expect(calls.loadAccountData).toHaveLength(1);
   });
 
+  it("rehydrate reads again after a hydration that was already running (the guest import)", async () => {
+    const { sync, stores, calls } = setup();
+    const early = sync.hydrate();
+    const fresh = sync.rehydrate();
+    await settle();
+    expect(calls.loadAccountData).toHaveLength(1);
+    call(calls, "loadAccountData", 0).reply.resolve({
+      ok: true,
+      value: { ...SERVER, saved: [] },
+    });
+    await early;
+    await settle();
+    expect(calls.loadAccountData).toHaveLength(2);
+    call(calls, "loadAccountData", 1).reply.resolve({ ok: true, value: SERVER });
+    await fresh;
+    expect(slugs(stores.saved)).toEqual(["xx-phone"]);
+  });
+
+  it("rehydrate with nothing running sends one read", async () => {
+    const { sync, calls } = setup();
+    const fresh = sync.rehydrate();
+    await settle();
+    expect(calls.loadAccountData).toHaveLength(1);
+    call(calls, "loadAccountData", 0).reply.resolve({ ok: true, value: SERVER });
+    await fresh;
+    expect(calls.loadAccountData).toHaveLength(1);
+  });
+
   it("keeps the cache when the read fails, and signs out for an unknown session", async () => {
     const { sync, stores, calls, onSignedOut } = setup({ saved: list("xx-a") });
     const failed = sync.hydrate();

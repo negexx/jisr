@@ -3,6 +3,8 @@ import { z } from "zod";
 import { IsoDateSchema, SlugSchema } from "@/data-schema/primitives";
 import { ProfileSchema } from "@/data-schema/profile";
 import { CHECKLIST_STEP_IDS } from "@/domain/types";
+import { MAX_SAVED_PROGRAMS } from "@/lib/constants";
+import { MAX_PLAN_PROGRAMS } from "@/lib/plan/progress";
 
 // Server-side input bounds for the account Server Actions. Each is tighter than the column
 // bound in src/db/schema/app.ts, which only stops an unvalidated writer from filling a row.
@@ -59,3 +61,39 @@ export const FeedbackInputSchema = z.strictObject({
 });
 
 export const ProgramSlugInputSchema = ProgramSlugSchema;
+
+const StepIdSchema = z.enum(CHECKLIST_STEP_IDS);
+
+function distinct(values: readonly string[]): boolean {
+  return new Set(values).size === values.length;
+}
+
+// A device's guest data as the guest parsers read it (decodeProfile, parseSaved,
+// parsePlanProgress), bounded like the per-item actions above. Empty is refused: an import that
+// carries nothing must not mark the account as imported.
+export const GuestImportPayloadSchema = z
+  .strictObject({
+    profile: ProfileInputSchema.nullable(),
+    saved: z
+      .array(SavedProgramInputSchema)
+      .max(MAX_SAVED_PROGRAMS)
+      .refine((items) => distinct(items.map((item) => item.slug)), { message: "duplicate slug" }),
+    plan: z
+      .record(ProgramSlugSchema, z.array(StepIdSchema).min(1).max(CHECKLIST_STEP_IDS.length))
+      .refine((done) => Object.keys(done).length <= MAX_PLAN_PROGRAMS, {
+        message: "too many programmes",
+      })
+      .refine((done) => Object.values(done).every(distinct), { message: "duplicate step" }),
+  })
+  .refine(
+    (payload) =>
+      payload.profile !== null || payload.saved.length > 0 || Object.keys(payload.plan).length > 0,
+    { message: "nothing to import" },
+  );
+
+export const ImportModeSchema = z.enum(["auto", "replace"]);
+
+export const GuestImportInputSchema = z.strictObject({
+  payload: GuestImportPayloadSchema,
+  mode: ImportModeSchema,
+});

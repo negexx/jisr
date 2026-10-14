@@ -1,4 +1,5 @@
 import type { Profile } from "@/data-schema/profile";
+import { AUTH_HINT_KEY } from "@/lib/auth/session-hint";
 import { PROFILE_SCHEMA_VERSION } from "@/lib/constants";
 import { getLocalStorage, KEY_PREFIX, removeQuietly, type StorageLike } from "@/lib/local-storage";
 
@@ -94,14 +95,21 @@ export function writeProfile(storage: StorageLike, profile: unknown): WriteResul
   return { ok: true };
 }
 
-// App code must go through the store (save/clear), not call this directly: a same-tab write fires
-// no `storage` event, so a direct write would leave the store's cached snapshot stale.
+// Clear my data never removes these. The sign-in hint is managed only by sign-in, sign-out and
+// account deletion: removing it here would make a signed-in device look signed out while its
+// session cookie lives on.
+const KEPT_BY_CLEAR = new Set<string>([AUTH_HINT_KEY]);
+
+// Every other `jisr.` key goes: the guest's data (profile, draft, saved list, plan progress) and the
+// signed-in account's cache. App code must go through the store (save/clear), not call this
+// directly: a same-tab write fires no `storage` event, so a direct write would leave the store's
+// cached snapshot stale.
 export function clearLocalData(storage: StorageLike): void {
   const keys: string[] = [];
   try {
     for (let index = 0; index < storage.length; index += 1) {
       const key = storage.key(index);
-      if (key?.startsWith(KEY_PREFIX)) keys.push(key);
+      if (key?.startsWith(KEY_PREFIX) && !KEPT_BY_CLEAR.has(key)) keys.push(key);
     }
   } catch {
     return;

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
 
+import { inAccountMode } from "@/lib/account-cache";
 import { clearDraft, writeDraft } from "@/lib/profile/draft";
 import { draftFromForm, type FormState } from "@/lib/profile/form/state";
 import { getLocalStorage } from "@/lib/profile/storage";
@@ -20,10 +21,15 @@ export function useDraftAutosave(form: FormState, step: number, baseline: FormSt
   const pending = useRef(false);
   const suspended = useRef(false);
   const mounted = useRef(false);
+  // The draft key follows the sign-in hint (draft.ts). A form opened signed in and still open after
+  // a sign-out elsewhere (another tab, an expired session) would otherwise write the account's
+  // answers into the guest's draft, or the reverse: it only writes in the mode it was opened in.
+  const accountModeAtMount = useRef(false);
 
   const write = useCallback(() => {
     pending.current = false;
     if (suspended.current) return;
+    if (inAccountMode() !== accountModeAtMount.current) return;
     const storage = getLocalStorage();
     if (storage === null) return;
     const { form: current, step: currentStep } = latest.current;
@@ -58,6 +64,7 @@ export function useDraftAutosave(form: FormState, step: number, baseline: FormSt
 
   // Declared last: on the first run it only arms the effects above for later changes.
   useEffect(() => {
+    accountModeAtMount.current = inAccountMode();
     mounted.current = true;
     const flush = () => {
       if (!pending.current) return;

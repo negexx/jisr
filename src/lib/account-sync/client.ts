@@ -1,10 +1,12 @@
 import { inAccountMode, subscribeAccountMode } from "@/lib/account-cache";
 import { forgetSession } from "@/lib/auth/session-client";
 import { clearAccountLocalState } from "@/lib/auth/session-hint";
+import { clearAllLocalData } from "@/lib/local-data";
 import { accountPlanStore } from "@/lib/plan/store";
 import { accountProfileStore } from "@/lib/profile/store";
 import { accountSavedStore } from "@/lib/saved/store";
 import {
+  clearAccountData,
   forgetProgress,
   loadAccountData,
   saveProfile,
@@ -40,7 +42,33 @@ subscribeAccountMode(() => {
   if (!inAccountMode()) accountSync.reset();
 });
 
-// For the post-auth landing (todo 15): read the account into the cache after a sign-in.
+// For the post-auth landing: read the account into the cache after the guest import wrote it.
 export function hydrateAccountData(): Promise<void> {
-  return accountSync.hydrate();
+  return accountSync.rehydrate();
+}
+
+export type ClearAccountOutcome = "cleared" | "signed_out" | "failed";
+
+// Clear my data while signed in: the account's rows first, then this device. Nothing local is
+// removed unless the server confirmed, so a failure never leaves the two disagreeing. The sign-in
+// hint stays (clearAllLocalData keeps it): the student is still signed in.
+export async function clearAccountEverywhere(): Promise<ClearAccountOutcome> {
+  let result: Awaited<ReturnType<typeof clearAccountData>>;
+  try {
+    result = await clearAccountData();
+  } catch {
+    return "failed";
+  }
+  if (!result.ok) {
+    if (result.error !== "unauthenticated") return "failed";
+    // The server no longer knows this session: the device signs out, and what is left to clear is
+    // this device's own data, which the student can now clear as a guest.
+    forgetSession();
+    clearAccountLocalState();
+    return "signed_out";
+  }
+  // Forget what the sync layer still holds or has queued, so nothing is written back.
+  accountSync.reset();
+  clearAllLocalData();
+  return "cleared";
 }

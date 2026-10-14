@@ -38,6 +38,8 @@ export type ProfileStore = {
   subscribe: (listener: () => void) => () => void;
   save: (profile: unknown) => SaveResult;
   clear: () => void;
+  // Re-reads storage after something outside the store changed it (the guest import).
+  reload: () => void;
   dismissReset: () => void;
 };
 
@@ -180,6 +182,13 @@ export function createProfileStore(getStorage: () => StorageLike | null): Profil
       refresh();
       notify();
     },
+    reload() {
+      memoryProfile = null;
+      writeFailed = false;
+      version += 1;
+      refresh();
+      notify();
+    },
     dismissReset() {
       if (resetReason === null) return;
       resetReason = null;
@@ -246,8 +255,13 @@ export function accountAwareProfileStore(
       return { ok: true, persisted: true };
     },
     clear() {
-      // Removes every `jisr.` key, the hint and the account cache included.
+      // Removes every `jisr.` key but the sign-in hint, the account cache included.
       guest.clear();
+      account.reload();
+      refreshAccountMode();
+    },
+    reload() {
+      guest.reload();
       account.reload();
       refreshAccountMode();
     },

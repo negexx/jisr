@@ -3,7 +3,14 @@ import type { NodePgDatabase } from "drizzle-orm/node-postgres";
 
 import type { Profile } from "@/data-schema/profile";
 import type * as schema from "@/db/schema";
-import { checklistProgress, feedbackReports, profiles, savedPrograms, user } from "@/db/schema";
+import {
+  checklistProgress,
+  feedbackReports,
+  profiles,
+  savedPrograms,
+  user,
+  userDataState,
+} from "@/db/schema";
 import { CHECKLIST_STEP_IDS, type ChecklistStepId } from "@/domain/types";
 import { MAX_SAVED_PROGRAMS } from "@/lib/constants";
 import { isRecord } from "@/lib/guards";
@@ -20,7 +27,7 @@ import { rowsToPlanProgress, rowsToSavedList, rowToProfile, savedProgramToRow } 
 export const FEEDBACK_REPORTS_PER_DAY = 20;
 
 export type AccountDb = NodePgDatabase<typeof schema>;
-type Transaction = Parameters<Parameters<AccountDb["transaction"]>[0]>[0];
+export type Transaction = Parameters<Parameters<AccountDb["transaction"]>[0]>[0];
 
 export type ActionError =
   | "unauthenticated"
@@ -73,7 +80,7 @@ function ok<T>(value: T): { ok: true; value: T } {
 // plan-programme cap, the feedback rate limit). FOR UPDATE on the user row also conflicts with the
 // FOR KEY SHARE an insert takes through its foreign key. False when the user row is gone, e.g. the
 // account was deleted while the session was still being presented.
-async function lockUser(tx: Transaction, userId: string): Promise<boolean> {
+export async function lockUser(tx: Transaction, userId: string): Promise<boolean> {
   const locked = await tx
     .select({ id: user.id })
     .from(user)
@@ -280,6 +287,24 @@ export async function createFeedbackReportFor(
       snapshotVersion: report.snapshotVersion,
       note,
     });
+    return ok(undefined);
+  });
+}
+
+// Clear my data while signed in. The import marker goes too: it only says that the account's rows
+// came from a device, and once they are gone a later sign-in with guest data imports it again
+// instead of asking whether to keep an empty account. Feedback reports, the consent record and the
+// sign-in itself are not user data here; account deletion removes them.
+export async function clearAccountDataFor(
+  db: AccountDb,
+  userId: string,
+): Promise<ActionResult<void>> {
+  return db.transaction(async (tx) => {
+    if (!(await lockUser(tx, userId))) return { ok: false, error: "unauthenticated" };
+    await tx.delete(savedPrograms).where(eq(savedPrograms.userId, userId));
+    await tx.delete(checklistProgress).where(eq(checklistProgress.userId, userId));
+    await tx.delete(profiles).where(eq(profiles.userId, userId));
+    await tx.delete(userDataState).where(eq(userDataState.userId, userId));
     return ok(undefined);
   });
 }

@@ -2,14 +2,16 @@
 
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { type ReactNode, useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import type { AppLocale } from "@/i18n/routing";
 import { landingReturnPath, RETURN_PARAM, signInErrorPath } from "@/lib/auth/callback-urls";
 import { runPostAuthSeam } from "@/lib/auth/post-auth";
+
 import { lookupSession } from "@/lib/auth/session-client";
 import { setSessionHint } from "@/lib/auth/session-hint";
+import type { ImportMode } from "@/lib/server/import";
 
 import { FinishSignupGate } from "./finish-signup-gate";
 
@@ -26,20 +28,73 @@ function readLocation(): { returnParam: string | null; error: string | null } {
   return { returnParam: params.get(RETURN_PARAM), error: params.get("error") };
 }
 
+// Most sign-ins never need the choice, so its dialog (Radix) loads only when one does.
+const ImportChoiceDialog = lazy(async () => ({
+  default: (await import("./import-choice-dialog")).ImportChoiceDialog,
+}));
+
+type Step = { kind: "working" } | { kind: "choose" } | { kind: "failed"; mode: ImportMode };
+
 // Rendered once the finish-signup gate is clear: records the sign-in on this device, runs the
-// post-auth step, then moves on. Mounted only after the gate, so it runs exactly once.
-function Completion({ locale, children }: { locale: AppLocale; children: ReactNode }) {
+// post-auth step (the guest import), then moves on. Mounted only after the gate, so the automatic
+// import starts exactly once; a failure never strands the student here.
+function Completion({ locale }: { locale: AppLocale }) {
+  const t = useTranslations("welcome");
   const router = useRouter();
   const started = useRef(false);
+  const [step, setStep] = useState<Step>({ kind: "working" });
+
+  const leave = useCallback(() => {
+    router.replace(landingReturnPath(readLocation().returnParam, locale));
+  }, [locale, router]);
+
+  const run = useCallback(
+    (mode: ImportMode) => {
+      setStep({ kind: "working" });
+      void runPostAuthSeam(locale, mode).then(
+        (outcome) => {
+          if (outcome === "done") leave();
+          else if (outcome === "choose") setStep({ kind: "choose" });
+          else setStep({ kind: "failed", mode });
+        },
+        () => setStep({ kind: "failed", mode }),
+      );
+    },
+    [leave, locale],
+  );
+
   useEffect(() => {
     if (started.current) return;
     started.current = true;
     setSessionHint();
-    void runPostAuthSeam().then(() => {
-      router.replace(landingReturnPath(readLocation().returnParam, locale));
-    });
-  }, [locale, router]);
-  return children;
+    run("auto");
+  }, [run]);
+
+  if (step.kind === "failed") {
+    return (
+      <div className="flex max-w-prose flex-col items-start gap-4 text-start">
+        <p role="alert" className="text-base font-medium text-destructive">
+          {t("import.failed")}
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <Button type="button" onClick={() => run(step.mode)}>
+            {t("import.retry")}
+          </Button>
+          <Button type="button" variant="outline" onClick={leave}>
+            {t("import.continue")}
+          </Button>
+        </div>
+      </div>
+    );
+  }
+  if (step.kind === "choose") {
+    return (
+      <Suspense fallback={null}>
+        <ImportChoiceDialog onKeep={leave} onReplace={() => run("replace")} />
+      </Suspense>
+    );
+  }
+  return <output>{t("finishing")}</output>;
 }
 
 // The one completion point for every redirect-based sign-in (magic link on any device, Google). It
@@ -79,9 +134,7 @@ export function PostAuthLanding({ locale }: { locale: AppLocale }) {
   if (stage.kind === "consent") {
     return (
       <FinishSignupGate consentVersion={stage.consentVersion}>
-        <Completion locale={locale}>
-          <output>{t("finishing")}</output>
-        </Completion>
+        <Completion locale={locale} />
       </FinishSignupGate>
     );
   }

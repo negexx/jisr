@@ -9,6 +9,7 @@ import { PostAuthLanding } from "@/components/auth/post-auth-landing";
 import { localeDirection } from "@/i18n/direction";
 import type { AppLocale } from "@/i18n/routing";
 import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
+import type { PostAuthStep } from "@/lib/auth/post-auth";
 import { forgetSession } from "@/lib/auth/session-client";
 import { AUTH_HINT_KEY } from "@/lib/auth/session-hint";
 import { type MessageTree, pickMessages } from "@/lib/i18n/client-messages";
@@ -25,7 +26,7 @@ const mocks = vi.hoisted(() => {
     router: { replace },
     getSession: vi.fn<() => Promise<unknown>>(),
     acceptCurrentConsent: vi.fn<() => Promise<unknown>>(),
-    seam: vi.fn<() => Promise<void>>(),
+    seam: vi.fn<(locale: AppLocale, mode?: "auto" | "replace") => Promise<PostAuthStep>>(),
   };
 });
 
@@ -71,7 +72,7 @@ beforeEach(() => {
   mocks.getSession.mockReset();
   mocks.acceptCurrentConsent.mockReset();
   mocks.seam.mockReset();
-  mocks.seam.mockResolvedValue(undefined);
+  mocks.seam.mockResolvedValue("done");
 });
 afterEach(() => {
   cleanup();
@@ -116,8 +117,8 @@ describe("post-auth landing with a ready account", () => {
     mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
     let finish: () => void = () => {};
     mocks.seam.mockReturnValue(
-      new Promise<void>((resolve) => {
-        finish = resolve;
+      new Promise<PostAuthStep>((resolve) => {
+        finish = () => resolve("done");
       }),
     );
     renderLanding("fr", "?return=%2Ffr%2Fplan");
@@ -201,5 +202,90 @@ describe("post-auth landing without a session", () => {
     mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
     await userEvent.setup().click(screen.getByRole("button", { name: fr.welcome.retry }));
     await waitFor(() => expect(mocks.replace).toHaveBeenCalledExactlyOnceWith("/fr/plan"));
+  });
+});
+
+describe("post-auth landing: the guest import", () => {
+  it("runs the automatic import once, for the page's locale", async () => {
+    mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
+    renderLanding("ar", "?return=%2Far%2Fplan");
+    await waitFor(() => expect(mocks.replace).toHaveBeenCalledExactlyOnceWith("/ar/plan"));
+    expect(mocks.seam).toHaveBeenCalledExactlyOnceWith("ar", "auto");
+  });
+
+  it.each([
+    ["fails", () => mocks.seam.mockResolvedValueOnce("failed")],
+    ["throws", () => mocks.seam.mockRejectedValueOnce(new Error("chunk"))],
+  ])("shows a retry and a way on, never a dead end, when the step %s", async (_label, arrange) => {
+    mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
+    arrange();
+    renderLanding("fr", "?return=%2Ffr%2Fcompare");
+    expect(await screen.findByRole("alert")).toHaveProperty(
+      "textContent",
+      fr.welcome.import.failed,
+    );
+    expect(mocks.replace).not.toHaveBeenCalled();
+
+    await userEvent.setup().click(screen.getByRole("button", { name: fr.welcome.import.retry }));
+    await waitFor(() => expect(mocks.replace).toHaveBeenCalledExactlyOnceWith("/fr/compare"));
+    expect(mocks.seam).toHaveBeenNthCalledWith(2, "fr", "auto");
+  });
+
+  it("lets the student move on without the import after a failure", async () => {
+    mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
+    mocks.seam.mockResolvedValueOnce("failed");
+    renderLanding("en", "?return=%2Fen%2Fmatches");
+    await userEvent
+      .setup()
+      .click(await screen.findByRole("button", { name: en.welcome.import.continue }));
+    expect(mocks.replace).toHaveBeenCalledExactlyOnceWith("/en/matches");
+    expect(mocks.seam).toHaveBeenCalledTimes(1);
+  });
+
+  describe.each(["fr", "ar"] as const)("when the account already holds data (%s)", (locale) => {
+    const copy = CATALOGS[locale].welcome.import;
+
+    async function openChoice() {
+      mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
+      mocks.seam.mockResolvedValueOnce("choose");
+      renderLanding(locale, `?return=%2F${locale}%2Fplan`);
+      return screen.findByRole("alertdialog", { name: copy.title });
+    }
+
+    it("asks, and moves on without replacing when the student keeps the account's data", async () => {
+      const dialog = await openChoice();
+      expect(dialog.textContent).toContain(copy.description);
+      expect(mocks.replace).not.toHaveBeenCalled();
+      const keep = screen.getByRole("button", { name: copy.keep });
+      expect(keep.getAttribute("aria-describedby")).toBe("import-keep-hint");
+
+      await userEvent.setup().click(keep);
+      await waitFor(() => expect(mocks.replace).toHaveBeenCalledExactlyOnceWith(`/${locale}/plan`));
+      expect(mocks.seam).toHaveBeenCalledExactlyOnceWith(locale, "auto");
+    });
+
+    it("keeps the account's data when the dialog is dismissed with Escape", async () => {
+      await openChoice();
+      await userEvent.setup().keyboard("{Escape}");
+      await waitFor(() => expect(mocks.replace).toHaveBeenCalledExactlyOnceWith(`/${locale}/plan`));
+      expect(mocks.seam).toHaveBeenCalledTimes(1);
+    });
+
+    it("replaces only on the explicit choice, then moves on", async () => {
+      await openChoice();
+      await userEvent.setup().click(screen.getByRole("button", { name: copy.replace }));
+      await waitFor(() => expect(mocks.replace).toHaveBeenCalledExactlyOnceWith(`/${locale}/plan`));
+      expect(mocks.seam).toHaveBeenNthCalledWith(2, locale, "replace");
+    });
+
+    it("offers to retry the replace itself when it fails", async () => {
+      await openChoice();
+      mocks.seam.mockResolvedValueOnce("failed");
+      const user = userEvent.setup();
+      await user.click(screen.getByRole("button", { name: copy.replace }));
+      await user.click(await screen.findByRole("button", { name: copy.retry }));
+      await waitFor(() => expect(mocks.replace).toHaveBeenCalledTimes(1));
+      expect(mocks.seam).toHaveBeenNthCalledWith(3, locale, "replace");
+    });
   });
 });
