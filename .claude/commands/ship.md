@@ -14,7 +14,7 @@ Ship the current branch as a PR. The user expects this command to do the boring 
 
 2. **Run /verify** — typecheck + tests + lint must all pass. If anything fails, stop and report.
 
-3. **Review** — dispatch the `reviewer` subagent (Opus 5.5 at medium effort) against the full diff. Resolve or explicitly accept every `Critical`/`Important` finding before continuing — a `REQUEST_CHANGES` verdict blocks shipping until addressed.
+3. **Review** — dispatch the `reviewer-complex` subagent (Opus 5.5 at medium effort) against the full diff: shipping is the final whole-branch review. Resolve or explicitly accept every `Critical`/`Important` finding before continuing — a `REQUEST_CHANGES` verdict blocks shipping until addressed.
 
 4. **Push** — `git push -u origin HEAD` (only if branch isn't already tracking remote).
 
@@ -47,5 +47,5 @@ Ship the current branch as a PR. The user expects this command to do the boring 
 - Never push directly to `main`.
 - Never force-push unless the user asked.
 - If verification fails, do NOT push or open the PR — fix first.
-- Never skip the Opus 5.5 review step (at medium effort), even under time pressure — it's the mandatory gate, not an optional nicety.
+- Never skip the whole-branch Opus 5.5 review step (`reviewer-complex`, medium effort), even under time pressure — it's the mandatory gate, not an optional nicety.
 - Include any schema migrations, env var changes, or breaking changes in the Notes section explicitly.
