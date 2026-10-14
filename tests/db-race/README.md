@@ -18,8 +18,9 @@ the job if any spec in this directory was skipped.
 Use `describeRace` and `createRaceDatabase` from `./pg`. `createRaceDatabase()` runs
 `create database race_<random>` through `TEST_POSTGRES_URL`, runs the `drizzle/` migrations into it
 and hands out pools on that database. Call `race.drop()` in `afterAll`: it ends the pools, drops the
-database with `(force)` and throws if a pool reported an idle-client error (so a terminated client
-fails the suite instead of crashing the worker).
+database with `(force)` and throws if a pool reported an idle-client error before teardown began (so
+a terminated client fails the suite instead of crashing the worker). The `57P01` admin_shutdown the
+forced drop itself can cause on a not-yet-exited backend is ignored; `pg.test.ts` pins both sides.
 
 Isolation is per database, not per schema, because drizzle-kit writes `"public"."table"` in foreign
 keys and `CREATE TYPE "public"."enum"`, which `search_path` cannot redirect (`migrations.test.ts`

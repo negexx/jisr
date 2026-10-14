@@ -21,6 +21,7 @@ export const RACE_SKIP_REASON =
   "TEST_POSTGRES_URL unset: race specs need a real Postgres (PGlite is single-connection)";
 
 const MIGRATIONS_DIR = "drizzle";
+const ADMIN_SHUTDOWN = "57P01";
 
 export function raceDatabase(): { url: string } | null {
   const url = process.env.TEST_POSTGRES_URL;
@@ -44,7 +45,8 @@ export type RaceDatabase = {
   createPool: (max: number) => Pool;
   /** False only when the migrations directory does not exist: the tolerated empty path. */
   readonly migrated: boolean;
-  /** Ends every pool, drops the database (forcibly), then throws if a pool reported an error. */
+  /** Ends every pool, drops the database (forcibly), then throws if a pool reported an error
+   * before teardown began; the admin_shutdown (57P01) the forced drop itself causes is ignored. */
   drop: () => Promise<void>;
 };
 
@@ -71,19 +73,28 @@ export async function createRaceDatabase(
 
   const pools: Pool[] = [];
   const poolErrors: Error[] = [];
+  let tearingDown = false;
+  const recordPoolError = (error: Error): void => {
+    // pool.end() resolves once Terminate is sent, so the forced drop can still kill a backend
+    // that has not exited yet; its socket then reports admin_shutdown. That is the teardown
+    // itself, not a failure of the spec under test.
+    if (tearingDown && (error as { code?: unknown }).code === ADMIN_SHUTDOWN) return;
+    poolErrors.push(error);
+  };
   const createPool = (max: number): Pool => {
     const pool = new Pool({ connectionString: url, max });
     // An unhandled 'error' on an idle client would crash the worker; keep it and fail drop().
-    pool.on("error", (error) => poolErrors.push(error));
+    pool.on("error", recordPoolError);
     pools.push(pool);
     return pool;
   };
 
   const admin = new Pool({ connectionString: server.url, max: 1 });
-  admin.on("error", (error) => poolErrors.push(error));
+  admin.on("error", recordPoolError);
   await admin.query(`create database ${quoteIdent(name)}`);
 
   const drop = async (): Promise<void> => {
+    tearingDown = true;
     await Promise.all(pools.splice(0).map((pool) => pool.end()));
     try {
       await admin.query(`drop database if exists ${quoteIdent(name)} with (force)`);
