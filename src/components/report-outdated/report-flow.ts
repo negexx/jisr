@@ -38,7 +38,8 @@ export async function submitReport(request: ReportRequest): Promise<ReportOutcom
       clearAccountLocalState();
       return { kind: "navigate", to: signInPath(locale, returnPath) };
     case "consent_required":
-      // The finish-signup gate lives on the landing page and sends the student back here after.
+      // The landing URL is the post-auth landing: it holds the finish-signup gate and, once the
+      // student consents, continues to `return`. authCallbackUrls is the only builder of that URL.
       return { kind: "navigate", to: authCallbackUrls(locale, returnPath).callbackURL };
     case "rate_limited":
       return { kind: "failed", reason: "rate_limited" };

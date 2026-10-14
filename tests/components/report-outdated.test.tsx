@@ -266,6 +266,32 @@ const SURFACES: Surface[] = [
       );
     },
   },
+  {
+    // The step's own facts are empty, so its only badge is the program's bare documents FactMeta.
+    name: "plan documents step (fact without a record of its own)",
+    render: async (locale) => {
+      const { programs } = await planEntries(fixture.client(), locale, [PROGRAMS.ok]);
+      const [program] = programs;
+      const step = program?.steps.find((candidate) => candidate.id === "documents");
+      if (program === undefined || step === undefined) throw new Error("no documents step");
+      const result = render(
+        <PlanProviders locale={locale}>
+          <Reporting locale={locale}>
+            <ol>
+              <StepRow
+                program={{ ...program, intake: { kind: "unknown", fact: null } }}
+                step={{ ...step, facts: [] }}
+                done={false}
+                onToggle={() => undefined}
+              />
+            </ol>
+          </Reporting>
+        </PlanProviders>,
+      );
+      expect(counts(result.container)).toEqual({ badges: 1, buttons: 1 });
+      return result;
+    },
+  },
 ];
 
 describe.each(LOCALES)("ReportOutdatedButton on journey surfaces (%s)", (locale) => {
@@ -295,6 +321,11 @@ describe.each(LOCALES)("ReportOutdatedButton on journey surfaces (%s)", (locale)
     expect(buttons.length).toBeGreaterThan(0);
     for (const button of buttons) await user.click(button);
     await waitFor(() => expect(mocks.createFeedbackReport).toHaveBeenCalledTimes(buttons.length));
+    if (_name.startsWith("plan documents step")) {
+      expect(mocks.createFeedbackReport).toHaveBeenCalledWith(
+        expect.objectContaining({ record: `programs/${E2E_SLUGS.ok}`, path: "documents" }),
+      );
+    }
     for (const [input] of mocks.createFeedbackReport.mock.calls) {
       const parsed = FeedbackInputSchema.safeParse(input);
       expect(parsed.success, JSON.stringify(input)).toBe(true);
