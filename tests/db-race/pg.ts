@@ -7,18 +7,20 @@ import { migrate } from "drizzle-orm/node-postgres/migrator";
 import { Pool } from "pg";
 import { describe } from "vitest";
 
-import { TEST_DB_MIGRATIONS_DIR } from "../db/harness";
-
 /**
  * Race and transaction specs need real, concurrent Postgres connections (row locks,
  * serialisation failures), which PGlite's single-connection socket cannot give. They run
  * against the Postgres named by TEST_POSTGRES_URL (a CI service container, or a local
  * `docker run`) and are skipped when it is unset. Each spec works in its own throwaway
- * schema, so parallel files and reruns never collide. See tests/db-race/README.md.
+ * DATABASE, not schema: drizzle-kit writes `"public"."table"` references and
+ * `CREATE TYPE "public"."enum"`, which search_path cannot redirect, so only a separate
+ * database keeps parallel files and reruns from colliding. See tests/db-race/README.md.
  */
 
 export const RACE_SKIP_REASON =
   "TEST_POSTGRES_URL unset: race specs need a real Postgres (PGlite is single-connection)";
+
+const MIGRATIONS_DIR = "drizzle";
 
 export function raceDatabase(): { url: string } | null {
   const url = process.env.TEST_POSTGRES_URL;
@@ -34,13 +36,15 @@ export const describeRace = (name: string, factory: () => void): void => {
   }
 };
 
-export type RaceSchema = {
-  readonly schema: string;
-  /** A pool whose every connection has search_path set to the throwaway schema. */
+export type RaceDatabase = {
+  /** Name of the throwaway database, `race_<12 hex>`. */
+  readonly name: string;
+  readonly url: string;
+  /** A pool on the throwaway database; ended by drop(). Idle-client errors fail drop(). */
   createPool: (max: number) => Pool;
-  /** False until the first migration exists (todo 4): the tolerated empty path. */
+  /** False only while drizzle/ does not exist yet (before todo 4): the tolerated empty path. */
   readonly migrated: boolean;
-  /** Ends every pool created here and drops the schema. */
+  /** Ends every pool, drops the database (forcibly), then throws if a pool reported an error. */
   drop: () => Promise<void>;
 };
 
@@ -48,51 +52,61 @@ function quoteIdent(identifier: string): string {
   return `"${identifier.replaceAll('"', '""')}"`;
 }
 
-export async function createRaceSchema(
-  options: { repoRoot?: string; migrationsDir?: string } = {},
-): Promise<RaceSchema> {
-  const database = raceDatabase();
-  if (!database) throw new Error(RACE_SKIP_REASON);
+function urlForDatabase(baseUrl: string, database: string): string {
+  const url = new URL(baseUrl);
+  url.pathname = `/${database}`;
+  return url.toString();
+}
 
-  const schema = `race_${randomBytes(6).toString("hex")}`;
+export async function createRaceDatabase(
+  options: { repoRoot?: string; migrationsDir?: string } = {},
+): Promise<RaceDatabase> {
+  const server = raceDatabase();
+  if (!server) throw new Error(RACE_SKIP_REASON);
+
+  const name = `race_${randomBytes(6).toString("hex")}`;
+  const url = urlForDatabase(server.url, name);
   const repoRoot = options.repoRoot ?? process.cwd();
-  const migrationsDir = options.migrationsDir ?? resolve(repoRoot, TEST_DB_MIGRATIONS_DIR);
+  const migrationsDir = options.migrationsDir ?? resolve(repoRoot, MIGRATIONS_DIR);
 
   const pools: Pool[] = [];
+  const poolErrors: Error[] = [];
   const createPool = (max: number): Pool => {
-    const pool = new Pool({
-      connectionString: database.url,
-      max,
-      options: `-c search_path=${schema}`,
-    });
+    const pool = new Pool({ connectionString: url, max });
+    // An unhandled 'error' on an idle client would crash the worker; keep it and fail drop().
+    pool.on("error", (error) => poolErrors.push(error));
     pools.push(pool);
     return pool;
   };
 
-  const admin = new Pool({ connectionString: database.url, max: 1 });
-  await admin.query(`create schema ${quoteIdent(schema)}`);
+  const admin = new Pool({ connectionString: server.url, max: 1 });
+  admin.on("error", (error) => poolErrors.push(error));
+  await admin.query(`create database ${quoteIdent(name)}`);
 
-  const dropSchema = async (): Promise<void> => {
+  const drop = async (): Promise<void> => {
     await Promise.all(pools.splice(0).map((pool) => pool.end()));
     try {
-      await admin.query(`drop schema if exists ${quoteIdent(schema)} cascade`);
+      await admin.query(`drop database if exists ${quoteIdent(name)} with (force)`);
     } finally {
       await admin.end();
     }
+    const [firstError] = poolErrors;
+    if (firstError) throw new Error(`a race pool reported an error: ${firstError.message}`);
   };
 
   let migrated = false;
-  if (existsSync(resolve(migrationsDir, "meta", "_journal.json"))) {
+  if (existsSync(migrationsDir)) {
+    // A migrations folder without a journal is broken, not "empty": fail, locally and in CI.
+    if (!existsSync(resolve(migrationsDir, "meta", "_journal.json"))) {
+      await drop();
+      throw new Error(`${migrationsDir} exists but has no meta/_journal.json`);
+    }
     const migrationPool = createPool(1);
     try {
-      // The bookkeeping table lives in the same schema, not the shared "drizzle" one.
-      await migrate(drizzle(migrationPool), {
-        migrationsFolder: migrationsDir,
-        migrationsSchema: schema,
-      });
+      await migrate(drizzle(migrationPool), { migrationsFolder: migrationsDir });
       migrated = true;
     } catch (error) {
-      await dropSchema();
+      await drop();
       throw error;
     }
   } else {
@@ -101,5 +115,5 @@ export async function createRaceSchema(
     );
   }
 
-  return { schema, createPool, migrated, drop: dropSchema };
+  return { name, url, createPool, migrated, drop };
 }

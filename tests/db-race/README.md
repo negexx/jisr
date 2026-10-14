@@ -15,11 +15,20 @@ the job if any spec in this directory was skipped.
 
 ## Writing a spec
 
-Use `describeRace` and `createRaceSchema` from `./pg`. `createRaceSchema()` creates a fresh
-`race_<random>` schema, runs the `drizzle/` migrations into it (tolerating their absence until the
-first migration exists) and hands out pools whose connections all have that schema as `search_path`.
-Call `race.drop()` in `afterAll`. Never use a shared persistent database and never put real
-credentials in a spec.
+Use `describeRace` and `createRaceDatabase` from `./pg`. `createRaceDatabase()` runs
+`create database race_<random>` through `TEST_POSTGRES_URL`, runs the `drizzle/` migrations into it
+and hands out pools on that database. Call `race.drop()` in `afterAll`: it ends the pools, drops the
+database with `(force)` and throws if a pool reported an idle-client error (so a terminated client
+fails the suite instead of crashing the worker).
+
+Isolation is per database, not per schema, because drizzle-kit writes `"public"."table"` in foreign
+keys and `CREATE TYPE "public"."enum"`, which `search_path` cannot redirect (`migrations.test.ts`
+runs two such migrations concurrently against `fixtures/migrations/`).
+
+Migrations are tolerated as absent only while the `drizzle/` directory does not exist (before the
+first migration). Once it exists, a missing `meta/_journal.json` or a failing migration fails the
+spec, locally and in CI. Never use a shared persistent database and never put real credentials in a
+spec.
 
 `harness.test.ts` is the seed: two pool clients get different `pg_backend_pid()` values, and a
 `select … for update` in one client blocks the other until the first commits.

@@ -1,7 +1,7 @@
 import type { Pool, PoolClient } from "pg";
 import { afterAll, beforeAll, expect, it } from "vitest";
 
-import { createRaceSchema, describeRace, type RaceSchema } from "./pg";
+import { createRaceDatabase, describeRace, type RaceDatabase } from "./pg";
 
 const LOCK_WAIT_TIMEOUT_MS = 10_000;
 
@@ -19,13 +19,13 @@ async function waitUntilBlockedOnLock(observer: Pool, pid: number): Promise<void
 }
 
 describeRace("race harness", () => {
-  let race: RaceSchema;
+  let race: RaceDatabase;
   let pool: Pool;
   let clientA: PoolClient;
   let clientB: PoolClient;
 
   beforeAll(async () => {
-    race = await createRaceSchema();
+    race = await createRaceDatabase();
     pool = race.createPool(3);
     await pool.query("create table lock_probe (id integer primary key, value text not null)");
     await pool.query("insert into lock_probe (id, value) values (1, 'initial')");
@@ -39,10 +39,10 @@ describeRace("race harness", () => {
     await race?.drop();
   });
 
-  it("uses a throwaway schema as the search_path of every connection", async () => {
-    const { rows } = await clientA.query<{ schema: string }>("select current_schema() as schema");
-    expect(rows[0]?.schema).toBe(race.schema);
-    expect(race.schema).toMatch(/^race_[0-9a-f]{12}$/);
+  it("connects every client to the throwaway database", async () => {
+    const { rows } = await clientA.query<{ name: string }>("select current_database() as name");
+    expect(rows[0]?.name).toBe(race.name);
+    expect(race.name).toMatch(/^race_[0-9a-f]{12}$/);
   });
 
   it("holds two distinct real connections", async () => {
