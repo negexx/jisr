@@ -30,7 +30,7 @@ import {
   ResetNotice,
   StorageNotice,
 } from "./compare-states";
-import { pickerItems } from "./picker-items";
+import { distinctProgrammes, pickerItems } from "./picker-items";
 
 // The view model is loaded on demand: it carries the matching, cost and reason code, which only a
 // student with two saved programs ever needs.
@@ -92,22 +92,24 @@ export function CompareClient({ locale, client }: { locale: AppLocale; client?: 
   }, [wanted, attempt]);
 
   // Saved programs that the loaded shards contain, in saved order: only these can be compared.
-  const available = useMemo(() => {
-    if (bundle === null) return [];
-    const known = new Set(bundle.programs.flatMap((shard) => shard.programs.map((p) => p.slug)));
-    return items
-      .map((item) => item.slug)
-      .filter((slug) => known.has(resolveProgramSlug(slug, bundle)));
-  }, [bundle, items]);
-  const rows = useMemo(
+  const savedSlugs = useMemo(
     () =>
       bundle === null
         ? []
-        : pickerItems(
+        : distinctProgrammes(
             bundle,
             items.map((item) => item.slug),
           ),
     [bundle, items],
+  );
+  const available = useMemo(() => {
+    if (bundle === null) return [];
+    const known = new Set(bundle.programs.flatMap((shard) => shard.programs.map((p) => p.slug)));
+    return savedSlugs.filter((slug) => known.has(resolveProgramSlug(slug, bundle)));
+  }, [bundle, savedSlugs]);
+  const rows = useMemo(
+    () => (bundle === null ? [] : pickerItems(bundle, savedSlugs)),
+    [bundle, savedSlugs],
   );
 
   // `null` is the default selection (the first MAX_COMPARE); the student's own choice replaces it.

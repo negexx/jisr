@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
-import { pickerItems } from "@/components/compare/picker-items";
+import { distinctProgrammes, pickerItems } from "@/components/compare/picker-items";
 import type { SnapshotBundle } from "@/lib/snapshot/client";
 
 import { E2E_PROFILE, E2E_SLUGS } from "../../fixtures/e2e/profiles";
@@ -25,6 +25,31 @@ describe("pickerItems", () => {
   it("still shows a slug that is neither live nor aliased as no longer in our data", () => {
     expect(pickerItems(bundle, ["xx-test-prog-never-existed"])).toEqual([
       { kind: "missing", slug: "xx-test-prog-never-existed" },
+    ]);
+  });
+});
+
+describe("distinctProgrammes", () => {
+  const FORMER = "xx-test-prog-old-ok";
+
+  it("keeps the first saved slug when a former and a current slug name the same programme", () => {
+    expect(distinctProgrammes(bundle, [FORMER, E2E_SLUGS.ok])).toEqual([FORMER]);
+    expect(distinctProgrammes(bundle, [E2E_SLUGS.ok, FORMER])).toEqual([E2E_SLUGS.ok]);
+  });
+
+  it("keeps the order of the others and leaves a list without aliases untouched", () => {
+    expect(distinctProgrammes(bundle, [E2E_SLUGS.check, FORMER, E2E_SLUGS.ok])).toEqual([
+      E2E_SLUGS.check,
+      FORMER,
+    ]);
+    const plain = [E2E_SLUGS.ok, E2E_SLUGS.check];
+    expect(distinctProgrammes(bundle, plain)).toEqual(plain);
+  });
+
+  it("keeps a slug that is not in our data, once", () => {
+    expect(distinctProgrammes(bundle, ["xx-test-prog-never-existed", E2E_SLUGS.ok])).toEqual([
+      "xx-test-prog-never-existed",
+      E2E_SLUGS.ok,
     ]);
   });
 });
