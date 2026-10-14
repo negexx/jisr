@@ -33,6 +33,8 @@ describe("proxy matcher", () => {
 
   it.each([
     "/api/x",
+    "/api/auth",
+    "/api/auth/callback/google",
     "/_next/static/a.js",
     "/_vercel/x",
     "/snapshots/manifest.json",

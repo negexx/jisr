@@ -1,5 +1,5 @@
 import { Pool } from "pg";
-import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { startTestDatabase, type TestDatabase } from "./harness";
 
@@ -92,6 +92,10 @@ beforeEach(async () => {
   await pool.query("delete from pending_signups");
 });
 
+afterEach(() => {
+  vi.unstubAllEnvs();
+});
+
 afterAll(async () => {
   await closeAppPool?.();
   await pool?.end();
@@ -136,6 +140,12 @@ describe("readPendingSignup", () => {
 });
 
 describe("admission gate against the database", () => {
+  // The accounts kill switch is off by default; these specs exercise the admission rules
+  // behind it, so each one turns it on for its own run only.
+  beforeEach(() => {
+    vi.stubEnv("ACCOUNTS_ENABLED", "true");
+  });
+
   it("rejects a create with no server-validated evidence at the hook, so no row is written", async () => {
     const before = auth.options.databaseHooks?.user?.create?.before;
     if (!before) throw new Error("the create.before gate hook is not registered");

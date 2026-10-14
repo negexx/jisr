@@ -9,7 +9,8 @@ import { magicLink } from "better-auth/plugins";
 import { db } from "@/db";
 import * as schema from "@/db/schema";
 import { sendAuthEmail } from "@/lib/server/email";
-
+import { accountsEnabled } from "./accounts-enabled";
+import { ACCOUNTS_DISABLED_CODE, accountsGate } from "./accounts-gate";
 import { type AdmissionConfirmation, evaluateAdmission } from "./admission";
 import { readPendingSignup } from "./pending-signup";
 
@@ -56,6 +57,14 @@ export const auth = betterAuth({
     user: {
       create: {
         before: async (user, ctx) => {
+          // Defence in depth behind the accounts gate plugin: auth.api.* server calls and
+          // anything else that skips the HTTP handler still cannot create a user while off.
+          if (!accountsEnabled()) {
+            throw new APIError("FORBIDDEN", {
+              message: "Accounts are not available yet.",
+              code: ACCOUNTS_DISABLED_CODE,
+            });
+          }
           const pending = await readPendingSignup(user.email);
           const decision = evaluateAdmission(
             admissionConfirmationFromHookContext(ctx),
@@ -80,6 +89,7 @@ export const auth = betterAuth({
     },
   },
   plugins: [
+    accountsGate(),
     magicLink({
       expiresIn: MAGIC_LINK_EXPIRY_S,
       disableSignUp: false,
