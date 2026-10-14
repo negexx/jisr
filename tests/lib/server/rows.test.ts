@@ -2,7 +2,8 @@ import { describe, expect, it } from "vitest";
 
 import { ProfileSchema } from "@/data-schema/profile";
 import { CHECKLIST_STEP_IDS } from "@/domain/types";
-import { type PlanProgress, parsePlanProgress } from "@/lib/plan/progress";
+import { MAX_SAVED_PROGRAMS } from "@/lib/constants";
+import { MAX_PLAN_PROGRAMS, type PlanProgress, parsePlanProgress } from "@/lib/plan/progress";
 import { parseSaved, type SavedList, type SavedProgram } from "@/lib/saved/saved";
 import {
   planProgressToRows,
@@ -170,6 +171,22 @@ describe("checklist progress rows", () => {
       { userId: USER_ID, programSlug: "xx-prog-a", stepId: "visa", doneAt: DONE_AT },
     ];
     expect(rowsToPlanProgress(rows).done).toEqual({ "xx-prog-a": ["visa"] });
+  });
+
+  it("keeps at most MAX_PLAN_PROGRAMS programmes, the first ones by slug, whatever the row order", () => {
+    const slugs = Array.from(
+      { length: MAX_PLAN_PROGRAMS + 3 },
+      (_, index) => `xx-prog-${String(index).padStart(3, "0")}`,
+    );
+    const rows = [...slugs]
+      .reverse()
+      .map((programSlug) => ({ userId: USER_ID, programSlug, stepId: "visa", doneAt: DONE_AT }));
+    const kept = Object.keys(rowsToPlanProgress(rows).done);
+    expect(kept).toEqual(slugs.slice(0, MAX_PLAN_PROGRAMS));
+    expect(MAX_PLAN_PROGRAMS).toBeGreaterThanOrEqual(MAX_SAVED_PROGRAMS);
+    expect(parsePlanProgress(rowsToPlanProgress(rows))?.done).toEqual(
+      rowsToPlanProgress(rows).done,
+    );
   });
 
   it("maps no rows to the empty record", () => {

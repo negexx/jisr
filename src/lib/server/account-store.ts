@@ -1,0 +1,229 @@
+import { and, count, eq, sql } from "drizzle-orm";
+import type { NodePgDatabase } from "drizzle-orm/node-postgres";
+
+import type { Profile } from "@/data-schema/profile";
+import type * as schema from "@/db/schema";
+import { checklistProgress, feedbackReports, profiles, savedPrograms, user } from "@/db/schema";
+import { CHECKLIST_STEP_IDS, type ChecklistStepId } from "@/domain/types";
+import { MAX_SAVED_PROGRAMS } from "@/lib/constants";
+import { MAX_PLAN_PROGRAMS } from "@/lib/plan/progress";
+import type { SavedProgram } from "@/lib/saved/saved";
+
+import { rowsToSavedList, rowToProfile, savedProgramToRow } from "./rows";
+
+// The database half of the account Server Actions. Every function takes the database and an
+// already-authenticated user id, so the race specs can drive two real connections through the
+// same code the "use server" wrappers in account-actions.ts call. Input is validated by the
+// wrapper (account-inputs.ts); nothing here reads a session.
+
+export const FEEDBACK_REPORTS_PER_DAY = 20;
+
+export type AccountDb = NodePgDatabase<typeof schema>;
+type Transaction = Parameters<Parameters<AccountDb["transaction"]>[0]>[0];
+
+export type ActionError =
+  | "unauthenticated"
+  | "consent_required"
+  | "invalid"
+  | "saved_limit"
+  | "rate_limited";
+export type ActionResult<T> = { ok: true; value: T } | { ok: false; error: ActionError };
+
+export type ProfileConflict = {
+  ok: false;
+  error: "conflict";
+  current: { profile: Profile; revision: number };
+};
+export type SaveProfileResult = ActionResult<{ revision: number }> | ProfileConflict;
+
+export type FeedbackInput = {
+  record: string;
+  path: string;
+  sourceUrl: string;
+  snapshotVersion: string;
+  note?: string | undefined;
+};
+
+function ok<T>(value: T): { ok: true; value: T } {
+  return { ok: true, value };
+}
+
+// Serialises this user's writes that must see each other's effect (the saved-programme cap, the
+// plan-programme cap, the feedback rate limit). FOR UPDATE on the user row also conflicts with the
+// FOR KEY SHARE an insert takes through its foreign key. False when the user row is gone, e.g. the
+// account was deleted while the session was still being presented.
+async function lockUser(tx: Transaction, userId: string): Promise<boolean> {
+  const locked = await tx
+    .select({ id: user.id })
+    .from(user)
+    .where(eq(user.id, userId))
+    .for("update");
+  return locked.length > 0;
+}
+
+async function savedItems(tx: Transaction, userId: string): Promise<SavedProgram[]> {
+  const rows = await tx.select().from(savedPrograms).where(eq(savedPrograms.userId, userId));
+  return rowsToSavedList(rows).items;
+}
+
+async function doneSteps(
+  tx: Transaction,
+  userId: string,
+  programSlug: string,
+): Promise<ChecklistStepId[]> {
+  const rows = await tx
+    .select({ stepId: checklistProgress.stepId })
+    .from(checklistProgress)
+    .where(
+      and(eq(checklistProgress.userId, userId), eq(checklistProgress.programSlug, programSlug)),
+    );
+  const present = new Set(rows.map((row) => row.stepId));
+  return CHECKLIST_STEP_IDS.filter((stepId) => present.has(stepId));
+}
+
+export async function saveProgramFor(
+  db: AccountDb,
+  userId: string,
+  item: SavedProgram,
+): Promise<ActionResult<{ items: SavedProgram[] }>> {
+  return db.transaction(async (tx) => {
+    if (!(await lockUser(tx, userId))) return { ok: false, error: "unauthenticated" };
+    const current = await savedItems(tx, userId);
+    const already = current.some((saved) => saved.slug === item.slug);
+    if (!already && current.length >= MAX_SAVED_PROGRAMS) {
+      return { ok: false, error: "saved_limit" };
+    }
+    await tx.insert(savedPrograms).values(savedProgramToRow(userId, item)).onConflictDoNothing();
+    return ok({ items: await savedItems(tx, userId) });
+  });
+}
+
+export async function unsaveProgramFor(
+  db: AccountDb,
+  userId: string,
+  slug: string,
+): Promise<ActionResult<{ items: SavedProgram[] }>> {
+  return db.transaction(async (tx) => {
+    await tx
+      .delete(savedPrograms)
+      .where(and(eq(savedPrograms.userId, userId), eq(savedPrograms.slug, slug)));
+    await tx
+      .delete(checklistProgress)
+      .where(and(eq(checklistProgress.userId, userId), eq(checklistProgress.programSlug, slug)));
+    return ok({ items: await savedItems(tx, userId) });
+  });
+}
+
+export async function setStepDoneFor(
+  db: AccountDb,
+  userId: string,
+  slug: string,
+  step: ChecklistStepId,
+  done: boolean,
+): Promise<ActionResult<{ steps: ChecklistStepId[] }>> {
+  return db.transaction(async (tx) => {
+    if (!done) {
+      await tx
+        .delete(checklistProgress)
+        .where(
+          and(
+            eq(checklistProgress.userId, userId),
+            eq(checklistProgress.programSlug, slug),
+            eq(checklistProgress.stepId, step),
+          ),
+        );
+      return ok({ steps: await doneSteps(tx, userId, slug) });
+    }
+    if (!(await lockUser(tx, userId))) return { ok: false, error: "unauthenticated" };
+    const known = await tx
+      .selectDistinct({ programSlug: checklistProgress.programSlug })
+      .from(checklistProgress)
+      .where(eq(checklistProgress.userId, userId));
+    const isNewProgram = !known.some((row) => row.programSlug === slug);
+    // Bounds what one account can store; rowsToPlanProgress would drop the surplus on read anyway.
+    if (isNewProgram && known.length >= MAX_PLAN_PROGRAMS) return { ok: false, error: "invalid" };
+    await tx
+      .insert(checklistProgress)
+      .values({ userId, programSlug: slug, stepId: step })
+      .onConflictDoNothing();
+    return ok({ steps: await doneSteps(tx, userId, slug) });
+  });
+}
+
+export async function forgetProgressFor(
+  db: AccountDb,
+  userId: string,
+  slug: string,
+): Promise<ActionResult<void>> {
+  await db
+    .delete(checklistProgress)
+    .where(and(eq(checklistProgress.userId, userId), eq(checklistProgress.programSlug, slug)));
+  return ok(undefined);
+}
+
+async function conflictWithCurrent(db: AccountDb, userId: string): Promise<SaveProfileResult> {
+  const [row] = await db.select().from(profiles).where(eq(profiles.userId, userId));
+  // No row, or a document this build cannot read: there is no version to offer the student.
+  const profile = row === undefined ? null : rowToProfile(row);
+  if (row === undefined || profile === null) return { ok: false, error: "invalid" };
+  return { ok: false, error: "conflict", current: { profile, revision: row.revision } };
+}
+
+// Compare-and-set: the write succeeds only against the revision the caller last saw. After a
+// concurrent commit Postgres re-evaluates the UPDATE's WHERE (READ COMMITTED), so of two writers
+// holding the same revision exactly one matches a row; no lock is needed.
+export async function saveProfileFor(
+  db: AccountDb,
+  userId: string,
+  profile: Profile,
+  expectedRevision: number,
+): Promise<SaveProfileResult> {
+  const [updated] = await db
+    .update(profiles)
+    .set({ data: profile, revision: sql`${profiles.revision} + 1`, updatedAt: sql`now()` })
+    .where(and(eq(profiles.userId, userId), eq(profiles.revision, expectedRevision)))
+    .returning({ revision: profiles.revision });
+  if (updated !== undefined) return ok({ revision: updated.revision });
+
+  if (expectedRevision === 0) {
+    const [created] = await db
+      .insert(profiles)
+      .values({ userId, data: profile, revision: 1 })
+      .onConflictDoNothing()
+      .returning({ revision: profiles.revision });
+    if (created !== undefined) return ok({ revision: created.revision });
+  }
+  return conflictWithCurrent(db, userId);
+}
+
+export async function createFeedbackReportFor(
+  db: AccountDb,
+  userId: string,
+  report: FeedbackInput,
+): Promise<ActionResult<void>> {
+  return db.transaction(async (tx) => {
+    if (!(await lockUser(tx, userId))) return { ok: false, error: "unauthenticated" };
+    const [recent] = await tx
+      .select({ total: count() })
+      .from(feedbackReports)
+      .where(
+        and(
+          eq(feedbackReports.userId, userId),
+          sql`${feedbackReports.createdAt} > now() - interval '24 hours'`,
+        ),
+      );
+    if ((recent?.total ?? 0) >= FEEDBACK_REPORTS_PER_DAY) {
+      return { ok: false, error: "rate_limited" };
+    }
+    const note = report.note === undefined || report.note === "" ? null : report.note;
+    await tx.insert(feedbackReports).values({
+      userId,
+      record: report.record,
+      path: report.path,
+      sourceUrl: report.sourceUrl,
+      snapshotVersion: report.snapshotVersion,
+      note,
+    });
+    return ok(undefined);
+  });
+}

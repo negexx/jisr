@@ -445,6 +445,24 @@ describe("client-reachable modules stay Zod-free", () => {
   });
 });
 
+describe("Server Action modules", () => {
+  it("all live under src/lib/server, the only place the Zod scanner treats as server-side", () => {
+    const serverDir = path.join(SRC, "lib", "server") + path.sep;
+    const actionModules = sourceFiles(SRC).filter((file) =>
+      hasUseServer(readFileSync(file, "utf8")),
+    );
+    const names = actionModules.map((file) => path.relative(SRC, file).split(path.sep).join("/"));
+    expect(names).toEqual(
+      expect.arrayContaining(["lib/server/account-actions.ts", "lib/server/signup.ts"]),
+    );
+    expect(
+      actionModules
+        .filter((file) => !file.startsWith(serverDir))
+        .map((file) => path.relative(ROOT, file)),
+    ).toEqual([]);
+  });
+});
+
 describe("transitive import walk", () => {
   const at = (...segments: string[]) => path.join(SRC, ...segments);
   const files = (entries: Record<string, string>): Reader => {

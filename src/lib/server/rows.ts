@@ -3,7 +3,7 @@ import type { checklistProgress, profiles, savedPrograms } from "@/db/schema/app
 import { CHECKLIST_STEP_IDS, type ChecklistStepId } from "@/domain/types";
 import { PLAN_SCHEMA_VERSION, SAVED_SCHEMA_VERSION } from "@/lib/constants";
 import { isOneOf } from "@/lib/guards";
-import type { PlanProgress } from "@/lib/plan/progress";
+import { MAX_PLAN_PROGRAMS, type PlanProgress } from "@/lib/plan/progress";
 import type { SavedList, SavedProgram } from "@/lib/saved/saved";
 
 // Pure mappers between the per-item user-data rows and the guest document shapes the UI
@@ -61,6 +61,8 @@ export function planProgressToRows(
 
 // A step id outside the checklist cannot be stored (CHECK constraint); skipping one here
 // only guards a row written by a future code version that this build does not know yet.
+// Programmes are capped like the guest parser (the first MAX_PLAN_PROGRAMS by slug), so a
+// document read from the database is never larger than one read from localStorage.
 export function rowsToPlanProgress(rows: readonly ChecklistProgressRow[]): PlanProgress {
   const bySlug = new Map<string, Set<ChecklistStepId>>();
   for (const row of rows) {
@@ -70,10 +72,10 @@ export function rowsToPlanProgress(rows: readonly ChecklistProgressRow[]): PlanP
     bySlug.set(row.programSlug, steps);
   }
   const done = Object.fromEntries(
-    [...bySlug].map(([slug, steps]) => [
-      slug,
-      CHECKLIST_STEP_IDS.filter((stepId) => steps.has(stepId)),
-    ]),
+    [...bySlug]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .slice(0, MAX_PLAN_PROGRAMS)
+      .map(([slug, steps]) => [slug, CHECKLIST_STEP_IDS.filter((stepId) => steps.has(stepId))]),
   );
   return { schemaVersion: PLAN_SCHEMA_VERSION, done };
 }
