@@ -8,7 +8,7 @@ paths:
 # Better Auth (phase 2 — after the guest journey works)
 
 - Guest-first: the whole core journey works without an account, with the profile in localStorage. Accounts add cross-device saves; on signup, import the local profile once and don't silently overwrite existing server data.
-- One server instance in `src/lib/auth/server.ts`: `betterAuth({ database: drizzleAdapter(db, { provider: "pg", schema }), … })` with the `nextCookies()` plugin last in `plugins`. The browser client is a separate file, `src/lib/auth/client.ts`.
+- One server instance in `src/lib/auth/server.ts`: `betterAuth({ database: drizzleAdapter(db, { provider: "pg", schema }), … })` with `drizzleAdapter` imported from `@better-auth/drizzle-adapter` (the dedicated package supersedes `better-auth/adapters/drizzle`; ctx7-verified 2026-10-14) and the `nextCookies()` plugin last in `plugins`. The browser client is a separate file, `src/lib/auth/client.ts`.
 - Route handler is `src/app/api/auth/[...all]/route.ts` exporting `toNextJsHandler(auth)` — nothing else lives there.
 - Read the session on the server with `auth.api.getSession({ headers: await headers() })` in every page, Server Action and route handler that touches user data. The proxy cookie check is optimistic UX, not authorization.
 - Sign-in methods: Google and email magic link (avoids password-reset email volume). Adding a method or plugin means regenerating the auth schema and writing a migration. `user.role` defaults to `student`; there is no admin UI.

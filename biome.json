@@ -53,6 +53,7 @@
         "src/app/sitemap.ts",
         "src/i18n/request.ts",
         "next.config.ts",
+        "drizzle.config.ts",
         "vitest.config.ts",
         "playwright.config.ts",
         "postcss.config.mjs"
