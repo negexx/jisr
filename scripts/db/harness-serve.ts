@@ -7,7 +7,7 @@
 // scripts/e2e/build.ts for why there is no "is this the entry script" guard).
 import { type ChildProcess, spawn } from "node:child_process";
 
-import { startTestDatabase, TEST_DB_DEFAULT_PORT } from "./harness";
+import { childExitCode, startTestDatabase, TEST_DB_DEFAULT_PORT } from "./harness";
 
 type CliOptions = { port?: number; exec?: string };
 
@@ -81,7 +81,7 @@ async function main(): Promise<void> {
     void shutdown(1);
   });
   child.on("exit", (code) => {
-    void shutdown(code ?? 0);
+    void shutdown(childExitCode(code));
   });
 }
 

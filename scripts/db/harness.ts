@@ -117,6 +117,12 @@ function runDrizzleKitMigrate(
   });
 }
 
+// A child that died from a signal (for example an OOM-killed `next start`) reports no exit code;
+// that must read as a failure, never as success.
+export function childExitCode(code: number | null): number {
+  return code ?? 1;
+}
+
 export async function startTestDatabase(
   options: StartTestDatabaseOptions = {},
 ): Promise<TestDatabase> {
