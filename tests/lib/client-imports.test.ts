@@ -9,6 +9,11 @@ import { ROOT } from "./snapshot/fixture";
 // whole initial load), so client-reachable code validates by hand and Zod stays on the server, in
 // scripts and in tests. `@/data-schema/*` builds Zod schemas at module load, so only type imports
 // (erased at build time) and the modules listed here may cross into client code.
+//
+// Server Action modules (first statement `"use server"`) live in src/lib/server/ and may import Zod:
+// Next replaces an import of one from client code with a reference to its endpoint, so the scanner
+// neither treats them as client roots nor walks into them. `import "server-only"` is a different
+// mechanism (it makes the build fail if client code reaches the module) and is not modelled here.
 const ZOD_FREE_DATA_SCHEMA = ["@/data-schema/dates", "@/data-schema/staleness"] as const;
 
 const SRC = path.join(ROOT, "src");
@@ -135,17 +140,31 @@ export function violationsIn(file: string, source: string): string[] {
   );
 }
 
-export function hasUseClient(source: string): boolean {
+// A directive is a string-literal statement in the prologue, before any other statement (comments
+// are not statements). `"use server"` inside a function body is an inline Server Action: it makes
+// that function a Server Function, not its module a server module.
+function hasDirective(source: string, directive: string): boolean {
   for (const statement of parseSource(source).statements) {
     if (!ts.isExpressionStatement(statement) || !ts.isStringLiteral(statement.expression)) {
       return false;
     }
-    if (statement.expression.text === "use client") return true;
+    if (statement.expression.text === directive) return true;
   }
   return false;
 }
 
+export function hasUseClient(source: string): boolean {
+  return hasDirective(source, "use client");
+}
+
+export function hasUseServer(source: string): boolean {
+  return hasDirective(source, "use server");
+}
+
 export function isClientReachable(relativeToSrc: string, source: string): boolean {
+  // First, before every directory and file list: a module marked "use server" is a Server Action
+  // module wherever it sits (convention: src/lib/server/).
+  if (hasUseServer(source)) return false;
   if (SERVER_ONLY_FILES.includes(relativeToSrc)) return false;
   if (hasUseClient(source)) return true;
   if (CLIENT_FILES.includes(relativeToSrc)) return true;
@@ -173,6 +192,8 @@ function resolveLocal(from: string, specifier: string, read: Reader): string | n
 
 // Walks the runtime import graph from `roots`. Type-only imports are erased at build time and are
 // not followed; a dynamic import() is followed because its chunk still ships to the browser.
+// The walk stops at a "use server" module: Next compiles an import of one from client code into a
+// reference to the server endpoint, so what that module imports never reaches the browser.
 // Every reachable module is checked, and a forbidden import is reported with the chain that led to it.
 export function reachableViolations(roots: readonly string[], read: Reader): string[] {
   const parent = new Map<string, string | null>();
@@ -196,7 +217,7 @@ export function reachableViolations(roots: readonly string[], read: Reader): str
   while (queue.length > 0) {
     const file = queue.shift();
     const source = file === undefined ? null : read(file);
-    if (file === undefined || source === null) continue;
+    if (file === undefined || source === null || hasUseServer(source)) continue;
     for (const { specifier, typeOnly } of importsOf(source)) {
       if (typeOnly) continue;
       if (isForbidden(file, specifier)) {
@@ -329,6 +350,47 @@ describe("client import scanner", () => {
     expect(isClientReachable(path.join("data-schema", "profile.ts"), "")).toBe(false);
   });
 
+  it.each([
+    ["a double-quoted directive", '"use server";\nexport async function a() {}', true],
+    ["a single-quoted directive without a semicolon", "'use server'\nexport const a = 1;", true],
+    ["a directive after a line comment", '// actions\n"use server";\nexport const a = 1;', true],
+    [
+      "a directive after a block comment",
+      '/* actions */\n"use server";\nexport const a = 1;',
+      true,
+    ],
+    ["a directive after another directive", '"use strict";\n"use server";', true],
+    ["a directive after an import", 'import x from "y";\n"use server";', false],
+    [
+      "an inline directive in a function body",
+      'export async function a() {\n  "use server";\n  return 1;\n}',
+      false,
+    ],
+    ["a commented-out directive", '// "use server"\nexport const a = 1;', false],
+    ["a string that is not a statement", 'const a = "use server";', false],
+    ["a use-client directive", '"use client";\nexport const a = 1;', false],
+    ["an empty file", "", false],
+  ])("detects the use-server directive in %s", (_label, source, expected) => {
+    expect(hasUseServer(source)).toBe(expected);
+  });
+
+  it("never treats a use-server module as client-reachable, whatever directory it sits in", () => {
+    const action = '"use server";\nimport { z } from "zod";\nexport async function a() {}';
+    expect(isClientReachable(path.join("lib", "server", "actions.ts"), action)).toBe(false);
+    expect(isClientReachable(path.join("lib", "saved", "actions.ts"), action)).toBe(false);
+    expect(isClientReachable(path.join("components", "actions.ts"), action)).toBe(false);
+    expect(isClientReachable(path.join("lib", "format.ts"), action)).toBe(false);
+  });
+
+  it("keeps modules that hold only an inline action client-reachable, and src/lib/server unscanned", () => {
+    const inline = 'export async function a() {\n  "use server";\n}';
+    expect(isClientReachable(path.join("lib", "saved", "x.ts"), inline)).toBe(true);
+    expect(isClientReachable(path.join("components", "x.tsx"), inline)).toBe(true);
+    expect(isClientReachable(path.join("lib", "server", "rows.ts"), "export const a = 1;")).toBe(
+      false,
+    );
+  });
+
   it("finds the use-client directive even when a later string holds a comment opener", () => {
     expect(hasUseClient('"use client";\nconst a = "/*";')).toBe(true);
     expect(hasUseClient('const a = "use client";')).toBe(false);
@@ -430,6 +492,77 @@ describe("transitive import walk", () => {
     expect(reachableViolations([at("lib/a.ts")], read)).toEqual([
       "src/lib/a.ts -> src/data-schema/dates.ts imports zod",
     ]);
+  });
+
+  describe("use server modules", () => {
+    const action = (...imports: string[]) =>
+      `"use server";\n${imports.join("\n")}\nexport async function act() {}`;
+
+    it("does not flag a use-server module that imports zod", () => {
+      const read = files({ "lib/server/actions.ts": action('import { z } from "zod";') });
+      expect(reachableViolations([at("lib/server/actions.ts")], read)).toEqual([]);
+    });
+
+    it("still flags a use-client module that imports zod directly", () => {
+      const read = files({ "components/widget.tsx": '"use client";\nimport { z } from "zod";' });
+      expect(reachableViolations([at("components/widget.tsx")], read)).toEqual([
+        "src/components/widget.tsx imports zod",
+      ]);
+    });
+
+    it("stops at a use-server module reached from client code", () => {
+      const read = files({
+        "components/widget.tsx":
+          '"use client";\nimport { act } from "@/lib/server/actions";\nexport const W = act;',
+        "lib/server/actions.ts": action(
+          'import { z } from "zod";',
+          'import { ProfileSchema } from "@/data-schema/profile";',
+          'import { rows } from "./rows";',
+        ),
+        "lib/server/rows.ts": 'import { z } from "zod";',
+      });
+      expect(reachableViolations([at("components/widget.tsx")], read)).toEqual([]);
+    });
+
+    it("stops at a use-server module reached through a dynamic import", () => {
+      const read = files({
+        "lib/saved/use-saved.ts": 'const load = () => import("@/lib/server/actions");',
+        "lib/server/actions.ts": action('import { z } from "zod";'),
+      });
+      expect(reachableViolations([at("lib/saved/use-saved.ts")], read)).toEqual([]);
+    });
+
+    it("still reports zod in client code that sits beside the use-server module", () => {
+      const read = files({
+        "components/widget.tsx":
+          '"use client";\nimport { act } from "@/lib/server/actions";\nimport { z } from "zod";',
+        "lib/server/actions.ts": action('import { z } from "zod";'),
+      });
+      expect(reachableViolations([at("components/widget.tsx")], read)).toEqual([
+        "src/components/widget.tsx imports zod",
+      ]);
+    });
+
+    it("does not exempt a module for living in src/lib/server without the directive", () => {
+      const read = files({
+        "components/widget.tsx": '"use client";\nimport { rows } from "@/lib/server/rows";',
+        "lib/server/rows.ts": 'import { z } from "zod";',
+      });
+      expect(reachableViolations([at("components/widget.tsx")], read)).toEqual([
+        "src/components/widget.tsx -> src/lib/server/rows.ts imports zod",
+      ]);
+    });
+
+    it("does not exempt a module that only holds an inline use-server function", () => {
+      const read = files({
+        "components/widget.tsx": '"use client";\nimport { act } from "./inline";',
+        "components/inline.ts":
+          'import { z } from "zod";\nexport async function act() {\n  "use server";\n}',
+      });
+      expect(reachableViolations([at("components/widget.tsx")], read)).toEqual([
+        "src/components/widget.tsx -> src/components/inline.ts imports zod",
+      ]);
+    });
   });
 
   it("ignores packages and files it cannot read", () => {
