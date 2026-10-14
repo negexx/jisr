@@ -79,6 +79,15 @@ describe("claimEmailSendSlot", () => {
     expect(rows).toEqual([{ email: "ana@example.com" }]);
   });
 
+  it("uses the database clock when no time is injected", async () => {
+    expect(await claimEmailSendSlot("magic-link", "clock@example.com")).toBe(true);
+    expect(await claimEmailSendSlot("magic-link", "clock@example.com")).toBe(false);
+    const { rows } = await pool.query<{ near: boolean }>(
+      "select abs(extract(epoch from (now() - last_sent_at))) < 30 as near from email_cooldowns where email = 'clock@example.com'",
+    );
+    expect(rows).toEqual([{ near: true }]);
+  });
+
   it("grants exactly one of several simultaneous claims", async () => {
     const results = await Promise.all(
       Array.from({ length: 5 }, () => claimEmailSendSlot("magic-link", "race@example.com", T0)),

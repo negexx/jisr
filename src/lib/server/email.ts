@@ -176,13 +176,15 @@ function parseSender(raw: string | undefined): Sender {
 type Transport = { kind: "brevo"; apiKey: string; sender: Sender } | { kind: "file" };
 
 // The file transport writes magic-link tokens to disk, so it is for tests and local runs only:
-// outside production by default, in production only when e2e opts in explicitly.
+// an allow-list of NODE_ENV values (an unset or misspelled one must not open it), or an explicit
+// opt-in for the e2e run, which is a production build.
+const FILE_TRANSPORT_NODE_ENVS = new Set(["development", "test"]);
+
 function selectTransport(env: Env): Transport {
   const apiKey = (env.BREVO_API_KEY ?? "").trim();
   if (apiKey) return { kind: "brevo", apiKey, sender: parseSender(env.BREVO_SENDER) };
-  if (env.NODE_ENV !== "production" || env.JISR_EMAIL_FILE_TRANSPORT === "1") {
-    return { kind: "file" };
-  }
+  const nodeEnvAllowed = FILE_TRANSPORT_NODE_ENVS.has(env.NODE_ENV ?? "");
+  if (nodeEnvAllowed || env.JISR_EMAIL_FILE_TRANSPORT === "1") return { kind: "file" };
   throw new AuthEmailTransportNotConfigured("BREVO_API_KEY is empty");
 }
 
@@ -226,9 +228,20 @@ async function postToBrevo(
         textContent: rendered.text,
       }),
     });
-    if (!response.ok) recordDeliveryFailure(request.kind, response.status);
+    const { ok, status } = response;
+    await discardBody(response);
+    if (!ok) recordDeliveryFailure(request.kind, status);
   } catch {
     recordDeliveryFailure(request.kind, "network");
+  }
+}
+
+// The body is never read (it may echo the address), only released so the connection is freed.
+async function discardBody(response: Response): Promise<void> {
+  try {
+    await response.body?.cancel();
+  } catch {
+    // Releasing the body is best effort and must not hide the status.
   }
 }
 

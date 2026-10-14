@@ -36,7 +36,7 @@ function accountsDisabledError(): APIError {
 // names no address.
 async function sendAuthEmailWithCooldown(request: AuthEmailRequest): Promise<void> {
   if (!accountsEnabled()) throw accountsDisabledError();
-  if (!(await claimEmailSendSlot(request.kind, request.to, new Date()))) {
+  if (!(await claimEmailSendSlot(request.kind, request.to))) {
     throw new APIError("TOO_MANY_REQUESTS", {
       message: "An email was sent a moment ago. Wait a minute before asking for another.",
       code: "EMAIL_COOLDOWN",

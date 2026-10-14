@@ -189,6 +189,44 @@ describe("sendAuthEmail transport selection", () => {
     expect(await readdir(mailDir)).toEqual([]);
   });
 
+  it.each([
+    undefined,
+    "",
+    "prod",
+    "staging",
+    "Production",
+    " production ",
+  ])("refuses the file transport unless NODE_ENV is development or test (NODE_ENV=%j)", async (nodeEnv) => {
+    const { fetchMock } = recordingFetch();
+    await expect(
+      sendAuthEmail(request(), {
+        env: { ...BASE_ENV, NODE_ENV: nodeEnv },
+        fetch: fetchMock,
+        mailDir,
+      }),
+    ).rejects.toBeInstanceOf(AuthEmailTransportNotConfigured);
+    expect(fetchMock).not.toHaveBeenCalled();
+    expect(await readdir(mailDir)).toEqual([]);
+  });
+
+  it.each([
+    "development",
+    "test",
+  ])("allows the file transport when NODE_ENV=%s", async (nodeEnv) => {
+    await sendAuthEmail(request(), { env: { ...BASE_ENV, NODE_ENV: nodeEnv }, mailDir });
+    expect(await readdir(mailDir)).toHaveLength(1);
+  });
+
+  it("allows the file transport with the explicit opt-in even when NODE_ENV is unset or odd", async () => {
+    for (const nodeEnv of [undefined, "staging", "production"]) {
+      await sendAuthEmail(request(), {
+        env: { ...BASE_ENV, NODE_ENV: nodeEnv, JISR_EMAIL_FILE_TRANSPORT: "1" },
+        mailDir,
+      });
+    }
+    expect(await readdir(mailDir)).toHaveLength(3);
+  });
+
   it("allows the file transport in production only with JISR_EMAIL_FILE_TRANSPORT=1", async () => {
     await sendAuthEmail(request(), {
       env: { ...BASE_ENV, NODE_ENV: "production", JISR_EMAIL_FILE_TRANSPORT: "1" },
@@ -394,6 +432,29 @@ describe("sendAuthEmail when Brevo fails", () => {
       }),
     );
     expect(logged).toHaveLength(1);
+    expectNoSecrets(logged);
+  });
+
+  function responseWithBody(status: number, cancel: () => Promise<void>): Response {
+    return { ok: status >= 200 && status < 300, status, body: { cancel } } as unknown as Response;
+  }
+
+  it("cancels the response body after reading the status, on success and on failure", async () => {
+    for (const status of [201, 500]) {
+      const cancel = vi.fn(async () => undefined);
+      await runFailing(vi.fn(async () => responseWithBody(status, cancel)));
+      expect(cancel).toHaveBeenCalledTimes(1);
+    }
+  });
+
+  it("never lets a failing body cancel into the flow, and keeps the real status", async () => {
+    const cancel = vi.fn(async () => {
+      throw new Error(`cancel failed for ${ADDRESS}`);
+    });
+    const logged = await runFailing(vi.fn(async () => responseWithBody(500, cancel)));
+    expect(logged).toHaveLength(1);
+    expect(JSON.stringify(logged)).toContain("500");
+    expect(JSON.stringify(logged)).not.toContain("network");
     expectNoSecrets(logged);
   });
 
