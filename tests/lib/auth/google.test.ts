@@ -339,6 +339,22 @@ describe("google sign-up admission", () => {
     expect(await count("account")).toBe(0);
   });
 
+  it("never stores the Google ID token, on sign-up or on a repeat sign-in", async () => {
+    const evidence = { ageConfirmed: true, consentVersion: CURRENT_CONSENT_VERSION };
+    const idTokens = async () =>
+      (await pool.query<{ id_token: string | null }>("select id_token from account")).rows;
+
+    expect(await signInWithGoogle("new@example.com", evidence)).toBeNull();
+    expect(await idTokens()).toEqual([{ id_token: null }]);
+
+    // The second sign-in finds the linked account and updates its tokens (the update path).
+    vi.restoreAllMocks();
+    expect(await signInWithGoogle("new@example.com", evidence)).toBeNull();
+    expect(await idTokens()).toEqual([{ id_token: null }]);
+    expect(await count("user")).toBe(1);
+    expect(await count("session")).toBe(2);
+  });
+
   it("stores the Google access and refresh tokens encrypted", async () => {
     expect(
       await signInWithGoogle("new@example.com", {

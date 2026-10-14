@@ -145,6 +145,12 @@ export const auth = betterAuth({
         },
       },
     },
+    // Jisr never reads the provider ID token, and Better Auth stores it unencrypted even with
+    // encryptOAuthTokens (only access and refresh tokens go through it), so it is never kept.
+    account: {
+      create: { before: async () => ({ data: { idToken: null } }) },
+      update: { before: async () => ({ data: { idToken: null } }) },
+    },
     verification: {
       create: {
         // Magic-link and deletion tokens are verification rows written before any email goes
