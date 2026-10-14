@@ -4,6 +4,7 @@ import type userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { AUTOSAVE_DELAY_MS } from "@/components/profile/use-draft-autosave";
+import { clearAccountLocalState, setSessionHint } from "@/lib/auth/session-hint";
 import { parseDraft } from "@/lib/profile/draft-validate";
 import { DRAFT_KEY, PROFILE_KEY } from "@/lib/profile/storage";
 import { profileStore } from "@/lib/profile/store";
@@ -56,6 +57,26 @@ async function completeFixtureForm(user: User) {
   await user.click(screen.getByRole("button", { name: "Next" }));
   await stepHeading("Review");
 }
+
+describe("final submit after the device signed out while the form was open", () => {
+  it("does not save answers given signed in into the guest's own profile", async () => {
+    // The guest's own profile, unclaimed, waits under the guest key while the account is signed in.
+    const guest = JSON.stringify(profile());
+    window.localStorage.setItem(PROFILE_KEY, guest);
+    setSessionHint();
+    const { user } = renderProfileForm("en", fixtureClient());
+    await completeFixtureForm(user);
+    act(() => clearAccountLocalState());
+
+    await user.click(screen.getByRole("button", { name: "See my matches" }));
+
+    expect(
+      await screen.findByText("We could not save your profile. Please try again."),
+    ).toBeTruthy();
+    expect(window.localStorage.getItem(PROFILE_KEY)).toBe(guest);
+    expect(navigation.push).not.toHaveBeenCalled();
+  });
+});
 
 describe("final submit", () => {
   it("saves the profile in the browser only, then goes to the matches page", async () => {

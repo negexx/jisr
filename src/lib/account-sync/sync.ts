@@ -76,6 +76,9 @@ export type AccountSync = {
   // A read that starts after a write made outside this layer (the guest import): a hydration
   // already running may have read the account before it.
   rehydrate: () => Promise<void>;
+  // Resolves once every operation made so far has been answered by the server (Clear my data waits
+  // for it, so a write sent before the clear cannot land after it and bring a row back).
+  settle: () => Promise<void>;
   // Forgets everything queued or held; called once the device is signed out.
   reset: () => void;
   dismissNotice: () => void;
@@ -403,6 +406,18 @@ export function createAccountSync(options: AccountSyncOptions): AccountSync {
     return hydrate();
   }
 
+  async function settle(): Promise<void> {
+    const lanes = [saved, plan, profiles];
+    let tails = lanes.map((each) => each.idle());
+    for (;;) {
+      await Promise.all([...tails, hydrating ?? undefined]);
+      const next = lanes.map((each) => each.idle());
+      // Nothing was queued while waiting.
+      if (next.every((tail, index) => tail === tails[index])) return;
+      tails = next;
+    }
+  }
+
   return {
     toggleSaved(ref, snapshotVersion, today) {
       const list = saved.shown();
@@ -428,6 +443,7 @@ export function createAccountSync(options: AccountSyncOptions): AccountSync {
     resolveConflict,
     hydrate,
     rehydrate,
+    settle,
     reset() {
       epoch += 1;
       saved.reset();

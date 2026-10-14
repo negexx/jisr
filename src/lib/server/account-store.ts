@@ -62,7 +62,6 @@ export type FeedbackInput = {
 };
 
 const SQLSTATE = /^[0-9A-Z]{5}$/;
-const FOREIGN_KEY_VIOLATION = "23503";
 
 // The driver error is the only source of a SQLSTATE; Drizzle wraps it as `cause`.
 export function sqlState(error: unknown): string | null {
@@ -87,6 +86,30 @@ export async function lockUser(tx: Transaction, userId: string): Promise<boolean
     .where(eq(user.id, userId))
     .for("update");
   return locked.length > 0;
+}
+
+// The revision a new profile row starts at: one above every revision this user's profile ever
+// had. A profile deleted (Clear my data, an import that replaces it with none) leaves its revision
+// in user_data_state, so a revision is never handed out twice and a device still holding an old
+// one gets `conflict` rather than matching a newer row by accident.
+export function nextProfileRevision(userId: string) {
+  return sql<number>`coalesce((select ${userDataState.profileRevision} from ${userDataState} where ${userDataState.userId} = ${userId}), 0) + 1`;
+}
+
+// Deletes the profile row and raises the revision floor to its revision. Callers hold lockUser.
+export async function retireProfile(tx: Transaction, userId: string): Promise<void> {
+  const [gone] = await tx
+    .delete(profiles)
+    .where(eq(profiles.userId, userId))
+    .returning({ revision: profiles.revision });
+  if (gone === undefined) return;
+  await tx
+    .insert(userDataState)
+    .values({ userId, profileRevision: gone.revision })
+    .onConflictDoUpdate({
+      target: userDataState.userId,
+      set: { profileRevision: sql`greatest(${userDataState.profileRevision}, ${gone.revision})` },
+    });
 }
 
 async function savedItems(tx: Transaction, userId: string): Promise<SavedProgram[]> {
@@ -243,18 +266,20 @@ export async function saveProfileFor(
   if (updated !== undefined) return ok({ revision: updated.revision });
 
   if (expectedRevision === 0) {
-    try {
-      const [created] = await db
+    // Creating the row reads the revision floor, so it takes the user lock that Clear my data and
+    // the import hold while they move that floor.
+    const created = await db.transaction(async (tx) => {
+      if (!(await lockUser(tx, userId))) return "gone" as const;
+      const [row] = await tx
         .insert(profiles)
-        .values({ userId, data: profile, revision: 1 })
+        .values({ userId, data: profile, revision: nextProfileRevision(userId) })
         .onConflictDoNothing()
         .returning({ revision: profiles.revision });
-      if (created !== undefined) return ok({ revision: created.revision });
-    } catch (error) {
-      // The user row is gone (account deleted mid-session), as lockUser reports for the other actions.
-      if (sqlState(error) === FOREIGN_KEY_VIOLATION) return { ok: false, error: "unauthenticated" };
-      throw error;
-    }
+      return row?.revision ?? null;
+    });
+    // The user row is gone (account deleted mid-session), as lockUser reports for the other actions.
+    if (created === "gone") return { ok: false, error: "unauthenticated" };
+    if (created !== null) return ok({ revision: created });
   }
   return conflictWithCurrent(db, userId);
 }
@@ -291,8 +316,8 @@ export async function createFeedbackReportFor(
   });
 }
 
-// Clear my data while signed in. The import marker goes too: it only says that the account's rows
-// came from a device, and once they are gone a later sign-in with guest data imports it again
+// Clear my data while signed in. The import marker is cleared too: it only says that the account's
+// rows came from a device, and once they are gone a later sign-in with guest data imports it again
 // instead of asking whether to keep an empty account. Feedback reports, the consent record and the
 // sign-in itself are not user data here; account deletion removes them.
 export async function clearAccountDataFor(
@@ -303,8 +328,12 @@ export async function clearAccountDataFor(
     if (!(await lockUser(tx, userId))) return { ok: false, error: "unauthenticated" };
     await tx.delete(savedPrograms).where(eq(savedPrograms.userId, userId));
     await tx.delete(checklistProgress).where(eq(checklistProgress.userId, userId));
-    await tx.delete(profiles).where(eq(profiles.userId, userId));
-    await tx.delete(userDataState).where(eq(userDataState.userId, userId));
+    await retireProfile(tx, userId);
+    // The marker row stays for its revision floor; only the import marker itself is cleared.
+    await tx
+      .update(userDataState)
+      .set({ importedAt: null })
+      .where(eq(userDataState.userId, userId));
     return ok(undefined);
   });
 }

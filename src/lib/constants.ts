@@ -14,3 +14,9 @@ export const PLAN_SCHEMA_VERSION = 1;
 export const MAX_SAVED_PROGRAMS = 12;
 export const MIN_COMPARE = 2;
 export const MAX_COMPARE = 4;
+// Account input bounds (src/lib/server/account-inputs.ts), here so that client code can drop what
+// the server would refuse without importing Zod.
+export const ACCOUNT_SLUG_MAX_LENGTH = 120;
+export const ACCOUNT_FIELD_MAX_LENGTH = 64;
+// A real profile serialises to about 1 KB; the limit stops a well-formed but padded document.
+export const ACCOUNT_PROFILE_JSON_LIMIT = 16_384;

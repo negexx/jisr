@@ -55,6 +55,8 @@ export type ClearAccountOutcome = "cleared" | "signed_out" | "failed";
 export async function clearAccountEverywhere(): Promise<ClearAccountOutcome> {
   let result: Awaited<ReturnType<typeof clearAccountData>>;
   try {
+    // A save or tick still on its way would otherwise reach the server after the clear.
+    await accountSync.settle();
     result = await clearAccountData();
   } catch {
     return "failed";

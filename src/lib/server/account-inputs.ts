@@ -3,19 +3,23 @@ import { z } from "zod";
 import { IsoDateSchema, SlugSchema } from "@/data-schema/primitives";
 import { ProfileSchema } from "@/data-schema/profile";
 import { CHECKLIST_STEP_IDS } from "@/domain/types";
-import { MAX_SAVED_PROGRAMS } from "@/lib/constants";
+import {
+  ACCOUNT_FIELD_MAX_LENGTH,
+  ACCOUNT_PROFILE_JSON_LIMIT,
+  ACCOUNT_SLUG_MAX_LENGTH,
+  MAX_SAVED_PROGRAMS,
+} from "@/lib/constants";
 import { MAX_PLAN_PROGRAMS } from "@/lib/plan/progress";
 
 // Server-side input bounds for the account Server Actions. Each is tighter than the column
 // bound in src/db/schema/app.ts, which only stops an unvalidated writer from filling a row.
-export const SLUG_MAX_LENGTH = 120;
-export const FIELD_MAX_LENGTH = 64;
+export const SLUG_MAX_LENGTH = ACCOUNT_SLUG_MAX_LENGTH;
+export const FIELD_MAX_LENGTH = ACCOUNT_FIELD_MAX_LENGTH;
 export const FEEDBACK_NOTE_LIMIT = 500;
 export const FEEDBACK_RECORD_LIMIT = 120;
 export const FEEDBACK_PATH_LIMIT = 120;
 export const FEEDBACK_SOURCE_URL_LIMIT = 1500;
-// A real profile serialises to about 1 KB; the limit stops a well-formed but padded document.
-export const PROFILE_JSON_LIMIT = 16_384;
+export const PROFILE_JSON_LIMIT = ACCOUNT_PROFILE_JSON_LIMIT;
 // The profile revision is a Postgres integer.
 const MAX_REVISION = 2_147_483_647;
 

@@ -187,6 +187,36 @@ describe("runPostAuthSeam", () => {
 });
 
 describe("readGuestData", () => {
+  it("leaves out what the account's input bounds would refuse, so the rest still imports", () => {
+    const long = `xx-${"a".repeat(130)}`;
+    window.localStorage.setItem(
+      SAVED_KEY,
+      JSON.stringify({
+        schemaVersion: 1,
+        items: [item(long), { ...item("xx-wide"), field: `f${"-x".repeat(40)}` }, item("xx-ok")],
+      }),
+    );
+    window.localStorage.setItem(
+      PLAN_KEY,
+      JSON.stringify({ schemaVersion: 1, done: { [long]: ["visa"], "xx-ok": ["visa"] } }),
+    );
+    expect(readGuestData(window.localStorage)).toEqual({
+      profile: null,
+      saved: [item("xx-ok")],
+      plan: { "xx-ok": ["visa"] },
+    });
+  });
+
+  it("keeps entries exactly at the bounds", () => {
+    const slug = `xx-${"a".repeat(117)}`;
+    const field = `f${"a".repeat(63)}`;
+    window.localStorage.setItem(
+      SAVED_KEY,
+      JSON.stringify({ schemaVersion: 1, items: [{ ...item(slug), field }] }),
+    );
+    expect(readGuestData(window.localStorage)?.saved).toEqual([{ ...item(slug), field }]);
+  });
+
   it("ignores an unreadable profile and corrupt lists, and reports nothing to import", () => {
     window.localStorage.setItem(PROFILE_KEY, "{not json");
     window.localStorage.setItem(SAVED_KEY, JSON.stringify({ schemaVersion: 9, items: [] }));

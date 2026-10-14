@@ -94,5 +94,11 @@ export function useDraftAutosave(form: FormState, step: number, baseline: FormSt
     suspended.current = false;
   }, []);
 
-  return { suspend, resume };
+  // The explicit save follows the same rule: answers given signed in never reach the guest's profile.
+  const modeChanged = useCallback(
+    () => mounted.current && inAccountMode() !== accountModeAtMount.current,
+    [],
+  );
+
+  return { suspend, resume, modeChanged };
 }

@@ -1,3 +1,8 @@
+import {
+  ACCOUNT_FIELD_MAX_LENGTH,
+  ACCOUNT_PROFILE_JSON_LIMIT,
+  ACCOUNT_SLUG_MAX_LENGTH,
+} from "@/lib/constants";
 import { PLAN_KEY, parsePlanProgress } from "@/lib/plan/progress";
 import { decodeProfile, PROFILE_KEY, removeQuietly, type StorageLike } from "@/lib/profile/storage";
 import { parseSaved, SAVED_KEY, type SavedProgram } from "@/lib/saved/saved";
@@ -27,14 +32,31 @@ function readJson(storage: StorageLike, key: string): unknown {
   }
 }
 
+// The guest parsers accept a little more than the account's input bounds (a slug or field of any
+// length, a profile of any size). One such entry would make the server refuse the whole import,
+// every time, so it is left out here instead: the account could never hold it, and the rest of the
+// device's data is imported.
+function fitsAccount(item: SavedProgram): boolean {
+  return (
+    item.slug.length <= ACCOUNT_SLUG_MAX_LENGTH && item.field.length <= ACCOUNT_FIELD_MAX_LENGTH
+  );
+}
+
 // What this device would bring into an account, read with the guest parsers; null when there is
 // nothing to bring (no readable profile, no saves, no ticks).
 export function readGuestData(storage: StorageLike | null): GuestImportPayload | null {
   if (storage === null) return null;
   const stored = decodeProfile(readKey(storage, PROFILE_KEY));
-  const profile = stored.status === "ok" ? stored.profile : null;
-  const saved = parseSaved(readJson(storage, SAVED_KEY))?.items ?? [];
-  const plan = parsePlanProgress(readJson(storage, PLAN_KEY))?.done ?? {};
+  const profile =
+    stored.status === "ok" && JSON.stringify(stored.profile).length <= ACCOUNT_PROFILE_JSON_LIMIT
+      ? stored.profile
+      : null;
+  const saved = (parseSaved(readJson(storage, SAVED_KEY))?.items ?? []).filter(fitsAccount);
+  const plan = Object.fromEntries(
+    Object.entries(parsePlanProgress(readJson(storage, PLAN_KEY))?.done ?? {}).filter(
+      ([slug]) => slug.length <= ACCOUNT_SLUG_MAX_LENGTH,
+    ),
+  );
   if (profile === null && saved.length === 0 && Object.keys(plan).length === 0) return null;
   return { profile, saved, plan };
 }

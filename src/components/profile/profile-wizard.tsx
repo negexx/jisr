@@ -74,7 +74,7 @@ function WizardBody({ core, text, locale, onCleared }: WizardProps & { onCleared
   const pendingFocus = useRef<FocusTarget | null>(null);
   const submitting = useRef(false);
   const dismissingReset = useRef(false);
-  const { suspend, resume } = useDraftAutosave(form, stepIndex, baseline);
+  const { suspend, resume, modeChanged } = useDraftAutosave(form, stepIndex, baseline);
 
   useEffect(() => {
     const target = pendingFocus.current;
@@ -194,6 +194,13 @@ function WizardBody({ core, text, locale, onCleared }: WizardProps & { onCleared
       setPinned(forStep);
       setAnnouncement(progressLabel(STEPS.indexOf(target)));
       showFailedAttempt(forStep);
+      return;
+    }
+    // Signed in or out in another tab since the form opened: saving now would put these answers
+    // in the other mode's profile (the account's into the guest's, or the reverse).
+    if (modeChanged()) {
+      submitting.current = false;
+      setSaveFailed(true);
       return;
     }
     suspend();

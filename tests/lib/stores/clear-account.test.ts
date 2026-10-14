@@ -11,11 +11,11 @@ import { savedStore } from "@/lib/saved/store";
 // Clear my data while signed in, on the device side: the account action is stood in for, the
 // stores and keys are real.
 
-const actions = vi.hoisted(() => ({ clearAccountData: vi.fn() }));
+const actions = vi.hoisted(() => ({ clearAccountData: vi.fn(), saveProgram: vi.fn() }));
 vi.mock("@/lib/server/account-actions", () => ({
   clearAccountData: actions.clearAccountData,
   loadAccountData: vi.fn(),
-  saveProgram: vi.fn(),
+  saveProgram: actions.saveProgram,
   unsaveProgram: vi.fn(),
   setStepDone: vi.fn(),
   forgetProgress: vi.fn(),
@@ -54,6 +54,7 @@ function keys(): string[] {
 beforeEach(() => {
   window.localStorage.clear();
   actions.clearAccountData.mockReset();
+  actions.saveProgram.mockReset();
 });
 afterEach(() => window.localStorage.clear());
 
@@ -89,5 +90,35 @@ describe("clearAccountEverywhere", () => {
     const { clearAccountEverywhere } = await import("@/lib/account-sync/client");
     expect(await clearAccountEverywhere()).toBe("signed_out");
     expect(keys()).toEqual([DRAFT_KEY, PLAN_KEY, PROFILE_KEY, SAVED_KEY, "unrelated"].sort());
+  });
+
+  it("waits for a save still on its way before clearing, so it cannot bring a row back", async () => {
+    seed();
+    let answerSave: (value: unknown) => void = () => undefined;
+    actions.saveProgram.mockReturnValue(
+      new Promise((resolve) => {
+        answerSave = resolve;
+      }),
+    );
+    actions.clearAccountData.mockResolvedValue({ ok: true, value: undefined });
+    const { accountSync, clearAccountEverywhere } = await import("@/lib/account-sync/client");
+    accountSync.saveProgram({
+      slug: "xx-late",
+      country: "FR",
+      field: "computer-science",
+      snapshotVersion: "0123456789ab",
+      savedAt: "2026-10-02",
+    });
+    const clearing = clearAccountEverywhere();
+    for (let round = 0; round < 10; round += 1) await Promise.resolve();
+    expect(actions.saveProgram).toHaveBeenCalledTimes(1);
+    expect(actions.clearAccountData).not.toHaveBeenCalled();
+
+    answerSave({ ok: true, value: { items: [] } });
+    expect(await clearing).toBe("cleared");
+    expect(actions.clearAccountData).toHaveBeenCalledTimes(1);
+    expect(actions.saveProgram.mock.invocationCallOrder[0]).toBeLessThan(
+      actions.clearAccountData.mock.invocationCallOrder[0] ?? 0,
+    );
   });
 });

@@ -476,6 +476,69 @@ describe("importGuestData replace (the student's explicit choice)", () => {
   });
 });
 
+describe("profile revisions never repeat after a profile row is deleted", () => {
+  const STALE: Profile = { ...SERVER_PROFILE, destinations: ["IT"] };
+
+  it("clear, then import: a device still holding revision 1 gets conflict, not an overwrite", async () => {
+    expect(await actions.saveProfile(SERVER_PROFILE, 0)).toEqual({
+      ok: true,
+      value: { revision: 1 },
+    });
+    expect(await actions.clearAccountData()).toMatchObject({ ok: true });
+    expect(await importer.importGuestData(GUEST, "auto")).toMatchObject({ ok: true });
+    expect(await profileRow(aliceId)).toEqual({ data: PROFILE, revision: 2 });
+
+    expect(await actions.saveProfile(STALE, 1)).toEqual({
+      ok: false,
+      error: "conflict",
+      current: { profile: PROFILE, revision: 2 },
+    });
+    expect(await profileRow(aliceId)).toEqual({ data: PROFILE, revision: 2 });
+  });
+
+  it("clear, then a new profile from another device: it starts above the cleared revision", async () => {
+    await seedServerData();
+    await actions.clearAccountData();
+    expect(await actions.saveProfile(PROFILE, 0)).toEqual({ ok: true, value: { revision: 3 } });
+    expect(await actions.saveProfile(STALE, 2)).toMatchObject({ ok: false, error: "conflict" });
+    expect((await profileRow(aliceId))?.data).toEqual(PROFILE);
+  });
+
+  it("replace without a profile, then a new profile: the stale revision gets conflict", async () => {
+    await seedServerData();
+    await importer.importGuestData(
+      { profile: null, saved: [program("xx-a")], plan: {} },
+      "replace",
+    );
+    expect(await profileRow(aliceId)).toBeUndefined();
+    expect(await actions.saveProfile(PROFILE, 0)).toEqual({ ok: true, value: { revision: 3 } });
+    expect(await actions.saveProfile(STALE, 2)).toEqual({
+      ok: false,
+      error: "conflict",
+      current: { profile: PROFILE, revision: 3 },
+    });
+  });
+
+  it("replace without a profile, then a stale save with no row: never accepted", async () => {
+    await seedServerData();
+    await importer.importGuestData(
+      { profile: null, saved: [program("xx-a")], plan: {} },
+      "replace",
+    );
+    expect(await actions.saveProfile(STALE, 2)).toEqual({ ok: false, error: "invalid" });
+    expect(await profileRow(aliceId)).toBeUndefined();
+  });
+
+  it("clear twice and import again: still above every earlier revision", async () => {
+    await seedServerData();
+    await actions.clearAccountData();
+    await importer.importGuestData(GUEST, "auto");
+    await actions.clearAccountData();
+    await importer.importGuestData(GUEST, "replace");
+    expect((await profileRow(aliceId))?.revision).toBe(4);
+  });
+});
+
 describe("importGuestData for an account deleted while its session was presented", () => {
   it("returns unauthenticated and writes nothing", async () => {
     const { importGuestDataFor } = await import("@/lib/server/import-store");
@@ -543,9 +606,11 @@ describe("clearAccountData (Clear my data while signed in)", () => {
 
     expect(await actions.clearAccountData()).toEqual({ ok: true, value: undefined });
 
-    for (const table of USER_DATA_TABLES) {
+    for (const table of ["saved_programs", "checklist_progress", "profiles"]) {
       expect(await count(table, `user_id = '${aliceId}'`), table).toBe(0);
     }
+    // The marker row stays only for the profile revision floor; the import marker is cleared.
+    expect(await importedAt(aliceId)).toBeNull();
     expect(await count("feedback_reports", `user_id = '${aliceId}'`)).toBe(1);
     expect(await count("user", `id = '${aliceId}'`)).toBe(1);
     expect(await count("session", `user_id = '${aliceId}'`)).toBeGreaterThan(0);

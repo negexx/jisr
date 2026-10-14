@@ -5,7 +5,14 @@ import { checklistProgress, profiles, savedPrograms, userDataState } from "@/db/
 import type { ChecklistStepId } from "@/domain/types";
 import type { SavedProgram } from "@/lib/saved/saved";
 
-import { type AccountDb, type ActionResult, lockUser, type Transaction } from "./account-store";
+import {
+  type AccountDb,
+  type ActionResult,
+  lockUser,
+  nextProfileRevision,
+  retireProfile,
+  type Transaction,
+} from "./account-store";
 import { savedProgramToRow } from "./rows";
 
 // The database half of the one-time guest import (importGuestData in import.ts). Like
@@ -61,13 +68,13 @@ async function writeProfile(
   mode: ImportMode,
 ): Promise<boolean> {
   if (profile === null) {
-    if (mode === "replace") await tx.delete(profiles).where(eq(profiles.userId, userId));
+    if (mode === "replace") await retireProfile(tx, userId);
     return true;
   }
   if (mode === "auto") {
     const created = await tx
       .insert(profiles)
-      .values({ userId, data: profile, revision: 1 })
+      .values({ userId, data: profile, revision: nextProfileRevision(userId) })
       .onConflictDoNothing()
       .returning({ revision: profiles.revision });
     return created.length > 0;
@@ -76,7 +83,7 @@ async function writeProfile(
   // next saveProfile instead of overwriting what was just imported.
   await tx
     .insert(profiles)
-    .values({ userId, data: profile, revision: 1 })
+    .values({ userId, data: profile, revision: nextProfileRevision(userId) })
     .onConflictDoUpdate({
       target: profiles.userId,
       set: { data: profile, revision: sql`${profiles.revision} + 1`, updatedAt: sql`now()` },
