@@ -56,7 +56,7 @@ export type TestDatabase = {
   readonly port: number;
   /** Connection string to hand to `pg`, drizzle-kit and the app. SSL is disabled. */
   readonly databaseUrl: string;
-  /** Apply `drizzle/` migrations; a no-op (applied: false) until todo 4 adds the first. */
+  /** Apply `drizzle/` migrations; a no-op (applied: false) when the migrations directory is missing. */
   migrate: () => Promise<MigrationResult>;
   stats: () => TestDatabaseStats;
   stop: () => Promise<void>;
@@ -147,8 +147,8 @@ export async function startTestDatabase(
   const migrate = async (): Promise<MigrationResult> => {
     const journal = resolve(migrationsDir, "meta", "_journal.json");
     if (!existsSync(journal)) {
-      // No schema/migrations yet (todo 4 adds them): drizzle-kit exits 1 with no
-      // message on a missing migrations directory, so this is the tolerated no-op.
+      // drizzle-kit exits 1 with no message on a missing migrations directory, so a
+      // directory with no journal is the tolerated no-op.
       console.log(
         `[test-db] no migrations found in ${migrationsDir}; tolerating the empty-migration path`,
       );

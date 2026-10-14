@@ -42,7 +42,7 @@ export type RaceDatabase = {
   readonly url: string;
   /** A pool on the throwaway database; ended by drop(). Idle-client errors fail drop(). */
   createPool: (max: number) => Pool;
-  /** False only while drizzle/ does not exist yet (before todo 4): the tolerated empty path. */
+  /** False only when the migrations directory does not exist: the tolerated empty path. */
   readonly migrated: boolean;
   /** Ends every pool, drops the database (forcibly), then throws if a pool reported an error. */
   drop: () => Promise<void>;

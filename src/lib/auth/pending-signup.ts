@@ -1,11 +1,27 @@
 import "server-only";
 
-import type { PendingSignup } from "./admission";
+import { and, eq, gt } from "drizzle-orm";
 
-// Handoff to todo 4: the `pending_signups` table (email, consent_version, age_confirmed,
-// …) arrives with the schema. Todo 4 replaces this body with a Drizzle read keyed by the
-// normalised email. Until then no pending sign-up can exist, so the gate reads null and
-// fails closed (age missing -> reject) for magic-link sign-ups.
-export async function readPendingSignup(_email: string): Promise<PendingSignup | null> {
-  return null;
+import { db } from "@/db";
+import { pendingSignups } from "@/db/schema";
+
+import type { PendingSignup } from "./admission";
+import { normalizeEmail } from "./normalize-email";
+
+// An expired row is ignored here rather than swept (no worker, ADR 0003): lazy expiry.
+// A missing row makes the admission gate fail closed (age unconfirmed -> reject).
+export async function readPendingSignup(
+  email: string,
+  now: Date = new Date(),
+): Promise<PendingSignup | null> {
+  const [row] = await db
+    .select({
+      email: pendingSignups.email,
+      ageConfirmed: pendingSignups.ageConfirmed,
+      consentVersion: pendingSignups.consentVersion,
+    })
+    .from(pendingSignups)
+    .where(and(eq(pendingSignups.email, normalizeEmail(email)), gt(pendingSignups.expiresAt, now)))
+    .limit(1);
+  return row ?? null;
 }

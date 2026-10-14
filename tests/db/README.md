@@ -37,9 +37,12 @@ try {
 - `startTestDatabase({ port })` — a fixed default port fails loudly (named
   `TestDatabasePortInUseError`) when a second harness is running; pass `port: 0` in specs
   that run in parallel.
-- `migrate()` — applies `drizzle/` migrations; until the first migration exists (todo 4) this
-  is a tolerated no-op (`{ applied: false }`), because `drizzle-kit migrate` exits non-zero on
-  a missing migrations directory.
+- `migrate()` — applies `drizzle/` migrations (`{ applied: true }`); a missing migrations
+  directory is a tolerated no-op (`{ applied: false }`), because `drizzle-kit migrate` exits
+  non-zero on it.
+- Specs that import `@/db` must set `process.env.DATABASE_URL` to `databaseUrl` before a
+  dynamic `import()` (the pool is built at import time) and end the pool in `afterAll`
+  (`db.$client.end()`); see `admission.test.ts`.
 - `stop()` — stops the socket and closes the database; the port is free immediately.
 
 `pnpm db:harness [--port N] [--exec "<command>"]` boots the harness as a standalone process

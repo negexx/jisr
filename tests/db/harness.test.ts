@@ -1,3 +1,5 @@
+import { resolve } from "node:path";
+
 import { Client } from "pg";
 import { afterEach, describe, expect, it } from "vitest";
 
@@ -25,13 +27,11 @@ afterEach(async () => {
 
 describe("test database harness", () => {
   it(
-    "connects over the harness URL, tolerates the empty-migration path and runs select 1",
+    "connects over the harness URL, applies the committed migrations and runs select 1",
     async () => {
       const db = await start({ port: 0, runMigrations: false });
 
-      // No schema or drizzle/ migrations exist yet (todo 4 adds them), so applying
-      // migrations must be a tolerated no-op rather than a boot failure.
-      expect(await db.migrate()).toEqual({ applied: false });
+      expect(await db.migrate()).toEqual({ applied: true });
 
       const client = new Client({ connectionString: db.databaseUrl });
       await client.connect();
@@ -41,6 +41,19 @@ describe("test database harness", () => {
       } finally {
         await client.end();
       }
+    },
+    TIMEOUT_MS,
+  );
+
+  it(
+    "tolerates a missing migrations directory as an empty-migration no-op",
+    async () => {
+      const db = await start({
+        port: 0,
+        runMigrations: false,
+        migrationsDir: resolve(process.cwd(), "tests", "db", "no-such-migrations"),
+      });
+      expect(await db.migrate()).toEqual({ applied: false });
     },
     TIMEOUT_MS,
   );

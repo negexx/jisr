@@ -49,23 +49,6 @@ describe("better auth server config", () => {
     expect(required(options.socialProviders, "socialProviders").google).toBeDefined();
   });
 
-  it("rejects a user creation with no age confirmation through the gate hook", async () => {
-    const before = required(
-      options.databaseHooks?.user?.create?.before,
-      "databaseHooks.user.create.before",
-    );
-    const createBefore = before as (
-      user: Record<string, unknown>,
-      ctx: unknown,
-    ) => Promise<unknown>;
-
-    // No pending sign-up row exists yet (todo 4) and no server-validated OAuth state (todo
-    // 9), so the gate fails closed: the create must be rejected, never passed through.
-    await expect(
-      createBefore({ email: "student@example.com", name: "Student" }, {}),
-    ).rejects.toMatchObject({ status: "BAD_REQUEST", body: { code: "AGE_NOT_CONFIRMED" } });
-  });
-
   it("prints the instantiated auth config surface for manual QA", () => {
     const plugins = required(options.plugins, "plugins");
     const surface = {
