@@ -23,7 +23,7 @@ type AuthModule = typeof import("@/lib/auth/server");
 
 let testDb: TestDatabase;
 let pool: Pool;
-let auth: AuthModule["auth"];
+let auth: ReturnType<AuthModule["getAuth"]>;
 let closeAppPool: () => Promise<void>;
 
 type UserRow = { email: string; consent_version: string | null; consented_at: Date | null };
@@ -142,7 +142,7 @@ beforeAll(async () => {
   process.env.BETTER_AUTH_URL = ORIGIN;
   process.env.GOOGLE_CLIENT_ID = GOOGLE_CLIENT_ID;
   process.env.GOOGLE_CLIENT_SECRET = GOOGLE_CLIENT_SECRET;
-  ({ auth } = await import("@/lib/auth/server"));
+  auth = (await import("@/lib/auth/server")).getAuth();
   const { db } = await import("@/db");
   closeAppPool = () => db.$client.end();
 }, TIMEOUT_MS);

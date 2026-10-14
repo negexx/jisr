@@ -1,7 +1,7 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import * as dbSchema from "@/db/schema";
 import { accountsEnabled } from "@/lib/auth/accounts-enabled";
-import { auth } from "@/lib/auth/server";
+import { getAuth } from "@/lib/auth/server";
 
 function required<T>(value: T | undefined, label: string): T {
   if (value === undefined) throw new Error(`auth config: ${label} is missing`);
@@ -9,7 +9,17 @@ function required<T>(value: T | undefined, label: string): T {
 }
 
 describe("better auth server config", () => {
-  const options = auth.options;
+  let options: ReturnType<typeof getAuth>["options"];
+
+  beforeAll(() => {
+    vi.stubEnv("BETTER_AUTH_SECRET", "test-secret-test-secret-test-secret-0123");
+    vi.stubEnv("BETTER_AUTH_URL", "http://localhost:3000");
+    options = getAuth().options;
+  });
+
+  afterAll(() => {
+    vi.unstubAllEnvs();
+  });
 
   it("declares the server-owned consent, age and role fields as non-input", () => {
     const fields = required(options.user?.additionalFields, "user.additionalFields");
@@ -69,7 +79,6 @@ describe("accountsEnabled", () => {
   afterEach(() => {
     vi.unstubAllEnvs();
   });
-
 
   it.each<[string, Record<string, string | undefined>, boolean]>([
     ["unset", {}, false],

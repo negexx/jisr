@@ -85,94 +85,130 @@ async function sendAuthEmailWithCooldown(request: AuthEmailRequest): Promise<voi
   await sendAuthEmail(request);
 }
 
-export const auth = betterAuth({
-  appName: "Jisr",
-  baseURL: process.env.BETTER_AUTH_URL,
-  secret: process.env.BETTER_AUTH_SECRET,
-  database: drizzleAdapter(db, { provider: "pg", schema }),
-  // Project rule: never record IPs. Better Auth then also skips its IP-keyed rate limiter, so
-  // throttling of auth emails must live in our own code (the email_cooldowns slot).
-  advanced: { ipAddress: { disableIpTracking: true } },
-  // Encrypts the stored provider access and refresh tokens with the auth secret.
-  account: { encryptOAuthTokens: true },
-  socialProviders: {
-    google: {
-      clientId: process.env.GOOGLE_CLIENT_ID ?? "",
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
-    },
-  },
-  user: {
-    additionalFields: {
-      // Nullable by design (plan R2-2): "consent missing -> created, features gated" needs
-      // a row without consent, which required: true would forbid. input: false keeps all
-      // three out of user input, so only this server instance can set them.
-      consentVersion: { type: "string", required: false, input: false },
-      consentedAt: { type: "date", required: false, input: false },
-      role: { type: "string", required: false, defaultValue: "student", input: false },
-    },
-    deleteUser: {
-      enabled: true,
-      sendDeleteAccountVerification: async ({ user, url, token }) => {
-        await sendAuthEmailWithCooldown({ kind: "delete-account", to: user.email, url, token });
+export class AuthMisconfiguredError extends Error {
+  constructor(readonly missing: readonly string[]) {
+    super(`Accounts are on but required environment variables are missing: ${missing.join(", ")}`);
+    this.name = "AuthMisconfiguredError";
+  }
+}
+
+function presentEnv(name: string): string | undefined {
+  const value = process.env[name];
+  return value === undefined || value.trim() === "" ? undefined : value;
+}
+
+function createAuth(secret: string, baseURL: string) {
+  return betterAuth({
+    appName: "Jisr",
+    baseURL,
+    secret,
+    database: drizzleAdapter(db, { provider: "pg", schema }),
+    // Project rule: never record IPs. Better Auth then also skips its IP-keyed rate limiter, so
+    // throttling of auth emails must live in our own code (the email_cooldowns slot).
+    advanced: { ipAddress: { disableIpTracking: true } },
+    // Encrypts the stored provider access and refresh tokens with the auth secret.
+    account: { encryptOAuthTokens: true },
+    socialProviders: {
+      google: {
+        clientId: process.env.GOOGLE_CLIENT_ID ?? "",
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
       },
     },
-  },
-  databaseHooks: {
     user: {
-      create: {
-        before: async (user, ctx) => {
-          // Defence in depth behind the accounts gate plugin: auth.api.* server calls and
-          // anything else that skips the HTTP handler still cannot create a user while off.
-          if (!accountsEnabled()) throw accountsDisabledError();
-          const decision = evaluateAdmission(
-            await admissionEvidence(user, ctx),
-            new Date(),
-            CURRENT_CONSENT_VERSION,
-          );
-          if (decision.kind === "reject") {
-            throw new APIError("BAD_REQUEST", {
-              message: "Age 16 or over must be confirmed before an account can be created.",
-              code: "AGE_NOT_CONFIRMED",
-            });
-          }
-          return {
-            data: {
-              ...user,
-              consentVersion: decision.consentVersion,
-              consentedAt: decision.consentedAt,
-            },
-          };
+      additionalFields: {
+        // Nullable by design (plan R2-2): "consent missing -> created, features gated" needs
+        // a row without consent, which required: true would forbid. input: false keeps all
+        // three out of user input, so only this server instance can set them.
+        consentVersion: { type: "string", required: false, input: false },
+        consentedAt: { type: "date", required: false, input: false },
+        role: { type: "string", required: false, defaultValue: "student", input: false },
+      },
+      deleteUser: {
+        enabled: true,
+        sendDeleteAccountVerification: async ({ user, url, token }) => {
+          await sendAuthEmailWithCooldown({ kind: "delete-account", to: user.email, url, token });
         },
       },
     },
-    // Jisr never reads the provider ID token, and Better Auth stores it unencrypted even with
-    // encryptOAuthTokens (only access and refresh tokens go through it), so it is never kept.
-    account: {
-      create: { before: async () => ({ data: { idToken: null } }) },
-      update: { before: async () => ({ data: { idToken: null } }) },
-    },
-    verification: {
-      create: {
-        // Magic-link and deletion tokens are verification rows written before any email goes
-        // out. Refusing them here keeps a disabled instance from storing tokens at all, for
-        // callers that skip the HTTP gate (auth.api.* on the server).
-        before: async () => {
-          if (!accountsEnabled()) throw accountsDisabledError();
+    databaseHooks: {
+      user: {
+        create: {
+          before: async (user, ctx) => {
+            // Defence in depth behind the accounts gate plugin: auth.api.* server calls and
+            // anything else that skips the HTTP handler still cannot create a user while off.
+            if (!accountsEnabled()) throw accountsDisabledError();
+            const decision = evaluateAdmission(
+              await admissionEvidence(user, ctx),
+              new Date(),
+              CURRENT_CONSENT_VERSION,
+            );
+            if (decision.kind === "reject") {
+              throw new APIError("BAD_REQUEST", {
+                message: "Age 16 or over must be confirmed before an account can be created.",
+                code: "AGE_NOT_CONFIRMED",
+              });
+            }
+            return {
+              data: {
+                ...user,
+                consentVersion: decision.consentVersion,
+                consentedAt: decision.consentedAt,
+              },
+            };
+          },
+        },
+      },
+      // Jisr never reads the provider ID token, and Better Auth stores it unencrypted even with
+      // encryptOAuthTokens (only access and refresh tokens go through it), so it is never kept.
+      account: {
+        create: { before: async () => ({ data: { idToken: null } }) },
+        update: { before: async () => ({ data: { idToken: null } }) },
+      },
+      verification: {
+        create: {
+          // Magic-link and deletion tokens are verification rows written before any email goes
+          // out. Refusing them here keeps a disabled instance from storing tokens at all, for
+          // callers that skip the HTTP gate (auth.api.* on the server).
+          before: async () => {
+            if (!accountsEnabled()) throw accountsDisabledError();
+          },
         },
       },
     },
-  },
-  plugins: [
-    accountsGate(),
-    magicLink({
-      expiresIn: MAGIC_LINK_EXPIRY_S,
-      disableSignUp: false,
-      storeToken: "hashed",
-      sendMagicLink: async ({ email, url, token, metadata }) => {
-        await sendAuthEmailWithCooldown({ kind: "magic-link", to: email, url, token, metadata });
-      },
-    }),
-    // Must stay last: it reads Set-Cookie off every other plugin's response.
-    nextCookies(),
-  ],
-});
+    plugins: [
+      accountsGate(),
+      magicLink({
+        expiresIn: MAGIC_LINK_EXPIRY_S,
+        disableSignUp: false,
+        storeToken: "hashed",
+        sendMagicLink: async ({ email, url, token, metadata }) => {
+          await sendAuthEmailWithCooldown({ kind: "magic-link", to: email, url, token, metadata });
+        },
+      }),
+      // Must stay last: it reads Set-Cookie off every other plugin's response.
+      nextCookies(),
+    ],
+  });
+}
+
+type Auth = ReturnType<typeof createAuth>;
+
+let instance: Auth | undefined;
+
+// Better Auth is created on first use, never at import: constructing it with
+// NODE_ENV=production and no secret rejects ("You are using the default secret"), and until
+// launch production runs exactly that way. The base URL is always explicit, so it is never
+// inferred from a request's Host header (magic-link URLs would be poisonable).
+export function getAuth(): Auth {
+  if (instance) return instance;
+  const secret = presentEnv("BETTER_AUTH_SECRET");
+  const baseURL = presentEnv("BETTER_AUTH_URL");
+  if (secret === undefined || baseURL === undefined) {
+    throw new AuthMisconfiguredError([
+      ...(secret === undefined ? ["BETTER_AUTH_SECRET"] : []),
+      ...(baseURL === undefined ? ["BETTER_AUTH_URL"] : []),
+    ]);
+  }
+  instance = createAuth(secret, baseURL);
+  return instance;
+}

@@ -19,7 +19,7 @@ type PendingModule = typeof import("@/lib/auth/pending-signup");
 
 let testDb: TestDatabase;
 let pool: Pool;
-let auth: AuthModule["auth"];
+let auth: ReturnType<AuthModule["getAuth"]>;
 let readPendingSignup: PendingModule["readPendingSignup"];
 let closeAppPool: () => Promise<void>;
 
@@ -80,7 +80,7 @@ beforeAll(async () => {
   process.env.DATABASE_URL = `${testDb.databaseUrl}&options=-c%20timezone%3DAsia%2FTokyo`;
   process.env.BETTER_AUTH_SECRET = "test-secret-test-secret-test-secret-0123";
   process.env.BETTER_AUTH_URL = "http://localhost:3000";
-  ({ auth } = await import("@/lib/auth/server"));
+  auth = (await import("@/lib/auth/server")).getAuth();
   ({ readPendingSignup } = await import("@/lib/auth/pending-signup"));
   const { db } = await import("@/db");
   closeAppPool = () => db.$client.end();

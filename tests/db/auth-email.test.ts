@@ -18,7 +18,7 @@ type AuthModule = typeof import("@/lib/auth/server");
 
 let testDb: TestDatabase;
 let pool: Pool;
-let auth: AuthModule["auth"];
+let auth: ReturnType<AuthModule["getAuth"]>;
 let closeAppPool: () => Promise<void>;
 
 async function count(table: string): Promise<number> {
@@ -45,7 +45,7 @@ beforeAll(async () => {
   process.env.DATABASE_URL = testDb.databaseUrl;
   process.env.BETTER_AUTH_SECRET = "test-secret-test-secret-test-secret-0123";
   process.env.BETTER_AUTH_URL = "http://localhost:3000";
-  ({ auth } = await import("@/lib/auth/server"));
+  auth = (await import("@/lib/auth/server")).getAuth();
   const { db } = await import("@/db");
   closeAppPool = () => db.$client.end();
 }, TIMEOUT_MS);

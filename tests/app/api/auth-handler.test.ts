@@ -21,7 +21,7 @@ type RouteModule = typeof import("@/app/api/auth/[...all]/route");
 
 let testDb: TestDatabase;
 let pool: Pool;
-let auth: AuthModule["auth"];
+let auth: ReturnType<AuthModule["getAuth"]>;
 let route: RouteModule;
 let closeAppPool: () => Promise<void>;
 
@@ -53,7 +53,7 @@ beforeAll(async () => {
   process.env.DATABASE_URL = testDb.databaseUrl;
   process.env.BETTER_AUTH_SECRET = "test-secret-test-secret-test-secret-0123";
   process.env.BETTER_AUTH_URL = ORIGIN;
-  ({ auth } = await import("@/lib/auth/server"));
+  auth = (await import("@/lib/auth/server")).getAuth();
   route = await import("@/app/api/auth/[...all]/route");
   const { db } = await import("@/db");
   closeAppPool = () => db.$client.end();
@@ -91,9 +91,8 @@ describe("route file", () => {
         .split(/\r?\n/)
         .filter((line) => line.trim() !== ""),
     ).toEqual([
-      'import { toNextJsHandler } from "better-auth/next-js";',
-      'import { auth } from "@/lib/auth/server";',
-      "export const { GET, POST } = toNextJsHandler(auth);",
+      'import { authHandler } from "@/lib/auth/handler";',
+      "export const { GET, POST } = authHandler;",
     ]);
   });
 });
@@ -103,6 +102,8 @@ describe.each([
   ["empty", ""],
   ["false", "false"],
   ["0", "0"],
+  ["a typo", "fasle"],
+  ["yes", "yes"],
 ])("with ACCOUNTS_ENABLED %s", (_label, value) => {
   beforeEach(() => {
     if (value === undefined) vi.stubEnv("ACCOUNTS_ENABLED", undefined);
