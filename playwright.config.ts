@@ -5,6 +5,11 @@ const COLD_BUILD_TIMEOUT_MS = 10 * 60 * 1000;
 
 // webServer.env is inherited from the parent process, so SWC_NATIVE_BINDING_CACHE and E2E_DATA_DIR
 // reach `pnpm build:e2e` whenever the caller set them.
+//
+// The webServer command chain boots the in-process PGlite test database (TCP socket) and applies
+// migrations BEFORE `next start`, in one process, so ordering is deterministic and never depends
+// on globalSetup. `pnpm db:harness --exec` injects DATABASE_URL into the Next process and tears
+// the database down when it exits. See tests/db/README.md.
 export default defineConfig({
   testDir: "tests/e2e",
   forbidOnly: Boolean(process.env.CI),
@@ -22,7 +27,7 @@ export default defineConfig({
     { name: "desktop", use: { browserName: "chromium", viewport: { width: 1280, height: 800 } } },
   ],
   webServer: {
-    command: `pnpm build:e2e && pnpm exec next start -p ${PORT}`,
+    command: `pnpm build:e2e && pnpm db:harness --exec "pnpm exec next start -p ${PORT}"`,
     url: `http://localhost:${PORT}/fr`,
     reuseExistingServer: !process.env.CI,
     timeout: COLD_BUILD_TIMEOUT_MS,
