@@ -112,7 +112,7 @@ jobs:
 
   # Race and transaction specs (tests/db-race/) need real concurrent connections, which the PGlite
   # harness cannot give. They run against a throwaway Postgres service container; each spec works in
-  # its own `race_<random>` schema. The password below is the container's throwaway one and guards
+  # its own `race_<random>` database. The password below is the container's throwaway one and guards
   # nothing. The guard step fails the job if the JSON report shows any skipped spec, so this job can
   # never pass by skipping (locally, without TEST_POSTGRES_URL, `pnpm test` skips them on purpose).
   db-race:

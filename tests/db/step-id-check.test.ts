@@ -14,7 +14,10 @@ function constraintLiterals(): string[] {
   const journal: { entries: { tag: string }[] } = JSON.parse(
     readFileSync(resolve(MIGRATIONS_DIR, "meta", "_journal.json"), "utf8"),
   );
-  const definition = new RegExp(`CONSTRAINT "${CONSTRAINT}" CHECK ([^)]*? in (([^)]*)))`, "g");
+  const definition = new RegExp(
+    `CONSTRAINT "${CONSTRAINT}" CHECK \\([^)]*? in \\(([^)]*)\\)\\)`,
+    "g",
+  );
   let last: string | undefined;
   for (const { tag } of journal.entries) {
     const sql = readFileSync(resolve(MIGRATIONS_DIR, `${tag}.sql`), "utf8");
