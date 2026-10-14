@@ -11,6 +11,7 @@ import type { LocalJsonStore } from "@/lib/local-store";
 export const ACCOUNT_SAVED_KEY = `${ACCOUNT_CACHE_PREFIX}saved`;
 export const ACCOUNT_PLAN_KEY = `${ACCOUNT_CACHE_PREFIX}plan`;
 export const ACCOUNT_PROFILE_KEY = `${ACCOUNT_CACHE_PREFIX}profile`;
+export const ACCOUNT_DRAFT_KEY = `${ACCOUNT_CACHE_PREFIX}profile-draft`;
 
 const modeListeners = new Set<() => void>();
 // Only trusted while someone listens: then every change of the hint reaches onHintChange.

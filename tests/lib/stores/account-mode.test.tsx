@@ -3,11 +3,18 @@ import { act, cleanup, renderHook } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { Profile } from "@/data-schema/profile";
-import { ACCOUNT_PLAN_KEY, ACCOUNT_PROFILE_KEY, ACCOUNT_SAVED_KEY } from "@/lib/account-cache";
+import {
+  ACCOUNT_DRAFT_KEY,
+  ACCOUNT_PLAN_KEY,
+  ACCOUNT_PROFILE_KEY,
+  ACCOUNT_SAVED_KEY,
+} from "@/lib/account-cache";
+import { getSyncUnavailable } from "@/lib/account-sync-runner";
 import { AUTH_HINT_KEY, clearAccountLocalState, setSessionHint } from "@/lib/auth/session-hint";
 import { clearAllLocalData } from "@/lib/local-data";
 import { PLAN_KEY } from "@/lib/plan/progress";
 import { forgetProgress, planStore, setStepDone } from "@/lib/plan/store";
+import { readDraft, writeDraft } from "@/lib/profile/draft";
 import { DRAFT_KEY, PROFILE_KEY } from "@/lib/profile/storage";
 import { profileStore } from "@/lib/profile/store";
 import { removeFromPlan } from "@/lib/saved/actions";
@@ -28,10 +35,15 @@ const sync = vi.hoisted(() => ({
   saveProfile: vi.fn(),
 }));
 
+const chunk = vi.hoisted(() => ({ fails: false }));
+
 // Stands in for the lazy chunk; everything else in account-cache is the real module.
 vi.mock("@/lib/account-cache", async (importOriginal) => ({
   ...(await importOriginal<typeof import("@/lib/account-cache")>()),
-  loadAccountSync: async () => ({ accountSync: sync }),
+  loadAccountSync: async () => {
+    if (chunk.fails) throw new Error("chunk failed to load");
+    return { accountSync: sync };
+  },
 }));
 
 const PROFILE: Profile = {
@@ -93,7 +105,9 @@ function savedSlugs(): string[] {
 }
 
 function guestBytes(): (string | null)[] {
-  return [SAVED_KEY, PLAN_KEY, PROFILE_KEY].map((key) => window.localStorage.getItem(key));
+  return [SAVED_KEY, PLAN_KEY, PROFILE_KEY, DRAFT_KEY].map((key) =>
+    window.localStorage.getItem(key),
+  );
 }
 
 // The sync layer is loaded asynchronously: let it resolve.
@@ -102,6 +116,7 @@ async function flush(): Promise<void> {
 }
 
 beforeEach(() => {
+  chunk.fails = false;
   window.localStorage.clear();
   savedStore.reload();
   planStore.reload();
@@ -144,8 +159,9 @@ describe("with the sign-in hint", () => {
   });
 
   it("hands every mutation to the sync layer and leaves the guest keys byte-identical", async () => {
-    const before = guestBytes();
     window.localStorage.setItem(DRAFT_KEY, "{}");
+    window.localStorage.setItem(ACCOUNT_DRAFT_KEY, "{}");
+    const before = guestBytes();
     setStepDone("xx-account", "visa", true);
     forgetProgress("xx-account");
     removeFromPlan("xx-account");
@@ -166,8 +182,37 @@ describe("with the sign-in hint", () => {
     expect(sync.saveProfile).toHaveBeenCalledWith(PROFILE);
     expect(sync.toggleSaved).toHaveBeenCalledTimes(1);
     expect(guestBytes()).toEqual(before);
-    // The form's draft is done with once the save is accepted, as for a guest.
-    expect(window.localStorage.getItem(DRAFT_KEY)).toBeNull();
+    // The account's draft is done with once the save is accepted; the guest's own draft stays.
+    expect(window.localStorage.getItem(ACCOUNT_DRAFT_KEY)).toBeNull();
+  });
+
+  it("keeps the signed-in form's draft under the account prefix, away from the guest's", () => {
+    window.localStorage.setItem(DRAFT_KEY, "guest draft bytes");
+    const storage = window.localStorage;
+    const draft = { schemaVersion: 1, step: 1, nationality: "MA" };
+    expect(writeDraft(storage, draft)).toEqual({ ok: true });
+    expect(readDraft(storage)).toEqual(draft);
+    expect(JSON.parse(window.localStorage.getItem(ACCOUNT_DRAFT_KEY) ?? "null")).toEqual(draft);
+    expect(window.localStorage.getItem(DRAFT_KEY)).toBe("guest draft bytes");
+    // Signing out wipes the account's draft with the rest of its cache, and only that.
+    act(() => {
+      clearAccountLocalState();
+    });
+    expect(window.localStorage.getItem(ACCOUNT_DRAFT_KEY)).toBeNull();
+    expect(window.localStorage.getItem(DRAFT_KEY)).toBe("guest draft bytes");
+  });
+
+  it("says so when a change is dropped because the sync chunk did not load", async () => {
+    chunk.fails = true;
+    const before = getSyncUnavailable();
+    const bytes = guestBytes();
+    setStepDone("xx-account", "visa", true);
+    removeFromPlan("xx-account");
+    expect(profileStore.save(PROFILE)).toEqual({ ok: true, persisted: true });
+    await flush();
+    expect(getSyncUnavailable()).toBe(before + 3);
+    expect(sync.setStepDone).not.toHaveBeenCalled();
+    expect(guestBytes()).toEqual(bytes);
   });
 
   it("goes back to the untouched guest data when the device signs out", () => {

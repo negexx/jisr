@@ -5,9 +5,11 @@ import { createTranslator } from "next-intl";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { AccountSyncEntry } from "@/components/auth/account-sync-entry";
+import { AccountSyncLoader } from "@/components/auth/account-sync-loader";
 import { AccountSyncNotices } from "@/components/auth/account-sync-notices";
 import type { Profile } from "@/data-schema/profile";
 import type { SyncStatus } from "@/lib/account-sync/sync";
+import { withAccountSync } from "@/lib/account-sync-runner";
 import { clearAccountLocalState, setSessionHint } from "@/lib/auth/session-hint";
 
 import ar from "../../messages/ar.json";
@@ -36,6 +38,13 @@ const sync = vi.hoisted(() => {
 });
 
 vi.mock("@/lib/account-sync/client", () => ({ accountSync: sync }));
+// The runner's path to the chunk: here it never loads.
+vi.mock("@/lib/account-cache", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/lib/account-cache")>()),
+  loadAccountSync: async () => {
+    throw new Error("chunk failed to load");
+  },
+}));
 vi.mock("next-intl/server", () => ({
   getTranslations: async ({
     locale,
@@ -138,5 +147,25 @@ describe("hydration triggers", () => {
     vi.advanceTimersByTime(61_000);
     flip("visible");
     expect(sync.hydrate).toHaveBeenCalledTimes(2);
+  });
+});
+
+describe("a change dropped because the sync chunk did not load", () => {
+  it.each([
+    "fr",
+    "ar",
+  ] as const)("is told by the eager loader in %s, and can be dismissed", async (locale) => {
+    const labels = await labelsFor(locale);
+    clearAccountLocalState();
+    render(<AccountSyncLoader labels={labels} />);
+    expect(screen.queryByRole("alert")).toBeNull();
+    await act(async () => {
+      withAccountSync(() => undefined);
+      await new Promise((resolve) => setTimeout(resolve, 0));
+    });
+    const copy = catalogues[locale].accountSync;
+    expect(screen.getByRole("alert").textContent).toBe(copy.failed);
+    await userEvent.click(screen.getByRole("button", { name: copy.dismiss }));
+    expect(screen.queryByRole("alert")).toBeNull();
   });
 });

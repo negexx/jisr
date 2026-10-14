@@ -171,12 +171,27 @@ export function createAccountSync(options: AccountSyncOptions): AccountSync {
     let confirmed = cachedValue(store, empty);
     let pending: Array<Op<T>> = [];
     let tail: Promise<void> = Promise.resolve();
+    let publishing = false;
     const shown = () => pending.reduce((value, op) => op.apply(value), overlay(confirmed));
     const publish = () => {
       if (!isActive()) return;
       const next = shown();
-      store.update(() => next);
+      publishing = true;
+      try {
+        store.update(() => next);
+      } finally {
+        publishing = false;
+      }
     };
+    // Another tab of this account wrote the shared cache (a `storage` event): with nothing of ours
+    // in flight its value is the newer confirmed state; otherwise the server settles it.
+    store.subscribe(() => {
+      if (publishing || !isActive()) return;
+      const state = store.getSnapshot();
+      if (state.status !== "ready") return;
+      if (pending.length === 0) confirmed = state.value;
+      else void hydrate();
+    });
     return {
       confirmed: () => confirmed,
       shown,

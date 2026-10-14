@@ -2,10 +2,10 @@ import type { Profile } from "@/data-schema/profile";
 import {
   ACCOUNT_PROFILE_KEY,
   inAccountMode,
-  loadAccountSync,
   refreshAccountMode,
   subscribeActive,
 } from "@/lib/account-cache";
+import { withAccountSync } from "@/lib/account-sync-runner";
 import { createLocalJsonStore, type LocalJsonStore, type LocalState } from "@/lib/local-store";
 
 import { type AccountProfile, EMPTY_ACCOUNT_PROFILE, parseAccountProfile } from "./account-profile";
@@ -241,11 +241,8 @@ export function accountAwareProfileStore(
         storage = null;
       }
       if (storage !== null) clearDraft(storage);
-      // A chunk that cannot load leaves the account as it was; there is nothing to roll back.
-      loadAccountSync().then(
-        ({ accountSync }) => accountSync.saveProfile(parsed),
-        () => undefined,
-      );
+      // A chunk that cannot load leaves the account as it was, and a notice says so.
+      withAccountSync((sync) => sync.saveProfile(parsed));
       return { ok: true, persisted: true };
     },
     clear() {
