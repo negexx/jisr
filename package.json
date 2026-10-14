@@ -15,6 +15,7 @@
     "typecheck": "next typegen && tsc --noEmit",
     "lint": "biome check .",
     "test": "vitest run",
+    "test:db-race": "vitest run tests/db-race",
     "test:e2e": "playwright test",
     "data:check": "tsx scripts/data/check.ts",
     "data:build": "tsx scripts/data/build.ts",
