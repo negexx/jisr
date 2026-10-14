@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { type ReactNode, useEffect, useMemo, useState } from "react";
-
+import { ReportSnapshot } from "@/components/report-outdated/report-context";
 import type { IsoDate } from "@/data-schema/dates";
 import type { Profile } from "@/data-schema/profile";
 import type { AppLocale } from "@/i18n/routing";
@@ -187,7 +187,9 @@ export function MatchesClient({ locale, client }: { locale: AppLocale; client?: 
   return (
     <>
       <output className="sr-only">{loading ? t("loading") : ""}</output>
-      {node}
+      <ReportSnapshot version={state.status === "ready" ? state.bundle.snapshotVersion : null}>
+        {node}
+      </ReportSnapshot>
     </>
   );
 }

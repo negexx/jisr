@@ -1235,5 +1235,11 @@
     "working": "Clearing…",
     "failed": "We could not clear your account's data. Nothing was removed. Try again.",
     "signedOut": "You are no longer signed in, so nothing was removed from your account. Confirm again to clear this device only."
+  },
+  "reportOutdated": {
+    "button": "Report outdated info",
+    "reported": "Reported, thank you",
+    "failed": "Your report could not be sent. Try again.",
+    "rateLimited": "You have reached today's limit of reports. Try again tomorrow."
   }
 }

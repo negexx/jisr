@@ -79,7 +79,11 @@ function TuitionCell({ program }: CellProps) {
         <small className="text-sm text-muted-foreground">{tCost(`per.${tuition.period}`)}</small>
       </p>
       <TuitionBasisNote tuition={tuition} />
-      <SourceBadge meta={program.tuition} variant="compact" />
+      <SourceBadge
+        meta={program.tuition}
+        variant="compact"
+        report={{ record: `programs/${program.slug}`, path: "tuition" }}
+      />
     </div>
   );
 }
@@ -110,7 +114,11 @@ function LanguageCell({ program }: CellProps) {
           locale,
         )}
       </p>
-      <SourceBadge meta={program.teachingLanguages} variant="compact" />
+      <SourceBadge
+        meta={program.teachingLanguages}
+        variant="compact"
+        report={{ record: `programs/${program.slug}`, path: "teachingLanguages" }}
+      />
     </div>
   );
 }
@@ -179,7 +187,7 @@ function ApplicationCell({ program }: CellProps) {
             {t("applyOn", { name: isolate(channel.name) })}
           </ExternalLink>
           {program.channelFact === null ? null : (
-            <SourceBadge meta={program.channelFact} variant="compact" />
+            <SourceBadge meta={program.channelFact} variant="compact" report />
           )}
         </div>
       )}
@@ -204,7 +212,11 @@ function ApplicationCell({ program }: CellProps) {
                 </li>
               ))}
             </ul>
-            <SourceBadge meta={program.documentsMeta} variant="compact" />
+            <SourceBadge
+              meta={program.documentsMeta}
+              variant="compact"
+              report={{ record: `programs/${program.slug}`, path: "documents" }}
+            />
           </>
         )}
       </div>

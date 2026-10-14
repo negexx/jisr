@@ -8,6 +8,8 @@ import { formatDate } from "@/lib/format";
 import { ExternalLink, sourceHostname } from "./external-link";
 import { FreshnessMark } from "./freshness-mark";
 import { KindPill } from "./kind-pill";
+import type { ReportTarget } from "./report-outdated/report-context";
+import { ReportOutdatedSlot } from "./report-outdated/report-outdated-slot";
 
 // Only what freshness is computed from crosses into the client leaf: a FactRef's stored `freshness` was stamped at some other `now` (for a static page, a build-time value) and must never ship.
 function factMetaOf(meta: FactMeta | FactRef): FactMeta {
@@ -26,11 +28,15 @@ export function SourceBadge({
   variant = "compact",
   label,
   basisText,
+  report,
 }: {
   meta: FactMeta | FactRef;
   variant?: "compact" | "full";
   label?: string;
   basisText?: string;
+  // Opt-in, journey surfaces only: the fact a signed-in student may report as outdated. `true` takes
+  // the record and path from a FactRef; a FactMeta has neither, so its caller names them.
+  report?: ReportTarget | true;
 }) {
   const locale = useLocale();
   const t = useTranslations("sourceBadge");
@@ -39,6 +45,7 @@ export function SourceBadge({
   const kind = meta.info_kind;
   const hostname = sourceHostname(meta.source_url);
   const full = variant === "full";
+  const reportTarget = report === true ? ("record" in meta ? meta : undefined) : report;
   const groupProps = label === undefined ? {} : { role: "group", "aria-label": label };
 
   return (
@@ -75,6 +82,14 @@ export function SourceBadge({
             stale: kind === "official" ? tFreshness("stale") : t("staleCheckSource"),
           }}
         />
+        {reportTarget === undefined ? null : (
+          <ReportOutdatedSlot
+            record={reportTarget.record}
+            path={reportTarget.path}
+            sourceUrl={meta.source_url}
+            hostname={hostname}
+          />
+        )}
       </div>
       {full ? (
         <p className="max-w-prose text-sm text-muted-foreground">{tKind(`${kind}.meaning`)}</p>

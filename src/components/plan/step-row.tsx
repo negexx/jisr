@@ -53,7 +53,7 @@ export function StepSources({
   return (
     <div className="flex flex-col gap-2">
       {facts.map((fact) => (
-        <SourceBadge key={factKey(fact)} meta={fact} variant="compact" />
+        <SourceBadge key={factKey(fact)} meta={fact} variant="compact" report />
       ))}
     </div>
   );

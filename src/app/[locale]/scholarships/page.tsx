@@ -4,7 +4,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-
+import {
+  loadReportCopy,
+  ReportOutdatedEntry,
+} from "@/components/report-outdated/report-outdated-entry";
 import { ScholarshipsPageView } from "@/components/scholarships/scholarships-page-view";
 import { routing } from "@/i18n/routing";
 import { pageMetadata } from "@/lib/seo";
@@ -33,5 +36,10 @@ export default async function ScholarshipsPage({ params }: Props) {
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const data = await loadScholarshipsPageData(locale);
-  return <ScholarshipsPageView data={data} />;
+  const reportCopy = await loadReportCopy(locale);
+  return (
+    <ReportOutdatedEntry copy={reportCopy} locale={locale} snapshotVersion={data.snapshotVersion}>
+      <ScholarshipsPageView data={data} />
+    </ReportOutdatedEntry>
+  );
 }

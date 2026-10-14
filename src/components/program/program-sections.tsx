@@ -157,7 +157,10 @@ export function OverviewSection({ data }: { data: ProgramPageData }) {
                   </span>
                 </p>
               )}
-              <SourceBadge meta={institution.fact} />
+              <SourceBadge
+                meta={institution.fact}
+                report={{ record: `institutions/${institution.slug}`, path: "" }}
+              />
             </>
           )}
         </Fact>
@@ -167,7 +170,10 @@ export function OverviewSection({ data }: { data: ProgramPageData }) {
           ) : (
             <>
               <p className="text-base">{t("header.duration", duration)}</p>
-              <SourceBadge meta={program.durationYears} />
+              <SourceBadge
+                meta={program.durationYears}
+                report={{ record: `programs/${program.slug}`, path: "durationYears" }}
+              />
             </>
           )}
         </Fact>
@@ -177,7 +183,10 @@ export function OverviewSection({ data }: { data: ProgramPageData }) {
           ) : (
             <>
               <p className="text-base">{languages}</p>
-              <SourceBadge meta={program.teachingLanguages} />
+              <SourceBadge
+                meta={program.teachingLanguages}
+                report={{ record: `programs/${program.slug}`, path: "teachingLanguages" }}
+              />
             </>
           )}
         </Fact>
@@ -207,7 +216,11 @@ export function RequirementsSection({ data }: { data: ProgramPageData }) {
         </p>
       ) : null}
       {requirements.rules.length === 0 ? null : (
-        <SourceBadge meta={requirements.fact} variant="full" />
+        <SourceBadge
+          meta={requirements.fact}
+          variant="full"
+          report={{ record: `programs/${data.program.slug}`, path: "requirements" }}
+        />
       )}
       {requirements.rules.length === 0 ? (
         <ToCheck>{t("none")}</ToCheck>
@@ -236,7 +249,13 @@ export function RequirementsSection({ data }: { data: ProgramPageData }) {
                     <LocalizedDataText value={{ text: view.note.text, note: view.note.textNote }} />
                   </p>
                 )}
-                <SourceBadge meta={view.fact} />
+                <SourceBadge
+                  meta={view.fact}
+                  report={{
+                    record: `programs/${data.program.slug}`,
+                    path: `requirements.rules.${rule.id}`,
+                  }}
+                />
               </li>
             );
           })}
@@ -267,7 +286,11 @@ export function TuitionSection({ data }: { data: ProgramPageData }) {
             </span>
           </p>
           <TuitionBasisNote tuition={tuition} />
-          <SourceBadge meta={data.program.tuition} variant="full" />
+          <SourceBadge
+            meta={data.program.tuition}
+            variant="full"
+            report={{ record: `programs/${data.program.slug}`, path: "tuition" }}
+          />
         </>
       )}
     </Section>
@@ -372,7 +395,12 @@ export function DeadlineSection({ data }: { data: ProgramPageData }) {
           </ul>
         </>
       )}
-      {intakes.length === 0 ? null : <SourceBadge meta={data.program.intakes} />}
+      {intakes.length === 0 ? null : (
+        <SourceBadge
+          meta={data.program.intakes}
+          report={{ record: `programs/${data.program.slug}`, path: "intakes" }}
+        />
+      )}
     </Section>
   );
 }
@@ -410,9 +438,15 @@ export function ProcedureSection({ data }: { data: ProgramPageData }) {
             <ExternalLink href={channel.url} className="min-h-11 w-fit text-base md:min-h-8">
               {t("open")}
             </ExternalLink>
-            <SourceBadge meta={data.program.applicationChannel} />
+            <SourceBadge
+              meta={data.program.applicationChannel}
+              report={{ record: `programs/${data.program.slug}`, path: "applicationChannel" }}
+            />
             {sameSource(data.program.applicationChannel, channel.fact) ? null : (
-              <SourceBadge meta={channel.fact} />
+              <SourceBadge
+                meta={channel.fact}
+                report={{ record: `application-channels/${channel.slug}`, path: "" }}
+              />
             )}
           </Fact>
         </dl>
@@ -452,7 +486,10 @@ export function DocumentsSection({ data }: { data: ProgramPageData }) {
         </ul>
       )}
       {documents === null || documents.length === 0 ? null : (
-        <SourceBadge meta={data.program.documents} />
+        <SourceBadge
+          meta={data.program.documents}
+          report={{ record: `programs/${data.program.slug}`, path: "documents" }}
+        />
       )}
     </Section>
   );
@@ -542,8 +579,16 @@ function ScholarshipItem({
       <ExternalLink href={scholarship.officialUrl} className="min-h-11 w-fit text-base md:min-h-8">
         {t("link")}
       </ExternalLink>
-      <SourceBadge meta={scholarship.support} />
-      {sharedSource ? null : <SourceBadge meta={scholarship.deadline} />}
+      <SourceBadge
+        meta={scholarship.support}
+        report={{ record: `scholarships/${scholarship.slug}`, path: "support" }}
+      />
+      {sharedSource ? null : (
+        <SourceBadge
+          meta={scholarship.deadline}
+          report={{ record: `scholarships/${scholarship.slug}`, path: "deadline" }}
+        />
+      )}
     </li>
   );
 }
@@ -583,7 +628,13 @@ function RouteGuidanceBlock({ data }: { data: ProgramPageData }) {
                 <p className="max-w-prose text-base">
                   <LocalizedDataText value={data.text(note.note)} />
                 </p>
-                <SourceBadge meta={note.fact} />
+                <SourceBadge
+                  meta={note.fact}
+                  report={{
+                    record: `admission-routes/${note.route}`,
+                    path: `guidance.${note.id}`,
+                  }}
+                />
               </li>
             ))}
           </ul>

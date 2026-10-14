@@ -137,7 +137,11 @@ export function MatchCard({
             )}
           </p>
           {languageNames === null ? null : (
-            <SourceBadge meta={model.teachingLanguages} variant="compact" />
+            <SourceBadge
+              meta={model.teachingLanguages}
+              variant="compact"
+              report={{ record: `programs/${model.slug}`, path: "teachingLanguages" }}
+            />
           )}
         </div>
         <MatchStatusBadge group={model.group} />
@@ -166,7 +170,11 @@ export function MatchCard({
                 </small>
               </p>
               <TuitionBasisNote tuition={tuition} />
-              <SourceBadge meta={model.tuition} variant="compact" />
+              <SourceBadge
+                meta={model.tuition}
+                variant="compact"
+                report={{ record: `programs/${model.slug}`, path: "tuition" }}
+              />
             </>
           )}
         </Fact>
@@ -197,7 +205,7 @@ export function MatchCard({
                 )}
               </p>
               {channelSource === undefined ? null : (
-                <SourceBadge meta={channelSource} variant="compact" />
+                <SourceBadge meta={channelSource} variant="compact" report />
               )}
             </>
           )}

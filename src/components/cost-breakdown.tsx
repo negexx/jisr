@@ -89,6 +89,7 @@ function LineRow({
             <div className="col-span-2 @md:col-span-1">
               <SourceBadge
                 meta={fact}
+                report
                 variant={variant === "full" && basisText !== undefined ? "full" : "compact"}
                 {...(basisText === undefined ? {} : { basisText })}
               />

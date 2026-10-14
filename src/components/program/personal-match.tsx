@@ -7,6 +7,7 @@ import { type ReactNode, useEffect, useState } from "react";
 
 import { MatchStatusBadge } from "@/components/match-status-badge";
 import { ReasonList } from "@/components/reason-list";
+import { ReportSnapshot } from "@/components/report-outdated/report-context";
 import { Button } from "@/components/ui/button";
 import type { CountryCode, Slug } from "@/data-schema/primitives";
 import type { Profile } from "@/data-schema/profile";
@@ -262,11 +263,13 @@ export function PersonalMatch({
   } else {
     head = <ResultHead result={outcome.result} />;
     details = (
-      <ResultDetails
-        result={outcome.result}
-        budgetProvided={profile.budget !== null}
-        scholarshipSlugs={scholarshipSlugs}
-      />
+      <ReportSnapshot version={bundle?.snapshotVersion ?? null}>
+        <ResultDetails
+          result={outcome.result}
+          budgetProvided={profile.budget !== null}
+          scholarshipSlugs={scholarshipSlugs}
+        />
+      </ReportSnapshot>
     );
   }
   const result = outcome?.kind === "result" ? outcome.result : null;

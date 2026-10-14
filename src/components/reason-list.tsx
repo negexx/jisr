@@ -66,7 +66,7 @@ function SourcesDetails({ facts }: { facts: readonly FactRef[] }) {
       <ul className="flex flex-col gap-2 pb-1">
         {facts.map((fact) => (
           <li key={`${fact.source_url}|${fact.last_verified_at}|${fact.info_kind}`}>
-            <SourceBadge meta={fact} variant="compact" />
+            <SourceBadge meta={fact} variant="compact" report />
           </li>
         ))}
       </ul>

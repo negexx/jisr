@@ -1235,5 +1235,11 @@
     "working": "Effacement…",
     "failed": "Impossible d'effacer les données de votre compte. Rien n'a été supprimé. Réessayez.",
     "signedOut": "Vous n'êtes plus connecté, donc rien n'a été supprimé de votre compte. Confirmez à nouveau pour effacer les données de cet appareil uniquement."
+  },
+  "reportOutdated": {
+    "button": "Signaler une info périmée",
+    "reported": "Signalé, merci",
+    "failed": "Votre signalement n'a pas pu être envoyé. Réessayez.",
+    "rateLimited": "Vous avez atteint la limite de signalements pour aujourd'hui. Réessayez demain."
   }
 }

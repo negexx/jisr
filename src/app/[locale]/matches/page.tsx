@@ -7,6 +7,10 @@ import { MatchesClient } from "@/components/matches/matches-client";
 import { MatchesSummary } from "@/components/matches/matches-summary";
 import { MATCHES_MESSAGE_NAMESPACES } from "@/components/matches/namespaces";
 import { PageBand } from "@/components/page-band";
+import {
+  loadReportCopy,
+  ReportOutdatedEntry,
+} from "@/components/report-outdated/report-outdated-entry";
 import { routing } from "@/i18n/routing";
 import { pickMessages } from "@/lib/i18n/client-messages";
 import { pageMetadata } from "@/lib/seo";
@@ -32,7 +36,11 @@ export default async function MatchesPage({ params }: Props) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
-  const [messages, t] = await Promise.all([getMessages(), getTranslations("matches")]);
+  const [messages, t, reportCopy] = await Promise.all([
+    getMessages(),
+    getTranslations("matches"),
+    loadReportCopy(locale),
+  ]);
   return (
     <div className="-mt-8 md:-mt-12">
       <NextIntlClientProvider
@@ -43,7 +51,9 @@ export default async function MatchesPage({ params }: Props) {
           <MatchesSummary />
         </PageBand>
         <div className="pt-8 md:pt-12">
-          <MatchesClient locale={locale} />
+          <ReportOutdatedEntry copy={reportCopy} locale={locale}>
+            <MatchesClient locale={locale} />
+          </ReportOutdatedEntry>
         </div>
       </NextIntlClientProvider>
     </div>
