@@ -1,9 +1,7 @@
+import { startTestDatabase, type TestDatabase } from "@scripts/db/harness";
 import { Pool } from "pg";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
-
 import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
-
-import { startTestDatabase, type TestDatabase } from "../../db/harness";
 
 // The Google path end to end through the real Better Auth instance on PGlite: /sign-in/social
 // stores the OAuth state (with the client's additionalData) in the verification table, then

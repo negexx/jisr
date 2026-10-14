@@ -1,14 +1,12 @@
 import { resolve } from "node:path";
-
-import { Client } from "pg";
-import { afterEach, describe, expect, it } from "vitest";
-
 import {
   type StartTestDatabaseOptions,
   startTestDatabase,
   type TestDatabase,
   TestDatabasePortInUseError,
-} from "./harness";
+} from "@scripts/db/harness";
+import { Client } from "pg";
+import { afterEach, describe, expect, it } from "vitest";
 
 const TIMEOUT_MS = 30_000;
 const running: TestDatabase[] = [];

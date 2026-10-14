@@ -2,7 +2,7 @@
 
 DB-backed specs (schema, Server Actions, export/deletion, signed-in e2e) run against an
 **in-process Postgres** so `pnpm test`, Playwright and manual QA need no external service
-and no secrets. `harness.ts` boots [PGlite](https://pglite.dev) behind a local TCP socket
+and no secrets. `scripts/db/harness.ts` boots [PGlite](https://pglite.dev) behind a local TCP socket
 (`@electric-sql/pglite-socket`) and exposes an ordinary `postgres://…` connection string;
 migration SQL that works here applies unchanged to Neon in production.
 
@@ -23,7 +23,7 @@ moved to another major, bump `@electric-sql/pglite` to a build on that major in 
 ## Usage
 
 ```ts
-import { startTestDatabase } from "./harness";
+import { startTestDatabase } from "@scripts/db/harness";
 
 const db = await startTestDatabase(); // PGlite + socket + migrate
 try {

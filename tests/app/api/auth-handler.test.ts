@@ -1,10 +1,8 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-
+import { startTestDatabase, type TestDatabase } from "@scripts/db/harness";
 import { Pool } from "pg";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
-
-import { startTestDatabase, type TestDatabase } from "../../db/harness";
 
 const TIMEOUT_MS = 60_000;
 const ORIGIN = "http://localhost:3000";

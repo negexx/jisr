@@ -7,7 +7,7 @@
 // scripts/e2e/build.ts for why there is no "is this the entry script" guard).
 import { type ChildProcess, spawn } from "node:child_process";
 
-import { startTestDatabase, TEST_DB_DEFAULT_PORT } from "../../tests/db/harness";
+import { startTestDatabase, TEST_DB_DEFAULT_PORT } from "./harness";
 
 type CliOptions = { port?: number; exec?: string };
 

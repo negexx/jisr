@@ -1,7 +1,7 @@
 # tests/db-race — specs that need a real Postgres
 
 Race and transaction specs (row locks, concurrent writers, serialisation failures) need several
-real connections. The PGlite harness in `tests/db/` is single-connection, so these specs run against
+real connections. The PGlite harness (`scripts/db/harness.ts`, specs in `tests/db/`) is single-connection, so these specs run against
 the Postgres named by `TEST_POSTGRES_URL` and are **skipped** when it is unset: a plain `pnpm test`
 lists them as skipped, with the reason in the suite title.
 

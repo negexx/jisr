@@ -1,14 +1,12 @@
+import { startTestDatabase, type TestDatabase } from "@scripts/db/harness";
 import { eq } from "drizzle-orm";
 import { drizzle, type NodePgDatabase } from "drizzle-orm/node-postgres";
 import { Pool } from "pg";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-
 import { ProfileSchema } from "@/data-schema/profile";
 import * as schema from "@/db/schema";
 import { CHECKLIST_STEP_IDS } from "@/domain/types";
 import { rowsToPlanProgress, rowsToSavedList, rowToProfile } from "@/lib/server/rows";
-
-import { startTestDatabase, type TestDatabase } from "./harness";
 
 const TIMEOUT_MS = 60_000;
 const NOW = new Date("2026-10-14T09:00:00.000Z");

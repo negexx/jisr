@@ -1,7 +1,6 @@
+import { startTestDatabase, type TestDatabase } from "@scripts/db/harness";
 import { Pool } from "pg";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
-
-import { startTestDatabase, type TestDatabase } from "./harness";
 
 const TIMEOUT_MS = 60_000;
 
