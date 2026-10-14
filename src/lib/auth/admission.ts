@@ -9,6 +9,7 @@
 //                                      by the first-login "finish signup" gate until the
 //                                      student consents)
 //   age confirmed, consent present  -> allow, stamp consent_version + consented_at now
+//   consent naming another version  -> treated as missing (allow, NULL), never stamped
 //
 // `validateUserInfo` runs BEFORE `databaseHooks.user.create.before` and `input: false`
 // keeps consent fields out of user input, so this gate only ever sees server-resolved
@@ -42,14 +43,33 @@ export function evaluateAdmission(
   confirmation: AdmissionConfirmation,
   pendingSignup: PendingSignup | null,
   now: Date,
+  currentVersion: string,
 ): AdmissionDecision {
   const ageConfirmed = confirmation.ageConfirmed || pendingSignup?.ageConfirmed === true;
   if (!ageConfirmed) return { kind: "reject", code: "age_not_confirmed" };
 
-  const consentVersion =
-    normalizeConsentVersion(confirmation.consentVersion) ??
-    normalizeConsentVersion(pendingSignup?.consentVersion ?? null);
-  if (consentVersion === null) return { kind: "allow", consentVersion: null, consentedAt: null };
+  const evidence = [confirmation.consentVersion, pendingSignup?.consentVersion ?? null];
+  const consentsToCurrent = evidence.some(
+    (version) => normalizeConsentVersion(version) === currentVersion,
+  );
+  if (!consentsToCurrent) return { kind: "allow", consentVersion: null, consentedAt: null };
 
-  return { kind: "allow", consentVersion, consentedAt: now };
+  return { kind: "allow", consentVersion: currentVersion, consentedAt: now };
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+/**
+ * Reads the Google sign-up confirmation out of the OAuth state. Its top-level keys come from
+ * the client's `additionalData`, so they are self-declared: only a literal boolean `true`
+ * confirms age, only a string can name a version, and nothing else (timestamps included) is read.
+ */
+export function confirmationFromOAuthState(state: unknown): AdmissionConfirmation {
+  if (!isRecord(state)) return { ageConfirmed: false, consentVersion: null };
+  return {
+    ageConfirmed: state.ageConfirmed === true,
+    consentVersion: typeof state.consentVersion === "string" ? state.consentVersion : null,
+  };
 }

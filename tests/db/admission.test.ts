@@ -1,6 +1,8 @@
 import { Pool } from "pg";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
+import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
+
 import { startTestDatabase, type TestDatabase } from "./harness";
 
 const TIMEOUT_MS = 60_000;
@@ -173,7 +175,7 @@ describe("admission gate against the database", () => {
   it("creates the user with the consent record from a valid pending row", async () => {
     await insertPending("new@example.com", {
       expiresAt: IN_ONE_HOUR,
-      consentVersion: "2026-10-14",
+      consentVersion: CURRENT_CONSENT_VERSION,
     });
     expect(await signInWithMagicLink("new@example.com")).toEqual({ error: null });
     const { rows } = await pool.query<{
@@ -181,14 +183,27 @@ describe("admission gate against the database", () => {
       consented_at: Date | null;
     }>('select consent_version, consented_at from "user" where email = $1', ["new@example.com"]);
     expect(rows).toHaveLength(1);
-    expect(rows[0]?.consent_version).toBe("2026-10-14");
+    expect(rows[0]?.consent_version).toBe(CURRENT_CONSENT_VERSION);
     expect(rows[0]?.consented_at).toBeInstanceOf(Date);
+  });
+
+  it("creates the user with NULL consent when the pending row names an older version", async () => {
+    await insertPending("new@example.com", {
+      expiresAt: IN_ONE_HOUR,
+      consentVersion: "2026-01-01",
+    });
+    expect(await signInWithMagicLink("new@example.com")).toEqual({ error: null });
+    const { rows } = await pool.query<{
+      consent_version: string | null;
+      consented_at: Date | null;
+    }>('select consent_version, consented_at from "user" where email = $1', ["new@example.com"]);
+    expect(rows).toEqual([{ consent_version: null, consented_at: null }]);
   });
 
   it("records no client IP on the session created by the magic-link flow", async () => {
     await insertPending("new@example.com", {
       expiresAt: IN_ONE_HOUR,
-      consentVersion: "2026-10-14",
+      consentVersion: CURRENT_CONSENT_VERSION,
     });
     // The request carries an x-forwarded-for header; with tracking disabled it must not land in the row.
     expect(await signInWithMagicLink("new@example.com")).toEqual({ error: null });

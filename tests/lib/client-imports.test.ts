@@ -32,6 +32,7 @@ const CLIENT_DIRECTORIES = [
 ];
 const CLIENT_FILES = [
   path.join("lib", "analytics.ts"),
+  path.join("lib", "auth", "consent.ts"),
   path.join("lib", "local-storage.ts"),
   path.join("lib", "local-store.ts"),
   path.join("lib", "local-data.ts"),

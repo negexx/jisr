@@ -2,7 +2,7 @@ import "server-only";
 
 import { drizzleAdapter } from "@better-auth/drizzle-adapter";
 import { betterAuth } from "better-auth";
-import { APIError } from "better-auth/api";
+import { APIError, getOAuthState } from "better-auth/api";
 import { nextCookies } from "better-auth/next-js";
 import { magicLink } from "better-auth/plugins";
 
@@ -12,16 +12,28 @@ import { type AuthEmailRequest, sendAuthEmail } from "@/lib/server/email";
 import { claimEmailSendSlot } from "@/lib/server/email-cooldown";
 import { accountsEnabled } from "./accounts-enabled";
 import { ACCOUNTS_DISABLED_CODE, accountsGate } from "./accounts-gate";
-import { type AdmissionConfirmation, evaluateAdmission } from "./admission";
+import {
+  type AdmissionConfirmation,
+  confirmationFromOAuthState,
+  evaluateAdmission,
+} from "./admission";
+import { CURRENT_CONSENT_VERSION } from "./consent";
 import { readPendingSignup } from "./pending-signup";
 
 const MAGIC_LINK_EXPIRY_S = 15 * 60;
 
-// Todo 9 wires the Google path by reading the server-validated OAuth state out of `ctx`
-// (client-supplied additionalData is untrusted). Until then there is no server-validated
-// OAuth evidence, so the gate fails closed for a Google create.
-function admissionConfirmationFromHookContext(_ctx: unknown): AdmissionConfirmation {
-  return { ageConfirmed: false, consentVersion: null };
+const OAUTH_CALLBACK_PATH = "/callback/:id";
+
+// Google sign-up evidence rides the OAuth state: the client's additionalData is stored server
+// side at /sign-in/social and parsed back on the callback, so it cannot be changed in between,
+// but it is still self-declared and confirmationFromOAuthState validates it strictly. Only the
+// callback has a parsed state; every other create path (magic link, the ID-token sign-in, server
+// calls) carries none and relies on the pending-signup row.
+async function admissionConfirmationFromHookContext(
+  ctx: { path?: string } | null,
+): Promise<AdmissionConfirmation> {
+  if (ctx?.path !== OAUTH_CALLBACK_PATH) return { ageConfirmed: false, consentVersion: null };
+  return confirmationFromOAuthState(await getOAuthState());
 }
 
 function accountsDisabledError(): APIError {
@@ -84,9 +96,10 @@ export const auth = betterAuth({
           if (!accountsEnabled()) throw accountsDisabledError();
           const pending = await readPendingSignup(user.email);
           const decision = evaluateAdmission(
-            admissionConfirmationFromHookContext(ctx),
+            await admissionConfirmationFromHookContext(ctx),
             pending,
             new Date(),
+            CURRENT_CONSENT_VERSION,
           );
           if (decision.kind === "reject") {
             throw new APIError("BAD_REQUEST", {

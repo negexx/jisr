@@ -9,6 +9,7 @@ import { renderToString } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
 
 import type { AppLocale } from "@/i18n/routing";
+import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
 import { MdxLink } from "@/mdx-components";
 
 import ar from "../../messages/ar.json";
@@ -122,6 +123,27 @@ describe.each(CASES)("legal page: $name", (pageCase) => {
       expect(headings[0]?.getAttribute("data-doc")).toBe(pageCase.doc);
       expect(textOf(parsed.body)).toContain(message(locale, "legal.updated"));
     });
+  });
+});
+
+// The MDX files carry their version as an ESM export (no frontmatter plugin is configured, so a
+// YAML block would render as text). Vitest has no MDX transform, so the export is read from disk.
+describe("privacy notice consent version", () => {
+  const ALL_LOCALES: readonly AppLocale[] = ["fr", "en", "ar"];
+
+  function consentVersionOf(locale: AppLocale): string | null {
+    const source = readFileSync(
+      path.resolve(process.cwd(), "content", locale, "privacy.mdx"),
+      "utf8",
+    );
+    const block = source.match(
+      /^export const frontmatter = \{\s*consentVersion: "([^"]+)",?\s*\};/,
+    );
+    return block?.[1] ?? null;
+  }
+
+  it.each(ALL_LOCALES)("content/%s/privacy.mdx names CURRENT_CONSENT_VERSION", (locale) => {
+    expect(consentVersionOf(locale)).toBe(CURRENT_CONSENT_VERSION);
   });
 });
 
