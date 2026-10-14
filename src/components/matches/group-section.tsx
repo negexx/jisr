@@ -12,16 +12,20 @@ import { PagedList } from "./paged-list";
 
 const HEADING_CLASS = "text-2xl font-light tracking-tight text-balance";
 
+type Aliases = Readonly<Record<string, string>> | undefined;
+
 function Cards({
   cards,
   budgetProvided,
   locale,
   routeExplained,
+  aliases,
 }: {
   cards: readonly MatchCardModel[];
   budgetProvided: boolean;
   locale: AppLocale;
   routeExplained: boolean;
+  aliases: Aliases;
 }) {
   return (
     <PagedList
@@ -33,6 +37,7 @@ function Cards({
             budgetProvided={budgetProvided}
             monthsLabel={displayNumber(card.cost.academicYearMonths, locale)}
             routeExplained={routeExplained}
+            aliases={aliases}
           />
         </li>
       ))}
@@ -65,11 +70,14 @@ export function GroupSection({
   cards,
   budgetProvided,
   locale,
+  aliases,
 }: {
   group: MatchGroup;
   cards: readonly MatchCardModel[];
   budgetProvided: boolean;
   locale: AppLocale;
+  // Former slug to current slug, for the save buttons (from the loaded snapshot).
+  aliases?: Aliases;
 }) {
   const tStatus = useTranslations("domain.status");
   const tFoundation = useTranslations("matches.groups.foundation");
@@ -108,6 +116,7 @@ export function GroupSection({
               budgetProvided={budgetProvided}
               locale={locale}
               routeExplained={false}
+              aliases={aliases}
             />
           </div>
         </details>
@@ -124,6 +133,7 @@ export function GroupSection({
         budgetProvided={budgetProvided}
         locale={locale}
         routeExplained={group === "foundation"}
+        aliases={aliases}
       />
     </section>
   );

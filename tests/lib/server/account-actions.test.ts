@@ -527,6 +527,77 @@ describe("saveProfile compare-and-set", () => {
   });
 });
 
+describe("loadAccountData", () => {
+  it.each<[string, () => void]>([
+    ["without a session", signedOut],
+    ["while accounts are off", () => vi.stubEnv("ACCOUNTS_ENABLED", "")],
+  ])("returns unauthenticated %s", async (_label, arrange) => {
+    await actions.saveProgram(program("xx-prog-a"));
+    arrange();
+    expect(await actions.loadAccountData()).toEqual({ ok: false, error: "unauthenticated" });
+  });
+
+  it("returns consent_required for a user at the finish-signup gate", async () => {
+    const { rows } = await pool.query<{ consent_version: string | null }>(
+      'select consent_version from "user" where id = $1',
+      [aliceId],
+    );
+    await pool.query('update "user" set consent_version = $2 where id = $1', [
+      aliceId,
+      "2020-01-01",
+    ]);
+    try {
+      expect(await actions.loadAccountData()).toEqual({ ok: false, error: "consent_required" });
+    } finally {
+      await pool.query('update "user" set consent_version = $2 where id = $1', [
+        aliceId,
+        rows[0]?.consent_version ?? null,
+      ]);
+    }
+  });
+
+  it("returns an empty account as no profile at revision 0, no saves and no ticks", async () => {
+    expect(await actions.loadAccountData()).toEqual({
+      ok: true,
+      value: { profile: null, revision: 0, saved: [], plan: { schemaVersion: 1, done: {} } },
+    });
+  });
+
+  it("returns what the other actions stored, for this user only", async () => {
+    await actions.saveProfile(PROFILE, 0);
+    await actions.saveProfile(OTHER_PROFILE, 1);
+    await actions.saveProgram(program("xx-prog-b", { savedAt: "2026-10-02" }));
+    await actions.saveProgram(program("xx-prog-a"));
+    await actions.setStepDone("xx-prog-a", "visa", true);
+    await actions.setStepDone("xx-prog-a", "documents", true);
+    signedInAs(bobCookie);
+    await actions.saveProgram(program("xx-prog-bob"));
+    await actions.setStepDone("xx-prog-bob", "visa", true);
+    signedInAs(aliceCookie);
+    expect(await actions.loadAccountData()).toEqual({
+      ok: true,
+      value: {
+        profile: OTHER_PROFILE,
+        revision: 2,
+        saved: [program("xx-prog-a"), program("xx-prog-b", { savedAt: "2026-10-02" })],
+        plan: { schemaVersion: 1, done: { "xx-prog-a": ["documents", "visa"] } },
+      },
+    });
+  });
+
+  it("returns a stored profile this build cannot read as none, keeping its revision", async () => {
+    await actions.saveProfile(PROFILE, 0);
+    await pool.query(
+      `update profiles set data = '{"schemaVersion":99}'::jsonb, revision = 4 where user_id = $1`,
+      [aliceId],
+    );
+    expect(await actions.loadAccountData()).toMatchObject({
+      ok: true,
+      value: { profile: null, revision: 4 },
+    });
+  });
+});
+
 describe("createFeedbackReport", () => {
   it("stores a FactRef-shaped report for the signed-in user", async () => {
     expect(

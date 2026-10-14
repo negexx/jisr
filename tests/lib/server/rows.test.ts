@@ -115,6 +115,12 @@ describe("saved programme rows", () => {
     ]);
   });
 
+  it("breaks a full tie by code unit, not by the runtime locale", () => {
+    // localeCompare puts "Z-prog" after a lowercase slug; code-unit order puts it first.
+    const rows = ["xx-prog-a", "Z-prog"].map((slug) => stored(sameDayItem(slug)));
+    expect(rowsToSavedList(rows).items.map((item) => item.slug)).toEqual(["Z-prog", "xx-prog-a"]);
+  });
+
   it("returns what the client validator accepts", () => {
     const rows = SAVED.items.map((item) => stored(item));
     expect(parseSaved(rowsToSavedList(rows))).toEqual(SAVED);

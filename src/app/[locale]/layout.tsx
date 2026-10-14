@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { ReactNode } from "react";
 
 import { AnalyticsLoader } from "@/components/analytics-loader";
+import { AccountSyncEntry } from "@/components/auth/account-sync-entry";
 import { DirectionProvider } from "@/components/direction-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -66,6 +67,7 @@ export default async function LocaleLayout({ children, params }: Props) {
               {children}
             </main>
             <SiteFooter locale={locale} />
+            <AccountSyncEntry locale={locale} />
           </DirectionProvider>
         </NextIntlClientProvider>
         <AnalyticsLoader goatCounterUrl={readSiteEnv().goatCounterUrl} />

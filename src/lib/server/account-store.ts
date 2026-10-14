@@ -7,10 +7,10 @@ import { checklistProgress, feedbackReports, profiles, savedPrograms, user } fro
 import { CHECKLIST_STEP_IDS, type ChecklistStepId } from "@/domain/types";
 import { MAX_SAVED_PROGRAMS } from "@/lib/constants";
 import { isRecord } from "@/lib/guards";
-import { MAX_PLAN_PROGRAMS } from "@/lib/plan/progress";
+import { MAX_PLAN_PROGRAMS, type PlanProgress } from "@/lib/plan/progress";
 import type { SavedProgram } from "@/lib/saved/saved";
 
-import { rowsToSavedList, rowToProfile, savedProgramToRow } from "./rows";
+import { rowsToPlanProgress, rowsToSavedList, rowToProfile, savedProgramToRow } from "./rows";
 
 // The database half of the account Server Actions. Every function takes the database and an
 // already-authenticated user id, so the race specs can drive two real connections through the
@@ -36,6 +36,15 @@ export type ProfileConflict = {
   current: { profile: Profile; revision: number };
 };
 export type SaveProfileResult = ActionResult<{ revision: number }> | ProfileConflict;
+
+// Everything the account holds, in the shapes the stores speak. A profile this build cannot read
+// comes back as null with its revision, so the next save replaces it instead of conflicting.
+export type AccountData = {
+  profile: Profile | null;
+  revision: number;
+  saved: SavedProgram[];
+  plan: PlanProgress;
+};
 
 export type FeedbackInput = {
   record: string;
@@ -91,6 +100,30 @@ async function doneSteps(
     );
   const present = new Set(rows.map((row) => row.stepId));
   return CHECKLIST_STEP_IDS.filter((stepId) => present.has(stepId));
+}
+
+// One read-only snapshot, so the three parts never mix states from before and after a write.
+export async function loadAccountDataFor(
+  db: AccountDb,
+  userId: string,
+): Promise<ActionResult<AccountData>> {
+  return db.transaction(
+    async (tx) => {
+      const [profileRow] = await tx.select().from(profiles).where(eq(profiles.userId, userId));
+      const saved = await savedItems(tx, userId);
+      const planRows = await tx
+        .select()
+        .from(checklistProgress)
+        .where(eq(checklistProgress.userId, userId));
+      return ok({
+        profile: profileRow === undefined ? null : rowToProfile(profileRow),
+        revision: profileRow?.revision ?? 0,
+        saved,
+        plan: rowsToPlanProgress(planRows),
+      });
+    },
+    { isolationLevel: "repeatable read", accessMode: "read only" },
+  );
 }
 
 export async function saveProgramFor(

@@ -1,4 +1,5 @@
 import type { IsoDate } from "@/data-schema/dates";
+import { inAccountMode, loadAccountSync } from "@/lib/account-cache";
 import { track } from "@/lib/analytics";
 import { MAX_SAVED_PROGRAMS } from "@/lib/constants";
 import type { LocalJsonStore } from "@/lib/local-store";
@@ -46,8 +47,16 @@ export function toggleSaved(
   return { ok: true, saved, persisted: result.ok && result.persisted };
 }
 
-// Removing a program from the plan also forgets its ticked steps.
+// Removing a program from the plan also forgets its ticked steps (signed in, the server's unsave
+// deletes them too). If the sync chunk cannot load, nothing was changed.
 export function removeFromPlan(slug: string): void {
+  if (inAccountMode()) {
+    loadAccountSync().then(
+      ({ accountSync }) => accountSync.unsaveProgram(slug),
+      () => undefined,
+    );
+    return;
+  }
   savedStore.update((current) => removeSaved(current, slug));
   forgetProgress(slug);
 }

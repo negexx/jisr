@@ -91,6 +91,7 @@ function ProgramHeader({ data }: { data: ProgramPageData }) {
           snapshotVersion={data.snapshotVersion}
           programName={data.program.name}
           copy={saveCopy}
+          aliases={data.aliases}
         />
       </div>
     </header>

@@ -2,6 +2,7 @@
 
 import { useMemo, useSyncExternalStore } from "react";
 
+import { inAccountMode, loadAccountSync } from "@/lib/account-cache";
 import { todayIso } from "@/lib/clock";
 
 import type { SavedRef, ToggleResult } from "./actions";
@@ -35,8 +36,11 @@ export function useSaved(): UseSaved {
       isSaved: (slug) => items.some((item) => item.slug === slug),
       // The toggle code (and, behind it, the tick store an unsave must clear) is loaded on the
       // first click: pages that only show a Save button do not carry it until it is used.
+      // Signed in, the sync layer applies it and sends it to the account.
       toggle: async (ref, snapshotVersion) =>
-        (await import("./actions")).toggleSavedProgram(ref, snapshotVersion, todayIso()),
+        inAccountMode()
+          ? (await loadAccountSync()).accountSync.toggleSaved(ref, snapshotVersion, todayIso())
+          : (await import("./actions")).toggleSavedProgram(ref, snapshotVersion, todayIso()),
     };
   }, [state]);
 }

@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MAX_SAVED_PROGRAMS } from "@/lib/constants";
 import { useSaved } from "@/lib/saved/use-saved";
+import { resolveProgramSlug } from "@/lib/snapshot/resolve-program-slug";
 
 // Every string is a prop: the button sits on the program page header (a server component under a
 // provider with no messages) and in the match cards (a provider with a short namespace list).
@@ -26,14 +27,17 @@ export function SaveProgramButton({
   snapshotVersion,
   programName,
   copy,
+  aliases,
 }: {
   program: { slug: string; country: string; field: string };
   snapshotVersion: string;
   // The official name, read by screen readers after the visible label (the bookmark carries no text).
   programName: string;
   copy: SaveCopy;
+  // Former slug to current slug: a programme saved before it was renamed shows as saved here.
+  aliases?: Readonly<Record<string, string>> | undefined;
 }) {
-  const { hydrated, items, isSaved, toggle } = useSaved();
+  const { hydrated, items, toggle } = useSaved();
   const [message, setMessage] = useState<string | null>(null);
   // How many times a save was refused because the list is full (0: none since the last success).
   // The count keys the alert, so each refusal inserts a fresh one and is announced again.
@@ -48,7 +52,8 @@ export function SaveProgramButton({
     );
   }
 
-  const saved = isSaved(program.slug);
+  const savedAs = items.find((item) => resolveProgramSlug(item.slug, { aliases }) === program.slug);
+  const saved = savedAs !== undefined;
   // The complaint is only true while the list is still full and this program is not on it.
   const stillFull = !saved && items.length >= MAX_SAVED_PROGRAMS;
   if (refusals > 0 && !stillFull) {
@@ -63,7 +68,11 @@ export function SaveProgramButton({
     busy.current = true;
     try {
       const wasSaved = saved;
-      const result = await toggle(program, snapshotVersion);
+      // Unsaving removes the entry under the slug it was saved with, which may be a former one.
+      const result = await toggle(
+        savedAs === undefined ? program : { ...program, slug: savedAs.slug },
+        snapshotVersion,
+      );
       if (!result.ok) {
         setFailures(0);
         setRefusals((count) => count + 1);

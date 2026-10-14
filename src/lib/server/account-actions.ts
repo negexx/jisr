@@ -15,10 +15,12 @@ import {
   StepToggleInputSchema,
 } from "./account-inputs";
 import {
+  type AccountData,
   type ActionResult,
   createFeedbackReportFor,
   type FeedbackInput,
   forgetProgressFor,
+  loadAccountDataFor,
   type SaveProfileResult,
   saveProfileFor,
   saveProgramFor,
@@ -29,6 +31,7 @@ import {
 import { requireAccountReady } from "./session";
 
 export type {
+  AccountData,
   ActionError,
   ActionResult,
   FeedbackInput,
@@ -63,6 +66,13 @@ async function withReadyAccount<Input, Result>(
   const parsed = schema.safeParse(input);
   if (!parsed.success) return { ok: false, error: "invalid" };
   return guarded(action, () => run(ready.userId, parsed.data));
+}
+
+// The read side of the account (hydration). It takes no input, so there is nothing to validate.
+export async function loadAccountData(): Promise<ActionResult<AccountData>> {
+  const ready = await guarded("loadAccountData", requireAccountReady);
+  if (!ready.ok) return ready;
+  return guarded("loadAccountData", () => loadAccountDataFor(db, ready.userId));
 }
 
 export async function saveProgram(

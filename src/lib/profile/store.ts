@@ -1,5 +1,14 @@
 import type { Profile } from "@/data-schema/profile";
+import {
+  ACCOUNT_PROFILE_KEY,
+  inAccountMode,
+  loadAccountSync,
+  refreshAccountMode,
+  subscribeActive,
+} from "@/lib/account-cache";
+import { createLocalJsonStore, type LocalJsonStore, type LocalState } from "@/lib/local-store";
 
+import { type AccountProfile, EMPTY_ACCOUNT_PROFILE, parseAccountProfile } from "./account-profile";
 import { clearDraft } from "./draft";
 import {
   clearLocalData,
@@ -181,4 +190,78 @@ export function createProfileStore(getStorage: () => StorageLike | null): Profil
   };
 }
 
-export const profileStore = createProfileStore(getLocalStorage);
+// Written only by the account sync layer (src/lib/account-sync).
+export const accountProfileStore = createLocalJsonStore(getLocalStorage, {
+  key: ACCOUNT_PROFILE_KEY,
+  empty: EMPTY_ACCOUNT_PROFILE,
+  parse: parseAccountProfile,
+});
+
+// The profile store's API over the guest store or, while the sign-in hint is set, the account
+// cache. A signed-in save is handed to the sync layer, which applies it at once and then sends it.
+export function accountAwareProfileStore(
+  guest: ProfileStore,
+  account: LocalJsonStore<AccountProfile>,
+  getStorage: () => StorageLike | null,
+): ProfileStore {
+  let source: LocalState<AccountProfile> | null = null;
+  let mapped: ProfileState = UNHYDRATED;
+
+  // Same object while the cache is unchanged, as useSyncExternalStore requires.
+  function accountState(): ProfileState {
+    const next = account.getSnapshot();
+    if (next !== source) {
+      source = next;
+      if (next.status === "unhydrated") mapped = UNHYDRATED;
+      else if (next.value.profile === null) {
+        mapped = { status: "none", storageAvailable: next.storageAvailable };
+      } else {
+        mapped = {
+          status: "ok",
+          profile: next.value.profile,
+          storageAvailable: next.storageAvailable,
+        };
+      }
+    }
+    return mapped;
+  }
+
+  return {
+    getSnapshot: () => (inAccountMode() ? accountState() : guest.getSnapshot()),
+    getServerSnapshot: guest.getServerSnapshot,
+    subscribe: (listener) => subscribeActive(guest.subscribe, account.subscribe, listener),
+    save(input) {
+      if (!inAccountMode()) return guest.save(input);
+      const parsed = parseProfile(input);
+      if (parsed === null) return { ok: false, reason: "invalid" };
+      let storage: StorageLike | null = null;
+      try {
+        storage = getStorage();
+      } catch {
+        storage = null;
+      }
+      if (storage !== null) clearDraft(storage);
+      // A chunk that cannot load leaves the account as it was; there is nothing to roll back.
+      loadAccountSync().then(
+        ({ accountSync }) => accountSync.saveProfile(parsed),
+        () => undefined,
+      );
+      return { ok: true, persisted: true };
+    },
+    clear() {
+      // Removes every `jisr.` key, the hint and the account cache included.
+      guest.clear();
+      account.reload();
+      refreshAccountMode();
+    },
+    dismissReset() {
+      if (!inAccountMode()) guest.dismissReset();
+    },
+  };
+}
+
+export const profileStore = accountAwareProfileStore(
+  createProfileStore(getLocalStorage),
+  accountProfileStore,
+  getLocalStorage,
+);

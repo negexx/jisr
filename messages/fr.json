@@ -1203,5 +1203,18 @@
     "finishing": "Retour à votre page…",
     "failed": "Impossible de vérifier votre connexion. Vérifiez votre réseau et réessayez.",
     "retry": "Réessayer"
+  },
+  "accountSync": {
+    "conflictTitle": "Votre profil a été modifié sur un autre appareil",
+    "conflictBody": "Vos modifications restent ici jusqu'à ce que vous choisissiez la version que votre compte garde.",
+    "useOther": "Utiliser la version de l'autre appareil",
+    "keepMine": "Garder la mienne",
+    "failed": "Cette modification n'a pas pu être enregistrée dans votre compte, elle a donc été annulée. Réessayez.",
+    "savedLimit": "Votre compte contient déjà {max} programmes enregistrés, celui-ci n'a donc pas été ajouté.",
+    "planLimit": "Votre compte ne peut pas garder d'étapes cochées pour plus de programmes, cette case a donc été décochée.",
+    "signedOut": "Vous êtes déconnecté, cette modification n'a donc pas été enregistrée dans votre compte.",
+    "consentRequired": "Terminez la création de votre compte pour enregistrer vos modifications. Cette modification a été annulée.",
+    "profileReloaded": "Le profil de votre compte avait changé, il a donc été rechargé. Votre modification n'a pas été enregistrée, refaites-la.",
+    "dismiss": "Fermer"
   }
 }

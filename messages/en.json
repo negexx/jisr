@@ -1203,5 +1203,18 @@
     "finishing": "Taking you back…",
     "failed": "We could not check your sign-in. Check your connection and try again.",
     "retry": "Try again"
+  },
+  "accountSync": {
+    "conflictTitle": "Your profile was changed on another device",
+    "conflictBody": "Your changes stay here until you choose which version your account keeps.",
+    "useOther": "Use the other device's version",
+    "keepMine": "Keep mine",
+    "failed": "This change could not be saved to your account, so it was undone. Try again.",
+    "savedLimit": "Your account already holds {max} saved programs, so this one was not added.",
+    "planLimit": "Your account cannot keep ticked steps for more programs, so this tick was undone.",
+    "signedOut": "You are signed out, so this change was not saved to your account.",
+    "consentRequired": "Finish setting up your account to save changes. This change was undone.",
+    "profileReloaded": "Your account's profile had changed, so it was loaded again. Your edit was not saved, so make it again.",
+    "dismiss": "Dismiss"
   }
 }

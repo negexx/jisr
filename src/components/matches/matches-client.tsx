@@ -46,7 +46,17 @@ function Loading() {
   );
 }
 
-function Results({ view, profile, locale }: { view: OkView; profile: Profile; locale: AppLocale }) {
+function Results({
+  view,
+  profile,
+  locale,
+  aliases,
+}: {
+  view: OkView;
+  profile: Profile;
+  locale: AppLocale;
+  aliases: SnapshotBundle["aliases"];
+}) {
   const t = useTranslations("matches.states.allHidden");
   const shown = MATCH_GROUPS.reduce((sum, group) => sum + view.counts[group], 0);
   const budgetProvided = profile.budget !== null;
@@ -73,6 +83,7 @@ function Results({ view, profile, locale }: { view: OkView; profile: Profile; lo
             cards={view.groups[group]}
             budgetProvided={budgetProvided}
             locale={locale}
+            aliases={aliases}
           />
         ),
       )}
@@ -163,7 +174,7 @@ export function MatchesClient({ locale, client }: { locale: AppLocale; client?: 
           {view.kind === "no_programs_for_fields" ? (
             <NoProgramsForFieldsState />
           ) : (
-            <Results view={view} profile={profile} locale={locale} />
+            <Results view={view} profile={profile} locale={locale} aliases={bundle.aliases} />
           )}
         </MatchesLayout>
       ),

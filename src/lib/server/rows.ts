@@ -27,15 +27,19 @@ export function savedProgramToRow(userId: string, item: SavedProgram): SavedProg
   };
 }
 
+function byCodeUnit(a: string, b: string): number {
+  return a < b ? -1 : a > b ? 1 : 0;
+}
+
 // saved_at is a calendar date, so same-day saves are ordered by created_at (insertion time);
-// slug is the final deterministic tie-break.
+// slug is the final deterministic tie-break, in code-unit order like Postgres C collation.
 export function rowsToSavedList(rows: readonly SavedProgramRow[]): SavedList {
   const items = [...rows]
     .sort(
       (a, b) =>
-        a.savedAt.localeCompare(b.savedAt) ||
+        byCodeUnit(a.savedAt, b.savedAt) ||
         a.createdAt.getTime() - b.createdAt.getTime() ||
-        a.slug.localeCompare(b.slug),
+        byCodeUnit(a.slug, b.slug),
     )
     .map(
       (row): SavedProgram => ({
@@ -74,7 +78,7 @@ export function rowsToPlanProgress(rows: readonly ChecklistProgressRow[]): PlanP
   const done = Object.fromEntries(
     [...bySlug]
       // Code-unit order, like Postgres C collation: the kept programmes never depend on the ICU locale.
-      .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
+      .sort(([a], [b]) => byCodeUnit(a, b))
       .slice(0, MAX_PLAN_PROGRAMS)
       .map(([slug, steps]) => [slug, CHECKLIST_STEP_IDS.filter((stepId) => steps.has(stepId))]),
   );
