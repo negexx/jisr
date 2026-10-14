@@ -1,10 +1,11 @@
 // 2026-10-14 (accounts phase 2, PR 1, ADR 0008): mounting the Better Auth route (/api/auth) grew Turbopack's
 // shared client runtime chunk by about 0.45 KB gzip (bisected to commit 6c2c545d), and the slug-alias
 // resolution adds about 0.1 KB on plan and compare. Measured (KB, fixture build, phone and desktop, fr and
-// ar): home and profile until idle 219.5; matches initial 194.2; plan until idle 246.7;
-// compare until idle 254.6. No safe trim exists. Owner decision 2026-10-14: raise only the affected rows
-// by 1 KB: home and profile until idle 219 -> 220, matches initial 194 -> 195, plan until idle 246 -> 247,
-// compare until idle 254 -> 255. No other row moves.
+// ar): home and profile until idle 219.5; matches initial 194.2; matches until idle 219.5; plan until idle
+// 246.7; compare until idle 254.6. No safe trim exists. Owner decision 2026-10-14: raise only the affected
+// rows by 1 KB: home and profile until idle 219 -> 220, matches initial 194 -> 195, matches until idle
+// 219 -> 220 (masked in the first run because its initial assertion failed first), plan until idle
+// 246 -> 247, compare until idle 254 -> 255. No other row moves.
 // 2026-10-11 (Stripe-world redesign, ADR 0008): the redesign's shared client chunks grew about 0.6 KB,
 // pushing the matches initial and the profile/plan/matches until-idle rows just past their ratchets. Owner
 // decision (ruling R10): raise only the affected rows by 1 KB. matches initial 193 -> 194, until idle
@@ -82,8 +83,8 @@ export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/ar": { initial: 172, untilIdle: 220 },
   "/fr/profile": { initial: 187, untilIdle: 220 },
   "/ar/profile": { initial: 187, untilIdle: 220 },
-  "/fr/matches": { initial: 195, untilIdle: 219 },
-  "/ar/matches": { initial: 195, untilIdle: 219 },
+  "/fr/matches": { initial: 195, untilIdle: 220 },
+  "/ar/matches": { initial: 195, untilIdle: 220 },
   "/fr/plan": { initial: 189, untilIdle: 247 },
   "/ar/plan": { initial: 189, untilIdle: 247 },
   "/fr/compare": { initial: 190, untilIdle: 255 },
