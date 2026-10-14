@@ -105,9 +105,29 @@ export const pendingSignups = pgTable("pending_signups", {
   ageConfirmed: boolean("age_confirmed").notNull().default(false),
   createdAt: timestamptz("created_at").notNull().defaultNow(),
   expiresAt: timestamptz("expires_at").notNull(),
-  // Resend cooldown anchor.
-  lastSentAt: timestamptz("last_sent_at").notNull().defaultNow(),
 });
+
+export const AUTH_EMAIL_KINDS = ["magic-link", "delete-account"] as const;
+export type AuthEmailKind = (typeof AUTH_EMAIL_KINDS)[number];
+
+const authEmailKindList = sql.raw(AUTH_EMAIL_KINDS.map((kind) => `'${kind}'`).join(", "));
+
+// Pre-account, keyed by the normalised email (normalizeEmail) and the kind of email, so it has
+// no user FK and is not erased by account deletion (todo 19 deletes it explicitly). One row per
+// (address, kind) records when the last auth email was released; claimEmailSendSlot is the only
+// writer and enforces the resend cooldown atomically.
+export const emailCooldowns = pgTable(
+  "email_cooldowns",
+  {
+    email: varchar("email", { length: EMAIL_MAX_LENGTH }).notNull(),
+    kind: text("kind").notNull(),
+    lastSentAt: timestamptz("last_sent_at").notNull(),
+  },
+  (table) => [
+    primaryKey({ columns: [table.email, table.kind] }),
+    check("email_cooldowns_kind_check", sql`${table.kind} in (${authEmailKindList})`),
+  ],
+);
 
 export const userDataState = pgTable("user_data_state", {
   userId: text("user_id")

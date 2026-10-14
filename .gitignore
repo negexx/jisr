@@ -57,3 +57,6 @@ yarn-error.log*
 # The candidate review queue (pnpm data:import, data:read, data:evidence, data:translate-ar): a
 # local, re-creatable staging area, not source. Promoted records live in data/.
 data-staging/
+
+# Rendered auth emails of the file transport (tests/e2e only; they contain sign-in links)
+/tests/e2e/.mail/

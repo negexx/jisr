@@ -7,6 +7,14 @@ CREATE TABLE "checklist_progress" (
 	CONSTRAINT "checklist_progress_step_id_check" CHECK ("checklist_progress"."step_id" in ('documents', 'translation', 'language_exam', 'application_account', 'submit', 'scholarships', 'financial_documents', 'accommodation', 'visa', 'departure'))
 );
 --> statement-breakpoint
+CREATE TABLE "email_cooldowns" (
+	"email" varchar(320) NOT NULL,
+	"kind" text NOT NULL,
+	"last_sent_at" timestamp with time zone NOT NULL,
+	CONSTRAINT "email_cooldowns_email_kind_pk" PRIMARY KEY("email","kind"),
+	CONSTRAINT "email_cooldowns_kind_check" CHECK ("email_cooldowns"."kind" in ('magic-link', 'delete-account'))
+);
+--> statement-breakpoint
 CREATE TABLE "feedback_reports" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"user_id" text NOT NULL,
@@ -24,8 +32,7 @@ CREATE TABLE "pending_signups" (
 	"consented_at" timestamp with time zone,
 	"age_confirmed" boolean DEFAULT false NOT NULL,
 	"created_at" timestamp with time zone DEFAULT now() NOT NULL,
-	"expires_at" timestamp with time zone NOT NULL,
-	"last_sent_at" timestamp with time zone DEFAULT now() NOT NULL
+	"expires_at" timestamp with time zone NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE "profiles" (

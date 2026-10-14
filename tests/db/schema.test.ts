@@ -108,6 +108,7 @@ describe("user data schema on the harness", () => {
     expect(rows.map((row) => row.table_name)).toEqual([
       "account",
       "checklist_progress",
+      "email_cooldowns",
       "feedback_reports",
       "pending_signups",
       "profiles",
@@ -315,6 +316,24 @@ describe("user data schema on the harness", () => {
         db.insert(schema.pendingSignups).values({
           email: `${"a".repeat(schema.EMAIL_MAX_LENGTH)}@example.com`,
           expiresAt: NOW,
+        }),
+      ),
+    ).toBe("22001");
+  });
+
+  it("keys email_cooldowns by (email, kind) and rejects an unknown kind", async () => {
+    const row = { email: "cool@example.com", kind: "magic-link", lastSentAt: NOW };
+    await db.insert(schema.emailCooldowns).values(row);
+    await db.insert(schema.emailCooldowns).values({ ...row, kind: "delete-account" });
+    expect(await sqlState(db.insert(schema.emailCooldowns).values(row))).toBe("23505");
+    expect(
+      await sqlState(db.insert(schema.emailCooldowns).values({ ...row, kind: "newsletter" })),
+    ).toBe("23514");
+    expect(
+      await sqlState(
+        db.insert(schema.emailCooldowns).values({
+          ...row,
+          email: `${"a".repeat(schema.EMAIL_MAX_LENGTH)}@example.com`,
         }),
       ),
     ).toBe("22001");

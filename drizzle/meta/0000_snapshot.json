@@ -1,5 +1,5 @@
 {
-  "id": "7bfa059d-e01a-4ae8-81d7-bc91e443b046",
+  "id": "6ed08098-cafb-47af-a84f-7ca6db2a6505",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -66,6 +66,50 @@
         "checklist_progress_step_id_check": {
           "name": "checklist_progress_step_id_check",
           "value": "\"checklist_progress\".\"step_id\" in ('documents', 'translation', 'language_exam', 'application_account', 'submit', 'scholarships', 'financial_documents', 'accommodation', 'visa', 'departure')"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "public.email_cooldowns": {
+      "name": "email_cooldowns",
+      "schema": "",
+      "columns": {
+        "email": {
+          "name": "email",
+          "type": "varchar(320)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "kind": {
+          "name": "kind",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "last_sent_at": {
+          "name": "last_sent_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {
+        "email_cooldowns_email_kind_pk": {
+          "name": "email_cooldowns_email_kind_pk",
+          "columns": [
+            "email",
+            "kind"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "email_cooldowns_kind_check": {
+          "name": "email_cooldowns_kind_check",
+          "value": "\"email_cooldowns\".\"kind\" in ('magic-link', 'delete-account')"
         }
       },
       "isRLSEnabled": false
@@ -210,13 +254,6 @@
           "type": "timestamp with time zone",
           "primaryKey": false,
           "notNull": true
-        },
-        "last_sent_at": {
-          "name": "last_sent_at",
-          "type": "timestamp with time zone",
-          "primaryKey": false,
-          "notNull": true,
-          "default": "now()"
         }
       },
       "indexes": {},

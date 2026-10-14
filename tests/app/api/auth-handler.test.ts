@@ -65,6 +65,7 @@ beforeEach(async () => {
   await pool.query("delete from verification");
   await pool.query("delete from session");
   await pool.query("delete from pending_signups");
+  await pool.query("delete from email_cooldowns");
 });
 
 afterEach(() => {
@@ -140,6 +141,12 @@ describe.each([
     const response = await route.GET(getRequest("/api/auth/get-session"));
     expect(response.status).toBe(200);
     expect(await response.json()).toBeNull();
+  });
+
+  it("refuses get-session variants: trailing slash, other casing and POST", async () => {
+    await expectDisabled(await route.GET(getRequest("/api/auth/get-session/")));
+    await expectDisabled(await route.GET(getRequest("/api/auth/Get-Session")));
+    await expectDisabled(await route.POST(postRequest("/api/auth/get-session", {})));
   });
 
   it("answers get-session as signed out even when the visitor holds a cookie", async () => {
