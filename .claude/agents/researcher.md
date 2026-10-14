@@ -1,7 +1,7 @@
 ---
 name: researcher
 description: Investigates how something currently works in the codebase or external docs. Use to answer "where does X happen?" or "how does library Y handle Z?" before planning a change.
-model: haiku
+model: claude-haiku-5-5
 tools:
   - Read
   - Glob

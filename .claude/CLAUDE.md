@@ -116,24 +116,23 @@ Pick the tier that matches the task's complexity, not the biggest model availabl
 
 | Task | Model | Effort |
 |------|-------|--------|
-| Trivial — search, read, copy, simple lookups | Haiku 4.5 | — |
-| Implementation — basic to medium complexity (DEFAULT) | Sonnet 5.5 | high |
-| In-depth planning, architecture, highly complex implementation | Opus 5.5 | medium |
+| Trivial — search, read, copy, simple lookups | Haiku 5.5 | — |
+| Implementation — low to medium complexity (DEFAULT for delegated coding) | Haiku 5.5 | max |
+| Implementation — medium to hard complexity | Sonnet 5.5 | high |
+| Planning, architecture, really long or complex implementation | Opus 5.5 | medium |
 | Review — every completed task, before it's marked done | Opus 5.5 (mandatory, not an escalation) | medium |
 
-**Escalate** Sonnet 5.5 → Opus 5.5 when: the task is architectural, security-critical, the approach is genuinely unclear, or a wrong call here is expensive to undo.
+**Escalate** Haiku 5.5 → Sonnet 5.5 when the step carries real logic (matching, eligibility, costs, Zod schemas, importers), spans several modules, or Haiku has failed typecheck/tests twice on it. Sonnet 5.5 → Opus 5.5 when the task is architectural, security-critical, the approach is genuinely unclear, a wrong call is expensive to undo, or the work is long enough to need sustained design judgment. **Downgrade** once the approach is settled and the remaining work is mechanical.
 
-**Downgrade** back to Sonnet 5.5 once the approach is settled and the remaining work is mechanical.
-
-**Review is not optional.** Every task — regardless of which model implemented it — goes through an Opus 5.5 review (the `reviewer` subagent) at medium effort before it's marked done.
-
-Never drive a main session on Haiku 4.5. Never skip the Opus 5.5 review step to save time.
+**Review is not optional.** Every task, whichever model implemented it, goes through an Opus 5.5 review (the `reviewer` subagent) at medium effort before it's marked done. The main session is the orchestrator (brainstorm, plan, dispatch, review reports) and runs on Opus 5.5 (`model` in `settings.json`; medium is its default effort, check with `/effort`); drop to Sonnet 5.5 with `/model` when only executing an already-approved plan. Haiku 5.5 works through the subagents below, never as the main session.
 
 ## Available agents
 
-- **`researcher`** (Haiku 4.5): "where does X happen?" / "how does library Y work?" — fast lookups before planning
+- **`researcher`** (Haiku 5.5): "where does X happen?" / "how does library Y work?" — fast lookups before planning
 - **`planner`** (Opus 5.5, medium): implementation plans with strategy, trade-offs, risks — complex features, architecture, multi-file coordination
-- **`implementer`** (Sonnet 5.5, high): executes a written plan once strategy is settled
+- **`implementer`** (Haiku 5.5, max): executes low-to-medium steps of a written plan
+- **`implementer-hard`** (Sonnet 5.5, high): executes medium-to-hard steps (domain logic, schemas, importers)
+- **`implementer-complex`** (Opus 5.5, medium): executes really long or complex steps once the plan is agreed
 - **`reviewer`** (Opus 5.5, medium): reviews changes for correctness, security, conventions before shipping
 
 ## Skills — when to invoke

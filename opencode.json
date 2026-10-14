@@ -13,7 +13,15 @@
       "model": "opencode-go/deepseek-v4.1-flash"
     },
     "implementer": {
-      "description": "Executes a written plan once the strategy is settled.",
+      "description": "Executes low-to-medium complexity steps of a written plan once the strategy is settled.",
+      "model": "opencode-go/deepseek-v4.1-flash"
+    },
+    "implementer-hard": {
+      "description": "Executes medium-to-hard steps of a written plan (domain logic, schemas, importers).",
+      "model": "opencode-go/deepseek-v4.1-flash"
+    },
+    "implementer-complex": {
+      "description": "Executes really long or complex steps of an agreed plan (auth, schema, architecture).",
       "model": "opencode-go/deepseek-v4.1-flash"
     },
     "reviewer": {

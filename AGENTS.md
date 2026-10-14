@@ -4,21 +4,23 @@ This is the opencode entry point for **Jisr**. The full operating manual is `.cl
 
 ## Model policy
 
-**Every agent and every tier runs on `opencode-go/deepseek-v4.1-flash`** — the four workflow agents, the oh-my-openagent orchestration agents, the built-ins, and the title/summary/compaction helpers. Where `.claude/CLAUDE.md`'s "Model dispatch" table names Claude models (Haiku / Sonnet / Opus), substitute `opencode-go/deepseek-v4.1-flash`. The pins live in three places:
+**Every agent and every tier runs on `opencode-go/deepseek-v4.1-flash`** — the six workflow agents, the oh-my-openagent orchestration agents, the built-ins, and the title/summary/compaction helpers. Where `.claude/CLAUDE.md`'s "Model dispatch" table names Claude models (Haiku / Sonnet / Opus), substitute `opencode-go/deepseek-v4.1-flash`. The pins live in three places:
 
-- `opencode.json` (this project): the default `model` / `small_model`, plus the `agent` block for `researcher`, `planner`, `implementer`, `reviewer`.
+- `opencode.json` (this project): the default `model` / `small_model`, plus the `agent` block for `researcher`, `planner`, `implementer`, `implementer-hard`, `implementer-complex`, `reviewer`.
 - `~/.omo/omo.jsonc` (the oh-my-openagent plugin): every orchestration agent (`sisyphus`, `prometheus`, `atlas`, `hephaestus`, `oracle`, `explore`, `librarian`, `metis`, `momus`, `multimodal-looker`, `sisyphus-junior`, `build`, `plan`) and every task category (`quick`, `deep-low`, `deep-high`, `ultrabrain`, `unspecified-low`, `unspecified-high`, `visual-engineering`, `artistry`, `writing`).
 - Subagents that name no model inherit the primary agent's model, which is also deepseek-v4.1-flash.
 
 ## Agents
 
-Four workflow agents, defined by `.claude/agents/*.md` and model-pinned in `opencode.json`:
+Six workflow agents, defined by `.claude/agents/*.md` and model-pinned in `opencode.json`:
 
 | Agent | Role |
 |---|---|
 | `researcher` | Focused lookups ("where does X live", "how does library Y work") before planning. |
 | `planner` | Implementation plans: strategy, trade-offs, risks, steps — no code. |
-| `implementer` | Executes a written plan; no re-planning, no scope creep. |
+| `implementer` | Executes low-to-medium steps of a written plan; no re-planning, no scope creep. |
+| `implementer-hard` | Executes medium-to-hard steps (domain logic, schemas, importers). |
+| `implementer-complex` | Executes really long or complex steps of an agreed plan. |
 | `reviewer` | Reviews a diff for correctness, trust/data integrity, security, conventions. |
 
 The `oh-my-openagent` plugin provides the orchestration agents (`oracle`, `explore`, `librarian`, `metis`, `momus`, `multimodal-looker`, `sisyphus`, `prometheus`, `atlas`, …); they are all model-pinned to deepseek-v4.1-flash in `~/.omo/omo.jsonc`, not re-modelled here.
@@ -58,7 +60,7 @@ Full detail in `.claude/docs/conventions.md` and `.claude/CLAUDE.md`. The load-b
 The CLAUDE.md workflow is loaded verbatim through `instructions`; run it as written, with one substitution — every model is `opencode-go/deepseek-v4.1-flash`.
 
 - Tiers: trivial → implementation → planning → review all use deepseek-v4.1-flash (no model escalation, never drive the session on a smaller model).
-- Delegation order: `researcher` → `planner` → `implementer` → `reviewer` (all deepseek-v4.1-flash).
+- Delegation order: `researcher` → `planner` → `implementer` / `implementer-hard` / `implementer-complex` (by step complexity) → `reviewer` (all deepseek-v4.1-flash).
 - Process skills: **Superpowers is installed** (plugin `superpowers@git+https://github.com/obra/superpowers.git`, registered in `~/.config/opencode/opencode.jsonc`). Its skills load under their bare names: `brainstorming`, `writing-plans`, `test-driven-development`, `systematic-debugging`, `verification-before-completion`, `subagent-driven-development`, `executing-plans`, `dispatching-parallel-agents`, `requesting-code-review`, `receiving-code-review`, `using-git-worktrees`, `finishing-a-development-branch`, `writing-skills`, `using-superpowers`, `diagnosing-superpowers`. Where `.claude/CLAUDE.md` writes `superpowers:<name>`, load the opencode skill `<name>`. The plugin also injects the `using-superpowers` bootstrap into every top-level session.
 
 ## Skills
