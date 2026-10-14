@@ -2,8 +2,10 @@ import { describe, expect, it } from "vitest";
 
 import {
   authCallbackUrls,
+  landingReturnPath,
   POST_AUTH_LANDING,
   safeReturnPath,
+  signInErrorPath,
   signInPath,
 } from "@/lib/auth/callback-urls";
 
@@ -68,5 +70,38 @@ describe("signInPath", () => {
   it("names the sign-in surface with the sanitised return path", () => {
     expect(signInPath("fr", "/fr/plan")).toBe("/fr/sign-in?return=%2Ffr%2Fplan");
     expect(signInPath("ar", "//evil.example")).toBe("/ar/sign-in?return=%2Far");
+  });
+});
+
+describe("landingReturnPath", () => {
+  it("defaults to the plan when no return was given", () => {
+    for (const absent of [null, undefined, ""]) {
+      expect(landingReturnPath(absent, "ar")).toBe("/ar/plan");
+    }
+  });
+
+  it("keeps a safe return and falls back to the locale home for an unsafe one", () => {
+    expect(landingReturnPath("/fr/compare", "fr")).toBe("/fr/compare");
+    expect(landingReturnPath("https://evil.example", "fr")).toBe("/fr");
+    expect(landingReturnPath("/en/plan", "fr")).toBe("/en/plan");
+  });
+});
+
+describe("signInErrorPath", () => {
+  it("adds the failure code to the sign-in surface, keeping the return", () => {
+    expect(signInErrorPath("fr", "/fr/plan", "AGE_NOT_CONFIRMED")).toBe(
+      "/fr/sign-in?return=%2Ffr%2Fplan&error=AGE_NOT_CONFIRMED",
+    );
+  });
+
+  it.each([
+    "",
+    "a b",
+    "<script>",
+    "x".repeat(65),
+    "é",
+    "a&b=c",
+  ])("replaces the code %j that is not a plain token", (code) => {
+    expect(signInErrorPath("ar", null, code)).toBe("/ar/sign-in?return=%2Far&error=UNKNOWN");
   });
 });

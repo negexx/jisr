@@ -51,3 +51,24 @@ export function authCallbackUrls(locale: Locale, returnPath: string | null): Aut
 export function signInPath(locale: Locale, returnPath: string | null): string {
   return withReturn(`/${locale}${SIGN_IN_PATH}`, safeReturnPath(returnPath, locale));
 }
+
+// With no `return` at all the landing continues to the plan, the page a signed-in student most
+// likely wants; a `return` that is present but unsafe falls back to the locale home.
+export function landingReturnPath(raw: string | null | undefined, locale: Locale): string {
+  return raw === null || raw === undefined || raw === ""
+    ? `/${locale}/plan`
+    : safeReturnPath(raw, locale);
+}
+
+const ERROR_CODE = /^[A-Za-z0-9_-]{1,64}$/;
+export const UNKNOWN_ERROR_CODE = "UNKNOWN";
+
+/** The sign-in surface carrying a failure code, for the landing to forward Better Auth's `?error=`. */
+export function signInErrorPath(
+  locale: Locale,
+  returnPath: string | null,
+  errorCode: string,
+): string {
+  const code = ERROR_CODE.test(errorCode) ? errorCode : UNKNOWN_ERROR_CODE;
+  return `${signInPath(locale, returnPath)}&${new URLSearchParams({ error: code })}`;
+}

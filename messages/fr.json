@@ -1183,5 +1183,25 @@
       "signedOut": "Vous êtes déconnecté. Reconnectez-vous pour continuer.",
       "failed": "Votre réponse n'a pas pu être enregistrée. Réessayez dans un instant."
     }
+  },
+  "account": {
+    "signIn": "Se connecter",
+    "signOut": "Se déconnecter",
+    "signingOut": "Déconnexion…",
+    "signOutFailed": "La déconnexion n'a pas abouti. Réessayez.",
+    "checkFailed": "Impossible de vérifier votre connexion.",
+    "retry": "Réessayer"
+  },
+  "welcome": {
+    "meta": {
+      "title": "Finalisation de la connexion",
+      "description": "Finalisation de votre connexion à Jisr."
+    },
+    "title": "Connexion en cours",
+    "lead": "Un instant, nous terminons votre connexion.",
+    "checking": "Vérification de votre connexion…",
+    "finishing": "Retour à votre page…",
+    "failed": "Impossible de vérifier votre connexion. Vérifiez votre réseau et réessayez.",
+    "retry": "Réessayer"
   }
 }

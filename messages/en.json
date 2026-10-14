@@ -1183,5 +1183,25 @@
       "signedOut": "You are signed out. Sign in again to continue.",
       "failed": "Your answer could not be saved. Try again in a moment."
     }
+  },
+  "account": {
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "signingOut": "Signing out…",
+    "signOutFailed": "Signing out did not work. Try again.",
+    "checkFailed": "We could not check your sign-in.",
+    "retry": "Try again"
+  },
+  "welcome": {
+    "meta": {
+      "title": "Finishing sign-in",
+      "description": "Completing your sign-in to Jisr."
+    },
+    "title": "Signing you in",
+    "lead": "One moment, we are finishing your sign-in.",
+    "checking": "Checking your sign-in…",
+    "finishing": "Taking you back…",
+    "failed": "We could not check your sign-in. Check your connection and try again.",
+    "retry": "Try again"
   }
 }
