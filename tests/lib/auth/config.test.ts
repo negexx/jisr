@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import * as dbSchema from "@/db/schema";
 import { accountsEnabled } from "@/lib/auth/accounts-enabled";
 import { auth } from "@/lib/auth/server";
@@ -63,40 +63,39 @@ describe("better auth server config", () => {
   it("configures the Google social provider from env", () => {
     expect(required(options.socialProviders, "socialProviders").google).toBeDefined();
   });
-
-  it("prints the instantiated auth config surface for manual QA", () => {
-    const plugins = required(options.plugins, "plugins");
-    const surface = {
-      additionalFields: Object.keys(required(options.user?.additionalFields, "additionalFields")),
-      deleteUserEnabled: options.user?.deleteUser?.enabled,
-      lastPlugin: plugins.at(-1)?.id,
-      gateHook: typeof options.databaseHooks?.user?.create?.before,
-      accountsEnabled: {
-        unset: accountsEnabled({}),
-        empty: accountsEnabled({ ACCOUNTS_ENABLED: "" }),
-        set: accountsEnabled({ ACCOUNTS_ENABLED: "1" }),
-      },
-    };
-    console.log("[manual-qa] auth config surface:", JSON.stringify(surface, null, 2));
-    expect(surface.additionalFields).toHaveLength(3);
-  });
 });
 
 describe("accountsEnabled", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
+
+
   it.each<[string, Record<string, string | undefined>, boolean]>([
     ["unset", {}, false],
     ["an empty string", { ACCOUNTS_ENABLED: "" }, false],
     ["only whitespace", { ACCOUNTS_ENABLED: "   " }, false],
-    ["a set flag", { ACCOUNTS_ENABLED: "1" }, true],
+    ["1", { ACCOUNTS_ENABLED: "1" }, true],
     ["the literal true", { ACCOUNTS_ENABLED: "true" }, true],
+    ["TRUE with padding", { ACCOUNTS_ENABLED: "  TRUE " }, true],
     ["the literal false", { ACCOUNTS_ENABLED: "false" }, false],
     ["an explicit off token", { ACCOUNTS_ENABLED: "OFF" }, false],
     ["a zero token", { ACCOUNTS_ENABLED: "0" }, false],
+    ["no", { ACCOUNTS_ENABLED: "no" }, false],
+    ["disabled", { ACCOUNTS_ENABLED: "disabled" }, false],
+    ["a typo of false", { ACCOUNTS_ENABLED: "fasle" }, false],
+    ["an unrecognised word", { ACCOUNTS_ENABLED: "yes-please" }, false],
+    ["on", { ACCOUNTS_ENABLED: "on" }, false],
+    ["yes", { ACCOUNTS_ENABLED: "yes" }, false],
+    ["2", { ACCOUNTS_ENABLED: "2" }, false],
   ])("is %s -> %s", (_label, env, expected) => {
     expect(accountsEnabled(env)).toBe(expected);
   });
 
   it("reads the process environment when called without an argument", () => {
+    vi.stubEnv("ACCOUNTS_ENABLED", undefined);
     expect(accountsEnabled()).toBe(false);
+    vi.stubEnv("ACCOUNTS_ENABLED", "true");
+    expect(accountsEnabled()).toBe(true);
   });
 });
