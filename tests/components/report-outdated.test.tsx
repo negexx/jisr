@@ -24,6 +24,7 @@ import {
 } from "@/components/program/program-sections";
 import { ReasonList } from "@/components/reason-list";
 import { ReportProvider } from "@/components/report-outdated/report-context";
+import { reportCopyFrom } from "@/components/report-outdated/report-fact";
 import { ScholarshipsPageView } from "@/components/scholarships/scholarships-page-view";
 import { SourceBadge } from "@/components/source-badge";
 import type { CoreShard } from "@/data-schema/snapshot";
@@ -88,7 +89,7 @@ afterEach(() => {
 function Reporting({ locale, children }: { locale: AppLocale; children: ReactElement }) {
   return (
     <ReportProvider
-      copy={catalogs[locale].reportOutdated}
+      copy={reportCopyFrom(catalogs[locale].reportOutdated)}
       locale={locale}
       snapshotVersion={VERSION}
     >

@@ -1,7 +1,10 @@
+import type { ReportCopy } from "./report-context";
+
 // Which fact a report button is about, for its accessible name ("Report outdated info: tuition
 // fees"): a screen-reader list of buttons must say what each one reports, not repeat one label.
-// Derived from the report's record and path, so every surface that files a report names its fact
-// without passing a label. Zod-free: it ships with the button.
+// The table lives here, on the server (loadReportCopy) and in tests: the page hands the button a
+// ready lookup of labels, so the client only splits the record and path (reportContext in
+// report-trigger.tsx) and no table ships in the shared chunks a guest loads.
 
 export const REPORT_FACT_KEYS = [
   "tuition",
@@ -32,42 +35,46 @@ export const REPORT_FACT_KEYS = [
 
 export type ReportFactKey = (typeof REPORT_FACT_KEYS)[number];
 
-const PROGRAM_PATHS: Record<string, ReportFactKey> = {
-  tuition: "tuition",
-  teachingLanguages: "teachingLanguages",
-  durationYears: "duration",
-  requirements: "requirements",
-  intakes: "deadline",
-  applicationChannel: "applicationChannel",
-  documents: "documents",
-};
-
-const SCHOLARSHIP_PATHS: Record<string, ReportFactKey> = {
-  support: "scholarshipAmount",
-  deadline: "scholarshipDeadline",
-  documents: "scholarshipDocuments",
-  requirements: "scholarshipEligibility",
-};
-
-const RECORD_KINDS: Record<string, ReportFactKey> = {
+// Lookup key: "<record kind>:<first path segment>" (for a cost line, the segment after "lines."),
+// then "<record kind>" for anything else in that kind, then "other".
+const LOOKUP: Record<string, ReportFactKey> = {
+  "programs:tuition": "tuition",
+  "programs:teachingLanguages": "teachingLanguages",
+  "programs:durationYears": "duration",
+  "programs:requirements": "requirements",
+  "programs:intakes": "deadline",
+  "programs:applicationChannel": "applicationChannel",
+  "programs:documents": "documents",
+  programs: "program",
+  "scholarships:support": "scholarshipAmount",
+  "scholarships:deadline": "scholarshipDeadline",
+  "scholarships:documents": "scholarshipDocuments",
+  "scholarships:requirements": "scholarshipEligibility",
+  scholarships: "scholarship",
   institutions: "institution",
   "application-channels": "applicationChannel",
   "admission-routes": "admissionRoute",
   "grading-scales": "gradeConversion",
   "grade-conversions": "gradeConversion",
   "credential-types": "credential",
+  "cost-profiles:housing": "housing",
+  "cost-profiles:food": "food",
+  "cost-profiles:transport": "transport",
+  "cost-profiles:insurance": "insurance",
+  "cost-profiles:application_visa": "application_visa",
+  "cost-profiles:setup": "setup",
+  other: "other",
 };
 
-function isFactKey(value: string): value is ReportFactKey {
-  return (REPORT_FACT_KEYS as readonly string[]).includes(value);
-}
+export type ReportMessages = Omit<ReportCopy, "factLabels"> & {
+  facts: Record<ReportFactKey, string>;
+};
 
-export function reportFactKey(record: string, path: string): ReportFactKey {
-  const kind = record.split("/")[0] ?? "";
-  const [head = "", second = ""] = path.split(".");
-  if (kind === "programs") return PROGRAM_PATHS[head] ?? "program";
-  if (kind === "scholarships") return SCHOLARSHIP_PATHS[head] ?? "scholarship";
-  // Cost lines are `lines.<category>`; a category with no label of its own is still a cost fact.
-  if (kind === "cost-profiles") return head === "lines" && isFactKey(second) ? second : "other";
-  return RECORD_KINDS[kind] ?? "other";
+/** The button's copy from the `reportOutdated` messages, with the fact lookup resolved. */
+export function reportCopyFrom(messages: ReportMessages): ReportCopy {
+  const { facts, ...rest } = messages;
+  const factLabels = Object.fromEntries(
+    Object.entries(LOOKUP).map(([lookup, key]) => [lookup, facts[key]]),
+  );
+  return { ...rest, factLabels };
 }

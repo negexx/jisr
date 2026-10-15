@@ -4,6 +4,7 @@ import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { ReportProvider, ReportSnapshot } from "@/components/report-outdated/report-context";
+import { reportCopyFrom } from "@/components/report-outdated/report-fact";
 import { SourceBadge } from "@/components/source-badge";
 import type { FactRef } from "@/domain/types";
 import type { AppLocale } from "@/i18n/routing";
@@ -41,7 +42,7 @@ function renderButton(locale: AppLocale) {
   window.history.pushState({}, "", `/${locale}/programs/xx-test-prog-ok`);
   return renderWithMessages(
     <ReportProvider
-      copy={catalogs[locale].reportOutdated}
+      copy={reportCopyFrom(catalogs[locale].reportOutdated)}
       locale={locale}
       snapshotVersion={VERSION}
     >
@@ -199,7 +200,11 @@ describe.each(LOCALES)("ReportOutdatedButton click (%s)", (locale) => {
 describe("ReportOutdatedButton without a snapshot version", () => {
   it("renders nothing, since a report must name the version the student saw", () => {
     const { container } = renderWithMessages(
-      <ReportProvider copy={catalogs.fr.reportOutdated} locale="fr" snapshotVersion={null}>
+      <ReportProvider
+        copy={reportCopyFrom(catalogs.fr.reportOutdated)}
+        locale="fr"
+        snapshotVersion={null}
+      >
         <SourceBadge meta={FACT} report />
       </ReportProvider>,
       "fr",
@@ -211,7 +216,11 @@ describe("ReportOutdatedButton without a snapshot version", () => {
 describe("ReportSnapshot", () => {
   it("supplies the version a client tree learned in the browser", () => {
     const { container } = renderWithMessages(
-      <ReportProvider copy={catalogs.fr.reportOutdated} locale="fr" snapshotVersion={null}>
+      <ReportProvider
+        copy={reportCopyFrom(catalogs.fr.reportOutdated)}
+        locale="fr"
+        snapshotVersion={null}
+      >
         <ReportSnapshot version={VERSION}>
           <SourceBadge meta={FACT} report />
         </ReportSnapshot>

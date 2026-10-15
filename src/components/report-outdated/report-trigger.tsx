@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 
-import { type ReportFactKey, reportFactKey } from "./report-fact";
+import type { ReportCopy } from "./report-context";
 
 // The one look of the button, whether the signed-out trigger or the full button draws it, so
 // nothing moves when the lazy chunk takes over. The accessible name is the visible label, then (for
 // screen readers only) the fact it reports and the source's host: "Report outdated info: tuition
-// fees (example.org)". It starts with the visible label, so voice control still finds it.
+// fees example.org". It starts with the visible label, so voice control still finds it.
 export function ReportTrigger({
   label,
   context,
@@ -29,14 +29,7 @@ export function ReportTrigger({
     >
       {label}
       <span className="sr-only">
-        <bdi>{context}</bdi>
-        {hostname === null ? null : (
-          <>
-            {" ("}
-            <bdi dir="ltr">{hostname}</bdi>
-            {")"}
-          </>
-        )}
+        {context} {hostname === null ? null : <bdi dir="ltr">{hostname}</bdi>}
       </span>
     </button>
   );
@@ -44,10 +37,15 @@ export function ReportTrigger({
 
 export const REPORT_WRAPPER_CLASS = "inline-flex flex-wrap items-center gap-x-2";
 
+// The fact part of the accessible name, from the lookup the page built (reportCopyFrom): first
+// "<kind>:<path head>" (a cost line's category after "lines."), then the kind, then "other".
 export function reportContext(
-  copy: { nameSeparator: string; facts: Record<ReportFactKey, string> },
+  copy: Pick<ReportCopy, "nameSeparator" | "factLabels">,
   record: string,
   path: string,
 ): string {
-  return `${copy.nameSeparator}${copy.facts[reportFactKey(record, path)]}`;
+  const kind = record.split("/")[0] ?? "";
+  const labels = copy.factLabels;
+  const lookup = `${kind}:${path.split(".")[kind === "cost-profiles" ? 1 : 0]}`;
+  return copy.nameSeparator + (labels[lookup] ?? labels[kind] ?? labels.other ?? "");
 }
