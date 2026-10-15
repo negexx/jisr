@@ -1350,6 +1350,33 @@
     "button": "Signaler une info périmée",
     "reported": "Signalé, merci",
     "failed": "Votre signalement n'a pas pu être envoyé. Réessayez.",
-    "rateLimited": "Vous avez atteint la limite de signalements pour aujourd'hui. Réessayez demain."
+    "rateLimited": "Vous avez atteint la limite de signalements pour aujourd'hui. Réessayez demain.",
+    "nameSeparator": " : ",
+    "facts": {
+      "tuition": "frais de scolarité",
+      "teachingLanguages": "langues d'enseignement",
+      "duration": "durée du programme",
+      "requirements": "conditions d'admission",
+      "deadline": "date limite de candidature",
+      "applicationChannel": "procédure de candidature",
+      "documents": "documents à fournir",
+      "program": "informations sur le programme",
+      "institution": "informations sur l'établissement",
+      "admissionRoute": "voie d'admission",
+      "gradeConversion": "conversion des notes",
+      "credential": "reconnaissance du diplôme",
+      "scholarshipAmount": "montant de la bourse",
+      "scholarshipDeadline": "date limite de la bourse",
+      "scholarshipDocuments": "documents de la bourse",
+      "scholarshipEligibility": "conditions de la bourse",
+      "scholarship": "informations sur la bourse",
+      "housing": "coût du logement",
+      "food": "coût de l'alimentation",
+      "transport": "coût du transport",
+      "insurance": "coût de l'assurance",
+      "application_visa": "frais de dossier et de visa",
+      "setup": "frais d'installation",
+      "other": "cette information"
+    }
   }
 }

@@ -1350,6 +1350,33 @@
     "button": "Report outdated info",
     "reported": "Reported, thank you",
     "failed": "Your report could not be sent. Try again.",
-    "rateLimited": "You have reached today's limit of reports. Try again tomorrow."
+    "rateLimited": "You have reached today's limit of reports. Try again tomorrow.",
+    "nameSeparator": ": ",
+    "facts": {
+      "tuition": "tuition fees",
+      "teachingLanguages": "teaching languages",
+      "duration": "program length",
+      "requirements": "admission requirements",
+      "deadline": "application deadline",
+      "applicationChannel": "how to apply",
+      "documents": "documents to provide",
+      "program": "program details",
+      "institution": "institution details",
+      "admissionRoute": "admission route",
+      "gradeConversion": "grade conversion",
+      "credential": "diploma recognition",
+      "scholarshipAmount": "scholarship amount",
+      "scholarshipDeadline": "scholarship deadline",
+      "scholarshipDocuments": "scholarship documents",
+      "scholarshipEligibility": "scholarship eligibility",
+      "scholarship": "scholarship details",
+      "housing": "housing cost",
+      "food": "food cost",
+      "transport": "transport cost",
+      "insurance": "insurance cost",
+      "application_visa": "application and visa fees",
+      "setup": "setup costs",
+      "other": "this information"
+    }
   }
 }

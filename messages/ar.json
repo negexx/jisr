@@ -1350,6 +1350,33 @@
     "button": "الإبلاغ عن معلومة قديمة",
     "reported": "تم الإبلاغ، شكرًا لك",
     "failed": "تعذّر إرسال بلاغك. حاول مرة أخرى.",
-    "rateLimited": "وصلت إلى الحد الأقصى من البلاغات لهذا اليوم. حاول غدًا."
+    "rateLimited": "وصلت إلى الحد الأقصى من البلاغات لهذا اليوم. حاول غدًا.",
+    "nameSeparator": ": ",
+    "facts": {
+      "tuition": "الرسوم الدراسية",
+      "teachingLanguages": "لغات التدريس",
+      "duration": "مدة البرنامج",
+      "requirements": "شروط القبول",
+      "deadline": "الموعد النهائي للتقديم",
+      "applicationChannel": "طريقة التقديم",
+      "documents": "الوثائق المطلوبة",
+      "program": "معلومات البرنامج",
+      "institution": "معلومات المؤسسة",
+      "admissionRoute": "مسار القبول",
+      "gradeConversion": "تحويل العلامات",
+      "credential": "الاعتراف بالشهادة",
+      "scholarshipAmount": "قيمة المنحة",
+      "scholarshipDeadline": "الموعد النهائي للمنحة",
+      "scholarshipDocuments": "وثائق المنحة",
+      "scholarshipEligibility": "شروط المنحة",
+      "scholarship": "معلومات المنحة",
+      "housing": "تكلفة السكن",
+      "food": "تكلفة الغذاء",
+      "transport": "تكلفة النقل",
+      "insurance": "تكلفة التأمين",
+      "application_visa": "رسوم التقديم والتأشيرة",
+      "setup": "مصاريف الاستقرار",
+      "other": "هذه المعلومة"
+    }
   }
 }

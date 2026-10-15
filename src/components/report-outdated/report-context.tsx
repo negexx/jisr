@@ -4,11 +4,16 @@ import { createContext, type ReactNode, useContext, useMemo } from "react";
 
 import type { AppLocale } from "@/i18n/routing";
 
+import type { ReportFactKey } from "./report-fact";
+
 export type ReportCopy = {
   button: string;
   reported: string;
   failed: string;
   rateLimited: string;
+  // Between the button's label and the fact it reports, in the accessible name only.
+  nameSeparator: string;
+  facts: Record<ReportFactKey, string>;
 };
 
 // `snapshotVersion` stays null until the page knows which snapshot its facts came from; a button

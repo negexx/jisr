@@ -5,6 +5,7 @@ import type { AppLocale } from "@/i18n/routing";
 import { accountsEnabled } from "@/lib/auth/accounts-enabled";
 
 import { type ReportCopy, ReportProvider } from "./report-context";
+import { REPORT_FACT_KEYS, type ReportFactKey } from "./report-fact";
 
 // Read while the page is prerendered (ruling P4): null while accounts are off. A page awaits this
 // itself and hands the result to ReportOutdatedEntry, which stays synchronous so a page element can
@@ -12,11 +13,16 @@ import { type ReportCopy, ReportProvider } from "./report-context";
 export async function loadReportCopy(locale: AppLocale): Promise<ReportCopy | null> {
   if (!accountsEnabled()) return null;
   const t = await getTranslations({ locale, namespace: "reportOutdated" });
+  const facts = Object.fromEntries(
+    REPORT_FACT_KEYS.map((key) => [key, t(`facts.${key}`)]),
+  ) as Record<ReportFactKey, string>;
   return {
     button: t("button"),
     reported: t("reported"),
     failed: t("failed"),
     rateLimited: t("rateLimited"),
+    nameSeparator: t("nameSeparator"),
+    facts,
   };
 }
 
