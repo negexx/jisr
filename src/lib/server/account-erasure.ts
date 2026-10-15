@@ -1,9 +1,9 @@
 import "server-only";
 
-import { eq, or, sql } from "drizzle-orm";
+import { eq, inArray, or, sql } from "drizzle-orm";
 
 import { emailCooldowns, pendingSignups, verification } from "@/db/schema";
-import { normalizeEmail } from "@/lib/auth/normalize-email";
+import { cooldownKey, normalizeEmail } from "@/lib/auth/normalize-email";
 
 import { type AccountDb, sqlState } from "./account-store";
 
@@ -35,7 +35,10 @@ export async function eraseAccountResidue(db: AccountDb, user: ErasedUser): Prom
             sql`(${verification.identifier} like ${OAUTH_STATE_PREFIX} and (${jsonValue} -> 'link' ->> 'userId' = ${user.id} or lower(btrim(${jsonValue} -> 'link' ->> 'email')) = ${email}))`,
           ),
         );
-      await tx.delete(emailCooldowns).where(eq(emailCooldowns.email, email));
+      // Keyed by the mailbox since todo 28 (cooldownKey); the plain form covers older rows.
+      await tx
+        .delete(emailCooldowns)
+        .where(inArray(emailCooldowns.email, [email, cooldownKey(email)]));
       await tx.delete(pendingSignups).where(eq(pendingSignups.email, email));
     });
   } catch (error) {

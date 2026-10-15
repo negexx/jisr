@@ -129,6 +129,18 @@ export const emailCooldowns = pgTable(
   ],
 );
 
+// One row per UTC day: how many auth emails were released that day, across every address and kind
+// (claimDailyEmailSlot is the only writer). Holds no personal data; rows of past days are deleted
+// on a later send.
+export const authEmailDays = pgTable(
+  "auth_email_days",
+  {
+    day: date("day", { mode: "string" }).primaryKey(),
+    sent: integer("sent").notNull().default(0),
+  },
+  (table) => [check("auth_email_days_sent_check", sql`${table.sent} >= 0`)],
+);
+
 export const userDataState = pgTable("user_data_state", {
   userId: text("user_id")
     .primaryKey()

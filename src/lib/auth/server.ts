@@ -9,10 +9,9 @@ import { magicLink } from "better-auth/plugins";
 
 import { db } from "@/db";
 import * as schema from "@/db/schema";
-import { EMAIL_MAX_LENGTH } from "@/db/schema/app";
 import { eraseAccountResidue } from "@/lib/server/account-erasure";
 import { type AuthEmailRequest, resolveAuthEmailLocale, sendAuthEmail } from "@/lib/server/email";
-import { claimEmailSendSlot } from "@/lib/server/email-cooldown";
+import { claimAuthEmailSend } from "@/lib/server/email-cooldown";
 import { accountsEnabled } from "./accounts-enabled";
 import { ACCOUNTS_DISABLED_CODE, accountsGate } from "./accounts-gate";
 import {
@@ -22,6 +21,7 @@ import {
 } from "./admission";
 import { accountDeleteConfirmPath } from "./callback-urls";
 import { CURRENT_CONSENT_VERSION } from "./consent";
+import { looksLikeEmail } from "./email-shape";
 import { onAuthApiError, scrubbedAuthLog } from "./log";
 import { readPendingSignup } from "./pending-signup";
 
@@ -88,10 +88,15 @@ function emailCooldownError(): APIError {
 }
 
 // The switch is checked before the slot is claimed so a disabled instance writes no cooldown
-// row. The refusal names no address.
+// row. The mailbox cooldown and the daily ceiling refuse with the same answer, which names no
+// address and does not tell a caller which limit it hit.
 async function claimSendSlot(kind: AuthEmailRequest["kind"], email: string): Promise<void> {
   if (!accountsEnabled()) throw accountsDisabledError();
-  if (!(await claimEmailSendSlot(kind, email))) throw emailCooldownError();
+  if (!(await claimAuthEmailSend(kind, email))) throw emailCooldownError();
+}
+
+function invalidEmailError(): APIError {
+  return new APIError("BAD_REQUEST", { message: "Invalid email address.", code: "INVALID_EMAIL" });
 }
 
 async function sendAuthEmailWhileEnabled(request: AuthEmailRequest): Promise<void> {
@@ -106,8 +111,10 @@ function notFoundError(): APIError {
 // Exactly one claim per magic-link send, taken before the plugin writes its verification row, so
 // a refused request leaves no unused token behind. Hooks run for the HTTP route and for
 // auth.api.signInMagicLink alike (both dispatch through the hook pipeline), which covers the
-// signup Server Action and a direct POST. The body is not validated yet at this point: a value
-// that is not a plausible address is left to the endpoint's own validation, unclaimed.
+// signup Server Action and a direct POST. The body is not validated yet at this point, so the
+// address is checked here: anything the signup form would refuse (not a string, malformed, longer
+// than EMAIL_MAX_LENGTH) is a 400 before any claim, verification row or email. Without that, an
+// oversize address skipped the claim yet still passed the endpoint's own check and was sent.
 //
 // Better Auth's GET /delete-user/callback deletes the signed-in account on a plain GET (ruling Q2:
 // a GET must never delete), so it is closed; deletion is confirmed only by POST /delete-user with
@@ -118,8 +125,7 @@ const beforeAuthEndpoint = createAuthMiddleware(async (ctx) => {
   if (ctx.path !== MAGIC_LINK_SIGN_IN_PATH) return;
   if (!accountsEnabled()) throw accountsDisabledError();
   const email: unknown = ctx.body?.email;
-  if (typeof email !== "string" || !email.includes("@")) return;
-  if (email.trim().length > EMAIL_MAX_LENGTH) return;
+  if (typeof email !== "string" || !looksLikeEmail(email)) throw invalidEmailError();
   await claimSendSlot("magic-link", email);
 });
 

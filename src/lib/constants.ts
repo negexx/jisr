@@ -20,3 +20,7 @@ export const ACCOUNT_SLUG_MAX_LENGTH = 120;
 export const ACCOUNT_FIELD_MAX_LENGTH = 64;
 // A real profile serialises to about 1 KB; the limit stops a well-formed but padded document.
 export const ACCOUNT_PROFILE_JSON_LIMIT = 16_384;
+// Auth emails (magic links and deletion confirmations together) released per UTC day, across all
+// addresses: below Brevo's free quota of about 300 a day, so a flood of requests is refused with the
+// cooldown answer instead of exhausting the sender (src/lib/server/email-cooldown.ts).
+export const AUTH_EMAILS_PER_DAY = 250;

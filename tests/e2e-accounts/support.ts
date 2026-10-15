@@ -11,6 +11,7 @@ import {
 } from "@playwright/test";
 import { Client } from "pg";
 
+import { cooldownKey } from "@/lib/auth/normalize-email";
 import type { AccountExport } from "@/lib/server/account-export-store";
 
 import { E2E_NOW, E2E_PROFILE, PROFILE_KEY, SAVED_KEY } from "../e2e/support/fixture-data";
@@ -81,7 +82,7 @@ async function withDb<T>(run: (client: Client) => Promise<T>): Promise<T> {
 // same address in on several devices within a minute, so it resets the row for that address.
 export async function resetEmailCooldown(email: string): Promise<void> {
   await withDb((client) =>
-    client.query("delete from email_cooldowns where email = $1", [email.toLowerCase()]),
+    client.query("delete from email_cooldowns where email = $1", [cooldownKey(email)]),
   );
 }
 

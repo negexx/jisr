@@ -54,6 +54,7 @@ beforeEach(async () => {
   sent.length = 0;
   await pool.query("delete from verification");
   await pool.query("delete from email_cooldowns");
+  await pool.query("delete from auth_email_days");
 });
 
 afterEach(() => {
@@ -150,10 +151,58 @@ describe("with ACCOUNTS_ENABLED on", () => {
     expect(await count("verification")).toBe(1);
   });
 
-  it("leaves a value that is not an address to the endpoint, without claiming a slot", async () => {
-    await expect(signIn("not-an-address")).rejects.toThrow(/email/i);
+  it("refuses a value that is not an address with a 400, without claiming a slot", async () => {
+    await expect(signIn("not-an-address")).rejects.toMatchObject({ status: "BAD_REQUEST" });
     expect(await count("email_cooldowns")).toBe(0);
     expect(await count("verification")).toBe(0);
+    expect(sent).toEqual([]);
+  });
+
+  it.each([
+    ["an oversize address", `${"a".repeat(320)}@example.com`],
+    ["a malformed address", "two@@example.com"],
+    ["an address with no domain dot", "ana@localhost"],
+  ])("answers a direct POST of %s with 400 and writes no verification row", async (_label, email) => {
+    const response = await auth.handler(
+      new Request("http://localhost:3000/api/auth/sign-in/magic-link", {
+        method: "POST",
+        headers: { origin: "http://localhost:3000", "content-type": "application/json" },
+        body: JSON.stringify({ email }),
+      }),
+    );
+    expect(response.status).toBe(400);
+    expect(await count("verification")).toBe(0);
+    expect(await count("email_cooldowns")).toBe(0);
+    expect(sent).toEqual([]);
+  });
+
+  it("shares one slot between +tag forms of one address", async () => {
+    await signIn("a+1@example.com");
+    await expect(signIn("a+2@example.com")).rejects.toMatchObject({
+      status: "TOO_MANY_REQUESTS",
+      body: { code: "EMAIL_COOLDOWN" },
+    });
+    expect(sent.map((request) => request.to)).toEqual(["a+1@example.com"]);
+  });
+
+  it("refuses every auth email past the daily ceiling with the cooldown answer", async () => {
+    const { AUTH_EMAILS_PER_DAY } = await import("@/lib/constants");
+    await pool.query(
+      "insert into auth_email_days (day, sent) values ((now() at time zone 'utc')::date, $1)",
+      [AUTH_EMAILS_PER_DAY - 1],
+    );
+    await signIn("last@example.com");
+    const refusal = await signIn("over@example.com").catch((error: unknown) => error);
+    expect(refusal).toMatchObject({
+      status: "TOO_MANY_REQUESTS",
+      body: { code: "EMAIL_COOLDOWN" },
+    });
+    await expect(sendDeleteVerification("over-delete@example.com")).rejects.toMatchObject({
+      status: "TOO_MANY_REQUESTS",
+      body: { code: "EMAIL_COOLDOWN" },
+    });
+    expect(sent.map((request) => request.to)).toEqual(["last@example.com"]);
+    expect(await count("verification")).toBe(1);
   });
 
   it("lets another address through while one is cooling down", async () => {

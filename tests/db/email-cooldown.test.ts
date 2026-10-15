@@ -15,19 +15,24 @@ let testDb: TestDatabase;
 let pool: Pool;
 let claimEmailSendSlot: CooldownModule["claimEmailSendSlot"];
 let EMAIL_COOLDOWN_S: CooldownModule["EMAIL_COOLDOWN_S"];
+let claimDailyEmailSlot: CooldownModule["claimDailyEmailSlot"];
+let claimAuthEmailSend: CooldownModule["claimAuthEmailSend"];
 let closeAppPool: () => Promise<void>;
 
 beforeAll(async () => {
   testDb = await startTestDatabase({ port: 0 });
   pool = new Pool({ connectionString: testDb.databaseUrl });
   process.env.DATABASE_URL = testDb.databaseUrl;
-  ({ claimEmailSendSlot, EMAIL_COOLDOWN_S } = await import("@/lib/server/email-cooldown"));
+  ({ claimEmailSendSlot, EMAIL_COOLDOWN_S, claimDailyEmailSlot, claimAuthEmailSend } = await import(
+    "@/lib/server/email-cooldown"
+  ));
   const { db } = await import("@/db");
   closeAppPool = () => db.$client.end();
 }, TIMEOUT_MS);
 
 beforeEach(async () => {
   await pool.query("delete from email_cooldowns");
+  await pool.query("delete from auth_email_days");
 });
 
 afterAll(async () => {
@@ -92,5 +97,65 @@ describe("claimEmailSendSlot", () => {
       Array.from({ length: 5 }, () => claimEmailSendSlot("magic-link", "race@example.com", T0)),
     );
     expect(results.filter(Boolean)).toHaveLength(1);
+  });
+});
+
+describe("claimEmailSendSlot mailbox key", () => {
+  it("shares one slot between +tag forms of one address", async () => {
+    expect(await claimEmailSendSlot("magic-link", "a+1@example.com", T0)).toBe(true);
+    expect(await claimEmailSendSlot("magic-link", "a+2@example.com", after(1))).toBe(false);
+    expect(await claimEmailSendSlot("magic-link", "a@example.com", after(2))).toBe(false);
+  });
+
+  it("shares one slot between dotted Gmail forms of one mailbox", async () => {
+    expect(await claimEmailSendSlot("magic-link", "ana.b@gmail.com", T0)).toBe(true);
+    expect(await claimEmailSendSlot("magic-link", "a.n.a.b+x@googlemail.com", after(1))).toBe(
+      false,
+    );
+  });
+});
+
+describe("claimDailyEmailSlot", () => {
+  it("allows 250 auth emails a day, below the Brevo free daily quota", async () => {
+    const { AUTH_EMAILS_PER_DAY } = await import("@/lib/constants");
+    expect(AUTH_EMAILS_PER_DAY).toBe(250);
+  });
+
+  it("refuses the send after the ceiling and keeps the count at the ceiling", async () => {
+    for (let index = 0; index < 3; index += 1) {
+      expect(await claimDailyEmailSlot(after(index), 3)).toBe(true);
+    }
+    expect(await claimDailyEmailSlot(after(10), 3)).toBe(false);
+    const { rows } = await pool.query<{ day: string; sent: number }>(
+      "select to_char(day, 'YYYY-MM-DD') as day, sent from auth_email_days",
+    );
+    expect(rows).toEqual([{ day: "2026-10-14", sent: 3 }]);
+  });
+
+  it("counts each UTC day on its own", async () => {
+    expect(await claimDailyEmailSlot(new Date("2026-10-14T23:59:59.000Z"), 1)).toBe(true);
+    expect(await claimDailyEmailSlot(new Date("2026-10-14T23:59:59.500Z"), 1)).toBe(false);
+    expect(await claimDailyEmailSlot(new Date("2026-10-15T00:00:00.000Z"), 1)).toBe(true);
+  });
+
+  it("uses the database clock's UTC day when no time is injected", async () => {
+    expect(await claimDailyEmailSlot(undefined, 5)).toBe(true);
+    const { rows } = await pool.query<{ today: boolean }>(
+      "select day = (now() at time zone 'utc')::date as today from auth_email_days",
+    );
+    expect(rows).toEqual([{ today: true }]);
+  });
+});
+
+describe("claimAuthEmailSend", () => {
+  it("does not spend the daily budget on a request the address cooldown refuses", async () => {
+    const claim = (email: string, seconds: number) =>
+      claimAuthEmailSend("magic-link", email, { now: after(seconds), dailyLimit: 2 });
+    expect(await claim("ana@example.com", 0)).toBe(true);
+    for (let index = 1; index <= 5; index += 1) {
+      expect(await claim("ana@example.com", index)).toBe(false);
+    }
+    expect(await claim("ben@example.com", 6)).toBe(true);
+    expect(await claim("cleo@example.com", 7)).toBe(false);
   });
 });
