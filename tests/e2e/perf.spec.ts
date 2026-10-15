@@ -16,6 +16,15 @@ import { seedProfile } from "./support/seed";
 // ADR 0004: a shard over 300 KB gzipped is a build failure; the browser must see the same limit.
 const SHARD_LIMIT_BYTES = 300 * 1024;
 const ZOD_MARKERS = ["ZodError", "_zod"] as const;
+// Account code is lazy (ADR 0013): a guest's page never fetches the auth client, the sync layer's
+// Server Action references or the report flow, so none of their names may appear in a script it loads.
+const GUEST_FORBIDDEN_MARKERS = [
+  "get-session",
+  "loadAccountData",
+  "clearAccountData",
+  "createFeedbackReport",
+  "requestSignInLink",
+] as const;
 const PERF_LOG = path.resolve("test-results", "perf.jsonl");
 // Transferred bytes (Next's own gzip) against the build's gzip -6 of the same files: same files, so close.
 const CROSS_CHECK_TOLERANCE = 0.05;
@@ -167,6 +176,9 @@ test.describe("JavaScript per page (ratchet, not the ADR target)", () => {
           }
           for (const marker of ZOD_MARKERS) {
             expect(script.body, `${marker} in ${script.path}`).not.toContain(marker);
+          }
+          for (const marker of GUEST_FORBIDDEN_MARKERS) {
+            expect(script.body, `account code (${marker}) in ${script.path}`).not.toContain(marker);
           }
         }
 
