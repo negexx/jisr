@@ -241,7 +241,8 @@ async function requestDeletion(student: Student, locale = "fr"): Promise<Respons
 }
 
 function tokenFrom(mail: Mail): string {
-  const token = new URL(mail.url).searchParams.get("token");
+  // The token rides the fragment, which no server or request log ever receives.
+  const token = new URLSearchParams(new URL(mail.url).hash.slice(1)).get("token");
   if (token === null) throw new Error("the deletion mail carries no token");
   return token;
 }
@@ -304,13 +305,18 @@ describe("a completed deletion", () => {
     const mail = await lastMail();
     expect(mail).toMatchObject({ kind: "delete-account", to: alice.email });
     expect(mail.subject).toBe("تأكيد حذف حسابك في جسر");
-    expect(mail.url).toMatch(/^http:\/\/localhost:3000\/ar\/account\/delete\?token=[0-9a-z]{32}$/);
+    expect(mail.url).toMatch(/^http:\/\/localhost:3000\/ar\/account\/delete#token=[0-9a-z]{32}$/);
     expect(mail.text).toContain(mail.url);
     expect(mail.text).not.toContain("/api/auth");
 
     const confirmed = await post(alice, "/delete-user", { token: tokenFrom(mail) });
     expect(confirmed.status).toBe(200);
     expect(await confirmed.json()).toEqual({ success: true, message: "User deleted" });
+    const cleared = confirmed.headers
+      .getSetCookie()
+      .find((cookie) => cookie.startsWith("better-auth.session_token="));
+    expect(cleared).toMatch(/^better-auth\.session_token=;/);
+    expect(cleared).toMatch(/Max-Age=0/i);
 
     expect(await footprint(alice)).toEqual(
       Object.fromEntries(Object.keys(aliceBefore).map((key) => [key, 0])),
@@ -391,6 +397,7 @@ describe("a refused confirmation deletes nothing", () => {
     const before = [await footprint(alice), await footprint(bob)];
     const response = await post(alice, "/delete-user", { token: "garbage" });
     expect(response.status).toBe(404);
+    expect(response.headers.getSetCookie().join("\n")).not.toContain("session_token=;");
     expect(await response.json()).toMatchObject({ code: "INVALID_TOKEN" });
     expect([await footprint(alice), await footprint(bob)]).toEqual(before);
   });
@@ -482,7 +489,7 @@ describe("requesting the email", () => {
     const dan = await signUp("dan");
     expect((await post(dan, "/delete-user", { callbackURL: "/" })).status).toBe(200);
     const mail = await lastMail();
-    expect(mail.url).toMatch(/^http:\/\/localhost:3000\/fr\/account\/delete\?token=/);
+    expect(mail.url).toMatch(/^http:\/\/localhost:3000\/fr\/account\/delete#token=/);
     expect(mail.subject).toBe("Confirmez la suppression de votre compte Jisr");
   });
 

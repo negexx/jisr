@@ -41,8 +41,9 @@ export async function requestAccountDeletion(locale: AppLocale): Promise<Deletio
 // Better Auth's token is 32 characters of [0-9a-z]; the bound only keeps junk out of the request.
 const TOKEN = /^[0-9A-Za-z_-]{1,128}$/;
 
-export function readDeletionToken(search: string): string | null {
-  const token = new URLSearchParams(search).get(DELETE_TOKEN_PARAM);
+/** The token from the link's fragment (`location.hash`, with or without its leading `#`). */
+export function readDeletionToken(hash: string): string | null {
+  const token = new URLSearchParams(hash.replace(/^#/, "")).get(DELETE_TOKEN_PARAM);
   return token !== null && TOKEN.test(token) ? token : null;
 }
 

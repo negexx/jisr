@@ -91,9 +91,12 @@ export function accountDeleteRequest(locale: Locale): { callbackURL: string } {
   return { callbackURL: accountDeletePath(locale) };
 }
 
-/** The emailed link: the confirm page carrying the token, never Better Auth's GET callback. */
+/**
+ * The emailed link: the confirm page carrying the token, never Better Auth's GET callback. The token
+ * rides the fragment, which the browser never sends, so it reaches no request log or Referer.
+ */
 export function accountDeleteConfirmPath(locale: Locale, token: string): string {
-  return `${accountDeletePath(locale)}?${new URLSearchParams({ [DELETE_TOKEN_PARAM]: token })}`;
+  return `${accountDeletePath(locale)}#${new URLSearchParams({ [DELETE_TOKEN_PARAM]: token })}`;
 }
 
 const ERROR_CODE = /^[A-Za-z0-9_-]{1,64}$/;

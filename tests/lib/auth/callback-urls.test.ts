@@ -135,8 +135,8 @@ describe("account deletion paths", () => {
     expect(accountDeleteRequest("en")).toEqual({ callbackURL: "/en/account/delete" });
   });
 
-  it("carries the token as an encoded query parameter", () => {
-    expect(accountDeleteConfirmPath("fr", "abc123")).toBe("/fr/account/delete?token=abc123");
-    expect(accountDeleteConfirmPath("en", "a&b=c")).toBe("/en/account/delete?token=a%26b%3Dc");
+  it("carries the token as an encoded fragment parameter", () => {
+    expect(accountDeleteConfirmPath("fr", "abc123")).toBe("/fr/account/delete#token=abc123");
+    expect(accountDeleteConfirmPath("en", "a&b=c")).toBe("/en/account/delete#token=a%26b%3Dc");
   });
 });

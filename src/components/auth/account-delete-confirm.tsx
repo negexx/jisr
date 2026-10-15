@@ -33,10 +33,9 @@ export function AccountDeleteConfirm({ locale }: { locale: AppLocale }) {
   useEffect(() => {
     if (started.current) return;
     started.current = true;
-    const token = readDeletionToken(window.location.search);
-    // The token leaves the address bar at once, so it is not in the history, a shared screenshot or
-    // the page path a later analytics hit would read.
-    if (window.location.search !== "") {
+    const token = readDeletionToken(window.location.hash);
+    // The token leaves the address bar at once, so it is not in the history or a shared screenshot.
+    if (window.location.hash !== "" || window.location.search !== "") {
       window.history.replaceState(window.history.state, "", window.location.pathname);
     }
     setStage(token === null ? { kind: "no-token" } : { kind: "ready", token });

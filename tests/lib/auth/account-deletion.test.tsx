@@ -114,11 +114,12 @@ describe("confirmAccountDeletion", () => {
 
 describe("readDeletionToken", () => {
   it.each([
-    ["?token=abc0123456789xyz", "abc0123456789xyz"],
+    ["#token=abc0123456789xyz", "abc0123456789xyz"],
+    ["token=abc0123456789xyz", "abc0123456789xyz"],
     ["", null],
-    ["?token=", null],
-    ["?token=a%20b", null],
-    [`?token=${"a".repeat(129)}`, null],
+    ["#token=", null],
+    ["#token=a%20b", null],
+    [`#token=${"a".repeat(129)}`, null],
   ])("reads %s as %s", (search, token) => {
     expect(readDeletionToken(search)).toBe(token);
   });
@@ -138,13 +139,13 @@ function renderPage(locale: AppLocale) {
 describe("the confirm page", () => {
   it("deletes nothing on opening, strips the token from the address, and deletes on the button", async () => {
     seedDevice();
-    window.history.replaceState(null, "", "/fr/account/delete?token=tok123");
+    window.history.replaceState(null, "", "/fr/account/delete#token=tok123");
     mocks.deleteUser.mockResolvedValue(deleted);
     renderPage("fr");
 
     const button = await screen.findByRole("button", { name: fr.accountDelete.confirm });
     expect(mocks.deleteUser).not.toHaveBeenCalled();
-    expect(window.location.search).toBe("");
+    expect(window.location.hash).toBe("");
     expect(window.location.pathname).toBe("/fr/account/delete");
 
     await userEvent.click(button);
@@ -158,7 +159,7 @@ describe("the confirm page", () => {
 
   it("shows the typed error for an invalid link and keeps the device's data", async () => {
     seedDevice();
-    window.history.replaceState(null, "", "/ar/account/delete?token=garbage");
+    window.history.replaceState(null, "", "/ar/account/delete#token=garbage");
     mocks.deleteUser.mockResolvedValue({
       data: null,
       error: { status: 404, code: "INVALID_TOKEN" },
@@ -173,7 +174,7 @@ describe("the confirm page", () => {
   });
 
   it("offers sign-in when the session is gone", async () => {
-    window.history.replaceState(null, "", "/en/account/delete?token=tok123");
+    window.history.replaceState(null, "", "/en/account/delete#token=tok123");
     mocks.deleteUser.mockResolvedValue({
       data: null,
       error: { status: 401, code: "UNAUTHORIZED" },
@@ -188,7 +189,7 @@ describe("the confirm page", () => {
   });
 
   it("keeps the button for a retry after a failure", async () => {
-    window.history.replaceState(null, "", "/fr/account/delete?token=tok123");
+    window.history.replaceState(null, "", "/fr/account/delete#token=tok123");
     mocks.deleteUser.mockResolvedValueOnce({ data: null, error: { status: 500 } });
     mocks.deleteUser.mockResolvedValueOnce(deleted);
     renderPage("fr");

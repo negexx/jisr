@@ -3,6 +3,7 @@ import "server-only";
 import { drizzleAdapter } from "@better-auth/drizzle-adapter";
 import { betterAuth } from "better-auth";
 import { APIError, createAuthMiddleware, getOAuthState } from "better-auth/api";
+import { deleteSessionCookie } from "better-auth/cookies";
 import { nextCookies } from "better-auth/next-js";
 import { magicLink } from "better-auth/plugins";
 
@@ -28,6 +29,7 @@ export const MAGIC_LINK_EXPIRY_S = 15 * 60;
 const OAUTH_CALLBACK_PATH = "/callback/:id";
 const MAGIC_LINK_VERIFY_PATH = "/magic-link/verify";
 const MAGIC_LINK_SIGN_IN_PATH = "/sign-in/magic-link";
+const DELETE_USER_PATH = "/delete-user";
 const DELETE_USER_CALLBACK_PATH = "/delete-user/callback";
 
 // getOAuthState throws outside a Better Auth request scope; that is simply "no evidence".
@@ -119,6 +121,16 @@ const beforeAuthEndpoint = createAuthMiddleware(async (ctx) => {
   await claimSendSlot("magic-link", email);
 });
 
+// POST /delete-user with a token runs Better Auth's deletion callback as a plain function call, so the
+// session cookie that callback expires is set on a context whose headers are dropped (1.7.7,
+// update-user.mjs): the response would leave the dead cookie in the browser. A successful token
+// deletion expires it here, on the real response. A refusal returns an APIError and keeps it.
+const afterAuthEndpoint = createAuthMiddleware(async (ctx) => {
+  if (ctx.path !== DELETE_USER_PATH || typeof ctx.body?.token !== "string") return;
+  if (ctx.context.returned instanceof Error) return;
+  deleteSessionCookie(ctx);
+});
+
 // The message names variables, never their values, so it is safe to log.
 export class AuthMisconfiguredError extends Error {
   constructor(readonly problems: readonly string[]) {
@@ -159,7 +171,7 @@ function createAuth(secret: string, baseURL: string) {
     // Project rule: never record IPs. Better Auth then also skips its IP-keyed rate limiter, so
     // throttling of auth emails must live in our own code (the email_cooldowns slot).
     advanced: { ipAddress: { disableIpTracking: true } },
-    hooks: { before: beforeAuthEndpoint },
+    hooks: { before: beforeAuthEndpoint, after: afterAuthEndpoint },
     // Encrypts the stored provider access and refresh tokens with the auth secret.
     account: { encryptOAuthTokens: true },
     socialProviders: {
