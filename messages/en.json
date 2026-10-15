@@ -4,7 +4,7 @@
     "privacy": {
       "meta": {
         "title": "Privacy notice",
-        "description": "How Jisr handles your data: what stays in your browser, what our host and analytics see, and your rights under the GDPR and Moroccan Law 09-08."
+        "description": "How Jisr handles your data, as a guest or with an account: what your browser keeps, what we store, who processes it, and your rights under the GDPR and Moroccan Law 09-08."
       }
     },
     "terms": {
@@ -417,7 +417,7 @@
   "profile": {
     "meta": {
       "title": "Jisr | Create your profile",
-      "description": "Tell us about your Bac, your languages and what you want to study. Your answers stay on your device."
+      "description": "Tell us about your Bac, your languages and what you want to study to see programs that look realistic for you. Free, with or without an account."
     },
     "title": {
       "create": "Create your profile",

@@ -4,7 +4,7 @@
     "privacy": {
       "meta": {
         "title": "Politique de confidentialité",
-        "description": "Comment Jisr traite vos données : ce qui reste dans votre navigateur, ce que voient notre hébergeur et nos statistiques, et vos droits au titre du RGPD et de la loi marocaine 09-08."
+        "description": "Comment Jisr traite vos données, en invité ou avec un compte : ce que garde votre navigateur, ce que nous conservons, qui les traite, et vos droits au titre du RGPD et de la loi marocaine 09-08."
       }
     },
     "terms": {
@@ -417,7 +417,7 @@
   "profile": {
     "meta": {
       "title": "Jisr | Créer mon profil",
-      "description": "Parlez-nous de votre Bac, de vos langues et de ce que vous voulez étudier. Vos réponses restent sur votre appareil."
+      "description": "Parlez-nous de votre Bac, de vos langues et de ce que vous voulez étudier pour voir les programmes qui semblent réalistes pour vous. Gratuit, avec ou sans compte."
     },
     "title": {
       "create": "Créer mon profil",
@@ -1225,7 +1225,7 @@
     "failed": "Impossible de vérifier votre connexion. Vérifiez votre réseau et réessayez.",
     "retry": "Réessayer",
     "confirm": {
-      "title": "Ajouter les données de cet appareil à <account>{email}</account>",
+      "title": "Ajouter les données de cet appareil à <account>{email}</account> ?",
       "body": "Cet appareil a un profil, des programmes enregistrés ou des étapes cochées d'avant votre connexion. Ajoutez-les seulement si ce compte est le vôtre.",
       "add": "Ajouter à ce compte",
       "notNow": "Pas maintenant",

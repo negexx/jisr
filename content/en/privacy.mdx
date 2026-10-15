@@ -1,5 +1,5 @@
 export const frontmatter = {
-  consentVersion: "2026-10-14",
+  consentVersion: "2026-10-15",
 };
 
 # Privacy notice
@@ -11,39 +11,121 @@ Jisr is a free, non-commercial project run by one individual established in Ital
 - **Controller:** [CONTROLLER NAME]
 - **Contact:** [CONTACT EMAIL]
 
-## What Jisr does with your data
+## The short version
 
-Jisr runs one journey: from your student profile to realistic options, then costs, scholarships and an application plan. The profile you create, the programs you save and the steps you tick live **only in your browser**, through local storage. Nothing personal you enter is sent to us, and we hold no copy of it.
+- You can use all of Jisr as a **guest**, without an account. Then what you enter stays in your browser and is never sent to us.
+- An **account** is optional and free. It keeps your profile, saved programs and plan progress on our server, so they follow you from one device to another. You must be 16 or older, and you create it by giving your consent.
+- With an account, your data is stored in a database in the European Union, in Frankfurt. We use it only to run your account. We do not sell it and we do not use it for advertising.
+- You can download your data and delete your account yourself, at any time.
+
+## If you use Jisr as a guest
+
+This section describes what happens when you are not signed in.
+
+Jisr runs one journey: from your student profile to realistic options, then costs, scholarships and an application plan. The profile you create, the programs you save and the steps you tick live **only in your browser**, through local storage, under these keys:
+
+- `jisr.profile`: your profile.
+- `jisr.profile-draft`: answers you started but did not finish.
+- `jisr.saved`: your saved programs.
+- `jisr.plan`: the steps you ticked in your application plan.
+
+Nothing personal you enter is sent to us, and we hold no copy of it. As a guest, we never collect your **grades**, your **nationality**, your saved list, your ticked steps or the rest of your profile. None of it reaches our servers. The "Clear my data" button in the footer removes all of it from your browser. The comparison between your profile and the published requirements also runs in your browser, not on our servers.
+
+## If you create an account
+
+You sign in with an **email link** or with **Google**. There is no password.
+
+- **Consent.** To create an account you tick a box to agree that Jisr keeps your email address, profile, saved programs and plan progress to run your account, as described in this notice. The box is never ticked for you. We keep your account data on that basis, and we record which version of this notice you agreed to and when.
+- **Age.** You confirm with a second box that you are 16 or older. We do not ask for your date of birth and we do not check your age: we record that you confirmed it. If you are under 16, keep using Jisr as a guest. The whole journey works without an account.
+- **Email link.** You type your email address and we send you a link, valid for 15 minutes and for one use. Anyone can type an address into the form, so a sign-up request is a request made for that address, not proof that its owner made it. Nothing becomes an account until the owner of the address opens the link. If you receive a link you did not ask for, ignore it.
+- **Google.** If you choose Google, Google runs the sign-in itself, under its own privacy policy. We receive the email address that Google has verified, your name and the address of your profile picture.
+- **Data from this device.** If the device already holds guest data when you sign in, Jisr asks whether to add it to your account and shows which account it would go to. Nothing is copied to your account unless you confirm.
+- **New versions of this notice.** If we change this notice, we publish a new version. The next time you use your account, we ask you to read it and agree again. Until you do, your account is paused: nothing is read from it or saved to it. You can still download your data or delete your account.
+
+## What we store when you have an account
+
+All of it is kept in a database hosted by Neon in Frankfurt, in the European Union. The name in brackets is the name of the record.
+
+- **Your account** (`user`): your email address, your name if you sign in with Google, the address of your Google profile picture if there is one, the date the account was created, the version of this notice you agreed to and when, and a role that is always "student". Jisr does not use your name or your picture.
+- **Sign-in method** (`account`): only if you use Google. Google's identifier for you, and the access and refresh tokens that Google returns. They are stored in encrypted form and Jisr does not use them. Google's ID token is never stored.
+- **Sessions** (`session`): one record for each device where you are signed in, with a random token and the dates it was created and expires. It holds no IP address and no information about your device or browser: Jisr is set up not to record them.
+- **Sign-in codes** (`verification`): short-lived records that make a sign-in or a deletion work. An email link has one, which contains your email address and a code stored in hashed form, valid for 15 minutes and for one use. A Google sign-in has a temporary record of its state, which includes the confirmations you gave on the form. Deleting your account also uses one. They are removed when used, and expired ones are cleaned up automatically.
+- **Sign-up request** (`pending_signups`): when you ask for a link to create an account, we store your email address, the version of this notice you agreed to and when, and the fact that you confirmed you are 16 or older. It is valid for 15 minutes. See "How long we keep data".
+- **Link throttle** (`email_cooldowns`): your email address, the kind of email (sign-in or deletion) and when we last sent one, so that Jisr sends at most one of each kind per address per minute.
+- **Profile** (`profiles`): your nationality; your diploma (country, type, track, whether you have it or expect it, overall grade and subject grades); years of previous higher education; your language levels and certificates; the fields, teaching languages and destination countries you chose; your budget; and the type of institution you prefer. Your grades and your nationality are the most personal items. We use them for one purpose: to compare your situation with the published requirements of programs, so that you see realistic options. The comparison runs in your browser, and the profile is stored so that it follows you from one device to another. It also carries a revision number, which stops two devices from silently overwriting each other.
+- **Saved programs** (`saved_programs`): for each program you saved, its reference, its country and field, and the date you saved it.
+- **Plan progress** (`checklist_progress`): the steps you ticked for each program, and when.
+- **Reports** (`feedback_reports`): when you use "Report outdated info" on a fact, we store which fact (its record, its place in that record and its source link), the version of the data you were looking at, and the time. You can send up to 20 reports in any 24 hours. We use reports only to check and correct our data.
+- **Account state** (`user_data_state`): whether guest data from a device was added to your account and when, and the highest revision number of your profile, so that revision numbers never repeat.
+
+## What your browser keeps when you are signed in
+
+- A **session cookie**, set when you sign in and removed when you sign out or after seven days without use. It is strictly necessary, because without it Jisr cannot tell that you are signed in. Page scripts cannot read it, and it is not used for tracking. While you sign in with Google, a second security cookie lasts a few minutes. Jisr sets no tracking or advertising cookies, and no cookies at all as long as you do not start signing in.
+- `jisr.auth` in local storage: a flag saying that this browser signed in. It holds no personal data.
+- A copy of your account's data in local storage, kept so that pages can show it at once, under these keys:
+  - `jisr.account.profile`: your account's profile.
+  - `jisr.account.profile-draft`: your unfinished answers.
+  - `jisr.account.saved`: your saved programs.
+  - `jisr.account.plan`: your plan progress.
+
+Signing out ends your session and removes the flag and every key whose name starts with `jisr.account` from the device. Guest data from before you signed in stays under the guest keys until you add it to your account or clear it. If you delete your account, Jisr removes every key whose name starts with `jisr` from the device where you confirm. On your other devices, Jisr removes its copy the next time you open it there and finds that your session has ended.
+
+## Who handles your data
+
+These companies handle data when you use Jisr. Our database and the code that runs your account are in Frankfurt. Some of these companies are established outside the European Union: where that means data leaves the EU, the GDPR rules on international transfers apply.
+
+- **Vercel** hosts Jisr. The code that handles sign-in and your account runs in its Frankfurt region (`fra1`), and pages and data files are delivered through its network.
+- **Neon** hosts the database for accounts, in Frankfurt.
+- **Brevo** sends the only two kinds of email Jisr sends: the sign-in link and the account-deletion confirmation. It receives your email address and the text of the message, which contains the link. The messages come from an address on a domain we control. We send no newsletters and no marketing.
+- **Google**, only if you choose "Continue with Google". Google runs that sign-in under its own privacy policy and sees that you are signing in to Jisr.
+- **GoatCounter** counts visits, as described under "Analytics".
+- **Sentry** is a service for error reports. Jisr does not use it today and sends no error reports to any outside service. If we start, it will be in Sentry's EU region, set up to leave out request contents, cookies and query strings, with tracing and session recording off. We will update this notice first.
 
 ## What our host sees
 
-Jisr is hosted by **Vercel**, in the Frankfurt region (`fra1`). Like any hosting provider, Vercel keeps standard server logs for each request, for example the IP address, the URL, the time and the user agent. Those logs are produced by the host as part of running the service. Jisr sets **no cookies**.
+Like any hosting provider, Vercel keeps standard server logs for each request, for example the IP address, the URL, the time and the user agent. That applies to every visitor, signed in or not, and includes requests to the sign-in and account pages. The address of a sign-in link contains a single-use code that stops working after 15 minutes or after its first use, so it appears in these logs like any other address. Those logs are produced by the host as part of running and protecting the service. Jisr's own code is written not to log your grades, your nationality, your email address or your sign-in links.
 
 ## Analytics
 
-We use **GoatCounter**, a cookieless analytics tool hosted in the EU. The script is served from `gc.zgo.at`. It records the page you viewed (its path, title and any query string), the referrer and your screen size, without placing a persistent identifier on your device. We do not load it at all when your browser sends a Do Not Track or Global Privacy Control signal. It never receives your profile data, which stays in your browser. Analytics is off until this notice is live.
+We use **GoatCounter**, a cookieless analytics tool hosted in the EU. The script is served from `gc.zgo.at`. It records the page you viewed (its path, title and any query string), the referrer and your screen size, without placing a persistent identifier on your device. We do not load it at all when your browser sends a Do Not Track or Global Privacy Control signal. It never receives your profile data or your email address. The few events Jisr sends to it only count that a step happened, for example that a profile was completed.
 
 ## The data files your browser downloads
 
-To compute your results, your browser downloads reference files whose names include your diploma's country, the destination countries and the fields you chose, plus the fields of any program you open or save. These files are static data. They name no grade and no nationality.
+To compute your results, your browser downloads reference files whose names include your diploma's country, the destination countries and the fields you chose, plus the fields of any program you open or save. These files are static data. They name no grade and no nationality. This is the same with or without an account, and our host's logs record these downloads like any other request.
 
-## What we never collect
+## What we never do
 
-We never collect your **grades**, your **nationality**, your saved list, your ticked steps or the rest of your profile. None of it reaches our servers.
+- We never store your IP address, or details of your device or browser, in our database.
+- We never ask for your date of birth.
+- We never share your profile, grades or nationality with analytics, with a university or with anyone else, apart from the providers above that store and carry the data for us.
+- We never sell your data, show advertising or send marketing emails.
+
+## How long we keep data
+
+- **Guest data** stays in your browser until you clear it. We hold no copy and keep no separate database of guests.
+- **Your account and everything in it** stay until you delete your account. We do not delete accounts automatically.
+- **Your session** ends when you sign out and expires after seven days without use.
+- **Sign-in codes** are removed when used, and expire after 15 minutes for an email link and after a few minutes for a Google sign-in.
+- **Sign-up requests and link throttle records** are valid for 15 minutes and for one minute. They are not deleted automatically when they expire. They are overwritten the next time the same address asks for a link, and deleted when you delete your account. If you asked for a link and never created an account, write to **[CONTACT EMAIL]** and we will delete them.
+- **Server logs** follow the standard retention of our hosting provider, and delivery records of emails follow that of Brevo.
+- **After a deletion**, copies may remain for a short time in the technical backups of our database provider, until they expire. The provider sets that period.
 
 ## Your rights
 
-Under the GDPR and Moroccan Law 09-08 you have rights over your personal data: access, rectification, erasure and objection, and in some situations restriction, portability and withdrawal of consent. To exercise any of them, write to **[CONTACT EMAIL]**.
+Under the GDPR and Moroccan Law 09-08 you have rights over your personal data: access, rectification, erasure and objection, and in some situations restriction, portability and withdrawal of consent. With an account you can use several of them yourself, from the "My account" page and the footer:
+
+- **Access and portability:** "Download my data" gives you a JSON file with your account details, profile, saved programs, ticked steps, reports, consent record and sign-up request. It leaves out the technical records that only run sign-in, such as sessions, sign-in codes and the link throttle. If you want to know what we hold in them, write to us.
+- **Erasure:** "Delete my account" sends a confirmation link to your email address, so that nobody else can delete your account for you. When you open the link and confirm, we delete your account and everything in it, including the sign-up request and the link throttle record for your address, and Jisr removes its data from that device. "Clear my data" empties your profile, saved programs and plan progress without deleting the account.
+- **Rectification:** change your profile, saved programs and ticked steps whenever you want. For anything else, such as the email address of your account, write to us.
+- **Withdrawing consent:** delete your account. You can do it at any time, even before you agree to a new version of this notice, and it does not affect what was done before. If you only stop using Jisr, your account stays until you delete it.
+
+For any other request, or if you cannot sign in, write to **[CONTACT EMAIL]**. We may need to check that the request comes from the owner of the email address.
 
 You may also complain to a supervisory authority:
 
 - **Garante per la protezione dei dati personali** (Italy)
 - **CNDP**, the Commission nationale de contrôle de la protection des données à caractère personnel (Morocco)
 
-## How long we keep data
-
-Jisr stores nothing about you beyond what the host keeps. Retention therefore follows the standard log retention of our hosting provider; we keep no separate database of visitors.
-
 ## Changes to this notice
 
-This notice covers the guest release. It will be updated before accounts (phase 2) launch, when we begin to process personal data ourselves. The rules for using Jisr are in our [Terms of use](/terms).
+This notice covers Jisr with and without an account. When we change it in a way that matters, we publish a new version and ask signed-in users to read and agree to it before they carry on using their account, as explained above. The rules for using Jisr are in our [Terms of use](/terms).

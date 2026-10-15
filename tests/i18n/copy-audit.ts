@@ -145,8 +145,6 @@ export const DEVICE_CLAIMS: Record<string, DeviceClaim> = {
 
 // Device claims that stay as they are, with the ruling that says why.
 export const GUEST_ONLY_CLAIMS: Record<string, string> = {
-  "profile.meta.description": "static <head> metadata cannot see the session (ruling P18, todo 21)",
-  "legal.privacy.meta.description": "static <head> metadata (ruling P18, todo 21)",
   "signup.gate.bodyNew": "accurate before consent, shown to signed-in users only (ruling P20)",
   "signup.gate.bodyChanged": "accurate before consent, shown to signed-in users only (ruling P20)",
 };
