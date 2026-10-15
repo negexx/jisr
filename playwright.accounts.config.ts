@@ -16,9 +16,13 @@ export default defineConfig({
   testDir: "tests/e2e-accounts",
   fullyParallel: true,
   forbidOnly: Boolean(process.env.CI),
-  retries: process.env.CI ? 1 : 0,
-  failOnFlakyTests: Boolean(process.env.CI),
-  reporter: process.env.CI ? [["list"], ["html", { open: "never" }]] : "list",
+  // No retries: the journey shares one database and real cooldowns, so a retry would mask a real
+  // ordering bug as flakiness.
+  retries: 0,
+  // Its own folder: the guest suite runs first in the same job and writes playwright-report/.
+  reporter: process.env.CI
+    ? [["list"], ["html", { open: "never", outputFolder: "playwright-report-accounts" }]]
+    : "list",
   outputDir: "test-results-accounts",
   use: {
     baseURL: ORIGIN,
