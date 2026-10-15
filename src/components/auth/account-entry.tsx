@@ -20,6 +20,7 @@ export async function AccountEntry({ locale }: { locale: AppLocale }) {
         signOutFailed: t("signOutFailed"),
         checkFailed: t("checkFailed"),
         retry: t("retry"),
+        finishSetup: t("finishSetup"),
       }}
     />
   );

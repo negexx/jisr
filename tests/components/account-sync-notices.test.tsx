@@ -15,6 +15,7 @@ import { clearAccountLocalState, setSessionHint } from "@/lib/auth/session-hint"
 import ar from "../../messages/ar.json";
 import en from "../../messages/en.json";
 import fr from "../../messages/fr.json";
+import { renderIntl } from "./intl";
 
 const catalogues = { fr, en, ar } as const;
 
@@ -38,6 +39,9 @@ const sync = vi.hoisted(() => {
 });
 
 vi.mock("@/lib/account-sync/client", () => ({ accountSync: sync }));
+const navigation = vi.hoisted(() => ({ push: vi.fn<(href: string) => void>(), pathname: "/plan" }));
+vi.mock("next/navigation", () => ({ useRouter: () => ({ push: navigation.push }) }));
+vi.mock("@/i18n/navigation", () => ({ usePathname: () => navigation.pathname }));
 // The runner's path to the chunk: here it never loads.
 vi.mock("@/lib/account-cache", async (importOriginal) => ({
   ...(await importOriginal<typeof import("@/lib/account-cache")>()),
@@ -115,6 +119,37 @@ describe.each(["fr", "ar"] as const)("account sync notices (%s)", (locale) => {
     await userEvent.click(screen.getByRole("button", { name: copy.useOther }));
     await userEvent.click(screen.getByRole("button", { name: copy.keepMine }));
     expect(sync.resolveConflict.mock.calls).toEqual([["server"], ["mine"]]);
+  });
+});
+
+describe.each(["fr", "ar"] as const)("an account that needs finishing (%s)", (locale) => {
+  const copy = catalogues[locale].accountSync;
+
+  beforeEach(() => {
+    navigation.push.mockReset();
+    navigation.pathname = "/plan";
+  });
+
+  it.each([
+    "consentRequired",
+    "consentPending",
+  ] as const)("offers to finish setting up with the %s notice, and goes to the landing", async (kind) => {
+    const labels = await labelsFor(locale);
+    renderIntl(<AccountSyncNotices labels={labels} />, locale);
+    act(() => sync.set({ notice: { id: 3, kind }, conflict: null }));
+    expect(screen.getByRole("alert").textContent).toBe(copy[kind]);
+    await userEvent.click(screen.getByRole("button", { name: copy.finishSetup }));
+    expect(navigation.push).toHaveBeenCalledExactlyOnceWith(
+      `/${locale}/welcome?return=%2F${locale}%2Fplan`,
+    );
+    expect(sync.dismissNotice).toHaveBeenCalledTimes(1);
+  });
+
+  it("offers nothing more with another notice", async () => {
+    const labels = await labelsFor(locale);
+    renderIntl(<AccountSyncNotices labels={labels} />, locale);
+    act(() => sync.set({ notice: { id: 4, kind: "failed" }, conflict: null }));
+    expect(screen.queryByRole("button", { name: copy.finishSetup })).toBeNull();
   });
 });
 

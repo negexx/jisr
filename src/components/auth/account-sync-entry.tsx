@@ -23,8 +23,10 @@ export async function AccountSyncEntry({ locale }: { locale: AppLocale }) {
         planLimit: t("planLimit"),
         signedOut: t("signedOut"),
         consentRequired: t("consentRequired"),
+        consentPending: t("consentPending"),
         profileReloaded: t("profileReloaded"),
         dismiss: t("dismiss"),
+        finishSetup: t("finishSetup"),
       }}
     />
   );

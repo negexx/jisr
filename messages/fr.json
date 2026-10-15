@@ -1209,7 +1209,8 @@
     "signingOut": "Déconnexion…",
     "signOutFailed": "La déconnexion n'a pas abouti. Réessayez.",
     "checkFailed": "Impossible de vérifier votre connexion.",
-    "retry": "Réessayer"
+    "retry": "Réessayer",
+    "finishSetup": "Finaliser mon compte"
   },
   "welcome": {
     "meta": {
@@ -1222,9 +1223,17 @@
     "finishing": "Retour à votre page…",
     "failed": "Impossible de vérifier votre connexion. Vérifiez votre réseau et réessayez.",
     "retry": "Réessayer",
+    "confirm": {
+      "title": "Ajouter les données de cet appareil à <account>{email}</account>",
+      "body": "Cet appareil a un profil, des programmes enregistrés ou des étapes cochées d'avant votre connexion. Ajoutez-les seulement si ce compte est le vôtre.",
+      "add": "Ajouter à ce compte",
+      "notNow": "Pas maintenant",
+      "notNowHint": "Les données de cet appareil y restent, et nous vous reposerons la question à votre prochaine connexion ici."
+    },
     "import": {
       "title": "Votre compte contient déjà des données",
       "description": "Cet appareil a aussi un profil, des programmes enregistrés ou des étapes cochées d'avant votre connexion. Choisissez ce que votre compte garde. Les deux ne sont pas fusionnés.",
+      "account": "Connecté en tant que <account>{email}</account>",
       "keep": "Garder les données du compte",
       "keepHint": "Les données de cet appareil y restent, et nous vous reposerons la question à votre prochaine connexion ici.",
       "replace": "Remplacer par les données de cet appareil",
@@ -1244,8 +1253,10 @@
     "planLimit": "Votre compte ne peut pas garder d'étapes cochées pour plus de programmes, cette case a donc été décochée.",
     "signedOut": "Vous êtes déconnecté, cette modification n'a donc pas été enregistrée dans votre compte.",
     "consentRequired": "Terminez la création de votre compte pour enregistrer vos modifications. Cette modification a été annulée.",
+    "consentPending": "Finalisez votre compte pour l'utiliser sur cet appareil. D'ici là, rien n'y est lu ni enregistré.",
     "profileReloaded": "Le profil de votre compte avait changé, il a donc été rechargé. Votre modification n'a pas été enregistrée, refaites-la.",
-    "dismiss": "Fermer"
+    "dismiss": "Fermer",
+    "finishSetup": "Finaliser mon compte"
   },
   "clearDataAccount": {
     "title": "Effacer les données de votre compte ?",
@@ -1253,7 +1264,9 @@
     "confirm": "Effacer mes données",
     "working": "Effacement…",
     "failed": "Impossible d'effacer les données de votre compte. Rien n'a été supprimé. Réessayez.",
-    "signedOut": "Vous n'êtes plus connecté, donc rien n'a été supprimé de votre compte. Confirmez à nouveau pour effacer les données de cet appareil uniquement."
+    "signedOut": "Vous n'êtes plus connecté, donc rien n'a été supprimé de votre compte. Confirmez à nouveau pour effacer les données de cet appareil uniquement.",
+    "consentRequired": "Finalisez votre compte avant d'effacer ses données. Rien n'a été supprimé.",
+    "finishSetup": "Finaliser mon compte"
   },
   "reportOutdated": {
     "button": "Signaler une info périmée",

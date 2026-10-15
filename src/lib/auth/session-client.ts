@@ -3,7 +3,7 @@
 // guest page never loads it. Zod-free.
 
 export type SessionLookup =
-  | { status: "signed-in"; consentVersion: string | null }
+  | { status: "signed-in"; email: string; consentVersion: string | null }
   | { status: "signed-out" }
   | { status: "unavailable" };
 
@@ -19,7 +19,11 @@ async function fetchSession(): Promise<SessionLookup> {
     const { data, error } = await authClient.getSession();
     if (error) return { status: "unavailable" };
     if (data === null) return { status: "signed-out" };
-    return { status: "signed-in", consentVersion: readConsentVersion(data.user) };
+    return {
+      status: "signed-in",
+      email: data.user.email,
+      consentVersion: readConsentVersion(data.user),
+    };
   } catch {
     return { status: "unavailable" };
   }

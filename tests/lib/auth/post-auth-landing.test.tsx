@@ -10,8 +10,8 @@ import { localeDirection } from "@/i18n/direction";
 import type { AppLocale } from "@/i18n/routing";
 import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
 import type { PostAuthStep } from "@/lib/auth/post-auth";
-import { forgetSession } from "@/lib/auth/session-client";
-import { AUTH_HINT_KEY } from "@/lib/auth/session-hint";
+import { forgetSession, lookupSession } from "@/lib/auth/session-client";
+import { ACCOUNT_CACHE_PREFIX, AUTH_HINT_KEY } from "@/lib/auth/session-hint";
 import { type MessageTree, pickMessages } from "@/lib/i18n/client-messages";
 
 import ar from "../../../messages/ar.json";
@@ -27,6 +27,7 @@ const mocks = vi.hoisted(() => {
     getSession: vi.fn<() => Promise<unknown>>(),
     acceptCurrentConsent: vi.fn<() => Promise<unknown>>(),
     seam: vi.fn<(locale: AppLocale, mode?: "auto" | "replace") => Promise<PostAuthStep>>(),
+    hasGuestData: vi.fn<() => boolean>(),
   };
 });
 
@@ -37,12 +38,18 @@ vi.mock("next/navigation", async (importOriginal) => ({
 }));
 vi.mock("@/lib/auth/client", () => ({ authClient: { getSession: mocks.getSession } }));
 vi.mock("@/lib/server/consent", () => ({ acceptCurrentConsent: mocks.acceptCurrentConsent }));
-vi.mock("@/lib/auth/post-auth", () => ({ runPostAuthSeam: mocks.seam }));
+vi.mock("@/lib/auth/post-auth", () => ({
+  runPostAuthSeam: mocks.seam,
+  deviceHasGuestData: mocks.hasGuestData,
+}));
 
 const CATALOGS = { fr, en, ar };
 
+const EMAIL = "amina.b@example.com";
+const MASKED = "a***@example.com";
+
 function sessionWith(consentVersion: string | null) {
-  return { data: { session: {}, user: { id: "u1", consentVersion } }, error: null };
+  return { data: { session: {}, user: { id: "u1", email: EMAIL, consentVersion } }, error: null };
 }
 
 function throwOnIntlError(error: Error): never {
@@ -73,6 +80,8 @@ beforeEach(() => {
   mocks.acceptCurrentConsent.mockReset();
   mocks.seam.mockReset();
   mocks.seam.mockResolvedValue("done");
+  mocks.hasGuestData.mockReset();
+  mocks.hasGuestData.mockReturnValue(false);
 });
 afterEach(() => {
   cleanup();
@@ -89,13 +98,39 @@ describe("post-auth landing with a ready account", () => {
     ],
     ["en", "", "/en/plan"],
     ["fr", "?return=", "/fr/plan"],
-  ] as const)("sets the hint, runs the seam and replaces to the %s return %s", async (locale, search, target) => {
+  ] as const)("sets the hint and, with no guest data, replaces to the %s return %s", async (locale, search, target) => {
     mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
     renderLanding(locale, search);
     await waitFor(() => expect(mocks.replace).toHaveBeenCalledExactlyOnceWith(target));
     expect(window.localStorage.getItem(AUTH_HINT_KEY)).toBe("true");
-    expect(mocks.seam).toHaveBeenCalledTimes(1);
+    expect(mocks.seam).not.toHaveBeenCalled();
     expect(mocks.getSession).toHaveBeenCalledTimes(1);
+  });
+
+  it("clears an earlier account's cache before it sets the hint (ruling P24)", async () => {
+    const cached = `${ACCOUNT_CACHE_PREFIX}saved`;
+    window.localStorage.setItem(AUTH_HINT_KEY, "true");
+    window.localStorage.setItem(cached, '{"earlier":"account"}');
+    window.localStorage.setItem(`${ACCOUNT_CACHE_PREFIX}profile`, '{"earlier":"account"}');
+    window.localStorage.setItem("jisr.saved", '{"guest":"saved"}');
+    const cacheWhenHintSet: Array<string | null> = [];
+    const setItem = Storage.prototype.setItem;
+    vi.spyOn(Storage.prototype, "setItem").mockImplementation(function (
+      this: Storage,
+      key: string,
+      value: string,
+    ) {
+      if (key === AUTH_HINT_KEY) cacheWhenHintSet.push(this.getItem(cached));
+      setItem.call(this, key, value);
+    });
+    mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
+    renderLanding("fr", "?return=%2Ffr%2Fplan");
+    await waitFor(() => expect(mocks.replace).toHaveBeenCalledTimes(1));
+    vi.restoreAllMocks();
+    expect(cacheWhenHintSet).toEqual([null]);
+    expect(window.localStorage.getItem(`${ACCOUNT_CACHE_PREFIX}profile`)).toBeNull();
+    expect(window.localStorage.getItem(AUTH_HINT_KEY)).toBe("true");
+    expect(window.localStorage.getItem("jisr.saved")).toBe('{"guest":"saved"}');
   });
 
   it.each([
@@ -115,6 +150,7 @@ describe("post-auth landing with a ready account", () => {
 
   it("moves on only after the post-auth step has finished", async () => {
     mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
+    mocks.hasGuestData.mockReturnValue(true);
     let finish: () => void = () => {};
     mocks.seam.mockReturnValue(
       new Promise<PostAuthStep>((resolve) => {
@@ -122,6 +158,7 @@ describe("post-auth landing with a ready account", () => {
       }),
     );
     renderLanding("fr", "?return=%2Ffr%2Fplan");
+    await confirmImport("fr");
     await waitFor(() => expect(mocks.seam).toHaveBeenCalledTimes(1));
     expect(mocks.replace).not.toHaveBeenCalled();
     await act(async () => finish());
@@ -147,7 +184,14 @@ describe("post-auth landing before the account is ready", () => {
     await user.click(screen.getByRole("button", { name: copy.gate.submit }));
     await waitFor(() => expect(mocks.replace).toHaveBeenCalledExactlyOnceWith("/fr/plan"));
     expect(window.localStorage.getItem(AUTH_HINT_KEY)).toBe("true");
-    expect(mocks.seam).toHaveBeenCalledTimes(1);
+    expect(mocks.seam).not.toHaveBeenCalled();
+    // The kept answer predates the consent: the next lookup (the menu's) asks the server again.
+    expect(mocks.getSession).toHaveBeenCalledTimes(1);
+    mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
+    await expect(lookupSession()).resolves.toMatchObject({
+      consentVersion: CURRENT_CONSENT_VERSION,
+    });
+    expect(mocks.getSession).toHaveBeenCalledTimes(2);
   });
 
   it("holds a user who agreed to an older notice at the gate", async () => {
@@ -205,13 +249,55 @@ describe("post-auth landing without a session", () => {
   });
 });
 
-describe("post-auth landing: the guest import", () => {
-  it("runs the automatic import once, for the page's locale", async () => {
+async function confirmImport(locale: AppLocale) {
+  await userEvent
+    .setup()
+    .click(await screen.findByRole("button", { name: CATALOGS[locale].welcome.confirm.add }));
+}
+
+describe.each([
+  "fr",
+  "ar",
+  "en",
+] as const)("post-auth landing: the import confirmation (%s)", (locale) => {
+  const copy = CATALOGS[locale].welcome.confirm;
+
+  beforeEach(() => {
     mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
-    renderLanding("ar", "?return=%2Far%2Fplan");
-    await waitFor(() => expect(mocks.replace).toHaveBeenCalledExactlyOnceWith("/ar/plan"));
-    expect(mocks.seam).toHaveBeenCalledExactlyOnceWith("ar", "auto");
+    mocks.hasGuestData.mockReturnValue(true);
   });
+
+  it("names the signed-in account, masked, and imports nothing before the student confirms", async () => {
+    renderLanding(locale, `?return=%2F${locale}%2Fplan`);
+    const heading = await screen.findByRole("heading", { level: 2 });
+    expect(heading.textContent).toContain(MASKED);
+    expect(document.body.textContent).not.toContain(EMAIL);
+    expect(document.body.textContent).toContain(copy.body);
+    const notNow = screen.getByRole("button", { name: copy.notNow });
+    expect(notNow.getAttribute("aria-describedby")).toBe(screen.getByText(copy.notNowHint).id);
+    await act(async () => {});
+    expect(mocks.seam).not.toHaveBeenCalled();
+    expect(mocks.replace).not.toHaveBeenCalled();
+    expect(window.localStorage.getItem(AUTH_HINT_KEY)).toBe("true");
+  });
+
+  it("imports once the student confirms, for the page's locale, then moves on", async () => {
+    renderLanding(locale, `?return=%2F${locale}%2Fplan`);
+    await confirmImport(locale);
+    await waitFor(() => expect(mocks.replace).toHaveBeenCalledExactlyOnceWith(`/${locale}/plan`));
+    expect(mocks.seam).toHaveBeenCalledExactlyOnceWith(locale, "auto");
+  });
+
+  it("moves on without any import on Not now", async () => {
+    renderLanding(locale, `?return=%2F${locale}%2Fcompare`);
+    await userEvent.setup().click(await screen.findByRole("button", { name: copy.notNow }));
+    expect(mocks.replace).toHaveBeenCalledExactlyOnceWith(`/${locale}/compare`);
+    expect(mocks.seam).not.toHaveBeenCalled();
+  });
+});
+
+describe("post-auth landing: the guest import", () => {
+  beforeEach(() => mocks.hasGuestData.mockReturnValue(true));
 
   it.each([
     ["fails", () => mocks.seam.mockResolvedValueOnce("failed")],
@@ -220,6 +306,7 @@ describe("post-auth landing: the guest import", () => {
     mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
     arrange();
     renderLanding("fr", "?return=%2Ffr%2Fcompare");
+    await confirmImport("fr");
     expect(await screen.findByRole("alert")).toHaveProperty(
       "textContent",
       fr.welcome.import.failed,
@@ -235,6 +322,7 @@ describe("post-auth landing: the guest import", () => {
     mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
     mocks.seam.mockResolvedValueOnce("failed");
     renderLanding("en", "?return=%2Fen%2Fmatches");
+    await confirmImport("en");
     await userEvent
       .setup()
       .click(await screen.findByRole("button", { name: en.welcome.import.continue }));
@@ -249,12 +337,15 @@ describe("post-auth landing: the guest import", () => {
       mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
       mocks.seam.mockResolvedValueOnce("choose");
       renderLanding(locale, `?return=%2F${locale}%2Fplan`);
+      await confirmImport(locale);
       return screen.findByRole("alertdialog", { name: copy.title });
     }
 
     it("asks, and moves on without replacing when the student keeps the account's data", async () => {
       const dialog = await openChoice();
       expect(dialog.textContent).toContain(copy.description);
+      expect(dialog.textContent).toContain(MASKED);
+      expect(dialog.textContent).not.toContain(EMAIL);
       expect(mocks.replace).not.toHaveBeenCalled();
       const keep = screen.getByRole("button", { name: copy.keep });
       expect(keep.getAttribute("aria-describedby")).toBe("import-keep-hint");

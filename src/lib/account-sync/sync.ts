@@ -58,6 +58,7 @@ export type SyncNoticeKind =
   | "planLimit"
   | "signedOut"
   | "consentRequired"
+  | "consentPending"
   | "profileReloaded";
 // `id` changes with every notice, so the same kind raised twice is announced twice.
 export type SyncNotice = { id: number; kind: SyncNoticeKind };
@@ -379,8 +380,13 @@ export function createAccountSync(options: AccountSyncOptions): AccountSync {
         if (startedIn !== epoch) return;
         if (!result.ok) {
           if (result.error === "unauthenticated") onSignedOut();
+          // Signed in, but not to the current privacy notice: the account stays unread until the
+          // student finishes setting it up, so say so instead of showing an empty account.
+          else if (result.error === "consent_required") notice("consentPending");
           return;
         }
+        // Set up after all (consent given on the landing): that notice no longer applies.
+        if (status.notice?.kind === "consentPending") setStatus({ notice: null });
         const data = result.value;
         saved.replace(savedList(data.saved));
         plan.replace(data.plan);

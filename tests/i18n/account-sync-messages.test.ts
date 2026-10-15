@@ -11,6 +11,7 @@ const NOTICE_KINDS: readonly SyncNoticeKind[] = [
   "planLimit",
   "signedOut",
   "consentRequired",
+  "consentPending",
   "profileReloaded",
 ];
 

@@ -12,6 +12,8 @@ export type SignedInClearCopy = {
   working: string;
   failed: string;
   signedOut: string;
+  consentRequired: string;
+  finishSetup: string;
 };
 
 export type ClearDataCopy = {

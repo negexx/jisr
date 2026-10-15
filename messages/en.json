@@ -1209,7 +1209,8 @@
     "signingOut": "Signing out…",
     "signOutFailed": "Signing out did not work. Try again.",
     "checkFailed": "We could not check your sign-in.",
-    "retry": "Try again"
+    "retry": "Try again",
+    "finishSetup": "Finish setting up"
   },
   "welcome": {
     "meta": {
@@ -1222,9 +1223,17 @@
     "finishing": "Taking you back…",
     "failed": "We could not check your sign-in. Check your connection and try again.",
     "retry": "Try again",
+    "confirm": {
+      "title": "Add this device's data to <account>{email}</account>?",
+      "body": "This device has a profile, saved programs or ticked steps from before you signed in. Add them only if this is your account.",
+      "add": "Add to this account",
+      "notNow": "Not now",
+      "notNowHint": "This device's data stays on it, and we will ask again the next time you sign in here."
+    },
     "import": {
       "title": "Your account already holds data",
       "description": "This device also has a profile, saved programs or ticked steps from before you signed in. Choose which your account keeps. The two are not merged.",
+      "account": "Signed in as <account>{email}</account>",
       "keep": "Keep my account's data",
       "keepHint": "This device's data stays on it, and we will ask again the next time you sign in here.",
       "replace": "Replace with this device's data",
@@ -1244,8 +1253,10 @@
     "planLimit": "Your account cannot keep ticked steps for more programs, so this tick was undone.",
     "signedOut": "You are signed out, so this change was not saved to your account.",
     "consentRequired": "Finish setting up your account to save changes. This change was undone.",
+    "consentPending": "Finish setting up your account to use it on this device. Until then, nothing is read from it or saved to it.",
     "profileReloaded": "Your account's profile had changed, so it was loaded again. Your edit was not saved, so make it again.",
-    "dismiss": "Dismiss"
+    "dismiss": "Dismiss",
+    "finishSetup": "Finish setting up"
   },
   "clearDataAccount": {
     "title": "Clear your account's data?",
@@ -1253,7 +1264,9 @@
     "confirm": "Clear my data",
     "working": "Clearing…",
     "failed": "We could not clear your account's data. Nothing was removed. Try again.",
-    "signedOut": "You are no longer signed in, so nothing was removed from your account. Confirm again to clear this device only."
+    "signedOut": "You are no longer signed in, so nothing was removed from your account. Confirm again to clear this device only.",
+    "consentRequired": "Finish setting up your account before clearing its data. Nothing was removed.",
+    "finishSetup": "Finish setting up"
   },
   "reportOutdated": {
     "button": "Report outdated info",

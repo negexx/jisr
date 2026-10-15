@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   authCallbackUrls,
+  finishSetupPath,
   landingReturnPath,
   POST_AUTH_LANDING,
   safeReturnPath,
@@ -103,5 +104,21 @@ describe("signInErrorPath", () => {
     "a&b=c",
   ])("replaces the code %j that is not a plain token", (code) => {
     expect(signInErrorPath("ar", null, code)).toBe("/ar/sign-in?return=%2Far&error=UNKNOWN");
+  });
+});
+
+describe("finishSetupPath", () => {
+  it.each([
+    ["fr", "/compare", "/fr/welcome?return=%2Ffr%2Fcompare"],
+    [
+      "ar",
+      "/programs/de-tum-informatics-bsc",
+      "/ar/welcome?return=%2Far%2Fprograms%2Fde-tum-informatics-bsc",
+    ],
+    ["en", "/", "/en/welcome?return=%2Fen"],
+    ["fr", "/sign-in", "/fr/welcome?return=%2Ffr"],
+    ["fr", "/welcome", "/fr/welcome?return=%2Ffr"],
+  ] as const)("sends %s %s through the landing, returning to %s", (locale, pathname, expected) => {
+    expect(finishSetupPath(locale, pathname)).toBe(expected);
   });
 });

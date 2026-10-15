@@ -1,6 +1,8 @@
 "use client";
 
 import { type RefObject, useState } from "react";
+
+import { FinishSetupButton } from "@/components/auth/finish-setup-button";
 import type { ClearDataCopy } from "@/components/clear-data-button";
 import {
   AlertDialog,
@@ -23,7 +25,7 @@ type Props = {
   returnFocusTo: RefObject<HTMLElement | null>;
 };
 
-type Status = "idle" | "working" | "failed" | "signedOut";
+type Status = "idle" | "working" | "failed" | "signedOut" | "consentRequired";
 
 export function ClearDataDialog({ copy, open, onOpenChange, returnFocusTo }: Props) {
   const hint = useSessionHint();
@@ -45,7 +47,9 @@ export function ClearDataDialog({ copy, open, onOpenChange, returnFocusTo }: Pro
       .then(
         (outcome) => {
           if (outcome === "cleared") changeOpen(false);
-          else setStatus(outcome === "signed_out" ? "signedOut" : "failed");
+          else if (outcome === "signed_out") setStatus("signedOut");
+          else if (outcome === "consent_required") setStatus("consentRequired");
+          else setStatus("failed");
         },
         () => setStatus("failed"),
       );
@@ -56,7 +60,9 @@ export function ClearDataDialog({ copy, open, onOpenChange, returnFocusTo }: Pro
       ? copy.signedIn?.failed
       : status === "signedOut"
         ? copy.signedIn?.signedOut
-        : null;
+        : status === "consentRequired"
+          ? copy.signedIn?.consentRequired
+          : null;
 
   return (
     <AlertDialog open={open} onOpenChange={changeOpen}>
@@ -75,6 +81,11 @@ export function ClearDataDialog({ copy, open, onOpenChange, returnFocusTo }: Pro
           <p role="alert" className="text-base font-medium text-destructive">
             {message}
           </p>
+        ) : null}
+        {status === "consentRequired" && account !== undefined ? (
+          <div>
+            <FinishSetupButton label={account.finishSetup} onNavigate={() => changeOpen(false)} />
+          </div>
         ) : null}
         <AlertDialogFooter>
           <AlertDialogCancel>{copy.cancel}</AlertDialogCancel>

@@ -37,9 +37,11 @@ export const accountSync = createAccountSync({
   },
 });
 
-// Signing out here, in the menu or through clear my data drops whatever is still queued.
+// Signing out here, in the menu or through clear my data drops whatever is still queued. Signing
+// in again in this tab (the landing clears the cache first, ruling P24) reads the account afresh.
 subscribeAccountMode(() => {
   if (!inAccountMode()) accountSync.reset();
+  else void accountSync.hydrate();
 });
 
 // For the post-auth landing: read the account into the cache after the guest import wrote it.
@@ -47,7 +49,7 @@ export function hydrateAccountData(): Promise<void> {
   return accountSync.rehydrate();
 }
 
-export type ClearAccountOutcome = "cleared" | "signed_out" | "failed";
+export type ClearAccountOutcome = "cleared" | "signed_out" | "consent_required" | "failed";
 
 // Clear my data while signed in: the account's rows first, then this device. Nothing local is
 // removed unless the server confirmed, so a failure never leaves the two disagreeing. The sign-in
@@ -62,6 +64,7 @@ export async function clearAccountEverywhere(): Promise<ClearAccountOutcome> {
     return "failed";
   }
   if (!result.ok) {
+    if (result.error === "consent_required") return "consent_required";
     if (result.error !== "unauthenticated") return "failed";
     // The server no longer knows this session: the device signs out, and what is left to clear is
     // this device's own data, which the student can now clear as a guest.

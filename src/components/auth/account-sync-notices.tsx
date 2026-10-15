@@ -8,13 +8,18 @@ import type { SyncNoticeKind, SyncStatus } from "@/lib/account-sync/sync";
 import { rehydrateOnReturn } from "@/lib/account-sync/visibility";
 import { useSessionHint } from "@/lib/auth/session-hint";
 
+import { FinishSetupButton } from "./finish-setup-button";
+
 export type AccountSyncLabels = Record<SyncNoticeKind, string> & {
   conflictTitle: string;
   conflictBody: string;
   useOther: string;
   keepMine: string;
   dismiss: string;
+  finishSetup: string;
 };
+
+const NEEDS_SETUP: ReadonlySet<SyncNoticeKind> = new Set(["consentRequired", "consentPending"]);
 
 const IDLE: SyncStatus = { notice: null, conflict: null };
 
@@ -78,14 +83,24 @@ export function AccountSyncNotices({ labels }: { labels: AccountSyncLabels }) {
             <p key={notice.id} role="alert" className="text-base">
               {labels[notice.kind]}
             </p>
-            <Button
-              type="button"
-              variant="ghost"
-              size="sm"
-              onClick={() => accountSync.dismissNotice()}
-            >
-              {labels.dismiss}
-            </Button>
+            <div className="flex shrink-0 flex-wrap items-center gap-2">
+              {NEEDS_SETUP.has(notice.kind) ? (
+                <FinishSetupButton
+                  label={labels.finishSetup}
+                  size="sm"
+                  className={WRAPPING}
+                  onNavigate={() => accountSync.dismissNotice()}
+                />
+              ) : null}
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                onClick={() => accountSync.dismissNotice()}
+              >
+                {labels.dismiss}
+              </Button>
+            </div>
           </div>
         ) : null}
       </div>

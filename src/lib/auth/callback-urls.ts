@@ -52,6 +52,21 @@ export function signInPath(locale: Locale, returnPath: string | null): string {
   return withReturn(`/${locale}${SIGN_IN_PATH}`, safeReturnPath(returnPath, locale));
 }
 
+export function isAuthPage(pathname: string): boolean {
+  return pathname.startsWith(SIGN_IN_PATH) || pathname.startsWith(POST_AUTH_LANDING);
+}
+
+/** Where to come back to from a locale-less `pathname`; the sign-in and landing pages are not. */
+export function returnPathFor(locale: Locale, pathname: string): string | null {
+  if (isAuthPage(pathname)) return null;
+  return pathname === "/" ? `/${locale}` : `/${locale}${pathname}`;
+}
+
+/** The landing, which holds the finish-signup gate and then comes back to `pathname`. */
+export function finishSetupPath(locale: Locale, pathname: string): string {
+  return authCallbackUrls(locale, returnPathFor(locale, pathname)).callbackURL;
+}
+
 // With no `return` at all the landing continues to the plan, the page a signed-in student most
 // likely wants; a `return` that is present but unsafe falls back to the locale home.
 export function landingReturnPath(raw: string | null | undefined, locale: Locale): string {

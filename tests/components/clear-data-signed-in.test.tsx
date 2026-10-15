@@ -18,11 +18,15 @@ import { renderIntl, shellProps } from "./intl";
 // behaviour unchanged when signed out or while accounts are off.
 
 const sync = vi.hoisted(() => ({
-  clearAccountEverywhere: vi.fn<() => Promise<"cleared" | "signed_out" | "failed">>(),
+  clearAccountEverywhere:
+    vi.fn<() => Promise<"cleared" | "signed_out" | "consent_required" | "failed">>(),
 }));
 vi.mock("@/lib/account-sync/client", () => ({
   clearAccountEverywhere: sync.clearAccountEverywhere,
 }));
+const navigation = vi.hoisted(() => ({ push: vi.fn<(href: string) => void>() }));
+vi.mock("next/navigation", () => ({ useRouter: () => ({ push: navigation.push }) }));
+vi.mock("@/i18n/navigation", () => ({ usePathname: () => "/compare" }));
 
 const CATALOGS = { fr, en, ar };
 
@@ -33,6 +37,7 @@ function copyWithAccount(locale: AppLocale) {
 beforeEach(() => {
   window.localStorage.clear();
   sync.clearAccountEverywhere.mockReset();
+  navigation.push.mockReset();
 });
 afterEach(() => {
   cleanup();
@@ -72,6 +77,23 @@ describe.each(["fr", "ar", "en"] as const)("Clear my data while signed in (%s)",
     expect((await within(dialog).findByRole("alert")).textContent).toBe(account.failed);
     expect(screen.getByRole("alertdialog")).toBeTruthy();
     expect(window.localStorage.getItem(PROFILE_KEY)).toBe("kept");
+  });
+
+  it("asks to finish setting up, removing nothing, when the account still needs consent", async () => {
+    window.localStorage.setItem(PROFILE_KEY, "kept");
+    sync.clearAccountEverywhere.mockResolvedValue("consent_required");
+    const { user, dialog } = await openDialog(locale);
+    expect(within(dialog).queryByRole("button", { name: account.finishSetup })).toBeNull();
+    await user.click(within(dialog).getByRole("button", { name: account.confirm }));
+    expect((await within(dialog).findByRole("alert")).textContent).toBe(account.consentRequired);
+    expect(account.consentRequired).not.toBe(account.failed);
+    expect(window.localStorage.getItem(PROFILE_KEY)).toBe("kept");
+
+    await user.click(within(dialog).getByRole("button", { name: account.finishSetup }));
+    expect(navigation.push).toHaveBeenCalledExactlyOnceWith(
+      `/${locale}/welcome?return=%2F${locale}%2Fcompare`,
+    );
+    await waitFor(() => expect(screen.queryByRole("alertdialog")).toBeNull());
   });
 
   it("falls back to the device-only copy once the server says the session is gone", async () => {

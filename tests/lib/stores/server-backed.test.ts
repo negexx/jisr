@@ -521,6 +521,37 @@ describe("hydration", () => {
     expect(onSignedOut).toHaveBeenCalledTimes(1);
   });
 
+  it("says the account needs finishing when the read is refused for consent, and lifts it once a read succeeds", async () => {
+    const { sync, stores, calls, onSignedOut } = setup({ saved: list("xx-a") });
+    const refused = sync.hydrate();
+    await settle();
+    call(calls, "loadAccountData", 0).reply.resolve({ ok: false, error: "consent_required" });
+    await refused;
+    expect(sync.getStatus().notice).toMatchObject({ kind: "consentPending" });
+    expect(onSignedOut).not.toHaveBeenCalled();
+    expect(slugs(stores.saved)).toEqual(["xx-a"]);
+
+    const read = sync.hydrate();
+    await settle();
+    call(calls, "loadAccountData", 1).reply.resolve({ ok: true, value: SERVER });
+    await read;
+    expect(sync.getStatus().notice).toBeNull();
+    expect(slugs(stores.saved)).toEqual(["xx-phone"]);
+  });
+
+  it("leaves another notice in place after a successful read", async () => {
+    const { sync, calls } = setup();
+    sync.saveProgram(item("xx-a"));
+    await settle();
+    call(calls, "saveProgram", 0).reply.resolve({ ok: false, error: "consent_required" });
+    await settle();
+    const read = sync.hydrate();
+    await settle();
+    call(calls, "loadAccountData", 0).reply.resolve({ ok: true, value: SERVER });
+    await read;
+    expect(sync.getStatus().notice).toMatchObject({ kind: "consentRequired" });
+  });
+
   it("keeps a held conflict and offers the newest server version", async () => {
     const { sync, stores, calls } = setup({
       profile: { schemaVersion: 1, profile: PROFILE, revision: 1 },

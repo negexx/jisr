@@ -2,7 +2,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { ACCOUNT_DRAFT_KEY, ACCOUNT_PLAN_KEY, ACCOUNT_SAVED_KEY } from "@/lib/account-cache";
-import { AUTH_HINT_KEY, setSessionHint } from "@/lib/auth/session-hint";
+import { AUTH_HINT_KEY, clearAccountLocalState, setSessionHint } from "@/lib/auth/session-hint";
 import { PLAN_KEY } from "@/lib/plan/progress";
 import { DRAFT_KEY, PROFILE_KEY } from "@/lib/profile/storage";
 import { SAVED_KEY } from "@/lib/saved/saved";
@@ -11,10 +11,14 @@ import { savedStore } from "@/lib/saved/store";
 // Clear my data while signed in, on the device side: the account action is stood in for, the
 // stores and keys are real.
 
-const actions = vi.hoisted(() => ({ clearAccountData: vi.fn(), saveProgram: vi.fn() }));
+const actions = vi.hoisted(() => ({
+  clearAccountData: vi.fn(),
+  saveProgram: vi.fn(),
+  loadAccountData: vi.fn(),
+}));
 vi.mock("@/lib/server/account-actions", () => ({
   clearAccountData: actions.clearAccountData,
-  loadAccountData: vi.fn(),
+  loadAccountData: actions.loadAccountData,
   saveProgram: actions.saveProgram,
   unsaveProgram: vi.fn(),
   setStepDone: vi.fn(),
@@ -55,6 +59,9 @@ beforeEach(() => {
   window.localStorage.clear();
   actions.clearAccountData.mockReset();
   actions.saveProgram.mockReset();
+  actions.loadAccountData.mockReset();
+  // Signing in again in this tab reads the account (see the last describe); here it changes nothing.
+  actions.loadAccountData.mockResolvedValue({ ok: false, error: "consent_required" });
 });
 afterEach(() => window.localStorage.clear());
 
@@ -70,10 +77,7 @@ describe("clearAccountEverywhere", () => {
   });
 
   it.each<[string, () => void]>([
-    [
-      "refuses",
-      () => actions.clearAccountData.mockResolvedValue({ ok: false, error: "consent_required" }),
-    ],
+    ["refuses", () => actions.clearAccountData.mockResolvedValue({ ok: false, error: "invalid" })],
     ["throws", () => actions.clearAccountData.mockRejectedValue(new Error("offline"))],
   ])("removes nothing when the server %s", async (_label, arrange) => {
     seed();
@@ -81,6 +85,15 @@ describe("clearAccountEverywhere", () => {
     arrange();
     const { clearAccountEverywhere } = await import("@/lib/account-sync/client");
     expect(await clearAccountEverywhere()).toBe("failed");
+    expect(keys()).toEqual(before);
+  });
+
+  it("removes nothing and says the account needs finishing when consent is not current", async () => {
+    seed();
+    const before = keys();
+    actions.clearAccountData.mockResolvedValue({ ok: false, error: "consent_required" });
+    const { clearAccountEverywhere } = await import("@/lib/account-sync/client");
+    expect(await clearAccountEverywhere()).toBe("consent_required");
     expect(keys()).toEqual(before);
   });
 
@@ -120,5 +133,22 @@ describe("clearAccountEverywhere", () => {
     expect(actions.saveProgram.mock.invocationCallOrder[0]).toBeLessThan(
       actions.clearAccountData.mock.invocationCallOrder[0] ?? 0,
     );
+  });
+});
+
+describe("signing in again in the same tab", () => {
+  it("reads the account afresh once the landing has cleared an earlier account's cache", async () => {
+    seed();
+    actions.loadAccountData.mockResolvedValue({
+      ok: true,
+      value: { saved: [], plan: { schemaVersion: 1, done: {} }, profile: null, revision: 0 },
+    });
+    await import("@/lib/account-sync/client");
+    // What the landing does on a fresh sign-in (ruling P24).
+    clearAccountLocalState();
+    expect(window.localStorage.getItem(ACCOUNT_SAVED_KEY)).toBeNull();
+    setSessionHint();
+    for (let round = 0; round < 10; round += 1) await Promise.resolve();
+    expect(actions.loadAccountData).toHaveBeenCalledTimes(1);
   });
 });

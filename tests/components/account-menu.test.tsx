@@ -4,6 +4,7 @@ import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { AccountMenu, type AccountMenuLabels } from "@/components/auth/account-menu";
+import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
 import { forgetSession } from "@/lib/auth/session-client";
 import { ACCOUNT_CACHE_PREFIX, AUTH_HINT_KEY, setSessionHint } from "@/lib/auth/session-hint";
 import { PLAN_KEY } from "@/lib/plan/progress";
@@ -37,7 +38,10 @@ const LABELS = {
   ar: ar.account,
 } as const satisfies Record<string, AccountMenuLabels>;
 
-const SIGNED_IN = { data: { session: {}, user: { id: "u1", consentVersion: "x" } }, error: null };
+function signedInWith(consentVersion: string | null) {
+  return { data: { session: {}, user: { id: "u1", consentVersion } }, error: null };
+}
+const SIGNED_IN = signedInWith(CURRENT_CONSENT_VERSION);
 const GUEST_PROFILE = '{"guest":"profile"}';
 const GUEST_SAVED = '{"guest":"saved"}';
 const GUEST_PLAN = '{"guest":"plan"}';
@@ -141,6 +145,61 @@ describe("AccountMenu with the session hint", () => {
     expect(window.localStorage.getItem(AUTH_HINT_KEY)).toBeNull();
     expect(window.localStorage.getItem(`${ACCOUNT_CACHE_PREFIX}saved`)).toBeNull();
     expect(window.localStorage.getItem(SAVED_KEY)).toBe(GUEST_SAVED);
+  });
+});
+
+describe.each([
+  "fr",
+  "ar",
+] as const)("AccountMenu for an account that needs finishing (%s)", (locale) => {
+  const copy = LABELS[locale];
+  beforeEach(() => setSessionHint());
+
+  it.each([
+    ["a new account", null],
+    ["a privacy notice that changed", "2020-01-01"],
+  ])("offers to finish setting up for %s, next to Sign out", async (_label, version) => {
+    mocks.getSession.mockResolvedValue(signedInWith(version));
+    mocks.pathname = "/compare";
+    renderMenu(locale);
+    await userEvent.setup().click(await screen.findByRole("button", { name: copy.finishSetup }));
+    expect(mocks.push).toHaveBeenCalledExactlyOnceWith(
+      `/${locale}/welcome?return=%2F${locale}%2Fcompare`,
+    );
+    expect(screen.getByRole("button", { name: copy.signOut })).toBeTruthy();
+    expect(mocks.prefetch).not.toHaveBeenCalled();
+    expect(screen.queryByRole("link")).toBeNull();
+  });
+
+  it("does not offer it once consent is current", async () => {
+    mocks.getSession.mockResolvedValue(SIGNED_IN);
+    renderMenu(locale);
+    await screen.findByRole("button", { name: copy.signOut });
+    expect(screen.queryByRole("button", { name: copy.finishSetup })).toBeNull();
+  });
+
+  it("does not offer it on the landing, which is where it would go", async () => {
+    mocks.getSession.mockResolvedValue(signedInWith(null));
+    mocks.pathname = "/welcome";
+    renderMenu(locale);
+    await screen.findByRole("button", { name: copy.signOut });
+    await act(async () => {});
+    expect(screen.queryByRole("button", { name: copy.finishSetup })).toBeNull();
+  });
+
+  it("drops the offer after the next navigation once the landing took the consent", async () => {
+    mocks.getSession.mockResolvedValue(signedInWith(null));
+    const view = renderMenu(locale);
+    await screen.findByRole("button", { name: copy.finishSetup });
+    // The landing forgets the kept answer after the student consents, then moves on.
+    forgetSession();
+    mocks.getSession.mockResolvedValue(SIGNED_IN);
+    mocks.pathname = "/compare";
+    view.rerender(<AccountMenu locale={locale} labels={copy} />);
+    await waitFor(() =>
+      expect(screen.queryByRole("button", { name: copy.finishSetup })).toBeNull(),
+    );
+    expect(mocks.getSession).toHaveBeenCalledTimes(2);
   });
 });
 

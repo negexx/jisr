@@ -14,13 +14,17 @@ beforeEach(() => {
 });
 
 describe("lookupSession", () => {
-  it("reports a signed-in user with the consent version the server holds", async () => {
+  it("reports a signed-in user with the address and consent version the server holds", async () => {
     client.getSession.mockResolvedValue({
-      data: { session: {}, user: { id: "u1", consentVersion: "2026-10-14" } },
+      data: {
+        session: {},
+        user: { id: "u1", email: "amina@example.com", consentVersion: "2026-10-14" },
+      },
       error: null,
     });
     await expect(lookupSession()).resolves.toEqual({
       status: "signed-in",
+      email: "amina@example.com",
       consentVersion: "2026-10-14",
     });
   });

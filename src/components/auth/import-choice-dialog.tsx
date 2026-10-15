@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import type { ReactNode } from "react";
 
 import {
   AlertDialog,
@@ -15,12 +16,13 @@ import {
 // Long labels (French, Arabic) wrap on a phone instead of overflowing the button.
 const WRAPPING = "h-auto min-h-11 w-full whitespace-normal py-2 text-center";
 
-type Props = { onKeep: () => void; onReplace: () => void };
+// `account` names the signed-in account, so the student replaces data only in one they recognise.
+type Props = { account: ReactNode; onKeep: () => void; onReplace: () => void };
 
 // The account already holds data and this device has its own: never a silent overwrite, so the
 // student chooses. Closing the dialog any other way (Escape) keeps the account's data, which is
 // the choice that deletes nothing; this device's data is then offered again at the next sign-in.
-export function ImportChoiceDialog({ onKeep, onReplace }: Props) {
+export function ImportChoiceDialog({ account, onKeep, onReplace }: Props) {
   const t = useTranslations("welcome.import");
   return (
     <AlertDialog
@@ -33,6 +35,7 @@ export function ImportChoiceDialog({ onKeep, onReplace }: Props) {
         <AlertDialogHeader>
           <AlertDialogTitle>{t("title")}</AlertDialogTitle>
           <AlertDialogDescription>{t("description")}</AlertDialogDescription>
+          <p className="text-sm text-muted-foreground">{account}</p>
         </AlertDialogHeader>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-1.5">

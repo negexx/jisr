@@ -23,6 +23,8 @@ export async function SiteFooter({ locale }: { locale: AppLocale }) {
         working: tAccount("working"),
         failed: tAccount("failed"),
         signedOut: tAccount("signedOut"),
+        consentRequired: tAccount("consentRequired"),
+        finishSetup: tAccount("finishSetup"),
       }
     : undefined;
   return (
