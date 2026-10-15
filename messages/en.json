@@ -1,6 +1,6 @@
 {
   "legal": {
-    "updated": "Last updated: 10/10/2026",
+    "updated": "Last updated: 15/10/2026",
     "privacy": {
       "meta": {
         "title": "Privacy notice",
@@ -10,7 +10,7 @@
     "terms": {
       "meta": {
         "title": "Terms of use",
-        "description": "The rules for using Jisr: a free, informational service with no account, no fees and no warranty, governed by Italian law."
+        "description": "The rules for using Jisr: a free, informational service with an optional account, no fees and no warranty, governed by Italian law."
       }
     }
   },

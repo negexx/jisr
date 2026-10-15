@@ -1,10 +1,10 @@
 {
   "fr": {
-    "legal.updated": "Dernière mise à jour : 10/10/2026",
+    "legal.updated": "Dernière mise à jour : 15/10/2026",
     "legal.privacy.meta.title": "Politique de confidentialité",
     "legal.privacy.meta.description": "Comment Jisr traite vos données, en invité ou avec un compte : ce que garde votre navigateur, ce que nous conservons, qui les traite, et vos droits au titre du RGPD et de la loi marocaine 09-08.",
     "legal.terms.meta.title": "Conditions d'utilisation",
-    "legal.terms.meta.description": "Les règles d'utilisation de Jisr : un service gratuit et informatif, sans compte, sans frais et sans engagement, régi par le droit italien.",
+    "legal.terms.meta.description": "Les règles d'utilisation de Jisr : un service gratuit et informatif, avec un compte facultatif, sans frais et sans engagement, régi par le droit italien.",
     "guides.meta.title": "Guides pour étudier en Europe",
     "guides.meta.description": "Des guides clairs et sourcés pour préparer une licence en Europe après le bac marocain.",
     "guides.index.title": "Guides",
@@ -688,11 +688,11 @@
     "scholarshipsPage.nationality.caveat": "D'après la règle de nationalité publiée seulement. Vérifiez les autres conditions sur la page officielle."
   },
   "en": {
-    "legal.updated": "Last updated: 10/10/2026",
+    "legal.updated": "Last updated: 15/10/2026",
     "legal.privacy.meta.title": "Privacy notice",
     "legal.privacy.meta.description": "How Jisr handles your data, as a guest or with an account: what your browser keeps, what we store, who processes it, and your rights under the GDPR and Moroccan Law 09-08.",
     "legal.terms.meta.title": "Terms of use",
-    "legal.terms.meta.description": "The rules for using Jisr: a free, informational service with no account, no fees and no warranty, governed by Italian law.",
+    "legal.terms.meta.description": "The rules for using Jisr: a free, informational service with an optional account, no fees and no warranty, governed by Italian law.",
     "guides.meta.title": "Guides to studying in Europe",
     "guides.meta.description": "Clear, sourced guides to preparing a Bachelor's in Europe after the Moroccan bac.",
     "guides.index.title": "Guides",
@@ -1376,11 +1376,11 @@
     "scholarshipsPage.nationality.caveat": "Based on the published nationality rule only. Check the other conditions on the official page."
   },
   "ar": {
-    "legal.updated": "آخر تحديث: 10/10/2026",
+    "legal.updated": "آخر تحديث: 15/10/2026",
     "legal.privacy.meta.title": "إشعار الخصوصية",
     "legal.privacy.meta.description": "كيف يتعامل جسر مع بياناتك كزائر أو بحساب: ما يحتفظ به متصفحك، وما نخزّنه نحن، ومن يعالجها، وحقوقك بموجب النظام الأوروبي RGPD والقانون المغربي 09-08.",
     "legal.terms.meta.title": "شروط الاستخدام",
-    "legal.terms.meta.description": "قواعد استخدام جسر: خدمة مجانية إعلامية، بدون حساب وبدون رسوم وبدون تعهّد، يخضع للقانون الإيطالي.",
+    "legal.terms.meta.description": "قواعد استخدام جسر: خدمة مجانية إعلامية، مع حساب اختياري وبدون رسوم وبدون تعهّد، يخضع للقانون الإيطالي.",
     "guides.meta.title": "أدلة الدراسة في أوروبا",
     "guides.meta.description": "أدلة واضحة وموثقة للتحضير لدرجة الإجازة في أوروبا بعد البكالوريا المغربية.",
     "guides.index.title": "أدلة",
