@@ -83,7 +83,7 @@ These companies handle data when you use Jisr. Our database and the code that ru
 
 ## What our host sees
 
-Like any hosting provider, Vercel keeps standard server logs for each request, for example the IP address, the URL, the time and the user agent. That applies to every visitor, signed in or not, and includes requests to the sign-in and account pages. The address of a sign-in link contains a single-use code that stops working after 15 minutes or after its first use, so it appears in these logs like any other address. Those logs are produced by the host as part of running and protecting the service. Jisr's own code is written not to log your grades, your nationality, your email address or your sign-in links.
+Like any hosting provider, Vercel keeps standard server logs for each request, for example the IP address, the URL, the time and the user agent. That applies to every visitor, signed in or not, and includes requests to the sign-in and account pages. The single-use code in a sign-in link sits after the # in its address, a part your browser never sends, so it does not appear in these logs. Those logs are produced by the host as part of running and protecting the service. Jisr's own code is written not to log your grades, your nationality, your email address or your sign-in links.
 
 ## Analytics
 
@@ -106,7 +106,7 @@ To compute your results, your browser downloads reference files whose names incl
 - **Your account and everything in it** stay until you delete your account. We do not delete accounts automatically.
 - **Your session** ends when you sign out and expires after seven days without use.
 - **Sign-in codes** are removed when used, and expire after 15 minutes for an email link and after a few minutes for a Google sign-in.
-- **Sign-up requests and link throttle records** are valid for 15 minutes and for one minute. They are deleted automatically within a day after they expire, the next time Jisr sends a sign-in or deletion email, and they are deleted when you delete your account. If you asked for a link and never created an account and want them gone sooner, write to **[CONTACT EMAIL]** and we will delete them.
+- **Sign-up requests and link throttle records** are valid for 15 minutes and for one minute. Once expired, they are deleted the next time Jisr sends a sign-in or deletion email (there is no scheduled clean-up, so on a quiet day this takes longer), and they are deleted when you delete your account. If you asked for a link and never created an account and want them gone sooner, write to **[CONTACT EMAIL]** and we will delete them.
 - **Server logs** follow the standard retention of our hosting provider, and delivery records of emails follow that of Brevo.
 - **After a deletion**, copies may remain for a short time in the technical backups of our database provider, until they expire. The provider sets that period.
 
