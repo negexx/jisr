@@ -2,12 +2,13 @@ import "server-only";
 
 import { drizzleAdapter } from "@better-auth/drizzle-adapter";
 import { betterAuth } from "better-auth";
-import { APIError, getOAuthState } from "better-auth/api";
+import { APIError, createAuthMiddleware, getOAuthState } from "better-auth/api";
 import { nextCookies } from "better-auth/next-js";
 import { magicLink } from "better-auth/plugins";
 
 import { db } from "@/db";
 import * as schema from "@/db/schema";
+import { EMAIL_MAX_LENGTH } from "@/db/schema/app";
 import { type AuthEmailRequest, sendAuthEmail } from "@/lib/server/email";
 import { claimEmailSendSlot } from "@/lib/server/email-cooldown";
 import { accountsEnabled } from "./accounts-enabled";
@@ -20,10 +21,11 @@ import {
 import { CURRENT_CONSENT_VERSION } from "./consent";
 import { readPendingSignup } from "./pending-signup";
 
-const MAGIC_LINK_EXPIRY_S = 15 * 60;
+export const MAGIC_LINK_EXPIRY_S = 15 * 60;
 
 const OAUTH_CALLBACK_PATH = "/callback/:id";
 const MAGIC_LINK_VERIFY_PATH = "/magic-link/verify";
+const MAGIC_LINK_SIGN_IN_PATH = "/sign-in/magic-link";
 
 // getOAuthState throws outside a Better Auth request scope; that is simply "no evidence".
 async function readOAuthState(): Promise<unknown> {
@@ -71,23 +73,43 @@ function accountsDisabledError(): APIError {
   });
 }
 
+function emailCooldownError(): APIError {
+  return new APIError("TOO_MANY_REQUESTS", {
+    message: "An email was sent a moment ago. Wait a minute before asking for another.",
+    code: "EMAIL_COOLDOWN",
+  });
+}
+
 // The switch is checked before the slot is claimed so a disabled instance writes no cooldown
-// row; the slot is claimed before the send so a refused request sends nothing. The refusal
-// names no address.
-async function sendAuthEmailWithCooldown(request: AuthEmailRequest): Promise<void> {
+// row. The refusal names no address.
+async function claimSendSlot(kind: AuthEmailRequest["kind"], email: string): Promise<void> {
   if (!accountsEnabled()) throw accountsDisabledError();
-  if (!(await claimEmailSendSlot(request.kind, request.to))) {
-    throw new APIError("TOO_MANY_REQUESTS", {
-      message: "An email was sent a moment ago. Wait a minute before asking for another.",
-      code: "EMAIL_COOLDOWN",
-    });
-  }
+  if (!(await claimEmailSendSlot(kind, email))) throw emailCooldownError();
+}
+
+async function sendAuthEmailWhileEnabled(request: AuthEmailRequest): Promise<void> {
+  if (!accountsEnabled()) throw accountsDisabledError();
   await sendAuthEmail(request);
 }
 
+// Exactly one claim per magic-link send, taken before the plugin writes its verification row, so
+// a refused request leaves no unused token behind. Hooks run for the HTTP route and for
+// auth.api.signInMagicLink alike (both dispatch through the hook pipeline), which covers the
+// signup Server Action and a direct POST. The body is not validated yet at this point: a value
+// that is not a plausible address is left to the endpoint's own validation, unclaimed.
+const claimMagicLinkSlot = createAuthMiddleware(async (ctx) => {
+  if (ctx.path !== MAGIC_LINK_SIGN_IN_PATH) return;
+  if (!accountsEnabled()) throw accountsDisabledError();
+  const email: unknown = ctx.body?.email;
+  if (typeof email !== "string" || !email.includes("@")) return;
+  if (email.trim().length > EMAIL_MAX_LENGTH) return;
+  await claimSendSlot("magic-link", email);
+});
+
+// The message names variables, never their values, so it is safe to log.
 export class AuthMisconfiguredError extends Error {
-  constructor(readonly missing: readonly string[]) {
-    super(`Accounts are on but required environment variables are missing: ${missing.join(", ")}`);
+  constructor(readonly problems: readonly string[]) {
+    super(`Accounts are on but the auth configuration is invalid: ${problems.join(", ")}`);
     this.name = "AuthMisconfiguredError";
   }
 }
@@ -95,6 +117,17 @@ export class AuthMisconfiguredError extends Error {
 function presentEnv(name: string): string | undefined {
   const value = process.env[name];
   return value === undefined || value.trim() === "" ? undefined : value;
+}
+
+// Magic-link URLs and the OAuth redirect URI are built from it, so a relative or non-web value
+// must stop the instance rather than produce broken links.
+function isAbsoluteHttpUrl(value: string): boolean {
+  try {
+    const { protocol } = new URL(value);
+    return protocol === "http:" || protocol === "https:";
+  } catch {
+    return false;
+  }
 }
 
 function createAuth(secret: string, baseURL: string) {
@@ -106,6 +139,7 @@ function createAuth(secret: string, baseURL: string) {
     // Project rule: never record IPs. Better Auth then also skips its IP-keyed rate limiter, so
     // throttling of auth emails must live in our own code (the email_cooldowns slot).
     advanced: { ipAddress: { disableIpTracking: true } },
+    hooks: { before: claimMagicLinkSlot },
     // Encrypts the stored provider access and refresh tokens with the auth secret.
     account: { encryptOAuthTokens: true },
     socialProviders: {
@@ -126,7 +160,8 @@ function createAuth(secret: string, baseURL: string) {
       deleteUser: {
         enabled: true,
         sendDeleteAccountVerification: async ({ user, url, token }) => {
-          await sendAuthEmailWithCooldown({ kind: "delete-account", to: user.email, url, token });
+          await claimSendSlot("delete-account", user.email);
+          await sendAuthEmailWhileEnabled({ kind: "delete-account", to: user.email, url, token });
         },
       },
     },
@@ -182,7 +217,8 @@ function createAuth(secret: string, baseURL: string) {
         disableSignUp: false,
         storeToken: "hashed",
         sendMagicLink: async ({ email, url, token, metadata }) => {
-          await sendAuthEmailWithCooldown({ kind: "magic-link", to: email, url, token, metadata });
+          // The cooldown slot was claimed by the before hook (claimMagicLinkSlot).
+          await sendAuthEmailWhileEnabled({ kind: "magic-link", to: email, url, token, metadata });
         },
       }),
       // Must stay last: it reads Set-Cookie off every other plugin's response.
@@ -203,11 +239,15 @@ export function getAuth(): Auth {
   if (instance) return instance;
   const secret = presentEnv("BETTER_AUTH_SECRET");
   const baseURL = presentEnv("BETTER_AUTH_URL");
-  if (secret === undefined || baseURL === undefined) {
-    throw new AuthMisconfiguredError([
-      ...(secret === undefined ? ["BETTER_AUTH_SECRET"] : []),
-      ...(baseURL === undefined ? ["BETTER_AUTH_URL"] : []),
-    ]);
+  const problems = [
+    ...(secret === undefined ? ["BETTER_AUTH_SECRET is missing"] : []),
+    ...(baseURL === undefined ? ["BETTER_AUTH_URL is missing"] : []),
+    ...(baseURL !== undefined && !isAbsoluteHttpUrl(baseURL)
+      ? ["BETTER_AUTH_URL is not an absolute http(s) URL"]
+      : []),
+  ];
+  if (secret === undefined || baseURL === undefined || problems.length > 0) {
+    throw new AuthMisconfiguredError(problems);
   }
   instance = createAuth(secret, baseURL);
   return instance;

@@ -9,7 +9,7 @@ const BAND_WASH =
 type PageBandProps = {
   eyebrow?: string;
   title: string;
-  lead?: string;
+  lead?: ReactNode;
   children?: ReactNode;
   id?: string;
 };

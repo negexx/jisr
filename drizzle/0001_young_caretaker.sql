@@ -1,0 +1,1 @@
+ALTER TABLE "user_data_state" ADD COLUMN "profile_revision" integer DEFAULT 0 NOT NULL;

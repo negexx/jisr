@@ -144,6 +144,15 @@ describe("clearLocalData", () => {
     expect(storage.keys().sort()).toEqual(["notjisr.y", "other.key"]);
   });
 
+  it("keeps the sign-in hint, which only sign-in, sign-out and account deletion manage, and removes the account cache", () => {
+    const storage = createFakeStorage();
+    storage.seed("jisr.auth", "true");
+    storage.seed("jisr.account.saved", "1");
+    storage.seed(PROFILE_KEY, "2");
+    clearLocalData(storage);
+    expect(storage.keys()).toEqual(["jisr.auth"]);
+  });
+
   it("survives a storage whose removeItem throws", () => {
     const storage = createFakeStorage({ remove: true });
     storage.seed(PROFILE_KEY, "2");

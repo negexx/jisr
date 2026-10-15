@@ -56,6 +56,7 @@ export function MatchCard({
   budgetProvided,
   monthsLabel,
   routeExplained = false,
+  aliases,
 }: {
   model: MatchCardModel;
   // The profile has a budget: the domain still answers "unknown" when it cannot compare, and that is said too.
@@ -63,6 +64,8 @@ export function MatchCard({
   monthsLabel: string;
   // The page already explains the foundation route (a box above the group): skip the long text here and keep the short reason.
   routeExplained?: boolean;
+  // Former slug to current slug, so a save made before a rename shows as saved.
+  aliases?: Readonly<Record<string, string>> | undefined;
 }) {
   const locale = useLocale();
   const t = useTranslations("matchCard");
@@ -134,7 +137,11 @@ export function MatchCard({
             )}
           </p>
           {languageNames === null ? null : (
-            <SourceBadge meta={model.teachingLanguages} variant="compact" />
+            <SourceBadge
+              meta={model.teachingLanguages}
+              variant="compact"
+              report={{ record: `programs/${model.slug}`, path: "teachingLanguages" }}
+            />
           )}
         </div>
         <MatchStatusBadge group={model.group} />
@@ -163,7 +170,11 @@ export function MatchCard({
                 </small>
               </p>
               <TuitionBasisNote tuition={tuition} />
-              <SourceBadge meta={model.tuition} variant="compact" />
+              <SourceBadge
+                meta={model.tuition}
+                variant="compact"
+                report={{ record: `programs/${model.slug}`, path: "tuition" }}
+              />
             </>
           )}
         </Fact>
@@ -194,7 +205,7 @@ export function MatchCard({
                 )}
               </p>
               {channelSource === undefined ? null : (
-                <SourceBadge meta={channelSource} variant="compact" />
+                <SourceBadge meta={channelSource} variant="compact" report />
               )}
             </>
           )}
@@ -246,6 +257,7 @@ export function MatchCard({
           snapshotVersion={model.snapshotVersion}
           programName={model.name}
           copy={saveCopy}
+          aliases={aliases}
         />
       </div>
     </article>

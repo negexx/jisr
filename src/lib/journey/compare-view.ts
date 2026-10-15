@@ -141,7 +141,8 @@ export function buildCompareView(input: CompareInput): CompareView {
   const programs: CompareProgram[] = [];
   const missing: string[] = [];
   for (const slug of slugs) {
-    const program = catalogue.find((p) => p.slug === resolveProgramSlug(slug, bundle));
+    const resolved = resolveProgramSlug(slug, bundle);
+    const program = catalogue.find((p) => p.slug === resolved);
     if (program === undefined) {
       missing.push(slug);
       continue;

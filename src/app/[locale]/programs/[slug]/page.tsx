@@ -7,6 +7,10 @@ import { getMessages, getTranslations, setRequestLocale } from "next-intl/server
 
 import { PROGRAM_CLIENT_NAMESPACES } from "@/components/program/client-namespaces";
 import { ProgramPageView } from "@/components/program/program-page-view";
+import {
+  loadReportCopy,
+  ReportOutdatedEntry,
+} from "@/components/report-outdated/report-outdated-entry";
 import { redirect } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { pickMessages } from "@/lib/i18n/client-messages";
@@ -62,12 +66,14 @@ export default async function ProgramPage({ params }: Props) {
     if (current === null) notFound();
     return redirect({ href: `/programs/${current}`, locale });
   }
-  const messages = await getMessages();
+  const [messages, reportCopy] = await Promise.all([getMessages(), loadReportCopy(locale)]);
   return (
-    <ProgramPageView
-      data={data}
-      locale={locale}
-      clientMessages={pickMessages(messages, PROGRAM_CLIENT_NAMESPACES)}
-    />
+    <ReportOutdatedEntry copy={reportCopy} locale={locale} snapshotVersion={data.snapshotVersion}>
+      <ProgramPageView
+        data={data}
+        locale={locale}
+        clientMessages={pickMessages(messages, PROGRAM_CLIENT_NAMESPACES)}
+      />
+    </ReportOutdatedEntry>
   );
 }

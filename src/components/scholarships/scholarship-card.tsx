@@ -126,7 +126,12 @@ export function ScholarshipCard({
           </p>
         )}
         {covers === null ? null : <p className="text-base">{tProg("covers", { items: covers })}</p>}
-        {amount === null && covers === null ? null : <SourceBadge meta={scholarship.support} />}
+        {amount === null && covers === null ? null : (
+          <SourceBadge
+            meta={scholarship.support}
+            report={{ record: `scholarships/${scholarship.slug}`, path: "support" }}
+          />
+        )}
       </div>
 
       <div data-testid="scholarship-deadline" className="flex flex-col gap-1.5">
@@ -142,7 +147,10 @@ export function ScholarshipCard({
               </bdi>
             </p>
             {sharedSource && !(amount === null && covers === null) ? null : (
-              <SourceBadge meta={scholarship.deadline} />
+              <SourceBadge
+                meta={scholarship.deadline}
+                report={{ record: `scholarships/${scholarship.slug}`, path: "deadline" }}
+              />
             )}
           </>
         )}
@@ -190,7 +198,13 @@ export function ScholarshipCard({
                             />
                           </p>
                         )}
-                        <SourceBadge meta={view.fact} />
+                        <SourceBadge
+                          meta={view.fact}
+                          report={{
+                            record: `scholarships/${scholarship.slug}`,
+                            path: `requirements.rules.${rule.id}`,
+                          }}
+                        />
                       </li>
                     );
                   })}
@@ -217,7 +231,10 @@ export function ScholarshipCard({
                     </li>
                   ))}
                 </ul>
-                <SourceBadge meta={documents} />
+                <SourceBadge
+                  meta={documents}
+                  report={{ record: `scholarships/${scholarship.slug}`, path: "documents" }}
+                />
               </>
             )}
           </section>

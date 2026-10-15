@@ -7,18 +7,18 @@ const T0 = new Date("2026-10-14T09:00:00.000Z");
 describeRace("claimEmailSendSlot under real concurrency", () => {
   let race: RaceDatabase;
   let claimEmailSendSlot: typeof import("@/lib/server/email-cooldown").claimEmailSendSlot;
-  let closeAppPool: () => Promise<void>;
 
   beforeAll(async () => {
     race = await createRaceDatabase();
     process.env.DATABASE_URL = race.url;
     ({ claimEmailSendSlot } = await import("@/lib/server/email-cooldown"));
     const { db } = await import("@/db");
-    closeAppPool = () => db.$client.end();
+    // The app pool has no 'error' listener of its own; the harness ends it before the forced drop and
+    // absorbs the admin_shutdown a still-closing backend reports (CI saw it as an unhandled error).
+    race.adoptPool(db.$client);
   });
 
   afterAll(async () => {
-    await closeAppPool?.();
     await race?.drop();
   });
 

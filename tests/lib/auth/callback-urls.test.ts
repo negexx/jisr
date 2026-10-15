@@ -1,0 +1,124 @@
+import { describe, expect, it } from "vitest";
+
+import {
+  authCallbackUrls,
+  finishSetupPath,
+  landingReturnPath,
+  POST_AUTH_LANDING,
+  safeReturnPath,
+  signInErrorPath,
+  signInPath,
+} from "@/lib/auth/callback-urls";
+
+describe("safeReturnPath", () => {
+  it.each([
+    ["/fr", "/fr"],
+    ["/ar/plan", "/ar/plan"],
+    ["/en/programs/de-tum-informatics-bsc", "/en/programs/de-tum-informatics-bsc"],
+    ["/fr/compare/", "/fr/compare/"],
+  ])("keeps the same-origin locale path %s", (raw, expected) => {
+    expect(safeReturnPath(raw, "fr")).toBe(expected);
+  });
+
+  it.each<[string, string | null | undefined]>([
+    ["nothing", undefined],
+    ["null", null],
+    ["an empty string", ""],
+    ["an absolute URL", "https://evil.example/fr"],
+    ["a protocol-relative URL", "//evil.example/fr"],
+    ["a backslash trick", "/\\evil.example"],
+    ["a path without a locale", "/plan"],
+    ["an unknown locale", "/de/plan"],
+    ["a locale prefix of a longer segment", "/frx/plan"],
+    ["a dot segment", "/fr/../plan"],
+    ["a single dot segment", "/fr/./plan"],
+    ["a query string", "/fr/plan?x=1"],
+    ["a fragment", "/fr/plan#top"],
+    ["an encoded character", "/fr/%2e%2e/plan"],
+    ["a relative path", "fr/plan"],
+    ["a javascript URL", "javascript:alert(1)"],
+    ["an empty segment", "/fr//plan"],
+    ["whitespace", "/fr/ plan"],
+  ])("falls back to the locale home for %s", (_label, raw) => {
+    expect(safeReturnPath(raw, "ar")).toBe("/ar");
+  });
+});
+
+describe("authCallbackUrls", () => {
+  it("sends every outcome to the post-auth landing with the sanitised return path", () => {
+    const expected = `/fr${POST_AUTH_LANDING}?return=%2Ffr%2Fplan`;
+    expect(authCallbackUrls("fr", "/fr/plan")).toEqual({
+      callbackURL: expected,
+      newUserCallbackURL: expected,
+      errorCallbackURL: expected,
+    });
+  });
+
+  it("uses the locale home when the return path is unsafe", () => {
+    expect(authCallbackUrls("ar", "https://evil.example").callbackURL).toBe(
+      "/ar/welcome?return=%2Far",
+    );
+  });
+
+  it("builds relative URLs only, so Better Auth's origin check accepts them", () => {
+    for (const url of Object.values(authCallbackUrls("en", "/en/compare"))) {
+      expect(url.startsWith("/en/welcome?")).toBe(true);
+    }
+  });
+});
+
+describe("signInPath", () => {
+  it("names the sign-in surface with the sanitised return path", () => {
+    expect(signInPath("fr", "/fr/plan")).toBe("/fr/sign-in?return=%2Ffr%2Fplan");
+    expect(signInPath("ar", "//evil.example")).toBe("/ar/sign-in?return=%2Far");
+  });
+});
+
+describe("landingReturnPath", () => {
+  it("defaults to the plan when no return was given", () => {
+    for (const absent of [null, undefined, ""]) {
+      expect(landingReturnPath(absent, "ar")).toBe("/ar/plan");
+    }
+  });
+
+  it("keeps a safe return and falls back to the locale home for an unsafe one", () => {
+    expect(landingReturnPath("/fr/compare", "fr")).toBe("/fr/compare");
+    expect(landingReturnPath("https://evil.example", "fr")).toBe("/fr");
+    expect(landingReturnPath("/en/plan", "fr")).toBe("/en/plan");
+  });
+});
+
+describe("signInErrorPath", () => {
+  it("adds the failure code to the sign-in surface, keeping the return", () => {
+    expect(signInErrorPath("fr", "/fr/plan", "AGE_NOT_CONFIRMED")).toBe(
+      "/fr/sign-in?return=%2Ffr%2Fplan&error=AGE_NOT_CONFIRMED",
+    );
+  });
+
+  it.each([
+    "",
+    "a b",
+    "<script>",
+    "x".repeat(65),
+    "é",
+    "a&b=c",
+  ])("replaces the code %j that is not a plain token", (code) => {
+    expect(signInErrorPath("ar", null, code)).toBe("/ar/sign-in?return=%2Far&error=UNKNOWN");
+  });
+});
+
+describe("finishSetupPath", () => {
+  it.each([
+    ["fr", "/compare", "/fr/welcome?return=%2Ffr%2Fcompare"],
+    [
+      "ar",
+      "/programs/de-tum-informatics-bsc",
+      "/ar/welcome?return=%2Far%2Fprograms%2Fde-tum-informatics-bsc",
+    ],
+    ["en", "/", "/en/welcome?return=%2Fen"],
+    ["fr", "/sign-in", "/fr/welcome?return=%2Ffr"],
+    ["fr", "/welcome", "/fr/welcome?return=%2Ffr"],
+  ] as const)("sends %s %s through the landing, returning to %s", (locale, pathname, expected) => {
+    expect(finishSetupPath(locale, pathname)).toBe(expected);
+  });
+});

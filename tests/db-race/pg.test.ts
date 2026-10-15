@@ -44,6 +44,17 @@ describeRace("race harness teardown", () => {
     await expect(race.drop()).resolves.toBeUndefined();
   });
 
+  it("ends an adopted pool and ignores its forced-drop disconnect too", async () => {
+    const race = await freshRace();
+    const pool = new Pool({ connectionString: race.url, max: 1 });
+    race.adoptPool(pool);
+    await pool.query("select 1");
+    failAfterEnd(pool, adminShutdown());
+
+    await expect(race.drop()).resolves.toBeUndefined();
+    expect(pool.ended).toBe(true);
+  });
+
   it("still fails when a different error arrives while tearing down", async () => {
     const race = await freshRace();
     const pool = race.createPool(1);

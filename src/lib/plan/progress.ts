@@ -10,7 +10,9 @@ export type PlanProgress = { schemaVersion: 1; done: Record<string, ChecklistSte
 export const EMPTY_PROGRESS: PlanProgress = { schemaVersion: PLAN_SCHEMA_VERSION, done: {} };
 
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-const MAX_PROGRAMS = 50;
+// Programmes with ticked steps. Above MAX_SAVED_PROGRAMS on purpose: a tick can outlive an unsave
+// that another device made in between, and the cap only bounds what is kept, not what is shown.
+export const MAX_PLAN_PROGRAMS = 50;
 
 function ordered(steps: Iterable<ChecklistStepId>): ChecklistStepId[] {
   const set = new Set(steps);
@@ -22,7 +24,7 @@ export function parsePlanProgress(raw: unknown): PlanProgress | null {
   if (raw.schemaVersion !== PLAN_SCHEMA_VERSION || !isPlainObject(raw.done)) return null;
   const done: Record<string, ChecklistStepId[]> = {};
   for (const slug of Object.keys(raw.done)) {
-    if (Object.keys(done).length >= MAX_PROGRAMS) break;
+    if (Object.keys(done).length >= MAX_PLAN_PROGRAMS) break;
     const value = raw.done[slug];
     if (!matches(slug, SLUG) || !Array.isArray(value)) continue;
     const steps = ordered(

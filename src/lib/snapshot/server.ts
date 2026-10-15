@@ -224,6 +224,8 @@ export type ProgramPageData = {
   core: CoreShard;
   applicationChannel: ApplicationChannel | null;
   text: TextLookup;
+  // This programme's former slugs (to its slug), so a save made under one shows as saved here.
+  aliases: Record<string, string>;
 };
 
 export async function loadProgramPageData(
@@ -286,6 +288,11 @@ export async function loadProgramPageData(
     core,
     applicationChannel: core.applicationChannels.find((c) => c.slug === channelSlug) ?? null,
     text: createTextLookup(textShards, locale),
+    aliases: Object.fromEntries(
+      Object.keys(snapshot.manifest.aliases ?? {})
+        .filter((former) => resolveProgramSlug(former, snapshot.manifest) === program.slug)
+        .map((former) => [former, program.slug]),
+    ),
   };
 }
 

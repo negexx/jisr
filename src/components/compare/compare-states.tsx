@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { EmptyState } from "@/components/empty-state";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
+import { useSessionHint } from "@/lib/auth/session-hint";
 
 const BLOCK = "rounded-lg bg-muted motion-safe:animate-pulse";
 
@@ -46,10 +47,11 @@ export function NotEnoughState() {
 
 export function NoProfileState() {
   const t = useTranslations("compare.noProfile");
+  const signedIn = useSessionHint();
   return (
     <EmptyState
       title={t("title")}
-      description={t("description")}
+      description={t(signedIn ? "descriptionSignedIn" : "description")}
       action={
         <Link href="/profile" className={buttonVariants({ size: "lg" })}>
           {t("action")}
@@ -81,10 +83,11 @@ export function ErrorState({ onRetry }: { onRetry?: () => void }) {
 // keep the list, so the page says so for as long as it is true.
 export function StorageNotice() {
   const t = useTranslations("compare.storage");
+  const signedIn = useSessionHint();
   return (
     <output className="flex items-start gap-3 rounded-lg border border-border bg-muted px-4 py-3">
       <Info aria-hidden="true" className="mt-1 size-5 shrink-0 text-muted-foreground" />
-      <p className="flex-1 pt-0.5 text-base">{t("notice")}</p>
+      <p className="flex-1 pt-0.5 text-base">{t(signedIn ? "noticeSignedIn" : "notice")}</p>
     </output>
   );
 }

@@ -67,8 +67,19 @@ export function buildPlanView({ profile, bundle, saved, now }: PlanInput): PlanV
       : { name: found.name, url: found.url, accountRequired: found.accountRequired };
   };
 
-  const entries = saved.map((item): PlanProgram | PlanMissing => {
-    const program = programs.find((p) => p.slug === resolveProgramSlug(item.slug, bundle));
+  // A programme renamed after it was saved can sit in the list under its former and its current
+  // slug (another device, an account's rows): it is shown once, under the first saved slug.
+  const seen = new Set<string>();
+  const distinct = saved.filter((item) => {
+    const resolved = resolveProgramSlug(item.slug, bundle);
+    if (seen.has(resolved)) return false;
+    seen.add(resolved);
+    return true;
+  });
+
+  const entries = distinct.map((item): PlanProgram | PlanMissing => {
+    const resolved = resolveProgramSlug(item.slug, bundle);
+    const program = programs.find((p) => p.slug === resolved);
     if (program === undefined) return { kind: "missing", slug: item.slug };
 
     const match = matchProgram({ profile, program, routes, reference: core, now });

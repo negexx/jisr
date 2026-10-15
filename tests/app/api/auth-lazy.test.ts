@@ -96,6 +96,10 @@ describe.each([
   ["url missing", "test-secret-test-secret-test-secret-0123", undefined],
   ["url blank", "test-secret-test-secret-test-secret-0123", ""],
   ["both missing", undefined, undefined],
+  ["url relative", "test-secret-test-secret-test-secret-0123", "/api/auth"],
+  ["url without a scheme", "test-secret-test-secret-test-secret-0123", "localhost:3000"],
+  ["url not http(s)", "test-secret-test-secret-test-secret-0123", "ftp://jisr.test"],
+  ["url unparsable", "test-secret-test-secret-test-secret-0123", "http://"],
 ])("accounts on, %s", (_label, secret, url) => {
   beforeEach(() => {
     vi.stubEnv("NODE_ENV", "production");
@@ -116,6 +120,19 @@ describe.each([
       expect(text).not.toContain("BETTER_AUTH");
     }
     expect(betterAuthSpy).not.toHaveBeenCalled();
+  });
+
+  it("logs which variables are at fault, never their values", async () => {
+    const logged = vi.spyOn(console, "error").mockImplementation(() => {});
+    const route = await loadRoute();
+    await route.GET(getRequest("/api/auth/get-session"));
+    expect(logged).toHaveBeenCalledTimes(1);
+    const line = logged.mock.calls.flat().join(" ");
+    expect(line).toMatch(/BETTER_AUTH_(SECRET|URL)/);
+    for (const value of [secret, url]) {
+      if (value !== undefined && value.trim() !== "") expect(line).not.toContain(value);
+    }
+    logged.mockRestore();
   });
 });
 

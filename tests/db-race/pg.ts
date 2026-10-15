@@ -43,6 +43,10 @@ export type RaceDatabase = {
   readonly url: string;
   /** A pool on the throwaway database; ended by drop(). Idle-client errors fail drop(). */
   createPool: (max: number) => Pool;
+  /** Hands a pool created elsewhere (e.g. the app's own `@/db` pool) to the harness: drop() ends it
+   * first and its idle-client errors are handled like createPool's, so the forced drop's
+   * admin_shutdown never surfaces as an unhandled error. */
+  adoptPool: (pool: Pool) => void;
   /** False only when the migrations directory does not exist: the tolerated empty path. */
   readonly migrated: boolean;
   /** Ends every pool, drops the database (forcibly), then throws if a pool reported an error
@@ -81,11 +85,14 @@ export async function createRaceDatabase(
     if (tearingDown && (error as { code?: unknown }).code === ADMIN_SHUTDOWN) return;
     poolErrors.push(error);
   };
-  const createPool = (max: number): Pool => {
-    const pool = new Pool({ connectionString: url, max });
+  const adoptPool = (pool: Pool): void => {
     // An unhandled 'error' on an idle client would crash the worker; keep it and fail drop().
     pool.on("error", recordPoolError);
     pools.push(pool);
+  };
+  const createPool = (max: number): Pool => {
+    const pool = new Pool({ connectionString: url, max });
+    adoptPool(pool);
     return pool;
   };
 
@@ -126,5 +133,5 @@ export async function createRaceDatabase(
     );
   }
 
-  return { name, url, createPool, migrated, drop };
+  return { name, url, createPool, adoptPool, migrated, drop };
 }

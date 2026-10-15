@@ -133,6 +133,10 @@ export const userDataState = pgTable("user_data_state", {
   userId: text("user_id")
     .primaryKey()
     .references(() => user.id, { onDelete: "cascade" }),
-  // Set once when the guest data was imported; null means the import has not happened.
+  // Set once when the guest data was imported; null means the import has not happened (or the
+  // account's data was cleared since).
   importedAt: timestamptz("imported_at"),
+  // The highest revision a deleted profile row of this user had. A new profile row starts above it,
+  // so revisions never repeat and a device still holding an old one gets `conflict`.
+  profileRevision: integer("profile_revision").notNull().default(0),
 });

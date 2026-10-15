@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
+import { useSessionHint } from "@/lib/auth/session-hint";
 import { formatGrade, intlLocale, parseLocaleDecimal } from "@/lib/format";
 import { gradingScaleFor } from "@/lib/profile/form/options";
 import type { StepId } from "@/lib/profile/form/state";
@@ -47,6 +48,7 @@ function Section({ step, children }: { step: Exclude<StepId, "review">; children
 
 export function StepReview() {
   const t = useTranslations("profile");
+  const signedIn = useSessionHint();
   const { form, core, text, locale } = useStep();
   const { credential, budget } = form;
   const notGiven = t("review.notGiven");
@@ -194,7 +196,9 @@ export function StepReview() {
         <h3 id="review-save-title" className="text-lg font-semibold">
           {t("review.saveTitle")}
         </h3>
-        <p className="max-w-[65ch] text-base">{t("review.saveBody")}</p>
+        <p className="max-w-[65ch] text-base">
+          {t(signedIn ? "review.saveBodySignedIn" : "review.saveBody")}
+        </p>
       </section>
     </div>
   );

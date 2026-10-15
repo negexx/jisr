@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { type ReactNode, useEffect, useMemo, useRef, useState } from "react";
-
+import { ReportSnapshot } from "@/components/report-outdated/report-context";
 import type { IsoDate } from "@/data-schema/dates";
 import type { AppLocale } from "@/i18n/routing";
 import { track } from "@/lib/analytics";
@@ -230,7 +230,7 @@ export function PlanClient({ locale, client }: { locale: AppLocale; client?: Sna
     <div ref={root} className="flex flex-col gap-6">
       <output className="sr-only">{loading ? t("loading") : ""}</output>
       {storageNotice ? <StorageNotice /> : null}
-      {node}
+      <ReportSnapshot version={bundle?.snapshotVersion ?? null}>{node}</ReportSnapshot>
     </div>
   );
 }

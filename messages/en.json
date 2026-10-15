@@ -83,6 +83,7 @@
     "lead": "Jisr helps you find Bachelor's programmes that are realistic for your profile, estimate the costs and prepare your application.",
     "cta": "Create my profile",
     "ctaNote": "Your answers stay on this device.",
+    "ctaNoteSignedIn": "Your answers are saved to your account.",
     "matchesCta": "See my matches",
     "scholarshipsCta": "Browse scholarships",
     "hero": {
@@ -158,7 +159,9 @@
   },
   "footer": {
     "privacy": "Your profile, saved programs and plan progress stay on this device. Jisr uses no cookies.",
+    "privacySignedIn": "Your profile, saved programs and plan progress are saved to your account, and you can export or delete them. Jisr uses no tracking cookies.",
     "privacyLogs": "As on any website, our host sees the pages you open. To show your results and your plan, your browser also downloads data files whose names include your diploma's country, destination countries and fields: the ones you chose and those of the programs you open or save. Your grades, your nationality and the programs on your saved list are never sent.",
+    "privacyLogsSignedIn": "As on any website, our host sees the pages you open. To show your results and your plan, your browser also downloads data files whose names include your diploma's country, destination countries and fields: the ones you chose and those of the programs you open or save. Your profile, saved programs and plan progress are sent to our server to be saved in your account.",
     "sources": "Data and sources are checked by hand; every fact shows its source.",
     "privacyLink": "Privacy",
     "termsLink": "Terms",
@@ -422,6 +425,7 @@
       "neutral": "Your profile"
     },
     "ctaNote": "Your answers stay on this device.",
+    "ctaNoteSignedIn": "Your answers are saved to your account.",
     "intro": "Four short steps, then a last check. Every question is required unless it says optional.",
     "progress": {
       "step": "Step {current} of {total}: {title}",
@@ -570,6 +574,7 @@
       "draft": "We kept your unfinished answers. You are back where you stopped.",
       "reset": "We could not read your saved profile, so we removed it. You can create it again.",
       "storage": "We cannot save on this device: your answers will be lost when you close this page.",
+      "storageSignedIn": "We cannot keep a copy on this device. Your account keeps what you save.",
       "saveFailed": "We could not save your profile. Please try again."
     },
     "errors": {
@@ -612,6 +617,7 @@
     "review": {
       "saveTitle": "What is saved",
       "saveBody": "Your answers are saved in this browser, on this device only. Nothing is sent to a server. You can delete them with \"Clear my data\" at the bottom of the page.",
+      "saveBodySignedIn": "Your answers are saved to your account, with a copy in this browser. You can delete them with \"Clear my data\" at the bottom of the page, which also clears them from your account.",
       "notGiven": "Not given",
       "noPreference": "No preference",
       "allCountries": "All countries",
@@ -623,7 +629,9 @@
       "whyTitle": "Why we ask",
       "whyPhone": "Why we ask?",
       "deviceTitle": "Stays on your device",
-      "deviceBody": "Your answers are kept in this browser only. Nothing is sent to us. To delete them, use \"Clear my data\" at the bottom of the page."
+      "deviceTitleSignedIn": "Saved to your account",
+      "deviceBody": "Your answers are kept in this browser only. Nothing is sent to us. To delete them, use \"Clear my data\" at the bottom of the page.",
+      "deviceBodySignedIn": "Your answers are saved to your account and can be exported or deleted. To delete them, use \"Clear my data\" at the bottom of the page."
     }
   },
   "costBreakdown": {
@@ -723,10 +731,12 @@
       "none": {
         "title": "Create your profile to see programs that fit",
         "description": "Answer a few questions about your Bac and what you want to study. Your answers stay on this device.",
+        "descriptionSignedIn": "Answer a few questions about your Bac and what you want to study. Your answers are saved to your account.",
         "cta": "Create my profile"
       },
       "reset": {
         "notice": "The profile saved on this device could not be read, so we removed it. You can create it again.",
+        "noticeSignedIn": "The copy of your profile on this device could not be read, so we removed it. Your account keeps what you saved.",
         "dismiss": "Dismiss this message"
       },
       "error": {
@@ -882,6 +892,7 @@
       "cta": {
         "title": "Create your profile to see how this program fits you",
         "description": "Your answers stay on this device.",
+        "descriptionSignedIn": "Your answers are saved to your account.",
         "action": "Create my profile"
       },
       "error": {
@@ -929,13 +940,15 @@
     "title": "My application plan",
     "eyebrow": "Your application",
     "lead": "Tick off each step as you complete it. Your progress stays on this device.",
+    "leadSignedIn": "Tick off each step as you complete it. Your progress is saved to your account.",
     "loading": "Loading your plan",
     "compare": {
       "action": "Compare saved programs",
       "hint": "Save at least 2 programs to compare them."
     },
     "storage": {
-      "notice": "This device cannot keep your saved programs and ticked steps: they will be lost when you close this page."
+      "notice": "This device cannot keep your saved programs and ticked steps: they will be lost when you close this page.",
+      "noticeSignedIn": "This device cannot keep a copy of your saved programs and ticked steps. Your account keeps what you save."
     },
     "empty": {
       "title": "You have not saved any program yet",
@@ -945,6 +958,7 @@
     "noProfile": {
       "title": "Create your profile to get your plan",
       "description": "Your saved programs are kept on this device. We need your profile to work out which steps apply to you.",
+      "descriptionSignedIn": "Your saved programs are kept in your account. We need your profile to work out which steps apply to you.",
       "action": "Create my profile"
     },
     "error": {
@@ -990,6 +1004,7 @@
     },
     "reset": {
       "notice": "The profile saved on this device could not be read, so we removed it. You can create it again.",
+      "noticeSignedIn": "The copy of your profile on this device could not be read, so we removed it. Your account keeps what you saved.",
       "dismiss": "Dismiss this message"
     }
   },
@@ -1013,6 +1028,7 @@
     "noProfile": {
       "title": "Create your profile to compare",
       "description": "Your saved programs are kept on this device. We need your profile to show how each program fits you.",
+      "descriptionSignedIn": "Your saved programs are kept in your account. We need your profile to show how each program fits you.",
       "action": "Create my profile"
     },
     "error": {
@@ -1021,7 +1037,8 @@
       "retry": "Try again"
     },
     "storage": {
-      "notice": "This device cannot keep your saved programs reliably, so they may be lost when you close this page."
+      "notice": "This device cannot keep your saved programs reliably, so they may be lost when you close this page.",
+      "noticeSignedIn": "This device cannot keep a copy of your saved programs. Your account keeps what you save."
     },
     "reset": {
       "notice": "Your saved profile could not be read, so it was cleared.",
@@ -1126,5 +1143,135 @@
       "noProfile": "Create your profile to check your nationality",
       "caveat": "Based on the published nationality rule only. Check the other conditions on the official page."
     }
+  },
+  "signup": {
+    "meta": {
+      "title": "Sign in or create an account",
+      "description": "Create a free Jisr account to keep your profile, saved programmes and plan on all your devices."
+    },
+    "title": "Your Jisr account",
+    "lead": "An account is optional. Without one, everything keeps working and your data stays on this device. With one, your profile, saved programmes and plan follow you on all your devices.",
+    "leadSignedIn": "You are signed in. Your profile, saved programmes and plan are saved to your account and follow you on all your devices. You can export or delete them.",
+    "modes": {
+      "label": "What do you want to do?",
+      "signup": "Create an account",
+      "signin": "I already have an account"
+    },
+    "email": {
+      "label": "Email address",
+      "hint": "We send you a link to sign in. No password."
+    },
+    "consent": {
+      "label": "I agree that Jisr keeps my email address, profile, saved programmes and plan progress to provide my account, as described in the privacy notice.",
+      "privacyLink": "Read the privacy notice"
+    },
+    "age": {
+      "label": "I am 16 or older.",
+      "hint": "Under 16? Keep using Jisr without an account: everything works, and your data stays on this device.",
+      "hintSignedIn": "Under 16? You can use Jisr without an account: everything works."
+    },
+    "required": "required",
+    "submit": "Email me a sign-in link",
+    "sending": "Sending the link…",
+    "or": "or",
+    "google": "Continue with Google",
+    "sent": {
+      "title": "Check your inbox",
+      "body": "We sent a sign-in link to {email}. It works for 15 minutes and only once. Open it on any device.",
+      "again": "Use another address"
+    },
+    "errors": {
+      "summary": "Check the form before continuing.",
+      "consentRequired": "To create an account, tick the box to agree to the privacy notice.",
+      "ageRequired": "To create an account, confirm that you are 16 or older.",
+      "emailInvalid": "Enter an email address such as name@example.com.",
+      "cooldown": "A link was sent to this address a moment ago. Wait a minute before asking for another.",
+      "disabled": "Accounts are not available yet. You can keep using Jisr without one.",
+      "failed": "The link could not be sent. Try again in a moment.",
+      "noAccount": "There is no account with this address yet. To create one, choose Create an account and tick both boxes.",
+      "linkFailed": "Sign-in did not work. The link may have expired or been used already: ask for a new one."
+    },
+    "gate": {
+      "titleNew": "Finish creating your account",
+      "titleChanged": "Our privacy notice has changed",
+      "bodyNew": "Before your account can keep your data, agree to the privacy notice. Until then, Jisr keeps working on this device as before.",
+      "bodyChanged": "We updated the privacy notice since you agreed to it. Read it and agree to the new version to keep using your account. Until then, Jisr keeps working on this device as before.",
+      "submit": "Continue",
+      "sending": "Saving…",
+      "required": "Tick the box to agree to the privacy notice.",
+      "signedOut": "You are signed out. Sign in again to continue.",
+      "failed": "Your answer could not be saved. Try again in a moment."
+    }
+  },
+  "account": {
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "signingOut": "Signing out…",
+    "signOutFailed": "Signing out did not work. Try again.",
+    "checkFailed": "We could not check your sign-in.",
+    "retry": "Try again",
+    "finishSetup": "Finish setting up"
+  },
+  "welcome": {
+    "meta": {
+      "title": "Finishing sign-in",
+      "description": "Completing your sign-in to Jisr."
+    },
+    "title": "Signing you in",
+    "lead": "One moment, we are finishing your sign-in.",
+    "checking": "Checking your sign-in…",
+    "finishing": "Taking you back…",
+    "failed": "We could not check your sign-in. Check your connection and try again.",
+    "retry": "Try again",
+    "confirm": {
+      "title": "Add this device's data to <account>{email}</account>?",
+      "body": "This device has a profile, saved programs or ticked steps from before you signed in. Add them only if this is your account.",
+      "add": "Add to this account",
+      "notNow": "Not now",
+      "notNowHint": "This device's data stays on it, and we will ask again the next time you sign in here."
+    },
+    "import": {
+      "title": "Your account already holds data",
+      "description": "This device also has a profile, saved programs or ticked steps from before you signed in. Choose which your account keeps. The two are not merged.",
+      "account": "Signed in as <account>{email}</account>",
+      "keep": "Keep my account's data",
+      "keepHint": "This device's data stays on it, and we will ask again the next time you sign in here.",
+      "replace": "Replace with this device's data",
+      "replaceHint": "Your account's profile, saved programs and ticked steps are deleted and replaced.",
+      "failed": "We could not bring this device's data into your account. It is still on this device.",
+      "retry": "Try again",
+      "continue": "Continue without it"
+    }
+  },
+  "accountSync": {
+    "conflictTitle": "Your profile was changed on another device",
+    "conflictBody": "Your changes stay here until you choose which version your account keeps.",
+    "useOther": "Use the other device's version",
+    "keepMine": "Keep mine",
+    "failed": "This change could not be saved to your account, so it was undone. Try again.",
+    "savedLimit": "Your account already holds {max} saved programs, so this one was not added.",
+    "planLimit": "Your account cannot keep ticked steps for more programs, so this tick was undone.",
+    "signedOut": "You are signed out, so this change was not saved to your account.",
+    "consentRequired": "Finish setting up your account to save changes. This change was undone.",
+    "consentPending": "Finish setting up your account to use it on this device. Until then, nothing is read from it or saved to it.",
+    "profileReloaded": "Your account's profile had changed, so it was loaded again. Your edit was not saved, so make it again.",
+    "dismiss": "Dismiss",
+    "finishSetup": "Finish setting up"
+  },
+  "clearDataAccount": {
+    "title": "Clear your account's data?",
+    "description": "This removes your profile, your saved programs and your plan progress from your account, on all your devices, and all Jisr data from this device. You stay signed in and your account is not deleted.",
+    "confirm": "Clear my data",
+    "working": "Clearing…",
+    "failed": "We could not clear your account's data. Nothing was removed. Try again.",
+    "signedOut": "You are no longer signed in, so nothing was removed from your account. Confirm again to clear this device only.",
+    "consentRequired": "Finish setting up your account before clearing its data. Nothing was removed.",
+    "finishSetup": "Finish setting up"
+  },
+  "reportOutdated": {
+    "button": "Report outdated info",
+    "reported": "Reported, thank you",
+    "failed": "Your report could not be sent. Try again.",
+    "rateLimited": "You have reached today's limit of reports. Try again tomorrow."
   }
 }

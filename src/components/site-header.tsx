@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 
+import { AccountEntry } from "@/components/auth/account-entry";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { NavLinks } from "@/components/nav-links";
 import { Link } from "@/i18n/navigation";
@@ -38,6 +39,7 @@ export async function SiteHeader({ locale }: { locale: AppLocale }) {
             ]}
           />
         </div>
+        <AccountEntry locale={locale} />
         <LocaleSwitcher
           current={locale}
           label={tSwitcher("label")}

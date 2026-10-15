@@ -88,6 +88,19 @@ describe("buildPlanView", () => {
       expect({ ...former, slug: canonical.slug }).toEqual(canonical);
     });
 
+    it("shows a programme saved under its former and its current slug once, under the first", () => {
+      const view = buildPlanView({
+        profile: E2E_PROFILE,
+        bundle,
+        saved: [{ slug: FORMER }, { slug: E2E_SLUGS.stale }, { slug: E2E_SLUGS.ok }],
+        now: E2E_NOW,
+      });
+      expect(view.entries.map((e) => [e.kind, e.slug])).toEqual([
+        ["program", FORMER],
+        ["program", E2E_SLUGS.stale],
+      ]);
+    });
+
     it("still reports a slug that is neither live nor aliased as missing", () => {
       const view = buildPlanView({
         profile: E2E_PROFILE,

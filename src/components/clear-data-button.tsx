@@ -4,12 +4,25 @@ import { lazy, Suspense, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 
+// Shown instead while this browser is signed in; absent while accounts are off.
+export type SignedInClearCopy = {
+  title: string;
+  description: string;
+  confirm: string;
+  working: string;
+  failed: string;
+  signedOut: string;
+  consentRequired: string;
+  finishSetup: string;
+};
+
 export type ClearDataCopy = {
   trigger: string;
   title: string;
   description: string;
   cancel: string;
   confirm: string;
+  signedIn?: SignedInClearCopy | undefined;
 };
 
 // The dialog (Radix AlertDialog, about 13 KB gzipped) loads on the first click, so no page pays for

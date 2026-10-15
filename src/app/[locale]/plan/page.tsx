@@ -6,7 +6,13 @@ import { getMessages, getTranslations, setRequestLocale } from "next-intl/server
 import { PageBand } from "@/components/page-band";
 import { PLAN_MESSAGE_NAMESPACES } from "@/components/plan/namespaces";
 import { PlanClient } from "@/components/plan/plan-client";
+import {
+  loadReportCopy,
+  ReportOutdatedEntry,
+} from "@/components/report-outdated/report-outdated-entry";
+import { SessionText } from "@/components/session-text";
 import { routing } from "@/i18n/routing";
+import { accountsEnabled } from "@/lib/auth/accounts-enabled";
 import { pickMessages } from "@/lib/i18n/client-messages";
 import { pageMetadata } from "@/lib/seo";
 import { readSiteEnv } from "@/lib/site-env";
@@ -33,16 +39,32 @@ export default async function PlanPage({ params }: Props) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
-  const [messages, t] = await Promise.all([getMessages(), getTranslations("plan")]);
+  const [messages, t, reportCopy] = await Promise.all([
+    getMessages(),
+    getTranslations("plan"),
+    loadReportCopy(locale),
+  ]);
   return (
     <div className="-mt-8 md:-mt-12">
-      <PageBand eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
+      <PageBand
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        lead={
+          accountsEnabled() ? (
+            <SessionText guest={t("lead")} signedIn={t("leadSignedIn")} />
+          ) : (
+            t("lead")
+          )
+        }
+      />
       <div className="pt-8 md:pt-12">
         <NextIntlClientProvider
           locale={locale}
           messages={pickMessages(messages, PLAN_MESSAGE_NAMESPACES)}
         >
-          <PlanClient locale={locale} />
+          <ReportOutdatedEntry copy={reportCopy} locale={locale}>
+            <PlanClient locale={locale} />
+          </ReportOutdatedEntry>
         </NextIntlClientProvider>
       </div>
     </div>

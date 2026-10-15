@@ -123,6 +123,38 @@ describe("with ACCOUNTS_ENABLED on", () => {
     expect(sent).toHaveLength(1);
   });
 
+  it("claims once per send and leaves no verification row behind a refusal", async () => {
+    await signIn("new@example.com");
+    await expect(signIn("new@example.com")).rejects.toMatchObject({
+      body: { code: "EMAIL_COOLDOWN" },
+    });
+    expect(await count("verification")).toBe(1);
+    expect(await count("email_cooldowns")).toBe(1);
+  });
+
+  it("claims the slot for a direct POST to the magic-link route too", async () => {
+    const post = () =>
+      auth.handler(
+        new Request("http://localhost:3000/api/auth/sign-in/magic-link", {
+          method: "POST",
+          headers: { origin: "http://localhost:3000", "content-type": "application/json" },
+          body: JSON.stringify({ email: "direct@example.com" }),
+        }),
+      );
+    expect((await post()).status).toBe(200);
+    const refused = await post();
+    expect(refused.status).toBe(429);
+    expect(await refused.json()).toMatchObject({ code: "EMAIL_COOLDOWN" });
+    expect(sent.map((request) => request.to)).toEqual(["direct@example.com"]);
+    expect(await count("verification")).toBe(1);
+  });
+
+  it("leaves a value that is not an address to the endpoint, without claiming a slot", async () => {
+    await expect(signIn("not-an-address")).rejects.toThrow(/email/i);
+    expect(await count("email_cooldowns")).toBe(0);
+    expect(await count("verification")).toBe(0);
+  });
+
   it("lets another address through while one is cooling down", async () => {
     await signIn("one@example.com");
     await signIn("two@example.com");

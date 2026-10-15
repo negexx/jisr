@@ -2,7 +2,8 @@ import { describe, expect, it } from "vitest";
 
 import { ProfileSchema } from "@/data-schema/profile";
 import { CHECKLIST_STEP_IDS } from "@/domain/types";
-import { type PlanProgress, parsePlanProgress } from "@/lib/plan/progress";
+import { MAX_SAVED_PROGRAMS } from "@/lib/constants";
+import { MAX_PLAN_PROGRAMS, type PlanProgress, parsePlanProgress } from "@/lib/plan/progress";
 import { parseSaved, type SavedList, type SavedProgram } from "@/lib/saved/saved";
 import {
   planProgressToRows,
@@ -114,6 +115,12 @@ describe("saved programme rows", () => {
     ]);
   });
 
+  it("breaks a full tie by code unit, not by the runtime locale", () => {
+    // localeCompare puts "Z-prog" after a lowercase slug; code-unit order puts it first.
+    const rows = ["xx-prog-a", "Z-prog"].map((slug) => stored(sameDayItem(slug)));
+    expect(rowsToSavedList(rows).items.map((item) => item.slug)).toEqual(["Z-prog", "xx-prog-a"]);
+  });
+
   it("returns what the client validator accepts", () => {
     const rows = SAVED.items.map((item) => stored(item));
     expect(parseSaved(rowsToSavedList(rows))).toEqual(SAVED);
@@ -170,6 +177,43 @@ describe("checklist progress rows", () => {
       { userId: USER_ID, programSlug: "xx-prog-a", stepId: "visa", doneAt: DONE_AT },
     ];
     expect(rowsToPlanProgress(rows).done).toEqual({ "xx-prog-a": ["visa"] });
+  });
+
+  it("keeps at most MAX_PLAN_PROGRAMS programmes, the first ones by slug, whatever the row order", () => {
+    const slugs = Array.from(
+      { length: MAX_PLAN_PROGRAMS + 3 },
+      (_, index) => `xx-prog-${String(index).padStart(3, "0")}`,
+    );
+    const rows = [...slugs]
+      .reverse()
+      .map((programSlug) => ({ userId: USER_ID, programSlug, stepId: "visa", doneAt: DONE_AT }));
+    const kept = Object.keys(rowsToPlanProgress(rows).done);
+    expect(kept).toEqual(slugs.slice(0, MAX_PLAN_PROGRAMS));
+    expect(MAX_PLAN_PROGRAMS).toBeGreaterThanOrEqual(MAX_SAVED_PROGRAMS);
+    expect(parsePlanProgress(rowsToPlanProgress(rows))?.done).toEqual(
+      rowsToPlanProgress(rows).done,
+    );
+  });
+
+  it("orders the kept programmes by code unit, not by the runtime locale", () => {
+    // localeCompare puts "Z-prog" after every lowercase slug; code-unit order puts it first.
+    const slugs = [
+      "Z-prog",
+      ...Array.from(
+        { length: MAX_PLAN_PROGRAMS },
+        (_, index) => `a-prog-${String(index).padStart(3, "0")}`,
+      ),
+    ];
+    const rows = slugs.map((programSlug) => ({
+      userId: USER_ID,
+      programSlug,
+      stepId: "visa",
+      doneAt: DONE_AT,
+    }));
+    const kept = Object.keys(rowsToPlanProgress(rows).done);
+    expect(kept).toHaveLength(MAX_PLAN_PROGRAMS);
+    expect(kept[0]).toBe("Z-prog");
+    expect(kept).not.toContain("a-prog-049");
   });
 
   it("maps no rows to the empty record", () => {

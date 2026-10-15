@@ -7,6 +7,7 @@ import { useId } from "react";
 import { DeadlineStatus } from "@/components/deadline-status";
 import { ExternalLink } from "@/components/external-link";
 import { LocalizedDataText } from "@/components/localized-data-text";
+import type { ReportTarget } from "@/components/report-outdated/report-context";
 import { SourceBadge } from "@/components/source-badge";
 import type { FactMeta } from "@/data-schema/resolved";
 import type { FactRef } from "@/domain/types";
@@ -45,15 +46,23 @@ function GuidanceTag() {
 export function StepSources({
   facts,
   covered = false,
+  metaTarget,
 }: {
   facts: readonly SourceMeta[];
   covered?: boolean;
+  // Where a report about a fact with no record of its own (a bare FactMeta) is filed.
+  metaTarget?: ReportTarget;
 }) {
   if (facts.length === 0) return covered ? null : <GuidanceTag />;
   return (
     <div className="flex flex-col gap-2">
       {facts.map((fact) => (
-        <SourceBadge key={factKey(fact)} meta={fact} variant="compact" />
+        <SourceBadge
+          key={factKey(fact)}
+          meta={fact}
+          variant="compact"
+          report={"record" in fact ? true : metaTarget}
+        />
       ))}
     </div>
   );
@@ -204,7 +213,11 @@ export function StepRow({
         {step.id === "application_account" || step.id === "submit" ? <Channel step={step} /> : null}
         {step.id === "submit" ? <DeadlineStatus intake={program.intake} /> : null}
         {step.id === "scholarships" ? <Scholarships program={program} step={step} /> : null}
-        <StepSources facts={facts} covered={deadlineFact !== null} />
+        <StepSources
+          facts={facts}
+          covered={deadlineFact !== null}
+          metaTarget={{ record: `programs/${program.slug}`, path: "documents" }}
+        />
       </div>
     </li>
   );

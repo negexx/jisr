@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { type ReactNode, useEffect, useMemo, useState } from "react";
 import { displayNumber } from "@/components/matches/display-number";
+import { ReportSnapshot } from "@/components/report-outdated/report-context";
 import type { IsoDate } from "@/data-schema/dates";
 import type { AppLocale } from "@/i18n/routing";
 import { todayIso } from "@/lib/clock";
@@ -222,7 +223,7 @@ export function CompareClient({ locale, client }: { locale: AppLocale; client?: 
     <div className="flex flex-col gap-6">
       <output className="sr-only">{loading ? t("loading") : announcement}</output>
       {storageNotice ? <StorageNotice /> : null}
-      {node}
+      <ReportSnapshot version={bundle?.snapshotVersion ?? null}>{node}</ReportSnapshot>
     </div>
   );
 }

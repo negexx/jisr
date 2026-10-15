@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { type ReactNode, useEffect, useMemo, useState } from "react";
-
+import { ReportSnapshot } from "@/components/report-outdated/report-context";
 import type { IsoDate } from "@/data-schema/dates";
 import type { Profile } from "@/data-schema/profile";
 import type { AppLocale } from "@/i18n/routing";
@@ -46,7 +46,17 @@ function Loading() {
   );
 }
 
-function Results({ view, profile, locale }: { view: OkView; profile: Profile; locale: AppLocale }) {
+function Results({
+  view,
+  profile,
+  locale,
+  aliases,
+}: {
+  view: OkView;
+  profile: Profile;
+  locale: AppLocale;
+  aliases: SnapshotBundle["aliases"];
+}) {
   const t = useTranslations("matches.states.allHidden");
   const shown = MATCH_GROUPS.reduce((sum, group) => sum + view.counts[group], 0);
   const budgetProvided = profile.budget !== null;
@@ -73,6 +83,7 @@ function Results({ view, profile, locale }: { view: OkView; profile: Profile; lo
             cards={view.groups[group]}
             budgetProvided={budgetProvided}
             locale={locale}
+            aliases={aliases}
           />
         ),
       )}
@@ -163,7 +174,7 @@ export function MatchesClient({ locale, client }: { locale: AppLocale; client?: 
           {view.kind === "no_programs_for_fields" ? (
             <NoProgramsForFieldsState />
           ) : (
-            <Results view={view} profile={profile} locale={locale} />
+            <Results view={view} profile={profile} locale={locale} aliases={bundle.aliases} />
           )}
         </MatchesLayout>
       ),
@@ -176,7 +187,9 @@ export function MatchesClient({ locale, client }: { locale: AppLocale; client?: 
   return (
     <>
       <output className="sr-only">{loading ? t("loading") : ""}</output>
-      {node}
+      <ReportSnapshot version={state.status === "ready" ? state.bundle.snapshotVersion : null}>
+        {node}
+      </ReportSnapshot>
     </>
   );
 }
