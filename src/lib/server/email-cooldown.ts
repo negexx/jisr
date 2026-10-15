@@ -1,11 +1,13 @@
 import "server-only";
 
-import { sql } from "drizzle-orm";
+import { lt, sql } from "drizzle-orm";
 
 import { db } from "@/db";
-import { type AuthEmailKind, authEmailDays, emailCooldowns } from "@/db/schema";
+import { type AuthEmailKind, authEmailDays, emailCooldowns, pendingSignups } from "@/db/schema";
 import { cooldownKey } from "@/lib/auth/normalize-email";
 import { AUTH_EMAILS_PER_DAY } from "@/lib/constants";
+
+import { sqlState } from "./account-store";
 
 // One auth email of each kind per mailbox per minute, for both magic links and deletion
 // confirmations. Better Auth's own limiter is IP-keyed and we record no IPs, so this and the daily
@@ -58,6 +60,30 @@ export async function claimDailyEmailSlot(
   return claimed.length > 0;
 }
 
+// A cooldown row stops blocking after a minute; it is kept a day so the purge is cheap and
+// rare-ish, then deleted.
+export const COOLDOWN_RETENTION_S = 24 * 60 * 60;
+
+// Retention without a worker (ADR 0003): every granted auth email send deletes the pre-account rows
+// that have expired, so a request that never became an account does not stay forever. Best effort:
+// the send has been claimed, and a failed purge must not stop a real sign-in, so a failure is
+// logged by SQLSTATE only (Drizzle's message carries the statement's parameters).
+async function purgeExpiredAuthRows(now: Date | undefined): Promise<void> {
+  // Cast: a bare parameter beside an interval would be inferred as an interval, not a time.
+  const at = now ? sql`${now.toISOString()}::timestamptz` : sql`now()`;
+  try {
+    await db.delete(pendingSignups).where(lt(pendingSignups.expiresAt, at));
+    await db
+      .delete(emailCooldowns)
+      .where(
+        sql`${emailCooldowns.lastSentAt} < ${at} - make_interval(secs => ${COOLDOWN_RETENTION_S})`,
+      );
+    await db.delete(authEmailDays).where(lt(authEmailDays.day, utcDay(now)));
+  } catch (error) {
+    console.error("[auth] purge of expired pre-account rows failed", { sqlState: sqlState(error) });
+  }
+}
+
 export type AuthEmailClaimOptions = { now?: Date; dailyLimit?: number };
 
 // The one claim every auth email takes. The mailbox cooldown goes first, so a request it refuses
@@ -70,5 +96,7 @@ export async function claimAuthEmailSend(
   options: AuthEmailClaimOptions = {},
 ): Promise<boolean> {
   if (!(await claimEmailSendSlot(kind, email, options.now))) return false;
-  return claimDailyEmailSlot(options.now, options.dailyLimit);
+  if (!(await claimDailyEmailSlot(options.now, options.dailyLimit))) return false;
+  await purgeExpiredAuthRows(options.now);
+  return true;
 }

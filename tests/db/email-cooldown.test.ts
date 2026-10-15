@@ -33,6 +33,7 @@ beforeAll(async () => {
 beforeEach(async () => {
   await pool.query("delete from email_cooldowns");
   await pool.query("delete from auth_email_days");
+  await pool.query("delete from pending_signups");
 });
 
 afterAll(async () => {
@@ -157,5 +158,61 @@ describe("claimAuthEmailSend", () => {
     }
     expect(await claim("ben@example.com", 6)).toBe(true);
     expect(await claim("cleo@example.com", 7)).toBe(false);
+  });
+});
+
+describe("claimAuthEmailSend retention purge", () => {
+  async function seedResidue(): Promise<void> {
+    await pool.query(
+      `insert into pending_signups (email, consent_version, consented_at, age_confirmed, expires_at)
+       values ('expired@example.com', 'v', $1, true, $2), ('fresh@example.com', 'v', $1, true, $3)`,
+      [after(-3600), after(-1), after(600)],
+    );
+    await pool.query(
+      `insert into email_cooldowns (email, kind, last_sent_at)
+       values ('old@example.com', 'magic-link', $1), ('recent@example.com', 'magic-link', $2)`,
+      [after(-(24 * 3600 + 1)), after(-(23 * 3600))],
+    );
+    await pool.query(
+      "insert into auth_email_days (day, sent) values ('2026-10-13', 7), ('2026-10-12', 3)",
+    );
+  }
+
+  async function emails(table: string): Promise<string[]> {
+    const { rows } = await pool.query<{ email: string }>(`select email from ${table} order by 1`);
+    return rows.map((row) => row.email);
+  }
+
+  it("deletes expired pending rows, day-old cooldowns and past counters on a send", async () => {
+    await seedResidue();
+    expect(await claimAuthEmailSend("magic-link", "ana@example.com", { now: T0 })).toBe(true);
+    expect(await emails("pending_signups")).toEqual(["fresh@example.com"]);
+    expect(await emails("email_cooldowns")).toEqual(["ana@example.com", "recent@example.com"]);
+    const { rows } = await pool.query<{ day: string; sent: number }>(
+      "select to_char(day, 'YYYY-MM-DD') as day, sent from auth_email_days order by 1",
+    );
+    expect(rows).toEqual([{ day: "2026-10-14", sent: 1 }]);
+  });
+
+  it("purges on the database clock when no time is injected", async () => {
+    await pool.query(
+      `insert into pending_signups (email, consent_version, consented_at, age_confirmed, expires_at)
+       values ('expired@example.com', 'v', now() - interval '1 hour', true, now() - interval '1 second'),
+              ('fresh@example.com', 'v', now(), true, now() + interval '10 minutes')`,
+    );
+    await pool.query(
+      `insert into email_cooldowns (email, kind, last_sent_at)
+       values ('old@example.com', 'magic-link', now() - interval '25 hours')`,
+    );
+    expect(await claimAuthEmailSend("magic-link", "ana@example.com")).toBe(true);
+    expect(await emails("pending_signups")).toEqual(["fresh@example.com"]);
+    expect(await emails("email_cooldowns")).toEqual(["ana@example.com"]);
+  });
+
+  it("purges nothing on a refused claim", async () => {
+    await claimAuthEmailSend("magic-link", "ana@example.com", { now: after(-10) });
+    await seedResidue();
+    expect(await claimAuthEmailSend("magic-link", "ana@example.com", { now: T0 })).toBe(false);
+    expect(await emails("pending_signups")).toEqual(["expired@example.com", "fresh@example.com"]);
   });
 });
