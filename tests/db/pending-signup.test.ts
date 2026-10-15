@@ -374,4 +374,26 @@ describe("finish-signup gate on the server", () => {
     );
     expect(rows).toEqual([{ consent_version: null }]);
   });
+
+  it("surfaces only the fixed error and logs no token-like content when the session lookup fails", async () => {
+    const TOKEN = "tok_SECRET_session_0123456789";
+    vi.spyOn(auth.api, "getSession").mockRejectedValue(
+      new Error(`Failed query: select * from "session" where token = $1
+params: ${TOKEN}`),
+    );
+    const spies = (["log", "info", "warn", "error", "debug"] as const).map((method) =>
+      vi.spyOn(console, method).mockImplementation(() => undefined),
+    );
+    const failure = await acceptCurrentConsent().then(
+      () => null,
+      (error: unknown) => error,
+    );
+    expect(failure).toBeInstanceOf(Error);
+    const output = `${(failure as Error).message}${(failure as Error).stack ?? ""}${JSON.stringify(
+      spies.flatMap((spy) => spy.mock.calls),
+    )}`;
+    expect(output).not.toContain(TOKEN);
+    expect(output).not.toContain("session");
+    expect(output).toContain("acceptCurrentConsent");
+  });
 });

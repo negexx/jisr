@@ -59,8 +59,9 @@ async function holdsData(tx: Transaction, userId: string): Promise<boolean> {
   return ticked.length > 0;
 }
 
-// Returns false when "auto" finds a profile written since holdsData looked: saveProfile takes no
-// user lock, so its first insert is the one write that can land in between.
+// Returns false when "auto" finds a profile written since holdsData looked. saveProfile's first
+// insert takes the user lock too, so nothing can land in between under that lock: the refusal is
+// defensive, for a profile write that ever skips the lock.
 async function writeProfile(
   tx: Transaction,
   userId: string,

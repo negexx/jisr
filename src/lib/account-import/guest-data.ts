@@ -34,8 +34,8 @@ function readJson(storage: StorageLike, key: string): unknown {
 
 // The guest parsers accept a little more than the account's input bounds (a slug or field of any
 // length, a profile of any size). One such entry would make the server refuse the whole import,
-// every time, so it is left out here instead: the account could never hold it, and the rest of the
-// device's data is imported.
+// every time, so it is left out here instead (ruling P15): the account could never hold it, and the
+// rest of the device's data is imported.
 function fitsAccount(item: SavedProgram): boolean {
   return (
     item.slug.length <= ACCOUNT_SLUG_MAX_LENGTH && item.field.length <= ACCOUNT_FIELD_MAX_LENGTH
