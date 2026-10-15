@@ -485,6 +485,22 @@ describe("requesting the email", () => {
     expect((await mails()).length).toBe(sent);
   });
 
+  it("writes a deletion token that expires one hour after it is issued", async () => {
+    const erin = await signUp("erin");
+    const before = Date.now();
+    expect((await requestDeletion(erin)).status).toBe(200);
+    const after = Date.now();
+    const { rows } = await pool.query<{ ms: string }>(
+      `select extract(epoch from expires_at) * 1000 as ms from verification
+       where identifier like 'delete-account-%' and value = $1`,
+      [erin.id],
+    );
+    expect(rows).toHaveLength(1);
+    const expiresMs = Number(rows[0]?.ms);
+    expect(expiresMs).toBeGreaterThanOrEqual(before + 3_600_000 - 1000);
+    expect(expiresMs).toBeLessThanOrEqual(after + 3_600_000 + 1000);
+  });
+
   it("falls back to French for a callback URL without a known locale", async () => {
     const dan = await signUp("dan");
     expect((await post(dan, "/delete-user", { callbackURL: "/" })).status).toBe(200);

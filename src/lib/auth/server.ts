@@ -26,6 +26,7 @@ import { onAuthApiError, scrubbedAuthLog } from "./log";
 import { readPendingSignup } from "./pending-signup";
 
 export const MAGIC_LINK_EXPIRY_S = 15 * 60;
+export const DELETE_TOKEN_EXPIRY_S = 60 * 60;
 
 const OAUTH_CALLBACK_PATH = "/callback/:id";
 const MAGIC_LINK_VERIFY_PATH = "/magic-link/verify";
@@ -196,6 +197,9 @@ function createAuth(secret: string, baseURL: string) {
       },
       deleteUser: {
         enabled: true,
+        // The emailed confirmation link is a deletion credential: one hour, not Better Auth's 24 h
+        // default, keeps a mailbox read later (or by someone else) from deleting the account.
+        deleteTokenExpiresIn: DELETE_TOKEN_EXPIRY_S,
         // Google-only users have no password, so deletion is always confirmed by email: with a
         // sender configured, POST /delete-user without a token only sends, never deletes, whatever
         // the session's age. Better Auth runs this through runInBackgroundOrAwait, which swallows
