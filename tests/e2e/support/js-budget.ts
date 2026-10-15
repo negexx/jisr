@@ -1,3 +1,10 @@
+// 2026-10-15 (accounts phase 2, PR 3, ADR 0008): /plan until idle measured 254.136 KB at 6d27f6f3 (PR 2
+// baseline 253.946). The +0.19 KB comes from Turbopack re-partitioning shared chunks once the
+// /[locale]/account and /[locale]/account/delete routes exist (an extra ~372 B stub chunk, three shared
+// chunks regrouped); no account code is in the chunks /plan loads (perf.spec's guest account-chunk guard
+// passes). Trims tried had no effect except removing the sync-unavailable notice, which was rejected.
+// Owner decision 2026-10-15: raise only the four /plan until-idle rows (fr and ar, phone and desktop)
+// 254 -> 255. No other row moves.
 // 2026-10-15 (accounts phase 2, PR 2, ADR 0008): the account-aware store facade (jisr.account.* cache and
 // session hint, c792413a), the SourceBadge report slot and provider (9f05db1b, about +0.8 KB on every
 // route) and the lazy account-menu loader grew the shared client chunks by 1.2 to 3 KB per route; no
@@ -98,8 +105,8 @@ export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/ar/profile": { initial: 191, untilIdle: 226 },
   "/fr/matches": { initial: 198, untilIdle: 226 },
   "/ar/matches": { initial: 198, untilIdle: 226 },
-  "/fr/plan": { initial: 191, untilIdle: 254 },
-  "/ar/plan": { initial: 191, untilIdle: 254 },
+  "/fr/plan": { initial: 191, untilIdle: 255 },
+  "/ar/plan": { initial: 191, untilIdle: 255 },
   "/fr/compare": { initial: 192, untilIdle: 278 },
   "/ar/compare": { initial: 192, untilIdle: 278 },
   "/fr/scholarships": { initial: 174, untilIdle: 231 },
