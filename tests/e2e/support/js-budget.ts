@@ -1,3 +1,16 @@
+// 2026-10-15 (accounts phase 2, PR 2, ADR 0008): the account-aware store facade (jisr.account.* cache and
+// session hint, c792413a), the SourceBadge report slot and provider (9f05db1b, about +0.8 KB on every
+// route) and the lazy account-menu loader grew the shared client chunks by 1.2 to 3 KB per route; no
+// guest-forbidden chunk loads (the auth client, sync, report-button and menu chunks are not fetched for
+// a guest; the same 9 _rsc prefetches). On /compare, Turbopack also stopped sharing the 13.7 KB
+// compare/plan chunk (a partition flip at 6220e517), so prefetching /plan from /compare now costs 21.9 KB
+// instead of 6.9 KB. Measured (KB, fixture build, phone and desktop, fr and ar; initial, until idle):
+// home 173.4, 224.1; profile 190.0, 225.3; matches 197.3, 225.3; program 187.0, 249.2; plan 190.3, 253.9;
+// compare 191.9, 277.0; scholarships 173.8, 230.7. Owner decision 2026-10-15: raise the affected rows to
+// the measurement plus 0.1 KB, rounded up: home 172 -> 174 / 220 -> 225, profile 187 -> 191 / 220 -> 226,
+// matches 195 -> 198 / 220 -> 226, program 185 -> 188 / 244 -> 250, plan 189 -> 191 / 247 -> 254,
+// compare 190 -> 192 / 255 -> 278, scholarships until idle 225 -> 231 (initial 174 unchanged), in /fr
+// and /ar. Todo 27 (PR 3) looks at trimming; not prefetching /plan from /compare would recover about 15 KB.
 // 2026-10-14 (accounts phase 2, PR 1, ADR 0008): mounting the Better Auth route (/api/auth) grew Turbopack's
 // shared client runtime chunk by about 0.45 KB gzip (bisected to commit 6c2c545d), and the slug-alias
 // resolution adds about 0.1 KB on plan and compare. Measured (KB, fixture build, phone and desktop, fr and
@@ -79,18 +92,18 @@ export type JsBudget = { initial: number; untilIdle: number };
 // cross-check. Owner decision: raise only the affected rows -- home initial 170 -> 172 and program
 // until-idle 240 -> 244, in /fr and /ar by symmetry. Nothing else moved.
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
-  "/fr": { initial: 172, untilIdle: 220 },
-  "/ar": { initial: 172, untilIdle: 220 },
-  "/fr/profile": { initial: 187, untilIdle: 220 },
-  "/ar/profile": { initial: 187, untilIdle: 220 },
-  "/fr/matches": { initial: 195, untilIdle: 220 },
-  "/ar/matches": { initial: 195, untilIdle: 220 },
-  "/fr/plan": { initial: 189, untilIdle: 247 },
-  "/ar/plan": { initial: 189, untilIdle: 247 },
-  "/fr/compare": { initial: 190, untilIdle: 255 },
-  "/ar/compare": { initial: 190, untilIdle: 255 },
-  "/fr/scholarships": { initial: 174, untilIdle: 225 },
-  "/ar/scholarships": { initial: 174, untilIdle: 225 },
-  "/fr/programs/xx-test-prog-ok": { initial: 185, untilIdle: 244 },
-  "/ar/programs/xx-test-prog-ok": { initial: 185, untilIdle: 244 },
+  "/fr": { initial: 174, untilIdle: 225 },
+  "/ar": { initial: 174, untilIdle: 225 },
+  "/fr/profile": { initial: 191, untilIdle: 226 },
+  "/ar/profile": { initial: 191, untilIdle: 226 },
+  "/fr/matches": { initial: 198, untilIdle: 226 },
+  "/ar/matches": { initial: 198, untilIdle: 226 },
+  "/fr/plan": { initial: 191, untilIdle: 254 },
+  "/ar/plan": { initial: 191, untilIdle: 254 },
+  "/fr/compare": { initial: 192, untilIdle: 278 },
+  "/ar/compare": { initial: 192, untilIdle: 278 },
+  "/fr/scholarships": { initial: 174, untilIdle: 231 },
+  "/ar/scholarships": { initial: 174, untilIdle: 231 },
+  "/fr/programs/xx-test-prog-ok": { initial: 188, untilIdle: 250 },
+  "/ar/programs/xx-test-prog-ok": { initial: 188, untilIdle: 250 },
 };
