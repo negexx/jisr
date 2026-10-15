@@ -78,12 +78,12 @@ export function AccountSyncNotices({ labels }: { labels: AccountSyncLabels }) {
           </section>
         ) : null}
         {notice !== null ? (
-          <div className="flex items-start justify-between gap-3">
+          <div className="flex flex-wrap items-start justify-between gap-3">
             {/* Keyed by the notice, so the same message raised twice is announced twice. */}
-            <p key={notice.id} role="alert" className="text-base">
+            <p key={notice.id} role="alert" className="min-w-0 flex-1 basis-56 text-base">
               {labels[notice.kind]}
             </p>
-            <div className="flex shrink-0 flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               {NEEDS_SETUP.has(notice.kind) ? (
                 <FinishSetupButton
                   label={labels.finishSetup}

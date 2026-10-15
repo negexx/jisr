@@ -1,13 +1,18 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { hasLocale, useLocale } from "next-intl";
+import { useLocale } from "next-intl";
 import type { ComponentProps } from "react";
 
 import { Button } from "@/components/ui/button";
 import { usePathname } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
+import { type AppLocale, routing } from "@/i18n/routing";
 import { finishSetupPath, isAuthPage } from "@/lib/auth/callback-urls";
+
+// Not next-intl's hasLocale: importing it here grows a chunk every guest page loads.
+function appLocale(value: string): AppLocale {
+  return routing.locales.find((locale) => locale === value) ?? routing.defaultLocale;
+}
 
 type Props = Pick<ComponentProps<typeof Button>, "className" | "size" | "variant"> & {
   label: string;
@@ -21,8 +26,7 @@ export function FinishSetupButton({ label, onNavigate, ...button }: Props) {
   // The landing URL already carries the locale, so this is Next's router, not the locale-aware one.
   const router = useRouter();
   const pathname = usePathname();
-  const current = useLocale();
-  const locale = hasLocale(routing.locales, current) ? current : routing.defaultLocale;
+  const locale = appLocale(useLocale());
   if (isAuthPage(pathname)) return null;
   return (
     <Button
