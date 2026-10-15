@@ -187,7 +187,7 @@ This repo is indexed in the `codebase-memory-mcp` knowledge graph as project `ji
 - Don't add countries/fields beyond Release 1 by writing code — add data; propose a plan first if the model can't express it
 - Don't set tracking or analytics cookies (the only cookie is the strictly necessary HttpOnly session cookie, for signed-in users), record IPs or send profile data to analytics or Sentry; Sentry stays scrubbed with tracing off
 - Don't accept ads, affiliate-first links, payments, paid hosting/editing or paid sponsorship (Vercel Hobby is non-commercial). Donations are allowed per Vercel's fair-use page (ADR 0011, verified 2026-10-08; refines ADR 0004's caution); re-read it before a donation link goes live
-- Don't launch accounts before the CNDP declaration and en/fr/ar privacy notice (ADR 0004); `ACCOUNTS_ENABLED` stays empty in code, CI, `.env.example` and docs until the owner flips it (ADR 0013), and no agent marks the CNDP filed
+- Don't launch accounts before the CNDP declaration and en/fr/ar privacy notice (ADR 0004); `ACCOUNTS_ENABLED` stays empty in code, CI, `.env.example` and docs until the owner flips it (ADR 0013; one exception, ruling Q5: the `webServer.env` of `playwright.accounts.config.ts` sets it for its own test server only), and no agent marks the CNDP filed
 - Don't hand-edit generated Better Auth tables, applied migrations, or built snapshots
 - Don't log profile data (grades, nationality) or session tokens
 
