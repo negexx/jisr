@@ -7,7 +7,8 @@ const TIMEOUT_MS = 60_000;
 type SentRequest = { kind: string; to: string; metadata?: Record<string, unknown> };
 const sent: SentRequest[] = [];
 
-vi.mock("@/lib/server/email", () => ({
+vi.mock("@/lib/server/email", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/lib/server/email")>()),
   sendAuthEmail: async (request: SentRequest) => {
     sent.push({ kind: request.kind, to: request.to, metadata: request.metadata });
   },

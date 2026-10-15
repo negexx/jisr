@@ -9,7 +9,8 @@ import { magicLink } from "better-auth/plugins";
 import { db } from "@/db";
 import * as schema from "@/db/schema";
 import { EMAIL_MAX_LENGTH } from "@/db/schema/app";
-import { type AuthEmailRequest, sendAuthEmail } from "@/lib/server/email";
+import { eraseAccountResidue } from "@/lib/server/account-erasure";
+import { type AuthEmailRequest, resolveAuthEmailLocale, sendAuthEmail } from "@/lib/server/email";
 import { claimEmailSendSlot } from "@/lib/server/email-cooldown";
 import { accountsEnabled } from "./accounts-enabled";
 import { ACCOUNTS_DISABLED_CODE, accountsGate } from "./accounts-gate";
@@ -18,6 +19,7 @@ import {
   confirmationFromOAuthState,
   evaluateAdmission,
 } from "./admission";
+import { accountDeleteConfirmPath } from "./callback-urls";
 import { CURRENT_CONSENT_VERSION } from "./consent";
 import { readPendingSignup } from "./pending-signup";
 
@@ -26,6 +28,7 @@ export const MAGIC_LINK_EXPIRY_S = 15 * 60;
 const OAUTH_CALLBACK_PATH = "/callback/:id";
 const MAGIC_LINK_VERIFY_PATH = "/magic-link/verify";
 const MAGIC_LINK_SIGN_IN_PATH = "/sign-in/magic-link";
+const DELETE_USER_CALLBACK_PATH = "/delete-user/callback";
 
 // getOAuthState throws outside a Better Auth request scope; that is simply "no evidence".
 async function readOAuthState(): Promise<unknown> {
@@ -92,12 +95,22 @@ async function sendAuthEmailWhileEnabled(request: AuthEmailRequest): Promise<voi
   await sendAuthEmail(request);
 }
 
+function notFoundError(): APIError {
+  return new APIError("NOT_FOUND", { message: "Not found.", code: "NOT_FOUND" });
+}
+
 // Exactly one claim per magic-link send, taken before the plugin writes its verification row, so
 // a refused request leaves no unused token behind. Hooks run for the HTTP route and for
 // auth.api.signInMagicLink alike (both dispatch through the hook pipeline), which covers the
 // signup Server Action and a direct POST. The body is not validated yet at this point: a value
 // that is not a plausible address is left to the endpoint's own validation, unclaimed.
-const claimMagicLinkSlot = createAuthMiddleware(async (ctx) => {
+//
+// Better Auth's GET /delete-user/callback deletes the signed-in account on a plain GET (ruling Q2:
+// a GET must never delete), so it is closed; deletion is confirmed only by POST /delete-user with
+// the token, from the confirm page. That POST reaches the same callback logic as a plain function
+// call, which skips hooks, so closing the route here does not close it.
+const beforeAuthEndpoint = createAuthMiddleware(async (ctx) => {
+  if (ctx.path === DELETE_USER_CALLBACK_PATH) throw notFoundError();
   if (ctx.path !== MAGIC_LINK_SIGN_IN_PATH) return;
   if (!accountsEnabled()) throw accountsDisabledError();
   const email: unknown = ctx.body?.email;
@@ -130,6 +143,13 @@ function isAbsoluteHttpUrl(value: string): boolean {
   }
 }
 
+// The address Better Auth puts in front of every token URL it builds, so the emailed link is on the
+// same origin as the sign-in links. A base URL that carries a path keeps only its origin here.
+function deleteConfirmUrl(baseURL: string, url: string, token: string) {
+  const locale = resolveAuthEmailLocale(url);
+  return { locale, url: new URL(accountDeleteConfirmPath(locale, token), baseURL).toString() };
+}
+
 function createAuth(secret: string, baseURL: string) {
   return betterAuth({
     appName: "Jisr",
@@ -139,7 +159,7 @@ function createAuth(secret: string, baseURL: string) {
     // Project rule: never record IPs. Better Auth then also skips its IP-keyed rate limiter, so
     // throttling of auth emails must live in our own code (the email_cooldowns slot).
     advanced: { ipAddress: { disableIpTracking: true } },
-    hooks: { before: claimMagicLinkSlot },
+    hooks: { before: beforeAuthEndpoint },
     // Encrypts the stored provider access and refresh tokens with the auth secret.
     account: { encryptOAuthTokens: true },
     socialProviders: {
@@ -159,13 +179,39 @@ function createAuth(secret: string, baseURL: string) {
       },
       deleteUser: {
         enabled: true,
-        sendDeleteAccountVerification: async ({ user, url, token }) => {
+        // Google-only users have no password, so deletion is always confirmed by email: with a
+        // sender configured, POST /delete-user without a token only sends, never deletes, whatever
+        // the session's age. Better Auth runs this through runInBackgroundOrAwait, which swallows
+        // a throw: a refused cooldown or a failed send still answers "Verification email sent".
+        sendDeleteAccountVerification: async ({ user, url: callbackUrl, token }) => {
           await claimSendSlot("delete-account", user.email);
-          await sendAuthEmailWhileEnabled({ kind: "delete-account", to: user.email, url, token });
+          const { locale, url } = deleteConfirmUrl(baseURL, callbackUrl, token);
+          await sendAuthEmailWhileEnabled({
+            kind: "delete-account",
+            to: user.email,
+            url,
+            token,
+            metadata: { locale },
+          });
+        },
+        // Better Auth deletes the user, session and account rows, and the app tables cascade from
+        // user.id; everything else that names the student is erased here. Before, so nothing is
+        // left if the delete itself fails after it; after too, for a sign-in link or cooldown
+        // written for the address while the delete ran.
+        beforeDelete: async (user) => {
+          if (!accountsEnabled()) throw accountsDisabledError();
+          await eraseAccountResidue(db, user);
+        },
+        afterDelete: async (user) => {
+          await eraseAccountResidue(db, user);
         },
       },
     },
     databaseHooks: {
+      // Ruling Q3: nothing reads the device or address of a session, so neither is stored.
+      session: {
+        create: { before: async () => ({ data: { userAgent: null, ipAddress: null } }) },
+      },
       user: {
         create: {
           before: async (user, ctx) => {

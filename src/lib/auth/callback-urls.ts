@@ -75,6 +75,27 @@ export function landingReturnPath(raw: string | null | undefined, locale: Locale
     : safeReturnPath(raw, locale);
 }
 
+export const ACCOUNT_DELETE_PATH = "/account/delete";
+export const DELETE_TOKEN_PARAM = "token";
+
+/**
+ * The page that confirms a deletion. Sent as the deletion request's callbackURL, which is how the
+ * request names its locale: Better Auth hands it back to the email sender inside its own URL.
+ */
+export function accountDeletePath(locale: Locale): string {
+  return `/${locale}${ACCOUNT_DELETE_PATH}`;
+}
+
+/** The body of the deletion request: Better Auth echoes its callbackURL to the email sender. */
+export function accountDeleteRequest(locale: Locale): { callbackURL: string } {
+  return { callbackURL: accountDeletePath(locale) };
+}
+
+/** The emailed link: the confirm page carrying the token, never Better Auth's GET callback. */
+export function accountDeleteConfirmPath(locale: Locale, token: string): string {
+  return `${accountDeletePath(locale)}?${new URLSearchParams({ [DELETE_TOKEN_PARAM]: token })}`;
+}
+
 const ERROR_CODE = /^[A-Za-z0-9_-]{1,64}$/;
 export const UNKNOWN_ERROR_CODE = "UNKNOWN";
 

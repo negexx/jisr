@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  accountDeleteConfirmPath,
+  accountDeletePath,
+  accountDeleteRequest,
   authCallbackUrls,
   finishSetupPath,
   landingReturnPath,
@@ -120,5 +123,20 @@ describe("finishSetupPath", () => {
     ["fr", "/welcome", "/fr/welcome?return=%2Ffr"],
   ] as const)("sends %s %s through the landing, returning to %s", (locale, pathname, expected) => {
     expect(finishSetupPath(locale, pathname)).toBe(expected);
+  });
+});
+
+describe("account deletion paths", () => {
+  it("names the confirm page under the locale", () => {
+    expect(accountDeletePath("ar")).toBe("/ar/account/delete");
+  });
+
+  it("sends the confirm page as the deletion request's callbackURL", () => {
+    expect(accountDeleteRequest("en")).toEqual({ callbackURL: "/en/account/delete" });
+  });
+
+  it("carries the token as an encoded query parameter", () => {
+    expect(accountDeleteConfirmPath("fr", "abc123")).toBe("/fr/account/delete?token=abc123");
+    expect(accountDeleteConfirmPath("en", "a&b=c")).toBe("/en/account/delete?token=a%26b%3Dc");
   });
 });

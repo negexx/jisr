@@ -1243,6 +1243,30 @@
       "continue": "Continue without it"
     }
   },
+  "accountDelete": {
+    "meta": {
+      "title": "Delete your account",
+      "description": "Confirm the deletion of your Jisr account."
+    },
+    "title": "Delete your account",
+    "lead": "This confirms the deletion you asked for by email.",
+    "reading": "Reading the link…",
+    "warning": "Your account and everything it holds on Jisr (profile, saved programs, ticked steps, reports) will be deleted for good, and this device's copy of your data will be removed too. This cannot be undone.",
+    "confirm": "Delete my account",
+    "working": "Deleting…",
+    "deleted": {
+      "title": "Your account has been deleted",
+      "body": "Your account and its data are gone from Jisr and from this device. You can keep using Jisr without an account.",
+      "home": "Back to the home page"
+    },
+    "errors": {
+      "invalidToken": "This link is not valid or has expired. Ask for a new deletion email from your account page.",
+      "signedOut": "Sign in to the account you want to delete, then open the link in the email again.",
+      "signIn": "Sign in",
+      "unavailable": "Accounts are not available at the moment. Nothing was deleted.",
+      "failed": "We could not confirm the deletion. Check your connection and try again."
+    }
+  },
   "accountSync": {
     "conflictTitle": "Your profile was changed on another device",
     "conflictBody": "Your changes stay here until you choose which version your account keeps.",
