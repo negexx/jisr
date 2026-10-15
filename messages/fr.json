@@ -1210,7 +1210,8 @@
     "signOutFailed": "La déconnexion n'a pas abouti. Réessayez.",
     "checkFailed": "Impossible de vérifier votre connexion.",
     "retry": "Réessayer",
-    "finishSetup": "Finaliser mon compte"
+    "finishSetup": "Finaliser mon compte",
+    "account": "Mon compte"
   },
   "welcome": {
     "meta": {
@@ -1265,6 +1266,56 @@
       "signIn": "Se connecter",
       "unavailable": "Les comptes ne sont pas disponibles pour le moment. Rien n'a été supprimé.",
       "failed": "Nous n'avons pas pu confirmer la suppression. Vérifiez votre connexion et réessayez."
+    }
+  },
+  "accountPage": {
+    "meta": {
+      "title": "Votre compte",
+      "description": "Téléchargez vos données ou supprimez votre compte Jisr."
+    },
+    "title": "Votre compte",
+    "lead": "Téléchargez une copie de vos données ou supprimez votre compte Jisr.",
+    "checking": "Vérification de votre connexion…",
+    "signedIn": "Connecté en tant que <value>{email}</value>",
+    "signedOut": {
+      "body": "Connectez-vous pour télécharger vos données ou supprimer votre compte.",
+      "signIn": "Se connecter"
+    },
+    "unavailable": {
+      "body": "Impossible de vérifier votre connexion pour le moment.",
+      "retry": "Réessayer"
+    },
+    "export": {
+      "title": "Télécharger mes données",
+      "body": "Un fichier JSON avec votre adresse e-mail, votre profil, vos programmes enregistrés, vos étapes cochées, vos signalements et votre consentement.",
+      "button": "Télécharger mes données",
+      "working": "Préparation…",
+      "done": "Le téléchargement a démarré.",
+      "errors": {
+        "failed": "Le téléchargement n'a pas abouti. Vérifiez votre connexion et réessayez.",
+        "unavailable": "Les comptes ne sont pas disponibles pour le moment. Réessayez plus tard."
+      }
+    },
+    "consent": {
+      "title": "Votre consentement",
+      "record": "Vous avez accepté la politique de confidentialité, version <value>{version}</value>, le <value>{date}</value>.",
+      "recordNoDate": "Vous avez accepté la politique de confidentialité, version <value>{version}</value>.",
+      "none": "Aucun consentement n'est enregistré pour ce compte."
+    },
+    "delete": {
+      "title": "Supprimer mon compte",
+      "body": "Votre compte et tout ce qu'il contient sur Jisr (profil, programmes enregistrés, étapes cochées, signalements) seront supprimés définitivement. Pour éviter une suppression par erreur, nous envoyons d'abord un lien de confirmation à <value>{email}</value>.",
+      "button": "Supprimer mon compte",
+      "working": "Envoi…",
+      "sent": {
+        "title": "Consultez votre boîte e-mail",
+        "body": "Nous venons de demander l'envoi d'un lien de confirmation à <value>{email}</value>. Il peut mettre une minute à arriver. Si rien n'arrive, essayez à nouveau après une minute. Rien n'est supprimé tant que vous n'avez pas ouvert le lien et confirmé.",
+        "again": "Renvoyer le lien"
+      },
+      "errors": {
+        "failed": "La demande n'a pas abouti. Rien n'a été supprimé. Vérifiez votre connexion et réessayez.",
+        "unavailable": "Les comptes ne sont pas disponibles pour le moment. Rien n'a été supprimé."
+      }
     }
   },
   "accountSync": {

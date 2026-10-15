@@ -1,12 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { usePathname } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
-import { returnPathFor, signInPath } from "@/lib/auth/callback-urls";
+import { ACCOUNT_PATH, accountPath, returnPathFor, signInPath } from "@/lib/auth/callback-urls";
 import { hasCurrentConsent } from "@/lib/auth/consent";
 import { forgetSession, lookupSession } from "@/lib/auth/session-client";
 import { clearAccountLocalState, useSessionHint } from "@/lib/auth/session-hint";
@@ -15,6 +16,7 @@ import { FinishSetupButton } from "./finish-setup-button";
 
 export type AccountMenuLabels = {
   signIn: string;
+  account: string;
   signOut: string;
   signingOut: string;
   signOutFailed: string;
@@ -83,6 +85,16 @@ export function AccountMenu({ locale, labels }: { locale: AppLocale; labels: Acc
     <div className="ms-auto flex items-center gap-2 lg:ms-0">
       {signedIn && check === "consent" ? (
         <FinishSetupButton label={labels.finishSetup} size="sm" />
+      ) : null}
+      {signedIn ? (
+        <Link
+          href={accountPath(locale)}
+          prefetch={false}
+          aria-current={pathname === ACCOUNT_PATH ? "page" : undefined}
+          className={buttonVariants({ size: "sm", variant: "ghost" })}
+        >
+          {labels.account}
+        </Link>
       ) : null}
       {signedIn ? (
         <Button

@@ -7,3 +7,6 @@ export const WELCOME_MESSAGE_NAMESPACES = ["welcome", ...SIGN_IN_MESSAGE_NAMESPA
 
 // The deletion confirm page (todo 19) reads only its own messages.
 export const ACCOUNT_DELETE_MESSAGE_NAMESPACES = ["accountDelete"] as const;
+
+// The account page (todo 20) reads only its own messages.
+export const ACCOUNT_PAGE_MESSAGE_NAMESPACES = ["accountPage"] as const;

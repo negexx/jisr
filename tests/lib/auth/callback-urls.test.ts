@@ -4,6 +4,7 @@ import {
   accountDeleteConfirmPath,
   accountDeletePath,
   accountDeleteRequest,
+  accountPath,
   authCallbackUrls,
   finishSetupPath,
   landingReturnPath,
@@ -123,6 +124,13 @@ describe("finishSetupPath", () => {
     ["fr", "/welcome", "/fr/welcome?return=%2Ffr"],
   ] as const)("sends %s %s through the landing, returning to %s", (locale, pathname, expected) => {
     expect(finishSetupPath(locale, pathname)).toBe(expected);
+  });
+});
+
+describe("account page path", () => {
+  it("names the page under the locale and survives as a sign-in return", () => {
+    expect(accountPath("ar")).toBe("/ar/account");
+    expect(signInPath("ar", accountPath("ar"))).toBe("/ar/sign-in?return=%2Far%2Faccount");
   });
 });
 

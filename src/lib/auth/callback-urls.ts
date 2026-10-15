@@ -75,8 +75,14 @@ export function landingReturnPath(raw: string | null | undefined, locale: Locale
     : safeReturnPath(raw, locale);
 }
 
+export const ACCOUNT_PATH = "/account";
 export const ACCOUNT_DELETE_PATH = "/account/delete";
 export const DELETE_TOKEN_PARAM = "token";
+
+/** The account page, also the `return` a signed-out visitor to it signs in with. */
+export function accountPath(locale: Locale): string {
+  return `/${locale}${ACCOUNT_PATH}`;
+}
 
 /**
  * The page that confirms a deletion. Sent as the deletion request's callbackURL, which is how the

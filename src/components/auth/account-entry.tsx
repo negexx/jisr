@@ -15,6 +15,7 @@ export async function AccountEntry({ locale }: { locale: AppLocale }) {
       locale={locale}
       labels={{
         signIn: t("signIn"),
+        account: t("account"),
         signOut: t("signOut"),
         signingOut: t("signingOut"),
         signOutFailed: t("signOutFailed"),

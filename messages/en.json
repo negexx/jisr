@@ -1210,7 +1210,8 @@
     "signOutFailed": "Signing out did not work. Try again.",
     "checkFailed": "We could not check your sign-in.",
     "retry": "Try again",
-    "finishSetup": "Finish setting up"
+    "finishSetup": "Finish setting up",
+    "account": "My account"
   },
   "welcome": {
     "meta": {
@@ -1265,6 +1266,56 @@
       "signIn": "Sign in",
       "unavailable": "Accounts are not available at the moment. Nothing was deleted.",
       "failed": "We could not confirm the deletion. Check your connection and try again."
+    }
+  },
+  "accountPage": {
+    "meta": {
+      "title": "Your account",
+      "description": "Download your data or delete your Jisr account."
+    },
+    "title": "Your account",
+    "lead": "Download a copy of your data or delete your Jisr account.",
+    "checking": "Checking your sign-in…",
+    "signedIn": "Signed in as <value>{email}</value>",
+    "signedOut": {
+      "body": "Sign in to download your data or delete your account.",
+      "signIn": "Sign in"
+    },
+    "unavailable": {
+      "body": "We could not check your sign-in right now.",
+      "retry": "Try again"
+    },
+    "export": {
+      "title": "Download my data",
+      "body": "A JSON file with your email address, profile, saved programmes, ticked steps, reports and consent record.",
+      "button": "Download my data",
+      "working": "Preparing…",
+      "done": "Your download has started.",
+      "errors": {
+        "failed": "The download did not work. Check your connection and try again.",
+        "unavailable": "Accounts are not available right now. Try again later."
+      }
+    },
+    "consent": {
+      "title": "Your consent",
+      "record": "You accepted the privacy notice, version <value>{version}</value>, on <value>{date}</value>.",
+      "recordNoDate": "You accepted the privacy notice, version <value>{version}</value>.",
+      "none": "No consent is recorded for this account."
+    },
+    "delete": {
+      "title": "Delete my account",
+      "body": "Your account and everything it holds on Jisr (profile, saved programmes, ticked steps, reports) will be deleted for good. To prevent a deletion by mistake, we first send a confirmation link to <value>{email}</value>.",
+      "button": "Delete my account",
+      "working": "Sending…",
+      "sent": {
+        "title": "Check your email",
+        "body": "We have just asked for a confirmation link to be sent to <value>{email}</value>. It can take a minute to arrive. If nothing arrives, try again after a minute. Nothing is deleted until you open the link and confirm.",
+        "again": "Send the link again"
+      },
+      "errors": {
+        "failed": "The request did not go through. Nothing was deleted. Check your connection and try again.",
+        "unavailable": "Accounts are not available right now. Nothing was deleted."
+      }
     }
   },
   "accountSync": {
