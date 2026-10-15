@@ -35,6 +35,7 @@ describe("proxy matcher", () => {
     "/api/x",
     "/api/auth",
     "/api/auth/callback/google",
+    "/api/account/export",
     "/_next/static/a.js",
     "/_vercel/x",
     "/snapshots/manifest.json",
