@@ -5,7 +5,7 @@ import { lt, sql } from "drizzle-orm";
 import { db } from "@/db";
 import { type AuthEmailKind, authEmailDays, emailCooldowns, pendingSignups } from "@/db/schema";
 import { cooldownKey } from "@/lib/auth/normalize-email";
-import { AUTH_EMAILS_PER_DAY } from "@/lib/constants";
+import { AUTH_EMAILS_PER_DAY, AUTH_EMAILS_RESERVED_FOR_DELETION } from "@/lib/constants";
 
 import { sqlState } from "./account-store";
 
@@ -84,7 +84,21 @@ async function purgeExpiredAuthRows(now: Date | undefined): Promise<void> {
   }
 }
 
-export type AuthEmailClaimOptions = { now?: Date; dailyLimit?: number };
+export type AuthEmailClaimOptions = {
+  now?: Date;
+  // The day's total; tests inject small values.
+  dailyLimit?: number;
+  reservedForDeletion?: number;
+};
+
+// One counter for every kind, with a kind-specific ceiling: a sign-in or sign-up link may be sent
+// while fewer than total - reserve were sent that day, a deletion confirmation while fewer than the
+// total. Under a flood, sign-ins stop first and the reserve stays free for erasure requests.
+function dailyLimitFor(kind: AuthEmailKind, options: AuthEmailClaimOptions): number {
+  const total = options.dailyLimit ?? AUTH_EMAILS_PER_DAY;
+  if (kind === "delete-account") return total;
+  return total - (options.reservedForDeletion ?? AUTH_EMAILS_RESERVED_FOR_DELETION);
+}
 
 // The one claim every auth email takes. The mailbox cooldown goes first, so a request it refuses
 // never spends the day's budget (a refused flood at one address cannot use up everyone's sends).
@@ -96,7 +110,7 @@ export async function claimAuthEmailSend(
   options: AuthEmailClaimOptions = {},
 ): Promise<boolean> {
   if (!(await claimEmailSendSlot(kind, email, options.now))) return false;
-  if (!(await claimDailyEmailSlot(options.now, options.dailyLimit))) return false;
+  if (!(await claimDailyEmailSlot(options.now, dailyLimitFor(kind, options)))) return false;
   await purgeExpiredAuthRows(options.now);
   return true;
 }

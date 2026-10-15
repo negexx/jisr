@@ -185,11 +185,14 @@ describe("with ACCOUNTS_ENABLED on", () => {
     expect(sent.map((request) => request.to)).toEqual(["a+1@example.com"]);
   });
 
-  it("refuses every auth email past the daily ceiling with the cooldown answer", async () => {
-    const { AUTH_EMAILS_PER_DAY } = await import("@/lib/constants");
+  it("stops sign-in links at the sign-in ceiling but keeps the reserve for deletion emails", async () => {
+    const { AUTH_EMAILS_PER_DAY, AUTH_EMAILS_RESERVED_FOR_DELETION } = await import(
+      "@/lib/constants"
+    );
+    const signInCeiling = AUTH_EMAILS_PER_DAY - AUTH_EMAILS_RESERVED_FOR_DELETION;
     await pool.query(
       "insert into auth_email_days (day, sent) values ((now() at time zone 'utc')::date, $1)",
-      [AUTH_EMAILS_PER_DAY - 1],
+      [signInCeiling - 1],
     );
     await signIn("last@example.com");
     const refusal = await signIn("over@example.com").catch((error: unknown) => error);
@@ -197,12 +200,26 @@ describe("with ACCOUNTS_ENABLED on", () => {
       status: "TOO_MANY_REQUESTS",
       body: { code: "EMAIL_COOLDOWN" },
     });
+    // A flood of made-up sign-in addresses cannot block the erasure confirmation (GDPR).
+    await sendDeleteVerification("keep-deleting@example.com");
+    expect(sent.map((request) => request.to)).toEqual([
+      "last@example.com",
+      "keep-deleting@example.com",
+    ]);
+    expect(await count("verification")).toBe(1);
+  });
+
+  it("refuses a deletion email once the whole day's budget is spent", async () => {
+    const { AUTH_EMAILS_PER_DAY } = await import("@/lib/constants");
+    await pool.query(
+      "insert into auth_email_days (day, sent) values ((now() at time zone 'utc')::date, $1)",
+      [AUTH_EMAILS_PER_DAY],
+    );
     await expect(sendDeleteVerification("over-delete@example.com")).rejects.toMatchObject({
       status: "TOO_MANY_REQUESTS",
       body: { code: "EMAIL_COOLDOWN" },
     });
-    expect(sent.map((request) => request.to)).toEqual(["last@example.com"]);
-    expect(await count("verification")).toBe(1);
+    expect(sent).toEqual([]);
   });
 
   it("lets another address through while one is cooling down", async () => {

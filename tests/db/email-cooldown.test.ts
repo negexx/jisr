@@ -151,7 +151,11 @@ describe("claimDailyEmailSlot", () => {
 describe("claimAuthEmailSend", () => {
   it("does not spend the daily budget on a request the address cooldown refuses", async () => {
     const claim = (email: string, seconds: number) =>
-      claimAuthEmailSend("magic-link", email, { now: after(seconds), dailyLimit: 2 });
+      claimAuthEmailSend("magic-link", email, {
+        now: after(seconds),
+        dailyLimit: 2,
+        reservedForDeletion: 0,
+      });
     expect(await claim("ana@example.com", 0)).toBe(true);
     for (let index = 1; index <= 5; index += 1) {
       expect(await claim("ana@example.com", index)).toBe(false);
@@ -214,5 +218,33 @@ describe("claimAuthEmailSend retention purge", () => {
     await seedResidue();
     expect(await claimAuthEmailSend("magic-link", "ana@example.com", { now: T0 })).toBe(false);
     expect(await emails("pending_signups")).toEqual(["expired@example.com", "fresh@example.com"]);
+  });
+});
+
+describe("claimAuthEmailSend deletion reserve", () => {
+  it("reserves 20 of the 250 daily sends for deletion confirmations", async () => {
+    const { AUTH_EMAILS_PER_DAY, AUTH_EMAILS_RESERVED_FOR_DELETION } = await import(
+      "@/lib/constants"
+    );
+    expect([AUTH_EMAILS_PER_DAY, AUTH_EMAILS_RESERVED_FOR_DELETION]).toEqual([250, 20]);
+  });
+
+  it("stops magic links at the total minus the reserve and lets deletions use the rest", async () => {
+    const options = (seconds: number) => ({
+      now: after(seconds),
+      dailyLimit: 5,
+      reservedForDeletion: 2,
+    });
+    for (let index = 0; index < 3; index += 1) {
+      expect(await claimAuthEmailSend("magic-link", `m${index}@example.com`, options(index))).toBe(
+        true,
+      );
+    }
+    expect(await claimAuthEmailSend("magic-link", "m3@example.com", options(3))).toBe(false);
+    expect(await claimAuthEmailSend("delete-account", "d0@example.com", options(4))).toBe(true);
+    expect(await claimAuthEmailSend("delete-account", "d1@example.com", options(5))).toBe(true);
+    expect(await claimAuthEmailSend("delete-account", "d2@example.com", options(6))).toBe(false);
+    const { rows } = await pool.query<{ sent: number }>("select sent from auth_email_days");
+    expect(rows).toEqual([{ sent: 5 }]);
   });
 });

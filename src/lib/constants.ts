@@ -24,3 +24,6 @@ export const ACCOUNT_PROFILE_JSON_LIMIT = 16_384;
 // addresses: below Brevo's free quota of about 300 a day, so a flood of requests is refused with the
 // cooldown answer instead of exhausting the sender (src/lib/server/email-cooldown.ts).
 export const AUTH_EMAILS_PER_DAY = 250;
+// The last sends of the day are kept for deletion confirmations: sign-in and sign-up links stop at
+// AUTH_EMAILS_PER_DAY - this, so a flood of made-up addresses cannot block an erasure (GDPR).
+export const AUTH_EMAILS_RESERVED_FOR_DELETION = 20;
