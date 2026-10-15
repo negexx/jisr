@@ -22,6 +22,25 @@ describe("redactLogText", () => {
     ).toBe("Invalid callbackURL: <url> for <address>");
     expect(redactLogText("x".repeat(500))).toHaveLength(200);
   });
+
+  it("blanks a token in a relative URL's query or fragment", () => {
+    expect(redactLogText("Invalid callbackURL: /fr/welcome?token=abc123SECRET&return=/fr")).toBe(
+      "Invalid callbackURL: /fr/welcome?token=<token>&return=/fr",
+    );
+    expect(redactLogText("rejected /api/auth/magic-link/verify?a=1&TOKEN=xyz789")).toBe(
+      "rejected /api/auth/magic-link/verify?a=1&TOKEN=<token>",
+    );
+    expect(redactLogText("/fr/account/delete#token=tok123")).toBe(
+      "/fr/account/delete#token=<token>",
+    );
+  });
+
+  it("blanks a percent-encoded address", () => {
+    expect(redactLogText("Invalid callbackURL: /fr/welcome?email=ana.b%40example.com&x=1")).toBe(
+      "Invalid callbackURL: /fr/welcome?email=<address>&x=1",
+    );
+    expect(redactLogText("Ana%40Example.COM")).toBe("<address>");
+  });
 });
 
 describe("scrubbedAuthLog", () => {
@@ -62,9 +81,21 @@ describe("onAuthApiError", () => {
     ]);
   });
 
-  it("turns any other error into a bodyless 500 after one scrubbed line", () => {
+  it("turns any other error into a 500 whose body is only its code, after one scrubbed line", () => {
     const spies = spyOnConsole();
-    expect(() => onAuthApiError(new Error("boom ana@example.com"))).toThrow(APIError);
+    const thrown = (() => {
+      try {
+        onAuthApiError(new Error("boom ana@example.com"));
+      } catch (error) {
+        return error;
+      }
+      return null;
+    })();
+    expect(thrown).toBeInstanceOf(APIError);
+    expect(thrown).toMatchObject({
+      status: "INTERNAL_SERVER_ERROR",
+      body: { code: "INTERNAL_SERVER_ERROR" },
+    });
     expect(spies.error).toHaveBeenCalledExactlyOnceWith("[better-auth] unexpected error", [
       "Error",
     ]);
