@@ -235,6 +235,39 @@ describe("sendAuthEmail transport selection", () => {
     expect(await readdir(mailDir)).toHaveLength(1);
   });
 
+  it.each([
+    "production",
+    "preview",
+    "development",
+    "",
+  ])("refuses the file transport on Vercel (VERCEL_ENV=%j) even with the opt-in and a test NODE_ENV", async (vercelEnv) => {
+    for (const nodeEnv of ["test", "development", "production"]) {
+      await expect(
+        sendAuthEmail(request(), {
+          env: {
+            ...BASE_ENV,
+            NODE_ENV: nodeEnv,
+            JISR_EMAIL_FILE_TRANSPORT: "1",
+            VERCEL_ENV: vercelEnv,
+          },
+          mailDir,
+        }),
+      ).rejects.toBeInstanceOf(AuthEmailTransportNotConfigured);
+    }
+    expect(await readdir(mailDir)).toEqual([]);
+  });
+
+  it("still sends through Brevo on Vercel when an API key is set", async () => {
+    const { fetchMock } = recordingFetch();
+    await sendAuthEmail(request(), {
+      env: { ...BREVO_ENV, VERCEL_ENV: "production" },
+      fetch: fetchMock,
+      waitUntil: waitUntilNoop,
+      mailDir,
+    });
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
   it("treats a blank-only API key as unset", async () => {
     const { fetchMock } = recordingFetch();
     await sendAuthEmail(request(), {

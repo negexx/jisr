@@ -177,12 +177,16 @@ type Transport = { kind: "brevo"; apiKey: string; sender: Sender } | { kind: "fi
 
 // The file transport writes magic-link tokens to disk, so it is for tests and local runs only:
 // an allow-list of NODE_ENV values (an unset or misspelled one must not open it), or an explicit
-// opt-in for the e2e run, which is a production build.
+// opt-in for the e2e run, which is a production build. Never on Vercel: VERCEL_ENV is set on every
+// Vercel build and function there (any value, even a stray opt-in variable, keeps it closed).
 const FILE_TRANSPORT_NODE_ENVS = new Set(["development", "test"]);
 
 function selectTransport(env: Env): Transport {
   const apiKey = (env.BREVO_API_KEY ?? "").trim();
   if (apiKey) return { kind: "brevo", apiKey, sender: parseSender(env.BREVO_SENDER) };
+  if (env.VERCEL_ENV !== undefined) {
+    throw new AuthEmailTransportNotConfigured("BREVO_API_KEY is empty on Vercel");
+  }
   const nodeEnvAllowed = FILE_TRANSPORT_NODE_ENVS.has(env.NODE_ENV ?? "");
   if (nodeEnvAllowed || env.JISR_EMAIL_FILE_TRANSPORT === "1") return { kind: "file" };
   throw new AuthEmailTransportNotConfigured("BREVO_API_KEY is empty");
