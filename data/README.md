@@ -10,7 +10,7 @@ One record per file: `data/<collection>/**/<id>.yaml`.
 
 - The collection is the first folder under `data/`. Deeper folders are organisational only.
 - The file name (without `.yaml`) equals the record's id: `slug`, or `code` for `countries`.
-- Do not rename a slug. Saved user data will refer to it, and the slug alias/redirect mechanism is not yet supported (to be built before accounts persist slugs, phase 2), so a rename breaks saved data.
+- Do not rename a slug without recording the old one. Saved user data refers to it. A programme or institution that is renamed keeps its previous slug(s) in `formerSlugs`; `pnpm data:check` rejects a former slug that equals a live slug or another record's former slug, rejects cycles and flattens chains, and the build publishes a `formerSlug -> current slug` map (`aliases`) in the manifest so saved lists, plans and compare resolve the old slug (ADR 0013, section 10).
 - Use the `.yaml` extension. `README.md` and dotfiles are ignored; anything else is an error.
 
 The 13 collections:
