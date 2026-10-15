@@ -156,6 +156,25 @@ describe("the confirm page", () => {
     expect(navigate).not.toHaveBeenCalled();
   });
 
+  it("re-reads the fragment when a second link opens in the same tab without a reload", async () => {
+    const SECOND = "ZyxwvutsZyxwvutsZyxwvutsZyxwvuts";
+    window.history.replaceState(null, "", "/en/sign-in/confirm#token=a%20b");
+    fetchMock.mockResolvedValue(answer(200, { status: true }));
+    const navigate = renderPage("en");
+    expect((await screen.findByRole("alert")).textContent).toBe(en.signInConfirm.errors.noToken);
+
+    // Opening another emailed link in this tab only changes the fragment: no reload, no remount.
+    window.location.hash = `#token=${SECOND}&mode=signup&return=%2Fen%2Fcompare`;
+    const button = await screen.findByRole("button", { name: en.signInConfirm.signup.confirm });
+    expect(window.location.hash).toBe("");
+    expect(fetchMock).not.toHaveBeenCalled();
+    await userEvent.click(button);
+    await waitFor(() =>
+      expect(navigate).toHaveBeenCalledWith("/en/welcome?return=%2Fen%2Fcompare"),
+    );
+    expect(JSON.parse(String(fetchMock.mock.calls[0]?.[1]?.body))).toEqual({ token: SECOND });
+  });
+
   it("offers a new link when the page has no usable token, and calls nothing", async () => {
     window.history.replaceState(null, "", "/en/sign-in/confirm#token=a%20b");
     renderPage("en");

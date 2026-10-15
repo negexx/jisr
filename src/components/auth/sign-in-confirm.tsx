@@ -51,18 +51,29 @@ export function SignInConfirm({
   const started = useRef(false);
 
   useEffect(() => {
-    if (started.current) return;
-    started.current = true;
-    const link = readSignInLink(window.location.hash, locale);
-    // The token leaves the address bar at once, so it is not in the history or a shared screenshot.
-    if (window.location.hash !== "" || window.location.search !== "") {
-      window.history.replaceState(window.history.state, "", window.location.pathname);
+    function readLink(): void {
+      const link = readSignInLink(window.location.hash, locale);
+      // The token leaves the address bar at once, so it is not in the history or a shared screenshot.
+      if (window.location.hash !== "" || window.location.search !== "") {
+        window.history.replaceState(window.history.state, "", window.location.pathname);
+      }
+      setStage(
+        link.token === null
+          ? { kind: "no-token", returnPath: link.returnPath }
+          : { kind: "ready", link: { ...link, token: link.token }, failed: false },
+      );
     }
-    setStage(
-      link.token === null
-        ? { kind: "no-token", returnPath: link.returnPath }
-        : { kind: "ready", link: { ...link, token: link.token }, failed: false },
-    );
+    // A second emailed link opened in this tab changes only the fragment (no reload, no remount).
+    // Stripping the fragment above uses replaceState, which fires no hashchange.
+    function onHashChange(): void {
+      if (window.location.hash !== "") readLink();
+    }
+    window.addEventListener("hashchange", onHashChange);
+    if (!started.current) {
+      started.current = true;
+      readLink();
+    }
+    return () => window.removeEventListener("hashchange", onHashChange);
   }, [locale]);
 
   const failed = stage.kind === "ready" && stage.failed;
