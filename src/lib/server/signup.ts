@@ -9,6 +9,9 @@ import { ACCOUNTS_DISABLED_CODE } from "@/lib/auth/accounts-gate";
 import { authCallbackUrls } from "@/lib/auth/callback-urls";
 import { normalizeEmail } from "@/lib/auth/normalize-email";
 import { AuthMisconfiguredError, getAuth } from "@/lib/auth/server";
+// Node.js runtime only: runAsSignup is AsyncLocalStorage (node:async_hooks), and the auth hooks read
+// it on this same request. Never give a page that renders the sign-in form, or the auth route, an
+// edge runtime; tests/lib/server/signup-runtime.test.ts fails if any src/app segment declares one.
 import { runAsSignup } from "@/lib/auth/signup-intent";
 import { LOCALES } from "@/lib/constants";
 
