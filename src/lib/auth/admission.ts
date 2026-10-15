@@ -5,7 +5,7 @@
 //
 // Evidence is scoped to the sign-in path, one source each, never combined:
 //   /callback/:id        (Google redirect) -> the OAuth state only
-//   /magic-link/verify   (magic link)      -> the pending-signup row only
+//   /magic-link/confirm  (magic link)      -> the pending-signup row only (the GET verify is closed)
 //   anything else, or no request context  -> no evidence, so the create is rejected
 // A pending row is typed by whoever submitted the signup form, so it must never vouch for an
 // account created through another path.

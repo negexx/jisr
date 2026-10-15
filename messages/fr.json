@@ -1270,6 +1270,31 @@
       "failed": "Nous n'avons pas pu confirmer la suppression. Vérifiez votre connexion et réessayez."
     }
   },
+  "signInConfirm": {
+    "meta": {
+      "title": "Confirmez votre connexion",
+      "description": "Confirmez le lien de connexion reçu par e-mail."
+    },
+    "title": "Se connecter à Jisr",
+    "lead": "Vous avez ouvert un lien de connexion. Rien ne se passe tant que vous ne confirmez pas ci-dessous.",
+    "reading": "Lecture du lien…",
+    "signin": {
+      "body": "Appuyez sur le bouton pour vous connecter sur ce navigateur.",
+      "confirm": "Me connecter"
+    },
+    "signup": {
+      "body": "Appuyez sur le bouton pour créer votre compte Jisr et vous connecter sur ce navigateur.",
+      "confirm": "Créer mon compte"
+    },
+    "working": "Connexion…",
+    "notYou": "Si vous n'avez pas demandé ce lien, fermez cette page : rien n'a été fait.",
+    "errors": {
+      "noToken": "Ce lien est incomplet ou a déjà été ouvert. Demandez un nouveau lien de connexion.",
+      "unavailable": "Les comptes ne sont pas disponibles pour le moment. Vous pouvez continuer à utiliser Jisr sans compte.",
+      "failed": "La connexion n'a pas abouti. Vérifiez votre connexion internet et réessayez."
+    },
+    "newLink": "Demander un nouveau lien"
+  },
   "accountPage": {
     "meta": {
       "title": "Votre compte",

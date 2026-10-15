@@ -12,6 +12,8 @@ import type { SavedProgram } from "@/lib/saved/saved";
 import type { AccountExport } from "@/lib/server/account-export-store";
 import type { SignInLinkRequest } from "@/lib/server/signup";
 
+import { confirmRequest } from "../../support/magic-link";
+
 // GET /api/account/export end to end on PGlite with real sessions, like account-actions.test.ts:
 // users sign up through the real magic-link flow, the account actions seed their data, and the route
 // reads the session through readSessionUser. Only the request headers are stubbed (no Next request
@@ -89,8 +91,8 @@ async function signUp(email: string): Promise<Student> {
   expect(await requestSignInLink(request)).toEqual({ ok: true });
   const response = await (await import("@/lib/auth/server"))
     .getAuth()
-    .handler(new Request(await lastLink(), { method: "GET" }));
-  expect(response.status).toBe(302);
+    .handler(confirmRequest(await lastLink()));
+  expect(response.status).toBe(200);
   const cookie = response.headers
     .getSetCookie()
     .map((value) => value.split(";")[0])

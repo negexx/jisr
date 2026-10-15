@@ -211,5 +211,28 @@ export async function signInOnDevice(
   await page.goto(`/${locale}/sign-in?return=${encodeURIComponent(returnPath)}`);
   await requestLink(page, t, email, "signin");
   const link = await readMailLink(email, "magic-link", since);
+  await confirmSignInLink(page, t, link, "signin");
+}
+
+// Todo 28, F3: the emailed link opens the confirm page, which signs in only on its button. The link
+// carries the token in its fragment and nothing in its query; opening it alone creates no session.
+export async function confirmSignInLink(
+  page: Page,
+  t: Translate,
+  link: URL,
+  mode: "signup" | "signin",
+): Promise<void> {
+  expect(link.pathname).toMatch(/^\/(?:fr|en|ar)\/sign-in\/confirm$/);
+  expect(link.search).toBe("");
+  expect(new URLSearchParams(link.hash.slice(1)).get("token")).toMatch(/^[A-Za-z]{32}$/);
   await page.goto(link.toString());
+  // Scoped to the page: the header's account menu has a "Sign in" button too.
+  const button = page
+    .getByRole("main")
+    .getByRole("button", { name: t(`signInConfirm.${mode}.confirm`) });
+  await expect(button).toBeVisible();
+  // The page has taken the token out of the address bar and nothing has signed in yet.
+  expect(new URL(page.url()).hash).toBe("");
+  expect(await exportStatus(page)).toBe(401);
+  await button.click();
 }

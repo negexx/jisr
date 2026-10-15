@@ -19,10 +19,16 @@ import {
   confirmationFromOAuthState,
   evaluateAdmission,
 } from "./admission";
-import { accountDeleteConfirmPath } from "./callback-urls";
+import {
+  accountDeleteConfirmPath,
+  RETURN_PARAM,
+  type SignInLinkMode,
+  signInConfirmPath,
+} from "./callback-urls";
 import { CURRENT_CONSENT_VERSION } from "./consent";
 import { looksLikeEmail } from "./email-shape";
 import { onAuthApiError, scrubbedAuthLog } from "./log";
+import { MAGIC_LINK_CONFIRM_PATH, magicLinkConfirm } from "./magic-link-confirm";
 import { PENDING_SIGNUP_TTL_S, readPendingSignup, recordPendingSignup } from "./pending-signup";
 import { isSignupFor } from "./signup-intent";
 
@@ -56,8 +62,10 @@ function googleEmailNotVerifiedError(): APIError {
 // the OAuth state: the client's additionalData is stored server side at /sign-in/social and parsed
 // back on the callback, so it cannot change in between, but it is self-declared and
 // confirmationFromOAuthState validates it strictly. The pending row is read only on the
-// magic-link verify, where following the emailed link proves the address. Every other path
-// (Google's ID-token sign-in, server calls) has no evidence and is rejected.
+// magic-link confirm (the POST the confirm page sends; it runs the plugin's verify handler inside
+// this request, so the hook sees this path), where holding the emailed token proves the address.
+// Every other path (Google's ID-token sign-in, the closed GET verify, server calls) has no
+// evidence and is rejected.
 async function admissionEvidence(
   user: { email: string; emailVerified?: boolean },
   ctx: { path?: string } | null,
@@ -68,7 +76,7 @@ async function admissionEvidence(
       // does not own, which the real owner would later be linked into.
       if (user.emailVerified !== true) throw googleEmailNotVerifiedError();
       return confirmationFromOAuthState(await readOAuthState());
-    case MAGIC_LINK_VERIFY_PATH:
+    case MAGIC_LINK_CONFIRM_PATH:
       return readPendingSignup(user.email);
     default:
       return null;
@@ -122,8 +130,16 @@ function notFoundError(): APIError {
 // a GET must never delete), so it is closed; deletion is confirmed only by POST /delete-user with
 // the token, from the confirm page. That POST reaches the same callback logic as a plain function
 // call, which skips hooks, so closing the route here does not close it.
+//
+// GET /magic-link/verify is closed the same way (todo 28, F3, ruling Q16): it signs in whoever opens
+// the URL (a prefetching mail scanner spends the token, an attacker's link signs the victim into the
+// attacker's account) and carries the token in the query, which reaches host request logs. The
+// emailed link opens /<locale>/sign-in/confirm#token=…, and its button posts the token to
+// /magic-link/confirm, which runs the same verify handler as a plain call.
 const beforeAuthEndpoint = createAuthMiddleware(async (ctx) => {
-  if (ctx.path === DELETE_USER_CALLBACK_PATH) throw notFoundError();
+  if (ctx.path === DELETE_USER_CALLBACK_PATH || ctx.path === MAGIC_LINK_VERIFY_PATH) {
+    throw notFoundError();
+  }
   if (ctx.path !== MAGIC_LINK_SIGN_IN_PATH) return;
   if (!accountsEnabled()) throw accountsDisabledError();
   const email: unknown = ctx.body?.email;
@@ -174,7 +190,50 @@ function deleteConfirmUrl(baseURL: string, url: string, token: string) {
   return { locale, url: new URL(accountDeleteConfirmPath(locale, token), baseURL).toString() };
 }
 
+// The emailed sign-in link: our confirm page on the auth base URL's origin, never the plugin's GET
+// verify URL. The plugin's URL is read only for what the sign-in request named: its callbackURL
+// carries the locale and the landing's return path (authCallbackUrls).
+function signInLinkUrl(
+  baseURL: string,
+  verifyUrl: string,
+  token: string,
+  mode: SignInLinkMode,
+  metadata: Record<string, unknown> | undefined,
+) {
+  const locale = resolveAuthEmailLocale(verifyUrl, metadata);
+  let returnPath: string | null = null;
+  try {
+    const callback = new URL(verifyUrl).searchParams.get("callbackURL");
+    if (callback !== null) {
+      returnPath = new URL(callback, "http://placeholder.invalid").searchParams.get(RETURN_PARAM);
+    }
+  } catch {
+    // An unparsable URL keeps no return path: the landing then continues to the plan.
+  }
+  const path = signInConfirmPath(locale, token, mode, returnPath);
+  return { locale, url: new URL(path, baseURL).toString() };
+}
+
 function createAuth(secret: string, baseURL: string) {
+  const magicLinkPlugin = magicLink({
+    expiresIn: MAGIC_LINK_EXPIRY_S,
+    disableSignUp: false,
+    storeToken: "hashed",
+    sendMagicLink: async ({ email, url: verifyUrl, token, metadata }) => {
+      // The cooldown slot was claimed by the before hook (beforeAuthEndpoint). The sign-up
+      // wording is chosen by the mode the Server Action sent, but only when the signup intent
+      // backs it: metadata alone is caller-controlled on a direct POST.
+      const mode = metadata?.mode === "signup" && isSignupFor(email) ? "signup" : "signin";
+      const { locale, url } = signInLinkUrl(baseURL, verifyUrl, token, mode, metadata);
+      await sendAuthEmailWhileEnabled({
+        kind: "magic-link",
+        to: email,
+        url,
+        token,
+        metadata: { ...metadata, locale, mode },
+      });
+    },
+  });
   return betterAuth({
     appName: "Jisr",
     baseURL,
@@ -182,7 +241,10 @@ function createAuth(secret: string, baseURL: string) {
     database: drizzleAdapter(db, { provider: "pg", schema }),
     // Project rule: never record IPs. Better Auth then also skips its IP-keyed rate limiter, so
     // throttling of auth emails must live in our own code (the email_cooldowns slot).
-    advanced: { ipAddress: { disableIpTracking: true } },
+    // disableOriginCheck: false is the production default already; Better Auth turns the origin and
+    // CSRF checks off by default under NODE_ENV=test, so stating it keeps the test suites on the
+    // production behaviour (the magic-link confirm's login-CSRF guard is tested through it).
+    advanced: { ipAddress: { disableIpTracking: true }, disableOriginCheck: false },
     // The default logger and better-call print raw errors, which carry query parameters (tokens,
     // addresses): see log.ts.
     logger: { log: scrubbedAuthLog },
@@ -289,24 +351,8 @@ function createAuth(secret: string, baseURL: string) {
     },
     plugins: [
       accountsGate(),
-      magicLink({
-        expiresIn: MAGIC_LINK_EXPIRY_S,
-        disableSignUp: false,
-        storeToken: "hashed",
-        sendMagicLink: async ({ email, url, token, metadata }) => {
-          // The cooldown slot was claimed by the before hook (beforeAuthEndpoint). The sign-up
-          // wording is chosen by the mode the Server Action sent, but only when the signup intent
-          // backs it: metadata alone is caller-controlled on a direct POST.
-          const mode = metadata?.mode === "signup" && isSignupFor(email) ? "signup" : "signin";
-          await sendAuthEmailWhileEnabled({
-            kind: "magic-link",
-            to: email,
-            url,
-            token,
-            metadata: { ...metadata, mode },
-          });
-        },
-      }),
+      magicLinkPlugin,
+      magicLinkConfirm(magicLinkPlugin.endpoints.magicLinkVerify),
       // Must stay last: it reads Set-Cookie off every other plugin's response.
       nextCookies(),
     ],

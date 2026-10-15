@@ -10,3 +10,6 @@ export const ACCOUNT_DELETE_MESSAGE_NAMESPACES = ["accountDelete"] as const;
 
 // The account page (todo 20) reads only its own messages.
 export const ACCOUNT_PAGE_MESSAGE_NAMESPACES = ["accountPage"] as const;
+
+// The magic-link confirm page (todo 28, F3) reads only its own messages.
+export const SIGN_IN_CONFIRM_MESSAGE_NAMESPACES = ["signInConfirm"] as const;

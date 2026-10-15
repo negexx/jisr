@@ -31,6 +31,7 @@ import { createSnapshotClient } from "@/lib/snapshot/client";
 import { shardsForPlan } from "@/lib/snapshot/plan";
 
 import { E2E_NOW, E2E_PROFILE, E2E_SLUGS } from "../../fixtures/e2e/profiles";
+import { confirmRequest } from "../../support/magic-link";
 import { importsOf, SRC, sourceFiles } from "../client-scanner";
 import {
   buildSnapshot,
@@ -257,8 +258,8 @@ async function signUp(email: string): Promise<Student> {
   expect(await requestSignInLink(request)).toEqual({ ok: true });
   const response = await (await import("@/lib/auth/server"))
     .getAuth()
-    .handler(new Request(await lastLink(), { method: "GET" }));
-  expect(response.status).toBe(302);
+    .handler(confirmRequest(await lastLink()));
+  expect(response.status).toBe(200);
   const cookie = response.headers
     .getSetCookie()
     .map((value) => value.split(";")[0])

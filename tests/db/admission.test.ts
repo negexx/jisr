@@ -6,7 +6,8 @@ import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
 const TIMEOUT_MS = 60_000;
 const sentLinks: { to: string; token: string }[] = [];
 
-vi.mock("@/lib/server/email", () => ({
+vi.mock("@/lib/server/email", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/lib/server/email")>()),
   sendAuthEmail: async (request: { to: string; token: string }) => {
     sentLinks.push({ to: request.to, token: request.token });
   },
@@ -45,15 +46,15 @@ async function insertPending(
   );
 }
 
-function redirectLocation(error: unknown): string | null {
-  if (typeof error !== "object" || error === null) return null;
-  if (!("status" in error) || error.status !== "FOUND") return null;
-  if (!("headers" in error) || !(error.headers instanceof Headers)) return null;
-  return error.headers.get("location");
+function refusalCode(error: unknown): string | null {
+  if (typeof error !== "object" || error === null || !("body" in error)) return null;
+  const { body } = error;
+  if (typeof body !== "object" || body === null || !("code" in body)) return null;
+  return typeof body.code === "string" ? body.code : null;
 }
 
-// The real sign-in path: request a magic link, then follow it. Better Auth answers a verify
-// with a redirect; a gate rejection shows up as `?error=<code>` on the redirect target.
+// The real sign-in path: request a magic link, then confirm it the way the confirm page does (todo
+// 28, F3). A gate rejection is the refusal's code.
 async function signInWithMagicLink(email: string): Promise<{ error: string | null }> {
   const headers = () =>
     new Headers({ "x-forwarded-for": "203.0.113.7", "user-agent": "jisr-test-agent" });
@@ -61,11 +62,11 @@ async function signInWithMagicLink(email: string): Promise<{ error: string | nul
   const link = sentLinks.at(-1);
   if (link?.to !== email) throw new Error("no magic link was sent");
   try {
-    await auth.api.magicLinkVerify({ query: { token: link.token }, headers: headers() });
+    await auth.api.magicLinkConfirm({ body: { token: link.token }, headers: headers() });
   } catch (error) {
-    const location = redirectLocation(error);
-    if (location === null) throw error;
-    return { error: new URL(location).searchParams.get("error") };
+    const code = refusalCode(error);
+    if (code === null) throw error;
+    return { error: code };
   }
   return { error: null };
 }

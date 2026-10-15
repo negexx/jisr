@@ -8,7 +8,8 @@ const TIMEOUT_MS = 60_000;
 const ORIGIN = "http://localhost:3000";
 const sentEmails: string[] = [];
 
-vi.mock("@/lib/server/email", () => ({
+vi.mock("@/lib/server/email", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/lib/server/email")>()),
   sendAuthEmail: async (request: { to: string }) => {
     sentEmails.push(request.to);
   },
@@ -129,6 +130,15 @@ describe.each([
     const response = await route.GET(getRequest("/api/auth/magic-link/verify?token=x"));
     await expectDisabled(response);
     expect(await count("user")).toBe(0);
+  });
+
+  it("refuses the magic-link confirm POST", async () => {
+    const response = await route.POST(
+      postRequest("/api/auth/magic-link/confirm", { token: "AbcdefghAbcdefghAbcdefghAbcdefgh" }),
+    );
+    await expectDisabled(response);
+    expect(await count("user")).toBe(0);
+    expect(await count("session")).toBe(0);
   });
 
   it("refuses an unknown path the same way", async () => {

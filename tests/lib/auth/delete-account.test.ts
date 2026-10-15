@@ -9,6 +9,8 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } 
 import { type Profile, ProfileSchema } from "@/data-schema/profile";
 import type { SignInLinkRequest } from "@/lib/server/signup";
 
+import { confirmRequest } from "../../support/magic-link";
+
 // Account deletion end to end on PGlite (todo 19): request -> emailed token (file transport) ->
 // confirm, through the real /api/auth route. Students sign up through the real magic-link flow and
 // the account actions seed their rows; residue Better Auth does not cascade (verification rows,
@@ -99,10 +101,10 @@ async function signUp(name: string): Promise<Student> {
   };
   io.requestHeaders = new Headers({ origin: ORIGIN });
   expect(await requestSignInLink(request)).toEqual({ ok: true });
-  const response = await route.GET(
-    new Request((await lastMail()).url, { method: "GET", headers: { "user-agent": USER_AGENT } }),
+  const response = await route.POST(
+    confirmRequest((await lastMail()).url, { "user-agent": USER_AGENT }),
   );
-  expect(response.status).toBe(302);
+  expect(response.status).toBe(200);
   const { rows } = await pool.query<{ id: string }>('select id from "user" where email = $1', [
     email,
   ]);

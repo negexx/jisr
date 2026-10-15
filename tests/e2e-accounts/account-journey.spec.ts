@@ -12,6 +12,7 @@ import { expectNavBadge, saveButton, savedButton } from "../e2e/support/plan";
 import {
   accountRowCount,
   addressFor,
+  confirmSignInLink,
   type Device,
   exportStatus,
   fetchExport,
@@ -80,8 +81,8 @@ for (const { locale, dir } of E2E_LOCALES) {
         await shot(page, testInfo, `03-check-inbox-${locale}`);
 
         const link = await readMailLink(email, "magic-link", since);
-        expect(link.pathname).toBe("/api/auth/magic-link/verify");
-        await page.goto(link.toString());
+        expect(link.pathname).toBe(`/${locale}/sign-in/confirm`);
+        await confirmSignInLink(page, t, link, "signup");
 
         // IS-2: the landing names the account and asks BEFORE anything is imported.
         const confirmTitle = page.getByRole("heading", {

@@ -10,6 +10,8 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } 
 import { type Profile, ProfileSchema } from "@/data-schema/profile";
 import type { SignInLinkRequest } from "@/lib/server/signup";
 
+import { confirmRequest } from "../../support/magic-link";
+
 // ADR 0004 and the project rules: no grade, nationality, address, session token, magic-link token,
 // cookie or user agent may reach a log. This drives the real account flows on PGlite (sign-up,
 // sign-in failures, every account action, export, deletion, mail failures, Better Auth's own error
@@ -196,10 +198,8 @@ async function signUp(email: string): Promise<{ student: Student; magicToken: st
   signedOut();
   expect(await requestSignInLink(signUpRequest(email))).toEqual({ ok: true });
   const url = await lastMailUrl();
-  const response = await route.GET(
-    new Request(url, { method: "GET", headers: { "user-agent": USER_AGENT } }),
-  );
-  expect(response.status).toBe(302);
+  const response = await route.POST(confirmRequest(url, { "user-agent": USER_AGENT }));
+  expect(response.status).toBe(200);
   const cookie = cookieOf(response);
   const { rows } = await pool.query<{ id: string }>('select id from "user" where email = $1', [
     email,
