@@ -1262,7 +1262,9 @@
     },
     "errors": {
       "invalidToken": "Ce lien n'est pas valide ou a expiré. Demandez un nouvel e-mail de suppression depuis la page de votre compte.",
-      "signedOut": "Connectez-vous au compte à supprimer, puis ouvrez à nouveau le lien de l'e-mail.",
+      "signedOut": "Cet appareil n'est pas connecté, nous ne pouvons donc pas confirmer la suppression ici. Si vous l'avez déjà confirmée il y a un instant, votre compte a probablement été supprimé, et vous pouvez effacer les données de Jisr de cet appareil. Sinon, connectez-vous au compte à supprimer, puis ouvrez à nouveau le lien de l'e-mail.",
+      "eraseDevice": "Effacer cet appareil",
+      "erased": "Les données de Jisr ont été effacées de cet appareil.",
       "signIn": "Se connecter",
       "unavailable": "Les comptes ne sont pas disponibles pour le moment. Rien n'a été supprimé.",
       "failed": "Nous n'avons pas pu confirmer la suppression. Vérifiez votre connexion et réessayez."

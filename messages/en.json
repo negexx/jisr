@@ -1262,7 +1262,9 @@
     },
     "errors": {
       "invalidToken": "This link is not valid or has expired. Ask for a new deletion email from your account page.",
-      "signedOut": "Sign in to the account you want to delete, then open the link in the email again.",
+      "signedOut": "This device is not signed in, so we cannot confirm the deletion here. If you already confirmed it a moment ago, your account has probably been deleted, and you can erase Jisr's data from this device. If not, sign in to the account you want to delete, then open the link in the email again.",
+      "eraseDevice": "Erase this device",
+      "erased": "Jisr's data has been erased from this device.",
       "signIn": "Sign in",
       "unavailable": "Accounts are not available at the moment. Nothing was deleted.",
       "failed": "We could not confirm the deletion. Check your connection and try again."

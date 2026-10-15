@@ -8,6 +8,7 @@ import type { AppLocale } from "@/i18n/routing";
 import {
   confirmAccountDeletion,
   type DeletionConfirmOutcome,
+  eraseThisDevice,
   readDeletionToken,
 } from "@/lib/auth/account-deletion";
 import { signInPath } from "@/lib/auth/callback-urls";
@@ -18,7 +19,8 @@ type Stage =
   | { kind: "ready"; token: string }
   | { kind: "working"; token: string }
   | { kind: "deleted" }
-  | { kind: "refused"; token: string; outcome: Exclude<DeletionConfirmOutcome, "deleted"> };
+  | { kind: "refused"; token: string; outcome: Exclude<DeletionConfirmOutcome, "deleted"> }
+  | { kind: "erased" };
 
 // The emailed deletion link lands here. Opening it deletes nothing (mail scanners open links): the
 // student confirms with the button, which posts the token to Better Auth.
@@ -63,6 +65,10 @@ export function AccountDeleteConfirm({ locale }: { locale: AppLocale }) {
     );
   }
 
+  if (stage.kind === "erased") {
+    return <output className="block max-w-prose text-base">{t("errors.erased")}</output>;
+  }
+
   if (stage.kind === "no-token") {
     return (
       <p role="alert" className="max-w-prose text-base font-medium text-destructive">
@@ -82,9 +88,24 @@ export function AccountDeleteConfirm({ locale }: { locale: AppLocale }) {
               : t("errors.unavailable")}
         </p>
         {stage.outcome === "signed-out" ? (
-          <a href={signInPath(locale, null)} className={buttonVariants({ variant: "outline" })}>
-            {t("errors.signIn")}
-          </a>
+          // A token was submitted and the answer is "no session": a deletion whose response was
+          // lost ends the session too, so the account is probably gone. Erasing stays the
+          // student's choice (ruling Q6), since a device that was never signed in answers the same.
+          <div className="flex flex-wrap gap-3">
+            <Button
+              type="button"
+              variant="destructive"
+              onClick={() => {
+                eraseThisDevice();
+                setStage({ kind: "erased" });
+              }}
+            >
+              {t("errors.eraseDevice")}
+            </Button>
+            <a href={signInPath(locale, null)} className={buttonVariants({ variant: "outline" })}>
+              {t("errors.signIn")}
+            </a>
+          </div>
         ) : null}
       </div>
     );

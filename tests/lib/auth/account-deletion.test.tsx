@@ -188,6 +188,35 @@ describe("the confirm page", () => {
     ).toBe("/en/sign-in?return=%2Fen");
   });
 
+  it.each([
+    "fr",
+    "en",
+    "ar",
+  ] as const)("treats a signed-out answer to a submitted token as probably deleted and offers to erase the device (%s)", async (locale) => {
+    const messages = CATALOGS[locale].accountDelete.errors;
+    seedDevice();
+    window.history.replaceState(null, "", `/${locale}/account/delete#token=tok123`);
+    mocks.deleteUser.mockResolvedValue({
+      data: null,
+      error: { status: 401, code: "UNAUTHORIZED" },
+    });
+    renderPage(locale);
+
+    await userEvent.click(
+      await screen.findByRole("button", { name: CATALOGS[locale].accountDelete.confirm }),
+    );
+    expect((await screen.findByRole("alert")).textContent).toBe(messages.signedOut);
+    // Nothing is erased until the student asks: the link may have been opened signed out on a
+    // device that was never part of the deleted account.
+    expect(jisrKeys().length).toBe(DEVICE_KEYS.length);
+
+    await userEvent.click(screen.getByRole("button", { name: messages.eraseDevice }));
+    expect((await screen.findByRole("status")).textContent).toBe(messages.erased);
+    expect(jisrKeys()).toEqual([]);
+    expect(window.localStorage.getItem("unrelated")).toBe("keep");
+    expect(screen.queryByRole("button", { name: messages.eraseDevice })).toBeNull();
+  });
+
   it("keeps the button for a retry after a failure", async () => {
     window.history.replaceState(null, "", "/fr/account/delete#token=tok123");
     mocks.deleteUser.mockResolvedValueOnce({ data: null, error: { status: 500 } });
