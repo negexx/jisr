@@ -502,9 +502,11 @@ describe("Better Auth's own error paths", () => {
     await pool.query('alter table "session" rename to session_moved');
     try {
       const logs = await recording(async () => {
-        const response = await get(alice, "/get-session");
-        expect(response.status).toBeLessThan(600);
+        await get(alice, "/get-session");
       });
+      // The error path really ran and went through the scrubbed logger, so the leak check below
+      // cannot pass on an empty log.
+      expect(logs).toContain("[better-auth]");
       expect(leaksIn(logs, [alice.sessionToken, alice.cookie, ADDRESS])).toEqual([]);
     } finally {
       await pool.query('alter table session_moved rename to "session"');
@@ -522,6 +524,7 @@ describe("Better Auth's own error paths", () => {
         callbackURL: "/fr/welcome",
       });
     });
+    expect(logs).toContain("[better-auth]");
     expect(leaksIn(logs, [OTHER_ADDRESS, "direct.canary", SENTINEL_TOKEN, USER_AGENT])).toEqual([]);
   });
 });
