@@ -303,6 +303,53 @@ describe("requestSignInLink with accounts on", () => {
     expect(await requireAccountReady()).toEqual({ ok: false, error: "consent_required" });
   });
 
+  it("emails the sign-up wording for a signup and the plain sign-in wording for a signin", async () => {
+    await requestSignInLink(request({ locale: "en" }));
+    await requestSignInLink(request({ locale: "en", mode: "signin", email: "other@example.com" }));
+    const [signup, signin] = await mails();
+    expect(signup?.text).toMatch(/opening this link creates a Jisr account/i);
+    expect(signup?.text).toContain(CURRENT_CONSENT_VERSION);
+    expect(signin?.text).not.toMatch(/creates a Jisr account/i);
+  });
+
+  it("does not let a direct POST claim the sign-up wording through the metadata", async () => {
+    const response = await auth.handler(
+      new Request(`${ORIGIN}/api/auth/sign-in/magic-link`, {
+        method: "POST",
+        headers: { origin: ORIGIN, "content-type": "application/json" },
+        body: JSON.stringify({
+          email: "forged@example.com",
+          metadata: { locale: "en", mode: "signup" },
+        }),
+      }),
+    );
+    expect(response.status).toBe(200);
+    expect((await mails())[0]?.text).not.toMatch(/creates a Jisr account/i);
+    expect(await count("pending_signups")).toBe(0);
+  });
+
+  it("writes no pending row for a signup the cooldown refuses", async () => {
+    expect(await requestSignInLink(request({ mode: "signin", consent: false }))).toEqual({
+      ok: true,
+    });
+    expect(await requestSignInLink(request())).toEqual({ ok: false, error: "cooldown" });
+    expect(await count("pending_signups")).toBe(0);
+  });
+
+  it("does not refresh a planted pending row when the cooldown refuses the signup", async () => {
+    await pool.query(
+      `insert into pending_signups (email, consent_version, consented_at, age_confirmed, expires_at)
+       values ('new@example.com', '2026-01-01', '2026-01-02T00:00:00Z', true, now() + interval '5 minutes')`,
+    );
+    expect(await requestSignInLink(request({ mode: "signin", consent: false }))).toEqual({
+      ok: true,
+    });
+    const before = await pool.query("select * from pending_signups");
+    expect(await requestSignInLink(request())).toEqual({ ok: false, error: "cooldown" });
+    const afterRows = await pool.query("select * from pending_signups");
+    expect(afterRows.rows).toEqual(before.rows);
+  });
+
   it("creates no user from an expired pending row", async () => {
     await requestSignInLink(request());
     await pool.query("update pending_signups set expires_at = now() - interval '1 second'");

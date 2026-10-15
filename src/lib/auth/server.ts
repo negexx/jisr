@@ -23,9 +23,11 @@ import { accountDeleteConfirmPath } from "./callback-urls";
 import { CURRENT_CONSENT_VERSION } from "./consent";
 import { looksLikeEmail } from "./email-shape";
 import { onAuthApiError, scrubbedAuthLog } from "./log";
-import { readPendingSignup } from "./pending-signup";
+import { PENDING_SIGNUP_TTL_S, readPendingSignup, recordPendingSignup } from "./pending-signup";
+import { isSignupFor } from "./signup-intent";
 
-export const MAGIC_LINK_EXPIRY_S = 15 * 60;
+// The pending row and the link that can use it expire together.
+export const MAGIC_LINK_EXPIRY_S = PENDING_SIGNUP_TTL_S;
 export const DELETE_TOKEN_EXPIRY_S = 60 * 60;
 
 const OAUTH_CALLBACK_PATH = "/callback/:id";
@@ -127,6 +129,8 @@ const beforeAuthEndpoint = createAuthMiddleware(async (ctx) => {
   const email: unknown = ctx.body?.email;
   if (typeof email !== "string" || !looksLikeEmail(email)) throw invalidEmailError();
   await claimSendSlot("magic-link", email);
+  // Only after the claim, so a refused request cannot write or refresh a planted row (todo 28, F2).
+  if (isSignupFor(email)) await recordPendingSignup(email);
 });
 
 // POST /delete-user with a token runs Better Auth's deletion callback as a plain function call, so the
@@ -290,8 +294,17 @@ function createAuth(secret: string, baseURL: string) {
         disableSignUp: false,
         storeToken: "hashed",
         sendMagicLink: async ({ email, url, token, metadata }) => {
-          // The cooldown slot was claimed by the before hook (claimMagicLinkSlot).
-          await sendAuthEmailWhileEnabled({ kind: "magic-link", to: email, url, token, metadata });
+          // The cooldown slot was claimed by the before hook (beforeAuthEndpoint). The sign-up
+          // wording is chosen by the mode the Server Action sent, but only when the signup intent
+          // backs it: metadata alone is caller-controlled on a direct POST.
+          const mode = metadata?.mode === "signup" && isSignupFor(email) ? "signup" : "signin";
+          await sendAuthEmailWhileEnabled({
+            kind: "magic-link",
+            to: email,
+            url,
+            token,
+            metadata: { ...metadata, mode },
+          });
         },
       }),
       // Must stay last: it reads Set-Cookie off every other plugin's response.

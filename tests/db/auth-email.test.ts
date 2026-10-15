@@ -211,9 +211,15 @@ describe("with ACCOUNTS_ENABLED on", () => {
     expect(sent.map((request) => request.to)).toEqual(["one@example.com", "two@example.com"]);
   });
 
-  it("hands the sign-in metadata to the email sender", async () => {
+  it("hands the sign-in metadata to the email sender, marked as a sign-in", async () => {
     await signIn("new@example.com", { locale: "ar" });
-    expect(sent[0]?.metadata).toEqual({ locale: "ar" });
+    expect(sent[0]?.metadata).toEqual({ locale: "ar", mode: "signin" });
+  });
+
+  it("treats a caller-supplied signup mode as a sign-in without the signup intent", async () => {
+    await signIn("new@example.com", { locale: "en", mode: "signup" });
+    expect(sent[0]?.metadata).toEqual({ locale: "en", mode: "signin" });
+    expect(await count("pending_signups")).toBe(0);
   });
 
   it("throttles delete-account emails on their own slot", async () => {
