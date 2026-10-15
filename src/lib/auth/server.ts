@@ -92,7 +92,8 @@ function accountsDisabledError(): APIError {
 
 function emailCooldownError(): APIError {
   return new APIError("TOO_MANY_REQUESTS", {
-    message: "An email was sent a moment ago. Wait a minute before asking for another.",
+    // Also the daily ceiling's answer, which can last until UTC midnight: no time is promised.
+    message: "No email can be sent for this address right now. Try again later.",
     code: "EMAIL_COOLDOWN",
   });
 }

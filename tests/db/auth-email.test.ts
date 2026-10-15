@@ -122,6 +122,9 @@ describe("with ACCOUNTS_ENABLED on", () => {
     });
     const text = `${JSON.stringify(refusal)} ${refusal instanceof Error ? refusal.message : ""}`;
     expect(text.toLowerCase()).not.toContain("example.com");
+    // The same answer covers the daily ceiling, which can last until midnight.
+    expect(text).not.toMatch(/minute/i);
+    expect(text).toMatch(/try again later/i);
     expect(sent).toHaveLength(1);
   });
 

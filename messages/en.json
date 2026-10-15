@@ -1185,7 +1185,7 @@
       "consentRequired": "To create an account, tick the box to agree to the privacy notice.",
       "ageRequired": "To create an account, confirm that you are 16 or older.",
       "emailInvalid": "Enter an email address such as name@example.com.",
-      "cooldown": "A link was sent to this address a moment ago. Wait a minute before asking for another.",
+      "cooldown": "We cannot send another link to this address right now. Try again later.",
       "disabled": "Accounts are not available yet. You can keep using Jisr without one.",
       "failed": "The link could not be sent. Try again in a moment.",
       "noAccount": "There is no account with this address yet. To create one, choose Create an account and tick both boxes.",

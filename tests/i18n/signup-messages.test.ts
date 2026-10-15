@@ -62,6 +62,20 @@ describe.each(LOCALES)("signup messages (%s)", (locale) => {
   });
 });
 
+describe("signup messages: the shared send refusal", () => {
+  // EMAIL_COOLDOWN answers both the one-a-minute mailbox cooldown and the daily ceiling, which can
+  // last until midnight; one wording for both, so it promises no time and names no limit.
+  it.each([
+    ["fr", /plus tard/, /minute/i],
+    ["en", /later/i, /minute/i],
+    ["ar", /لاحقًا/, /دقيقة/],
+  ] as const)("says 'try again later' without promising a minute in %s", (locale, later, minute) => {
+    const message = CATALOGS[locale].signup.errors.cooldown;
+    expect(message).toMatch(later);
+    expect(message).not.toMatch(minute);
+  });
+});
+
 describe("signup messages: language rules", () => {
   it("puts a no-break space before : ? ! ; in French", () => {
     for (const [key, value] of namespaceMessages("fr", ["signup"])) {

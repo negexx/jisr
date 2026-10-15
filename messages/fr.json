@@ -1185,7 +1185,7 @@
       "consentRequired": "Pour créer un compte, cochez la case pour accepter la politique de confidentialité.",
       "ageRequired": "Pour créer un compte, confirmez que vous avez 16 ans ou plus.",
       "emailInvalid": "Saisissez une adresse e-mail comme nom@exemple.com.",
-      "cooldown": "Un lien vient d'être envoyé à cette adresse. Attendez une minute avant d'en demander un autre.",
+      "cooldown": "Nous ne pouvons pas envoyer d'autre lien à cette adresse pour le moment. Réessayez plus tard.",
       "disabled": "Les comptes ne sont pas encore disponibles. Vous pouvez continuer à utiliser Jisr sans compte.",
       "failed": "Le lien n'a pas pu être envoyé. Réessayez dans un instant.",
       "noAccount": "Aucun compte n'existe encore avec cette adresse. Pour en créer un, choisissez Créer un compte et cochez les deux cases.",
