@@ -136,16 +136,18 @@ describe("post-auth landing with a ready account", () => {
   it.each([
     ["an absolute URL", "?return=https%3A%2F%2Fevil.example%2Ffr"],
     ["a protocol-relative URL", "?return=%2F%2Fevil.example"],
-    ["another locale's path", "?return=%2Fen%2Fplan"],
     ["a path with a query", "?return=%2Ffr%2Fplan%3Fx%3D1"],
     ["a path without a locale", "?return=%2Fplan"],
-  ])("never leaves the site for %s", async (_label, search) => {
+  ])("falls back to the locale home, never off the site, for %s", async (_label, search) => {
     mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
     renderLanding("fr", search);
-    await waitFor(() => expect(mocks.replace).toHaveBeenCalledTimes(1));
-    const [target] = mocks.replace.mock.calls[0] ?? [];
-    expect(target === "/fr" || target === "/fr/plan" || target === "/en/plan").toBe(true);
-    expect(String(target)).not.toContain("evil");
+    await waitFor(() => expect(mocks.replace).toHaveBeenCalledExactlyOnceWith("/fr"));
+  });
+
+  it("keeps a same-site path under another known locale as it is", async () => {
+    mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
+    renderLanding("fr", "?return=%2Fen%2Fplan");
+    await waitFor(() => expect(mocks.replace).toHaveBeenCalledExactlyOnceWith("/en/plan"));
   });
 
   it("moves on only after the post-auth step has finished", async () => {
