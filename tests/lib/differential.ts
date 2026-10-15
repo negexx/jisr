@@ -118,6 +118,12 @@ const INTERESTING: readonly unknown[] = [
 
 const EXTRA_KEYS = ["extra", "__proto__", "constructor", "toString", "schemaVersion", "step", "0"];
 
+// A copy, never the shared instance: the mutations push into arrays and objects in place, so a
+// shared `[]` would grow across cases (and could end up containing itself).
+function interesting(rng: Rng): unknown {
+  return cloneValue(pick(rng, INTERESTING));
+}
+
 function randomJson(rng: Rng, depth = 0): unknown {
   const roll = rng();
   if (depth < 2 && roll < 0.15) {
@@ -130,7 +136,7 @@ function randomJson(rng: Rng, depth = 0): unknown {
     }
     return object;
   }
-  return pick(rng, INTERESTING);
+  return interesting(rng);
 }
 
 function collectPaths(value: unknown, prefix: Path, into: Path[]): void {
@@ -164,7 +170,7 @@ function mutateOnce(root: unknown, rng: Rng): unknown {
   const operation = Math.floor(rng() * 6);
 
   if (operation === 0 || operation === 1) {
-    (parent as Record<string, unknown>)[key as string] = pick(rng, INTERESTING);
+    (parent as Record<string, unknown>)[key as string] = interesting(rng);
   } else if (operation === 2) {
     (parent as Record<string, unknown>)[key as string] = randomJson(rng);
   } else if (operation === 3) {
@@ -222,7 +228,7 @@ export function compare(
   return expected.success;
 }
 
-function preview(input: unknown): string {
+export function preview(input: unknown): string {
   const text = JSON.stringify(input, (_key, value: unknown) =>
     typeof value === "number" && !Number.isFinite(value) ? String(value) : value,
   );

@@ -2,6 +2,7 @@ import { z } from "zod";
 
 import { IsoDateSchema, SlugSchema } from "@/data-schema/primitives";
 import { ProfileSchema } from "@/data-schema/profile";
+import { EMAIL_MAX_LENGTH } from "@/db/schema/app";
 import { CHECKLIST_STEP_IDS } from "@/domain/types";
 import {
   ACCOUNT_FIELD_MAX_LENGTH,
@@ -24,6 +25,11 @@ export const PROFILE_JSON_LIMIT = ACCOUNT_PROFILE_JSON_LIMIT;
 const MAX_REVISION = 2_147_483_647;
 
 const ProgramSlugSchema = SlugSchema.max(SLUG_MAX_LENGTH);
+
+// The sign-in address as the signup Server Action reads it. The browser's looksLikeEmail
+// (src/lib/auth/email-shape.ts) is a deliberately looser first pass: tests/lib/differential.test.ts
+// proves it never rejects an address this schema accepts.
+export const SignInEmailSchema = z.string().trim().max(EMAIL_MAX_LENGTH).pipe(z.email());
 
 export const SavedProgramInputSchema = z.strictObject({
   slug: ProgramSlugSchema,

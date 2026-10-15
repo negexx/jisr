@@ -5,7 +5,7 @@ import { headers } from "next/headers";
 import { z } from "zod";
 
 import { db } from "@/db";
-import { EMAIL_MAX_LENGTH, pendingSignups } from "@/db/schema";
+import { pendingSignups } from "@/db/schema";
 import { accountsEnabled } from "@/lib/auth/accounts-enabled";
 import { ACCOUNTS_DISABLED_CODE } from "@/lib/auth/accounts-gate";
 import { authCallbackUrls } from "@/lib/auth/callback-urls";
@@ -13,6 +13,8 @@ import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
 import { normalizeEmail } from "@/lib/auth/normalize-email";
 import { AuthMisconfiguredError, getAuth, MAGIC_LINK_EXPIRY_S } from "@/lib/auth/server";
 import { LOCALES } from "@/lib/constants";
+
+import { SignInEmailSchema } from "./account-inputs";
 
 export type SignInLinkMode = "signup" | "signin";
 
@@ -47,8 +49,6 @@ const RequestSchema = z.object({
   locale: z.enum(LOCALES),
   returnPath: z.string().max(RETURN_PATH_MAX_LENGTH).nullable(),
 });
-
-const EmailSchema = z.string().trim().max(EMAIL_MAX_LENGTH).pipe(z.email());
 
 // The magic link and the pending row it relies on expire together, so the row is never kept
 // longer than the link that can use it.
@@ -92,7 +92,7 @@ export async function requestSignInLink(input: SignInLinkRequest): Promise<SignI
   if (!accountsEnabled()) return { ok: false, error: "accounts_disabled" };
   const request = RequestSchema.safeParse(input);
   if (!request.success) return { ok: false, error: "invalid_request" };
-  const parsedEmail = EmailSchema.safeParse(request.data.email);
+  const parsedEmail = SignInEmailSchema.safeParse(request.data.email);
   if (!parsedEmail.success) return { ok: false, error: "invalid_email" };
   const { mode, consent, ageConfirmed, locale, returnPath } = request.data;
   if (mode === "signup" && !(consent && ageConfirmed)) {

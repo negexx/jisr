@@ -1,6 +1,5 @@
 import { eq } from "drizzle-orm";
 
-import type { Profile } from "@/data-schema/profile";
 import {
   account,
   checklistProgress,
@@ -41,8 +40,9 @@ export type AccountExport = {
     signInMethods: { provider: string; createdAt: string }[];
   };
   consent: { consentVersion: string | null; consentedAt: string | null };
-  // The stored document as it is, even when this build can no longer parse it.
-  profile: { data: Profile; revision: number; updatedAt: string } | null;
+  // The stored document as it is, even when this build can no longer parse it: `unknown`, so a
+  // reader has to run ProfileSchema before using it.
+  profile: { data: unknown; revision: number; updatedAt: string } | null;
   savedPrograms: {
     slug: string;
     country: string;
