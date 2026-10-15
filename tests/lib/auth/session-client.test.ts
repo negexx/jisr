@@ -31,22 +31,24 @@ describe("lookupSession", () => {
       status: "signed-in",
       email: "amina@example.com",
       consentVersion: "2026-10-14",
-      consentedOn: "2026-10-15",
+      consentedAt: "2026-10-15T23:30:00.000Z",
     });
   });
 
-  it("reads the consent day from a timestamp string and ignores anything else", async () => {
+  it("keeps the consent timestamp from a string and ignores anything that is not one", async () => {
     client.getSession.mockResolvedValueOnce({
       data: { session: {}, user: { id: "u1", consentedAt: "2026-10-14T08:00:00.000Z" } },
       error: null,
     });
-    await expect(lookupSession()).resolves.toMatchObject({ consentedOn: "2026-10-14" });
+    await expect(lookupSession()).resolves.toMatchObject({
+      consentedAt: "2026-10-14T08:00:00.000Z",
+    });
     forgetSession();
     client.getSession.mockResolvedValueOnce({
       data: { session: {}, user: { id: "u1", consentedAt: "yesterday" } },
       error: null,
     });
-    await expect(lookupSession()).resolves.toMatchObject({ consentedOn: null });
+    await expect(lookupSession()).resolves.toMatchObject({ consentedAt: null });
   });
 
   it("reports no consent version as null", async () => {
@@ -54,7 +56,7 @@ describe("lookupSession", () => {
     await expect(lookupSession()).resolves.toMatchObject({
       status: "signed-in",
       consentVersion: null,
-      consentedOn: null,
+      consentedAt: null,
     });
   });
 

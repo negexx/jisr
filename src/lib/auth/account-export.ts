@@ -4,6 +4,7 @@
 export type ExportOutcome = "downloaded" | "signed-out" | "unavailable" | "failed";
 
 export const EXPORT_ENDPOINT = "/api/account/export";
+const REVOKE_DELAY_MS = 1000;
 const FALLBACK_FILENAME = "jisr-export.json";
 // Only plain file names: the header is the server's, but a name is never trusted to carry a path.
 const SAFE_FILENAME = /^[A-Za-z0-9._-]{1,100}$/;
@@ -36,7 +37,8 @@ function saveBlob(blob: Blob, filename: string): void {
   document.body.append(link);
   link.click();
   link.remove();
-  URL.revokeObjectURL(url);
+  // Revoking at once can cancel the download in some browsers; the blob is released a moment later.
+  setTimeout(() => URL.revokeObjectURL(url), REVOKE_DELAY_MS);
 }
 
 export async function downloadAccountExport(): Promise<ExportOutcome> {

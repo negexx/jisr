@@ -1310,6 +1310,7 @@
       "sent": {
         "title": "Check your email",
         "body": "We have just asked for a confirmation link to be sent to <value>{email}</value>. It can take a minute to arrive. If nothing arrives, try again after a minute. Nothing is deleted until you open the link and confirm.",
+        "repeated": "We asked again.",
         "again": "Send the link again"
       },
       "errors": {

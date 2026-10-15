@@ -27,7 +27,8 @@ vi.mock("@/lib/auth/client", () => ({
 
 const CATALOGS = { fr, en, ar } as const;
 const EMAIL = "amina@example.com";
-const CONSENTED_AT = "2026-10-14T09:00:00.000Z";
+// Local noon, so the shown day is 14/10/2026 in whatever time zone the suite runs in.
+const CONSENTED_AT = new Date(2026, 9, 14, 12, 0).toISOString();
 const fetchSpy = vi.fn<typeof fetch>();
 const createObjectURL = vi.fn<(blob: Blob) => string>();
 const revokeObjectURL = vi.fn<(url: string) => void>();
@@ -149,7 +150,22 @@ describe.each(["fr", "ar"] as const)("AccountPage signed in (%s)", (locale) => {
     expect(fetchSpy).toHaveBeenCalledExactlyOnceWith("/api/account/export", { cache: "no-store" });
     expect(downloads).toEqual(["jisr-export-2026-10-15.json"]);
     expect(createObjectURL).toHaveBeenCalledTimes(1);
-    expect(revokeObjectURL).toHaveBeenCalledWith("blob:jisr-export");
+    // Released a moment after the click, not during it.
+    expect(revokeObjectURL).not.toHaveBeenCalled();
+    await waitFor(() => expect(revokeObjectURL).toHaveBeenCalledWith("blob:jisr-export"), {
+      timeout: 3000,
+    });
+  });
+
+  it("isolates the address, version and date left-to-right", async () => {
+    const { container } = renderPage(locale);
+    await screen.findByRole("button", { name: copy.export.button });
+    const isolated = [...container.querySelectorAll("bdi")].map((node) => node.textContent);
+    expect(isolated).toEqual(
+      expect.arrayContaining([EMAIL, CURRENT_CONSENT_VERSION, "14/10/2026"]),
+    );
+    for (const node of container.querySelectorAll("bdi"))
+      expect(node.getAttribute("dir")).toBe("ltr");
   });
 
   it("asks for the deletion email and shows the check-your-email state without claiming delivery", async () => {
@@ -163,6 +179,45 @@ describe.each(["fr", "ar"] as const)("AccountPage signed in (%s)", (locale) => {
     expect(screen.getByRole("button", { name: copy.delete.sent.again })).toBeTruthy();
     expect(screen.queryByRole("button", { name: copy.delete.button })).toBeNull();
     expect(screen.queryByRole("alert")).toBeNull();
+  });
+
+  it("announces a repeat request and drops the confirmation when the repeat fails", async () => {
+    mocks.deleteUser.mockResolvedValue({ data: { success: true }, error: null });
+    renderPage(locale);
+    const user = userEvent.setup();
+    await user.click(await screen.findByRole("button", { name: copy.delete.button }));
+    const box = (await screen.findByRole("heading", { name: copy.delete.sent.title }))
+      .parentElement;
+    expect(document.activeElement).toBe(box);
+    expect(screen.queryByText(copy.delete.sent.repeated)).toBeNull();
+
+    // Focus moved on, as it would after the student tabbed around.
+    (document.activeElement as HTMLElement).blur();
+    await user.click(screen.getByRole("button", { name: copy.delete.sent.again }));
+    expect(await screen.findByText(copy.delete.sent.repeated)).toBeTruthy();
+    expect(document.activeElement).toBe(box);
+    expect(mocks.deleteUser).toHaveBeenCalledTimes(2);
+
+    mocks.deleteUser.mockResolvedValue({ data: null, error: { status: 500 } });
+    await user.click(screen.getByRole("button", { name: copy.delete.sent.again }));
+    expect((await screen.findByRole("alert")).textContent).toBe(copy.delete.errors.failed);
+    expect(screen.queryByRole("heading", { name: copy.delete.sent.title })).toBeNull();
+    expect(screen.queryByText(copy.delete.sent.repeated)).toBeNull();
+  });
+
+  it("clears the download notice while a new download is running", async () => {
+    fetchSpy.mockResolvedValueOnce(exportFile("jisr-export-2026-10-15.json"));
+    renderPage(locale);
+    const user = userEvent.setup();
+    await user.click(await screen.findByRole("button", { name: copy.export.button }));
+    expect(await screen.findByText(copy.export.done)).toBeTruthy();
+
+    let finish: (response: Response) => void = () => {};
+    fetchSpy.mockReturnValueOnce(new Promise<Response>((resolve) => (finish = resolve)));
+    await user.click(screen.getByRole("button", { name: copy.export.button }));
+    expect(screen.queryByText(copy.export.done)).toBeNull();
+    finish(exportFile("jisr-export-2026-10-15.json"));
+    expect(await screen.findByText(copy.export.done)).toBeTruthy();
   });
 
   it("works from the keyboard", async () => {
@@ -283,10 +338,20 @@ describe("AccountPage consent record", () => {
   beforeEach(() => setSessionHint());
 
   it("shows an older version as it was recorded", async () => {
-    mocks.getSession.mockResolvedValue(signedIn("2026-01-02", "2026-01-03T00:00:00.000Z"));
+    mocks.getSession.mockResolvedValue(
+      signedIn("2026-01-02", new Date(2026, 0, 3, 12, 0).toISOString()),
+    );
     const { container } = renderPage("en");
     await waitFor(() => expect(container.textContent).toContain("2026-01-02"));
     expect(container.textContent).toContain("03/01/2026");
+  });
+
+  it("shows the day in the browser's own time zone, not UTC's", async () => {
+    mocks.getSession.mockResolvedValue(
+      signedIn("2026-10-14", new Date(2026, 9, 14, 23, 30).toISOString()),
+    );
+    const { container } = renderPage("en");
+    await waitFor(() => expect(container.textContent).toContain("14/10/2026"));
   });
 
   it("says so when no consent is recorded", async () => {

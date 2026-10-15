@@ -12,7 +12,7 @@ import { forgetSession, lookupSession } from "@/lib/auth/session-client";
 import { clearAccountLocalState, readSessionHint } from "@/lib/auth/session-hint";
 import { formatDate } from "@/lib/format";
 
-type Account = { email: string; consentVersion: string | null; consentedOn: string | null };
+type Account = { email: string; consentVersion: string | null; consentedAt: string | null };
 
 type Check =
   | { kind: "checking" }
@@ -22,7 +22,21 @@ type Check =
 
 // The addresses, versions and dates stay left-to-right inside Arabic copy.
 function valueTag(chunks: ReactNode) {
-  return <bdi className="font-medium [overflow-wrap:anywhere]">{chunks}</bdi>;
+  return (
+    <bdi dir="ltr" className="font-medium [overflow-wrap:anywhere]">
+      {chunks}
+    </bdi>
+  );
+}
+
+// The day the student gave consent, as they lived it: the browser's own calendar day, not UTC's.
+function localDay(timestamp: string): string | null {
+  const moment = new Date(timestamp);
+  if (Number.isNaN(moment.getTime())) return null;
+  const month = String(moment.getMonth() + 1).padStart(2, "0");
+  const day = String(moment.getDate()).padStart(2, "0");
+  const iso = `${String(moment.getFullYear()).padStart(4, "0")}-${month}-${day}`;
+  return isValidIsoDate(iso) ? iso : null;
 }
 
 // A static page cannot see the session, so the server renders only the checking line. A browser with
@@ -47,7 +61,7 @@ export function AccountPage({ locale }: { locale: AppLocale }) {
           kind: "signed-in",
           email: result.email,
           consentVersion: result.consentVersion,
-          consentedOn: result.consentedOn,
+          consentedAt: result.consentedAt,
         });
         return;
       }
@@ -102,7 +116,7 @@ export function AccountPage({ locale }: { locale: AppLocale }) {
       <ConsentSection
         locale={locale}
         version={check.consentVersion}
-        consentedOn={check.consentedOn}
+        consentedAt={check.consentedAt}
       />
       <DeleteSection email={check.email} locale={locale} onSignedOut={leaveSession} />
     </div>
@@ -152,15 +166,15 @@ function ExportSection({ onSignedOut }: { onSignedOut: () => void }) {
 function ConsentSection({
   locale,
   version,
-  consentedOn,
+  consentedAt,
 }: {
   locale: AppLocale;
   version: string | null;
-  consentedOn: string | null;
+  consentedAt: string | null;
 }) {
   const t = useTranslations("accountPage.consent");
   const titleId = useId();
-  const date = consentedOn !== null && isValidIsoDate(consentedOn) ? consentedOn : null;
+  const date = consentedAt === null ? null : localDay(consentedAt);
   return (
     <section aria-labelledby={titleId} className={SECTION}>
       <h2 id={titleId} className="text-xl font-semibold">
@@ -191,13 +205,14 @@ function DeleteSection({
   const t = useTranslations("accountPage.delete");
   const ids = useId();
   const [status, setStatus] = useState<DeleteStatus>("idle");
-  const [asked, setAsked] = useState(false);
+  // How many requests were accepted so far: every one moves focus to the confirmation, so a
+  // repeat is announced too, and the second one says it is a repeat.
+  const [sentCount, setSentCount] = useState(0);
   const sentRef = useRef<HTMLDivElement>(null);
 
-  // The button the student pressed is replaced by the confirmation, so focus follows it.
   useEffect(() => {
-    if (asked) sentRef.current?.focus();
-  }, [asked]);
+    if (sentCount > 0) sentRef.current?.focus();
+  }, [sentCount]);
 
   async function request(): Promise<void> {
     setStatus("working");
@@ -206,13 +221,16 @@ function DeleteSection({
       onSignedOut();
       return;
     }
-    if (outcome === "sent") setAsked(true);
+    if (outcome === "sent") setSentCount((count) => count + 1);
     setStatus(outcome === "sent" ? "sent" : outcome);
   }
 
   const titleId = `${ids}-title`;
   const bodyId = `${ids}-body`;
   const working = status === "working";
+  const asked = sentCount > 0;
+  // A failed or refused repeat takes the confirmation away: it would contradict the notice.
+  const showSent = status === "sent" || (working && asked);
   return (
     <section aria-labelledby={titleId} className={SECTION}>
       <h2 id={titleId} className="text-xl font-semibold">
@@ -221,7 +239,7 @@ function DeleteSection({
       <p id={bodyId} className="text-base">
         {t.rich("body", { email, value: valueTag })}
       </p>
-      {asked ? (
+      {showSent ? (
         <div
           ref={sentRef}
           tabIndex={-1}
@@ -229,6 +247,7 @@ function DeleteSection({
         >
           <h3 className="text-base font-semibold">{t("sent.title")}</h3>
           <p className="text-base">{t.rich("sent.body", { email, value: valueTag })}</p>
+          {sentCount > 1 ? <output className="text-sm">{t("sent.repeated")}</output> : null}
         </div>
       ) : null}
       <Button

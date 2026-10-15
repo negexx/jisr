@@ -1310,6 +1310,7 @@
       "sent": {
         "title": "Consultez votre boîte e-mail",
         "body": "Nous venons de demander l'envoi d'un lien de confirmation à <value>{email}</value>. Il peut mettre une minute à arriver. Si rien n'arrive, essayez à nouveau après une minute. Rien n'est supprimé tant que vous n'avez pas ouvert le lien et confirmé.",
+        "repeated": "Nous avons relancé la demande.",
         "again": "Renvoyer le lien"
       },
       "errors": {

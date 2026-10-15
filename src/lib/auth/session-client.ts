@@ -7,8 +7,9 @@ export type SessionLookup =
       status: "signed-in";
       email: string;
       consentVersion: string | null;
-      // The calendar day (ISO 8601, UTC) the student accepted that version, for the account page.
-      consentedOn: string | null;
+      // When the student accepted that version (ISO 8601 timestamp); the account page shows the
+      // calendar day in the browser's own time zone.
+      consentedAt: string | null;
     }
   | { status: "signed-out" }
   | { status: "unavailable" };
@@ -20,14 +21,15 @@ function readConsentVersion(user: object): string | null {
 }
 
 // Better Auth's client revives ISO timestamps into Dates; a plain string is accepted too.
-function readConsentedOn(user: object): string | null {
+function readConsentedAt(user: object): string | null {
   if (!("consentedAt" in user)) return null;
   const { consentedAt } = user;
-  const iso =
-    consentedAt instanceof Date && !Number.isNaN(consentedAt.getTime())
-      ? consentedAt.toISOString()
-      : consentedAt;
-  return typeof iso === "string" && /^\d{4}-\d{2}-\d{2}/.test(iso) ? iso.slice(0, 10) : null;
+  if (consentedAt instanceof Date) {
+    return Number.isNaN(consentedAt.getTime()) ? null : consentedAt.toISOString();
+  }
+  return typeof consentedAt === "string" && !Number.isNaN(Date.parse(consentedAt))
+    ? consentedAt
+    : null;
 }
 
 async function fetchSession(): Promise<SessionLookup> {
@@ -40,7 +42,7 @@ async function fetchSession(): Promise<SessionLookup> {
       status: "signed-in",
       email: data.user.email,
       consentVersion: readConsentVersion(data.user),
-      consentedOn: readConsentedOn(data.user),
+      consentedAt: readConsentedAt(data.user),
     };
   } catch {
     return { status: "unavailable" };
