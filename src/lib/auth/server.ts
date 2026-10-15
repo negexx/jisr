@@ -22,6 +22,7 @@ import {
 } from "./admission";
 import { accountDeleteConfirmPath } from "./callback-urls";
 import { CURRENT_CONSENT_VERSION } from "./consent";
+import { onAuthApiError, scrubbedAuthLog } from "./log";
 import { readPendingSignup } from "./pending-signup";
 
 export const MAGIC_LINK_EXPIRY_S = 15 * 60;
@@ -171,6 +172,10 @@ function createAuth(secret: string, baseURL: string) {
     // Project rule: never record IPs. Better Auth then also skips its IP-keyed rate limiter, so
     // throttling of auth emails must live in our own code (the email_cooldowns slot).
     advanced: { ipAddress: { disableIpTracking: true } },
+    // The default logger and better-call print raw errors, which carry query parameters (tokens,
+    // addresses): see log.ts.
+    logger: { log: scrubbedAuthLog },
+    onAPIError: { onError: onAuthApiError },
     hooks: { before: beforeAuthEndpoint, after: afterAuthEndpoint },
     // Encrypts the stored provider access and refresh tokens with the auth secret.
     account: { encryptOAuthTokens: true },
