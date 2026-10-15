@@ -90,6 +90,11 @@ jobs:
       - name: Run end-to-end specs
         run: pnpm test:e2e
 
+      # The signed-in journey needs its own build with the accounts switch on; the switch and the test
+      # secrets are set only in playwright.accounts.config.ts (ruling Q5), nothing is set here.
+      - name: Run signed-in end-to-end specs
+        run: pnpm test:e2e:accounts
+
       - name: Upload Playwright report
         if: failure()
         uses: actions/upload-artifact@v7
@@ -106,7 +111,9 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: playwright-test-results
-          path: test-results/
+          path: |
+            test-results/
+            test-results-accounts/
           retention-days: 7
           if-no-files-found: ignore
 

@@ -19,6 +19,7 @@ next-env.d.ts
 coverage/
 playwright-report/
 test-results/
+test-results-accounts/
 
 # Subagent-driven-development scratch (briefs, reports, ledger)
 .superpowers/
