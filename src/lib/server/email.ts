@@ -105,7 +105,7 @@ const TEMPLATES: Record<AuthEmailLocale, Record<AuthEmailTemplate, Template>> = 
       subject: "Confirmez la création de votre compte Jisr",
       text: [
         "Bonjour,",
-        "Quelqu'un a demandé à créer un compte Jisr avec cette adresse email. Ouvrir ce lien crée un compte Jisr à votre nom :",
+        "Quelqu'un a demandé à créer un compte Jisr avec cette adresse email. Ouvrir ce lien crée ou ouvre votre compte Jisr :",
         url,
         `En l'ouvrant, vous confirmez avoir 16 ans ou plus et accepter la politique de confidentialité de Jisr, version ${CURRENT_CONSENT_VERSION} : ${privacyUrl}`,
         `Ce lien est valable ${MAGIC_LINK_VALID_MINUTES} minutes et ne peut être utilisé qu'une seule fois.`,
@@ -139,7 +139,7 @@ const TEMPLATES: Record<AuthEmailLocale, Record<AuthEmailTemplate, Template>> = 
       subject: "Confirm your new Jisr account",
       text: [
         "Hello,",
-        "Someone asked to create a Jisr account with this email address. Opening this link creates a Jisr account in your name:",
+        "Someone asked to create a Jisr account with this email address. Opening this link creates or opens your Jisr account:",
         url,
         `By opening it, you confirm that you are 16 or older and that you accept the Jisr privacy notice, version ${CURRENT_CONSENT_VERSION}: ${privacyUrl}`,
         `This link is valid for ${MAGIC_LINK_VALID_MINUTES} minutes and can be used only once.`,
@@ -173,7 +173,7 @@ const TEMPLATES: Record<AuthEmailLocale, Record<AuthEmailTemplate, Template>> = 
       subject: "تأكيد إنشاء حسابك في جسر",
       text: [
         "مرحبًا،",
-        "طلب أحدهم إنشاء حساب في جسر بعنوان البريد الإلكتروني هذا. فتح هذا الرابط يُنشئ حسابًا في جسر باسمك:",
+        "طلب أحدهم إنشاء حساب في جسر بعنوان البريد الإلكتروني هذا. فتح هذا الرابط يُنشئ حسابك في جسر أو يفتحه:",
         url,
         `بفتحه، تؤكد أن عمرك 16 سنة أو أكثر وأنك تقبل سياسة الخصوصية لجسر، الإصدار ${CURRENT_CONSENT_VERSION}: ${privacyUrl}`,
         `هذا الرابط صالح لمدة ${MAGIC_LINK_VALID_MINUTES} دقيقة ويمكن استخدامه مرة واحدة فقط.`,

@@ -144,17 +144,17 @@ describe("renderAuthEmail for a sign-up link", () => {
   // and accepts this notice version, and an unasked-for email is ignored with no account created.
   const WORDING = {
     fr: {
-      creates: /ouvrir ce lien crée un compte Jisr/i,
+      creates: /ouvrir ce lien crée ou ouvre votre compte Jisr/i,
       age: /16 ans ou plus/,
       ignore: /ignorez ce message[\s\S]*aucun compte n'est créé/i,
     },
     en: {
-      creates: /opening this link creates a Jisr account/i,
+      creates: /opening this link creates or opens your Jisr account/i,
       age: /16 or older/,
       ignore: /ignore this email[\s\S]*no account is created/i,
     },
     ar: {
-      creates: /فتح هذا الرابط يُنشئ حسابًا في جسر/,
+      creates: /فتح هذا الرابط يُنشئ حسابك في جسر أو يفتحه/,
       age: /16 سنة أو أكثر/,
       ignore: /فتجاهل هذه الرسالة[\s\S]*لن يُنشأ أي حساب/,
     },
@@ -207,7 +207,7 @@ describe("sendAuthEmail template choice", () => {
 
   it("sends the sign-up wording only when the metadata mode is signup", async () => {
     expect(await writtenText({ locale: "en", mode: "signup" })).toMatch(
-      /opening this link creates a Jisr account/i,
+      /opening this link creates or opens your Jisr account/i,
     );
     for (const metadata of [
       undefined,
@@ -218,7 +218,7 @@ describe("sendAuthEmail template choice", () => {
         mode: "SIGNUP",
       },
     ]) {
-      expect(await writtenText(metadata)).not.toMatch(/creates a Jisr account/i);
+      expect(await writtenText(metadata)).not.toMatch(/creates or opens your Jisr account/i);
     }
   });
 });
