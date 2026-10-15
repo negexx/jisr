@@ -31,7 +31,7 @@ type HeroProps = {
   titleAccent: string;
   lead: string;
   cta: string;
-  ctaNote: string;
+  ctaNote: ReactNode;
   matchesCta: string;
   scholarshipsCta: string;
   demo?: ReactNode;

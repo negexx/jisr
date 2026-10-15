@@ -7,7 +7,9 @@ import { Hero } from "@/components/home/hero";
 import { HeroDemo } from "@/components/home/hero-demo";
 import { Questions } from "@/components/home/questions";
 import { TrustBand } from "@/components/home/trust-band";
+import { SessionText } from "@/components/session-text";
 import { routing } from "@/i18n/routing";
+import { accountsEnabled } from "@/lib/auth/accounts-enabled";
 import { pageMetadata } from "@/lib/seo";
 import { readSiteEnv } from "@/lib/site-env";
 
@@ -44,7 +46,13 @@ export default async function HomePage({ params }: Props) {
         titleAccent={t("hero.titleAccent")}
         lead={t("lead")}
         cta={t("cta")}
-        ctaNote={t("ctaNote")}
+        ctaNote={
+          accountsEnabled() ? (
+            <SessionText guest={t("ctaNote")} signedIn={t("ctaNoteSignedIn")} />
+          ) : (
+            t("ctaNote")
+          )
+        }
         matchesCta={t("matchesCta")}
         scholarshipsCta={t("scholarshipsCta")}
         demo={

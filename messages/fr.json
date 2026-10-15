@@ -83,6 +83,7 @@
     "lead": "Jisr vous aide à trouver des licences réalistes pour votre profil, à estimer les coûts et à préparer votre candidature.",
     "cta": "Créer mon profil",
     "ctaNote": "Vos réponses restent sur cet appareil.",
+    "ctaNoteSignedIn": "Vos réponses sont enregistrées dans votre compte.",
     "matchesCta": "Voir mes résultats",
     "scholarshipsCta": "Voir les bourses",
     "hero": {
@@ -158,7 +159,9 @@
   },
   "footer": {
     "privacy": "Votre profil, vos programmes enregistrés et votre progression dans le plan restent sur cet appareil. Jisr n'utilise aucun cookie.",
+    "privacySignedIn": "Votre profil, vos programmes enregistrés et votre progression dans le plan sont enregistrés dans votre compte, et vous pouvez les exporter ou les supprimer. Jisr n'utilise aucun cookie de suivi.",
     "privacyLogs": "Comme sur tout site, notre hébergeur voit les pages que vous ouvrez. Pour afficher vos résultats et votre plan, votre navigateur télécharge aussi des fichiers de données dont le nom indique le pays de votre diplôme, des pays de destination et des domaines : ceux que vous avez choisis et ceux des programmes que vous ouvrez ou enregistrez. Vos notes, votre nationalité et les programmes de votre liste enregistrée ne sont jamais envoyés.",
+    "privacyLogsSignedIn": "Comme sur tout site, notre hébergeur voit les pages que vous ouvrez. Pour afficher vos résultats et votre plan, votre navigateur télécharge aussi des fichiers de données dont le nom indique le pays de votre diplôme, des pays de destination et des domaines : ceux que vous avez choisis et ceux des programmes que vous ouvrez ou enregistrez. Votre profil, vos programmes enregistrés et votre progression dans le plan sont envoyés à notre serveur pour être enregistrés dans votre compte.",
     "sources": "Les données et les sources sont vérifiées à la main ; chaque fait indique sa source.",
     "privacyLink": "Confidentialité",
     "termsLink": "Conditions d'utilisation",
@@ -422,6 +425,7 @@
       "neutral": "Votre profil"
     },
     "ctaNote": "Vos réponses restent sur cet appareil.",
+    "ctaNoteSignedIn": "Vos réponses sont enregistrées dans votre compte.",
     "intro": "Quatre étapes courtes, puis une dernière vérification. Toutes les questions sont obligatoires, sauf celles marquées facultatives.",
     "progress": {
       "step": "Étape {current} sur {total} : {title}",
@@ -570,6 +574,7 @@
       "draft": "Nous avons gardé vos réponses non terminées. Vous reprenez à l'étape où vous en étiez.",
       "reset": "Nous n'avons pas pu lire votre profil enregistré, nous l'avons donc supprimé. Vous pouvez le créer à nouveau.",
       "storage": "Nous ne pouvons pas enregistrer sur cet appareil : vos réponses seront perdues à la fermeture de cette page.",
+      "storageSignedIn": "Nous ne pouvons pas garder de copie sur cet appareil. Votre compte conserve ce que vous enregistrez.",
       "saveFailed": "Nous n'avons pas pu enregistrer votre profil. Réessayez."
     },
     "errors": {
@@ -612,6 +617,7 @@
     "review": {
       "saveTitle": "Ce qui est enregistré",
       "saveBody": "Vos réponses sont enregistrées dans ce navigateur, sur cet appareil uniquement. Rien n'est envoyé à un serveur. Vous pouvez les supprimer avec « Effacer mes données » en bas de la page.",
+      "saveBodySignedIn": "Vos réponses sont enregistrées dans votre compte, avec une copie dans ce navigateur. Vous pouvez les supprimer avec « Effacer mes données » en bas de la page, ce qui les efface aussi de votre compte.",
       "notGiven": "Non renseigné",
       "noPreference": "Pas de préférence",
       "allCountries": "Tous les pays",
@@ -623,7 +629,9 @@
       "whyTitle": "Pourquoi nous le demandons",
       "whyPhone": "Pourquoi cette question ?",
       "deviceTitle": "Reste sur votre appareil",
-      "deviceBody": "Vos réponses sont gardées dans ce navigateur seulement. Rien ne nous est envoyé. Pour les supprimer, utilisez « Effacer mes données » en bas de la page."
+      "deviceTitleSignedIn": "Enregistré dans votre compte",
+      "deviceBody": "Vos réponses sont gardées dans ce navigateur seulement. Rien ne nous est envoyé. Pour les supprimer, utilisez « Effacer mes données » en bas de la page.",
+      "deviceBodySignedIn": "Vos réponses sont enregistrées dans votre compte et peuvent être exportées ou supprimées. Pour les supprimer, utilisez « Effacer mes données » en bas de la page."
     }
   },
   "costBreakdown": {
@@ -723,10 +731,12 @@
       "none": {
         "title": "Créez votre profil pour voir les programmes qui vous conviennent",
         "description": "Répondez à quelques questions sur votre Bac et ce que vous voulez étudier. Vos réponses restent sur cet appareil.",
+        "descriptionSignedIn": "Répondez à quelques questions sur votre Bac et ce que vous voulez étudier. Vos réponses sont enregistrées dans votre compte.",
         "cta": "Créer mon profil"
       },
       "reset": {
         "notice": "Le profil enregistré sur cet appareil n'a pas pu être lu, nous l'avons donc supprimé. Vous pouvez le créer à nouveau.",
+        "noticeSignedIn": "La copie de votre profil sur cet appareil n'a pas pu être lue, nous l'avons donc supprimée. Votre compte conserve ce que vous avez enregistré.",
         "dismiss": "Fermer ce message"
       },
       "error": {
@@ -882,6 +892,7 @@
       "cta": {
         "title": "Créez votre profil pour voir si cette formation vous correspond",
         "description": "Vos réponses restent sur cet appareil.",
+        "descriptionSignedIn": "Vos réponses sont enregistrées dans votre compte.",
         "action": "Créer mon profil"
       },
       "error": {
@@ -929,13 +940,15 @@
     "title": "Mon plan de candidature",
     "eyebrow": "Votre candidature",
     "lead": "Cochez chaque étape une fois terminée. Votre progression reste sur cet appareil.",
+    "leadSignedIn": "Cochez chaque étape une fois terminée. Votre progression est enregistrée dans votre compte.",
     "loading": "Chargement de votre plan",
     "compare": {
       "action": "Comparer les programmes enregistrés",
       "hint": "Enregistrez au moins 2 programmes pour les comparer."
     },
     "storage": {
-      "notice": "Cet appareil ne peut pas conserver vos programmes enregistrés ni vos étapes cochées : ils seront perdus à la fermeture de cette page."
+      "notice": "Cet appareil ne peut pas conserver vos programmes enregistrés ni vos étapes cochées : ils seront perdus à la fermeture de cette page.",
+      "noticeSignedIn": "Cet appareil ne peut pas garder de copie de vos programmes enregistrés ni de vos étapes cochées. Votre compte conserve ce que vous enregistrez."
     },
     "empty": {
       "title": "Vous n'avez encore enregistré aucun programme",
@@ -945,6 +958,7 @@
     "noProfile": {
       "title": "Créez votre profil pour obtenir votre plan",
       "description": "Vos programmes enregistrés restent sur cet appareil. Nous avons besoin de votre profil pour savoir quelles étapes vous concernent.",
+      "descriptionSignedIn": "Vos programmes enregistrés sont conservés dans votre compte. Nous avons besoin de votre profil pour savoir quelles étapes vous concernent.",
       "action": "Créer mon profil"
     },
     "error": {
@@ -990,6 +1004,7 @@
     },
     "reset": {
       "notice": "Le profil enregistré sur cet appareil n'a pas pu être lu, nous l'avons donc supprimé. Vous pouvez le créer à nouveau.",
+      "noticeSignedIn": "La copie de votre profil sur cet appareil n'a pas pu être lue, nous l'avons donc supprimée. Votre compte conserve ce que vous avez enregistré.",
       "dismiss": "Fermer ce message"
     }
   },
@@ -1013,6 +1028,7 @@
     "noProfile": {
       "title": "Créez votre profil pour comparer",
       "description": "Vos programmes enregistrés restent sur cet appareil. Nous avons besoin de votre profil pour montrer comment chaque programme vous convient.",
+      "descriptionSignedIn": "Vos programmes enregistrés sont conservés dans votre compte. Nous avons besoin de votre profil pour montrer comment chaque programme vous convient.",
       "action": "Créer mon profil"
     },
     "error": {
@@ -1021,7 +1037,8 @@
       "retry": "Réessayer"
     },
     "storage": {
-      "notice": "Cet appareil ne peut pas conserver vos programmes enregistrés de façon fiable ; ils peuvent être perdus à la fermeture de cette page."
+      "notice": "Cet appareil ne peut pas conserver vos programmes enregistrés de façon fiable ; ils peuvent être perdus à la fermeture de cette page.",
+      "noticeSignedIn": "Cet appareil ne peut pas garder de copie de vos programmes enregistrés. Votre compte conserve ce que vous enregistrez."
     },
     "reset": {
       "notice": "Votre profil enregistré n'a pas pu être lu ; il a été effacé.",
@@ -1134,6 +1151,7 @@
     },
     "title": "Votre compte Jisr",
     "lead": "Le compte est facultatif. Sans compte, tout continue de fonctionner et vos données restent sur cet appareil. Avec un compte, votre profil, vos programmes enregistrés et votre plan vous suivent sur tous vos appareils.",
+    "leadSignedIn": "Vous êtes connecté. Votre profil, vos programmes enregistrés et votre plan sont enregistrés dans votre compte et vous suivent sur tous vos appareils. Vous pouvez les exporter ou les supprimer.",
     "modes": {
       "label": "Que voulez-vous faire ?",
       "signup": "Créer un compte",
@@ -1149,7 +1167,8 @@
     },
     "age": {
       "label": "J'ai 16 ans ou plus.",
-      "hint": "Moins de 16 ans ? Continuez à utiliser Jisr sans compte : tout fonctionne et vos données restent sur cet appareil."
+      "hint": "Moins de 16 ans ? Continuez à utiliser Jisr sans compte : tout fonctionne et vos données restent sur cet appareil.",
+      "hintSignedIn": "Moins de 16 ans ? Vous pouvez utiliser Jisr sans compte : tout fonctionne."
     },
     "required": "obligatoire",
     "submit": "Recevoir un lien de connexion",

@@ -8,6 +8,7 @@ import type { CoreShard } from "@/data-schema/snapshot";
 import { useRouter } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
 import { track } from "@/lib/analytics";
+import { useSessionHint } from "@/lib/auth/session-hint";
 import { type FormState, STEPS, type StepId } from "@/lib/profile/form/state";
 import {
   pathStep,
@@ -50,6 +51,7 @@ export function ProfileWizard(props: WizardProps) {
 
 function WizardBody({ core, text, locale, onCleared }: WizardProps & { onCleared: () => void }) {
   const t = useTranslations("profile");
+  const signedIn = useSessionHint();
   const router = useRouter();
   const profile = useProfile();
 
@@ -257,7 +259,9 @@ function WizardBody({ core, text, locale, onCleared }: WizardProps & { onCleared
             {t("notices.reset")}
           </Notice>
         ) : null}
-        {showStorage ? <Notice>{t("notices.storage")}</Notice> : null}
+        {showStorage ? (
+          <Notice>{t(signedIn ? "notices.storageSignedIn" : "notices.storage")}</Notice>
+        ) : null}
         {draftNotice ? (
           <Notice dismissLabel={t("common.dismiss")} onDismiss={() => setDraftNotice(false)}>
             {t("notices.draft")}
@@ -334,8 +338,12 @@ function WizardBody({ core, text, locale, onCleared }: WizardProps & { onCleared
             <p className="text-base text-muted-foreground">{why}</p>
           </section>
           <section className="flex flex-col gap-2 border-t border-border pt-6">
-            <h2 className="text-lg font-semibold">{t("aside.deviceTitle")}</h2>
-            <p className="text-base text-muted-foreground">{t("aside.deviceBody")}</p>
+            <h2 className="text-lg font-semibold">
+              {t(signedIn ? "aside.deviceTitleSignedIn" : "aside.deviceTitle")}
+            </h2>
+            <p className="text-base text-muted-foreground">
+              {t(signedIn ? "aside.deviceBodySignedIn" : "aside.deviceBody")}
+            </p>
           </section>
         </div>
       </aside>

@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
 import { ClearDataButton } from "@/components/clear-data-button";
+import { SessionText } from "@/components/session-text";
 import { Link } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
 import { accountsEnabled } from "@/lib/auth/accounts-enabled";
@@ -13,7 +14,8 @@ export async function SiteFooter({ locale }: { locale: AppLocale }) {
   ]);
   // Read while the page is prerendered (ruling P4): with accounts off the button gets exactly the
   // guest copy it always had.
-  const signedIn = accountsEnabled()
+  const accountsOn = accountsEnabled();
+  const signedIn = accountsOn
     ? {
         title: tAccount("title"),
         description: tAccount("description"),
@@ -27,8 +29,20 @@ export async function SiteFooter({ locale }: { locale: AppLocale }) {
     <footer className="mt-auto border-t border-border bg-canvas-soft">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 py-8 md:flex-row md:items-start md:justify-between md:gap-12 md:px-6">
         <div className="flex max-w-prose flex-col gap-2">
-          <p className="text-base">{t("privacy")}</p>
-          <p className="text-sm text-muted-foreground">{t("privacyLogs")}</p>
+          <p className="text-base">
+            {accountsOn ? (
+              <SessionText guest={t("privacy")} signedIn={t("privacySignedIn")} />
+            ) : (
+              t("privacy")
+            )}
+          </p>
+          <p className="text-sm text-muted-foreground">
+            {accountsOn ? (
+              <SessionText guest={t("privacyLogs")} signedIn={t("privacyLogsSignedIn")} />
+            ) : (
+              t("privacyLogs")
+            )}
+          </p>
           <p className="text-sm text-muted-foreground">{t("sources")}</p>
           <p className="text-sm">
             <Link

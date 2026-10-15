@@ -6,6 +6,7 @@ import { lazy, type ReactNode, Suspense } from "react";
 import { PageBand } from "@/components/page-band";
 import { Button } from "@/components/ui/button";
 import type { AppLocale } from "@/i18n/routing";
+import { useSessionHint } from "@/lib/auth/session-hint";
 import { useProfile } from "@/lib/profile/use-profile";
 import type { SnapshotClient } from "@/lib/snapshot/client";
 import { shardsForProfileForm } from "@/lib/snapshot/plan";
@@ -57,6 +58,7 @@ export function ProfileForm({ locale, client }: { locale: AppLocale; client?: Sn
   const t = useTranslations("profile");
   const { state: snapshot, retry } = useSnapshotBundle(REQUEST, locale, client);
   const { state: profile } = useProfile();
+  const signedIn = useSessionHint();
   const mode =
     profile.status === "unhydrated" ? "neutral" : profile.status === "ok" ? "edit" : "create";
 
@@ -101,7 +103,11 @@ export function ProfileForm({ locale, client }: { locale: AppLocale; client?: Sn
 
   return (
     <div className="-mt-8 md:-mt-12">
-      <PageBand id="profile-title" title={t(`title.${mode}`)} lead={t("ctaNote")} />
+      <PageBand
+        id="profile-title"
+        title={t(`title.${mode}`)}
+        lead={t(signedIn ? "ctaNoteSignedIn" : "ctaNote")}
+      />
       <div className="pt-8 md:pt-12">{content}</div>
     </div>
   );

@@ -10,6 +10,7 @@ import type { AppLocale } from "@/i18n/routing";
 import { authCallbackUrls, RETURN_PARAM } from "@/lib/auth/callback-urls";
 import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
 import { looksLikeEmail } from "@/lib/auth/email-shape";
+import { useSessionHint } from "@/lib/auth/session-hint";
 import { requestSignInLink, type SignInLinkMode } from "@/lib/server/signup";
 import { cn } from "@/lib/utils";
 
@@ -35,6 +36,7 @@ function readLocation(): { returnPath: string | null; error: string | null } {
 
 export function SignInForm({ locale }: { locale: AppLocale }) {
   const t = useTranslations("signup");
+  const signedIn = useSessionHint();
   const ids = useId();
   const [mode, setMode] = useState<SignInLinkMode>("signup");
   const [email, setEmail] = useState("");
@@ -257,7 +259,7 @@ export function SignInForm({ locale }: { locale: AppLocale }) {
               id={`${ids}-age`}
               inputRef={ageRef}
               label={t("age.label")}
-              hint={t("age.hint")}
+              hint={t(signedIn ? "age.hintSignedIn" : "age.hint")}
               error={errors.age}
               checked={ageConfirmed}
               onChange={setAgeConfirmed}

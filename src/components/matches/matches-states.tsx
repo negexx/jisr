@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { EmptyState } from "@/components/empty-state";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
+import { useSessionHint } from "@/lib/auth/session-hint";
 
 export function EditProfileLink({ size = "default" }: { size?: "default" | "sm" }) {
   const t = useTranslations("matches.summary");
@@ -16,10 +17,11 @@ export function EditProfileLink({ size = "default" }: { size?: "default" | "sm" 
 
 export function NoProfileState() {
   const t = useTranslations("matches.states.none");
+  const signedIn = useSessionHint();
   return (
     <EmptyState
       title={t("title")}
-      description={t("description")}
+      description={t(signedIn ? "descriptionSignedIn" : "description")}
       action={
         <Link href="/profile" className={buttonVariants({ size: "lg" })}>
           {t("cta")}
@@ -31,10 +33,11 @@ export function NoProfileState() {
 
 export function ResetNotice({ onDismiss }: { onDismiss: () => void }) {
   const t = useTranslations("matches.states.reset");
+  const signedIn = useSessionHint();
   return (
     <output className="flex items-start gap-3 rounded-xl bg-secondary px-4 py-3">
       <Info aria-hidden="true" className="mt-1 size-5 shrink-0 text-muted-foreground" />
-      <p className="flex-1 pt-0.5 text-base">{t("notice")}</p>
+      <p className="flex-1 pt-0.5 text-base">{t(signedIn ? "noticeSignedIn" : "notice")}</p>
       <Button
         type="button"
         variant="ghost"

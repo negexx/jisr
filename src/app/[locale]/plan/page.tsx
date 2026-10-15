@@ -10,7 +10,9 @@ import {
   loadReportCopy,
   ReportOutdatedEntry,
 } from "@/components/report-outdated/report-outdated-entry";
+import { SessionText } from "@/components/session-text";
 import { routing } from "@/i18n/routing";
+import { accountsEnabled } from "@/lib/auth/accounts-enabled";
 import { pickMessages } from "@/lib/i18n/client-messages";
 import { pageMetadata } from "@/lib/seo";
 import { readSiteEnv } from "@/lib/site-env";
@@ -44,7 +46,17 @@ export default async function PlanPage({ params }: Props) {
   ]);
   return (
     <div className="-mt-8 md:-mt-12">
-      <PageBand eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
+      <PageBand
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        lead={
+          accountsEnabled() ? (
+            <SessionText guest={t("lead")} signedIn={t("leadSignedIn")} />
+          ) : (
+            t("lead")
+          )
+        }
+      />
       <div className="pt-8 md:pt-12">
         <NextIntlClientProvider
           locale={locale}

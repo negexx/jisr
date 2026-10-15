@@ -6,6 +6,7 @@ import { getMessages, getTranslations, setRequestLocale } from "next-intl/server
 import { SIGN_IN_MESSAGE_NAMESPACES } from "@/components/auth/namespaces";
 import { SignInForm } from "@/components/auth/sign-in-form";
 import { PageBand } from "@/components/page-band";
+import { SessionText } from "@/components/session-text";
 import { routing } from "@/i18n/routing";
 import { accountsEnabled } from "@/lib/auth/accounts-enabled";
 import { pickMessages } from "@/lib/i18n/client-messages";
@@ -40,7 +41,10 @@ export default async function SignInPage({ params }: Props) {
   const messages = await getMessages();
   return (
     <>
-      <PageBand title={t("title")} lead={t("lead")} />
+      <PageBand
+        title={t("title")}
+        lead={<SessionText guest={t("lead")} signedIn={t("leadSignedIn")} />}
+      />
       <div className="pt-8">
         <NextIntlClientProvider
           locale={locale}

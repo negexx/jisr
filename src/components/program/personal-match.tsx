@@ -13,6 +13,7 @@ import type { CountryCode, Slug } from "@/data-schema/primitives";
 import type { Profile } from "@/data-schema/profile";
 import { Link } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
+import { useSessionHint } from "@/lib/auth/session-hint";
 import { todayIso } from "@/lib/clock";
 import { useProfile } from "@/lib/profile/use-profile";
 import type { SnapshotBundle, SnapshotClient } from "@/lib/snapshot/client";
@@ -86,10 +87,13 @@ function ComputeError() {
 
 function ProfileCta() {
   const t = useTranslations("program.personal.cta");
+  const signedIn = useSessionHint();
   return (
     <div data-slot="personal-cta" className="flex flex-col gap-2">
       <p className="text-base font-medium">{t("title")}</p>
-      <p className="text-sm text-muted-foreground">{t("description")}</p>
+      <p className="text-sm text-muted-foreground">
+        {t(signedIn ? "descriptionSignedIn" : "description")}
+      </p>
       <Button asChild className="mt-1 w-full sm:w-fit">
         <Link href="/profile">
           {t("action")}
