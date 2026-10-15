@@ -35,6 +35,18 @@ describe("redactLogText", () => {
     );
   });
 
+  it("blanks a token at the start of the text or after whitespace", () => {
+    expect(redactLogText("token=abc123SECRET&x=1")).toBe("token=<token>&x=1");
+    expect(redactLogText("bad value token=abc123SECRET in body")).toBe(
+      "bad value token=<token> in body",
+    );
+    expect(redactLogText("rejected	token=abc")).toBe("rejected	token=<token>");
+  });
+
+  it("leaves a word that only ends in token= alone", () => {
+    expect(redactLogText("csrftoken=abc")).toBe("csrftoken=abc");
+  });
+
   it("blanks a percent-encoded address", () => {
     expect(redactLogText("Invalid callbackURL: /fr/welcome?email=ana.b%40example.com&x=1")).toBe(
       "Invalid callbackURL: /fr/welcome?email=<address>&x=1",

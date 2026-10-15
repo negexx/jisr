@@ -9,7 +9,8 @@ import { APIError, isAPIError } from "better-auth/api";
 // says which route failed) with its token value blanked, and a %40-encoded address counts as one.
 const ADDRESS = /[^\s@<>"'()]+@[^\s@<>"'()]+/g;
 const ENCODED_ADDRESS = /[^\s<>"'()?&=#/]+%40[^\s<>"'()?&=#/]+/gi;
-const TOKEN_VALUE = /([?&#;]token=)[^&#\s"'<>]+/gi;
+// In a query or fragment, or standing alone (start of the text or after whitespace).
+const TOKEN_VALUE = /((?:^|[\s?&#;])token=)[^&#\s"'<>]+/gi;
 const URL_LIKE = /\b[a-z][a-z0-9+.-]*:\/\/\S+/gi;
 const SHORT_CODE = /^[A-Za-z0-9_-]{1,64}$/;
 const MAX_MESSAGE_LENGTH = 200;
