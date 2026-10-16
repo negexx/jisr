@@ -36,6 +36,7 @@ const PRIVATE_VALUES = [
 ].filter((value) => value !== "");
 
 const SNAPSHOT_PATH = /^\/snapshots\/(manifest\.json|s\/[A-Za-z0-9.-]+\.[0-9a-f]{12}\.json)$/;
+const LOGO_PATH = "/logo-mark.png";
 
 // Whole tokens only: "1375" or "xz" inside a chunk or shard hash, or in a Next router value, is not
 // the student's grade or nationality. A value counts when no letter or digit touches it.
@@ -228,6 +229,8 @@ for (const { locale } of E2E_LOCALES) {
           shardFiles.push(url.pathname);
         } else if (url.pathname.startsWith("/_next/static/")) {
           // Build output, the same for every visitor.
+        } else if (url.pathname === LOGO_PATH) {
+          // The header's logo mark: a fixed static asset, not request data.
         } else {
           // The plan page itself and the header's links (Next prefetches them): same-locale routes
           // of the app, never an API or a third party.
@@ -358,6 +361,8 @@ for (const { locale } of E2E_LOCALES) {
           expect(leaks(text), `values in ${url.pathname}`).toEqual([]);
         } else if (url.pathname.startsWith("/_next/static/")) {
           // Build output, the same for every visitor.
+        } else if (url.pathname === LOGO_PATH) {
+          // The header's logo mark: a fixed static asset, not request data.
         } else {
           const routes = ["", "/profile", "/matches", "/plan", "/compare"].map(
             (route) => `/${locale}${route}`,
