@@ -6,6 +6,7 @@ export const LOCALES = ["fr", "en", "ar"] as const;
 export const CEFR_LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"] as const;
 export const INFO_KINDS = ["official", "estimate", "guidance"] as const;
 export const PROFILE_SCHEMA_VERSION = 1;
+export const MATCH_FILTERS_VERSION = 1;
 export const DRAFT_SCHEMA_VERSION = 1;
 // 2 since the official fee range (tuition.maxAmountMinor, tuition.basis); see ADR 0010.
 export const SNAPSHOT_FORMAT_VERSION = 2;
