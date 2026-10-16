@@ -98,6 +98,9 @@ export type JsBudget = { initial: number; untilIdle: number };
 // page until-idle 242.5 (ratchet 240), deterministically and within the 5% browser-vs-build
 // cross-check. Owner decision: raise only the affected rows -- home initial 170 -> 172 and program
 // until-idle 240 -> 244, in /fr and /ar by symmetry. Nothing else moved.
+// 2026-10-16 (accounts PR 3, magic-link nonce, ruling Q19): the new account modules re-partition a
+// shared Turbopack chunk by bytes, with no account code in the guest scholarships chunks; the row
+// measured /fr|/ar scholarships until idle 231.009. Owner-approved raise: until-idle 231 -> 232.
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/fr": { initial: 174, untilIdle: 225 },
   "/ar": { initial: 174, untilIdle: 225 },
@@ -109,8 +112,8 @@ export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/ar/plan": { initial: 191, untilIdle: 255 },
   "/fr/compare": { initial: 192, untilIdle: 278 },
   "/ar/compare": { initial: 192, untilIdle: 278 },
-  "/fr/scholarships": { initial: 174, untilIdle: 231 },
-  "/ar/scholarships": { initial: 174, untilIdle: 231 },
+  "/fr/scholarships": { initial: 174, untilIdle: 232 },
+  "/ar/scholarships": { initial: 174, untilIdle: 232 },
   "/fr/programs/xx-test-prog-ok": { initial: 188, untilIdle: 250 },
   "/ar/programs/xx-test-prog-ok": { initial: 188, untilIdle: 250 },
 };
