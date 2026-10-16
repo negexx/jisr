@@ -1173,7 +1173,7 @@
     "required": "required",
     "submit": "Email me a sign-in link",
     "sending": "Sending the link…",
-    "or": "or",
+    "orEmail": "Or continue with email",
     "google": "Continue with Google",
     "sent": {
       "title": "Check your inbox",
