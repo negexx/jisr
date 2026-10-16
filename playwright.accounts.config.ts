@@ -41,6 +41,9 @@ export default defineConfig({
     timeout: COLD_BUILD_TIMEOUT_MS,
     stdout: "pipe",
     stderr: "pipe",
+    // See playwright.config.ts: SIGTERM lets the harness stop `next` and PGlite on teardown instead
+    // of Playwright SIGKILLing the group and orphaning `next`, which hangs the step.
+    gracefulShutdown: { signal: "SIGTERM", timeout: 10_000 },
     env: {
       ACCOUNTS_ENABLED: "1",
       BETTER_AUTH_SECRET: "e2e-only-secret-for-the-accounts-test-server-0000",
