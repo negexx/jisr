@@ -508,3 +508,15 @@ Durable decisions from executing todos 10, 11, 13-17 (branch `feat/accounts-phas
 | IS-6 | 8, 21, 22, 23, 27 | Legal read-checklist: Brevo named, EU residency, consent/age/deletion/export stated; no-PII test spies error paths across auth flows | <attemptDir>/task-21-phase-2-accounts.md |
 | IS-7 | 5, 6, 25 | Alias suite: former slug resolves to canonical (page + saved list + plan); unknown slug still hits the existing MissingProgram UI; 404 contract intact | <attemptDir>/task-25-phase-2-accounts.md |
 | IS-8 | 16, 13, 24 | Report button on journey facts only (absence asserted on hero-demo/trust-band/guides); row written with FactRef identity; signed-out click writes zero rows | <attemptDir>/task-16-phase-2-accounts.md |
+
+## PR 3 execution notes (todos 18–28)
+
+Branch `feat/accounts-phase-2-part3`, from `main` `6e2b5cf0`, worktree `.claude/worktrees/accounts-phase-2-part3-34af86`. Ledger: `.superpowers/sdd/2026-10-14-accounts-phase-2/progress.md`.
+
+- **Todos 18–27**: complete and reviewed (export, deletion, account page, privacy, terms, ADR/prelaunch, accounts e2e, aliases, differential validators, hardening/perf). Per-task reports live beside the ledger.
+- **Todo 28 security pass**: a `security-review` skill run plus an Opus threat-list review over the whole surface. No Critical/High; every Medium/Low fixed with a regression test or accepted in writing. Findings, resolutions, commits and accepted risks: `docs/ops/security-review-accounts.md`.
+- **F3 (ruling Q16)**: the emailed magic link opens `/<locale>/sign-in/confirm#token=…` and signs in only on its button; `GET /magic-link/verify` is closed and the token leaves the request logs (ruling Q11 retired). Report: `.superpowers/sdd/2026-10-14-accounts-phase-2/task-28-f3-report.md`.
+- **Q19 soft browser-bound nonce**: the browser that asks for a link keeps an HttpOnly cookie; only its hash is stored, bound to the link's token. A mismatch still signs in (cross-device) but the landing never offers the import and warns. Report: `task-28-nonce-report.md`. ADR 0013 decisions 4/7/14 and prelaunch D9 updated.
+- **JS ratchet (owner decision)**: `/plan` until-idle raised 254 → 255 (todo 27) and `/fr|/ar scholarships` until-idle raised 231 → 232 (todo 28, Turbopack chunk re-partition by the new account modules, no account code in the guest chunks). The `/ar` home until-idle row flakes at ~225.4 vs 225 under load (pre-existing).
+- **Deliberately not built** (ADR 0003): admin app, worker/queue, search engine, B2B, payments, WhatsApp API, monorepo, student-facing AI, native apps.
+- **Still pending the owner at PR time** (no code impact): written acceptance of the file-transport env escape outside Vercel (F7), of the unknown-address sign-in email volume, and of the no-IP-based-limit position; and the final whole-branch review.

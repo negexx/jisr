@@ -60,7 +60,7 @@ All of it is kept in a database hosted by Neon in Frankfurt, in the European Uni
 
 ## What your browser keeps when you are signed in
 
-- A **session cookie**, set when you sign in and removed when you sign out or after seven days without use. It is strictly necessary, because without it Jisr cannot tell that you are signed in. Page scripts cannot read it, and it is not used for tracking. While you sign in with Google, a second security cookie lasts a few minutes. Jisr sets no tracking or advertising cookies, and no cookies at all as long as you do not start signing in.
+- A **session cookie**, set when you sign in and removed when you sign out or after seven days without use. It is strictly necessary, because without it Jisr cannot tell that you are signed in. Page scripts cannot read it, and it is not used for tracking. While you sign in with Google, a second security cookie lasts a few minutes. When you ask for a sign-in link by email, a short-lived HttpOnly cookie (fifteen minutes) holds a random value that identifies the browser that asked for it. It is removed once the link is used, and it only lets us warn you when a sign-in comes from another browser. Jisr sets no tracking or advertising cookies, and no cookies at all as long as you do not start signing in.
 - `jisr.auth` in local storage: a flag saying that this browser signed in. It holds no personal data.
 - A copy of your account's data in local storage, kept so that pages can show it at once, under these keys:
   - `jisr.account.profile`: your account's profile.
