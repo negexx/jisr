@@ -36,16 +36,19 @@ describe.each(LOCALES)("legal MDX documents (%s)", (locale) => {
 
   it("content/privacy names the controller, processors and supervisory authorities", () => {
     const source = read(locale, "privacy");
+    // The controller identity and contact are filled in (launch gate D2), never the placeholders.
     for (const literal of [
       "Vercel",
       "GoatCounter",
-      "[CONTROLLER NAME]",
-      "[CONTACT EMAIL]",
+      "Hamza Dagdagui",
+      "dagdaguihamza@gmail.com",
       "Garante",
       "CNDP",
     ]) {
       expect(source, `${locale} ${literal}`).toContain(literal);
     }
+    expect(source, `${locale} controller placeholder`).not.toContain("[CONTROLLER NAME]");
+    expect(source, `${locale} contact placeholder`).not.toContain("[CONTACT EMAIL]");
   });
 
   it("content/privacy links to the terms and vice versa", () => {
