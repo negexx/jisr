@@ -207,6 +207,22 @@ export function SignInForm({ locale }: { locale: AppLocale }) {
         </div>
       </fieldset>
 
+      <Button
+        type="button"
+        className="w-full"
+        disabled={busy}
+        aria-disabled={busy}
+        onClick={continueWithGoogle}
+      >
+        {t("google")}
+      </Button>
+
+      <div className="flex items-center gap-3 text-sm text-muted-foreground" aria-hidden="true">
+        <span className="h-px flex-1 bg-border" />
+        <span>{t("orEmail")}</span>
+        <span className="h-px flex-1 bg-border" />
+      </div>
+
       <form noValidate onSubmit={sendLink} className="flex flex-col gap-5">
         <div className="flex flex-col gap-1.5">
           <label htmlFor={emailId} className="text-base font-medium">
@@ -273,18 +289,6 @@ export function SignInForm({ locale }: { locale: AppLocale }) {
           </Button>
         </div>
       </form>
-
-      <div className="flex items-center gap-3 text-sm text-muted-foreground" aria-hidden="true">
-        <span className="h-px flex-1 bg-border" />
-        <span>{t("or")}</span>
-        <span className="h-px flex-1 bg-border" />
-      </div>
-
-      <div>
-        <Button type="button" variant="outline" disabled={busy} onClick={continueWithGoogle}>
-          {t("google")}
-        </Button>
-      </div>
     </div>
   );
 }

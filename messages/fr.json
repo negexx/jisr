@@ -1173,7 +1173,7 @@
     "required": "obligatoire",
     "submit": "Recevoir un lien de connexion",
     "sending": "Envoi du lien…",
-    "or": "ou",
+    "orEmail": "Ou continuer avec un e-mail",
     "google": "Continuer avec Google",
     "sent": {
       "title": "Consultez votre boîte de réception",

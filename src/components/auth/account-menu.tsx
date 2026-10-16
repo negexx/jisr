@@ -93,7 +93,7 @@ export function AccountMenu({ locale, labels }: { locale: AppLocale; labels: Acc
           href={accountPath(locale)}
           prefetch={false}
           aria-current={pathname === ACCOUNT_PATH ? "page" : undefined}
-          className={buttonVariants({ size: "sm", variant: "ghost" })}
+          className={buttonVariants({ size: "sm", variant: "ghost", className: "lg:px-3" })}
         >
           {labels.account}
         </Link>
@@ -103,6 +103,7 @@ export function AccountMenu({ locale, labels }: { locale: AppLocale; labels: Acc
           type="button"
           size="sm"
           variant="outline"
+          className="lg:px-3"
           disabled={signOutStatus === "working"}
           onClick={signOut}
         >

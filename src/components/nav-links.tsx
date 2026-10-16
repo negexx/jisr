@@ -24,7 +24,7 @@ export function NavLinks({ label, items }: { label: string; items: readonly NavI
   const count = useSavedCount();
   return (
     <nav aria-label={label}>
-      {/* The links carry 8px of inline padding on phone (12px from md); pull the list back so their text lines up with the wordmark. Below lg the nav has its own row under the logo and the list wraps to a second row rather than scroll sideways when four items plus the badge do not fit (French and English at 343px). From lg the nav sits in-line beside the logo, which already supplies the gap. */}
+      {/* The links carry 8px of inline padding on phone (12px from md; back to 8px from lg, where the signed-in account menu must still leave the four items on one row); pull the list back so their text lines up with the wordmark. Below lg the nav has its own row under the logo and the list wraps to a second row rather than scroll sideways when four items plus the badge do not fit (French and English at 343px). From lg the nav sits in-line beside the logo, which already supplies the gap. */}
       <ul className="-ms-2 flex flex-wrap gap-x-2 md:-ms-3 lg:ms-0">
         {items.map(({ href, label: itemLabel, savedCount, prefetch: noPrefetch }) => {
           const current = isCurrent(pathname, href);
@@ -41,8 +41,8 @@ export function NavLinks({ label, items }: { label: string; items: readonly NavI
                 }
                 aria-current={current ? "page" : undefined}
                 className={cn(
-                  "relative inline-flex min-h-12 items-center whitespace-nowrap rounded-md px-2 text-base font-medium transition-colors md:px-3",
-                  "after:pointer-events-none after:absolute after:inset-x-2 after:bottom-2 after:h-0.5 after:rounded-full after:bg-primary after:transition-opacity md:after:inset-x-3",
+                  "relative inline-flex min-h-12 items-center whitespace-nowrap rounded-md px-2 text-base font-medium transition-colors md:px-3 lg:px-2",
+                  "after:pointer-events-none after:absolute after:inset-x-2 after:bottom-2 after:h-0.5 after:rounded-full after:bg-primary after:transition-opacity md:after:inset-x-3 lg:after:inset-x-2",
                   current
                     ? "text-foreground after:opacity-100"
                     : "text-muted-foreground after:opacity-0 hover:bg-canvas-soft hover:text-foreground",

@@ -226,8 +226,16 @@ describe("user data schema on the harness", () => {
   it("keeps insertion order for two same-day saves read back through the mapper", async () => {
     await insertUser("u-same-day");
     // Alphabetical order is the reverse of insertion order, so only created_at can explain it.
-    await db.insert(schema.savedPrograms).values(savedRow("u-same-day", "xx-prog-z"));
-    await db.insert(schema.savedPrograms).values(savedRow("u-same-day", "xx-prog-a"));
+    // Explicit, distinct created_at values: the clock_timestamp() default can tie for two rapid
+    // inserts, and the slug tie-break then reverses the order (the flake this test hit).
+    await db.insert(schema.savedPrograms).values({
+      ...savedRow("u-same-day", "xx-prog-z"),
+      createdAt: new Date("2026-09-01T00:00:00Z"),
+    });
+    await db.insert(schema.savedPrograms).values({
+      ...savedRow("u-same-day", "xx-prog-a"),
+      createdAt: new Date("2026-09-01T00:00:01Z"),
+    });
     const rows = await db
       .select()
       .from(schema.savedPrograms)

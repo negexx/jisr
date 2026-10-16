@@ -14,15 +14,13 @@ export async function SiteHeader({ locale }: { locale: AppLocale }) {
   const savedCountTemplate: unknown = tNav.raw("savedCount");
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-white/70 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-x-4 px-4 md:px-6 lg:flex-nowrap">
-        <Link href="/" className="flex min-h-16 items-center gap-2 text-lg font-semibold">
-          <bdi>{t("siteName")}</bdi>
-          <span lang="ar" className="font-normal text-muted-foreground">
-            {t("siteNameArabic")}
-          </span>
+      <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-x-4 px-4 md:px-6 lg:flex-nowrap lg:gap-x-2">
+        <Link href="/" className="flex min-h-16 items-center">
+          {/* biome-ignore lint/performance/noImgElement: the header ships on every route and the guest JS budget has no headroom for the next/image runtime (ADR 0008); the mark is a static fixed-size asset. */}
+          <img src="/logo-mark.png" alt="" width={160} height={108} className="h-9 w-auto" />
           <span className="sr-only">{t("homeLink")}</span>
         </Link>
-        <div className="order-3 w-full lg:order-none lg:me-auto lg:ms-6 lg:w-auto">
+        <div className="order-3 w-full lg:order-none lg:me-auto lg:ms-3 lg:w-auto">
           <NavLinks
             label={tNav("label")}
             items={[
