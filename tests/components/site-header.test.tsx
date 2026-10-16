@@ -44,4 +44,14 @@ describe.each(routing.locales)("site header (%s)", (locale) => {
     expect(nav).toBeLessThan(account);
     expect(account).toBeLessThan(locales);
   });
+
+  it("links home through the logo mark, keeping the accessible name", async () => {
+    const markup = renderToStaticMarkup(await SiteHeader({ locale }));
+    // Pinned because a next/image runtime or missing dimensions would change the header's JS and CLS.
+    expect(markup).toContain('src="/logo-mark.png"');
+    expect(markup).toContain('width="160" height="108"');
+    expect(markup).toContain('alt=""');
+    expect(markup).toContain(catalogues[locale].shell.homeLink);
+    expect(markup).not.toContain(catalogues[locale].shell.siteNameArabic);
+  });
 });

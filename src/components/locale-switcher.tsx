@@ -26,8 +26,8 @@ export function LocaleSwitcher({ current, label, names }: Props) {
                 variant="ghost"
                 className={
                   isCurrent
-                    ? "bg-background text-foreground shadow-sm"
-                    : "text-muted-foreground hover:bg-background/70 hover:text-foreground"
+                    ? "bg-background text-foreground shadow-sm lg:px-2"
+                    : "text-muted-foreground hover:bg-background/70 hover:text-foreground lg:px-2"
                 }
               >
                 <Link
