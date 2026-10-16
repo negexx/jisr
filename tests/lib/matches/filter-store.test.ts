@@ -119,8 +119,16 @@ describe("seedFiltersFromLegacy", () => {
     expect(storage.keys()).toEqual([]);
   });
 
-  it("does not throw when storage is blocked, whatever it returns", () => {
+  it("returns false when the write is blocked and nothing is stored", () => {
+    const storage = createFakeStorage({ set: true });
+    expect(seedFiltersFromLegacy(storage, CHOSEN)).toBe(false);
+    expect(readMatchFilters(storage)).toEqual(EMPTY_MATCH_FILTERS);
+    expect(storage.keys()).toEqual([]);
+  });
+
+  it("returns false and does not throw when storage is fully blocked", () => {
     const storage = createFakeStorage({ get: true, set: true });
     expect(() => seedFiltersFromLegacy(storage, CHOSEN)).not.toThrow();
+    expect(seedFiltersFromLegacy(storage, CHOSEN)).toBe(false);
   });
 });

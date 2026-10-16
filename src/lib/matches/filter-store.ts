@@ -34,10 +34,11 @@ export function writeMatchFilters(storage: StorageLike, filters: unknown): void 
 
 // One-time back-compat: the profile 1→2 migration hands over the preference values it stripped.
 // Seed them only when nothing is stored yet (never overwrite a live choice) and only when the
-// legacy values are non-default. Returns whether a write was attempted.
+// legacy values are non-default. Returns whether the write actually persisted: a blocked setItem
+// drops the write silently, so reading back is the only honest signal.
 export function seedFiltersFromLegacy(storage: StorageLike, legacy: MatchFilters): boolean {
   if (isEmptyFilters(legacy)) return false;
   if (!isEmptyFilters(readMatchFilters(storage))) return false;
   writeMatchFilters(storage, legacy);
-  return true;
+  return !isEmptyFilters(readMatchFilters(storage));
 }
