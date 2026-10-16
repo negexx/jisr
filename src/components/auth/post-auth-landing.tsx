@@ -20,13 +20,16 @@ import { maskEmail } from "@/lib/auth/mask-email";
 import { deviceHasGuestData, runPostAuthSeam } from "@/lib/auth/post-auth";
 import { forgetSession, lookupSession } from "@/lib/auth/session-client";
 import { clearAccountLocalState, setSessionHint } from "@/lib/auth/session-hint";
+import { readSignInBrowser } from "@/lib/auth/sign-in-browser";
 import type { ImportMode } from "@/lib/server/import";
 
 import { FinishSignupGate } from "./finish-signup-gate";
+import { OtherBrowserWarning } from "./other-browser-warning";
 
 type Stage =
   | { kind: "checking" }
   | { kind: "unavailable" }
+  | { kind: "other-browser"; account: string }
   | { kind: "consent"; consentVersion: string | null; account: string };
 
 // Failure code when the student arrives with no session and no code of their own.
@@ -161,6 +164,10 @@ export function PostAuthLanding({ locale }: { locale: AppLocale }) {
   const [stage, setStage] = useState<Stage>({ kind: "checking" });
   const [attempt, setAttempt] = useState(0);
 
+  const leave = useCallback(() => {
+    router.replace(landingReturnPath(readLocation().returnParam, locale));
+  }, [locale, router]);
+
   // biome-ignore lint/correctness/useExhaustiveDependencies: `attempt` is the retry trigger
   useEffect(() => {
     const { returnParam, error } = readLocation();
@@ -179,11 +186,15 @@ export function PostAuthLanding({ locale }: { locale: AppLocale }) {
       } else if (result.status === "unavailable") {
         setStage({ kind: "unavailable" });
       } else {
-        setStage({
-          kind: "consent",
-          consentVersion: result.consentVersion,
-          account: maskEmail(result.email),
-        });
+        const account = maskEmail(result.email);
+        // Ruling Q19: the confirm page binds the sign-in to the browser that asked for the link. When
+        // it did not, this device's data is never offered for import (read, not consumed, so a reload
+        // keeps the warning rather than falling back to the consent flow).
+        setStage(
+          readSignInBrowser() === "other"
+            ? { kind: "other-browser", account }
+            : { kind: "consent", consentVersion: result.consentVersion, account },
+        );
       }
     });
     return () => {
@@ -191,6 +202,9 @@ export function PostAuthLanding({ locale }: { locale: AppLocale }) {
     };
   }, [attempt, locale, router]);
 
+  if (stage.kind === "other-browser") {
+    return <OtherBrowserWarning locale={locale} account={stage.account} onContinue={leave} />;
+  }
   if (stage.kind === "consent") {
     return (
       // The kept session answer predates the consent: forget it, so the menu asks again.

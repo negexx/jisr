@@ -9,6 +9,10 @@ export type ReportCopy = {
   reported: string;
   failed: string;
   rateLimited: string;
+  // Between the button's label and the fact it reports, in the accessible name only.
+  nameSeparator: string;
+  // Fact labels by lookup key ("programs:tuition", "institutions", "other"); see report-fact.ts.
+  factLabels: Record<string, string>;
 };
 
 // `snapshotVersion` stays null until the page knows which snapshot its facts came from; a button

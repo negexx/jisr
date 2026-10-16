@@ -41,10 +41,16 @@ describe.each(LOCALES)("clearDataAccount messages (%s)", (locale) => {
 });
 
 describe("account and welcome messages: language rules", () => {
-  it("puts a no-break space before : ? ! ; in French", () => {
+  it("puts a no-break space (U+00A0 or U+202F) before : ? ! ; in French", () => {
     for (const [key, value] of namespaceMessages("fr", NAMESPACES)) {
-      expect(value, key).not.toMatch(/[^ ][:?!;]/u);
+      expect(value, key).not.toMatch(/[^\u00a0\u202f][:?!;]/u);
       expect(value, key).not.toMatch(/ [:?!;]/u);
     }
+  });
+
+  it("asks the guest-import confirmation as a question in every locale", () => {
+    expect(namespaceMessages("fr", NAMESPACES).get("welcome.confirm.title")).toMatch(/\u00a0\?$/u);
+    expect(namespaceMessages("en", NAMESPACES).get("welcome.confirm.title")).toMatch(/\?$/u);
+    expect(namespaceMessages("ar", NAMESPACES).get("welcome.confirm.title")).toMatch(/؟$/u);
   });
 });

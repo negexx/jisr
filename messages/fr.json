@@ -1,16 +1,16 @@
 {
   "legal": {
-    "updated": "Dernière mise à jour : 10/10/2026",
+    "updated": "Dernière mise à jour : 15/10/2026",
     "privacy": {
       "meta": {
         "title": "Politique de confidentialité",
-        "description": "Comment Jisr traite vos données : ce qui reste dans votre navigateur, ce que voient notre hébergeur et nos statistiques, et vos droits au titre du RGPD et de la loi marocaine 09-08."
+        "description": "Comment Jisr traite vos données, en invité ou avec un compte : ce que garde votre navigateur, ce que nous conservons, qui les traite, et vos droits au titre du RGPD et de la loi marocaine 09-08."
       }
     },
     "terms": {
       "meta": {
         "title": "Conditions d'utilisation",
-        "description": "Les règles d'utilisation de Jisr : un service gratuit et informatif, sans compte, sans frais et sans engagement, régi par le droit italien."
+        "description": "Les règles d'utilisation de Jisr : un service gratuit et informatif, avec un compte facultatif, sans frais et sans engagement, régi par le droit italien."
       }
     }
   },
@@ -417,7 +417,7 @@
   "profile": {
     "meta": {
       "title": "Jisr | Créer mon profil",
-      "description": "Parlez-nous de votre Bac, de vos langues et de ce que vous voulez étudier. Vos réponses restent sur votre appareil."
+      "description": "Parlez-nous de votre Bac, de vos langues et de ce que vous voulez étudier pour voir les programmes qui semblent réalistes pour vous. Gratuit, avec ou sans compte."
     },
     "title": {
       "create": "Créer mon profil",
@@ -1185,7 +1185,7 @@
       "consentRequired": "Pour créer un compte, cochez la case pour accepter la politique de confidentialité.",
       "ageRequired": "Pour créer un compte, confirmez que vous avez 16 ans ou plus.",
       "emailInvalid": "Saisissez une adresse e-mail comme nom@exemple.com.",
-      "cooldown": "Un lien vient d'être envoyé à cette adresse. Attendez une minute avant d'en demander un autre.",
+      "cooldown": "Nous ne pouvons pas envoyer d'autre lien à cette adresse pour le moment. Réessayez plus tard.",
       "disabled": "Les comptes ne sont pas encore disponibles. Vous pouvez continuer à utiliser Jisr sans compte.",
       "failed": "Le lien n'a pas pu être envoyé. Réessayez dans un instant.",
       "noAccount": "Aucun compte n'existe encore avec cette adresse. Pour en créer un, choisissez Créer un compte et cochez les deux cases.",
@@ -1210,7 +1210,8 @@
     "signOutFailed": "La déconnexion n'a pas abouti. Réessayez.",
     "checkFailed": "Impossible de vérifier votre connexion.",
     "retry": "Réessayer",
-    "finishSetup": "Finaliser mon compte"
+    "finishSetup": "Finaliser mon compte",
+    "account": "Mon compte"
   },
   "welcome": {
     "meta": {
@@ -1223,8 +1224,17 @@
     "finishing": "Retour à votre page…",
     "failed": "Impossible de vérifier votre connexion. Vérifiez votre réseau et réessayez.",
     "retry": "Réessayer",
+    "otherBrowser": {
+      "title": "Cet appareil n'a pas demandé ce lien de connexion",
+      "account": "Connexion en tant que <account>{email}</account>",
+      "body": "Si vous ne l'avez pas demandé depuis un autre appareil, déconnectez-vous maintenant. Aucune donnée de cet appareil ne sera ajoutée à ce compte.",
+      "continue": "Continuer sans ajouter les données de cet appareil",
+      "signOut": "Se déconnecter",
+      "signingOut": "Déconnexion…",
+      "failed": "Échec de la déconnexion. Essayez de nouveau."
+    },
     "confirm": {
-      "title": "Ajouter les données de cet appareil à <account>{email}</account>",
+      "title": "Ajouter les données de cet appareil à <account>{email}</account> ?",
       "body": "Cet appareil a un profil, des programmes enregistrés ou des étapes cochées d'avant votre connexion. Ajoutez-les seulement si ce compte est le vôtre.",
       "add": "Ajouter à ce compte",
       "notNow": "Pas maintenant",
@@ -1241,6 +1251,108 @@
       "failed": "Impossible d'ajouter les données de cet appareil à votre compte. Elles sont toujours sur cet appareil.",
       "retry": "Réessayer",
       "continue": "Continuer sans elles"
+    }
+  },
+  "accountDelete": {
+    "meta": {
+      "title": "Supprimer votre compte",
+      "description": "Confirmez la suppression de votre compte Jisr."
+    },
+    "title": "Supprimer votre compte",
+    "lead": "Cette page confirme la suppression que vous avez demandée par e-mail.",
+    "reading": "Lecture du lien…",
+    "warning": "Votre compte et tout ce qu'il contient sur Jisr (profil, programmes enregistrés, étapes cochées, signalements) seront supprimés définitivement, et les données gardées sur cet appareil seront effacées aussi. Cette action est irréversible.",
+    "confirm": "Supprimer mon compte",
+    "working": "Suppression…",
+    "deleted": {
+      "title": "Votre compte a été supprimé",
+      "body": "Votre compte et ses données ont été effacés de Jisr et de cet appareil. Vous pouvez continuer à utiliser Jisr sans compte.",
+      "home": "Retour à l'accueil"
+    },
+    "errors": {
+      "invalidToken": "Ce lien n'est pas valide ou a expiré. Demandez un nouvel e-mail de suppression depuis la page de votre compte.",
+      "signedOut": "Cet appareil n'est pas connecté, nous ne pouvons donc pas confirmer la suppression ici. Si vous l'avez déjà confirmée il y a un instant, votre compte a probablement été supprimé, et vous pouvez effacer les données de Jisr de cet appareil. Sinon, connectez-vous au compte à supprimer, puis ouvrez à nouveau le lien de l'e-mail.",
+      "eraseDevice": "Effacer cet appareil",
+      "erased": "Les données de Jisr ont été effacées de cet appareil.",
+      "signIn": "Se connecter",
+      "unavailable": "Les comptes ne sont pas disponibles pour le moment. Rien n'a été supprimé.",
+      "failed": "Nous n'avons pas pu confirmer la suppression. Vérifiez votre connexion et réessayez."
+    }
+  },
+  "signInConfirm": {
+    "meta": {
+      "title": "Confirmez votre connexion",
+      "description": "Confirmez le lien de connexion reçu par e-mail."
+    },
+    "title": "Se connecter à Jisr",
+    "lead": "Vous avez ouvert un lien de connexion. Rien ne se passe tant que vous ne confirmez pas ci-dessous.",
+    "reading": "Lecture du lien…",
+    "signin": {
+      "body": "Appuyez sur le bouton pour vous connecter sur ce navigateur.",
+      "confirm": "Me connecter"
+    },
+    "signup": {
+      "body": "Appuyez sur le bouton pour créer votre compte Jisr et vous connecter sur ce navigateur.",
+      "confirm": "Créer mon compte"
+    },
+    "working": "Connexion…",
+    "notYou": "Si vous n'avez pas demandé ce lien, fermez cette page : rien n'a été fait.",
+    "errors": {
+      "noToken": "Ce lien est incomplet ou a déjà été ouvert. Demandez un nouveau lien de connexion.",
+      "unavailable": "Les comptes ne sont pas disponibles pour le moment. Vous pouvez continuer à utiliser Jisr sans compte.",
+      "failed": "La connexion n'a pas abouti. Vérifiez votre connexion internet et réessayez."
+    },
+    "newLink": "Demander un nouveau lien"
+  },
+  "accountPage": {
+    "meta": {
+      "title": "Votre compte",
+      "description": "Téléchargez vos données ou supprimez votre compte Jisr."
+    },
+    "title": "Votre compte",
+    "lead": "Téléchargez une copie de vos données ou supprimez votre compte Jisr.",
+    "checking": "Vérification de votre connexion…",
+    "signedIn": "Connecté en tant que <value>{email}</value>",
+    "signedOut": {
+      "body": "Connectez-vous pour télécharger vos données ou supprimer votre compte.",
+      "signIn": "Se connecter"
+    },
+    "unavailable": {
+      "body": "Impossible de vérifier votre connexion pour le moment.",
+      "retry": "Réessayer"
+    },
+    "export": {
+      "title": "Télécharger mes données",
+      "body": "Un fichier JSON avec votre adresse e-mail, votre profil, vos programmes enregistrés, vos étapes cochées, vos signalements et votre consentement.",
+      "button": "Télécharger mes données",
+      "working": "Préparation…",
+      "done": "Le téléchargement a démarré.",
+      "errors": {
+        "failed": "Le téléchargement n'a pas abouti. Vérifiez votre connexion et réessayez.",
+        "unavailable": "Les comptes ne sont pas disponibles pour le moment. Réessayez plus tard."
+      }
+    },
+    "consent": {
+      "title": "Votre consentement",
+      "record": "Vous avez accepté la politique de confidentialité, version <value>{version}</value>, le <value>{date}</value>.",
+      "recordNoDate": "Vous avez accepté la politique de confidentialité, version <value>{version}</value>.",
+      "none": "Aucun consentement n'est enregistré pour ce compte."
+    },
+    "delete": {
+      "title": "Supprimer mon compte",
+      "body": "Votre compte et tout ce qu'il contient sur Jisr (profil, programmes enregistrés, étapes cochées, signalements) seront supprimés définitivement. Pour éviter une suppression par erreur, nous envoyons d'abord un lien de confirmation à <value>{email}</value>.",
+      "button": "Supprimer mon compte",
+      "working": "Envoi…",
+      "sent": {
+        "title": "Consultez votre boîte e-mail",
+        "body": "Nous venons de demander l'envoi d'un lien de confirmation à <value>{email}</value>. Il peut mettre une minute à arriver. Si rien n'arrive, essayez à nouveau après une minute. Rien n'est supprimé tant que vous n'avez pas ouvert le lien et confirmé.",
+        "repeated": "Nous avons relancé la demande.",
+        "again": "Renvoyer le lien"
+      },
+      "errors": {
+        "failed": "La demande n'a pas abouti. Rien n'a été supprimé. Vérifiez votre connexion et réessayez.",
+        "unavailable": "Les comptes ne sont pas disponibles pour le moment. Rien n'a été supprimé."
+      }
     }
   },
   "accountSync": {
@@ -1272,6 +1384,33 @@
     "button": "Signaler une info périmée",
     "reported": "Signalé, merci",
     "failed": "Votre signalement n'a pas pu être envoyé. Réessayez.",
-    "rateLimited": "Vous avez atteint la limite de signalements pour aujourd'hui. Réessayez demain."
+    "rateLimited": "Vous avez atteint la limite de signalements pour aujourd'hui. Réessayez demain.",
+    "nameSeparator": " : ",
+    "facts": {
+      "tuition": "frais de scolarité",
+      "teachingLanguages": "langues d'enseignement",
+      "duration": "durée du programme",
+      "requirements": "conditions d'admission",
+      "deadline": "date limite de candidature",
+      "applicationChannel": "procédure de candidature",
+      "documents": "documents à fournir",
+      "program": "informations sur le programme",
+      "institution": "informations sur l'établissement",
+      "admissionRoute": "voie d'admission",
+      "gradeConversion": "conversion des notes",
+      "credential": "reconnaissance du diplôme",
+      "scholarshipAmount": "montant de la bourse",
+      "scholarshipDeadline": "date limite de la bourse",
+      "scholarshipDocuments": "documents de la bourse",
+      "scholarshipEligibility": "conditions de la bourse",
+      "scholarship": "informations sur la bourse",
+      "housing": "coût du logement",
+      "food": "coût de l'alimentation",
+      "transport": "coût du transport",
+      "insurance": "coût de l'assurance",
+      "application_visa": "frais de dossier et de visa",
+      "setup": "frais d'installation",
+      "other": "cette information"
+    }
   }
 }

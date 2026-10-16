@@ -12,6 +12,7 @@ import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
 import type { PostAuthStep } from "@/lib/auth/post-auth";
 import { forgetSession, lookupSession } from "@/lib/auth/session-client";
 import { ACCOUNT_CACHE_PREFIX, AUTH_HINT_KEY } from "@/lib/auth/session-hint";
+import { SIGN_IN_BROWSER_KEY } from "@/lib/auth/sign-in-browser";
 import { type MessageTree, pickMessages } from "@/lib/i18n/client-messages";
 
 import ar from "../../../messages/ar.json";
@@ -28,6 +29,7 @@ const mocks = vi.hoisted(() => {
     acceptCurrentConsent: vi.fn<() => Promise<unknown>>(),
     seam: vi.fn<(locale: AppLocale, mode?: "auto" | "replace") => Promise<PostAuthStep>>(),
     hasGuestData: vi.fn<() => boolean>(),
+    signOut: vi.fn<() => Promise<{ error: unknown }>>(),
   };
 });
 
@@ -36,7 +38,9 @@ vi.mock("next/navigation", async (importOriginal) => ({
   ...(await importOriginal<typeof import("next/navigation")>()),
   useRouter: () => mocks.router,
 }));
-vi.mock("@/lib/auth/client", () => ({ authClient: { getSession: mocks.getSession } }));
+vi.mock("@/lib/auth/client", () => ({
+  authClient: { getSession: mocks.getSession, signOut: mocks.signOut },
+}));
 vi.mock("@/lib/server/consent", () => ({ acceptCurrentConsent: mocks.acceptCurrentConsent }));
 vi.mock("@/lib/auth/post-auth", () => ({
   runPostAuthSeam: mocks.seam,
@@ -74,6 +78,7 @@ function renderLanding(locale: AppLocale, search: string) {
 
 beforeEach(() => {
   window.localStorage.clear();
+  window.sessionStorage.clear();
   forgetSession();
   mocks.replace.mockReset();
   mocks.getSession.mockReset();
@@ -107,6 +112,25 @@ describe("post-auth landing with a ready account", () => {
     expect(mocks.getSession).toHaveBeenCalledTimes(1);
   });
 
+  it("never offers the import when the link was not asked for on this browser (ruling Q19)", async () => {
+    window.sessionStorage.setItem(SIGN_IN_BROWSER_KEY, "other");
+    mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
+    mocks.hasGuestData.mockReturnValue(true);
+    renderLanding("fr", "?return=%2Ffr%2Fcompare");
+
+    expect(
+      await screen.findByRole("heading", { name: fr.welcome.otherBrowser.title }),
+    ).toBeTruthy();
+    expect(screen.queryByRole("button", { name: fr.welcome.confirm.add })).toBeNull();
+    expect(mocks.seam).not.toHaveBeenCalled();
+    // The flag is not consumed, so a reload (a fresh mount) keeps the warning rather than offering
+    // the import again (ruling Q19: never).
+    expect(window.sessionStorage.getItem(SIGN_IN_BROWSER_KEY)).toBe("other");
+
+    await userEvent.click(screen.getByRole("button", { name: fr.welcome.otherBrowser.continue }));
+    expect(mocks.replace).toHaveBeenCalledWith("/fr/compare");
+  });
+
   it("clears an earlier account's cache before it sets the hint (ruling P24)", async () => {
     const cached = `${ACCOUNT_CACHE_PREFIX}saved`;
     window.localStorage.setItem(AUTH_HINT_KEY, "true");
@@ -136,16 +160,18 @@ describe("post-auth landing with a ready account", () => {
   it.each([
     ["an absolute URL", "?return=https%3A%2F%2Fevil.example%2Ffr"],
     ["a protocol-relative URL", "?return=%2F%2Fevil.example"],
-    ["another locale's path", "?return=%2Fen%2Fplan"],
     ["a path with a query", "?return=%2Ffr%2Fplan%3Fx%3D1"],
     ["a path without a locale", "?return=%2Fplan"],
-  ])("never leaves the site for %s", async (_label, search) => {
+  ])("falls back to the locale home, never off the site, for %s", async (_label, search) => {
     mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
     renderLanding("fr", search);
-    await waitFor(() => expect(mocks.replace).toHaveBeenCalledTimes(1));
-    const [target] = mocks.replace.mock.calls[0] ?? [];
-    expect(target === "/fr" || target === "/fr/plan" || target === "/en/plan").toBe(true);
-    expect(String(target)).not.toContain("evil");
+    await waitFor(() => expect(mocks.replace).toHaveBeenCalledExactlyOnceWith("/fr"));
+  });
+
+  it("keeps a same-site path under another known locale as it is", async () => {
+    mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
+    renderLanding("fr", "?return=%2Fen%2Fplan");
+    await waitFor(() => expect(mocks.replace).toHaveBeenCalledExactlyOnceWith("/en/plan"));
   });
 
   it("moves on only after the post-auth step has finished", async () => {

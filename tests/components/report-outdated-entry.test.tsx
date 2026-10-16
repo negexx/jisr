@@ -2,6 +2,7 @@ import { createTranslator } from "next-intl";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { ReportProvider } from "@/components/report-outdated/report-context";
+import { reportCopyFrom } from "@/components/report-outdated/report-fact";
 import {
   loadReportCopy,
   ReportOutdatedEntry,
@@ -43,7 +44,7 @@ describe.each(routing.locales)("report outdated copy and entry (%s)", (locale) =
 
   it("loads this locale's copy when accounts are on", async () => {
     vi.stubEnv("ACCOUNTS_ENABLED", "true");
-    expect(await loadReportCopy(locale)).toEqual(catalogues[locale].reportOutdated);
+    expect(await loadReportCopy(locale)).toEqual(reportCopyFrom(catalogues[locale].reportOutdated));
   });
 
   it("hands back the page untouched when there is no copy", () => {
@@ -58,7 +59,7 @@ describe.each(routing.locales)("report outdated copy and entry (%s)", (locale) =
   });
 
   it("wraps the page in a provider holding the copy and the snapshot version", () => {
-    const copy = catalogues[locale].reportOutdated;
+    const copy = reportCopyFrom(catalogues[locale].reportOutdated);
     const entry = ReportOutdatedEntry({
       copy,
       locale,
@@ -73,7 +74,7 @@ describe.each(routing.locales)("report outdated copy and entry (%s)", (locale) =
 
   it("leaves the snapshot version unset for pages that learn it in the browser", () => {
     const entry = ReportOutdatedEntry({
-      copy: catalogues[locale].reportOutdated,
+      copy: reportCopyFrom(catalogues[locale].reportOutdated),
       locale,
       children: CHILD,
     });

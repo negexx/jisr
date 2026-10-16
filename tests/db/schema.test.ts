@@ -105,6 +105,7 @@ describe("user data schema on the harness", () => {
     );
     expect(rows.map((row) => row.table_name)).toEqual([
       "account",
+      "auth_email_days",
       "checklist_progress",
       "email_cooldowns",
       "feedback_reports",

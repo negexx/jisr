@@ -18,7 +18,9 @@ next-env.d.ts
 # Test output
 coverage/
 playwright-report/
+playwright-report-accounts/
 test-results/
+test-results-accounts/
 
 # Subagent-driven-development scratch (briefs, reports, ledger)
 .superpowers/

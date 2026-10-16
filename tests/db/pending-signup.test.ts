@@ -9,6 +9,8 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } 
 import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
 import type { SignInLinkRequest } from "@/lib/server/signup";
 
+import { confirmRequest, cookieOf } from "../support/magic-link";
+
 // The signup surface's server side end to end on PGlite: the Server Action writes the pending row,
 // the real auth instance claims the cooldown slot and sends through the real file transport, and
 // following the emailed link creates the user. Only the request headers are stubbed (no Next
@@ -82,15 +84,14 @@ function request(overrides: Partial<SignInLinkRequest> = {}): SignInLinkRequest 
   };
 }
 
-// Follows an emailed link the way a browser does; the response is Better Auth's redirect.
-async function follow(link: string): Promise<{ location: URL; cookie: string }> {
-  const response = await auth.handler(new Request(link, { method: "GET" }));
-  expect(response.status).toBe(302);
-  const cookie = response.headers
-    .getSetCookie()
-    .map((value) => value.split(";")[0])
-    .join("; ");
-  return { location: new URL(response.headers.get("location") ?? "", ORIGIN), cookie };
+// Follows an emailed link the way a browser does: the link opens the confirm page, whose button posts
+// the token from the fragment (todo 28, F3). `error` is the refusal code, null on success.
+async function follow(link: string): Promise<{ error: string | null; cookie: string }> {
+  const response = await auth.handler(confirmRequest(link));
+  if (response.status === 200) return { error: null, cookie: cookieOf(response) };
+  expect(response.status).toBe(400);
+  const body: { code?: string } = await response.json();
+  return { error: body.code ?? null, cookie: "" };
 }
 
 function signedInAs(cookie: string): void {
@@ -205,21 +206,19 @@ describe("requestSignInLink with accounts on", () => {
     expect(sent.map((mail) => [mail.kind, mail.to])).toEqual([["magic-link", "new@example.com"]]);
   });
 
-  it("emails a link that lands on the welcome route with the return path", async () => {
+  it("emails a link to the confirm page that carries the return path in its fragment", async () => {
     await requestSignInLink(request({ locale: "ar", returnPath: "/ar/compare" }));
     const link = new URL(await lastLink());
-    const landing = "/ar/welcome?return=/ar/compare";
-    for (const param of ["callbackURL", "newUserCallbackURL", "errorCallbackURL"]) {
-      expect(decodeURIComponent(link.searchParams.get(param) ?? "")).toBe(landing);
-    }
+    expect(link.pathname).toBe("/ar/sign-in/confirm");
+    expect(link.search).toBe("");
+    expect(new URLSearchParams(link.hash.slice(1)).get("return")).toBe("/ar/compare");
     expect((await mails())[0]?.text).toContain("جسر");
   });
 
   it("creates the user with the current consent when the link is followed", async () => {
     await requestSignInLink(request());
-    const { location, cookie } = await follow(await lastLink());
-    expect(location.pathname).toBe("/fr/welcome");
-    expect(location.searchParams.get("error")).toBeNull();
+    const { error, cookie } = await follow(await lastLink());
+    expect(error).toBeNull();
     const { rows } = await pool.query<{ consent_version: string | null }>(
       'select consent_version from "user"',
     );
@@ -277,7 +276,7 @@ describe("requestSignInLink with accounts on", () => {
       error: "cooldown",
     });
     expect(await mails()).toHaveLength(1);
-    expect(await count("verification")).toBe(1);
+    expect(await count("verification")).toBe(2);
   });
 
   it("writes no pending row in signin mode, and the link then refuses an unknown address", async () => {
@@ -285,9 +284,8 @@ describe("requestSignInLink with accounts on", () => {
       ok: true,
     });
     expect(await count("pending_signups")).toBe(0);
-    const { location } = await follow(await lastLink());
-    expect(location.pathname).toBe("/fr/welcome");
-    expect(location.searchParams.get("error")).toBe("AGE_NOT_CONFIRMED");
+    const { error } = await follow(await lastLink());
+    expect(error).toBe("AGE_NOT_CONFIRMED");
     expect(await count("user")).toBe(0);
   });
 
@@ -297,17 +295,64 @@ describe("requestSignInLink with accounts on", () => {
        values ('existing', 'Student', 'known@example.com', true, '2026-01-01', '2026-01-02')`,
     );
     await requestSignInLink(request({ mode: "signin", email: "known@example.com" }));
-    const { location, cookie } = await follow(await lastLink());
-    expect(location.searchParams.get("error")).toBeNull();
+    const { error, cookie } = await follow(await lastLink());
+    expect(error).toBeNull();
     signedInAs(cookie);
     expect(await requireAccountReady()).toEqual({ ok: false, error: "consent_required" });
+  });
+
+  it("emails the sign-up wording for a signup and the plain sign-in wording for a signin", async () => {
+    await requestSignInLink(request({ locale: "en" }));
+    await requestSignInLink(request({ locale: "en", mode: "signin", email: "other@example.com" }));
+    const [signup, signin] = await mails();
+    expect(signup?.text).toMatch(/opening this link creates or opens your Jisr account/i);
+    expect(signup?.text).toContain(CURRENT_CONSENT_VERSION);
+    expect(signin?.text).not.toMatch(/creates or opens your Jisr account/i);
+  });
+
+  it("does not let a direct POST claim the sign-up wording through the metadata", async () => {
+    const response = await auth.handler(
+      new Request(`${ORIGIN}/api/auth/sign-in/magic-link`, {
+        method: "POST",
+        headers: { origin: ORIGIN, "content-type": "application/json" },
+        body: JSON.stringify({
+          email: "forged@example.com",
+          metadata: { locale: "en", mode: "signup" },
+        }),
+      }),
+    );
+    expect(response.status).toBe(200);
+    expect((await mails())[0]?.text).not.toMatch(/creates or opens your Jisr account/i);
+    expect(await count("pending_signups")).toBe(0);
+  });
+
+  it("writes no pending row for a signup the cooldown refuses", async () => {
+    expect(await requestSignInLink(request({ mode: "signin", consent: false }))).toEqual({
+      ok: true,
+    });
+    expect(await requestSignInLink(request())).toEqual({ ok: false, error: "cooldown" });
+    expect(await count("pending_signups")).toBe(0);
+  });
+
+  it("does not refresh a planted pending row when the cooldown refuses the signup", async () => {
+    await pool.query(
+      `insert into pending_signups (email, consent_version, consented_at, age_confirmed, expires_at)
+       values ('new@example.com', '2026-01-01', '2026-01-02T00:00:00Z', true, now() + interval '5 minutes')`,
+    );
+    expect(await requestSignInLink(request({ mode: "signin", consent: false }))).toEqual({
+      ok: true,
+    });
+    const before = await pool.query("select * from pending_signups");
+    expect(await requestSignInLink(request())).toEqual({ ok: false, error: "cooldown" });
+    const afterRows = await pool.query("select * from pending_signups");
+    expect(afterRows.rows).toEqual(before.rows);
   });
 
   it("creates no user from an expired pending row", async () => {
     await requestSignInLink(request());
     await pool.query("update pending_signups set expires_at = now() - interval '1 second'");
-    const { location } = await follow(await lastLink());
-    expect(location.searchParams.get("error")).toBe("AGE_NOT_CONFIRMED");
+    const { error } = await follow(await lastLink());
+    expect(error).toBe("AGE_NOT_CONFIRMED");
     expect(await count("user")).toBe(0);
   });
 });

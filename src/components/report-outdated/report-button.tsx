@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { readSessionHint } from "@/lib/auth/session-hint";
 
 import type { ReportScope } from "./report-context";
-import { REPORT_WRAPPER_CLASS, ReportTrigger } from "./report-trigger";
+import { REPORT_WRAPPER_CLASS, ReportTrigger, reportContext } from "./report-trigger";
 
 type Status = "idle" | "reported" | "failed" | "rate_limited";
 
@@ -79,6 +79,7 @@ export function ReportButton({
     <span data-slot="report-outdated" className={REPORT_WRAPPER_CLASS}>
       <ReportTrigger
         label={reported ? copy.reported : copy.button}
+        context={reportContext(copy, record, path)}
         hostname={hostname}
         disabled={reported}
         onClick={report}

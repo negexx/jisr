@@ -1,6 +1,6 @@
 # Hobby limits runbook
 
-Last updated 2026-10-08. This refines ADR 0004 section 1 (see ADR 0011). On the Hobby plan Vercel does not bill: when a monthly cap is reached the project is **paused**. This runbook is how to notice that early. Hobby does get Vercel's automatic usage notification emails, but their thresholds are not configurable, and Spend Management and configurable thresholds are Pro-only (https://vercel.com/docs/notifications, https://vercel.com/docs/pricing/manage-and-optimize-usage). So the monthly check below is the deliberate 60% early warning; the emails are the backstop. In your Vercel account notification settings (look for **Notifications**, https://vercel.com/docs/notifications) confirm that email notifications for usage are on, and that mail from Vercel is not going to spam.
+Last updated 2026-10-15. This refines ADR 0004 section 1 (see ADR 0011). On the Hobby plan Vercel does not bill: when a monthly cap is reached the project is **paused**. This runbook is how to notice that early. Hobby does get Vercel's automatic usage notification emails, but their thresholds are not configurable, and Spend Management and configurable thresholds are Pro-only (https://vercel.com/docs/notifications, https://vercel.com/docs/pricing/manage-and-optimize-usage). So the monthly check below is the deliberate 60% early warning; the emails are the backstop. In your Vercel account notification settings (look for **Notifications**, https://vercel.com/docs/notifications) confirm that email notifications for usage are on, and that mail from Vercel is not going to spam.
 
 ## 1. The limits (verified 2026-10-08)
 
@@ -11,7 +11,7 @@ Sources: https://vercel.com/docs/limits, https://vercel.com/docs/plans/hobby, ht
 | CDN Requests | 1,000,000 | 600,000 | Every file a visitor loads: HTML, JavaScript chunks, CSS, fonts, snapshot shards. Likely the first cap to bind. |
 | Fast Data Transfer | 100 GB | 60 GB | Bytes sent from the CDN to visitors. |
 | Fast Origin Transfer | 10 GB | 6 GB | Bytes between the CDN and Vercel functions or origin. Small here (static pages). |
-| Function Invocations | 1,000,000 | 600,000 | Only the redirect from `/` and from locale-less paths; page views on `/fr/...`, `/en/...`, `/ar/...` skip the proxy by design. |
+| Function Invocations | 1,000,000 | 600,000 | Guests: only the redirect from `/` and from locale-less paths; page views on `/fr/...`, `/en/...`, `/ar/...` skip the proxy by design. Once accounts are on, signed-in students also add the `/api/auth/*` requests (sign-in, link verification, Google callback, session lookup, deletion) and Server Actions: about two per full page load (one session lookup, one `loadAccountData`) plus one per save, tick, report or profile save. Guests add none. |
 | Active CPU | 4 hours | 2.4 hours | Function compute time. |
 | Provisioned Memory | 360 GB-hours | 216 GB-hours | Function memory time. |
 | Uploads per day (Vercel API, Hobby) | 5,000 | 3,000 | Each file of a deployment upload counts. Not monthly: it matters on deploy days. The build output has about 24,000 files, which is why the deploy uses `--archive=tgz` (see below). |
@@ -27,6 +27,10 @@ What a pause looks like: the site answers `503` with the code `DEPLOYMENT_PAUSED
 3. Add one row to the Log table in section 7.
 4. If any value is at or above its 60% mark, follow section 3 the same day.
 5. Also look at the Deployments list for failed production deployments.
+6. Once accounts are on, open Brevo (Statistics, transactional email) and read the busiest day of the month. The Free plan sends up to 300 emails a day after Brevo has approved the account (https://www.brevo.com/pricing/, read 2026-10-15; re-read it at each quarterly review). The 60% mark is 180 emails in a day. Every sign-in link and every account-deletion link is one email, so a Bac-results spike can reach the cap; past it new links are not sent and signing in fails, while the guest journey is unaffected. Options at the mark: wait, or move to a paid Brevo plan (this ends the zero-cost setup, so decide it deliberately and write it down).
+7. Function Invocations now include account traffic (section 1). In the Vercel dashboard (Usage, Function Invocations) look at which routes invoke: `/api/auth/*` and the Server Action requests on `/fr/...` pages are expected, anything else is not. If a reading is at or above 60%, follow section 4.
+8. Neon: open the Neon console, the project's Usage page, and read compute (CU-hours) and storage. The Free plan gives each project 100 CU-hours of compute a month (compute scales to zero when idle) and 1 GB of Postgres storage (https://neon.com/pricing, read 2026-10-15; re-read it at each quarterly review). The 60% marks are 60 CU-hours and 0.6 GB.
+9. Add one row to the accounts log in section 7.
 
 ## 3. The 60% rule: what to do
 
@@ -63,7 +67,7 @@ To go back, unset the variable and redeploy.
 
 ## 4. If the near cap is not CDN traffic
 
-- **Function Invocations or Active CPU:** a page view is not supposed to invoke a function. Check `src/proxy.ts` (the matcher skips `/fr`, `/en`, `/ar` and everything below them) and look at the dashboard to see which routes invoke. Crawler traffic on locale-less paths is the usual cause; it is cheap per request but can add up.
+- **Function Invocations or Active CPU:** a guest page view is not supposed to invoke a function. Check `src/proxy.ts` (the matcher skips `/fr`, `/en`, `/ar` and everything below them) and look at the dashboard to see which routes invoke. Crawler traffic on locale-less paths is the usual cause; it is cheap per request but can add up. With accounts on, signed-in traffic does invoke functions (section 1): look at `/api/auth/*` and the Server Action requests first. The sync layer already limits itself to one `loadAccountData` per full page load and one when a tab returns after more than 60 seconds hidden (`REHYDRATE_AFTER_HIDDEN_MS` in `src/lib/account-sync/visibility.ts`, ADR 0013 decision 5); lengthening that interval is the first lever, and unsetting `ACCOUNTS_ENABLED` (then redeploying) the last.
 - **Fast Data Transfer:** check the first-load JavaScript with `pnpm perf:js` and the largest files in the browser's network tab.
 
 ## 5. When the site is paused, and the non-commercial rule
@@ -109,3 +113,9 @@ Reading: the request cap binds well before the transfer cap for every case (abou
 | Date | Fast Data Transfer | CDN Requests | Function Invocations | Fast Origin Transfer | Active CPU |
 |---|---|---|---|---|---|
 | (first check after launch) | | | | | |
+
+### Accounts log (once accounts are on)
+
+| Date | Brevo: busiest day (emails) | Neon: compute (CU-hours) | Neon: storage | Notes |
+|---|---|---|---|---|
+| (first check after accounts launch) | | | | |

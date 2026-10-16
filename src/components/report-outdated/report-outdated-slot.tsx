@@ -5,7 +5,7 @@ import { lazy, Suspense, useState } from "react";
 import { useSessionHint } from "@/lib/auth/session-hint";
 
 import { useReportScope } from "./report-context";
-import { REPORT_WRAPPER_CLASS, ReportTrigger } from "./report-trigger";
+import { REPORT_WRAPPER_CLASS, ReportTrigger, reportContext } from "./report-trigger";
 
 // The button's code is fetched only once a sign-in hint is present or after the first click:
 // a guest's page carries just the label below, and the fact it sits beside never waits on the chunk.
@@ -33,6 +33,7 @@ export function ReportOutdatedSlot({ record, path, sourceUrl, hostname }: Props)
     <span data-slot="report-outdated" className={REPORT_WRAPPER_CLASS}>
       <ReportTrigger
         label={scope.copy.button}
+        context={reportContext(scope.copy, record, path)}
         hostname={hostname}
         onClick={() => setClicked(true)}
       />

@@ -4,15 +4,18 @@ import { isAPIError } from "better-auth/api";
 import { headers } from "next/headers";
 import { z } from "zod";
 
-import { db } from "@/db";
-import { EMAIL_MAX_LENGTH, pendingSignups } from "@/db/schema";
 import { accountsEnabled } from "@/lib/auth/accounts-enabled";
 import { ACCOUNTS_DISABLED_CODE } from "@/lib/auth/accounts-gate";
 import { authCallbackUrls } from "@/lib/auth/callback-urls";
-import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
 import { normalizeEmail } from "@/lib/auth/normalize-email";
-import { AuthMisconfiguredError, getAuth, MAGIC_LINK_EXPIRY_S } from "@/lib/auth/server";
+import { AuthMisconfiguredError, getAuth } from "@/lib/auth/server";
+// Node.js runtime only: runAsSignup is AsyncLocalStorage (node:async_hooks), and the auth hooks read
+// it on this same request. Never give a page that renders the sign-in form, or the auth route, an
+// edge runtime; tests/lib/server/signup-runtime.test.ts fails if any src/app segment declares one.
+import { runAsSignup } from "@/lib/auth/signup-intent";
 import { LOCALES } from "@/lib/constants";
+
+import { SignInEmailSchema } from "./account-inputs";
 
 export type SignInLinkMode = "signup" | "signin";
 
@@ -48,28 +51,6 @@ const RequestSchema = z.object({
   returnPath: z.string().max(RETURN_PATH_MAX_LENGTH).nullable(),
 });
 
-const EmailSchema = z.string().trim().max(EMAIL_MAX_LENGTH).pipe(z.email());
-
-// The magic link and the pending row it relies on expire together, so the row is never kept
-// longer than the link that can use it.
-const PENDING_SIGNUP_TTL_MS = MAGIC_LINK_EXPIRY_S * 1000;
-
-// Written before the link is sent, so the evidence is in the database when the link is opened,
-// on whichever device. The consent time is this server's clock, never the browser's.
-async function recordPendingSignup(email: string): Promise<void> {
-  const now = new Date();
-  const fields = {
-    consentVersion: CURRENT_CONSENT_VERSION,
-    consentedAt: now,
-    ageConfirmed: true,
-    expiresAt: new Date(now.getTime() + PENDING_SIGNUP_TTL_MS),
-  };
-  await db
-    .insert(pendingSignups)
-    .values({ email, ...fields })
-    .onConflictDoUpdate({ target: pendingSignups.email, set: fields });
-}
-
 function errorCode(error: unknown): string | undefined {
   if (!isAPIError(error)) return undefined;
   const code: unknown = error.body?.code;
@@ -92,7 +73,7 @@ export async function requestSignInLink(input: SignInLinkRequest): Promise<SignI
   if (!accountsEnabled()) return { ok: false, error: "accounts_disabled" };
   const request = RequestSchema.safeParse(input);
   if (!request.success) return { ok: false, error: "invalid_request" };
-  const parsedEmail = EmailSchema.safeParse(request.data.email);
+  const parsedEmail = SignInEmailSchema.safeParse(request.data.email);
   if (!parsedEmail.success) return { ok: false, error: "invalid_email" };
   const { mode, consent, ageConfirmed, locale, returnPath } = request.data;
   if (mode === "signup" && !(consent && ageConfirmed)) {
@@ -102,12 +83,16 @@ export async function requestSignInLink(input: SignInLinkRequest): Promise<SignI
   try {
     // Resolved first so a misconfigured deployment records nothing.
     const auth = getAuth();
-    if (mode === "signup") await recordPendingSignup(email);
-    // The cooldown slot is claimed inside this call, by the auth instance's before hook.
-    await auth.api.signInMagicLink({
-      body: { email, ...authCallbackUrls(locale, returnPath), metadata: { locale } },
-      headers: await headers(),
-    });
+    const requestHeaders = await headers();
+    // The auth instance's before hook claims the send slot inside this call and, for a signup
+    // (marked by runAsSignup, which only this action can set), writes the pending row right
+    // after the claim and before the verification row and the email.
+    const send = () =>
+      auth.api.signInMagicLink({
+        body: { email, ...authCallbackUrls(locale, returnPath), metadata: { locale, mode } },
+        headers: requestHeaders,
+      });
+    await (mode === "signup" ? runAsSignup(email, send) : send());
   } catch (error) {
     return { ok: false, error: failureOf(error) };
   }

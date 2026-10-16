@@ -7,7 +7,8 @@ const TIMEOUT_MS = 60_000;
 type SentRequest = { kind: string; to: string; metadata?: Record<string, unknown> };
 const sent: SentRequest[] = [];
 
-vi.mock("@/lib/server/email", () => ({
+vi.mock("@/lib/server/email", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/lib/server/email")>()),
   sendAuthEmail: async (request: SentRequest) => {
     sent.push({ kind: request.kind, to: request.to, metadata: request.metadata });
   },
@@ -53,6 +54,7 @@ beforeEach(async () => {
   sent.length = 0;
   await pool.query("delete from verification");
   await pool.query("delete from email_cooldowns");
+  await pool.query("delete from auth_email_days");
 });
 
 afterEach(() => {
@@ -120,6 +122,9 @@ describe("with ACCOUNTS_ENABLED on", () => {
     });
     const text = `${JSON.stringify(refusal)} ${refusal instanceof Error ? refusal.message : ""}`;
     expect(text.toLowerCase()).not.toContain("example.com");
+    // The same answer covers the daily ceiling, which can last until midnight.
+    expect(text).not.toMatch(/minute/i);
+    expect(text).toMatch(/try again later/i);
     expect(sent).toHaveLength(1);
   });
 
@@ -128,7 +133,7 @@ describe("with ACCOUNTS_ENABLED on", () => {
     await expect(signIn("new@example.com")).rejects.toMatchObject({
       body: { code: "EMAIL_COOLDOWN" },
     });
-    expect(await count("verification")).toBe(1);
+    expect(await count("verification")).toBe(2);
     expect(await count("email_cooldowns")).toBe(1);
   });
 
@@ -146,13 +151,78 @@ describe("with ACCOUNTS_ENABLED on", () => {
     expect(refused.status).toBe(429);
     expect(await refused.json()).toMatchObject({ code: "EMAIL_COOLDOWN" });
     expect(sent.map((request) => request.to)).toEqual(["direct@example.com"]);
-    expect(await count("verification")).toBe(1);
+    expect(await count("verification")).toBe(2);
   });
 
-  it("leaves a value that is not an address to the endpoint, without claiming a slot", async () => {
-    await expect(signIn("not-an-address")).rejects.toThrow(/email/i);
+  it("refuses a value that is not an address with a 400, without claiming a slot", async () => {
+    await expect(signIn("not-an-address")).rejects.toMatchObject({ status: "BAD_REQUEST" });
     expect(await count("email_cooldowns")).toBe(0);
     expect(await count("verification")).toBe(0);
+    expect(sent).toEqual([]);
+  });
+
+  it.each([
+    ["an oversize address", `${"a".repeat(320)}@example.com`],
+    ["a malformed address", "two@@example.com"],
+    ["an address with no domain dot", "ana@localhost"],
+  ])("answers a direct POST of %s with 400 and writes no verification row", async (_label, email) => {
+    const response = await auth.handler(
+      new Request("http://localhost:3000/api/auth/sign-in/magic-link", {
+        method: "POST",
+        headers: { origin: "http://localhost:3000", "content-type": "application/json" },
+        body: JSON.stringify({ email }),
+      }),
+    );
+    expect(response.status).toBe(400);
+    expect(await count("verification")).toBe(0);
+    expect(await count("email_cooldowns")).toBe(0);
+    expect(sent).toEqual([]);
+  });
+
+  it("shares one slot between +tag forms of one address", async () => {
+    await signIn("a+1@example.com");
+    await expect(signIn("a+2@example.com")).rejects.toMatchObject({
+      status: "TOO_MANY_REQUESTS",
+      body: { code: "EMAIL_COOLDOWN" },
+    });
+    expect(sent.map((request) => request.to)).toEqual(["a+1@example.com"]);
+  });
+
+  it("stops sign-in links at the sign-in ceiling but keeps the reserve for deletion emails", async () => {
+    const { AUTH_EMAILS_PER_DAY, AUTH_EMAILS_RESERVED_FOR_DELETION } = await import(
+      "@/lib/constants"
+    );
+    const signInCeiling = AUTH_EMAILS_PER_DAY - AUTH_EMAILS_RESERVED_FOR_DELETION;
+    await pool.query(
+      "insert into auth_email_days (day, sent) values ((now() at time zone 'utc')::date, $1)",
+      [signInCeiling - 1],
+    );
+    await signIn("last@example.com");
+    const refusal = await signIn("over@example.com").catch((error: unknown) => error);
+    expect(refusal).toMatchObject({
+      status: "TOO_MANY_REQUESTS",
+      body: { code: "EMAIL_COOLDOWN" },
+    });
+    // A flood of made-up sign-in addresses cannot block the erasure confirmation (GDPR).
+    await sendDeleteVerification("keep-deleting@example.com");
+    expect(sent.map((request) => request.to)).toEqual([
+      "last@example.com",
+      "keep-deleting@example.com",
+    ]);
+    expect(await count("verification")).toBe(2);
+  });
+
+  it("refuses a deletion email once the whole day's budget is spent", async () => {
+    const { AUTH_EMAILS_PER_DAY } = await import("@/lib/constants");
+    await pool.query(
+      "insert into auth_email_days (day, sent) values ((now() at time zone 'utc')::date, $1)",
+      [AUTH_EMAILS_PER_DAY],
+    );
+    await expect(sendDeleteVerification("over-delete@example.com")).rejects.toMatchObject({
+      status: "TOO_MANY_REQUESTS",
+      body: { code: "EMAIL_COOLDOWN" },
+    });
+    expect(sent).toEqual([]);
   });
 
   it("lets another address through while one is cooling down", async () => {
@@ -161,9 +231,15 @@ describe("with ACCOUNTS_ENABLED on", () => {
     expect(sent.map((request) => request.to)).toEqual(["one@example.com", "two@example.com"]);
   });
 
-  it("hands the sign-in metadata to the email sender", async () => {
+  it("hands the sign-in metadata to the email sender, marked as a sign-in", async () => {
     await signIn("new@example.com", { locale: "ar" });
-    expect(sent[0]?.metadata).toEqual({ locale: "ar" });
+    expect(sent[0]?.metadata).toEqual({ locale: "ar", mode: "signin" });
+  });
+
+  it("treats a caller-supplied signup mode as a sign-in without the signup intent", async () => {
+    await signIn("new@example.com", { locale: "en", mode: "signup" });
+    expect(sent[0]?.metadata).toEqual({ locale: "en", mode: "signin" });
+    expect(await count("pending_signups")).toBe(0);
   });
 
   it("throttles delete-account emails on their own slot", async () => {

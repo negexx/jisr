@@ -171,6 +171,7 @@ describe("existing jobs keep their steps", () => {
       "Install dependencies",
       "Install Chromium",
       "Run end-to-end specs",
+      "Run signed-in end-to-end specs",
       "Upload Playwright report",
       "Upload test results",
     ]);

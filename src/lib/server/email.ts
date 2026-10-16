@@ -8,6 +8,7 @@ import { waitUntil as vercelWaitUntil } from "@vercel/functions";
 
 import type { AuthEmailKind } from "@/db/schema";
 import { accountsEnabled } from "@/lib/auth/accounts-enabled";
+import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
 import { LOCALES } from "@/lib/constants";
 
 export type { AuthEmailKind };
@@ -20,7 +21,8 @@ export type AuthEmailRequest = {
   url: string;
   token: string;
   // The magic-link plugin's `metadata`: the only place the sign-in form can say which language
-  // the email should be in. Never stored, never logged.
+  // the email should be in, and (`mode: "signup"`, set by the auth instance only for a signup the
+  // Server Action recorded) that the link creates an account. Never stored, never logged.
   metadata?: Record<string, unknown>;
 };
 
@@ -79,11 +81,38 @@ function localeOf(value: unknown): AuthEmailLocale | null {
   return LOCALES.find((locale) => locale === value) ?? null;
 }
 
-type Template = (url: string) => RenderedAuthEmail;
+// A magic link is rendered as a sign-up email or a sign-in email; the cooldown and the stored kind
+// do not distinguish them.
+export type AuthEmailTemplate = AuthEmailKind | "magic-link-signup";
+
+type Template = (url: string, privacyUrl: string) => RenderedAuthEmail;
+
+// The privacy notice on the same origin as the link (the auth base URL), in the email's language.
+function privacyUrlFor(url: string, locale: AuthEmailLocale): string {
+  try {
+    return new URL(`/${locale}/privacy`, new URL(url).origin).toString();
+  } catch {
+    return `/${locale}/privacy`;
+  }
+}
 
 // Arabic is a machine draft until the native review (project rule, all `ar` copy).
-const TEMPLATES: Record<AuthEmailLocale, Record<AuthEmailKind, Template>> = {
+const TEMPLATES: Record<AuthEmailLocale, Record<AuthEmailTemplate, Template>> = {
   fr: {
+    // Anyone can type an address into the sign-up form, so the email itself tells the recipient
+    // what opening the link means and that ignoring it creates nothing (todo 28, F2).
+    "magic-link-signup": (url, privacyUrl) => ({
+      subject: "Confirmez la création de votre compte Jisr",
+      text: [
+        "Bonjour,",
+        "Quelqu'un a demandé à créer un compte Jisr avec cette adresse email. Ouvrir ce lien crée ou ouvre votre compte Jisr :",
+        url,
+        `En l'ouvrant, vous confirmez avoir 16 ans ou plus et accepter la politique de confidentialité de Jisr, version ${CURRENT_CONSENT_VERSION} : ${privacyUrl}`,
+        `Ce lien est valable ${MAGIC_LINK_VALID_MINUTES} minutes et ne peut être utilisé qu'une seule fois.`,
+        "Si vous n'avez pas fait cette demande, ignorez ce message : aucun compte n'est créé.",
+        "Jisr",
+      ].join("\n\n"),
+    }),
     "magic-link": (url) => ({
       subject: "Votre lien de connexion à Jisr",
       text: [
@@ -106,6 +135,18 @@ const TEMPLATES: Record<AuthEmailLocale, Record<AuthEmailKind, Template>> = {
     }),
   },
   en: {
+    "magic-link-signup": (url, privacyUrl) => ({
+      subject: "Confirm your new Jisr account",
+      text: [
+        "Hello,",
+        "Someone asked to create a Jisr account with this email address. Opening this link creates or opens your Jisr account:",
+        url,
+        `By opening it, you confirm that you are 16 or older and that you accept the Jisr privacy notice, version ${CURRENT_CONSENT_VERSION}: ${privacyUrl}`,
+        `This link is valid for ${MAGIC_LINK_VALID_MINUTES} minutes and can be used only once.`,
+        "If you did not ask for this, ignore this email: no account is created.",
+        "Jisr",
+      ].join("\n\n"),
+    }),
     "magic-link": (url) => ({
       subject: "Your Jisr sign-in link",
       text: [
@@ -128,6 +169,18 @@ const TEMPLATES: Record<AuthEmailLocale, Record<AuthEmailKind, Template>> = {
     }),
   },
   ar: {
+    "magic-link-signup": (url, privacyUrl) => ({
+      subject: "تأكيد إنشاء حسابك في جسر",
+      text: [
+        "مرحبًا،",
+        "طلب أحدهم إنشاء حساب في جسر بعنوان البريد الإلكتروني هذا. فتح هذا الرابط يُنشئ حسابك في جسر أو يفتحه:",
+        url,
+        `بفتحه، تؤكد أن عمرك 16 سنة أو أكثر وأنك تقبل سياسة الخصوصية لجسر، الإصدار ${CURRENT_CONSENT_VERSION}: ${privacyUrl}`,
+        `هذا الرابط صالح لمدة ${MAGIC_LINK_VALID_MINUTES} دقيقة ويمكن استخدامه مرة واحدة فقط.`,
+        "إذا لم تطلب ذلك، فتجاهل هذه الرسالة: لن يُنشأ أي حساب.",
+        "جسر",
+      ].join("\n\n"),
+    }),
     "magic-link": (url) => ({
       subject: "رابط تسجيل الدخول إلى جسر",
       text: [
@@ -152,11 +205,18 @@ const TEMPLATES: Record<AuthEmailLocale, Record<AuthEmailKind, Template>> = {
 };
 
 export function renderAuthEmail(
-  kind: AuthEmailKind,
+  template: AuthEmailTemplate,
   locale: AuthEmailLocale,
   url: string,
 ): RenderedAuthEmail {
-  return TEMPLATES[locale][kind](url);
+  return TEMPLATES[locale][template](url, privacyUrlFor(url, locale));
+}
+
+function templateOf(request: AuthEmailRequest): AuthEmailTemplate {
+  if (request.kind === "magic-link" && request.metadata?.mode === "signup") {
+    return "magic-link-signup";
+  }
+  return request.kind;
 }
 
 type Sender = { email: string; name: string };
@@ -177,12 +237,16 @@ type Transport = { kind: "brevo"; apiKey: string; sender: Sender } | { kind: "fi
 
 // The file transport writes magic-link tokens to disk, so it is for tests and local runs only:
 // an allow-list of NODE_ENV values (an unset or misspelled one must not open it), or an explicit
-// opt-in for the e2e run, which is a production build.
+// opt-in for the e2e run, which is a production build. Never on Vercel: VERCEL_ENV is set on every
+// Vercel build and function there (any value, even a stray opt-in variable, keeps it closed).
 const FILE_TRANSPORT_NODE_ENVS = new Set(["development", "test"]);
 
 function selectTransport(env: Env): Transport {
   const apiKey = (env.BREVO_API_KEY ?? "").trim();
   if (apiKey) return { kind: "brevo", apiKey, sender: parseSender(env.BREVO_SENDER) };
+  if (env.VERCEL_ENV !== undefined) {
+    throw new AuthEmailTransportNotConfigured("BREVO_API_KEY is empty on Vercel");
+  }
   const nodeEnvAllowed = FILE_TRANSPORT_NODE_ENVS.has(env.NODE_ENV ?? "");
   if (nodeEnvAllowed || env.JISR_EMAIL_FILE_TRANSPORT === "1") return { kind: "file" };
   throw new AuthEmailTransportNotConfigured("BREVO_API_KEY is empty");
@@ -261,7 +325,7 @@ export async function sendAuthEmail(
   if (!accountsEnabled(env)) throw new AuthEmailAccountsDisabled();
   const transport = selectTransport(env);
   const rendered = renderAuthEmail(
-    request.kind,
+    templateOf(request),
     resolveAuthEmailLocale(request.url, request.metadata),
     request.url,
   );

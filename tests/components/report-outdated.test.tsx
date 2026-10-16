@@ -24,6 +24,7 @@ import {
 } from "@/components/program/program-sections";
 import { ReasonList } from "@/components/reason-list";
 import { ReportProvider } from "@/components/report-outdated/report-context";
+import { reportCopyFrom } from "@/components/report-outdated/report-fact";
 import { ScholarshipsPageView } from "@/components/scholarships/scholarships-page-view";
 import { SourceBadge } from "@/components/source-badge";
 import type { CoreShard } from "@/data-schema/snapshot";
@@ -88,7 +89,7 @@ afterEach(() => {
 function Reporting({ locale, children }: { locale: AppLocale; children: ReactElement }) {
   return (
     <ReportProvider
-      copy={catalogs[locale].reportOutdated}
+      copy={reportCopyFrom(catalogs[locale].reportOutdated)}
       locale={locale}
       snapshotVersion={VERSION}
     >
@@ -294,7 +295,31 @@ const SURFACES: Surface[] = [
   },
 ];
 
+function escapeRegExp(text: string): string {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 describe.each(LOCALES)("ReportOutdatedButton on journey surfaces (%s)", (locale) => {
+  it.each(
+    SURFACES.map((surface) => [surface.name, surface] as const),
+  )("names the fact each button reports in its accessible name on %s", async (_name, surface) => {
+    const copy = catalogs[locale].reportOutdated;
+    const { container } = await surface.render(locale);
+    const buttons = [...container.querySelectorAll<HTMLButtonElement>(`${BUTTON} button`)];
+    expect(buttons.length).toBeGreaterThan(0);
+    const specific = Object.entries(copy.facts)
+      .filter(([key]) => key !== "other")
+      .map(([, label]) => escapeRegExp(label));
+    const name = new RegExp(
+      `^${escapeRegExp(copy.button)}${escapeRegExp(copy.nameSeparator)}(${specific.join("|")})( |$)`,
+    );
+    // The accessible name is the button's text, sr-only context included (no aria-label).
+    for (const button of buttons) {
+      expect(button.getAttribute("aria-label")).toBeNull();
+      expect(button.textContent ?? "").toMatch(name);
+    }
+  });
+
   it.each(
     SURFACES.map((surface) => [surface.name, surface] as const),
   )("renders beside the trust badges on %s", async (_name, surface) => {

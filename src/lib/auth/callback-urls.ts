@@ -75,6 +75,36 @@ export function landingReturnPath(raw: string | null | undefined, locale: Locale
     : safeReturnPath(raw, locale);
 }
 
+export const ACCOUNT_PATH = "/account";
+export const ACCOUNT_DELETE_PATH = "/account/delete";
+export const DELETE_TOKEN_PARAM = "token";
+
+/** The account page, also the `return` a signed-out visitor to it signs in with. */
+export function accountPath(locale: Locale): string {
+  return `/${locale}${ACCOUNT_PATH}`;
+}
+
+/**
+ * The page that confirms a deletion. Sent as the deletion request's callbackURL, which is how the
+ * request names its locale: Better Auth hands it back to the email sender inside its own URL.
+ */
+export function accountDeletePath(locale: Locale): string {
+  return `/${locale}${ACCOUNT_DELETE_PATH}`;
+}
+
+/** The body of the deletion request: Better Auth echoes its callbackURL to the email sender. */
+export function accountDeleteRequest(locale: Locale): { callbackURL: string } {
+  return { callbackURL: accountDeletePath(locale) };
+}
+
+/**
+ * The emailed link: the confirm page carrying the token, never Better Auth's GET callback. The token
+ * rides the fragment, which the browser never sends, so it reaches no request log or Referer.
+ */
+export function accountDeleteConfirmPath(locale: Locale, token: string): string {
+  return `${accountDeletePath(locale)}#${new URLSearchParams({ [DELETE_TOKEN_PARAM]: token })}`;
+}
+
 const ERROR_CODE = /^[A-Za-z0-9_-]{1,64}$/;
 export const UNKNOWN_ERROR_CODE = "UNKNOWN";
 
@@ -86,4 +116,49 @@ export function signInErrorPath(
 ): string {
   const code = ERROR_CODE.test(errorCode) ? errorCode : UNKNOWN_ERROR_CODE;
   return `${signInPath(locale, returnPath)}&${new URLSearchParams({ error: code })}`;
+}
+
+// Todo 28, F3 (ruling Q16): the emailed sign-in link opens this page, which signs in only when the
+// student presses its button. Everything rides the fragment, which the browser never sends: the
+// token reaches no request log, Referer or analytics, and the query stays empty.
+export const SIGN_IN_CONFIRM_PATH = "/sign-in/confirm";
+export const SIGN_IN_TOKEN_PARAM = "token";
+export const SIGN_IN_MODE_PARAM = "mode";
+
+/** Better Auth's mount point plus our confirm endpoint (src/lib/auth/magic-link-confirm.ts). */
+export const MAGIC_LINK_CONFIRM_ENDPOINT = "/api/auth/magic-link/confirm";
+
+/** "signup" when the link creates an account (the wording only; the server decides). */
+export type SignInLinkMode = "signup" | "signin";
+
+/** The emailed sign-in link: the confirm page, with the token, the mode and the return path. */
+export function signInConfirmPath(
+  locale: Locale,
+  token: string,
+  mode: SignInLinkMode,
+  returnPath: string | null,
+): string {
+  const fragment = new URLSearchParams({
+    [SIGN_IN_TOKEN_PARAM]: token,
+    [SIGN_IN_MODE_PARAM]: mode,
+  });
+  if (returnPath !== null) fragment.set(RETURN_PARAM, safeReturnPath(returnPath, locale));
+  return `/${locale}${SIGN_IN_CONFIRM_PATH}#${fragment}`;
+}
+
+// Better Auth's magic-link token is 32 letters; the bound only keeps junk out of the request.
+const LINK_TOKEN = /^[0-9A-Za-z_-]{1,128}$/;
+
+export type SignInLink = { token: string | null; mode: SignInLinkMode; returnPath: string | null };
+
+/** What the confirm page reads from `location.hash` (with or without its leading `#`). */
+export function readSignInLink(hash: string, locale: Locale): SignInLink {
+  const fragment = new URLSearchParams(hash.replace(/^#/, ""));
+  const token = fragment.get(SIGN_IN_TOKEN_PARAM);
+  const returnPath = fragment.get(RETURN_PARAM);
+  return {
+    token: token !== null && LINK_TOKEN.test(token) ? token : null,
+    mode: fragment.get(SIGN_IN_MODE_PARAM) === "signup" ? "signup" : "signin",
+    returnPath: returnPath === null ? null : safeReturnPath(returnPath, locale),
+  };
 }

@@ -3,13 +3,32 @@
 // guest page never loads it. Zod-free.
 
 export type SessionLookup =
-  | { status: "signed-in"; email: string; consentVersion: string | null }
+  | {
+      status: "signed-in";
+      email: string;
+      consentVersion: string | null;
+      // When the student accepted that version (ISO 8601 timestamp); the account page shows the
+      // calendar day in the browser's own time zone.
+      consentedAt: string | null;
+    }
   | { status: "signed-out" }
   | { status: "unavailable" };
 
 function readConsentVersion(user: object): string | null {
   return "consentVersion" in user && typeof user.consentVersion === "string"
     ? user.consentVersion
+    : null;
+}
+
+// Better Auth's client revives ISO timestamps into Dates; a plain string is accepted too.
+function readConsentedAt(user: object): string | null {
+  if (!("consentedAt" in user)) return null;
+  const { consentedAt } = user;
+  if (consentedAt instanceof Date) {
+    return Number.isNaN(consentedAt.getTime()) ? null : consentedAt.toISOString();
+  }
+  return typeof consentedAt === "string" && !Number.isNaN(Date.parse(consentedAt))
+    ? consentedAt
     : null;
 }
 
@@ -23,6 +42,7 @@ async function fetchSession(): Promise<SessionLookup> {
       status: "signed-in",
       email: data.user.email,
       consentVersion: readConsentVersion(data.user),
+      consentedAt: readConsentedAt(data.user),
     };
   } catch {
     return { status: "unavailable" };

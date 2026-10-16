@@ -1,11 +1,18 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  accountDeleteConfirmPath,
+  accountDeletePath,
+  accountDeleteRequest,
+  accountPath,
   authCallbackUrls,
   finishSetupPath,
   landingReturnPath,
+  MAGIC_LINK_CONFIRM_ENDPOINT,
   POST_AUTH_LANDING,
+  readSignInLink,
   safeReturnPath,
+  signInConfirmPath,
   signInErrorPath,
   signInPath,
 } from "@/lib/auth/callback-urls";
@@ -120,5 +127,75 @@ describe("finishSetupPath", () => {
     ["fr", "/welcome", "/fr/welcome?return=%2Ffr"],
   ] as const)("sends %s %s through the landing, returning to %s", (locale, pathname, expected) => {
     expect(finishSetupPath(locale, pathname)).toBe(expected);
+  });
+});
+
+describe("account page path", () => {
+  it("names the page under the locale and survives as a sign-in return", () => {
+    expect(accountPath("ar")).toBe("/ar/account");
+    expect(signInPath("ar", accountPath("ar"))).toBe("/ar/sign-in?return=%2Far%2Faccount");
+  });
+});
+
+describe("account deletion paths", () => {
+  it("names the confirm page under the locale", () => {
+    expect(accountDeletePath("ar")).toBe("/ar/account/delete");
+  });
+
+  it("sends the confirm page as the deletion request's callbackURL", () => {
+    expect(accountDeleteRequest("en")).toEqual({ callbackURL: "/en/account/delete" });
+  });
+
+  it("carries the token as an encoded fragment parameter", () => {
+    expect(accountDeleteConfirmPath("fr", "abc123")).toBe("/fr/account/delete#token=abc123");
+    expect(accountDeleteConfirmPath("en", "a&b=c")).toBe("/en/account/delete#token=a%26b%3Dc");
+  });
+});
+
+describe("sign-in confirm link (todo 28, F3)", () => {
+  it("carries the token, the mode and the safe return path in the fragment only", () => {
+    const path = signInConfirmPath("ar", "AbcXyz", "signup", "/ar/compare");
+    const url = new URL(path, "https://jisr.example");
+    expect(url.pathname).toBe("/ar/sign-in/confirm");
+    expect(url.search).toBe("");
+    expect(new URLSearchParams(url.hash.slice(1)).get("token")).toBe("AbcXyz");
+    expect(path).toBe("/ar/sign-in/confirm#token=AbcXyz&mode=signup&return=%2Far%2Fcompare");
+  });
+
+  it("drops an unsafe return path to the locale home and omits a missing one", () => {
+    expect(signInConfirmPath("fr", "t", "signin", "https://evil.example/")).toBe(
+      "/fr/sign-in/confirm#token=t&mode=signin&return=%2Ffr",
+    );
+    expect(signInConfirmPath("en", "t", "signin", null)).toBe(
+      "/en/sign-in/confirm#token=t&mode=signin",
+    );
+  });
+
+  it("reads back what it wrote", () => {
+    const { hash } = new URL(
+      signInConfirmPath("fr", "AbcXyz", "signup", "/fr/plan"),
+      "https://x.example",
+    );
+    expect(readSignInLink(hash, "fr")).toEqual({
+      token: "AbcXyz",
+      mode: "signup",
+      returnPath: "/fr/plan",
+    });
+  });
+
+  it.each<[string, ReturnType<typeof readSignInLink>]>([
+    ["", { token: null, mode: "signin", returnPath: null }],
+    ["#token=", { token: null, mode: "signin", returnPath: null }],
+    ["#token=a%20b&mode=signup", { token: null, mode: "signup", returnPath: null }],
+    [`#token=${"a".repeat(129)}`, { token: null, mode: "signin", returnPath: null }],
+    ["#token=ok&mode=admin", { token: "ok", mode: "signin", returnPath: null }],
+    ["#token=ok&return=%2F%2Fevil.example", { token: "ok", mode: "signin", returnPath: "/fr" }],
+    ["token=ok&return=%2Ffr%2Fplan", { token: "ok", mode: "signin", returnPath: "/fr/plan" }],
+  ])("reads %j defensively", (hash, expected) => {
+    expect(readSignInLink(hash, "fr")).toEqual(expected);
+  });
+
+  it("posts to the confirm endpoint under Better Auth's mount point", () => {
+    expect(MAGIC_LINK_CONFIRM_ENDPOINT).toBe("/api/auth/magic-link/confirm");
   });
 });

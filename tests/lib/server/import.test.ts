@@ -13,6 +13,8 @@ import type { SavedProgram } from "@/lib/saved/saved";
 import type { GuestImportPayload } from "@/lib/server/import";
 import type { SignInLinkRequest } from "@/lib/server/signup";
 
+import { confirmRequest } from "../../support/magic-link";
+
 // The guest import and the signed-in Clear my data end to end on PGlite with real sessions, like
 // account-actions.test.ts. Two imports racing on separate connections are in
 // tests/db-race/import.test.ts (PGlite has one connection, so it cannot show the lock).
@@ -92,8 +94,8 @@ async function signUp(email: string): Promise<{ cookie: string; id: string }> {
   expect(await requestSignInLink(request)).toEqual({ ok: true });
   const response = await (await import("@/lib/auth/server"))
     .getAuth()
-    .handler(new Request(await lastLink(), { method: "GET" }));
-  expect(response.status).toBe(302);
+    .handler(confirmRequest(await lastLink()));
+  expect(response.status).toBe(200);
   const cookie = response.headers
     .getSetCookie()
     .map((value) => value.split(";")[0])

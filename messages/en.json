@@ -1,16 +1,16 @@
 {
   "legal": {
-    "updated": "Last updated: 10/10/2026",
+    "updated": "Last updated: 15/10/2026",
     "privacy": {
       "meta": {
         "title": "Privacy notice",
-        "description": "How Jisr handles your data: what stays in your browser, what our host and analytics see, and your rights under the GDPR and Moroccan Law 09-08."
+        "description": "How Jisr handles your data, as a guest or with an account: what your browser keeps, what we store, who processes it, and your rights under the GDPR and Moroccan Law 09-08."
       }
     },
     "terms": {
       "meta": {
         "title": "Terms of use",
-        "description": "The rules for using Jisr: a free, informational service with no account, no fees and no warranty, governed by Italian law."
+        "description": "The rules for using Jisr: a free, informational service with an optional account, no fees and no warranty, governed by Italian law."
       }
     }
   },
@@ -417,7 +417,7 @@
   "profile": {
     "meta": {
       "title": "Jisr | Create your profile",
-      "description": "Tell us about your Bac, your languages and what you want to study. Your answers stay on your device."
+      "description": "Tell us about your Bac, your languages and what you want to study to see programs that look realistic for you. Free, with or without an account."
     },
     "title": {
       "create": "Create your profile",
@@ -1185,7 +1185,7 @@
       "consentRequired": "To create an account, tick the box to agree to the privacy notice.",
       "ageRequired": "To create an account, confirm that you are 16 or older.",
       "emailInvalid": "Enter an email address such as name@example.com.",
-      "cooldown": "A link was sent to this address a moment ago. Wait a minute before asking for another.",
+      "cooldown": "We cannot send another link to this address right now. Try again later.",
       "disabled": "Accounts are not available yet. You can keep using Jisr without one.",
       "failed": "The link could not be sent. Try again in a moment.",
       "noAccount": "There is no account with this address yet. To create one, choose Create an account and tick both boxes.",
@@ -1210,7 +1210,8 @@
     "signOutFailed": "Signing out did not work. Try again.",
     "checkFailed": "We could not check your sign-in.",
     "retry": "Try again",
-    "finishSetup": "Finish setting up"
+    "finishSetup": "Finish setting up",
+    "account": "My account"
   },
   "welcome": {
     "meta": {
@@ -1223,6 +1224,15 @@
     "finishing": "Taking you back…",
     "failed": "We could not check your sign-in. Check your connection and try again.",
     "retry": "Try again",
+    "otherBrowser": {
+      "title": "This browser did not ask for this sign-in link",
+      "account": "Signed in as <account>{email}</account>",
+      "body": "If you did not request it on another device, sign out now. No data from this browser will be added to this account.",
+      "continue": "Continue without adding this browser's data",
+      "signOut": "Sign out",
+      "signingOut": "Signing out…",
+      "failed": "Could not sign out. Try again."
+    },
     "confirm": {
       "title": "Add this device's data to <account>{email}</account>?",
       "body": "This device has a profile, saved programs or ticked steps from before you signed in. Add them only if this is your account.",
@@ -1241,6 +1251,108 @@
       "failed": "We could not bring this device's data into your account. It is still on this device.",
       "retry": "Try again",
       "continue": "Continue without it"
+    }
+  },
+  "accountDelete": {
+    "meta": {
+      "title": "Delete your account",
+      "description": "Confirm the deletion of your Jisr account."
+    },
+    "title": "Delete your account",
+    "lead": "This confirms the deletion you asked for by email.",
+    "reading": "Reading the link…",
+    "warning": "Your account and everything it holds on Jisr (profile, saved programs, ticked steps, reports) will be deleted for good, and this device's copy of your data will be removed too. This cannot be undone.",
+    "confirm": "Delete my account",
+    "working": "Deleting…",
+    "deleted": {
+      "title": "Your account has been deleted",
+      "body": "Your account and its data are gone from Jisr and from this device. You can keep using Jisr without an account.",
+      "home": "Back to the home page"
+    },
+    "errors": {
+      "invalidToken": "This link is not valid or has expired. Ask for a new deletion email from your account page.",
+      "signedOut": "This device is not signed in, so we cannot confirm the deletion here. If you already confirmed it a moment ago, your account has probably been deleted, and you can erase Jisr's data from this device. If not, sign in to the account you want to delete, then open the link in the email again.",
+      "eraseDevice": "Erase this device",
+      "erased": "Jisr's data has been erased from this device.",
+      "signIn": "Sign in",
+      "unavailable": "Accounts are not available at the moment. Nothing was deleted.",
+      "failed": "We could not confirm the deletion. Check your connection and try again."
+    }
+  },
+  "signInConfirm": {
+    "meta": {
+      "title": "Confirm your sign-in",
+      "description": "Confirm the sign-in link you asked for by email."
+    },
+    "title": "Sign in to Jisr",
+    "lead": "You opened a sign-in link. Nothing happens until you confirm below.",
+    "reading": "Reading the link…",
+    "signin": {
+      "body": "Press the button to sign in on this browser.",
+      "confirm": "Sign in"
+    },
+    "signup": {
+      "body": "Press the button to create your Jisr account and sign in on this browser.",
+      "confirm": "Create my account"
+    },
+    "working": "Signing in…",
+    "notYou": "If you did not ask for this link, close this page: nothing has been done.",
+    "errors": {
+      "noToken": "This link is incomplete or has been opened already. Ask for a new sign-in link.",
+      "unavailable": "Accounts are not available at the moment. You can keep using Jisr without one.",
+      "failed": "Sign-in did not go through. Check your connection and try again."
+    },
+    "newLink": "Ask for a new link"
+  },
+  "accountPage": {
+    "meta": {
+      "title": "Your account",
+      "description": "Download your data or delete your Jisr account."
+    },
+    "title": "Your account",
+    "lead": "Download a copy of your data or delete your Jisr account.",
+    "checking": "Checking your sign-in…",
+    "signedIn": "Signed in as <value>{email}</value>",
+    "signedOut": {
+      "body": "Sign in to download your data or delete your account.",
+      "signIn": "Sign in"
+    },
+    "unavailable": {
+      "body": "We could not check your sign-in right now.",
+      "retry": "Try again"
+    },
+    "export": {
+      "title": "Download my data",
+      "body": "A JSON file with your email address, profile, saved programmes, ticked steps, reports and consent record.",
+      "button": "Download my data",
+      "working": "Preparing…",
+      "done": "Your download has started.",
+      "errors": {
+        "failed": "The download did not work. Check your connection and try again.",
+        "unavailable": "Accounts are not available right now. Try again later."
+      }
+    },
+    "consent": {
+      "title": "Your consent",
+      "record": "You accepted the privacy notice, version <value>{version}</value>, on <value>{date}</value>.",
+      "recordNoDate": "You accepted the privacy notice, version <value>{version}</value>.",
+      "none": "No consent is recorded for this account."
+    },
+    "delete": {
+      "title": "Delete my account",
+      "body": "Your account and everything it holds on Jisr (profile, saved programmes, ticked steps, reports) will be deleted for good. To prevent a deletion by mistake, we first send a confirmation link to <value>{email}</value>.",
+      "button": "Delete my account",
+      "working": "Sending…",
+      "sent": {
+        "title": "Check your email",
+        "body": "We have just asked for a confirmation link to be sent to <value>{email}</value>. It can take a minute to arrive. If nothing arrives, try again after a minute. Nothing is deleted until you open the link and confirm.",
+        "repeated": "We asked again.",
+        "again": "Send the link again"
+      },
+      "errors": {
+        "failed": "The request did not go through. Nothing was deleted. Check your connection and try again.",
+        "unavailable": "Accounts are not available right now. Nothing was deleted."
+      }
     }
   },
   "accountSync": {
@@ -1272,6 +1384,33 @@
     "button": "Report outdated info",
     "reported": "Reported, thank you",
     "failed": "Your report could not be sent. Try again.",
-    "rateLimited": "You have reached today's limit of reports. Try again tomorrow."
+    "rateLimited": "You have reached today's limit of reports. Try again tomorrow.",
+    "nameSeparator": ": ",
+    "facts": {
+      "tuition": "tuition fees",
+      "teachingLanguages": "teaching languages",
+      "duration": "program length",
+      "requirements": "admission requirements",
+      "deadline": "application deadline",
+      "applicationChannel": "how to apply",
+      "documents": "documents to provide",
+      "program": "program details",
+      "institution": "institution details",
+      "admissionRoute": "admission route",
+      "gradeConversion": "grade conversion",
+      "credential": "diploma recognition",
+      "scholarshipAmount": "scholarship amount",
+      "scholarshipDeadline": "scholarship deadline",
+      "scholarshipDocuments": "scholarship documents",
+      "scholarshipEligibility": "scholarship eligibility",
+      "scholarship": "scholarship details",
+      "housing": "housing cost",
+      "food": "food cost",
+      "transport": "transport cost",
+      "insurance": "insurance cost",
+      "application_visa": "application and visa fees",
+      "setup": "setup costs",
+      "other": "this information"
+    }
   }
 }

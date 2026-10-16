@@ -33,5 +33,9 @@ export default defineConfig({
     timeout: COLD_BUILD_TIMEOUT_MS,
     stdout: "pipe",
     stderr: "pipe",
+    // The harness spawns `next` in its own process group, so Playwright's default SIGKILL would
+    // orphan it and leave the inherited stdout/stderr pipes open, hanging the teardown. SIGTERM lets
+    // the harness stop `next` and PGlite itself (scripts/db/harness-serve.ts). Ignored on Windows.
+    gracefulShutdown: { signal: "SIGTERM", timeout: 10_000 },
   },
 });

@@ -78,6 +78,7 @@ describe("AccountMenu for a guest", () => {
     expect(mocks.prefetch).not.toHaveBeenCalled();
     // A link would be prefetched by Next; the entry is a button that navigates on click.
     expect(container.querySelector("a")).toBeNull();
+    expect(screen.queryByRole("link", { name: fr.account.account })).toBeNull();
     expect(screen.queryByRole("button", { name: fr.account.signOut })).toBeNull();
   });
 
@@ -118,7 +119,10 @@ describe("AccountMenu with the session hint", () => {
     await act(async () => {});
     expect(mocks.getSession).toHaveBeenCalledTimes(1);
     expect(screen.queryByRole("button", { name: fr.account.signIn })).toBeNull();
-    expect(screen.queryByRole("link")).toBeNull();
+    expect(screen.getByRole("link", { name: fr.account.account }).getAttribute("href")).toBe(
+      "/fr/account",
+    );
+    expect(screen.getAllByRole("link")).toHaveLength(1);
   });
 
   it("looks signed out with a retry and a message when the check fails, and recovers on retry", async () => {
@@ -168,7 +172,9 @@ describe.each([
     );
     expect(screen.getByRole("button", { name: copy.signOut })).toBeTruthy();
     expect(mocks.prefetch).not.toHaveBeenCalled();
-    expect(screen.queryByRole("link")).toBeNull();
+    expect(screen.getByRole("link", { name: copy.account }).getAttribute("href")).toBe(
+      `/${locale}/account`,
+    );
   });
 
   it("does not offer it once consent is current", async () => {

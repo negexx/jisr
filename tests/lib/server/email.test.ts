@@ -4,6 +4,7 @@ import { join } from "node:path";
 
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
+import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
 import {
   AuthEmailAccountsDisabled,
   AuthEmailTransportNotConfigured,
@@ -136,6 +137,92 @@ describe("renderAuthEmail", () => {
   });
 });
 
+describe("renderAuthEmail for a sign-up link", () => {
+  const LINK = "https://jisr.example/api/auth/magic-link/verify?token=abc";
+
+  // What each locale must say: the link creates an account, the recipient confirms 16 or older
+  // and accepts this notice version, and an unasked-for email is ignored with no account created.
+  const WORDING = {
+    fr: {
+      creates: /ouvrir ce lien crée ou ouvre votre compte Jisr/i,
+      age: /16 ans ou plus/,
+      ignore: /ignorez ce message[\s\S]*aucun compte n'est créé/i,
+    },
+    en: {
+      creates: /opening this link creates or opens your Jisr account/i,
+      age: /16 or older/,
+      ignore: /ignore this email[\s\S]*no account is created/i,
+    },
+    ar: {
+      creates: /فتح هذا الرابط يُنشئ حسابك في جسر أو يفتحه/,
+      age: /16 سنة أو أكثر/,
+      ignore: /فتجاهل هذه الرسالة[\s\S]*لن يُنشأ أي حساب/,
+    },
+  } as const;
+
+  it.each([
+    "fr",
+    "en",
+    "ar",
+  ] as const)("states account creation, age, consent version and the ignore rule in %s", (locale) => {
+    const email = renderAuthEmail("magic-link-signup", locale, LINK);
+    const wording = WORDING[locale];
+    expect(email.text).toContain(LINK);
+    expect(email.text).toMatch(wording.creates);
+    expect(email.text).toMatch(wording.age);
+    expect(email.text).toMatch(wording.ignore);
+    expect(email.text).toContain(CURRENT_CONSENT_VERSION);
+    expect(email.text).toContain(`https://jisr.example/${locale}/privacy`);
+    expect(email.text).not.toMatch(/<[a-z]/i);
+  });
+
+  it.each([
+    "fr",
+    "en",
+    "ar",
+  ] as const)("keeps the sign-in email free of any account-creation claim in %s", (locale) => {
+    const email = renderAuthEmail("magic-link", locale, LINK);
+    expect(email.text).not.toMatch(WORDING[locale].creates);
+    expect(email.text).not.toMatch(/cr[ée]e un compte|creates? (a|an|your) .*account|يُنشئ حسابًا/i);
+    expect(email.text).not.toContain(CURRENT_CONSENT_VERSION);
+  });
+
+  it("uses its own subject in every locale", () => {
+    for (const locale of ["fr", "en", "ar"] as const) {
+      expect(renderAuthEmail("magic-link-signup", locale, LINK).subject).not.toBe(
+        renderAuthEmail("magic-link", locale, LINK).subject,
+      );
+    }
+  });
+});
+
+describe("sendAuthEmail template choice", () => {
+  async function writtenText(metadata: Record<string, unknown> | undefined): Promise<string> {
+    await sendAuthEmail(request({ metadata }), { env: BASE_ENV, mailDir });
+    const [file] = await readdir(mailDir);
+    const text = JSON.parse(await readFile(join(mailDir, String(file)), "utf8")).text as string;
+    await rm(join(mailDir, String(file)));
+    return text;
+  }
+
+  it("sends the sign-up wording only when the metadata mode is signup", async () => {
+    expect(await writtenText({ locale: "en", mode: "signup" })).toMatch(
+      /opening this link creates or opens your Jisr account/i,
+    );
+    for (const metadata of [
+      undefined,
+      { locale: "en" },
+      { locale: "en", mode: "signin" },
+      {
+        locale: "en",
+        mode: "SIGNUP",
+      },
+    ]) {
+      expect(await writtenText(metadata)).not.toMatch(/creates or opens your Jisr account/i);
+    }
+  });
+});
+
 describe("sendAuthEmail transport selection", () => {
   it("sends through Brevo when an API key is set, and writes no file", async () => {
     const { fetchMock } = recordingFetch();
@@ -233,6 +320,39 @@ describe("sendAuthEmail transport selection", () => {
       mailDir,
     });
     expect(await readdir(mailDir)).toHaveLength(1);
+  });
+
+  it.each([
+    "production",
+    "preview",
+    "development",
+    "",
+  ])("refuses the file transport on Vercel (VERCEL_ENV=%j) even with the opt-in and a test NODE_ENV", async (vercelEnv) => {
+    for (const nodeEnv of ["test", "development", "production"]) {
+      await expect(
+        sendAuthEmail(request(), {
+          env: {
+            ...BASE_ENV,
+            NODE_ENV: nodeEnv,
+            JISR_EMAIL_FILE_TRANSPORT: "1",
+            VERCEL_ENV: vercelEnv,
+          },
+          mailDir,
+        }),
+      ).rejects.toBeInstanceOf(AuthEmailTransportNotConfigured);
+    }
+    expect(await readdir(mailDir)).toEqual([]);
+  });
+
+  it("still sends through Brevo on Vercel when an API key is set", async () => {
+    const { fetchMock } = recordingFetch();
+    await sendAuthEmail(request(), {
+      env: { ...BREVO_ENV, VERCEL_ENV: "production" },
+      fetch: fetchMock,
+      waitUntil: waitUntilNoop,
+      mailDir,
+    });
+    expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
   it("treats a blank-only API key as unset", async () => {
