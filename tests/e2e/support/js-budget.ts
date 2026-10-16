@@ -104,19 +104,23 @@ export type JsBudget = { initial: number; untilIdle: number };
 // 2026-10-16 (accounts PR 3): the program page until-idle row sits at its 250 KB ratchet (stable
 // 249.4, intermittently 250.6 — CI run 38896196424 flaked 250.6, retried 249.4, and CI's
 // failOnFlakyTests fails the job on a flaky row). Headroom raise: until-idle 250 -> 252.
+// 2026-10-16 (accounts PR 3, follow-up): the until-idle measurement jitters ~1.2 KB in CI (e.g. /fr
+// home 224.2 stable, flaked 225.4), and CI's failOnFlakyTests fails the job when any row crosses its
+// ratchet. Rows with under ~1 KB of margin get a 2 KB margin: home 225 -> 227, profile/matches
+// 226 -> 228, plan 255 -> 257, scholarships 232 -> 233.
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
-  "/fr": { initial: 174, untilIdle: 225 },
-  "/ar": { initial: 174, untilIdle: 225 },
-  "/fr/profile": { initial: 191, untilIdle: 226 },
-  "/ar/profile": { initial: 191, untilIdle: 226 },
-  "/fr/matches": { initial: 198, untilIdle: 226 },
-  "/ar/matches": { initial: 198, untilIdle: 226 },
-  "/fr/plan": { initial: 191, untilIdle: 255 },
-  "/ar/plan": { initial: 191, untilIdle: 255 },
+  "/fr": { initial: 174, untilIdle: 227 },
+  "/ar": { initial: 174, untilIdle: 227 },
+  "/fr/profile": { initial: 191, untilIdle: 228 },
+  "/ar/profile": { initial: 191, untilIdle: 228 },
+  "/fr/matches": { initial: 198, untilIdle: 228 },
+  "/ar/matches": { initial: 198, untilIdle: 228 },
+  "/fr/plan": { initial: 191, untilIdle: 257 },
+  "/ar/plan": { initial: 191, untilIdle: 257 },
   "/fr/compare": { initial: 192, untilIdle: 278 },
   "/ar/compare": { initial: 192, untilIdle: 278 },
-  "/fr/scholarships": { initial: 174, untilIdle: 232 },
-  "/ar/scholarships": { initial: 174, untilIdle: 232 },
+  "/fr/scholarships": { initial: 174, untilIdle: 233 },
+  "/ar/scholarships": { initial: 174, untilIdle: 233 },
   "/fr/programs/xx-test-prog-ok": { initial: 188, untilIdle: 252 },
   "/ar/programs/xx-test-prog-ok": { initial: 188, untilIdle: 252 },
 };
