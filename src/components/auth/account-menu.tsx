@@ -11,6 +11,7 @@ import { ACCOUNT_PATH, accountPath, returnPathFor, signInPath } from "@/lib/auth
 import { hasCurrentConsent } from "@/lib/auth/consent";
 import { forgetSession, lookupSession } from "@/lib/auth/session-client";
 import { clearAccountLocalState, useSessionHint } from "@/lib/auth/session-hint";
+import { clearSignInBrowser } from "@/lib/auth/sign-in-browser";
 
 import { FinishSetupButton } from "./finish-setup-button";
 
@@ -76,6 +77,7 @@ export function AccountMenu({ locale, labels }: { locale: AppLocale; labels: Acc
       return;
     }
     forgetSession();
+    clearSignInBrowser();
     clearAccountLocalState();
     setSignOutStatus("idle");
   }

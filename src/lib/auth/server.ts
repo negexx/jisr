@@ -233,16 +233,10 @@ function createAuth(secret: string, baseURL: string) {
       // backs it: metadata alone is caller-controlled on a direct POST.
       const mode = metadata?.mode === "signup" && isSignupFor(email) ? "signup" : "signin";
       const { locale, url } = signInLinkUrl(baseURL, verifyUrl, token, mode, metadata);
-      await sendAuthEmailWhileEnabled({
-        kind: "magic-link",
-        to: email,
-        url,
-        token,
-        metadata: { ...metadata, locale, mode },
-      });
       // Ruling Q19: bind this link, softly, to the browser that asked for it. The cookie holds a
       // random nonce; only its hash is stored, keyed to the token, in a second verification row that
       // expires with the link (Better Auth's own record is `.strict()`, so it has no metadata slot).
+      // Written before the email, so the persisted state is in place whether or not the send lands.
       if (ctx !== undefined) {
         const nonce = newNonce();
         await ctx.context.internalAdapter.createVerificationValue({
@@ -252,6 +246,13 @@ function createAuth(secret: string, baseURL: string) {
         });
         ctx.setCookie(NONCE_COOKIE, nonce, nonceCookieAttributes(baseURL, MAGIC_LINK_EXPIRY_S));
       }
+      await sendAuthEmailWhileEnabled({
+        kind: "magic-link",
+        to: email,
+        url,
+        token,
+        metadata: { ...metadata, locale, mode },
+      });
     },
   });
   return betterAuth({

@@ -31,7 +31,10 @@ export function rememberSignInBrowser(
   }
 }
 
-export function takeSignInBrowser(
+// Read WITHOUT clearing: the fact must survive a reload or a remount of the landing, otherwise a
+// refresh would offer the guest import again (ruling Q19 says never). It is overwritten by the next
+// magic-link confirm and cleared on sign-out, so it cannot leak into a later, unrelated sign-in.
+export function readSignInBrowser(
   storage: StorageLike | null = getSessionStorage(),
 ): SignInBrowser | null {
   if (storage === null) return null;
@@ -41,7 +44,10 @@ export function takeSignInBrowser(
   } catch {
     return null;
   }
-  removeQuietly(storage, SIGN_IN_BROWSER_KEY);
   if (value === "other") return "other";
   return value === "same" ? "same" : null;
+}
+
+export function clearSignInBrowser(storage: StorageLike | null = getSessionStorage()): void {
+  if (storage !== null) removeQuietly(storage, SIGN_IN_BROWSER_KEY);
 }

@@ -20,7 +20,7 @@ import { maskEmail } from "@/lib/auth/mask-email";
 import { deviceHasGuestData, runPostAuthSeam } from "@/lib/auth/post-auth";
 import { forgetSession, lookupSession } from "@/lib/auth/session-client";
 import { clearAccountLocalState, setSessionHint } from "@/lib/auth/session-hint";
-import { takeSignInBrowser } from "@/lib/auth/sign-in-browser";
+import { readSignInBrowser } from "@/lib/auth/sign-in-browser";
 import type { ImportMode } from "@/lib/server/import";
 
 import { FinishSignupGate } from "./finish-signup-gate";
@@ -188,9 +188,10 @@ export function PostAuthLanding({ locale }: { locale: AppLocale }) {
       } else {
         const account = maskEmail(result.email);
         // Ruling Q19: the confirm page binds the sign-in to the browser that asked for the link. When
-        // it did not, this device's data is never offered for import.
+        // it did not, this device's data is never offered for import (read, not consumed, so a reload
+        // keeps the warning rather than falling back to the consent flow).
         setStage(
-          takeSignInBrowser() === "other"
+          readSignInBrowser() === "other"
             ? { kind: "other-browser", account }
             : { kind: "consent", consentVersion: result.consentVersion, account },
         );

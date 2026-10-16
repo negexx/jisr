@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import type { AppLocale } from "@/i18n/routing";
 import { forgetSession } from "@/lib/auth/session-client";
 import { clearAccountLocalState } from "@/lib/auth/session-hint";
+import { clearSignInBrowser } from "@/lib/auth/sign-in-browser";
 
 type SignOutStatus = "idle" | "working" | "failed";
 
@@ -45,6 +46,9 @@ export function OtherBrowserWarning({
       return;
     }
     forgetSession();
+    // Sign-out ends the sign-in this warning belonged to: drop the flag so a later sign-in (Google
+    // included) is not mistaken for another-browser.
+    clearSignInBrowser();
     clearAccountLocalState();
     // A full page load: whatever this tab still holds in memory goes with it.
     window.location.replace(`/${locale}`);

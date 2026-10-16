@@ -123,6 +123,9 @@ describe("post-auth landing with a ready account", () => {
     ).toBeTruthy();
     expect(screen.queryByRole("button", { name: fr.welcome.confirm.add })).toBeNull();
     expect(mocks.seam).not.toHaveBeenCalled();
+    // The flag is not consumed, so a reload (a fresh mount) keeps the warning rather than offering
+    // the import again (ruling Q19: never).
+    expect(window.sessionStorage.getItem(SIGN_IN_BROWSER_KEY)).toBe("other");
 
     await userEvent.click(screen.getByRole("button", { name: fr.welcome.otherBrowser.continue }));
     expect(mocks.replace).toHaveBeenCalledWith("/fr/compare");
