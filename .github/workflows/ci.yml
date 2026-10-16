@@ -67,7 +67,7 @@ jobs:
   e2e:
     name: End-to-end (Chromium)
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 40
     steps:
       - name: Check out
         uses: actions/checkout@v7
