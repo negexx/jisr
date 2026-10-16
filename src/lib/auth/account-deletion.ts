@@ -4,6 +4,7 @@ import { clearAllLocalData } from "@/lib/local-data";
 import { accountDeleteRequest, DELETE_TOKEN_PARAM } from "./callback-urls";
 import { forgetSession } from "./session-client";
 import { clearAccountLocalState } from "./session-hint";
+import { clearSignInBrowser } from "./sign-in-browser";
 
 // The browser half of account deletion (todo 19). Zod-free, and the auth client is imported only
 // when a request is made, so a page that mounts these helpers loads it on click, not on render.
@@ -48,10 +49,12 @@ export function readDeletionToken(hash: string): string | null {
 }
 
 // Ruling Q6: the student asked to erase everything, so this device keeps nothing either: the guest
-// keys, the account cache and the sign-in hint. Same-tab removals fire no `storage` event, so the
-// stores and the hint listeners are told explicitly.
+// keys, the account cache, the sign-in hint and the browser-bound sign-in flag (ruling Q19, so a
+// later Google sign-in in this tab is not mistaken for another-browser). Same-tab removals fire no
+// `storage` event, so the stores and the hint listeners are told explicitly.
 export function eraseThisDevice(): void {
   clearAllLocalData();
+  clearSignInBrowser();
   clearAccountLocalState();
   forgetSession();
 }

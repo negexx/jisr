@@ -13,6 +13,7 @@ import {
   requestAccountDeletion,
 } from "@/lib/auth/account-deletion";
 import { AUTH_HINT_KEY } from "@/lib/auth/session-hint";
+import { SIGN_IN_BROWSER_KEY } from "@/lib/auth/sign-in-browser";
 import { type MessageTree, pickMessages } from "@/lib/i18n/client-messages";
 import { PLAN_KEY } from "@/lib/plan/progress";
 import { PROFILE_KEY } from "@/lib/profile/storage";
@@ -55,6 +56,7 @@ const deleted: DeleteResult = { data: { success: true, message: "User deleted" }
 
 beforeEach(() => {
   window.localStorage.clear();
+  window.sessionStorage.clear();
   mocks.deleteUser.mockReset();
   window.history.replaceState(null, "", "/");
 });
@@ -62,6 +64,7 @@ beforeEach(() => {
 afterEach(() => {
   cleanup();
   window.localStorage.clear();
+  window.sessionStorage.clear();
 });
 
 describe("requestAccountDeletion", () => {
@@ -155,6 +158,16 @@ describe("the confirm page", () => {
     expect(
       screen.getByRole("link", { name: fr.accountDelete.deleted.home }).getAttribute("href"),
     ).toBe("/fr");
+  });
+
+  it("removes the browser-bound sign-in flag too (ruling Q19)", async () => {
+    window.sessionStorage.setItem(SIGN_IN_BROWSER_KEY, "other");
+    mocks.deleteUser.mockResolvedValue(deleted);
+    window.history.replaceState(null, "", "/fr/account/delete#token=tok123");
+    renderPage("fr");
+
+    await userEvent.click(await screen.findByRole("button", { name: fr.accountDelete.confirm }));
+    await waitFor(() => expect(window.sessionStorage.getItem(SIGN_IN_BROWSER_KEY)).toBeNull());
   });
 
   it("shows the typed error for an invalid link and keeps the device's data", async () => {

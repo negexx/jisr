@@ -21,7 +21,9 @@ const jsonValue = sql`(case when pg_input_is_valid(${verification.value}, 'jsonb
 // the app tables cascade from user.id): every verification row that names this user, and the two
 // pre-account tables keyed by the address. Verification rows name a user three ways in 1.7:
 // the user id as the whole value (delete-account-*, reset-password:*), the address inside a
-// magic-link value, and the id or address inside an OAuth account-link state.
+// magic-link value, and the id or address inside an OAuth account-link state. A ruling-Q19 nonce row
+// (`magic-link-nonce:<hash of token>`, value a hash of a random nonce) names no user and is left to
+// expire with its link (15 minutes), so it is deliberately not swept here.
 export async function eraseAccountResidue(db: AccountDb, user: ErasedUser): Promise<void> {
   const email = normalizeEmail(user.email);
   try {
