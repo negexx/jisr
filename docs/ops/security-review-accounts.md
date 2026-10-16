@@ -41,11 +41,11 @@ in writing below.
 - **Magic-link token in host request logs (ruling Q11) — retired.** Since F3 the token rides the confirm
   page's URL fragment and a POST body, never a query string, so it reaches no request log or `Referer`.
 - **F7 escape hatch outside Vercel (Low).** The file transport can still be enabled by an explicit env
-  var on a non-Vercel host. Pending the owner's written acceptance at PR time.
+  var on a non-Vercel host. Accepted by the owner on 2026-10-16.
 - **F8 held profile edit lost on reload (ruling Q17).** Accepted for launch; the server copy is never lost.
 - **Unknown-address sign-in email volume, no IP-based limit.** With IPs unrecorded (minimisation), the F1
   caps bound volume; the residual (an attacker spending the sign-in share of the daily budget with made-up
-  addresses) is bounded by the deletion reserve (20/250) and accepted, pending the owner's confirmation.
+  addresses) is bounded by the deletion reserve (20/250) and accepted by the owner on 2026-10-16.
 - **A browser that still holds `jisr.auth` after the flag goes off** shows its cached data until the hint
   is cleared (prelaunch D11 known behaviour).
 
