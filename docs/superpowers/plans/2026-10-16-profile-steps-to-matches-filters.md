@@ -137,10 +137,11 @@ Expected: FAIL — modules not found.
 ### Task 4: Profile v2 (eligibility only) + migrations + reduced wizard
 
 **Files:**
-- Modify: `src/data-schema/profile.ts`, `src/data-schema/draft.ts`, `src/lib/constants.ts`, `src/lib/profile/validate.ts`, `src/lib/profile/draft-validate.ts`, `src/lib/profile/storage.ts`, `src/lib/profile/draft.ts`, `src/lib/profile/store.ts`, `src/lib/server/rows.ts`, `src/lib/profile/form/{types,state,validate-step,build,options,initial-state}.ts`, `src/components/profile/profile-wizard.tsx`, `src/components/profile/step-review.tsx`, `src/components/profile/issues.ts`
-- Delete: `src/components/profile/step-preferences.tsx`, `src/components/profile/step-budget.tsx`
+- Modify: `src/data-schema/profile.ts` (keep `BudgetSchema` exported), `src/data-schema/draft.ts`, `src/lib/constants.ts`, `src/lib/profile/validate.ts`, `src/lib/profile/draft-validate.ts`, `src/lib/profile/storage.ts`, `src/lib/profile/draft.ts`, `src/lib/profile/store.ts`, `src/lib/server/rows.ts`, `src/lib/profile/form/{types,state,validate-step,build}.ts`, `src/components/profile/initial-state.ts`, `src/components/profile/profile-wizard.tsx`, `src/components/profile/step-review.tsx`, `src/components/profile/issues.ts`, `src/components/matches/matches-client.tsx` (drop the `ProfileSummary` aside + import)
+- Delete: `src/components/profile/step-preferences.tsx`, `src/components/profile/step-budget.tsx`, `src/components/matches/profile-summary.tsx`
 - Create: `.claude/docs/decisions/0014-profile-preferences-as-match-filters.md`
-- Test: `tests/data-schema/profile.test.ts`, `tests/lib/profile/{validate,storage,draft,draft-validate}.test.ts`, `tests/lib/profile/form/*`, `tests/lib/server/rows.test.ts`, `tests/components/profile/*`
+- Test (update **every** Profile fixture/consumer — the type change is global and `tsc` includes tests): `tests/data-schema/profile.test.ts`, `tests/lib/profile/{validate,storage,draft,draft-validate}.test.ts`, `tests/lib/profile/form/*`, `tests/lib/server/{rows,import,account-actions,provenance}.test.ts`, `tests/db-race/*`, `tests/db/schema.test.ts`, `tests/lib/stores/*`, `tests/app/api/export.test.ts`, `tests/components/profile/*`, `tests/fixtures/domain/builders.ts`, `tests/fixtures/e2e/profiles.ts`
+- Do **not** change `src/lib/profile/form/options.ts` (its builders read `core`, and Task 5 reuses them).
 
 **Interfaces:**
 - Consumes: `seedFiltersFromLegacy`, `MATCH_FILTERS_VERSION`, `EMPTY_MATCH_FILTERS`.
@@ -178,7 +179,6 @@ Expected: FAIL — modules not found.
 **Files:**
 - Create: `src/components/matches/filter-panel.tsx`, `src/components/matches/filter-controls.tsx`, `src/components/matches/filter-summary.tsx`, `src/lib/matches/filter-url.ts`
 - Modify: `src/components/matches/matches-client.tsx`, `src/components/matches/matches-states.tsx`, `src/components/matches/group-section.tsx`, `src/app/[locale]/matches/page.tsx` (Suspense), `messages/{fr,en,ar}.json`, `docs/product/jisr_mvp.md`
-- Delete: `src/components/matches/profile-summary.tsx`
 - Test: `tests/components/matches/*`, `tests/lib/matches/filter-url.test.ts`, `tests/i18n/{matches-messages,profile-messages}.test.ts`
 
 **Interfaces:**
