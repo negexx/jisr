@@ -1224,6 +1224,15 @@
     "finishing": "Taking you back…",
     "failed": "We could not check your sign-in. Check your connection and try again.",
     "retry": "Try again",
+    "otherBrowser": {
+      "title": "This browser did not ask for this sign-in link",
+      "account": "Signed in as <account>{email}</account>",
+      "body": "If you did not request it on another device, sign out now. No data from this browser will be added to this account.",
+      "continue": "Continue without adding this browser's data",
+      "signOut": "Sign out",
+      "signingOut": "Signing out…",
+      "failed": "Could not sign out. Try again."
+    },
     "confirm": {
       "title": "Add this device's data to <account>{email}</account>?",
       "body": "This device has a profile, saved programs or ticked steps from before you signed in. Add them only if this is your account.",

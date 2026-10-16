@@ -276,7 +276,7 @@ describe("requestSignInLink with accounts on", () => {
       error: "cooldown",
     });
     expect(await mails()).toHaveLength(1);
-    expect(await count("verification")).toBe(1);
+    expect(await count("verification")).toBe(2);
   });
 
   it("writes no pending row in signin mode, and the link then refuses an unknown address", async () => {

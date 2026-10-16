@@ -6,13 +6,29 @@ import { forgetSession } from "./session-client";
 // body, never in a URL.
 
 export type SignInConfirmOutcome =
-  | { kind: "signed-in" }
+  | { kind: "signed-in"; sameBrowser: boolean }
   // A refusal with Better Auth's code (INVALID_TOKEN, AGE_NOT_CONFIRMED, …): the sign-in form shows it.
   | { kind: "refused"; code: string }
   | { kind: "unavailable" }
   | { kind: "failed" };
 
 const CODE = /^[A-Za-z0-9_-]{1,64}$/;
+
+// Ruling Q19: the server says whether this browser's nonce matched. Anything unclear is "another
+// browser", the safe side: the landing then withholds the import.
+async function sameBrowserOf(response: Response): Promise<boolean> {
+  try {
+    const body: unknown = await response.json();
+    return (
+      typeof body === "object" &&
+      body !== null &&
+      "sameBrowser" in body &&
+      body.sameBrowser === true
+    );
+  } catch {
+    return false;
+  }
+}
 
 async function codeOf(response: Response): Promise<string | null> {
   try {
@@ -38,9 +54,10 @@ export async function confirmSignIn(token: string): Promise<SignInConfirmOutcome
     return { kind: "failed" };
   }
   if (response.ok) {
+    const sameBrowser = await sameBrowserOf(response);
     // Any answer kept from before the sign-in is stale now.
     forgetSession();
-    return { kind: "signed-in" };
+    return { kind: "signed-in", sameBrowser };
   }
   const code = await codeOf(response);
   if (code === "ACCOUNTS_DISABLED") return { kind: "unavailable" };

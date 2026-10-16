@@ -42,12 +42,17 @@ afterEach(() => {
 describe("confirmSignIn", () => {
   it("posts the token in a JSON body to the confirm endpoint, never in the URL", async () => {
     fetchMock.mockResolvedValue(answer(200, { status: true }));
-    expect(await confirmSignIn(TOKEN)).toEqual({ kind: "signed-in" });
+    expect(await confirmSignIn(TOKEN)).toEqual({ kind: "signed-in", sameBrowser: false });
     const [url, init] = fetchMock.mock.calls[0] ?? [];
     expect(url).toBe("/api/auth/magic-link/confirm");
     expect(String(url)).not.toContain(TOKEN);
     expect(init?.method).toBe("POST");
     expect(JSON.parse(String(init?.body))).toEqual({ token: TOKEN });
+  });
+
+  it("reports the same-browser flag the server returns", async () => {
+    fetchMock.mockResolvedValue(answer(200, { status: true, sameBrowser: true }));
+    expect(await confirmSignIn(TOKEN)).toEqual({ kind: "signed-in", sameBrowser: true });
   });
 
   it.each([

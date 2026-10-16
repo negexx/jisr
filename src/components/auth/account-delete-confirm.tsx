@@ -33,14 +33,25 @@ export function AccountDeleteConfirm({ locale }: { locale: AppLocale }) {
   const started = useRef(false);
 
   useEffect(() => {
-    if (started.current) return;
-    started.current = true;
-    const token = readDeletionToken(window.location.hash);
-    // The token leaves the address bar at once, so it is not in the history or a shared screenshot.
-    if (window.location.hash !== "" || window.location.search !== "") {
-      window.history.replaceState(window.history.state, "", window.location.pathname);
+    function readToken(): void {
+      const token = readDeletionToken(window.location.hash);
+      // The token leaves the address bar at once, so it is not in the history or a shared screenshot.
+      if (window.location.hash !== "" || window.location.search !== "") {
+        window.history.replaceState(window.history.state, "", window.location.pathname);
+      }
+      setStage(token === null ? { kind: "no-token" } : { kind: "ready", token });
     }
-    setStage(token === null ? { kind: "no-token" } : { kind: "ready", token });
+    // A second emailed deletion link opened in this tab changes only the fragment (no reload, no
+    // remount); the strip above uses replaceState, which fires no hashchange.
+    function onHashChange(): void {
+      if (window.location.hash !== "") readToken();
+    }
+    window.addEventListener("hashchange", onHashChange);
+    if (!started.current) {
+      started.current = true;
+      readToken();
+    }
+    return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
 
   async function confirm(token: string): Promise<void> {

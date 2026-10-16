@@ -238,4 +238,16 @@ describe("the confirm page", () => {
     expect(screen.queryByRole("button")).toBeNull();
     expect(mocks.deleteUser).not.toHaveBeenCalled();
   });
+
+  it("re-reads the fragment when a second deletion link opens in the same tab without a reload", async () => {
+    window.history.replaceState(null, "", "/fr/account/delete#token=first");
+    mocks.deleteUser.mockResolvedValue(deleted);
+    renderPage("fr");
+    await screen.findByRole("button", { name: fr.accountDelete.confirm });
+
+    // Opening another emailed link in this tab only changes the fragment: no reload, no remount.
+    window.location.hash = "#token=second";
+    await userEvent.click(await screen.findByRole("button", { name: fr.accountDelete.confirm }));
+    await waitFor(() => expect(mocks.deleteUser).toHaveBeenCalledWith({ token: "second" }));
+  });
 });

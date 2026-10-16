@@ -12,6 +12,7 @@ import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
 import type { PostAuthStep } from "@/lib/auth/post-auth";
 import { forgetSession, lookupSession } from "@/lib/auth/session-client";
 import { ACCOUNT_CACHE_PREFIX, AUTH_HINT_KEY } from "@/lib/auth/session-hint";
+import { SIGN_IN_BROWSER_KEY } from "@/lib/auth/sign-in-browser";
 import { type MessageTree, pickMessages } from "@/lib/i18n/client-messages";
 
 import ar from "../../../messages/ar.json";
@@ -28,6 +29,7 @@ const mocks = vi.hoisted(() => {
     acceptCurrentConsent: vi.fn<() => Promise<unknown>>(),
     seam: vi.fn<(locale: AppLocale, mode?: "auto" | "replace") => Promise<PostAuthStep>>(),
     hasGuestData: vi.fn<() => boolean>(),
+    signOut: vi.fn<() => Promise<{ error: unknown }>>(),
   };
 });
 
@@ -36,7 +38,9 @@ vi.mock("next/navigation", async (importOriginal) => ({
   ...(await importOriginal<typeof import("next/navigation")>()),
   useRouter: () => mocks.router,
 }));
-vi.mock("@/lib/auth/client", () => ({ authClient: { getSession: mocks.getSession } }));
+vi.mock("@/lib/auth/client", () => ({
+  authClient: { getSession: mocks.getSession, signOut: mocks.signOut },
+}));
 vi.mock("@/lib/server/consent", () => ({ acceptCurrentConsent: mocks.acceptCurrentConsent }));
 vi.mock("@/lib/auth/post-auth", () => ({
   runPostAuthSeam: mocks.seam,
@@ -74,6 +78,7 @@ function renderLanding(locale: AppLocale, search: string) {
 
 beforeEach(() => {
   window.localStorage.clear();
+  window.sessionStorage.clear();
   forgetSession();
   mocks.replace.mockReset();
   mocks.getSession.mockReset();
@@ -105,6 +110,22 @@ describe("post-auth landing with a ready account", () => {
     expect(window.localStorage.getItem(AUTH_HINT_KEY)).toBe("true");
     expect(mocks.seam).not.toHaveBeenCalled();
     expect(mocks.getSession).toHaveBeenCalledTimes(1);
+  });
+
+  it("never offers the import when the link was not asked for on this browser (ruling Q19)", async () => {
+    window.sessionStorage.setItem(SIGN_IN_BROWSER_KEY, "other");
+    mocks.getSession.mockResolvedValue(sessionWith(CURRENT_CONSENT_VERSION));
+    mocks.hasGuestData.mockReturnValue(true);
+    renderLanding("fr", "?return=%2Ffr%2Fcompare");
+
+    expect(
+      await screen.findByRole("heading", { name: fr.welcome.otherBrowser.title }),
+    ).toBeTruthy();
+    expect(screen.queryByRole("button", { name: fr.welcome.confirm.add })).toBeNull();
+    expect(mocks.seam).not.toHaveBeenCalled();
+
+    await userEvent.click(screen.getByRole("button", { name: fr.welcome.otherBrowser.continue }));
+    expect(mocks.replace).toHaveBeenCalledWith("/fr/compare");
   });
 
   it("clears an earlier account's cache before it sets the hint (ruling P24)", async () => {

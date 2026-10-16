@@ -142,7 +142,7 @@ describe("the emailed link", () => {
     expect(new URL(link).search).toBe("");
     expect(await count("user")).toBe(0);
     expect(await count("session")).toBe(0);
-    expect(await count("verification")).toBe(1);
+    expect(await count("verification")).toBe(2);
   });
 });
 
@@ -159,7 +159,7 @@ describe("GET /magic-link/verify is closed", () => {
     expect(response.headers.getSetCookie()).toEqual([]);
     expect(await count("user")).toBe(0);
     expect(await count("session")).toBe(0);
-    expect(await count("verification")).toBe(1);
+    expect(await count("verification")).toBe(2);
     // Still usable through the page.
     expect((await route.POST(confirmRequest(link))).status).toBe(200);
   });
@@ -173,7 +173,7 @@ describe("GET /magic-link/verify is closed", () => {
         headers: new Headers({ origin: ORIGIN }),
       }),
     ).rejects.toMatchObject({ status: "NOT_FOUND" });
-    expect(await count("verification")).toBe(1);
+    expect(await count("verification")).toBe(2);
   });
 });
 
@@ -182,7 +182,7 @@ describe("POST /magic-link/confirm", () => {
     const link = await signupLink();
     const response = await route.POST(confirmRequest(link));
     expect(response.status).toBe(200);
-    expect(await response.json()).toEqual({ status: true });
+    expect(await response.json()).toEqual({ status: true, sameBrowser: false });
     expect(response.headers.get("cache-control")).toContain("no-store");
     const cookie = cookieOf(response);
     expect(cookie).toMatch(/better-auth\.session_token=/);
@@ -227,7 +227,9 @@ describe("POST /magic-link/confirm", () => {
     const response = await route.POST(confirmRequest(link));
     expect(response.status).toBe(400);
     expect(await response.json()).toMatchObject({ code: "AGE_NOT_CONFIRMED" });
-    expect(response.headers.getSetCookie()).toEqual([]);
+    expect(response.headers.getSetCookie().some((value) => value.includes("session_token"))).toBe(
+      false,
+    );
     expect(await count("user")).toBe(0);
     expect(await count("session")).toBe(0);
   });
@@ -263,9 +265,11 @@ describe("POST /magic-link/confirm", () => {
     );
     expect(response.status).toBe(400);
     expect(await response.json()).toMatchObject({ code: "INVALID_TOKEN" });
-    expect(response.headers.getSetCookie()).toEqual([]);
+    expect(response.headers.getSetCookie().some((value) => value.includes("session_token"))).toBe(
+      false,
+    );
     expect(await count("user")).toBe(0);
-    expect(await count("verification")).toBe(1);
+    expect(await count("verification")).toBe(2);
   });
 
   it("answers a body with no token string as a 400 and creates nothing", async () => {
@@ -296,7 +300,7 @@ describe("POST /magic-link/confirm", () => {
     );
     expect(response.status).toBe(403);
     expect(await count("user")).toBe(0);
-    expect(await count("verification")).toBe(1);
+    expect(await count("verification")).toBe(2);
   });
 
   it("refuses a cross-site form navigation even without an Origin it can read", async () => {
@@ -310,7 +314,7 @@ describe("POST /magic-link/confirm", () => {
       }),
     );
     expect(response.status).toBe(403);
-    expect(await count("verification")).toBe(1);
+    expect(await count("verification")).toBe(2);
   });
 
   it("while accounts are off the route refuses and the token stays unused", async () => {
@@ -320,7 +324,7 @@ describe("POST /magic-link/confirm", () => {
     expect(response.status).toBe(403);
     expect(await response.json()).toEqual({ code: "ACCOUNTS_DISABLED" });
     expect(await count("user")).toBe(0);
-    expect(await count("verification")).toBe(1);
+    expect(await count("verification")).toBe(2);
   });
 
   it("while accounts are off a server-side call refuses before the token is read", async () => {
@@ -334,7 +338,104 @@ describe("POST /magic-link/confirm", () => {
         headers: new Headers({ origin: ORIGIN }),
       }),
     ).rejects.toMatchObject({ body: { code: "ACCOUNTS_DISABLED" } });
-    expect(await count("verification")).toBe(1);
+    expect(await count("verification")).toBe(2);
     expect(await count("user")).toBe(0);
+  });
+});
+
+// Todo 28, ruling Q19: the soft browser-bound nonce. Only the requesting browser's cookie matches
+// the stored hash; a missing or mismatched one still signs in (cross-device) but is marked "another
+// browser", so the landing never offers to import this device's data.
+describe("the browser-bound nonce (ruling Q19)", () => {
+  const NONCE_COOKIE = "jisr.ml-nonce";
+
+  function nonceOf(response: Response): string | null {
+    const setCookie = response.headers
+      .getSetCookie()
+      .find((value) => value.startsWith(`${NONCE_COOKIE}=`));
+    return setCookie === undefined ? null : (setCookie.split(";")[0] ?? null);
+  }
+
+  async function existingUser(email: string): Promise<void> {
+    await pool.query(
+      `insert into "user" (id, name, email, email_verified, consent_version, consented_at)
+       values ($1, 'Student', $2, true, '2026-01-01', '2026-01-02')`,
+      [email.toLowerCase(), email],
+    );
+  }
+
+  async function requestLinkFor(email: string): Promise<{ link: string; nonce: string }> {
+    const response = await route.POST(
+      new Request(`${ORIGIN}/api/auth/sign-in/magic-link`, {
+        method: "POST",
+        headers: { origin: ORIGIN, "content-type": "application/json" },
+        body: JSON.stringify({ email, callbackURL: "/fr/welcome" }),
+      }),
+    );
+    expect(response.status).toBe(200);
+    const nonce = nonceOf(response);
+    if (nonce === null) throw new Error("the link request set no nonce cookie");
+    return { link: (await lastMail()).url, nonce };
+  }
+
+  it("sets an HttpOnly, path-scoped, Lax, 15-minute cookie and stores only its hash", async () => {
+    await existingUser("known@example.com");
+    const response = await route.POST(
+      new Request(`${ORIGIN}/api/auth/sign-in/magic-link`, {
+        method: "POST",
+        headers: { origin: ORIGIN, "content-type": "application/json" },
+        body: JSON.stringify({ email: "known@example.com" }),
+      }),
+    );
+    expect(response.status).toBe(200);
+    const setCookie = response.headers
+      .getSetCookie()
+      .find((value) => value.startsWith(`${NONCE_COOKIE}=`));
+    expect(setCookie).toBeDefined();
+    expect(setCookie).toMatch(/HttpOnly/i);
+    expect(setCookie).toMatch(/Path=\/api\/auth/i);
+    expect(setCookie).toMatch(/SameSite=Lax/i);
+    expect(setCookie).toMatch(/Max-Age=900/i);
+    expect(setCookie).not.toMatch(/;\s*Secure/i);
+    const nonce = (setCookie ?? "").split(";")[0]?.split("=")[1] ?? "";
+    expect(nonce).not.toBe("");
+    const { rows } = await pool.query<{ identifier: string; value: string }>(
+      "select identifier, value from verification where identifier like 'magic-link-nonce:%'",
+    );
+    expect(rows).toHaveLength(1);
+    expect(rows[0]?.identifier).toMatch(/^magic-link-nonce:[A-Za-z0-9_-]{43}$/);
+    expect(rows[0]?.value).not.toBe(nonce);
+    expect(rows[0]?.value).toMatch(/^[A-Za-z0-9_-]{43}$/);
+  });
+
+  it("marks a same-browser confirm and clears the nonce cookie", async () => {
+    await existingUser("known@example.com");
+    const { link, nonce } = await requestLinkFor("known@example.com");
+    const response = await route.POST(confirmRequest(link, { cookie: nonce }));
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ status: true, sameBrowser: true });
+    const cleared = response.headers
+      .getSetCookie()
+      .find((value) => value.startsWith(`${NONCE_COOKIE}=`));
+    expect(cleared).toMatch(/Max-Age=0/i);
+    expect(await count("verification")).toBe(0);
+  });
+
+  it("signs in from another browser but marks it (no cookie)", async () => {
+    await existingUser("known@example.com");
+    const { link } = await requestLinkFor("known@example.com");
+    const response = await route.POST(confirmRequest(link));
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ status: true, sameBrowser: false });
+  });
+
+  it("marks a mismatched cookie (another link's nonce) as another browser", async () => {
+    await existingUser("first@example.com");
+    await existingUser("second@example.com");
+    const a = await requestLinkFor("first@example.com");
+    const b = await requestLinkFor("second@example.com");
+    const response = await route.POST(confirmRequest(a.link, { cookie: b.nonce }));
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ status: true, sameBrowser: false });
   });
 });

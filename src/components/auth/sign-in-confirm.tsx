@@ -12,6 +12,7 @@ import {
   signInErrorPath,
   signInPath,
 } from "@/lib/auth/callback-urls";
+import { rememberSignInBrowser } from "@/lib/auth/sign-in-browser";
 import { confirmSignIn } from "@/lib/auth/sign-in-confirm";
 
 type Ready = SignInLink & { token: string };
@@ -87,6 +88,9 @@ export function SignInConfirm({
     setStage({ kind: "working", link });
     const outcome = await confirmSignIn(link.token);
     if (outcome.kind === "signed-in") {
+      // Ruling Q19: carry the browser binding to the landing, which withholds the import when the
+      // link was not asked for on this browser.
+      rememberSignInBrowser(!outcome.sameBrowser);
       navigate(authCallbackUrls(locale, link.returnPath).callbackURL);
     } else if (outcome.kind === "refused") {
       // The sign-in form already words every refusal (expired or used link, no account yet).

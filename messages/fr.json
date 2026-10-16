@@ -1224,6 +1224,15 @@
     "finishing": "Retour à votre page…",
     "failed": "Impossible de vérifier votre connexion. Vérifiez votre réseau et réessayez.",
     "retry": "Réessayer",
+    "otherBrowser": {
+      "title": "Cet appareil n'a pas demandé ce lien de connexion",
+      "account": "Connexion en tant que <account>{email}</account>",
+      "body": "Si vous ne l'avez pas demandé depuis un autre appareil, déconnectez-vous maintenant. Aucune donnée de cet appareil ne sera ajoutée à ce compte.",
+      "continue": "Continuer sans ajouter les données de cet appareil",
+      "signOut": "Se déconnecter",
+      "signingOut": "Déconnexion…",
+      "failed": "Échec de la déconnexion. Essayez de nouveau."
+    },
     "confirm": {
       "title": "Ajouter les données de cet appareil à <account>{email}</account> ?",
       "body": "Cet appareil a un profil, des programmes enregistrés ou des étapes cochées d'avant votre connexion. Ajoutez-les seulement si ce compte est le vôtre.",

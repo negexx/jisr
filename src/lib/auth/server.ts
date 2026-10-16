@@ -29,6 +29,13 @@ import { CURRENT_CONSENT_VERSION } from "./consent";
 import { looksLikeEmail } from "./email-shape";
 import { onAuthApiError, scrubbedAuthLog } from "./log";
 import { MAGIC_LINK_CONFIRM_PATH, magicLinkConfirm } from "./magic-link-confirm";
+import {
+  hashNonce,
+  NONCE_COOKIE,
+  newNonce,
+  nonceCookieAttributes,
+  nonceIdentifier,
+} from "./magic-link-nonce";
 import { PENDING_SIGNUP_TTL_S, readPendingSignup, recordPendingSignup } from "./pending-signup";
 import { isSignupFor } from "./signup-intent";
 
@@ -220,7 +227,7 @@ function createAuth(secret: string, baseURL: string) {
     expiresIn: MAGIC_LINK_EXPIRY_S,
     disableSignUp: false,
     storeToken: "hashed",
-    sendMagicLink: async ({ email, url: verifyUrl, token, metadata }) => {
+    sendMagicLink: async ({ email, url: verifyUrl, token, metadata }, ctx) => {
       // The cooldown slot was claimed by the before hook (beforeAuthEndpoint). The sign-up
       // wording is chosen by the mode the Server Action sent, but only when the signup intent
       // backs it: metadata alone is caller-controlled on a direct POST.
@@ -233,6 +240,18 @@ function createAuth(secret: string, baseURL: string) {
         token,
         metadata: { ...metadata, locale, mode },
       });
+      // Ruling Q19: bind this link, softly, to the browser that asked for it. The cookie holds a
+      // random nonce; only its hash is stored, keyed to the token, in a second verification row that
+      // expires with the link (Better Auth's own record is `.strict()`, so it has no metadata slot).
+      if (ctx !== undefined) {
+        const nonce = newNonce();
+        await ctx.context.internalAdapter.createVerificationValue({
+          identifier: nonceIdentifier(token),
+          value: hashNonce(nonce),
+          expiresAt: new Date(Date.now() + MAGIC_LINK_EXPIRY_S * 1000),
+        });
+        ctx.setCookie(NONCE_COOKIE, nonce, nonceCookieAttributes(baseURL, MAGIC_LINK_EXPIRY_S));
+      }
     },
   });
   return betterAuth({

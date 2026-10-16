@@ -300,3 +300,32 @@ for (const { locale, dir } of E2E_LOCALES) {
       });
     });
 }
+
+// Ruling Q19: a magic link opened in a browser that did not ask for it still signs in (cross-device
+// keeps working), but the landing withholds this device's data: the victim of a look-alike-address
+// link cannot upload their profile to the attacker's account.
+for (const locale of ["fr", "ar"] as const) {
+  test(`IS-6 a link opened in another browser signs in but never offers the import (${locale})`, async ({
+    browser,
+  }, testInfo) => {
+    const t = translatorFor(locale);
+    const email = addressFor(locale, "other-browser");
+    const asker = await openDevice(browser);
+    const since = Date.now();
+    await asker.page.goto(`/${locale}/sign-in?return=%2F${locale}%2Fplan`);
+    await requestLink(asker.page, t, email, "signup");
+    const link = await readMailLink(email, "magic-link", since);
+    await asker.context.close();
+
+    const other = await openDevice(browser);
+    await seedGuestData(other.page, locale, [OK]);
+    await confirmSignInLink(other.page, t, link, "signup");
+
+    await expect(
+      other.page.getByRole("heading", { name: t("welcome.otherBrowser.title") }),
+    ).toBeVisible();
+    await expect(other.page.getByRole("button", { name: t("welcome.confirm.add") })).toHaveCount(0);
+    await shot(other.page, testInfo, `15-other-browser-${locale}`);
+    await other.context.close();
+  });
+}

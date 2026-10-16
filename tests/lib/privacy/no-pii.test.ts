@@ -344,6 +344,24 @@ describe("sign-up and sign-in", () => {
     expect(leaksIn(logs, ["canary", USER_AGENT])).toEqual([]);
   });
 
+  it("never writes the magic-link nonce cookie's value while a link is requested", async () => {
+    signedOut();
+    let nonce = "";
+    const logs = await recording(async () => {
+      const response = await post(null, "/sign-in/magic-link", {
+        email: "nonce.canary@example.com",
+        callbackURL: "/fr/welcome",
+      });
+      expect(response.status).toBe(200);
+      const setCookie = response.headers
+        .getSetCookie()
+        .find((value) => value.startsWith("jisr.ml-nonce="));
+      nonce = (setCookie ?? "").split(";")[0]?.split("=")[1] ?? "";
+    });
+    expect(nonce).not.toBe("");
+    expect(leaksIn(logs, [nonce])).toEqual([]);
+  });
+
   it("scrubs a mail failure that carries the address and the link", async () => {
     const { requestSignInLink } = await import("@/lib/server/signup");
     io.sendFailure = new Error(

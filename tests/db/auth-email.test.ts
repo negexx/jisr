@@ -133,7 +133,7 @@ describe("with ACCOUNTS_ENABLED on", () => {
     await expect(signIn("new@example.com")).rejects.toMatchObject({
       body: { code: "EMAIL_COOLDOWN" },
     });
-    expect(await count("verification")).toBe(1);
+    expect(await count("verification")).toBe(2);
     expect(await count("email_cooldowns")).toBe(1);
   });
 
@@ -151,7 +151,7 @@ describe("with ACCOUNTS_ENABLED on", () => {
     expect(refused.status).toBe(429);
     expect(await refused.json()).toMatchObject({ code: "EMAIL_COOLDOWN" });
     expect(sent.map((request) => request.to)).toEqual(["direct@example.com"]);
-    expect(await count("verification")).toBe(1);
+    expect(await count("verification")).toBe(2);
   });
 
   it("refuses a value that is not an address with a 400, without claiming a slot", async () => {
@@ -209,7 +209,7 @@ describe("with ACCOUNTS_ENABLED on", () => {
       "last@example.com",
       "keep-deleting@example.com",
     ]);
-    expect(await count("verification")).toBe(1);
+    expect(await count("verification")).toBe(2);
   });
 
   it("refuses a deletion email once the whole day's budget is spent", async () => {

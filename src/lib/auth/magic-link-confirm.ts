@@ -7,6 +7,12 @@ import { z } from "zod";
 
 import { accountsEnabled } from "./accounts-enabled";
 import { ACCOUNTS_DISABLED_CODE } from "./accounts-gate";
+import {
+  NONCE_COOKIE,
+  nonceCookieAttributes,
+  nonceIdentifier,
+  nonceMatches,
+} from "./magic-link-nonce";
 
 // Todo 28, F3 (ruling Q16). Better Auth 1.7.7's magic-link plugin verifies only on
 // GET /magic-link/verify?token=… (plugins/magic-link/index.mjs: `method: "GET"`, `query:
@@ -71,6 +77,14 @@ export function magicLinkConfirm(verify: MagicLinkVerify) {
           }
           const { token } = ctx.body;
           if (!TOKEN.test(token)) throw refusal(INVALID_TOKEN_CODE);
+          // Read the requesting browser's nonce, then consume and clear it: the token is single-use,
+          // so its nonce is too. A match is "same browser"; a missing or mismatched one still signs
+          // in (cross-device keeps working) but is marked, and the landing withholds the import.
+          const nonce = ctx.getCookie(NONCE_COOKIE);
+          const stored = await ctx.context.internalAdapter.consumeVerificationValue(
+            nonceIdentifier(token),
+          );
+          ctx.setCookie(NONCE_COOKIE, "", nonceCookieAttributes(ctx.context.baseURL, 0));
           let result: Awaited<ReturnType<typeof callVerify>>;
           try {
             result = await callVerify(verify, ctx, token);
@@ -84,7 +98,10 @@ export function magicLinkConfirm(verify: MagicLinkVerify) {
           for (const cookie of result.headers.getSetCookie()) {
             ctx.responseHeaders.append("set-cookie", cookie);
           }
-          return ctx.json({ status: true });
+          return ctx.json({
+            status: true,
+            sameBrowser: nonceMatches(nonce, stored?.value ?? null),
+          });
         },
       ),
     },
