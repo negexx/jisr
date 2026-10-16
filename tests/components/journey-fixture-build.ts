@@ -5,7 +5,12 @@ import { REASON_CODES, REASON_KINDS } from "@/lib/i18n/vocabulary";
 import { buildMatchesView } from "@/lib/journey/matches-view";
 import { describeReason, ruleIndex } from "@/lib/journey/reasons";
 
-import { E2E_NOW, E2E_PROFILE, E2E_PROFILE_WITH_BUDGET } from "../fixtures/e2e/profiles";
+import {
+  E2E_NOW,
+  E2E_PROFILE,
+  E2E_PROFILE_WITH_BUDGET,
+  filtersFromProfile,
+} from "../fixtures/e2e/profiles";
 import { loadMatchesBundle, programOf } from "../lib/journey/bundle";
 import { buildSnapshot, E2E_DATA_DIR, removeTempDirs } from "../lib/snapshot/fixture";
 
@@ -20,7 +25,13 @@ async function main() {
     const bundle = await loadMatchesBundle(dir, E2E_PROFILE, locale);
     const cards: Record<string, unknown> = {};
     for (const [name, profile] of Object.entries(PROFILES)) {
-      const view = buildMatchesView({ profile, bundle, now: E2E_NOW, locale });
+      const view = buildMatchesView({
+        profile,
+        filters: filtersFromProfile(profile),
+        bundle,
+        now: E2E_NOW,
+        locale,
+      });
       if (view.kind !== "ok") throw new Error(`expected an ok view, got ${view.kind}`);
       cards[name] = [
         ...view.groups.ok,

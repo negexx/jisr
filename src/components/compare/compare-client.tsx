@@ -5,6 +5,7 @@ import { type ReactNode, useEffect, useMemo, useState } from "react";
 import { displayNumber } from "@/components/matches/display-number";
 import { ReportSnapshot } from "@/components/report-outdated/report-context";
 import type { IsoDate } from "@/data-schema/dates";
+import type { MatchFilters } from "@/data-schema/match-filters";
 import type { AppLocale } from "@/i18n/routing";
 import { todayIso } from "@/lib/clock";
 import { MAX_COMPARE, MIN_COMPARE } from "@/lib/constants";
@@ -14,6 +15,9 @@ import {
   toggleSelection,
 } from "@/lib/journey/compare-selection";
 import type { CompareView } from "@/lib/journey/compare-view";
+import { getLocalStorage } from "@/lib/local-storage";
+import { readMatchFilters } from "@/lib/matches/filter-store";
+import { EMPTY_MATCH_FILTERS } from "@/lib/matches/filters";
 import { useProfile } from "@/lib/profile/use-profile";
 import { useSaved } from "@/lib/saved/use-saved";
 import type { SnapshotClient } from "@/lib/snapshot/client";
@@ -62,6 +66,11 @@ export function CompareClient({ locale, client }: { locale: AppLocale; client?: 
   useEffect(() => {
     setNow(todayIso());
   }, []);
+
+  const [filters] = useState<MatchFilters>(() => {
+    const storage = getLocalStorage();
+    return storage === null ? EMPTY_MATCH_FILTERS : readMatchFilters(storage);
+  });
 
   const request: SnapshotRequest | null =
     wanted && profile !== null
@@ -150,13 +159,20 @@ export function CompareClient({ locale, client }: { locale: AppLocale; client?: 
     try {
       return {
         kind: "view",
-        view: compareModule.buildCompareView({ profile, bundle, slugs: selected, now, locale }),
+        view: compareModule.buildCompareView({
+          profile,
+          filters,
+          bundle,
+          slugs: selected,
+          now,
+          locale,
+        }),
       };
     } catch {
       // A programmer error must not crash the page, and its message must not reach the student.
       return { kind: "error" };
     }
-  }, [profile, bundle, now, compareModule, selected, locale]);
+  }, [profile, filters, bundle, now, compareModule, selected, locale]);
 
   function retryAll() {
     setCompareModule(null);
@@ -208,7 +224,7 @@ export function CompareClient({ locale, client }: { locale: AppLocale; client?: 
           <CompareGrid
             view={computed.view}
             onlyDifferences={onlyDifferences}
-            budgetProvided={profile.budget !== null}
+            budgetProvided={filters.budget !== null}
           />
         </>
       ),

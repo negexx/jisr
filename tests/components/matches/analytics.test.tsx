@@ -88,15 +88,4 @@ describe("My Matches analytics", () => {
     await flushEffects();
     expect(track).not.toHaveBeenCalled();
   });
-
-  it("does not count it when the chosen fields have no programs", async () => {
-    profileStore.save(E2E_PROFILE);
-    const bundle = await loadedBundle();
-    renderMatches("en", bundleClient({ ...bundle, programs: [], hasPrograms: true }));
-    await screen.findByRole("heading", {
-      name: catalogs.en.matches.states.noProgramsForFields.title,
-    });
-    await flushEffects();
-    expect(track).not.toHaveBeenCalled();
-  });
 });

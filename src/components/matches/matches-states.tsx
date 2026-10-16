@@ -73,13 +73,6 @@ export function NoProgramsState() {
   return <EmptyState title={t("title")} description={t("description")} />;
 }
 
-export function NoProgramsForFieldsState() {
-  const t = useTranslations("matches.states.noProgramsForFields");
-  return (
-    <EmptyState title={t("title")} description={t("description")} action={<EditProfileLink />} />
-  );
-}
-
 export function AllHiddenState({ title }: { title: string }) {
   const t = useTranslations("matches.states.allHidden");
   return <EmptyState title={title} description={t("description")} action={<EditProfileLink />} />;

@@ -10,6 +10,7 @@ import {
   E2E_PROFILE,
   E2E_SCHOLARSHIP_SLUGS,
   E2E_SLUGS,
+  filtersFromProfile,
 } from "../../fixtures/e2e/profiles";
 import { forbidConsole } from "../profile/no-console";
 import { buildSnapshot, buildVariant, E2E_DATA_DIR, removeTempDirs } from "../snapshot/fixture";
@@ -94,7 +95,14 @@ function view(
   from: SnapshotBundle = bundle,
   profile: Profile = E2E_PROFILE,
 ) {
-  return buildCompareView({ profile, bundle: from, slugs, now: E2E_NOW, locale: "fr" });
+  return buildCompareView({
+    profile,
+    filters: filtersFromProfile(profile),
+    bundle: from,
+    slugs,
+    now: E2E_NOW,
+    locale: "fr",
+  });
 }
 
 function programOf(slug: string, from: SnapshotBundle = bundle): CompareProgram {
@@ -198,6 +206,7 @@ describe("buildCompareView", () => {
   it("gives the same tuition, cost, languages, deadline, group and route as the matches page", () => {
     const matches = buildMatchesView({
       profile: E2E_PROFILE,
+      filters: filtersFromProfile(E2E_PROFILE),
       bundle,
       now: E2E_NOW,
       locale: "fr",

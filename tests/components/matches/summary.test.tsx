@@ -10,9 +10,10 @@ import { MatchesSummary } from "@/components/matches/matches-summary";
 import type { AppLocale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { buildMatchesView } from "@/lib/journey/matches-view";
+import { writeMatchFilters } from "@/lib/matches/filter-store";
 import { profileStore } from "@/lib/profile/store";
 import { shardsForMatches } from "@/lib/snapshot/plan";
-import { E2E_NOW, E2E_PROFILE } from "../../fixtures/e2e/profiles";
+import { E2E_NOW, E2E_PROFILE, filtersFromProfile } from "../../fixtures/e2e/profiles";
 import { forbidConsole } from "../../lib/profile/no-console";
 import { catalogs, Providers, withFixtureClient } from "./helpers";
 
@@ -136,10 +137,17 @@ describe("MatchesSummary: the band's status summary", () => {
 
   it("reads the counts the matches island publishes, from one snapshot load", async () => {
     profileStore.save(E2E_PROFILE);
+    writeMatchFilters(window.localStorage, filtersFromProfile(E2E_PROFILE));
     const bundle = await fixture
       .client()
       .load((manifest) => shardsForMatches(E2E_PROFILE, manifest), "fr");
-    const view = buildMatchesView({ profile: E2E_PROFILE, bundle, now: E2E_NOW, locale: "fr" });
+    const view = buildMatchesView({
+      profile: E2E_PROFILE,
+      filters: filtersFromProfile(E2E_PROFILE),
+      bundle,
+      now: E2E_NOW,
+      locale: "fr",
+    });
     if (view.kind !== "ok") throw new Error("expected an ok view");
 
     const { container } = render(

@@ -1,8 +1,10 @@
 import type { IsoDate } from "@/data-schema/dates";
+import type { MatchFilters } from "@/data-schema/match-filters";
 import { type Profile, ProfileSchema } from "@/data-schema/profile";
 import type { RouteOutcome } from "@/data-schema/resolved";
 import type { PreferenceMismatch } from "@/domain/filter";
 import type { MatchStatus } from "@/domain/types";
+import { MATCH_FILTERS_VERSION } from "@/lib/constants";
 
 // Playwright specs pin the browser clock to this date; data:check and the domain tests take it as `now`.
 export const E2E_NOW: IsoDate = "2026-09-30";
@@ -58,6 +60,18 @@ export const E2E_PROFILE_WITH_BUDGET: Profile = baseProfile({
 });
 
 export const E2E_PROFILE_XB_ONLY: Profile = baseProfile({ destinations: ["XB"] });
+
+// Mirrors the profile's preference fields, which Task 4 removes, so the fixture expectations stay.
+export function filtersFromProfile(profile: Profile): MatchFilters {
+  return {
+    schemaVersion: MATCH_FILTERS_VERSION,
+    fields: profile.fields,
+    studyLanguages: profile.studyLanguages,
+    destinations: profile.destinations,
+    institutionType: profile.institutionType,
+    budget: profile.budget,
+  };
+}
 
 export type E2eGroup = "ok" | "check" | "foundation" | "failed";
 export type E2eIntakeKind = "upcoming" | "recurring" | "closed" | "none";

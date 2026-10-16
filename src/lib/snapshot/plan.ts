@@ -24,13 +24,13 @@ export function shardsForProfileForm(): ShardPlan {
   return { structural: [shardNames.core()] };
 }
 
-// Every destination is loaded whatever `profile.destinations` says, so programs outside the chosen
-// destinations can be counted as hidden instead of silently missing.
+// Every program shard is loaded whatever the match filters say, so a filter can only hide a loaded
+// program (and count it as hidden), never silently omit it from the page.
 export function shardsForMatches(
-  profile: { credential: { country: CountryCode }; fields: readonly Slug[] },
+  profile: { credential: { country: CountryCode } },
   manifest: Manifest,
 ): ShardPlan {
-  const programs = programShardsIn(manifest).filter((p) => profile.fields.includes(p.field));
+  const programs = programShardsIn(manifest);
   const destinations = [...new Set(programs.map((p) => p.destination))];
   return present(manifest, [
     shardNames.core(),

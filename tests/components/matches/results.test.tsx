@@ -10,6 +10,7 @@ import type { Profile } from "@/data-schema/profile";
 import type { AppLocale } from "@/i18n/routing";
 import { formatMoney } from "@/lib/format";
 import { buildMatchesView, MATCH_GROUPS, type MatchGroup } from "@/lib/journey/matches-view";
+import { writeMatchFilters } from "@/lib/matches/filter-store";
 import { profileStore } from "@/lib/profile/store";
 import { savedStore } from "@/lib/saved/store";
 import type { SnapshotBundle } from "@/lib/snapshot/client";
@@ -21,6 +22,7 @@ import {
   E2E_PROFILE_WITH_BUDGET,
   E2E_PROFILE_XB_ONLY,
   E2E_SLUGS,
+  filtersFromProfile,
 } from "../../fixtures/e2e/profiles";
 import { FORBIDDEN } from "../../i18n/forbidden-wording";
 import { forbidConsole } from "../../lib/profile/no-console";
@@ -52,6 +54,7 @@ function bundleFor(locale: AppLocale, profile: Profile): Promise<SnapshotBundle>
 
 async function renderFor(locale: AppLocale, profile: Profile) {
   profileStore.save(profile);
+  writeMatchFilters(window.localStorage, filtersFromProfile(profile));
   const view = renderMatches(locale, fixture.client());
   await waitFor(() => expect(screen.getAllByRole("article").length).toBeGreaterThan(0));
   return view;
@@ -107,6 +110,7 @@ describe.each(LOCALES)("My Matches: the four groups (%s)", (locale) => {
     const { container } = await renderFor(locale, E2E_PROFILE);
     const view = buildMatchesView({
       profile: E2E_PROFILE,
+      filters: filtersFromProfile(E2E_PROFILE),
       bundle: await bundleFor(locale, E2E_PROFILE),
       now: E2E_NOW,
       locale,
@@ -254,6 +258,7 @@ describe.each(LOCALES)("My Matches: hidden by preferences (%s)", (locale) => {
     expect(section(container, "foundation")).toBeNull();
     const view = buildMatchesView({
       profile: E2E_PROFILE_XB_ONLY,
+      filters: filtersFromProfile(E2E_PROFILE_XB_ONLY),
       bundle: await bundleFor(locale, E2E_PROFILE_XB_ONLY),
       now: E2E_NOW,
       locale,
