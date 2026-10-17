@@ -28,7 +28,7 @@ const BASE_ENV = {
 const BREVO_ENV = {
   ...BASE_ENV,
   BREVO_API_KEY: "xkeysib-test-key",
-  BREVO_SENDER: "Jisr <no-reply@jisrr.org>",
+  BREVO_SENDER: "Jisrr <no-reply@jisrr.org>",
 };
 
 function request(overrides: Partial<Parameters<typeof sendAuthEmail>[0]> = {}) {
@@ -367,7 +367,7 @@ describe("sendAuthEmail transport selection", () => {
   });
 
   it("throws a named error when a key is set but the sender is missing or malformed", async () => {
-    for (const sender of ["", "not-an-address", "Jisr <broken>"]) {
+    for (const sender of ["", "not-an-address", "Jisrr <broken>"]) {
       const { fetchMock } = recordingFetch();
       await expect(
         sendAuthEmail(request(), {
@@ -434,7 +434,7 @@ describe("sendAuthEmail through Brevo", () => {
     expect(headers.get("accept")).toBe("application/json");
     const rendered = renderAuthEmail("magic-link", "ar", URL_IN);
     expect(sentBody(calls)).toEqual({
-      sender: { email: "no-reply@jisrr.org", name: "Jisr" },
+      sender: { email: "no-reply@jisrr.org", name: "Jisrr" },
       to: [{ email: ADDRESS }],
       subject: rendered.subject,
       textContent: rendered.text,
@@ -448,7 +448,7 @@ describe("sendAuthEmail through Brevo", () => {
       fetch: fetchMock,
       waitUntil: waitUntilNoop,
     });
-    expect(sentBody(calls).sender).toEqual({ email: "no-reply@jisrr.org", name: "Jisr" });
+    expect(sentBody(calls).sender).toEqual({ email: "no-reply@jisrr.org", name: "Jisrr" });
   });
 
   it("sends the delete-account email with its own subject", async () => {

@@ -1,5 +1,5 @@
 
-# Jisr Foundation Plan, Part B: Milestone 1 (data platform), T6–T11
+# Jisrr Foundation Plan, Part B: Milestone 1 (data platform), T6–T11
 
 > Continues Part A (`docs/plans/2026-09-29-foundation-part-a-contract-m0.md`). The Global Constraints, plan-wide execution rules and the Shared type contract (sections 1–12) in Part A apply verbatim to every task below. Every implementer sees: their own task, Global Constraints, and the Shared type contract. The contract is normative. Where a task depends on a proposed amendment, it is tagged **[A#]** (see "Contract amendments needed" at the end). The main thread must apply accepted amendments to Part A **before** dispatching the task that uses them.
 

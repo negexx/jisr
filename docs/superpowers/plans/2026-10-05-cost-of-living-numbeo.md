@@ -67,7 +67,7 @@ The basket and the housing rule are our modelling choices, disclosed in the `bas
 
 - [ ] **Step 1: failing tests** (no network: the fetch function is injected): the city list comes from `data/programs` joined to `data/institutions` (programme `city` slug and the institution's city name, one row per slug); URL building for `Paris`, `Saint-Martin-d'Hères`, `'s-Gravenhage` and a name with a space; a 404 or a page without the rent table gives no profile and an entry in the report (that city falls back to the country profile); HU asks for `HUF`, the others `EUR`; the basis texts name Numbeo, the page date, the formula and the basket; the delay and `--max-requests` are honoured; a dry run prints the number of requests and writes nothing; an existing staged file or a slug already in `data/` is never overwritten.
 - [ ] **Step 2: run and see them fail.**
-- [ ] **Step 3: implement.** Fetch sequentially with the delay and the User-Agent `Jisr-research (non-commercial; written permission held by the project owner; contact dagdaguihamza@gmail.com)`. Country profiles come from the country pages (France, Germany, Netherlands, Italy, Hungary) and are the fallback for cities Numbeo does not list.
+- [ ] **Step 3: implement.** Fetch sequentially with the delay and the User-Agent `Jisrr-research (non-commercial; written permission held by the project owner; contact dagdaguihamza@gmail.com)`. Country profiles come from the country pages (France, Germany, Netherlands, Italy, Hungary) and are the fallback for cities Numbeo does not list.
 - [ ] **Step 4: tests pass; typecheck and lint; commit** `feat: data:costs stages Numbeo cost profiles for the programme cities and the countries`.
 
 ### Task 3: audit sheet for cost profiles

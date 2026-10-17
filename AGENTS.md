@@ -1,6 +1,6 @@
-# Jisr — opencode agent manual
+# Jisrr — opencode agent manual
 
-This is the opencode entry point for **Jisr**. The full operating manual is `.claude/CLAUDE.md`, loaded as an opencode instruction together with `.claude/docs/conventions.md` (see `opencode.json`). Read this file for the opencode-specific policy; read `.claude/CLAUDE.md` for the workflow itself.
+This is the opencode entry point for **Jisrr**. The full operating manual is `.claude/CLAUDE.md`, loaded as an opencode instruction together with `.claude/docs/conventions.md` (see `opencode.json`). Read this file for the opencode-specific policy; read `.claude/CLAUDE.md` for the workflow itself.
 
 ## Model policy
 
@@ -25,7 +25,7 @@ Six workflow agents, defined by `.claude/agents/*.md` and model-pinned in `openc
 
 The `oh-my-openagent` plugin provides the orchestration agents (`oracle`, `explore`, `librarian`, `metis`, `momus`, `multimodal-looker`, `sisyphus`, `prometheus`, `atlas`, …); they are all model-pinned to deepseek-v4.1-flash in `~/.omo/omo.jsonc`, not re-modelled here.
 
-## What Jisr is
+## What Jisrr is
 
 A free, non-commercial, trilingual (fr/en/ar RTL) web app that turns a Moroccan Bac graduate's profile into realistic, costed European Bachelor's options. One journey: profile → matches → costs → scholarships → application plan. Trust is the product: every fact carries an official source and a last-verified date. Release 1: France, Germany, the Netherlands, Hungary, Italy, Spain × Computer Science / Engineering / Business-Economics.
 

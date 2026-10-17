@@ -5,7 +5,7 @@
 
 ## Context
 
-Jisr's MVP brief (`docs/product/jisr_mvp.md`) specified product scope but no technology. The product is a web app with SEO-relevant, trilingual content pages (fr/en/ar with RTL), a profile questionnaire, saved lists and per-user checklists, backed by curated relational data. Users are Moroccan students, often on mobile and slow connections; GDPR applies.
+Jisrr's MVP brief (`docs/product/jisr_mvp.md`) specified product scope but no technology. The product is a web app with SEO-relevant, trilingual content pages (fr/en/ar with RTL), a profile questionnaire, saved lists and per-user checklists, backed by curated relational data. Users are Moroccan students, often on mobile and slow connections; GDPR applies.
 
 ## Decision
 

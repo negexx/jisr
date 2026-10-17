@@ -1,4 +1,4 @@
-# Spain as a Jisr destination (Spec 2) — design
+# Spain as a Jisrr destination (Spec 2) — design
 
 **Date:** 2026-10-13
 **Status:** Approved (design) by the owner in conversation; this file is the written spec, pending the owner's read before `writing-plans`.
@@ -7,7 +7,7 @@
 
 ## Goal
 
-Add **Spain (ES)** as Jisr's 6th destination, inside the existing model (`level: bachelor`; eligibility `(origin credential country, credential type) → (destination, level)` then program rules), with the same trust model as FR/DE/NL/HU/IT: official https sources only, a model only proposes and code verifies verbatim quotes, unknown stays `null` → ⚠️, every fact carries `source_url` + `info_kind` + `last_verified_at`, nothing enters `data/` except through the audit sample and `data:promote`.
+Add **Spain (ES)** as Jisrr's 6th destination, inside the existing model (`level: bachelor`; eligibility `(origin credential country, credential type) → (destination, level)` then program rules), with the same trust model as FR/DE/NL/HU/IT: official https sources only, a model only proposes and code verifies verbatim quotes, unknown stays `null` → ⚠️, every fact carries `source_url` + `info_kind` + `last_verified_at`, nothing enters `data/` except through the audit sample and `data:promote`.
 
 Deliverables: `data/countries/ES.yaml`; ES institutions; ES Grado programmes; the route `ma-bac-to-es.yaml`; ES application channels; ES cost profiles where a 2026 official city figure exists plus the Numbeo link where none does; the code touchpoints and tests that a new destination requires; an ADR; updated coverage.
 

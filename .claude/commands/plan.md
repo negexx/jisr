@@ -8,7 +8,7 @@ effort: medium
 
 # /plan — Implementation planning
 
-You are about to plan work on **Jisr**. The user's intent: `$ARGUMENTS`
+You are about to plan work on **Jisrr**. The user's intent: `$ARGUMENTS`
 
 Produce a plan, not code. The plan should be the kind of thing a competent teammate could pick up and execute without re-asking the same questions.
 

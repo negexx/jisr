@@ -134,16 +134,16 @@ their keys and values.
 `magic-link-signup` (sent for every form request; the plain sign-in wording stays for direct
 POSTs):
 
-- fr — subject "Confirmez votre connexion à Jisr":
-  "Bonjour," / "Quelqu'un a demandé à se connecter à Jisr avec cette adresse email. En ouvrant ce
-  lien, vous vous connectez — et s'il n'existe pas encore de compte Jisr avec cette adresse, il est
+- fr — subject "Confirmez votre connexion à Jisrr":
+  "Bonjour," / "Quelqu'un a demandé à se connecter à Jisrr avec cette adresse email. En ouvrant ce
+  lien, vous vous connectez — et s'il n'existe pas encore de compte Jisrr avec cette adresse, il est
   créé :" / url / "Si un compte est créé, cela vaut confirmation que vous avez 16 ans ou plus et que
-  vous acceptez la politique de confidentialité de Jisr, version X : <privacy>" / "Ce lien est
+  vous acceptez la politique de confidentialité de Jisrr, version X : <privacy>" / "Ce lien est
   valable 15 minutes et ne peut être utilisé qu'une seule fois." / "Si vous n'avez pas fait cette
-  demande, ignorez ce message : rien n'est créé." / "Jisr"
-- en — subject "Confirm your sign-in to Jisr": equivalent ("Opening this link signs you in — and if
-  there is no Jisr account for this address yet, it creates one:" / "If an account is created, it
-  confirms that you are 16 or older and accept the Jisr privacy notice, version X: <privacy>").
+  demande, ignorez ce message : rien n'est créé." / "Jisrr"
+- en — subject "Confirm your sign-in to Jisrr": equivalent ("Opening this link signs you in — and if
+  there is no Jisrr account for this address yet, it creates one:" / "If an account is created, it
+  confirms that you are 16 or older and accept the Jisrr privacy notice, version X: <privacy>").
 - ar — subject "تأكيد تسجيل الدخول إلى جسر": equivalent machine draft.
 
 ## 4. Task 2 — buttons

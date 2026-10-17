@@ -4,13 +4,13 @@
     "privacy": {
       "meta": {
         "title": "Politique de confidentialité",
-        "description": "Comment Jisr traite vos données, en invité ou avec un compte : ce que garde votre navigateur, ce que nous conservons, qui les traite, et vos droits au titre du RGPD et de la loi marocaine 09-08."
+        "description": "Comment Jisrr traite vos données, en invité ou avec un compte : ce que garde votre navigateur, ce que nous conservons, qui les traite, et vos droits au titre du RGPD et de la loi marocaine 09-08."
       }
     },
     "terms": {
       "meta": {
         "title": "Conditions d'utilisation",
-        "description": "Les règles d'utilisation de Jisr : un service gratuit et informatif, avec un compte facultatif, sans frais et sans engagement, régi par le droit italien."
+        "description": "Les règles d'utilisation de Jisrr : un service gratuit et informatif, avec un compte facultatif, sans frais et sans engagement, régi par le droit italien."
       }
     }
   },
@@ -35,7 +35,7 @@
     "backToGuides": "Retour aux guides",
     "studying-in-europe": {
       "title": "Étudier en Europe après le bac marocain",
-      "lead": "Les six pays suivis par Jisr, le parcours d'une candidature et la façon de lire chaque source.",
+      "lead": "Les six pays suivis par Jisrr, le parcours d'une candidature et la façon de lire chaque source.",
       "meta": {
         "title": "Étudier en Europe après le bac marocain",
         "description": "Un guide d'ensemble sur la candidature en licence en Europe après un bac marocain, avec les sources officielles."
@@ -75,12 +75,12 @@
     }
   },
   "metadata": {
-    "title": "Jisr | Étudier en Europe après le Bac",
+    "title": "Jisrr | Étudier en Europe après le Bac",
     "description": "Trouvez des licences réalistes en France, en Allemagne, aux Pays-Bas, en Hongrie, en Italie et en Espagne, avec les coûts, les bourses et les étapes pour candidater."
   },
   "home": {
     "title": "Étudier en Europe après le Bac",
-    "lead": "Jisr vous aide à trouver des licences réalistes pour votre profil, à estimer les coûts et à préparer votre candidature.",
+    "lead": "Jisrr vous aide à trouver des licences réalistes pour votre profil, à estimer les coûts et à préparer votre candidature.",
     "cta": "Créer mon profil",
     "ctaNote": "Vos réponses restent sur cet appareil.",
     "ctaNoteSignedIn": "Vos réponses sont enregistrées dans votre compte.",
@@ -91,7 +91,7 @@
       "titleLead": "Étudier en Europe",
       "titleAccent": "après le Bac"
     },
-    "questionsTitle": "Ce que Jisr vous aide à savoir",
+    "questionsTitle": "Ce que Jisrr vous aide à savoir",
     "questions": {
       "kicker": "Comment ça marche",
       "where": {
@@ -144,7 +144,7 @@
     }
   },
   "shell": {
-    "siteName": "Jisr",
+    "siteName": "Jisrr",
     "siteNameArabic": "جسر",
     "homeLink": "Accueil",
     "skipToContent": "Aller au contenu"
@@ -158,8 +158,8 @@
     "savedCount": "{count} enregistré(s)"
   },
   "footer": {
-    "privacy": "Votre profil, vos programmes enregistrés et votre progression dans le plan restent sur cet appareil. Jisr n'utilise aucun cookie.",
-    "privacySignedIn": "Votre profil, vos programmes enregistrés et votre progression dans le plan sont enregistrés dans votre compte, et vous pouvez les exporter ou les supprimer. Jisr n'utilise aucun cookie de suivi.",
+    "privacy": "Votre profil, vos programmes enregistrés et votre progression dans le plan restent sur cet appareil. Jisrr n'utilise aucun cookie.",
+    "privacySignedIn": "Votre profil, vos programmes enregistrés et votre progression dans le plan sont enregistrés dans votre compte, et vous pouvez les exporter ou les supprimer. Jisrr n'utilise aucun cookie de suivi.",
     "privacyLogs": "Comme sur tout site, notre hébergeur voit les pages que vous ouvrez. Pour afficher vos résultats et votre plan, votre navigateur télécharge aussi des fichiers de données dont le nom indique le pays de votre diplôme, des pays de destination et des domaines : ceux que vous avez choisis et ceux des programmes que vous ouvrez ou enregistrez. Vos notes, votre nationalité et les programmes de votre liste enregistrée ne sont jamais envoyés.",
     "privacyLogsSignedIn": "Comme sur tout site, notre hébergeur voit les pages que vous ouvrez. Pour afficher vos résultats et votre plan, votre navigateur télécharge aussi des fichiers de données dont le nom indique le pays de votre diplôme, des pays de destination et des domaines : ceux que vous avez choisis et ceux des programmes que vous ouvrez ou enregistrez. Votre profil, vos programmes enregistrés et votre progression dans le plan sont envoyés à notre serveur pour être enregistrés dans votre compte.",
     "sources": "Les données et les sources sont vérifiées à la main ; chaque fait indique sa source.",
@@ -416,7 +416,7 @@
   },
   "profile": {
     "meta": {
-      "title": "Jisr | Créer mon profil",
+      "title": "Jisrr | Créer mon profil",
       "description": "Parlez-nous de votre Bac, de vos langues et de ce que vous voulez étudier pour voir les programmes qui semblent réalistes pour vous. Gratuit, avec ou sans compte."
     },
     "title": {
@@ -639,7 +639,7 @@
   },
   "matches": {
     "meta": {
-      "title": "Jisr | Vos résultats",
+      "title": "Jisrr | Vos résultats",
       "description": "Les programmes comparés à votre profil : ce qui semble possible, ce qu'il faut vérifier, les coûts et les échéances, avec la source de chaque information."
     },
     "title": "Vos résultats",
@@ -744,8 +744,8 @@
   },
   "program": {
     "meta": {
-      "title": "{program}, {institution} | Jisr",
-      "titleWithoutInstitution": "{program} | Jisr",
+      "title": "{program}, {institution} | Jisrr",
+      "titleWithoutInstitution": "{program} | Jisrr",
       "description": "Conditions d'admission, coûts, dates limites et démarches pour {program}, avec la source de chaque information."
     },
     "header": {
@@ -1080,7 +1080,7 @@
   "scholarshipsPage": {
     "meta": {
       "title": "Bourses d'études pour la licence en Europe",
-      "description": "Les bourses répertoriées sur Jisr, avec montants, ce qu'elles couvrent, dates limites et sources officielles."
+      "description": "Les bourses répertoriées sur Jisrr, avec montants, ce qu'elles couvrent, dates limites et sources officielles."
     },
     "title": "Bourses",
     "eyebrow": "Aide au financement",
@@ -1131,9 +1131,9 @@
   "signup": {
     "meta": {
       "title": "Se connecter ou créer un compte",
-      "description": "Créez un compte Jisr gratuit pour retrouver votre profil, vos programmes enregistrés et votre plan sur tous vos appareils."
+      "description": "Créez un compte Jisrr gratuit pour retrouver votre profil, vos programmes enregistrés et votre plan sur tous vos appareils."
     },
-    "title": "Votre compte Jisr",
+    "title": "Votre compte Jisrr",
     "lead": "Le compte est facultatif. Sans compte, tout continue de fonctionner et vos données restent sur cet appareil. Avec un compte, votre profil, vos programmes enregistrés et votre plan vous suivent sur tous vos appareils.",
     "leadSignedIn": "Vous êtes connecté. Votre profil, vos programmes enregistrés et votre plan sont enregistrés dans votre compte et vous suivent sur tous vos appareils. Vous pouvez les exporter ou les supprimer.",
     "email": {
@@ -1141,13 +1141,13 @@
       "hint": "Nous vous envoyons un lien pour vous connecter. Pas de mot de passe."
     },
     "consent": {
-      "label": "J'accepte que Jisr conserve mon adresse e-mail, mon profil, mes programmes enregistrés et ma progression dans le plan pour faire fonctionner mon compte, comme décrit dans la politique de confidentialité.",
+      "label": "J'accepte que Jisrr conserve mon adresse e-mail, mon profil, mes programmes enregistrés et ma progression dans le plan pour faire fonctionner mon compte, comme décrit dans la politique de confidentialité.",
       "privacyLink": "Lire la politique de confidentialité"
     },
     "age": {
       "label": "J'ai 16 ans ou plus.",
-      "hint": "Moins de 16 ans ? Continuez à utiliser Jisr sans compte : tout fonctionne et vos données restent sur cet appareil.",
-      "hintSignedIn": "Moins de 16 ans ? Vous pouvez utiliser Jisr sans compte : tout fonctionne."
+      "hint": "Moins de 16 ans ? Continuez à utiliser Jisrr sans compte : tout fonctionne et vos données restent sur cet appareil.",
+      "hintSignedIn": "Moins de 16 ans ? Vous pouvez utiliser Jisrr sans compte : tout fonctionne."
     },
     "required": "obligatoire",
     "submit": "Continuer avec",
@@ -1165,15 +1165,15 @@
       "ageRequired": "Pour créer un compte, confirmez que vous avez 16 ans ou plus.",
       "emailInvalid": "Saisissez une adresse e-mail comme nom@exemple.com.",
       "cooldown": "Nous ne pouvons pas envoyer d'autre lien à cette adresse pour le moment. Réessayez plus tard.",
-      "disabled": "Les comptes ne sont pas encore disponibles. Vous pouvez continuer à utiliser Jisr sans compte.",
+      "disabled": "Les comptes ne sont pas encore disponibles. Vous pouvez continuer à utiliser Jisrr sans compte.",
       "failed": "Le lien n'a pas pu être envoyé. Réessayez dans un instant.",
       "linkFailed": "La connexion n'a pas fonctionné. Le lien a peut-être expiré ou déjà servi : demandez-en un nouveau."
     },
     "gate": {
       "titleNew": "Terminez la création de votre compte",
       "titleChanged": "Notre politique de confidentialité a changé",
-      "bodyNew": "Pour que votre compte conserve vos données, acceptez la politique de confidentialité. D'ici là, Jisr continue de fonctionner sur cet appareil comme avant.",
-      "bodyChanged": "Nous avons mis à jour la politique de confidentialité depuis que vous l'avez acceptée. Lisez-la et acceptez la nouvelle version pour continuer à utiliser votre compte. D'ici là, Jisr continue de fonctionner sur cet appareil comme avant.",
+      "bodyNew": "Pour que votre compte conserve vos données, acceptez la politique de confidentialité. D'ici là, Jisrr continue de fonctionner sur cet appareil comme avant.",
+      "bodyChanged": "Nous avons mis à jour la politique de confidentialité depuis que vous l'avez acceptée. Lisez-la et acceptez la nouvelle version pour continuer à utiliser votre compte. D'ici là, Jisrr continue de fonctionner sur cet appareil comme avant.",
       "submit": "Continuer",
       "sending": "Enregistrement…",
       "required": "Cochez la case pour accepter la politique de confidentialité.",
@@ -1194,7 +1194,7 @@
   "welcome": {
     "meta": {
       "title": "Finalisation de la connexion",
-      "description": "Finalisation de votre connexion à Jisr."
+      "description": "Finalisation de votre connexion à Jisrr."
     },
     "title": "Connexion en cours",
     "lead": "Un instant, nous terminons votre connexion.",
@@ -1234,24 +1234,24 @@
   "accountDelete": {
     "meta": {
       "title": "Supprimer votre compte",
-      "description": "Confirmez la suppression de votre compte Jisr."
+      "description": "Confirmez la suppression de votre compte Jisrr."
     },
     "title": "Supprimer votre compte",
     "lead": "Cette page confirme la suppression que vous avez demandée par e-mail.",
     "reading": "Lecture du lien…",
-    "warning": "Votre compte et tout ce qu'il contient sur Jisr (profil, programmes enregistrés, étapes cochées, signalements) seront supprimés définitivement, et les données gardées sur cet appareil seront effacées aussi. Cette action est irréversible.",
+    "warning": "Votre compte et tout ce qu'il contient sur Jisrr (profil, programmes enregistrés, étapes cochées, signalements) seront supprimés définitivement, et les données gardées sur cet appareil seront effacées aussi. Cette action est irréversible.",
     "confirm": "Supprimer mon compte",
     "working": "Suppression…",
     "deleted": {
       "title": "Votre compte a été supprimé",
-      "body": "Votre compte et ses données ont été effacés de Jisr et de cet appareil. Vous pouvez continuer à utiliser Jisr sans compte.",
+      "body": "Votre compte et ses données ont été effacés de Jisrr et de cet appareil. Vous pouvez continuer à utiliser Jisrr sans compte.",
       "home": "Retour à l'accueil"
     },
     "errors": {
       "invalidToken": "Ce lien n'est pas valide ou a expiré. Demandez un nouvel e-mail de suppression depuis la page de votre compte.",
-      "signedOut": "Cet appareil n'est pas connecté, nous ne pouvons donc pas confirmer la suppression ici. Si vous l'avez déjà confirmée il y a un instant, votre compte a probablement été supprimé, et vous pouvez effacer les données de Jisr de cet appareil. Sinon, connectez-vous au compte à supprimer, puis ouvrez à nouveau le lien de l'e-mail.",
+      "signedOut": "Cet appareil n'est pas connecté, nous ne pouvons donc pas confirmer la suppression ici. Si vous l'avez déjà confirmée il y a un instant, votre compte a probablement été supprimé, et vous pouvez effacer les données de Jisrr de cet appareil. Sinon, connectez-vous au compte à supprimer, puis ouvrez à nouveau le lien de l'e-mail.",
       "eraseDevice": "Effacer cet appareil",
-      "erased": "Les données de Jisr ont été effacées de cet appareil.",
+      "erased": "Les données de Jisrr ont été effacées de cet appareil.",
       "signIn": "Se connecter",
       "unavailable": "Les comptes ne sont pas disponibles pour le moment. Rien n'a été supprimé.",
       "failed": "Nous n'avons pas pu confirmer la suppression. Vérifiez votre connexion et réessayez."
@@ -1262,7 +1262,7 @@
       "title": "Confirmez votre connexion",
       "description": "Confirmez le lien de connexion reçu par e-mail."
     },
-    "title": "Se connecter à Jisr",
+    "title": "Se connecter à Jisrr",
     "lead": "Vous avez ouvert un lien de connexion. Rien ne se passe tant que vous ne confirmez pas ci-dessous.",
     "reading": "Lecture du lien…",
     "body": "Appuyez sur le bouton pour vous connecter. Si vous n'avez pas encore de compte, il sera créé.",
@@ -1271,7 +1271,7 @@
     "notYou": "Si vous n'avez pas demandé ce lien, fermez cette page : rien n'a été fait.",
     "errors": {
       "noToken": "Ce lien est incomplet ou a déjà été ouvert. Demandez un nouveau lien de connexion.",
-      "unavailable": "Les comptes ne sont pas disponibles pour le moment. Vous pouvez continuer à utiliser Jisr sans compte.",
+      "unavailable": "Les comptes ne sont pas disponibles pour le moment. Vous pouvez continuer à utiliser Jisrr sans compte.",
       "failed": "La connexion n'a pas abouti. Vérifiez votre connexion internet et réessayez."
     },
     "newLink": "Demander un nouveau lien"
@@ -1279,10 +1279,10 @@
   "accountPage": {
     "meta": {
       "title": "Votre compte",
-      "description": "Téléchargez vos données ou supprimez votre compte Jisr."
+      "description": "Téléchargez vos données ou supprimez votre compte Jisrr."
     },
     "title": "Votre compte",
-    "lead": "Téléchargez une copie de vos données ou supprimez votre compte Jisr.",
+    "lead": "Téléchargez une copie de vos données ou supprimez votre compte Jisrr.",
     "checking": "Vérification de votre connexion…",
     "signedIn": "Connecté en tant que <value>{email}</value>",
     "signedOut": {
@@ -1312,7 +1312,7 @@
     },
     "delete": {
       "title": "Supprimer mon compte",
-      "body": "Votre compte et tout ce qu'il contient sur Jisr (profil, programmes enregistrés, étapes cochées, signalements) seront supprimés définitivement. Pour éviter une suppression par erreur, nous envoyons d'abord un lien de confirmation à <value>{email}</value>.",
+      "body": "Votre compte et tout ce qu'il contient sur Jisrr (profil, programmes enregistrés, étapes cochées, signalements) seront supprimés définitivement. Pour éviter une suppression par erreur, nous envoyons d'abord un lien de confirmation à <value>{email}</value>.",
       "button": "Supprimer mon compte",
       "working": "Envoi…",
       "sent": {
@@ -1344,7 +1344,7 @@
   },
   "clearDataAccount": {
     "title": "Effacer les données de votre compte ?",
-    "description": "Cela supprime votre profil, vos programmes enregistrés et votre progression dans le plan de votre compte, sur tous vos appareils, ainsi que toutes les données Jisr de cet appareil. Vous restez connecté et votre compte n'est pas supprimé.",
+    "description": "Cela supprime votre profil, vos programmes enregistrés et votre progression dans le plan de votre compte, sur tous vos appareils, ainsi que toutes les données Jisrr de cet appareil. Vous restez connecté et votre compte n'est pas supprimé.",
     "confirm": "Effacer mes données",
     "working": "Effacement…",
     "failed": "Impossible d'effacer les données de votre compte. Rien n'a été supprimé. Réessayez.",

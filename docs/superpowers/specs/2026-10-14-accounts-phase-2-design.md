@@ -5,7 +5,7 @@ Plan: `docs/superpowers/plans/2026-10-14-accounts-phase-2.md`. Decision record: 
 
 ## Goal
 
-A student can create a Jisr account (Google or an email magic link) after ticking an unticked consent box and confirming they are 16 or older. Their profile, saved programmes and ticked plan steps then follow them across devices. They can report an outdated fact, download everything held about them as JSON, and delete their account completely. Signed-out visitors get exactly today's guest journey: same pages, same `jisr.*` localStorage keys, and no new server calls.
+A student can create a Jisrr account (Google or an email magic link) after ticking an unticked consent box and confirming they are 16 or older. Their profile, saved programmes and ticked plan steps then follow them across devices. They can report an outdated fact, download everything held about them as JSON, and delete their account completely. Signed-out visitors get exactly today's guest journey: same pages, same `jisr.*` localStorage keys, and no new server calls.
 
 ## Fixed decisions
 

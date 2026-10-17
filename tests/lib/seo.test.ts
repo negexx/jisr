@@ -128,7 +128,7 @@ describe("pageMetadata", () => {
     });
     expect(metadata.openGraph).toEqual({
       type: "website",
-      siteName: "Jisr",
+      siteName: "Jisrr",
       title: "T",
       description: "D",
       url: "https://x.test/ar/scholarships",

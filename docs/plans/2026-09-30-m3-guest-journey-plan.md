@@ -1,8 +1,8 @@
-# Jisr M3: guest journey (Profile → Matches → Program), implementation plan
+# Jisrr M3: guest journey (Profile → Matches → Program), implementation plan
 
 > Task-level plan for approval. Bite-sized TDD steps and exact code per task are written per task at execution time (after the M3-T0 design gate), following the same brief format as `2026-09-29-foundation-*`. Execution: `superpowers:subagent-driven-development` (implementer Sonnet 5.5 high, reviewer Opus 5.5 medium on every task, planner Opus for architecture-heavy tasks).
 
-**Goal.** A Moroccan Bac holder opens Jisr on a phone, in fr, en or ar, and with no server call and no account: builds a profile stored only in localStorage, sees programs grouped ✅ / ⚠️ / foundation ⚠️ / ❌ with honest reasons, costs and deadlines, and opens a statically generated program page where every fact carries its source. The journey is covered by Playwright in fr and ar, phone and desktop.
+**Goal.** A Moroccan Bac holder opens Jisrr on a phone, in fr, en or ar, and with no server call and no account: builds a profile stored only in localStorage, sees programs grouped ✅ / ⚠️ / foundation ⚠️ / ❌ with honest reasons, costs and deadlines, and opens a statically generated program page where every fact carries its source. The journey is covered by Playwright in fr and ar, phone and desktop.
 
 ## Decisions taken on the open questions (2026-09-30, product-owner delegated: "choose the best approach")
 1. **Budget currency / MAD.** Budget is entered in EUR (MAD selectable but explained as "cannot be compared yet"); no MAD conversion in M3 until a sourced exchange-rate fact exists in `data/` (inventing a rate would break "no invented data").

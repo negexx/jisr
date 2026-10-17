@@ -502,7 +502,7 @@ describe("requesting the email", () => {
     expect((await post(dan, "/delete-user", { callbackURL: "/" })).status).toBe(200);
     const mail = await lastMail();
     expect(mail.url).toMatch(/^http:\/\/localhost:3000\/fr\/account\/delete#token=/);
-    expect(mail.subject).toBe("Confirmez la suppression de votre compte Jisr");
+    expect(mail.subject).toBe("Confirmez la suppression de votre compte Jisrr");
   });
 
   it("refuses without a session", async () => {

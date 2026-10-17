@@ -1,8 +1,8 @@
-# Jisr — MVP
+# Jisrr — MVP
 
 ## Vision
 
-Jisr helps Moroccan students who have just finished high school discover realistic university options in Europe and understand what they need to do to study there.
+Jisrr helps Moroccan students who have just finished high school discover realistic university options in Europe and understand what they need to do to study there.
 
 The MVP should answer four questions:
 
@@ -50,7 +50,7 @@ The profile holds eligibility only. The student enters:
 
 ### 2. Get Matched Universities
 
-Jisr shows universities and programs that appear compatible with the student's profile.
+Jisrr shows universities and programs that appear compatible with the student's profile.
 
 The student narrows the list with filters on My Matches: field of study, teaching language, destination country, public or private institutions, and an approximate yearly/monthly budget. Filters combine as AND across filters and any-of within one filter; an empty filter keeps everything open. The budget never hides a program — it only marks whether the published costs look within reach.
 
@@ -117,7 +117,7 @@ The result should be presented as an estimate or range, not as an exact promise.
 
 ### 6. Personal Application Checklist
 
-Once a student saves a university, Jisr creates a simple checklist:
+Once a student saves a university, Jisrr creates a simple checklist:
 
 - Prepare documents
 - Translate documents if required
@@ -146,13 +146,13 @@ Compare:
 
 ## The Main Differentiator
 
-Jisr should not feel like a normal university directory.
+Jisrr should not feel like a normal university directory.
 
 The experience should be:
 
 **Student profile → realistic options → costs → scholarships → application steps**
 
-Instead of making the student research everything themselves, Jisr organizes the information around their situation.
+Instead of making the student research everything themselves, Jisrr organizes the information around their situation.
 
 ## Moroccan-Focused Features
 
@@ -173,13 +173,13 @@ Every important piece of information should have:
 - An official source
 - A last-verified date
 
-Jisr should clearly distinguish between:
+Jisrr should clearly distinguish between:
 
 - Official requirements
 - Estimated costs
 - General guidance
 
-The goal is to make students trust the information enough to use Jisr as their starting point for the application process.
+The goal is to make students trust the information enough to use Jisrr as their starting point for the application process.
 
 ## MVP Pages
 

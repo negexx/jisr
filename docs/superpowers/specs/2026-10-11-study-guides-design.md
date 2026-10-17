@@ -7,7 +7,7 @@
 
 ## Goal
 
-Ship Jisr's first long-form, Moroccan-focused **study guides**: a small trilingual set of sourced
+Ship Jisrr's first long-form, Moroccan-focused **study guides**: a small trilingual set of sourced
 articles, rendered as static pages under `/guides`, that turn the "Moroccan-Focused Features"
 promised in `docs/product/jisr_mvp.md` (lines 159-169) into shipped content. Each guide carries the
 same provenance the reference-data rule requires, links into the journey, and wears the trust/design

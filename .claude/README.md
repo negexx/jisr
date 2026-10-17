@@ -1,6 +1,6 @@
 # .claude/ — AI Workspace
 
-This directory is the operating manual for AI coding agents (Claude Code, Cursor, Copilot) working on **Jisr**. Humans can read it too, but it's optimized for agent consumption.
+This directory is the operating manual for AI coding agents (Claude Code, Cursor, Copilot) working on **Jisrr**. Humans can read it too, but it's optimized for agent consumption.
 
 ## Layout
 
