@@ -39,7 +39,7 @@ Start with a small number of countries and study fields rather than trying to co
 
 ### 1. Create Your Profile
 
-The student enters:
+The profile holds eligibility only. The student enters:
 
 - Nationality
 - Bac type
@@ -47,14 +47,12 @@ The student enters:
 - Relevant subject grades
 - French level
 - English level
-- Desired field
-- Preferred study language
-- Approximate yearly/monthly budget
-- Preference for public or private universities
 
 ### 2. Get Matched Universities
 
 Jisr shows universities and programs that appear compatible with the student's profile.
+
+The student narrows the list with filters on My Matches: field of study, teaching language, destination country, public or private institutions, and an approximate yearly/monthly budget. Filters combine as AND across filters and any-of within one filter; an empty filter keeps everything open. The budget never hides a program — it only marks whether the published costs look within reach.
 
 Each result should clearly show:
 

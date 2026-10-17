@@ -72,7 +72,7 @@ function slugsIn(element: HTMLElement | null): string[] {
 
 function hiddenDisclosure(container: HTMLElement, locale: AppLocale): HTMLDetailsElement {
   const found = [...container.querySelectorAll<HTMLDetailsElement>("details")].find((element) =>
-    element.textContent?.includes(catalogs[locale].matches.hidden.note),
+    element.textContent?.includes(catalogs[locale].matches.hidden.filtersNote),
   );
   if (found === undefined) throw new Error("no hidden-programs disclosure");
   return found;

@@ -6,15 +6,6 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { useSessionHint } from "@/lib/auth/session-hint";
 
-export function EditProfileLink({ size = "default" }: { size?: "default" | "sm" }) {
-  const t = useTranslations("matches.summary");
-  return (
-    <Link href="/profile" className={buttonVariants({ variant: "outline", size })}>
-      {t("edit")}
-    </Link>
-  );
-}
-
 export function NoProfileState() {
   const t = useTranslations("matches.states.none");
   const signedIn = useSessionHint();
@@ -73,7 +64,20 @@ export function NoProgramsState() {
   return <EmptyState title={t("title")} description={t("description")} />;
 }
 
-export function AllHiddenState({ title }: { title: string }) {
-  const t = useTranslations("matches.states.allHidden");
-  return <EmptyState title={title} description={t("description")} action={<EditProfileLink />} />;
+// Every published program is hidden by the filters: the recovery is Clear, not an edit of the
+// profile, which no longer carries any of the values that hide a program.
+export function NoMatchesState({ title, onClear }: { title: string; onClear: () => void }) {
+  const t = useTranslations("matches.states.noMatches");
+  const tFilters = useTranslations("matches.filters");
+  return (
+    <EmptyState
+      title={title}
+      description={t("description")}
+      action={
+        <Button type="button" variant="outline" onClick={onClear}>
+          {tFilters("clear")}
+        </Button>
+      }
+    />
+  );
 }

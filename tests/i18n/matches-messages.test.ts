@@ -83,6 +83,62 @@ describe.each(LOCALES)("matches messages (%s)", (locale) => {
   });
 });
 
+// The five browsing preferences moved from the profile wizard to the My-matches filter panel; these
+// keys carry their wording. A missing or renamed key would leave a control untranslated.
+const FILTER_KEYS = [
+  "matches.filters.title",
+  "matches.filters.toggle",
+  "matches.filters.clear",
+  "matches.filters.field.legend",
+  "matches.filters.field.hint",
+  "matches.filters.studyLanguage.legend",
+  "matches.filters.studyLanguage.hint",
+  "matches.filters.destination.legend",
+  "matches.filters.destination.hint",
+  "matches.filters.institution.legend",
+  "matches.filters.institution.hint",
+  "matches.filters.institution.any",
+  "matches.filters.institution.public",
+  "matches.filters.institution.private",
+  "matches.filters.budget.amount.label",
+  "matches.filters.budget.amount.hint",
+  "matches.filters.budget.currency.label",
+  "matches.filters.budget.period.label",
+  "matches.filters.budget.period.month",
+  "matches.filters.budget.period.year",
+  "matches.filters.budget.madNote",
+  "matches.filters.budget.neverHides",
+  "matches.filters.budget.per.month",
+  "matches.filters.budget.per.year",
+] as const;
+
+describe.each(LOCALES)("matches messages: the My-matches filters (%s)", (locale) => {
+  const messages = namespaceMessages(locale, NAMESPACES);
+
+  it("has every filter key", () => {
+    const missing = FILTER_KEYS.filter((key) => messages.get(key) === undefined);
+    expect(missing).toEqual([]);
+  });
+
+  it("tells the student to type the digits 0 to 9 in the budget amount", () => {
+    const hint = messages.get("matches.filters.budget.amount.hint") ?? "";
+    expect(hint).toContain("0");
+    expect(hint).toContain("9");
+  });
+});
+
+describe("matches messages: the budget wording", () => {
+  it.each([
+    ["fr", "ne peut pas encore être comparé"],
+    ["en", "cannot be compared with the costs in euros yet"],
+    ["ar", "لا يمكن بعد مقارنة"],
+  ] as const)("%s says a MAD budget cannot be compared yet", (locale, phrase) => {
+    expect(namespaceMessages(locale, NAMESPACES).get("matches.filters.budget.madNote")).toContain(
+      phrase,
+    );
+  });
+});
+
 describe("matches messages: language rules", () => {
   it("puts a no-break space before : ? ! ; in French", () => {
     for (const [key, value] of namespaceMessages("fr", NAMESPACES)) {

@@ -440,14 +440,6 @@
         "title": "Langues",
         "why": "Les programmes peuvent demander un niveau de langue. Vous ne savez pas ? Choisissez « Je ne sais pas » : le résultat sera marqué « à vérifier »."
       },
-      "preferences": {
-        "title": "Ce que vous voulez",
-        "why": "Vos choix décident des programmes que nous regardons. Laissez un groupe vide si vous n'avez pas de préférence : nous gardons alors tout ouvert."
-      },
-      "budget": {
-        "title": "Budget",
-        "why": "Un budget nous aide à dire si les coûts semblent à votre portée. Il ne masque jamais un programme."
-      },
       "review": {
         "title": "Vérification",
         "why": "Relisez vos réponses. Vous pouvez en changer avant d'enregistrer."
@@ -533,41 +525,6 @@
         "label": "Certificat",
         "hint": "Seulement si vous avez déjà passé un test de langue officiel.",
         "none": "Aucun certificat"
-      },
-      "fieldsOfStudy": {
-        "legend": "Domaines d'études",
-        "hint": "Choisissez-en au moins un."
-      },
-      "studyLanguages": {
-        "legend": "Langue d'enseignement",
-        "hint": "La langue dans laquelle vous voulez étudier. Ne cochez rien si vous n'avez pas de préférence."
-      },
-      "destinations": {
-        "legend": "Pays",
-        "hint": "Où vous aimeriez étudier. Ne cochez rien pour voir tous les pays."
-      },
-      "institution": {
-        "legend": "Type d'établissement",
-        "hint": "Choisissez « Public ou privé » si vous hésitez.",
-        "any": "Public ou privé",
-        "public": "Public uniquement",
-        "private": "Privé uniquement"
-      },
-      "budget": {
-        "amount": {
-          "label": "Montant que vous pouvez dépenser",
-          "hint": "Un nombre entier, chiffres de 0 à 9, par exemple 800. Laissez vide si vous préférez ne pas le dire."
-        },
-        "currency": {
-          "label": "Devise"
-        },
-        "period": {
-          "label": "Période",
-          "month": "par mois",
-          "year": "par an"
-        },
-        "madNote": "Un budget en MAD ne peut pas encore être comparé aux coûts en euros : nous n'indiquerons donc pas si un programme y correspond.",
-        "neverHides": "Votre budget ne masque jamais un programme. Il indique seulement, programme par programme, si les coûts semblent à votre portée."
       }
     },
     "notices": {
@@ -698,6 +655,50 @@
       "failed": "{n, plural, one {{count} à la condition publiée non remplie} other {{count} aux conditions publiées non remplies}}",
       "navLabel": "Aller à un groupe"
     },
+    "filters": {
+      "title": "Filtres",
+      "toggle": "Filtrer vos résultats",
+      "clear": "Effacer les filtres",
+      "field": {
+        "legend": "Domaines d'études",
+        "hint": "Ne cochez rien pour voir tous les domaines."
+      },
+      "studyLanguage": {
+        "legend": "Langue d'enseignement",
+        "hint": "La langue dans laquelle vous voulez étudier. Ne cochez rien si vous n'avez pas de préférence."
+      },
+      "destination": {
+        "legend": "Pays",
+        "hint": "Où vous aimeriez étudier. Ne cochez rien pour voir tous les pays."
+      },
+      "institution": {
+        "legend": "Type d'établissement",
+        "hint": "Choisissez « Public ou privé » si vous hésitez.",
+        "any": "Public ou privé",
+        "public": "Public uniquement",
+        "private": "Privé uniquement"
+      },
+      "budget": {
+        "amount": {
+          "label": "Montant que vous pouvez dépenser",
+          "hint": "Un nombre entier, chiffres de 0 à 9, par exemple 800. Laissez vide si vous préférez ne pas le dire."
+        },
+        "currency": {
+          "label": "Devise"
+        },
+        "period": {
+          "label": "Période",
+          "month": "par mois",
+          "year": "par an"
+        },
+        "madNote": "Un budget en MAD ne peut pas encore être comparé aux coûts en euros : nous n'indiquerons donc pas si un programme y correspond.",
+        "neverHides": "Votre budget ne masque jamais un programme. Il indique seulement, programme par programme, si les coûts semblent à votre portée.",
+        "per": {
+          "month": "<money>{amount}</money> par mois",
+          "year": "<money>{amount}</money> par an"
+        }
+      }
+    },
     "groups": {
       "foundation": {
         "title": "Possible via une année préparatoire",
@@ -709,22 +710,9 @@
       },
       "more": "Afficher plus de programmes ({count} restants)"
     },
-    "summary": {
-      "title": "Votre profil",
-      "fields": "Domaines",
-      "destinations": "Pays",
-      "allCountries": "Tous les pays",
-      "budget": "Budget",
-      "budgetNotSet": "Non renseigné",
-      "budgetPer": {
-        "month": "<money>{amount}</money> par mois",
-        "year": "<money>{amount}</money> par an"
-      },
-      "edit": "Modifier mon profil"
-    },
     "hidden": {
       "summary": "{n, plural, one {{count} programme masqué par vos préférences} other {{count} programmes masqués par vos préférences}}",
-      "note": "Nous ne comparons pas ces programmes avec votre profil. Modifiez vos préférences dans votre profil pour les voir.",
+      "filtersNote": "Nous ne comparons pas ces programmes avec votre profil. Modifiez vos filtres pour les voir.",
       "reasonCount": "{reason} : {count}"
     },
     "states": {
@@ -752,9 +740,9 @@
         "title": "Aucun programme n'est encore publié dans les domaines que vous avez choisis",
         "description": "Nous ajoutons encore des données. Cela ne dit rien de votre profil. Vous pouvez modifier vos domaines dans votre profil."
       },
-      "allHidden": {
-        "title": "{n, plural, one {Vos préférences masquent le seul programme publié pour l'instant dans vos domaines} other {Vos préférences masquent les {count} programmes publiés dans vos domaines}}",
-        "description": "Modifiez vos préférences dans votre profil pour les voir. Votre budget ne masque jamais un programme."
+      "noMatches": {
+        "title": "{n, plural, one {Vos filtres masquent le seul programme publié pour l'instant} other {Vos filtres masquent les {count} programmes publiés}}",
+        "description": "Effacez vos filtres pour les voir. Votre budget ne masque jamais un programme."
       }
     }
   },

@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import { Suspense } from "react";
 
 import { MatchesClient } from "@/components/matches/matches-client";
+import { MatchesSkeleton } from "@/components/matches/matches-skeleton";
 import { MatchesSummary } from "@/components/matches/matches-summary";
 import { MATCHES_MESSAGE_NAMESPACES } from "@/components/matches/namespaces";
 import { PageBand } from "@/components/page-band";
@@ -52,7 +54,17 @@ export default async function MatchesPage({ params }: Props) {
         </PageBand>
         <div className="pt-8 md:pt-12">
           <ReportOutdatedEntry copy={reportCopy} locale={locale}>
-            <MatchesClient locale={locale} />
+            {/* The island reads useSearchParams, so this statically rendered page keeps it behind a
+                boundary; the fallback is the same busy skeleton the island shows before hydration. */}
+            <Suspense
+              fallback={
+                <div aria-busy="true">
+                  <MatchesSkeleton />
+                </div>
+              }
+            >
+              <MatchesClient locale={locale} />
+            </Suspense>
           </ReportOutdatedEntry>
         </div>
       </NextIntlClientProvider>

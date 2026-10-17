@@ -1,23 +1,30 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { type ReactNode, useEffect, useMemo, useState } from "react";
+import { type ReactNode, useEffect, useMemo, useRef, useState } from "react";
+
 import { ReportSnapshot } from "@/components/report-outdated/report-context";
 import type { IsoDate } from "@/data-schema/dates";
 import type { MatchFilters } from "@/data-schema/match-filters";
+import type { CoreShard } from "@/data-schema/snapshot";
 import type { AppLocale } from "@/i18n/routing";
 import { track } from "@/lib/analytics";
 import { todayIso } from "@/lib/clock";
 import { buildMatchesView, MATCH_GROUPS, type MatchesView } from "@/lib/journey/matches-view";
 import { getLocalStorage } from "@/lib/local-storage";
-import { readMatchFilters } from "@/lib/matches/filter-store";
+import { readMatchFilters, writeMatchFilters } from "@/lib/matches/filter-store";
+import { decodeFilters, filtersSearch, hasMatchFilterParams } from "@/lib/matches/filter-url";
 import { EMPTY_MATCH_FILTERS } from "@/lib/matches/filters";
 import { useProfile } from "@/lib/profile/use-profile";
 import type { SnapshotBundle, SnapshotClient } from "@/lib/snapshot/client";
+import type { TextLookup } from "@/lib/snapshot/text";
 import { useSnapshotBundle } from "@/lib/snapshot/use-snapshot";
 
 import { CompareLink } from "./compare-link";
 import { displayNumber } from "./display-number";
+import { FilterPanel } from "./filter-panel";
+import { FilterSummary } from "./filter-summary";
 import { GroupSection } from "./group-section";
 import { HiddenPrograms } from "./hidden-programs";
 import { foldMatchesCounts, publishMatchesCounts } from "./matches-counts";
@@ -25,8 +32,8 @@ import { MatchesLayout } from "./matches-layout";
 import { matchesRequest } from "./matches-request";
 import { MatchesSkeleton } from "./matches-skeleton";
 import {
-  AllHiddenState,
   ErrorState,
+  NoMatchesState,
   NoProfileState,
   NoProgramsState,
   ResetNotice,
@@ -49,28 +56,43 @@ function Loading() {
 
 function Results({
   view,
-  budgetProvided,
+  filters,
+  core,
+  text,
   locale,
   aliases,
+  onFiltersChange,
 }: {
   view: OkView;
-  budgetProvided: boolean;
+  filters: MatchFilters;
+  core: CoreShard;
+  text: TextLookup;
   locale: AppLocale;
   aliases: SnapshotBundle["aliases"];
+  onFiltersChange: (filters: MatchFilters) => void;
 }) {
-  const t = useTranslations("matches.states.allHidden");
+  const t = useTranslations("matches.states.noMatches");
   const shown = MATCH_GROUPS.reduce((sum, group) => sum + view.counts[group], 0);
   useEffect(() => {
     track("matches-viewed");
   }, []);
   return (
     <>
+      <FilterPanel
+        filters={filters}
+        onFiltersChange={onFiltersChange}
+        core={core}
+        text={text}
+        locale={locale}
+        defaultOpen={shown === 0}
+      />
       {shown === 0 ? (
-        <AllHiddenState
+        <NoMatchesState
           title={t("title", {
             n: view.totalPrograms,
             count: displayNumber(view.totalPrograms, locale),
           })}
+          onClear={() => onFiltersChange(EMPTY_MATCH_FILTERS)}
         />
       ) : (
         <CompareLink locale={locale} />
@@ -81,7 +103,7 @@ function Results({
             key={group}
             group={group}
             cards={view.groups[group]}
-            budgetProvided={budgetProvided}
+            budgetProvided={filters.budget !== null}
             locale={locale}
             aliases={aliases}
           />
@@ -99,6 +121,7 @@ export function MatchesClient({ locale, client }: { locale: AppLocale; client?: 
   const t = useTranslations("matches");
   const { state: profileState, dismissReset } = useProfile();
   const profile = profileState.status === "ok" ? profileState.profile : null;
+  const searchParams = useSearchParams();
 
   // The browser clock, read once after mount: the server render and the first client render hold
   // no date, so nothing clock-dependent can differ between them.
@@ -107,12 +130,36 @@ export function MatchesClient({ locale, client }: { locale: AppLocale; client?: 
     setNow(todayIso());
   }, []);
 
-  // Read once: the filters are not reactive here (URL wiring comes later), and they never touch the
-  // server render because matching only runs after the clock is set.
-  const [filters] = useState<MatchFilters>(() => {
+  // The filters are seeded exactly once, after mount: a URL that carries filter parameters is a
+  // shared or bookmarked view and wins; without them the device's last choice applies. Neither is
+  // read during render, so the server HTML and the first client render stay identical.
+  const [filters, setFilters] = useState<MatchFilters>(EMPTY_MATCH_FILTERS);
+  const seeded = useRef(false);
+  useEffect(() => {
+    if (seeded.current) return;
+    seeded.current = true;
+    const params = searchParams ?? new URLSearchParams(window.location.search);
+    if (hasMatchFilterParams(params)) {
+      setFilters(decodeFilters(params));
+      return;
+    }
     const storage = getLocalStorage();
-    return storage === null ? EMPTY_MATCH_FILTERS : readMatchFilters(storage);
-  });
+    if (storage !== null) setFilters(readMatchFilters(storage));
+  }, [searchParams]);
+
+  // A choice is written to both places it lives, the device store and the URL, so a reload and a
+  // shared link show the same view.
+  function changeFilters(next: MatchFilters): void {
+    setFilters(next);
+    const storage = getLocalStorage();
+    if (storage !== null) writeMatchFilters(storage, next);
+    const search = filtersSearch(next);
+    window.history.replaceState(
+      window.history.state,
+      "",
+      `${window.location.pathname}${search}${window.location.hash}`,
+    );
+  }
 
   const request = matchesRequest(profile);
   const { state, retry } = useSnapshotBundle(request, locale, client);
@@ -168,15 +215,30 @@ export function MatchesClient({ locale, client }: { locale: AppLocale; client?: 
 
     const { view, bundle } = outcome;
     if (view.kind === "no_programs") return { loading: false, node: <NoProgramsState /> };
+    const core = bundle.core;
+    if (core === undefined) return { loading: false, node: <ErrorState onRetry={retry} /> };
     return {
       loading: false,
       node: (
-        <MatchesLayout aside={null}>
+        <MatchesLayout
+          aside={
+            <FilterSummary
+              filters={filters}
+              onClear={() => changeFilters(EMPTY_MATCH_FILTERS)}
+              core={core}
+              text={bundle.text}
+              locale={locale}
+            />
+          }
+        >
           <Results
             view={view}
-            budgetProvided={filters.budget !== null}
+            filters={filters}
+            core={core}
+            text={bundle.text}
             locale={locale}
             aliases={bundle.aliases}
+            onFiltersChange={changeFilters}
           />
         </MatchesLayout>
       ),

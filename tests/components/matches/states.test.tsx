@@ -208,7 +208,7 @@ describe("My Matches: data states", () => {
 
   it.each(
     LOCALES,
-  )("says every program is hidden by the filters and opens the hidden list (%s)", async (locale) => {
+  )("says the filters hide every program, opens the panel and offers Clear (%s)", async (locale) => {
     const bundle = await loadedBundle(locale);
     // Every fixture program is outside a destination nobody published.
     profileStore.save(E2E_PROFILE);
@@ -222,14 +222,16 @@ describe("My Matches: data states", () => {
     const title = createTranslator({
       locale,
       messages: catalogs[locale],
-      namespace: "matches.states.allHidden",
+      namespace: "matches.states.noMatches",
     })("title", { n: total, count: String(total) });
     await screen.findByRole("heading", { name: title });
     expect(screen.queryByRole("article")).toBeNull();
-    const details = document.querySelector("details");
-    expect(details?.open).toBe(true);
+    const panel = [...document.querySelectorAll("details")].find((element) =>
+      element.textContent?.includes(texts(locale).filters.toggle),
+    );
+    expect(panel?.open).toBe(true);
     expect(
-      screen.getAllByRole("link", { name: texts(locale).summary.edit }).length,
+      screen.getAllByRole("button", { name: texts(locale).filters.clear }).length,
     ).toBeGreaterThan(0);
   });
 });
