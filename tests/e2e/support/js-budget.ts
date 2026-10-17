@@ -108,19 +108,30 @@ export type JsBudget = { initial: number; untilIdle: number };
 // home 224.2 stable, flaked 225.4), and CI's failOnFlakyTests fails the job when any row crosses its
 // ratchet. Rows with under ~1 KB of margin get a 2 KB margin: home 225 -> 227, profile/matches
 // 226 -> 228, plan 255 -> 257, scholarships 232 -> 233.
+// 2026-10-17 (profile steps -> matches filters, Task 6): the filter panel moved from the profile
+// wizard to My matches, so the matches page chunk carries filter-panel.tsx and filter-controls.tsx
+// (fixture build: matches initial 202.0, previously 197.3; the wizard's preference controls left the
+// profile page, whose initial fell to 188.4). The header prefetches /matches from every page, so the
+// larger matches chunk also raises every page's until-idle row (home 227.7, profile/matches 228.9,
+// plan 258.3, compare 268.7, program 253.4, scholarships 234.9; phone and desktop, fr and ar). Owner
+// decision: raise only the rows measured above their ratchet, to measured + 2 KB for CI jitter:
+// home initial 174 -> 176 / until idle 227 -> 230, profile until idle 228 -> 231, matches initial
+// 198 -> 204 / until idle 228 -> 231, plan initial 191 -> 193 / until idle 257 -> 261, compare
+// initial 192 -> 195, scholarships initial 174 -> 176 / until idle 233 -> 237, program until idle
+// 252 -> 256. Profile and program initial, and compare until idle, stay.
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
-  "/fr": { initial: 174, untilIdle: 227 },
-  "/ar": { initial: 174, untilIdle: 227 },
-  "/fr/profile": { initial: 191, untilIdle: 228 },
-  "/ar/profile": { initial: 191, untilIdle: 228 },
-  "/fr/matches": { initial: 198, untilIdle: 228 },
-  "/ar/matches": { initial: 198, untilIdle: 228 },
-  "/fr/plan": { initial: 191, untilIdle: 257 },
-  "/ar/plan": { initial: 191, untilIdle: 257 },
-  "/fr/compare": { initial: 192, untilIdle: 278 },
-  "/ar/compare": { initial: 192, untilIdle: 278 },
-  "/fr/scholarships": { initial: 174, untilIdle: 233 },
-  "/ar/scholarships": { initial: 174, untilIdle: 233 },
-  "/fr/programs/xx-test-prog-ok": { initial: 188, untilIdle: 252 },
-  "/ar/programs/xx-test-prog-ok": { initial: 188, untilIdle: 252 },
+  "/fr": { initial: 176, untilIdle: 230 },
+  "/ar": { initial: 176, untilIdle: 230 },
+  "/fr/profile": { initial: 191, untilIdle: 231 },
+  "/ar/profile": { initial: 191, untilIdle: 231 },
+  "/fr/matches": { initial: 204, untilIdle: 231 },
+  "/ar/matches": { initial: 204, untilIdle: 231 },
+  "/fr/plan": { initial: 193, untilIdle: 261 },
+  "/ar/plan": { initial: 193, untilIdle: 261 },
+  "/fr/compare": { initial: 195, untilIdle: 278 },
+  "/ar/compare": { initial: 195, untilIdle: 278 },
+  "/fr/scholarships": { initial: 176, untilIdle: 237 },
+  "/ar/scholarships": { initial: 176, untilIdle: 237 },
+  "/fr/programs/xx-test-prog-ok": { initial: 188, untilIdle: 256 },
+  "/ar/programs/xx-test-prog-ok": { initial: 188, untilIdle: 256 },
 };

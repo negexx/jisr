@@ -9,7 +9,7 @@ import {
   serveTwinOfOk,
   TWIN_SLUG,
 } from "./support/compare";
-import { E2E_PROFILE, E2E_SLUGS } from "./support/fixture-data";
+import { E2E_FILTERS, E2E_PROFILE, E2E_SLUGS } from "./support/fixture-data";
 import { expect, test } from "./support/fixtures";
 import { E2E_LOCALES } from "./support/locales";
 import { card, openMatches } from "./support/matches";
@@ -26,7 +26,7 @@ import {
   selectProgram,
 } from "./support/plan";
 import { JOURNEY_FORM, ProfileFormDriver } from "./support/profile-form";
-import { seedProfile } from "./support/seed";
+import { seedFilters, seedProfile } from "./support/seed";
 import { MANIFEST_URL, readManifest, withoutProgramShards } from "./support/snapshot";
 
 type Stop = { id: string; order: number; top: number; left: number; right: number };
@@ -73,11 +73,6 @@ for (const { locale, dir } of E2E_LOCALES) {
       await form.advance("languages");
       await form.fillLanguages(JOURNEY_FORM);
       await expectNoSeriousViolations(page, `profile step 2 ${locale}`, testInfo);
-      await form.advance("preferences");
-      await form.fillPreferences(JOURNEY_FORM);
-      await expectNoSeriousViolations(page, `profile step 3 ${locale}`, testInfo);
-      await form.advance("budget");
-      await expectNoSeriousViolations(page, `profile step 4 ${locale}`, testInfo);
       await form.advance("review");
       await expectNoSeriousViolations(page, `profile review ${locale}`, testInfo);
     });
@@ -85,6 +80,7 @@ for (const { locale, dir } of E2E_LOCALES) {
     test.describe("with a saved profile", () => {
       test.beforeEach(async ({ page }) => {
         await seedProfile(page, E2E_PROFILE);
+        await seedFilters(page, E2E_FILTERS);
       });
 
       test("matches with results", async ({ page }, testInfo) => {
@@ -376,6 +372,7 @@ for (const { locale, dir } of E2E_LOCALES) {
     test.describe("with a saved profile", () => {
       test.beforeEach(async ({ page }) => {
         await seedProfile(page, E2E_PROFILE);
+        await seedFilters(page, E2E_FILTERS);
       });
 
       test("disclosures open and close with Enter and Space", async ({ page }) => {

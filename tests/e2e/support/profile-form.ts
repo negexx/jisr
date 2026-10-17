@@ -16,7 +16,16 @@ export type ProfileFormValues = {
   frenchLevel: string;
   frenchCertificate: string | null;
   englishLevel: "unknown" | string;
-  institution: "any" | "public" | "private";
+};
+
+// The former preference fields, now the transient filters of My matches. Values are data
+// identifiers, never copy.
+export type FilterFormValues = {
+  fields?: readonly string[];
+  studyLanguages?: readonly string[];
+  destinations?: readonly string[];
+  institution?: "any" | "public" | "private";
+  budget?: { amount: string; currency?: "EUR" | "MAD"; period?: "month" | "year" } | null;
 };
 
 export const JOURNEY_FORM: ProfileFormValues = {
@@ -30,7 +39,6 @@ export const JOURNEY_FORM: ProfileFormValues = {
   frenchLevel: "B2",
   frenchCertificate: "xx-test-cert-fr",
   englishLevel: "unknown",
-  institution: "public",
 };
 
 export class ProfileFormDriver {
@@ -67,7 +75,7 @@ export class ProfileFormDriver {
     });
   }
 
-  stepHeading(stepId: "bac" | "languages" | "preferences" | "budget" | "review"): Locator {
+  stepHeading(stepId: "bac" | "languages" | "review"): Locator {
     return this.page.getByRole("heading", {
       level: 2,
       name: this.t(`profile.steps.${stepId}.title`),
@@ -141,39 +149,104 @@ export class ProfileFormDriver {
     }
   }
 
-  async fillPreferences(values: ProfileFormValues): Promise<void> {
-    const { page, t } = this;
-    const fields = page.getByRole("group", {
-      name: startsWith(t("profile.fields.fieldsOfStudy.legend")),
-    });
-    for (const box of await fields.getByRole("checkbox").all()) await box.check();
-    const teaching = page.getByRole("group", {
-      name: startsWith(t("profile.fields.studyLanguages.legend")),
-    });
-    for (const box of await teaching.getByRole("checkbox").all()) await box.check();
-    await page
-      .getByRole("radio", { name: t(`profile.fields.institution.${values.institution}`) })
-      .check();
-  }
-
-  async advance(to: "languages" | "preferences" | "budget" | "review"): Promise<void> {
+  async advance(to: "languages" | "review"): Promise<void> {
     await this.next().click();
     await expect(this.stepHeading(to)).toBeVisible();
   }
 
-  // Walks the four steps and the review with valid values, stopping before the last button.
+  // Walks the two question steps and the review with valid values, stopping before the last button.
   async fillToReview(values: ProfileFormValues = JOURNEY_FORM): Promise<void> {
     await this.fillBac(values);
     await this.advance("languages");
     await this.fillLanguages(values);
-    await this.advance("preferences");
-    await this.fillPreferences(values);
-    await this.advance("budget");
     await this.advance("review");
   }
 
   async submit(): Promise<void> {
     await this.page.getByRole("button", { name: this.t("profile.common.seeMatches") }).click();
     await expect(this.page).toHaveURL(new RegExp(`/${this.locale}/matches$`));
+  }
+
+  filterPanel(): Locator {
+    return this.page
+      .locator("summary")
+      .filter({ hasText: this.t("matches.filters.toggle") })
+      .locator("xpath=..");
+  }
+
+  filterGroup(legend: string): Locator {
+    return this.page.getByRole("group", { name: startsWith(legend) });
+  }
+
+  async openFilters(): Promise<void> {
+    const panel = this.filterPanel();
+    if ((await panel.getAttribute("open")) === null) await panel.locator("summary").click();
+    await expect(panel).toHaveAttribute("open", "");
+  }
+
+  async chooseFilters(group: Locator, values: readonly string[]): Promise<void> {
+    for (const box of await group.getByRole("checkbox").all()) {
+      const value = await box.getAttribute("value");
+      if (value === null) continue;
+      const wanted = values.includes(value);
+      if ((await box.isChecked()) !== wanted) await box.setChecked(wanted);
+    }
+  }
+
+  // Sets only the groups named in `values`: the others keep the student's current choice.
+  async fillFilters(values: FilterFormValues): Promise<void> {
+    const { t } = this;
+    await this.openFilters();
+    if (values.fields !== undefined) {
+      await this.chooseFilters(this.filterGroup(t("matches.filters.field.legend")), values.fields);
+    }
+    if (values.studyLanguages !== undefined) {
+      await this.chooseFilters(
+        this.filterGroup(t("matches.filters.studyLanguage.legend")),
+        values.studyLanguages,
+      );
+    }
+    if (values.destinations !== undefined) {
+      await this.chooseFilters(
+        this.filterGroup(t("matches.filters.destination.legend")),
+        values.destinations,
+      );
+    }
+    if (values.institution !== undefined) {
+      await this.filterGroup(t("matches.filters.institution.legend"))
+        .getByRole("radio", { name: t(`matches.filters.institution.${values.institution}`) })
+        .check();
+    }
+    if (values.budget !== undefined) {
+      await this.page
+        .getByRole("textbox", {
+          name: startsWith(t("matches.filters.budget.amount.label")),
+        })
+        .fill(values.budget?.amount ?? "");
+      if (values.budget !== null) {
+        if (values.budget.currency !== undefined) {
+          await this.page
+            .getByRole("combobox", {
+              name: startsWith(t("matches.filters.budget.currency.label")),
+            })
+            .selectOption(values.budget.currency);
+        }
+        if (values.budget.period !== undefined) {
+          await this.page
+            .getByRole("combobox", {
+              name: startsWith(t("matches.filters.budget.period.label")),
+            })
+            .selectOption(values.budget.period);
+        }
+      }
+    }
+  }
+
+  async clearFilters(): Promise<void> {
+    await this.page
+      .getByRole("button", { name: this.t("matches.filters.clear") })
+      .first()
+      .click();
+    await expect(this.page).not.toHaveURL(/\?/);
   }
 }
