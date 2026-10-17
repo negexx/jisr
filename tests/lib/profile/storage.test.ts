@@ -4,6 +4,7 @@ import { MATCH_FILTERS_VERSION } from "@/lib/constants";
 import { MATCH_FILTERS_KEY, readMatchFilters, writeMatchFilters } from "@/lib/matches/filter-store";
 import { EMPTY_MATCH_FILTERS } from "@/lib/matches/filters";
 import {
+  applyMigrations,
   clearLocalData,
   DRAFT_KEY,
   KEY_PREFIX,
@@ -76,6 +77,19 @@ describe("migrateProfile", () => {
   it("carries no profile data in a failure", () => {
     const result = migrateProfile({ ...profile({ nationality: "ZZ" }), extra: 1 });
     expect(JSON.stringify(result)).not.toContain("ZZ");
+  });
+});
+
+describe("applyMigrations", () => {
+  it("returns the record a present step produced", () => {
+    const { record } = applyMigrations(V1);
+    expect(record.schemaVersion).toBe(2);
+    expect(record).not.toHaveProperty("fields");
+  });
+
+  it("returns the in-progress record when a step is missing", () => {
+    const raw = { schemaVersion: 0, nationality: "XA" };
+    expect(applyMigrations(raw)).toEqual({ record: raw });
   });
 });
 

@@ -24,7 +24,7 @@ Constraint behind every choice: one developer, free tiers only, and the `jisr.*`
 
 ### 2. Preferences live in the transient filter store
 
-- The five values are a `MatchFilters` document under `jisr.matches-filters`. They are browser-only: never sent to the server, never part of the account document, never in a URL (URL wiring is a later change). A signed-in device reads and writes them locally like a guest.
+- The five values are a `MatchFilters` document under `jisr.matches-filters`. They are device-local: never sent to the server, never part of the account document, never sent to analytics. A signed-in device reads and writes them locally like a guest. My matches also encodes them in its `/matches` URL (`field`, `lang`, `dest`, `type`, `budget`) so a filtered view can be shared or bookmarked; the URL is a browser entry point (the static page does not read it server-side) and is the only place outside the local store the values are written.
 - `filterPrograms(filters, programs, now)` and `preferenceMismatches(filters, program, now)` (`src/domain/filter.ts`) take the filters, not the profile. The matching semantics of ADR 0005 item 8 are unchanged: a program is hidden only on a definite mismatch (destination, field, institution type, study language), unknown/stale/non-official teaching-language data never hides a program, and excluded programs are returned with reasons so the UI can offer to show them.
 - The wizard is `STEPS = ["bac", "languages", "review"]`; the `preferences` and `budget` steps and their components are deleted. My matches hosts the filters instead (the filter panel is a later task in the same change); until it lands, the domain tests and the client islands read the filter store directly.
 
@@ -58,7 +58,7 @@ The type change is global; `tsc` includes tests. Every `Profile` fixture and con
 
 - Positive: one persisted document describes the student (eligibility); matching reads a transient, cheap value; the wizard is shorter; existing users keep their choices through a one-time seed; the schema can tell a v1 document from a typo.
 - Negative: a v1 guest profile is migrated on every read until it is saved again (the store seeds once, but the record itself is only rewritten on the next save); the server cannot seed filters for an imported account, so an account-only student re-answers their preferences (acceptable: they were never in the account).
-- Neutral: `fields`/`studyLanguages`/`destinations`/`institutionType`/`budget` remain valid `MatchFilters` keys; `BudgetSchema` lives in `profile.ts`; the URL wiring for filters is deferred to the rest of this change.
+- Neutral: `fields`/`studyLanguages`/`destinations`/`institutionType`/`budget` remain valid `MatchFilters` keys; `BudgetSchema` lives in `profile.ts`; filters are encoded in the `/matches` URL for sharing and bookmarking, but are never sent to the server, the account document or analytics.
 
 ## How to revisit
 

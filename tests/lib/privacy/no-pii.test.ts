@@ -8,6 +8,7 @@ import { Pool } from "pg";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { type Profile, ProfileSchema } from "@/data-schema/profile";
+import { JOURNEY_EVENTS, track } from "@/lib/analytics";
 import type { SignInLinkRequest } from "@/lib/server/signup";
 
 import { confirmRequest } from "../../support/magic-link";
@@ -583,6 +584,21 @@ describe("deletion", () => {
       expect(await (await get(carol, "/get-session")).json()).toBeNull();
     });
     expect(leaksIn(logs, [...identityCanaries(carol), magicToken, "carol.canary"])).toEqual([]);
+  });
+});
+
+describe("match filters and analytics", () => {
+  it("sends only the matches-viewed event name, never a match filter value", () => {
+    const count = vi.fn();
+    vi.stubGlobal("window", { __jisrAnalytics: true, goatcounter: { count } });
+    try {
+      track("matches-viewed");
+      expect(count).toHaveBeenCalledTimes(1);
+      expect(count).toHaveBeenCalledWith({ path: "matches-viewed", event: true });
+    } finally {
+      vi.unstubAllGlobals();
+    }
+    expect(JOURNEY_EVENTS.filter((event) => event.includes("matches"))).toEqual(["matches-viewed"]);
   });
 });
 

@@ -170,7 +170,7 @@
   "clearData": {
     "trigger": "Clear my data",
     "title": "Clear my data?",
-    "description": "This removes your profile, your saved programs, your plan progress and any unfinished answers from this device only.",
+    "description": "This removes your profile, your match filters, your saved programs, your plan progress and any unfinished answers from this device only.",
     "cancel": "Cancel",
     "confirm": "Clear my data"
   },
@@ -711,7 +711,7 @@
       "more": "Show more programs ({count} left)"
     },
     "hidden": {
-      "summary": "{n, plural, one {{count} program hidden by your preferences} other {{count} programs hidden by your preferences}}",
+      "summary": "{n, plural, one {{count} program hidden by your filters} other {{count} programs hidden by your filters}}",
       "filtersNote": "We do not compare these programs with your profile. Change your filters to see them.",
       "reasonCount": "{reason}: {count}"
     },
@@ -735,10 +735,6 @@
       "noPrograms": {
         "title": "We are still verifying official data",
         "description": "No programs are published yet. This is on our side, not yours. Please come back later."
-      },
-      "noProgramsForFields": {
-        "title": "No programs are published yet for the fields you chose",
-        "description": "We are still adding data. This says nothing about your profile. You can change your fields in your profile."
       },
       "noMatches": {
         "title": "{n, plural, one {Your filters hide the only program published so far} other {Your filters hide all {count} published programs}}",

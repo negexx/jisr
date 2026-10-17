@@ -71,12 +71,15 @@ function isRecord(value: unknown): value is RawRecord {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-function applyMigrations(raw: RawRecord): { record: RawRecord; legacyPreferences?: MatchFilters } {
+export function applyMigrations(raw: RawRecord): {
+  record: RawRecord;
+  legacyPreferences?: MatchFilters;
+} {
   let record = raw;
   let legacyPreferences: MatchFilters | undefined;
   for (let version = raw.schemaVersion as number; version < PROFILE_SCHEMA_VERSION; version += 1) {
     const migrate = MIGRATIONS[version];
-    if (!migrate) return { record: raw };
+    if (!migrate) return { record };
     const migrated = migrate(record);
     record = migrated.record;
     if (migrated.legacyPreferences !== undefined) legacyPreferences = migrated.legacyPreferences;

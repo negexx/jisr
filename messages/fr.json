@@ -170,7 +170,7 @@
   "clearData": {
     "trigger": "Effacer mes données",
     "title": "Effacer mes données ?",
-    "description": "Cela supprime votre profil, vos programmes enregistrés, votre progression dans le plan et vos réponses non terminées de cet appareil uniquement.",
+    "description": "Cela supprime votre profil, vos filtres de correspondance, vos programmes enregistrés, votre progression dans le plan et vos réponses non terminées de cet appareil uniquement.",
     "cancel": "Annuler",
     "confirm": "Effacer mes données"
   },
@@ -711,7 +711,7 @@
       "more": "Afficher plus de programmes ({count} restants)"
     },
     "hidden": {
-      "summary": "{n, plural, one {{count} programme masqué par vos préférences} other {{count} programmes masqués par vos préférences}}",
+      "summary": "{n, plural, one {{count} programme masqué par vos filtres} other {{count} programmes masqués par vos filtres}}",
       "filtersNote": "Nous ne comparons pas ces programmes avec votre profil. Modifiez vos filtres pour les voir.",
       "reasonCount": "{reason} : {count}"
     },
@@ -735,10 +735,6 @@
       "noPrograms": {
         "title": "Nous vérifions encore les données officielles",
         "description": "Aucun programme n'est encore publié. Le problème vient de nous, pas de vous. Revenez plus tard."
-      },
-      "noProgramsForFields": {
-        "title": "Aucun programme n'est encore publié dans les domaines que vous avez choisis",
-        "description": "Nous ajoutons encore des données. Cela ne dit rien de votre profil. Vous pouvez modifier vos domaines dans votre profil."
       },
       "noMatches": {
         "title": "{n, plural, one {Vos filtres masquent le seul programme publié pour l'instant} other {Vos filtres masquent les {count} programmes publiés}}",
