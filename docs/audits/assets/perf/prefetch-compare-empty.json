@@ -1,8 +1,4 @@
 {
-  "rsc": [
-    "/fr",
-    "/fr/matches",
-    "/fr/profile"
-  ],
+  "rsc": ["/fr", "/fr/matches", "/fr/profile"],
   "scriptsUntilIdle": 265318
 }

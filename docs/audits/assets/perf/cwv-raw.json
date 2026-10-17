@@ -24,16 +24,10 @@
         "jsBodyBytes": 251696,
         "snapshotRequests": 0,
         "snapshotBodyBytes": 0,
-        "thirdPartyRequests": [
-          "https://gc.zgo.at",
-          "https://negexx.goatcounter.com"
-        ],
+        "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"],
         "docCacheControl": "public, max-age=0, must-revalidate",
         "docContentEncoding": "br",
-        "thirdPartyOrigins": [
-          "https://gc.zgo.at",
-          "https://negexx.goatcounter.com"
-        ]
+        "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
       },
       "runs": [
         {
@@ -54,10 +48,7 @@
             "snapshotResourceCount": 0,
             "snapshotTransferBytes": 0,
             "snapshotDecodedBytes": 0,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 34,
           "transferredBodyBytes": 518293,
@@ -68,10 +59,7 @@
           "snapshotCacheHeaders": {},
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         },
         {
           "inPage": {
@@ -91,10 +79,7 @@
             "snapshotResourceCount": 0,
             "snapshotTransferBytes": 0,
             "snapshotDecodedBytes": 0,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 33,
           "transferredBodyBytes": 516818,
@@ -105,10 +90,7 @@
           "snapshotCacheHeaders": {},
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         },
         {
           "inPage": {
@@ -128,10 +110,7 @@
             "snapshotResourceCount": 0,
             "snapshotTransferBytes": 0,
             "snapshotDecodedBytes": 0,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 33,
           "transferredBodyBytes": 516789,
@@ -142,10 +121,7 @@
           "snapshotCacheHeaders": {},
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         }
       ]
     },
@@ -171,16 +147,10 @@
         "jsBodyBytes": 253195,
         "snapshotRequests": 0,
         "snapshotBodyBytes": 0,
-        "thirdPartyRequests": [
-          "https://gc.zgo.at",
-          "https://negexx.goatcounter.com"
-        ],
+        "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"],
         "docCacheControl": "public, max-age=0, must-revalidate",
         "docContentEncoding": "br",
-        "thirdPartyOrigins": [
-          "https://gc.zgo.at",
-          "https://negexx.goatcounter.com"
-        ]
+        "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
       },
       "runs": [
         {
@@ -201,10 +171,7 @@
             "snapshotResourceCount": 0,
             "snapshotTransferBytes": 0,
             "snapshotDecodedBytes": 0,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 34,
           "transferredBodyBytes": 517756,
@@ -215,10 +182,7 @@
           "snapshotCacheHeaders": {},
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         },
         {
           "inPage": {
@@ -238,10 +202,7 @@
             "snapshotResourceCount": 0,
             "snapshotTransferBytes": 0,
             "snapshotDecodedBytes": 0,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 34,
           "transferredBodyBytes": 517780,
@@ -252,10 +213,7 @@
           "snapshotCacheHeaders": {},
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         },
         {
           "inPage": {
@@ -275,10 +233,7 @@
             "snapshotResourceCount": 0,
             "snapshotTransferBytes": 0,
             "snapshotDecodedBytes": 0,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 34,
           "transferredBodyBytes": 517814,
@@ -289,10 +244,7 @@
           "snapshotCacheHeaders": {},
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         }
       ]
     },
@@ -318,16 +270,10 @@
         "jsBodyBytes": 253500,
         "snapshotRequests": 3,
         "snapshotBodyBytes": 13096,
-        "thirdPartyRequests": [
-          "https://gc.zgo.at",
-          "https://negexx.goatcounter.com"
-        ],
+        "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"],
         "docCacheControl": "public, max-age=0, must-revalidate",
         "docContentEncoding": "br",
-        "thirdPartyOrigins": [
-          "https://gc.zgo.at",
-          "https://negexx.goatcounter.com"
-        ]
+        "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
       },
       "runs": [
         {
@@ -348,10 +294,7 @@
             "snapshotResourceCount": 3,
             "snapshotTransferBytes": 13102,
             "snapshotDecodedBytes": 45418,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 38,
           "transferredBodyBytes": 527643,
@@ -360,9 +303,7 @@
           "snapshotBodyBytes": 13096,
           "snapshotRequests": 3,
           "snapshotCacheHeaders": {
-            "manifest.json": [
-              "manifest.json cc=no-cache ce=br len=8400 age=23640"
-            ],
+            "manifest.json": ["manifest.json cc=no-cache ce=br len=8400 age=23640"],
             "shard": [
               "text.fr.core.8c2ad6e50286.json cc=public, max-age=31536000, immutable ce=br len=2445 age=177",
               "core.24d54d5be0b9.json cc=public, max-age=31536000, immutable ce=br len=2251 age=4685"
@@ -370,10 +311,7 @@
           },
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         },
         {
           "inPage": {
@@ -393,10 +331,7 @@
             "snapshotResourceCount": 3,
             "snapshotTransferBytes": 13102,
             "snapshotDecodedBytes": 45418,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 38,
           "transferredBodyBytes": 527637,
@@ -405,9 +340,7 @@
           "snapshotBodyBytes": 13012,
           "snapshotRequests": 3,
           "snapshotCacheHeaders": {
-            "manifest.json": [
-              "manifest.json cc=no-cache ce=br len=8401 age=23643"
-            ],
+            "manifest.json": ["manifest.json cc=no-cache ce=br len=8401 age=23643"],
             "shard": [
               "core.24d54d5be0b9.json cc=public, max-age=31536000, immutable ce=br len=2251 age=4687",
               "text.fr.core.8c2ad6e50286.json cc=public, max-age=31536000, immutable ce=br len=2360 age=180"
@@ -415,10 +348,7 @@
           },
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         },
         {
           "inPage": {
@@ -438,10 +368,7 @@
             "snapshotResourceCount": 3,
             "snapshotTransferBytes": 13102,
             "snapshotDecodedBytes": 45418,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 38,
           "transferredBodyBytes": 527648,
@@ -450,9 +377,7 @@
           "snapshotBodyBytes": 13096,
           "snapshotRequests": 3,
           "snapshotCacheHeaders": {
-            "manifest.json": [
-              "manifest.json cc=no-cache ce=br len=8401 age=23646"
-            ],
+            "manifest.json": ["manifest.json cc=no-cache ce=br len=8401 age=23646"],
             "shard": [
               "text.fr.core.8c2ad6e50286.json cc=public, max-age=31536000, immutable ce=br len=2445 age=183",
               "core.24d54d5be0b9.json cc=public, max-age=31536000, immutable ce=br len=2250 age=4690"
@@ -460,10 +385,7 @@
           },
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         }
       ]
     },
@@ -489,16 +411,10 @@
         "jsBodyBytes": 275474,
         "snapshotRequests": 0,
         "snapshotBodyBytes": 0,
-        "thirdPartyRequests": [
-          "https://gc.zgo.at",
-          "https://negexx.goatcounter.com"
-        ],
+        "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"],
         "docCacheControl": "public, max-age=0, must-revalidate",
         "docContentEncoding": "br",
-        "thirdPartyOrigins": [
-          "https://gc.zgo.at",
-          "https://negexx.goatcounter.com"
-        ]
+        "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
       },
       "runs": [
         {
@@ -519,10 +435,7 @@
             "snapshotResourceCount": 0,
             "snapshotTransferBytes": 0,
             "snapshotDecodedBytes": 0,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 35,
           "transferredBodyBytes": 549541,
@@ -533,10 +446,7 @@
           "snapshotCacheHeaders": {},
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         },
         {
           "inPage": {
@@ -556,10 +466,7 @@
             "snapshotResourceCount": 0,
             "snapshotTransferBytes": 0,
             "snapshotDecodedBytes": 0,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 36,
           "transferredBodyBytes": 551018,
@@ -570,10 +477,7 @@
           "snapshotCacheHeaders": {},
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         },
         {
           "inPage": {
@@ -593,10 +497,7 @@
             "snapshotResourceCount": 0,
             "snapshotTransferBytes": 0,
             "snapshotDecodedBytes": 0,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 36,
           "transferredBodyBytes": 551056,
@@ -607,10 +508,7 @@
           "snapshotCacheHeaders": {},
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         }
       ]
     },
@@ -636,16 +534,10 @@
         "jsBodyBytes": 260975,
         "snapshotRequests": 0,
         "snapshotBodyBytes": 0,
-        "thirdPartyRequests": [
-          "https://gc.zgo.at",
-          "https://negexx.goatcounter.com"
-        ],
+        "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"],
         "docCacheControl": "public, max-age=0, must-revalidate",
         "docContentEncoding": "br",
-        "thirdPartyOrigins": [
-          "https://gc.zgo.at",
-          "https://negexx.goatcounter.com"
-        ]
+        "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
       },
       "runs": [
         {
@@ -666,10 +558,7 @@
             "snapshotResourceCount": 0,
             "snapshotTransferBytes": 0,
             "snapshotDecodedBytes": 0,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 34,
           "transferredBodyBytes": 547845,
@@ -680,10 +569,7 @@
           "snapshotCacheHeaders": {},
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         },
         {
           "inPage": {
@@ -703,10 +589,7 @@
             "snapshotResourceCount": 0,
             "snapshotTransferBytes": 0,
             "snapshotDecodedBytes": 0,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 35,
           "transferredBodyBytes": 549306,
@@ -717,10 +600,7 @@
           "snapshotCacheHeaders": {},
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         },
         {
           "inPage": {
@@ -740,10 +620,7 @@
             "snapshotResourceCount": 0,
             "snapshotTransferBytes": 0,
             "snapshotDecodedBytes": 0,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 35,
           "transferredBodyBytes": 549240,
@@ -754,10 +631,7 @@
           "snapshotCacheHeaders": {},
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         }
       ]
     },
@@ -783,16 +657,10 @@
         "jsBodyBytes": 278230,
         "snapshotRequests": 0,
         "snapshotBodyBytes": 0,
-        "thirdPartyRequests": [
-          "https://gc.zgo.at",
-          "https://negexx.goatcounter.com"
-        ],
+        "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"],
         "docCacheControl": "public, max-age=0, must-revalidate",
         "docContentEncoding": "br",
-        "thirdPartyOrigins": [
-          "https://gc.zgo.at",
-          "https://negexx.goatcounter.com"
-        ]
+        "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
       },
       "runs": [
         {
@@ -813,10 +681,7 @@
             "snapshotResourceCount": 0,
             "snapshotTransferBytes": 0,
             "snapshotDecodedBytes": 0,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 37,
           "transferredBodyBytes": 541421,
@@ -827,10 +692,7 @@
           "snapshotCacheHeaders": {},
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         },
         {
           "inPage": {
@@ -850,10 +712,7 @@
             "snapshotResourceCount": 0,
             "snapshotTransferBytes": 0,
             "snapshotDecodedBytes": 0,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 37,
           "transferredBodyBytes": 541679,
@@ -864,10 +723,7 @@
           "snapshotCacheHeaders": {},
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         },
         {
           "inPage": {
@@ -887,10 +743,7 @@
             "snapshotResourceCount": 0,
             "snapshotTransferBytes": 0,
             "snapshotDecodedBytes": 0,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 37,
           "transferredBodyBytes": 541324,
@@ -901,10 +754,7 @@
           "snapshotCacheHeaders": {},
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         }
       ]
     },
@@ -930,16 +780,10 @@
         "jsBodyBytes": 253493,
         "snapshotRequests": 77,
         "snapshotBodyBytes": 382536,
-        "thirdPartyRequests": [
-          "https://gc.zgo.at",
-          "https://negexx.goatcounter.com"
-        ],
+        "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"],
         "docCacheControl": "public, max-age=0, must-revalidate",
         "docContentEncoding": "br",
-        "thirdPartyOrigins": [
-          "https://gc.zgo.at",
-          "https://negexx.goatcounter.com"
-        ]
+        "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
       },
       "runs": [
         {
@@ -960,10 +804,7 @@
             "snapshotResourceCount": 77,
             "snapshotTransferBytes": 387530,
             "snapshotDecodedBytes": 6637152,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 112,
           "transferredBodyBytes": 900946,
@@ -972,9 +813,7 @@
           "snapshotBodyBytes": 382702,
           "snapshotRequests": 77,
           "snapshotCacheHeaders": {
-            "manifest.json": [
-              "manifest.json cc=no-cache ce=br len=8377 age=23675"
-            ],
+            "manifest.json": ["manifest.json cc=no-cache ce=br len=8377 age=23675"],
             "shard": [
               "programs.DE.allied-health.a7813801031f.json cc=public, max-age=31536000, immutable ce=br len=1117 age=23674",
               "core.24d54d5be0b9.json cc=public, max-age=31536000, immutable ce=br len=2251 age=4719",
@@ -1056,10 +895,7 @@
           },
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         },
         {
           "inPage": {
@@ -1079,10 +915,7 @@
             "snapshotResourceCount": 77,
             "snapshotTransferBytes": 387530,
             "snapshotDecodedBytes": 6637152,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 112,
           "transferredBodyBytes": 901095,
@@ -1091,9 +924,7 @@
           "snapshotBodyBytes": 382536,
           "snapshotRequests": 77,
           "snapshotCacheHeaders": {
-            "manifest.json": [
-              "manifest.json cc=no-cache ce=br len=8377 age=23679"
-            ],
+            "manifest.json": ["manifest.json cc=no-cache ce=br len=8377 age=23679"],
             "shard": [
               "programs.DE.allied-health.a7813801031f.json cc=public, max-age=31536000, immutable ce=br len=1185 age=23679",
               "routes.MA.6cd9a69bf6bb.json cc=public, max-age=31536000, immutable ce=br len=1567 age=23679",
@@ -1175,10 +1006,7 @@
           },
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         },
         {
           "inPage": {
@@ -1198,10 +1026,7 @@
             "snapshotResourceCount": 77,
             "snapshotTransferBytes": 387530,
             "snapshotDecodedBytes": 6637152,
-            "thirdPartyOrigins": [
-              "https://gc.zgo.at",
-              "https://negexx.goatcounter.com"
-            ]
+            "thirdPartyOrigins": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
           },
           "requests": 112,
           "transferredBodyBytes": 901172,
@@ -1210,9 +1035,7 @@
           "snapshotBodyBytes": 382513,
           "snapshotRequests": 77,
           "snapshotCacheHeaders": {
-            "manifest.json": [
-              "manifest.json cc=no-cache ce=br len=8378 age=23684"
-            ],
+            "manifest.json": ["manifest.json cc=no-cache ce=br len=8378 age=23684"],
             "shard": [
               "core.24d54d5be0b9.json cc=public, max-age=31536000, immutable ce=br len=2278 age=4729",
               "programs.DE.computer-science.77dc4e0209ee.json cc=public, max-age=31536000, immutable ce=br len=5609 age=23684",
@@ -1294,10 +1117,7 @@
           },
           "docCacheControl": "public, max-age=0, must-revalidate",
           "docContentEncoding": "br",
-          "thirdPartyRequests": [
-            "https://gc.zgo.at",
-            "https://negexx.goatcounter.com"
-          ]
+          "thirdPartyRequests": ["https://gc.zgo.at", "https://negexx.goatcounter.com"]
         }
       ]
     }
