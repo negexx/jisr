@@ -74,7 +74,6 @@ async function lastLink(): Promise<string> {
 
 function request(overrides: Partial<SignInLinkRequest> = {}): SignInLinkRequest {
   return {
-    mode: "signup",
     email: "new@example.com",
     consent: true,
     ageConfirmed: true,
@@ -82,6 +81,13 @@ function request(overrides: Partial<SignInLinkRequest> = {}): SignInLinkRequest 
     returnPath: "/fr/plan",
     ...overrides,
   };
+}
+
+async function requestDirectLink(email: string): Promise<void> {
+  await auth.api.signInMagicLink({
+    body: { email, callbackURL: "/fr/welcome" },
+    headers: io.requestHeaders,
+  });
 }
 
 // Follows an emailed link the way a browser does: the link opens the confirm page, whose button posts
@@ -144,11 +150,8 @@ describe.each([
     vi.stubEnv("ACCOUNTS_ENABLED", value);
   });
 
-  it.each([
-    "signup",
-    "signin",
-  ] as const)("refuses a %s request and processes nothing", async (mode) => {
-    expect(await requestSignInLink(request({ mode }))).toEqual({
+  it("refuses a request and processes nothing", async () => {
+    expect(await requestSignInLink(request())).toEqual({
       ok: false,
       error: "accounts_disabled",
     });
@@ -257,10 +260,9 @@ describe("requestSignInLink with accounts on", () => {
   });
 
   it.each<[string, unknown]>([
-    ["an unknown mode", { ...request(), mode: "admin" }],
     ["an unknown locale", { ...request(), locale: "de" }],
     ["a string consent", { ...request(), consent: "true" }],
-    ["a missing field", { mode: "signup", email: "new@example.com" }],
+    ["a missing field", { email: "new@example.com" }],
   ])("refuses %s as an invalid request", async (_label, input) => {
     expect(await requestSignInLink(input as SignInLinkRequest)).toEqual({
       ok: false,
@@ -271,7 +273,7 @@ describe("requestSignInLink with accounts on", () => {
 
   it("maps a second request inside the cooldown to a cooldown error, sending once", async () => {
     expect(await requestSignInLink(request())).toEqual({ ok: true });
-    expect(await requestSignInLink(request({ mode: "signin" }))).toEqual({
+    expect(await requestSignInLink(request())).toEqual({
       ok: false,
       error: "cooldown",
     });
@@ -279,35 +281,40 @@ describe("requestSignInLink with accounts on", () => {
     expect(await count("verification")).toBe(2);
   });
 
-  it("writes no pending row in signin mode, and the link then refuses an unknown address", async () => {
-    expect(await requestSignInLink(request({ mode: "signin", consent: false }))).toEqual({
-      ok: true,
-    });
+  it("refuses a link with no signup intent for an unknown address, creating nothing", async () => {
+    await requestDirectLink("unknown@example.com");
     expect(await count("pending_signups")).toBe(0);
     const { error } = await follow(await lastLink());
     expect(error).toBe("AGE_NOT_CONFIRMED");
     expect(await count("user")).toBe(0);
   });
 
-  it("signs an existing user in through signin mode without touching their consent", async () => {
+  it("signs an existing user in through the form, writing the pending row and leaving consent untouched", async () => {
     await pool.query(
       `insert into "user" (id, name, email, email_verified, consent_version, consented_at)
        values ('existing', 'Student', 'known@example.com', true, '2026-01-01', '2026-01-02')`,
     );
-    await requestSignInLink(request({ mode: "signin", email: "known@example.com" }));
+    expect(await requestSignInLink(request({ email: "known@example.com" }))).toEqual({ ok: true });
+    expect(await count("pending_signups")).toBe(1);
     const { error, cookie } = await follow(await lastLink());
     expect(error).toBeNull();
     signedInAs(cookie);
     expect(await requireAccountReady()).toEqual({ ok: false, error: "consent_required" });
+    const { rows } = await pool.query<{ consent_version: string | null }>(
+      `select consent_version from "user" where id = 'existing'`,
+    );
+    expect(rows).toEqual([{ consent_version: "2026-01-01" }]);
   });
 
-  it("emails the sign-up wording for a signup and the plain sign-in wording for a signin", async () => {
+  it("emails the sign-up wording for every form request", async () => {
     await requestSignInLink(request({ locale: "en" }));
-    await requestSignInLink(request({ locale: "en", mode: "signin", email: "other@example.com" }));
-    const [signup, signin] = await mails();
-    expect(signup?.text).toMatch(/opening this link creates or opens your Jisr account/i);
-    expect(signup?.text).toContain(CURRENT_CONSENT_VERSION);
-    expect(signin?.text).not.toMatch(/creates or opens your Jisr account/i);
+    await requestSignInLink(request({ locale: "en", email: "other@example.com" }));
+    const sent = await mails();
+    expect(sent).toHaveLength(2);
+    for (const mail of sent) {
+      expect(mail.text).toMatch(/opening this link signs you in/i);
+      expect(mail.text).toContain(CURRENT_CONSENT_VERSION);
+    }
   });
 
   it("does not let a direct POST claim the sign-up wording through the metadata", async () => {
@@ -327,9 +334,8 @@ describe("requestSignInLink with accounts on", () => {
   });
 
   it("writes no pending row for a signup the cooldown refuses", async () => {
-    expect(await requestSignInLink(request({ mode: "signin", consent: false }))).toEqual({
-      ok: true,
-    });
+    await requestDirectLink("new@example.com");
+    expect(await count("pending_signups")).toBe(0);
     expect(await requestSignInLink(request())).toEqual({ ok: false, error: "cooldown" });
     expect(await count("pending_signups")).toBe(0);
   });
@@ -339,9 +345,7 @@ describe("requestSignInLink with accounts on", () => {
       `insert into pending_signups (email, consent_version, consented_at, age_confirmed, expires_at)
        values ('new@example.com', '2026-01-01', '2026-01-02T00:00:00Z', true, now() + interval '5 minutes')`,
     );
-    expect(await requestSignInLink(request({ mode: "signin", consent: false }))).toEqual({
-      ok: true,
-    });
+    await requestDirectLink("new@example.com");
     const before = await pool.query("select * from pending_signups");
     expect(await requestSignInLink(request())).toEqual({ ok: false, error: "cooldown" });
     const afterRows = await pool.query("select * from pending_signups");

@@ -180,7 +180,6 @@ function signedOut(): void {
 
 function signUpRequest(email: string): SignInLinkRequest {
   return {
-    mode: "signup",
     email,
     consent: true,
     ageConfirmed: true,
@@ -322,13 +321,11 @@ describe("sign-up and sign-in", () => {
     const { requestSignInLink } = await import("@/lib/server/signup");
     signedOut();
     const logs = await recording(async () => {
-      expect(
-        await requestSignInLink({ ...signUpRequest("not an address"), mode: "signin" }),
-      ).toEqual({
+      expect(await requestSignInLink(signUpRequest("not an address"))).toEqual({
         ok: false,
         error: "invalid_email",
       });
-      await requestSignInLink({ ...signUpRequest("nobody.canary@example.com"), mode: "signin" });
+      await requestSignInLink(signUpRequest("nobody.canary@example.com"));
       expect(await requestSignInLink(signUpRequest("repeat.canary@example.com"))).toEqual({
         ok: true,
       });

@@ -102,14 +102,14 @@ const TEMPLATES: Record<AuthEmailLocale, Record<AuthEmailTemplate, Template>> = 
     // Anyone can type an address into the sign-up form, so the email itself tells the recipient
     // what opening the link means and that ignoring it creates nothing (todo 28, F2).
     "magic-link-signup": (url, privacyUrl) => ({
-      subject: "Confirmez la création de votre compte Jisr",
+      subject: "Confirmez votre connexion à Jisr",
       text: [
         "Bonjour,",
-        "Quelqu'un a demandé à créer un compte Jisr avec cette adresse email. Ouvrir ce lien crée ou ouvre votre compte Jisr :",
+        "Quelqu'un a demandé à se connecter à Jisr avec cette adresse email. En ouvrant ce lien, vous vous connectez — et s'il n'existe pas encore de compte Jisr avec cette adresse, il est créé :",
         url,
-        `En l'ouvrant, vous confirmez avoir 16 ans ou plus et accepter la politique de confidentialité de Jisr, version ${CURRENT_CONSENT_VERSION} : ${privacyUrl}`,
+        `Si un compte est créé, cela vaut confirmation que vous avez 16 ans ou plus et que vous acceptez la politique de confidentialité de Jisr, version ${CURRENT_CONSENT_VERSION} : ${privacyUrl}`,
         `Ce lien est valable ${MAGIC_LINK_VALID_MINUTES} minutes et ne peut être utilisé qu'une seule fois.`,
-        "Si vous n'avez pas fait cette demande, ignorez ce message : aucun compte n'est créé.",
+        "Si vous n'avez pas fait cette demande, ignorez ce message : rien n'est créé.",
         "Jisr",
       ].join("\n\n"),
     }),
@@ -136,14 +136,14 @@ const TEMPLATES: Record<AuthEmailLocale, Record<AuthEmailTemplate, Template>> = 
   },
   en: {
     "magic-link-signup": (url, privacyUrl) => ({
-      subject: "Confirm your new Jisr account",
+      subject: "Confirm your sign-in to Jisr",
       text: [
         "Hello,",
-        "Someone asked to create a Jisr account with this email address. Opening this link creates or opens your Jisr account:",
+        "Someone asked to sign in to Jisr with this email address. Opening this link signs you in — and if there is no Jisr account for this address yet, it creates one:",
         url,
-        `By opening it, you confirm that you are 16 or older and that you accept the Jisr privacy notice, version ${CURRENT_CONSENT_VERSION}: ${privacyUrl}`,
+        `If an account is created, it confirms that you are 16 or older and accept the Jisr privacy notice, version ${CURRENT_CONSENT_VERSION}: ${privacyUrl}`,
         `This link is valid for ${MAGIC_LINK_VALID_MINUTES} minutes and can be used only once.`,
-        "If you did not ask for this, ignore this email: no account is created.",
+        "If you did not ask for this, ignore this email: nothing is created.",
         "Jisr",
       ].join("\n\n"),
     }),
@@ -170,14 +170,14 @@ const TEMPLATES: Record<AuthEmailLocale, Record<AuthEmailTemplate, Template>> = 
   },
   ar: {
     "magic-link-signup": (url, privacyUrl) => ({
-      subject: "تأكيد إنشاء حسابك في جسر",
+      subject: "تأكيد تسجيل الدخول إلى جسر",
       text: [
         "مرحبًا،",
-        "طلب أحدهم إنشاء حساب في جسر بعنوان البريد الإلكتروني هذا. فتح هذا الرابط يُنشئ حسابك في جسر أو يفتحه:",
+        "طلب أحدهم تسجيل الدخول إلى جسر بعنوان البريد الإلكتروني هذا. بفتحك هذا الرابط، فأنت تسجّل الدخول — وإذا لم يكن هناك حساب في جسر بهذا العنوان بعد، فسيُنشأ حساب:",
         url,
-        `بفتحه، تؤكد أن عمرك 16 سنة أو أكثر وأنك تقبل سياسة الخصوصية لجسر، الإصدار ${CURRENT_CONSENT_VERSION}: ${privacyUrl}`,
+        `إذا أُنشئ حساب، فهذا يعني أنك تؤكد أن عمرك 16 سنة أو أكثر وأنك تقبل إشعار الخصوصية لجسر، الإصدار ${CURRENT_CONSENT_VERSION}: ${privacyUrl}`,
         `هذا الرابط صالح لمدة ${MAGIC_LINK_VALID_MINUTES} دقيقة ويمكن استخدامه مرة واحدة فقط.`,
-        "إذا لم تطلب ذلك، فتجاهل هذه الرسالة: لن يُنشأ أي حساب.",
+        "إذا لم تطلب ذلك، فتجاهل هذه الرسالة: لا يُنشأ أي شيء.",
         "جسر",
       ].join("\n\n"),
     }),

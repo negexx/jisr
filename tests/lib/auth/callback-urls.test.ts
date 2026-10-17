@@ -153,44 +153,36 @@ describe("account deletion paths", () => {
 });
 
 describe("sign-in confirm link (todo 28, F3)", () => {
-  it("carries the token, the mode and the safe return path in the fragment only", () => {
-    const path = signInConfirmPath("ar", "AbcXyz", "signup", "/ar/compare");
+  it("carries the token and the safe return path in the fragment only", () => {
+    const path = signInConfirmPath("ar", "AbcXyz", "/ar/compare");
     const url = new URL(path, "https://jisr.example");
     expect(url.pathname).toBe("/ar/sign-in/confirm");
     expect(url.search).toBe("");
     expect(new URLSearchParams(url.hash.slice(1)).get("token")).toBe("AbcXyz");
-    expect(path).toBe("/ar/sign-in/confirm#token=AbcXyz&mode=signup&return=%2Far%2Fcompare");
+    expect(path).toBe("/ar/sign-in/confirm#token=AbcXyz&return=%2Far%2Fcompare");
   });
 
   it("drops an unsafe return path to the locale home and omits a missing one", () => {
-    expect(signInConfirmPath("fr", "t", "signin", "https://evil.example/")).toBe(
-      "/fr/sign-in/confirm#token=t&mode=signin&return=%2Ffr",
+    expect(signInConfirmPath("fr", "t", "https://evil.example/")).toBe(
+      "/fr/sign-in/confirm#token=t&return=%2Ffr",
     );
-    expect(signInConfirmPath("en", "t", "signin", null)).toBe(
-      "/en/sign-in/confirm#token=t&mode=signin",
-    );
+    expect(signInConfirmPath("en", "t", null)).toBe("/en/sign-in/confirm#token=t");
   });
 
   it("reads back what it wrote", () => {
-    const { hash } = new URL(
-      signInConfirmPath("fr", "AbcXyz", "signup", "/fr/plan"),
-      "https://x.example",
-    );
-    expect(readSignInLink(hash, "fr")).toEqual({
-      token: "AbcXyz",
-      mode: "signup",
-      returnPath: "/fr/plan",
-    });
+    const { hash } = new URL(signInConfirmPath("fr", "AbcXyz", "/fr/plan"), "https://x.example");
+    expect(readSignInLink(hash, "fr")).toEqual({ token: "AbcXyz", returnPath: "/fr/plan" });
   });
 
   it.each<[string, ReturnType<typeof readSignInLink>]>([
-    ["", { token: null, mode: "signin", returnPath: null }],
-    ["#token=", { token: null, mode: "signin", returnPath: null }],
-    ["#token=a%20b&mode=signup", { token: null, mode: "signup", returnPath: null }],
-    [`#token=${"a".repeat(129)}`, { token: null, mode: "signin", returnPath: null }],
-    ["#token=ok&mode=admin", { token: "ok", mode: "signin", returnPath: null }],
-    ["#token=ok&return=%2F%2Fevil.example", { token: "ok", mode: "signin", returnPath: "/fr" }],
-    ["token=ok&return=%2Ffr%2Fplan", { token: "ok", mode: "signin", returnPath: "/fr/plan" }],
+    ["", { token: null, returnPath: null }],
+    ["#token=", { token: null, returnPath: null }],
+    ["#token=a%20b", { token: null, returnPath: null }],
+    [`#token=${"a".repeat(129)}`, { token: null, returnPath: null }],
+    ["#token=ok", { token: "ok", returnPath: null }],
+    ["#token=ok&return=%2F%2Fevil.example", { token: "ok", returnPath: "/fr" }],
+    ["token=ok&return=%2Ffr%2Fplan", { token: "ok", returnPath: "/fr/plan" }],
+    ["#token=ok&mode=signup&return=%2Ffr%2Fplan", { token: "ok", returnPath: "/fr/plan" }],
   ])("reads %j defensively", (hash, expected) => {
     expect(readSignInLink(hash, "fr")).toEqual(expected);
   });

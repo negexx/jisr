@@ -23,7 +23,6 @@ let closeAppPool: () => Promise<void>;
 
 function request(overrides: Partial<SignInLinkRequest> = {}): SignInLinkRequest {
   return {
-    mode: "signup",
     email: "layer-transport@example.com",
     consent: true,
     ageConfirmed: true,

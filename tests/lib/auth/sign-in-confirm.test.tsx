@@ -94,7 +94,7 @@ describe("the confirm page", () => {
     );
     fetchMock.mockResolvedValue(answer(200, { status: true }));
     const navigate = renderPage("fr");
-    const button = await screen.findByRole("button", { name: fr.signInConfirm.signin.confirm });
+    const button = await screen.findByRole("button", { name: fr.signInConfirm.confirm });
     expect(fetchMock).not.toHaveBeenCalled();
     expect(window.location.pathname).toBe("/fr/sign-in/confirm");
     expect(window.location.hash).toBe("");
@@ -106,13 +106,11 @@ describe("the confirm page", () => {
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
-  it("words the button for an account creation from the link's mode", async () => {
+  it("keeps one neutral wording for every link", async () => {
     window.history.replaceState(null, "", `/ar/sign-in/confirm#token=${TOKEN}&mode=signup`);
     renderPage("ar");
-    expect(
-      await screen.findByRole("button", { name: ar.signInConfirm.signup.confirm }),
-    ).toBeTruthy();
-    expect(screen.getByText(ar.signInConfirm.signup.body)).toBeTruthy();
+    expect(await screen.findByRole("button", { name: ar.signInConfirm.confirm })).toBeTruthy();
+    expect(screen.getByText(ar.signInConfirm.body)).toBeTruthy();
   });
 
   it.each([
@@ -126,9 +124,7 @@ describe("the confirm page", () => {
     );
     fetchMock.mockResolvedValue(answer(400, { code }));
     const navigate = renderPage("en");
-    await userEvent.click(
-      await screen.findByRole("button", { name: en.signInConfirm.signin.confirm }),
-    );
+    await userEvent.click(await screen.findByRole("button", { name: en.signInConfirm.confirm }));
     await waitFor(() => expect(navigate).toHaveBeenCalledWith(target));
   });
 
@@ -137,13 +133,11 @@ describe("the confirm page", () => {
     fetchMock.mockRejectedValueOnce(new TypeError("network"));
     fetchMock.mockResolvedValueOnce(answer(200, { status: true }));
     const navigate = renderPage("fr");
-    await userEvent.click(
-      await screen.findByRole("button", { name: fr.signInConfirm.signin.confirm }),
-    );
+    await userEvent.click(await screen.findByRole("button", { name: fr.signInConfirm.confirm }));
     const alert = await screen.findByRole("alert");
     expect(alert.textContent).toBe(fr.signInConfirm.errors.failed);
     expect(document.activeElement).toBe(alert);
-    await userEvent.click(screen.getByRole("button", { name: fr.signInConfirm.signin.confirm }));
+    await userEvent.click(screen.getByRole("button", { name: fr.signInConfirm.confirm }));
     await waitFor(() => expect(navigate).toHaveBeenCalledWith("/fr/welcome?return=%2Ffr"));
   });
 
@@ -151,9 +145,7 @@ describe("the confirm page", () => {
     window.history.replaceState(null, "", `/fr/sign-in/confirm#token=${TOKEN}`);
     fetchMock.mockResolvedValue(answer(403, { code: "ACCOUNTS_DISABLED" }));
     const navigate = renderPage("fr");
-    await userEvent.click(
-      await screen.findByRole("button", { name: fr.signInConfirm.signin.confirm }),
-    );
+    await userEvent.click(await screen.findByRole("button", { name: fr.signInConfirm.confirm }));
     expect((await screen.findByRole("alert")).textContent).toBe(
       fr.signInConfirm.errors.unavailable,
     );
@@ -170,7 +162,7 @@ describe("the confirm page", () => {
 
     // Opening another emailed link in this tab only changes the fragment: no reload, no remount.
     window.location.hash = `#token=${SECOND}&mode=signup&return=%2Fen%2Fcompare`;
-    const button = await screen.findByRole("button", { name: en.signInConfirm.signup.confirm });
+    const button = await screen.findByRole("button", { name: en.signInConfirm.confirm });
     expect(window.location.hash).toBe("");
     expect(fetchMock).not.toHaveBeenCalled();
     await userEvent.click(button);

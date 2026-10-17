@@ -123,25 +123,20 @@ export function signInErrorPath(
 // token reaches no request log, Referer or analytics, and the query stays empty.
 export const SIGN_IN_CONFIRM_PATH = "/sign-in/confirm";
 export const SIGN_IN_TOKEN_PARAM = "token";
-export const SIGN_IN_MODE_PARAM = "mode";
 
 /** Better Auth's mount point plus our confirm endpoint (src/lib/auth/magic-link-confirm.ts). */
 export const MAGIC_LINK_CONFIRM_ENDPOINT = "/api/auth/magic-link/confirm";
 
-/** "signup" when the link creates an account (the wording only; the server decides). */
+/** "signup" when the link creates an account (the server-side email wording only). */
 export type SignInLinkMode = "signup" | "signin";
 
-/** The emailed sign-in link: the confirm page, with the token, the mode and the return path. */
+/** The emailed sign-in link: the confirm page, with the token and the return path. */
 export function signInConfirmPath(
   locale: Locale,
   token: string,
-  mode: SignInLinkMode,
   returnPath: string | null,
 ): string {
-  const fragment = new URLSearchParams({
-    [SIGN_IN_TOKEN_PARAM]: token,
-    [SIGN_IN_MODE_PARAM]: mode,
-  });
+  const fragment = new URLSearchParams({ [SIGN_IN_TOKEN_PARAM]: token });
   if (returnPath !== null) fragment.set(RETURN_PARAM, safeReturnPath(returnPath, locale));
   return `/${locale}${SIGN_IN_CONFIRM_PATH}#${fragment}`;
 }
@@ -149,16 +144,18 @@ export function signInConfirmPath(
 // Better Auth's magic-link token is 32 letters; the bound only keeps junk out of the request.
 const LINK_TOKEN = /^[0-9A-Za-z_-]{1,128}$/;
 
-export type SignInLink = { token: string | null; mode: SignInLinkMode; returnPath: string | null };
+export type SignInLink = { token: string | null; returnPath: string | null };
 
-/** What the confirm page reads from `location.hash` (with or without its leading `#`). */
+/**
+ * What the confirm page reads from `location.hash` (with or without its leading `#`). A legacy
+ * fragment still carrying a `mode=` parameter parses fine: the extra parameter is ignored.
+ */
 export function readSignInLink(hash: string, locale: Locale): SignInLink {
   const fragment = new URLSearchParams(hash.replace(/^#/, ""));
   const token = fragment.get(SIGN_IN_TOKEN_PARAM);
   const returnPath = fragment.get(RETURN_PARAM);
   return {
     token: token !== null && LINK_TOKEN.test(token) ? token : null,
-    mode: fragment.get(SIGN_IN_MODE_PARAM) === "signup" ? "signup" : "signin",
     returnPath: returnPath === null ? null : safeReturnPath(returnPath, locale),
   };
 }

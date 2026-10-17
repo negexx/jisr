@@ -83,7 +83,6 @@ async function lastLink(): Promise<string> {
 async function signUp(email: string): Promise<{ cookie: string; id: string }> {
   const { requestSignInLink } = await import("@/lib/server/signup");
   const request: SignInLinkRequest = {
-    mode: "signup",
     email,
     consent: true,
     ageConfirmed: true,

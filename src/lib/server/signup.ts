@@ -19,12 +19,9 @@ import { SignInEmailSchema } from "./account-inputs";
 import { sqlState } from "./account-store";
 import { AuthEmailAccountsDisabled, AuthEmailTransportNotConfigured } from "./email";
 
-export type SignInLinkMode = "signup" | "signin";
-
 export type SignInLinkRequest = {
-  // "signup" creates an account and needs both confirmations; "signin" is for an existing account
-  // and records nothing (ruling P5). A "signin" link for an unknown address is refused at verify.
-  mode: SignInLinkMode;
+  // Every form request carries the signup intent (consent evidence); an existing address simply
+  // signs in and its pending row is never consumed. A direct POST never sets the intent.
   email: string;
   consent: boolean;
   ageConfirmed: boolean;
@@ -45,7 +42,6 @@ export type SignInLinkResult = { ok: true } | { ok: false; error: SignInLinkErro
 const RETURN_PATH_MAX_LENGTH = 2048;
 
 const RequestSchema = z.object({
-  mode: z.enum(["signup", "signin"]),
   email: z.string(),
   consent: z.boolean(),
   ageConfirmed: z.boolean(),
@@ -121,8 +117,8 @@ export async function requestSignInLink(input: SignInLinkRequest): Promise<SignI
   if (!request.success) return { ok: false, error: "invalid_request" };
   const parsedEmail = SignInEmailSchema.safeParse(request.data.email);
   if (!parsedEmail.success) return { ok: false, error: "invalid_email" };
-  const { mode, consent, ageConfirmed, locale, returnPath } = request.data;
-  if (mode === "signup" && !(consent && ageConfirmed)) {
+  const { consent, ageConfirmed, locale, returnPath } = request.data;
+  if (!(consent && ageConfirmed)) {
     return { ok: false, error: "confirmation_required" };
   }
   const email = normalizeEmail(parsedEmail.data);
@@ -130,15 +126,15 @@ export async function requestSignInLink(input: SignInLinkRequest): Promise<SignI
     // Resolved first so a misconfigured deployment records nothing.
     const auth = getAuth();
     const requestHeaders = await headers();
-    // The auth instance's before hook claims the send slot inside this call and, for a signup
-    // (marked by runAsSignup, which only this action can set), writes the pending row right
-    // after the claim and before the verification row and the email.
+    // The auth instance's before hook claims the send slot inside this call and, for a request
+    // marked by runAsSignup (which only this action can set), writes the pending row right after
+    // the claim and before the verification row and the email. The server derives the wording.
     const send = () =>
       auth.api.signInMagicLink({
-        body: { email, ...authCallbackUrls(locale, returnPath), metadata: { locale, mode } },
+        body: { email, ...authCallbackUrls(locale, returnPath), metadata: { locale } },
         headers: requestHeaders,
       });
-    await (mode === "signup" ? runAsSignup(email, send) : send());
+    await runAsSignup(email, send);
   } catch (error) {
     return { ok: false, error: failureOf(error) };
   }
