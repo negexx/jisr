@@ -47,7 +47,7 @@ vi.mock("@/lib/account-cache", async (importOriginal) => ({
 }));
 
 const PROFILE: Profile = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   nationality: "MA",
   credential: {
     country: "MA",
@@ -59,11 +59,6 @@ const PROFILE: Profile = {
   },
   priorHigherEducationYears: 0,
   languages: [{ language: "fr", level: "B2", certificate: null }],
-  fields: ["computer-science"],
-  studyLanguages: ["fr", "en"],
-  destinations: ["FR", "DE"],
-  budget: { amountMinor: 900_00, currency: "EUR", period: "month" },
-  institutionType: "any",
 };
 
 const item = (slug: string) => ({
@@ -189,7 +184,7 @@ describe("with the sign-in hint", () => {
   it("keeps the signed-in form's draft under the account prefix, away from the guest's", () => {
     window.localStorage.setItem(DRAFT_KEY, "guest draft bytes");
     const storage = window.localStorage;
-    const draft = { schemaVersion: 1, step: 1, nationality: "MA" };
+    const draft = { schemaVersion: 2, step: 1, nationality: "MA" };
     expect(writeDraft(storage, draft)).toEqual({ ok: true });
     expect(readDraft(storage)).toEqual(draft);
     expect(JSON.parse(window.localStorage.getItem(ACCOUNT_DRAFT_KEY) ?? "null")).toEqual(draft);

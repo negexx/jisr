@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { PROFILE_SCHEMA_VERSION, ProfileSchema } from "@/data-schema/profile";
 
 const PROFILE = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   nationality: "XA",
   credential: {
     country: "XA",
@@ -15,11 +15,6 @@ const PROFILE = {
   },
   priorHigherEducationYears: 0,
   languages: [{ language: "xx", level: "B2", certificate: null }],
-  fields: ["xx-test-field"],
-  studyLanguages: ["xx"],
-  destinations: [],
-  budget: null,
-  institutionType: "any",
 };
 
 type Mutable = Record<string, unknown> & {
@@ -30,16 +25,9 @@ type Mutable = Record<string, unknown> & {
 const rows: Array<[string, (p: Mutable) => void, boolean]> = [
   ["base profile", () => {}, true],
   [
-    "schemaVersion 2",
+    "schemaVersion 1",
     (p) => {
-      p.schemaVersion = 2;
-    },
-    false,
-  ],
-  [
-    "empty fields",
-    (p) => {
-      p.fields = [];
+      p.schemaVersion = 1;
     },
     false,
   ],
@@ -96,25 +84,18 @@ const rows: Array<[string, (p: Mutable) => void, boolean]> = [
     true,
   ],
   [
-    "fractional budget amount",
+    "legacy fields key",
     (p) => {
-      p.budget = { amountMinor: 1.5, currency: "EUR", period: "month" };
+      p.fields = ["xx-test-field"];
     },
     false,
   ],
   [
-    "budget period week",
+    "legacy budget key",
     (p) => {
-      p.budget = { amountMinor: 100, currency: "EUR", period: "week" };
+      p.budget = { amountMinor: 100, currency: "EUR", period: "year" };
     },
     false,
-  ],
-  [
-    "valid budget",
-    (p) => {
-      p.budget = { amountMinor: 100000, currency: "EUR", period: "year" };
-    },
-    true,
   ],
   [
     "extra key",
@@ -134,7 +115,7 @@ const rows: Array<[string, (p: Mutable) => void, boolean]> = [
 
 describe("ProfileSchema", () => {
   it("exposes the schema version literal", () => {
-    expect(PROFILE_SCHEMA_VERSION).toBe(1);
+    expect(PROFILE_SCHEMA_VERSION).toBe(2);
   });
 
   it.each(rows)("%s", (_label, mutate, ok) => {

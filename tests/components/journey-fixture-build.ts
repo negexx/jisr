@@ -6,17 +6,17 @@ import { buildMatchesView } from "@/lib/journey/matches-view";
 import { describeReason, ruleIndex } from "@/lib/journey/reasons";
 
 import {
+  E2E_FILTERS,
+  E2E_FILTERS_WITH_BUDGET,
   E2E_NOW,
   E2E_PROFILE,
-  E2E_PROFILE_WITH_BUDGET,
-  filtersFromProfile,
 } from "../fixtures/e2e/profiles";
 import { loadMatchesBundle, programOf } from "../lib/journey/bundle";
 import { buildSnapshot, E2E_DATA_DIR, removeTempDirs } from "../lib/snapshot/fixture";
 
 const LOCALES = ["fr", "en", "ar"] as const;
 const OUTCOMES: readonly RuleOutcome[] = ["pass", "fail", "unknown"];
-const PROFILES = { plain: E2E_PROFILE, budget: E2E_PROFILE_WITH_BUDGET };
+const FILTER_SETS = { plain: E2E_FILTERS, budget: E2E_FILTERS_WITH_BUDGET };
 
 async function main() {
   const dir = buildSnapshot(E2E_DATA_DIR);
@@ -24,10 +24,10 @@ async function main() {
   for (const locale of LOCALES) {
     const bundle = await loadMatchesBundle(dir, E2E_PROFILE, locale);
     const cards: Record<string, unknown> = {};
-    for (const [name, profile] of Object.entries(PROFILES)) {
+    for (const [name, filters] of Object.entries(FILTER_SETS)) {
       const view = buildMatchesView({
-        profile,
-        filters: filtersFromProfile(profile),
+        profile: E2E_PROFILE,
+        filters,
         bundle,
         now: E2E_NOW,
         locale,

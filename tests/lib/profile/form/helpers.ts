@@ -78,11 +78,6 @@ export function validForm(): FormState {
       { language: "fr", level: "B2", certificate: "xx-test-cert-fr" },
       { language: "en", level: "unknown", certificate: "" },
     ],
-    fields: ["xx-test-field"],
-    studyLanguages: ["fr"],
-    destinations: [],
-    institutionType: "any",
-    budget: { amount: "", currency: "EUR", period: "month" },
   };
 }
 

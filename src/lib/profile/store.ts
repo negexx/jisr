@@ -7,6 +7,7 @@ import {
 } from "@/lib/account-cache";
 import { withAccountSync } from "@/lib/account-sync-runner";
 import { createLocalJsonStore, type LocalJsonStore, type LocalState } from "@/lib/local-store";
+import { seedFiltersFromLegacy } from "@/lib/matches/filter-store";
 
 import { type AccountProfile, EMPTY_ACCOUNT_PROFILE, parseAccountProfile } from "./account-profile";
 import { clearDraft } from "./draft";
@@ -96,7 +97,11 @@ export function createProfileStore(getStorage: () => StorageLike | null): Profil
       else if (stored.status === "ok") resetReason = null;
 
       if (stored.status === "ok") {
-        state = { ...stored, storageAvailable };
+        // A profile migrated from v1 hands over the preference values it stripped; seed them once.
+        if (stored.legacyPreferences !== undefined && storage) {
+          seedFiltersFromLegacy(storage, stored.legacyPreferences);
+        }
+        state = { status: "ok", profile: stored.profile, storageAvailable };
         evidence = raw ?? "";
       } else if (resetReason) {
         state = { status: "reset", reason: resetReason, storageAvailable };

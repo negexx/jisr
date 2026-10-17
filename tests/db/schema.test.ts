@@ -22,7 +22,7 @@ const USER_OWNED_TABLES = [
 ] as const;
 
 const PROFILE = ProfileSchema.parse({
-  schemaVersion: 1,
+  schemaVersion: 2,
   nationality: "MA",
   credential: {
     country: "MA",
@@ -34,11 +34,6 @@ const PROFILE = ProfileSchema.parse({
   },
   priorHigherEducationYears: 0,
   languages: [],
-  fields: ["computer-science"],
-  studyLanguages: ["fr"],
-  destinations: [],
-  budget: null,
-  institutionType: "any",
 });
 
 let testDb: TestDatabase;

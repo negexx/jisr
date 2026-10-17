@@ -84,7 +84,7 @@ describe("createProfileStore", () => {
 
   it("save validates, writes, clears the draft and notifies", () => {
     const storage = createFakeStorage();
-    writeDraft(storage, { schemaVersion: 1, step: 2 });
+    writeDraft(storage, { schemaVersion: 2, step: 2 });
     const store = createProfileStore(() => storage);
     const listener = vi.fn();
     store.subscribe(listener);
@@ -101,7 +101,7 @@ describe("createProfileStore", () => {
 
   it("save refuses an invalid profile and keeps the draft", () => {
     const storage = createFakeStorage();
-    writeDraft(storage, { schemaVersion: 1, step: 2 });
+    writeDraft(storage, { schemaVersion: 2, step: 2 });
     const store = createProfileStore(() => storage);
     const listener = vi.fn();
     store.subscribe(listener);
@@ -342,7 +342,7 @@ describe("createProfileStore", () => {
       storage.seed("other.key", "keep");
       const store = createProfileStore(() => storage);
       store.save(profile());
-      writeDraft(storage, { schemaVersion: 1, step: 1 });
+      writeDraft(storage, { schemaVersion: 2, step: 1 });
       const listener = vi.fn();
       store.subscribe(listener);
       store.clear();
@@ -446,7 +446,7 @@ describe("privacy", () => {
     window.localStorage.setItem("other.key", "keep");
     const { profileStore } = await loadHookModules();
     profileStore.save(profile());
-    writeDraft(window.localStorage, { schemaVersion: 1, step: 1 });
+    writeDraft(window.localStorage, { schemaVersion: 2, step: 1 });
     const keys = Object.keys(window.localStorage).filter((key) => key !== "other.key");
     expect(keys.length).toBeGreaterThan(0);
     expect(keys.every((key) => key.startsWith("jisr."))).toBe(true);

@@ -27,7 +27,7 @@ export const E2E_SCHOLARSHIP_SLUGS = {
 
 function baseProfile(overrides: Partial<Profile> = {}): Profile {
   return ProfileSchema.parse({
-    schemaVersion: 1,
+    schemaVersion: 2,
     nationality: "XA",
     credential: {
       country: "XA",
@@ -44,34 +44,33 @@ function baseProfile(overrides: Partial<Profile> = {}): Profile {
       { language: "fr", level: "B2", certificate: "xx-test-cert-fr" },
       { language: "en", level: "B1", certificate: null },
     ],
-    fields: ["xx-test-field-cs", "xx-test-field-eng"],
-    studyLanguages: ["fr", "en"],
-    destinations: [],
-    budget: null,
-    institutionType: "public",
     ...overrides,
   });
 }
 
 export const E2E_PROFILE: Profile = baseProfile();
 
-export const E2E_PROFILE_WITH_BUDGET: Profile = baseProfile({
+// The preference fields now live in the transient match filters. The three filter sets reproduce the
+// expectations the profiles used to drive (plain, with a budget, XB-only destination).
+function baseFilters(overrides: Partial<MatchFilters> = {}): MatchFilters {
+  return {
+    schemaVersion: MATCH_FILTERS_VERSION,
+    fields: ["xx-test-field-cs", "xx-test-field-eng"],
+    studyLanguages: ["fr", "en"],
+    destinations: [],
+    institutionType: "public",
+    budget: null,
+    ...overrides,
+  };
+}
+
+export const E2E_FILTERS: MatchFilters = baseFilters();
+
+export const E2E_FILTERS_WITH_BUDGET: MatchFilters = baseFilters({
   budget: { amountMinor: 90_000, currency: "XTS", period: "month" },
 });
 
-export const E2E_PROFILE_XB_ONLY: Profile = baseProfile({ destinations: ["XB"] });
-
-// Mirrors the profile's preference fields, which Task 4 removes, so the fixture expectations stay.
-export function filtersFromProfile(profile: Profile): MatchFilters {
-  return {
-    schemaVersion: MATCH_FILTERS_VERSION,
-    fields: profile.fields,
-    studyLanguages: profile.studyLanguages,
-    destinations: profile.destinations,
-    institutionType: profile.institutionType,
-    budget: profile.budget,
-  };
-}
+export const E2E_FILTERS_XB_ONLY: MatchFilters = baseFilters({ destinations: ["XB"] });
 
 export type E2eGroup = "ok" | "check" | "foundation" | "failed";
 export type E2eIntakeKind = "upcoming" | "recurring" | "closed" | "none";

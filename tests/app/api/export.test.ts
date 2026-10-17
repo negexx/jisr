@@ -125,7 +125,7 @@ function program(slug: string, overrides: Partial<SavedProgram> = {}): SavedProg
 }
 
 const ALICE_PROFILE: Profile = ProfileSchema.parse({
-  schemaVersion: 1,
+  schemaVersion: 2,
   nationality: "MA",
   credential: {
     country: "MA",
@@ -137,15 +137,10 @@ const ALICE_PROFILE: Profile = ProfileSchema.parse({
   },
   priorHigherEducationYears: 0,
   languages: [{ language: "fr", level: "B2", certificate: null }],
-  fields: ["computer-science"],
-  studyLanguages: ["fr", "en"],
-  destinations: ["FR", "DE"],
-  budget: { amountMinor: 900_00, currency: "EUR", period: "month" },
-  institutionType: "any",
 });
 
-const ALICE_EDITED_PROFILE: Profile = { ...ALICE_PROFILE, destinations: ["NL"] };
-const BOB_PROFILE: Profile = { ...ALICE_PROFILE, destinations: ["IT"], fields: ["engineering"] };
+const ALICE_EDITED_PROFILE: Profile = { ...ALICE_PROFILE, priorHigherEducationYears: 1 };
+const BOB_PROFILE: Profile = { ...ALICE_PROFILE, nationality: "TN" };
 
 const ALICE_REPORT = {
   record: "programs/xx-test-alice",

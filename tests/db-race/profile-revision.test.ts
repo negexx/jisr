@@ -12,7 +12,7 @@ const USER_ID = "race-user";
 const ROUNDS = 20;
 
 const PROFILE: Profile = ProfileSchema.parse({
-  schemaVersion: 1,
+  schemaVersion: 2,
   nationality: "MA",
   credential: {
     country: "MA",
@@ -24,13 +24,8 @@ const PROFILE: Profile = ProfileSchema.parse({
   },
   priorHigherEducationYears: 0,
   languages: [],
-  fields: ["computer-science"],
-  studyLanguages: ["fr"],
-  destinations: ["FR"],
-  budget: null,
-  institutionType: "any",
 });
-const STALE: Profile = { ...PROFILE, destinations: ["IT"] };
+const STALE: Profile = { ...PROFILE, priorHigherEducationYears: 1 };
 
 // A Clear my data racing a first profile save from another device: whichever lands first, no
 // profile row ever gets a revision handed out before, so a device still holding an old revision is

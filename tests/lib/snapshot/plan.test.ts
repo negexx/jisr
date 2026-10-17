@@ -8,11 +8,7 @@ import {
   shardsForProgram,
 } from "@/lib/snapshot/plan";
 
-import {
-  E2E_PROFILE,
-  E2E_PROFILE_WITH_BUDGET,
-  E2E_PROFILE_XB_ONLY,
-} from "../../fixtures/e2e/profiles";
+import { E2E_PROFILE } from "../../fixtures/e2e/profiles";
 import { buildSnapshot, E2E_DATA_DIR, readManifest, removeTempDirs } from "./fixture";
 
 let manifest: Manifest;
@@ -33,7 +29,6 @@ describe("shardsForProfileForm", () => {
 
 describe("shardsForMatches", () => {
   it("loads every program shard and each destination's aux shards", () => {
-    expect(E2E_PROFILE.destinations).toEqual([]);
     const plan = shardsForMatches(E2E_PROFILE, manifest);
     expect(sorted(plan.structural)).toEqual(
       sorted([
@@ -52,8 +47,9 @@ describe("shardsForMatches", () => {
     );
   });
 
-  it("still loads unchosen destinations so destination mismatches can be counted", () => {
-    expect(sorted(shardsForMatches(E2E_PROFILE_XB_ONLY, manifest).structural)).toEqual(
+  it("still loads every destination's programs, so a filter change never changes the plan", () => {
+    const changed = { ...E2E_PROFILE, nationality: "XZ" };
+    expect(sorted(shardsForMatches(changed, manifest).structural)).toEqual(
       sorted(shardsForMatches(E2E_PROFILE, manifest).structural),
     );
   });
@@ -143,10 +139,6 @@ describe("shardsForPlan", () => {
 describe("planKey", () => {
   it("depends only on the credential country, so a filter change never refetches", () => {
     const base = planKey(E2E_PROFILE);
-    expect(planKey({ ...E2E_PROFILE, fields: ["xx-test-field-eng"] })).toBe(base);
-    expect(planKey(E2E_PROFILE_XB_ONLY)).toBe(base);
-    expect(planKey({ ...E2E_PROFILE, institutionType: "any" })).toBe(base);
-    expect(planKey(E2E_PROFILE_WITH_BUDGET)).toBe(base);
     expect(
       planKey({ ...E2E_PROFILE, credential: { ...E2E_PROFILE.credential, country: "XZ" } }),
     ).not.toBe(base);

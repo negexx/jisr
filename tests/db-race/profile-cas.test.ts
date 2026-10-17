@@ -12,7 +12,7 @@ const USER_ID = "race-user";
 const ROUNDS = 10;
 
 const PROFILE: Profile = ProfileSchema.parse({
-  schemaVersion: 1,
+  schemaVersion: 2,
   nationality: "MA",
   credential: {
     country: "MA",
@@ -24,14 +24,9 @@ const PROFILE: Profile = ProfileSchema.parse({
   },
   priorHigherEducationYears: 0,
   languages: [],
-  fields: ["computer-science"],
-  studyLanguages: ["fr"],
-  destinations: ["FR"],
-  budget: null,
-  institutionType: "any",
 });
-const FROM_PHONE: Profile = { ...PROFILE, destinations: ["DE"] };
-const FROM_LAPTOP: Profile = { ...PROFILE, destinations: ["NL"] };
+const FROM_PHONE: Profile = { ...PROFILE, priorHigherEducationYears: 1 };
+const FROM_LAPTOP: Profile = { ...PROFILE, priorHigherEducationYears: 2 };
 
 describeRace("saveProfile compare-and-set under real concurrency", () => {
   let race: RaceDatabase;

@@ -65,7 +65,7 @@ type Actions = typeof import("@/lib/server/account-actions");
 type Student = { cookie: string; id: string; email: string; sessionToken: string };
 
 const PROFILE: Profile = ProfileSchema.parse({
-  schemaVersion: 1,
+  schemaVersion: 2,
   nationality: "MA",
   credential: {
     country: "MA",
@@ -77,11 +77,6 @@ const PROFILE: Profile = ProfileSchema.parse({
   },
   priorHigherEducationYears: 0,
   languages: [{ language: "fr", level: "B2", certificate: null }],
-  fields: ["computer-science"],
-  studyLanguages: ["fr"],
-  destinations: ["FR"],
-  budget: { amountMinor: 900_00, currency: "EUR", period: "month" },
-  institutionType: "any",
 });
 
 // What a leak would carry. Strings are searched case-insensitively.
@@ -442,7 +437,7 @@ describe("account actions", () => {
       expect(await actions.saveProgram({ slug: "Not A Slug" } as never)).toMatchObject({
         ok: false,
       });
-      expect(await actions.saveProfile({ ...PROFILE, schemaVersion: 2 } as never, 0)).toMatchObject(
+      expect(await actions.saveProfile({ ...PROFILE, schemaVersion: 3 } as never, 0)).toMatchObject(
         {
           ok: false,
         },

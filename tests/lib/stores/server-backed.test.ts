@@ -59,7 +59,7 @@ function progress(done: Record<string, ChecklistStepId[]>): PlanProgress {
 }
 
 const PROFILE: Profile = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   nationality: "MA",
   credential: {
     country: "MA",
@@ -71,14 +71,9 @@ const PROFILE: Profile = {
   },
   priorHigherEducationYears: 0,
   languages: [{ language: "fr", level: "B2", certificate: null }],
-  fields: ["computer-science"],
-  studyLanguages: ["fr", "en"],
-  destinations: ["FR", "DE"],
-  budget: { amountMinor: 900_00, currency: "EUR", period: "month" },
-  institutionType: "any",
 };
-const OTHER_DEVICE: Profile = { ...PROFILE, destinations: ["NL"] };
-const MINE: Profile = { ...PROFILE, destinations: ["IT"] };
+const OTHER_DEVICE: Profile = { ...PROFILE, priorHigherEducationYears: 1 };
+const MINE: Profile = { ...PROFILE, priorHigherEducationYears: 2 };
 
 type Calls = {
   [K in keyof SyncActions]: Array<{
@@ -399,7 +394,7 @@ describe("profile, signed in", () => {
 
     it("holds a later save instead of sending it over the other device's version", async () => {
       const { sync, stores, calls } = await conflicted();
-      const LATER: Profile = { ...MINE, studyLanguages: ["en"] };
+      const LATER: Profile = { ...MINE, priorHigherEducationYears: 3 };
       sync.saveProfile(LATER);
       await settle();
       expect(calls.saveProfile).toHaveLength(1);

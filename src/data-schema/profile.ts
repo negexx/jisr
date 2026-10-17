@@ -8,15 +8,19 @@ import {
   SlugSchema,
 } from "./primitives";
 
-export const PROFILE_SCHEMA_VERSION = 1;
+export const PROFILE_SCHEMA_VERSION = 2;
 
 export const GradeValueSchema = z.strictObject({ scale: SlugSchema, value: z.number() });
+// Kept here, but no longer part of the profile: budget is a match filter (MatchFiltersSchema).
 export const BudgetSchema = z.strictObject({
   amountMinor: z.number().int().nonnegative(),
   currency: CurrencySchema,
   period: z.enum(["month", "year"]),
 });
 
+// Version 2: eligibility only (nationality, credential, prior years, languages). The five preference
+// fields (fields, studyLanguages, destinations, budget, institutionType) moved to MatchFiltersSchema;
+// a 1→2 migration strips them (src/lib/profile/storage.ts).
 export const ProfileSchema = z
   .strictObject({
     schemaVersion: z.literal(PROFILE_SCHEMA_VERSION),
@@ -37,11 +41,6 @@ export const ProfileSchema = z
         certificate: SlugSchema.nullable(),
       }),
     ),
-    fields: z.array(SlugSchema).min(1),
-    studyLanguages: z.array(LanguageCodeSchema),
-    destinations: z.array(CountryCodeSchema),
-    budget: BudgetSchema.nullable(),
-    institutionType: z.enum(["public", "private", "any"]),
   })
   .superRefine((profile, ctx) => {
     const seenSubjects = new Set<string>();

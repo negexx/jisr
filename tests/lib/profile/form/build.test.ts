@@ -11,11 +11,7 @@ import { validateStep } from "@/lib/profile/form/validate-step";
 import type { ProfileIssueCode } from "@/lib/profile/reference-checks";
 import { parseProfile } from "@/lib/profile/validate";
 
-import {
-  E2E_PROFILE,
-  E2E_PROFILE_WITH_BUDGET,
-  E2E_PROFILE_XB_ONLY,
-} from "../../../fixtures/e2e/profiles";
+import { E2E_PROFILE } from "../../../fixtures/e2e/profiles";
 import { forbidConsole } from "../no-console";
 import { at, edited, withRealCore } from "./helpers";
 
@@ -23,15 +19,8 @@ forbidConsole();
 
 const realCore = withRealCore();
 
-function withBudget(budget: Profile["budget"]): Profile {
-  return { ...E2E_PROFILE_WITH_BUDGET, budget };
-}
-
 const ROUND_TRIPS: Array<[string, Profile]> = [
   ["the E2E profile", E2E_PROFILE],
-  ["the E2E profile with an XB-only destination", E2E_PROFILE_XB_ONLY],
-  ["a monthly EUR budget", withBudget({ amountMinor: 90_000, currency: "EUR", period: "month" })],
-  ["a yearly MAD budget", withBudget({ amountMinor: 1_200_000, currency: "MAD", period: "year" })],
   [
     "an expected Bac without grades",
     {
@@ -57,8 +46,6 @@ const ROUND_TRIPS: Array<[string, Profile]> = [
         ],
       },
       priorHigherEducationYears: 2,
-      studyLanguages: [],
-      institutionType: "private",
     },
   ],
 ];
@@ -74,14 +61,6 @@ describe("buildProfile round trip", () => {
       const result = buildProfile(formFromProfile(profile), realCore());
       expect(result.ok && parseProfile(result.profile)).toEqual(profile);
     }
-  });
-
-  it("rejects the fixture's XTS budget because the form offers EUR and MAD only", () => {
-    const result = buildProfile(formFromProfile(E2E_PROFILE_WITH_BUDGET), realCore());
-    expect(result).toEqual({
-      ok: false,
-      issues: [{ code: "unknown_option", path: "budget.currency" }],
-    });
   });
 });
 
@@ -133,40 +112,19 @@ describe("buildProfile conversions", () => {
   it("turns years into a number", () => {
     expect(build((f) => (f.priorHigherEducationYears = " 3 ")).priorHigherEducationYears).toBe(3);
   });
-
-  it("converts the budget amount to minor units and an empty amount to null", () => {
-    const budget = (amount: string, currency: string, period: "month" | "year") =>
-      build((f) => (f.budget = { amount, currency, period })).budget;
-    expect(budget("1000", "EUR", "month")).toEqual({
-      amountMinor: 100_000,
-      currency: "EUR",
-      period: "month",
-    });
-    expect(budget(" 250 ", "MAD", "year")).toEqual({
-      amountMinor: 25_000,
-      currency: "MAD",
-      period: "year",
-    });
-    expect(budget("0", "EUR", "month")?.amountMinor).toBe(0);
-    expect(budget("9999999", "EUR", "month")?.amountMinor).toBe(999_999_900);
-    expect(budget("", "EUR", "month")).toBeNull();
-    expect(budget("  ", "USD", "month")).toBeNull();
-  });
 });
 
 describe("buildProfile refusal", () => {
   it("returns the step issues untouched, in review order", () => {
     const form = edited(formFromProfile(E2E_PROFILE), (f) => {
       f.credential.overall = "1,000";
-      f.fields = [];
-      f.budget.amount = "10.000";
+      f.nationality = "";
     });
     const result = buildProfile(form, realCore());
     expect(result).toEqual({ ok: false, issues: validateStep("review", form, realCore()) });
     expect(result.ok ? [] : result.issues.map((issue) => issue.code)).toEqual([
-      "ambiguous_number",
       "required",
-      "not_a_whole_number",
+      "ambiguous_number",
     ]);
   });
 
@@ -174,7 +132,7 @@ describe("buildProfile refusal", () => {
     const result = buildProfile(
       edited(formFromProfile(E2E_PROFILE), (f) => {
         f.nationality = "";
-        f.fields = [];
+        f.credential.type = "";
       }),
       realCore(),
     );
@@ -191,7 +149,6 @@ describe("reference issue mapping", () => {
     "unknown_subject",
     "unknown_certificate",
     "certificate_language_mismatch",
-    "unknown_field",
     "unknown_country",
   ] as const;
   const everyCodeListed: [Exclude<ProfileIssueCode, (typeof codes)[number]>] extends [never]
@@ -217,7 +174,6 @@ describe("reference issue mapping", () => {
         { code: "unknown_credential_type", path: "credential.type" },
         { code: "track_not_in_type", path: "credential.track" },
         { code: "unknown_subject", path: "credential.subjects.0.subject" },
-        { code: "unknown_field", path: "fields.0" },
       ],
       form,
       realCore(),
@@ -234,7 +190,6 @@ describe("reference issue mapping", () => {
       { code: "unknown_option", path: "credential.type" },
       { code: "unknown_option", path: "credential.track" },
       { code: "unknown_option", path: "credential.subjects.0.subject" },
-      { code: "unknown_option", path: "fields.0" },
     ]);
   });
 });

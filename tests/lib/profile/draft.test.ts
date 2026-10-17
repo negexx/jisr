@@ -42,18 +42,46 @@ describe("draft storage", () => {
   });
 
   it("accepts a bare draft with only a step", () => {
-    expect(DraftSchema.safeParse({ schemaVersion: 1, step: 0 }).success).toBe(true);
+    expect(DraftSchema.safeParse({ schemaVersion: DRAFT_SCHEMA_VERSION, step: 0 }).success).toBe(
+      true,
+    );
   });
 
   it("returns null when there is no draft", () => {
     expect(readDraft(createFakeStorage())).toBeNull();
   });
 
+  it("migrates a v1 draft to v2, stripping the preference fields and keeping the answers", () => {
+    const storage = createFakeStorage();
+    storage.seed(
+      DRAFT_KEY,
+      JSON.stringify({
+        schemaVersion: 1,
+        step: 2,
+        nationality: "MA",
+        credential: { type: "bac" },
+        languages: [{ language: "fr", level: "B2" }],
+        fields: ["computer-science"],
+        studyLanguages: ["fr"],
+        destinations: ["FR"],
+        budget: { amount: "9000", currency: "EUR", period: "year" },
+        institutionType: "public",
+      }),
+    );
+    expect(readDraft(storage)).toEqual({
+      schemaVersion: 2,
+      step: 2,
+      nationality: "MA",
+      credential: { type: "bac" },
+      languages: [{ language: "fr", level: "B2" }],
+    });
+  });
+
   it.each([
     ["corrupt JSON", "{oops"],
     ["a wrong shape", JSON.stringify({ hello: 1 })],
-    ["an unknown key", JSON.stringify({ schemaVersion: 1, step: 0, secret: "x" })],
-    ["another version", JSON.stringify({ schemaVersion: 2, step: 0 })],
+    ["an unknown key", JSON.stringify({ schemaVersion: 2, step: 0, secret: "x" })],
+    ["another version", JSON.stringify({ schemaVersion: 3, step: 0 })],
   ])("drops %s and removes it", (_label, raw) => {
     const storage = createFakeStorage();
     storage.seed(DRAFT_KEY, raw);

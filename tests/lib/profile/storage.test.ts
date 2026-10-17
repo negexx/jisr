@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 
+import { MATCH_FILTERS_VERSION } from "@/lib/constants";
+import { MATCH_FILTERS_KEY, readMatchFilters, writeMatchFilters } from "@/lib/matches/filter-store";
 import {
   clearLocalData,
   DRAFT_KEY,
@@ -16,6 +18,26 @@ import { forbidConsole } from "./no-console";
 
 forbidConsole();
 
+const V1 = {
+  schemaVersion: 1,
+  nationality: "XA",
+  credential: {
+    country: "XA",
+    type: "xx-test-cred",
+    track: "xx-test-track-sci",
+    status: "obtained",
+    overall: { scale: "xx-test-scale-20", value: 14 },
+    subjects: [{ subject: "xx-test-math", grade: { scale: "xx-test-scale-20", value: 15 } }],
+  },
+  priorHigherEducationYears: 0,
+  languages: [{ language: "fr", level: "B2", certificate: "xx-test-cert-fr" }],
+  fields: ["xx-test-field"],
+  studyLanguages: ["fr"],
+  destinations: ["XB"],
+  budget: { amountMinor: 90_000, currency: "EUR", period: "month" },
+  institutionType: "public",
+};
+
 describe("keys", () => {
   it("uses the jisr. namespace", () => {
     expect(PROFILE_KEY).toBe("jisr.profile");
@@ -31,9 +53,9 @@ describe("migrateProfile", () => {
   });
 
   it.each([
-    ["a higher version", { ...profile(), schemaVersion: 2 }],
+    ["a higher version", { ...profile(), schemaVersion: 3 }],
     ["version zero", { ...profile(), schemaVersion: 0 }],
-    ["a fractional version", { ...profile(), schemaVersion: 1.5 }],
+    ["a fractional version", { ...profile(), schemaVersion: 2.5 }],
   ])("reports %s as unsupported_version", (_label, raw) => {
     expect(migrateProfile(raw)).toEqual({ ok: false, reason: "unsupported_version" });
   });
@@ -53,6 +75,81 @@ describe("migrateProfile", () => {
   it("carries no profile data in a failure", () => {
     const result = migrateProfile({ ...profile({ nationality: "ZZ" }), extra: 1 });
     expect(JSON.stringify(result)).not.toContain("ZZ");
+  });
+});
+
+describe("v1 to v2 migration", () => {
+  it("migrates a stored v1 record to v2, strips the five keys and keeps the rest", () => {
+    const storage = createFakeStorage();
+    storage.seed(PROFILE_KEY, JSON.stringify(V1));
+    const stored = readProfile(storage);
+    expect(stored.status).toBe("ok");
+    if (stored.status !== "ok") return;
+    expect(stored.profile.schemaVersion).toBe(2);
+    expect(stored.profile).not.toHaveProperty("fields");
+    expect(stored.profile).not.toHaveProperty("budget");
+    expect(stored.profile.nationality).toBe("XA");
+  });
+
+  it("returns the removed preferences from migrateProfile", () => {
+    const result = migrateProfile(V1);
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    expect(result.profile.schemaVersion).toBe(2);
+    expect(result.legacyPreferences).toEqual({
+      schemaVersion: MATCH_FILTERS_VERSION,
+      fields: ["xx-test-field"],
+      studyLanguages: ["fr"],
+      destinations: ["XB"],
+      institutionType: "public",
+      budget: { amountMinor: 90_000, currency: "EUR", period: "month" },
+    });
+  });
+
+  it("seeds jisr.matches-filters once from the removed values", () => {
+    const storage = createFakeStorage();
+    storage.seed(PROFILE_KEY, JSON.stringify(V1));
+    readProfile(storage);
+    expect(readMatchFilters(storage)).toEqual({
+      schemaVersion: MATCH_FILTERS_VERSION,
+      fields: ["xx-test-field"],
+      studyLanguages: ["fr"],
+      destinations: ["XB"],
+      institutionType: "public",
+      budget: { amountMinor: 90_000, currency: "EUR", period: "month" },
+    });
+  });
+
+  it("does not overwrite an already-set filter store", () => {
+    const storage = createFakeStorage();
+    storage.seed(PROFILE_KEY, JSON.stringify(V1));
+    writeMatchFilters(storage, {
+      schemaVersion: MATCH_FILTERS_VERSION,
+      fields: ["kept"],
+      studyLanguages: [],
+      destinations: [],
+      institutionType: "any",
+      budget: null,
+    });
+    readProfile(storage);
+    expect(readMatchFilters(storage).fields).toEqual(["kept"]);
+  });
+
+  it("seeds nothing when the v1 preferences are all default", () => {
+    const storage = createFakeStorage();
+    storage.seed(
+      PROFILE_KEY,
+      JSON.stringify({
+        ...V1,
+        fields: [],
+        studyLanguages: [],
+        destinations: [],
+        institutionType: "any",
+        budget: null,
+      }),
+    );
+    readProfile(storage);
+    expect(storage.raw(MATCH_FILTERS_KEY)).toBeNull();
   });
 });
 
@@ -84,7 +181,7 @@ describe("readProfile", () => {
 
   it("resets and removes an unsupported schema version", () => {
     const storage = createFakeStorage();
-    storage.seed(PROFILE_KEY, JSON.stringify({ ...profile(), schemaVersion: 2 }));
+    storage.seed(PROFILE_KEY, JSON.stringify({ ...profile(), schemaVersion: 3 }));
     expect(readProfile(storage)).toEqual({ status: "reset", reason: "unsupported_version" });
     expect(storage.raw(PROFILE_KEY)).toBeNull();
   });

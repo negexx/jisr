@@ -96,7 +96,7 @@ describe("ProfileForm: reference data states", () => {
     const heading = await screen.findByRole("heading", { level: 2, name: "Your Bac" });
     expect(heading.getAttribute("tabindex")).toBe("-1");
     expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
-    expect(screen.getByText("Step 1 of 4: Your Bac")).toBeTruthy();
+    expect(screen.getByText("Step 1 of 2: Your Bac")).toBeTruthy();
   });
 });
 
@@ -114,13 +114,19 @@ describe("ProfileForm: initial state and notices", () => {
   });
 
   it("restores a kept draft on its step, with a dismissible status notice", async () => {
-    const draft = draftFromForm({ ...emptyFormState(coreShard()), fields: ["xx-test-field"] }, 2);
+    const base = emptyFormState(coreShard());
+    const form = {
+      ...base,
+      languages: base.languages.map((row) =>
+        row.language === "fr" ? { ...row, level: "B2" as const } : row,
+      ),
+    };
+    const draft = draftFromForm(form, 1);
     window.localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
     const { user } = renderProfileForm("en", clientFor(coreShard()));
-    expect(await screen.findByRole("heading", { level: 2, name: "What you want" })).toBeTruthy();
+    expect(await screen.findByRole("heading", { level: 2, name: "Languages" })).toBeTruthy();
     const notice = screen.getByText(/We kept your unfinished answers/);
     expect(notice.closest("output")).not.toBeNull();
-    expect((screen.getByLabelText("xx-test-field") as HTMLInputElement).checked).toBe(true);
     await user.click(screen.getByRole("button", { name: "Dismiss" }));
     expect(screen.queryByText(/We kept your unfinished answers/)).toBeNull();
   });
@@ -170,7 +176,7 @@ describe("ProfileForm: Arabic", () => {
     renderProfileForm("ar", clientFor(coreShard()));
     expect(await screen.findByRole("heading", { level: 2, name: "البكالوريا" })).toBeTruthy();
     expect(screen.getByTestId("dir-root").getAttribute("dir")).toBe("rtl");
-    expect(screen.getByText("الخطوة 1 من 4: البكالوريا")).toBeTruthy();
+    expect(screen.getByText("الخطوة 1 من 2: البكالوريا")).toBeTruthy();
     const next = screen.getByRole("button", { name: "التالي" });
     expect(next.querySelector("svg")?.getAttribute("class")).toContain("rtl:rotate-180");
   });

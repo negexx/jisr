@@ -2,12 +2,13 @@ import { useTranslations } from "next-intl";
 import type { ReactNode, Ref } from "react";
 
 import { Button } from "@/components/ui/button";
+import { STEPS } from "@/lib/profile/form/state";
 import { cn } from "@/lib/utils";
 
 import { AlertIcon, CloseIcon, InfoIcon } from "./icons";
 import type { ShownIssue } from "./issues";
 
-const STEP_COUNT = 4;
+const STEP_COUNT = STEPS.length - 1;
 
 // The text carries the meaning; the segments are a non-essential picture of it: one per step, and the
 // review keeps them all filled. Segments sit in a

@@ -1,7 +1,10 @@
+import type { MatchFilters } from "@/data-schema/match-filters";
 import type { Profile } from "@/data-schema/profile";
 import { AUTH_HINT_KEY } from "@/lib/auth/session-hint";
-import { PROFILE_SCHEMA_VERSION } from "@/lib/constants";
+import { MATCH_FILTERS_VERSION, PROFILE_SCHEMA_VERSION } from "@/lib/constants";
 import { getLocalStorage, KEY_PREFIX, removeQuietly, type StorageLike } from "@/lib/local-storage";
+import { seedFiltersFromLegacy } from "@/lib/matches/filter-store";
+import { parseMatchFilters } from "@/lib/matches/filters";
 
 import { parseProfile } from "./validate";
 
@@ -13,20 +16,77 @@ export const DRAFT_KEY = "jisr.profile-draft";
 export type ResetReason = "invalid" | "unsupported_version";
 export type StoredProfile =
   | { status: "none" }
-  | { status: "ok"; profile: Profile }
+  | { status: "ok"; profile: Profile; legacyPreferences?: MatchFilters }
   | { status: "reset"; reason: ResetReason };
 
-export type MigrationResult = { ok: true; profile: Profile } | { ok: false; reason: ResetReason };
+export type MigrationResult =
+  | { ok: true; profile: Profile; legacyPreferences?: MatchFilters }
+  | { ok: false; reason: ResetReason };
 export type WriteResult = { ok: true } | { ok: false; reason: "invalid" | "storage_unavailable" };
 
 type RawRecord = Record<string, unknown>;
 
-// Each entry upgrades a record from version N to N + 1. Version 1 is the current version, so the
-// table is empty; a future v2 adds `1: (raw) => ({ ...raw, schemaVersion: 2, ...changes })`.
-const MIGRATIONS: Readonly<Record<number, (raw: RawRecord) => RawRecord>> = {};
+// A migration upgrades a record from version N to N + 1 and, when it strips preference values the
+// student had chosen, hands them back so the store can seed the transient filter store once.
+type Migration = (raw: RawRecord) => { record: RawRecord; legacyPreferences?: MatchFilters };
+
+const LEGACY_PREFERENCE_KEYS = [
+  "fields",
+  "studyLanguages",
+  "destinations",
+  "budget",
+  "institutionType",
+] as const;
+
+// The v1 preference values are only trusted once parseMatchFilters accepts them; a corrupt record
+// seeds nothing rather than a half-parsed filter.
+function legacyFiltersFrom(raw: RawRecord): MatchFilters | undefined {
+  return (
+    parseMatchFilters({
+      schemaVersion: MATCH_FILTERS_VERSION,
+      fields: raw.fields,
+      studyLanguages: raw.studyLanguages,
+      destinations: raw.destinations,
+      institutionType: raw.institutionType,
+      budget: raw.budget,
+    }) ?? undefined
+  );
+}
+
+const MIGRATIONS: Readonly<Record<number, Migration>> = {
+  1: (raw) => {
+    const legacyPreferences = legacyFiltersFrom(raw);
+    const record: RawRecord = { ...raw, schemaVersion: 2 };
+    for (const key of LEGACY_PREFERENCE_KEYS) delete record[key];
+    return legacyPreferences === undefined ? { record } : { record, legacyPreferences };
+  },
+};
 
 function isRecord(value: unknown): value is RawRecord {
   return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function applyMigrations(raw: RawRecord): { record: RawRecord; legacyPreferences?: MatchFilters } {
+  let record = raw;
+  let legacyPreferences: MatchFilters | undefined;
+  for (let version = raw.schemaVersion as number; version < PROFILE_SCHEMA_VERSION; version += 1) {
+    const migrate = MIGRATIONS[version];
+    if (!migrate) return { record: raw };
+    const migrated = migrate(record);
+    record = migrated.record;
+    if (migrated.legacyPreferences !== undefined) legacyPreferences = migrated.legacyPreferences;
+  }
+  return legacyPreferences === undefined ? { record } : { record, legacyPreferences };
+}
+
+// The strip alone, for callers that validate with their own parser (the server read path keeps Zod):
+// a record this build cannot read is returned unchanged, and the caller's schema rejects it.
+export function migrateProfileRecord(raw: unknown): unknown {
+  if (!isRecord(raw)) return raw;
+  const { schemaVersion } = raw;
+  if (typeof schemaVersion !== "number" || !Number.isInteger(schemaVersion)) return raw;
+  if (schemaVersion < 1 || schemaVersion > PROFILE_SCHEMA_VERSION) return raw;
+  return applyMigrations(raw).record;
 }
 
 export function migrateProfile(raw: unknown): MigrationResult {
@@ -41,16 +101,13 @@ export function migrateProfile(raw: unknown): MigrationResult {
     return { ok: false, reason: "unsupported_version" };
   }
 
-  let record = raw;
-  for (let version = schemaVersion; version < PROFILE_SCHEMA_VERSION; version += 1) {
-    const migrate = MIGRATIONS[version];
-    if (!migrate) return { ok: false, reason: "unsupported_version" };
-    record = migrate(record);
-  }
-
+  const { record, legacyPreferences } = applyMigrations(raw);
   // Only the outcome leaves this function: nothing derived from the student's values is reported.
   const parsed = parseProfile(record);
-  return parsed === null ? { ok: false, reason: "invalid" } : { ok: true, profile: parsed };
+  if (parsed === null) return { ok: false, reason: "invalid" };
+  return legacyPreferences === undefined
+    ? { ok: true, profile: parsed }
+    : { ok: true, profile: parsed, legacyPreferences };
 }
 
 // Pure: turns the raw stored string into an outcome without touching storage.
@@ -63,9 +120,10 @@ export function decodeProfile(raw: string | null): StoredProfile {
     return { status: "reset", reason: "invalid" };
   }
   const migrated = migrateProfile(json);
-  return migrated.ok
+  if (!migrated.ok) return { status: "reset", reason: migrated.reason };
+  return migrated.legacyPreferences === undefined
     ? { status: "ok", profile: migrated.profile }
-    : { status: "reset", reason: migrated.reason };
+    : { status: "ok", profile: migrated.profile, legacyPreferences: migrated.legacyPreferences };
 }
 
 // App code must go through the store (save/clear), not call this directly: a same-tab write fires
@@ -79,6 +137,9 @@ export function readProfile(storage: StorageLike): StoredProfile {
   }
   const stored = decodeProfile(raw);
   if (stored.status === "reset") removeQuietly(storage, PROFILE_KEY);
+  if (stored.status === "ok" && stored.legacyPreferences !== undefined) {
+    seedFiltersFromLegacy(storage, stored.legacyPreferences);
+  }
   return stored;
 }
 

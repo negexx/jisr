@@ -4,6 +4,7 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import type { MatchFilters } from "@/data-schema/match-filters";
 import { type Profile, ProfileSchema } from "@/data-schema/profile";
 import type { AdmissionRoute, CostProfile, Program, Scholarship } from "@/data-schema/resolved";
 import {
@@ -83,7 +84,7 @@ afterAll(() => {
 
 function makeProfile(overrides: Partial<Profile> = {}, languageLevel: "B2" | "A2" = "B2"): Profile {
   return ProfileSchema.parse({
-    schemaVersion: 1,
+    schemaVersion: 2,
     nationality: "XA",
     credential: {
       country: "XA",
@@ -97,13 +98,20 @@ function makeProfile(overrides: Partial<Profile> = {}, languageLevel: "B2" | "A2
     },
     priorHigherEducationYears: 0,
     languages: [{ language: "xx", level: languageLevel, certificate: "xx-test-cert" }],
+    ...overrides,
+  });
+}
+
+function makeFilters(overrides: Partial<MatchFilters> = {}): MatchFilters {
+  return {
+    schemaVersion: 1,
     fields: ["xx-test-field"],
     studyLanguages: [],
     destinations: [],
-    budget: null,
     institutionType: "any",
+    budget: null,
     ...overrides,
-  });
+  };
 }
 
 function match(profile: Profile, now: string) {
@@ -341,21 +349,21 @@ describe("generateChecklist on built shards", () => {
 
 describe("filterPrograms on built shards", () => {
   it("keeps the program for a matching preference set", () => {
-    const profile = makeProfile({ destinations: ["XB"], studyLanguages: ["xx"] });
-    expect(filterPrograms(profile, [built.program], FRESH)).toEqual({
+    const filters = makeFilters({ destinations: ["XB"], studyLanguages: ["xx"] });
+    expect(filterPrograms(filters, [built.program], FRESH)).toEqual({
       kept: [built.program],
       excluded: [],
     });
   });
 
   it("hides on a definite mismatch and returns the reasons", () => {
-    const profile = makeProfile({
+    const filters = makeFilters({
       destinations: ["XC"],
       fields: ["xx-other-field"],
       institutionType: "private",
       studyLanguages: ["yy"],
     });
-    const result = filterPrograms(profile, [built.program], FRESH);
+    const result = filterPrograms(filters, [built.program], FRESH);
 
     expect(result.kept).toEqual([]);
     expect(result.excluded).toEqual([
@@ -367,8 +375,8 @@ describe("filterPrograms on built shards", () => {
   });
 
   it("stale language data never hides a program", () => {
-    const profile = makeProfile({ studyLanguages: ["yy"] });
-    expect(filterPrograms(profile, [built.program], FRESH).kept).toEqual([]);
-    expect(filterPrograms(profile, [built.program], STALE).kept).toEqual([built.program]);
+    const filters = makeFilters({ studyLanguages: ["yy"] });
+    expect(filterPrograms(filters, [built.program], FRESH).kept).toEqual([]);
+    expect(filterPrograms(filters, [built.program], STALE).kept).toEqual([built.program]);
   });
 });

@@ -25,10 +25,8 @@ import { ArrowIcon, ChevronDownIcon } from "./icons";
 import { initialWizardState } from "./initial-state";
 import { groupKeyForPath, type ShownIssue, shownIssues } from "./issues";
 import { StepBac } from "./step-bac";
-import { StepBudget } from "./step-budget";
 import { StepProvider } from "./step-context";
 import { StepLanguages } from "./step-languages";
-import { StepPreferences } from "./step-preferences";
 import { StepReview } from "./step-review";
 import { useDraftAutosave } from "./use-draft-autosave";
 
@@ -303,8 +301,6 @@ function WizardBody({ core, text, locale, onCleared }: WizardProps & { onCleared
           >
             {stepId === "bac" ? <StepBac /> : null}
             {stepId === "languages" ? <StepLanguages /> : null}
-            {stepId === "preferences" ? <StepPreferences /> : null}
-            {stepId === "budget" ? <StepBudget /> : null}
             {stepId === "review" ? <StepReview /> : null}
           </StepProvider>
         </section>

@@ -8,14 +8,10 @@ import { languageName } from "./display-names";
 
 export type ProfileT = ReturnType<typeof useTranslations<"profile">>;
 
-type Kind = "grade" | "budget" | "years" | "fields" | "choice";
+type Kind = "grade" | "years" | "choice";
 
-const LIST_ITEM = /^(fields|studyLanguages|destinations)\.[0-9]+$/;
-
-// One form control (or one checkbox group) per key: "fields.2" belongs to the "fields" group.
 export function groupKeyForPath(path: string): string {
-  const item = LIST_ITEM.exec(path);
-  return item?.[1] ?? path;
+  return path;
 }
 
 // Ids are made of the structural path only (never a typed value), so links from the error summary
@@ -28,9 +24,7 @@ function kindOf(path: string): Kind {
   if (path === "credential.overall" || /^credential\.subjects\.[0-9]+\.grade$/.test(path)) {
     return "grade";
   }
-  if (path === "budget.amount") return "budget";
   if (path === "priorHigherEducationYears") return "years";
-  if (groupKeyForPath(path) === "fields") return "fields";
   return "choice";
 }
 
@@ -43,7 +37,7 @@ export function issueMessage(t: ProfileT, issue: StepIssue): string {
   switch (issue.code) {
     case "required":
       if (kind === "grade") return t("errors.required.grade");
-      return kind === "fields" ? t("errors.required.fields") : t("errors.required.choice");
+      return t("errors.required.choice");
     case "not_a_number":
       return t("errors.not_a_number");
     case "ambiguous_number":
@@ -51,11 +45,7 @@ export function issueMessage(t: ProfileT, issue: StepIssue): string {
     case "too_many_decimals":
       return t("errors.too_many_decimals");
     case "out_of_range":
-      // Budgets share the code with grades but only ever go over the 7-digit cap, so the message
-      // names that cap and not a range.
-      return kind === "budget"
-        ? t("errors.out_of_range.budget", { max: param(issue, "max") })
-        : t("errors.out_of_range.grade", { min: param(issue, "min"), max: param(issue, "max") });
+      return t("errors.out_of_range.grade", { min: param(issue, "min"), max: param(issue, "max") });
     case "unknown_option":
       return t("errors.unknown_option");
     case "certificate_language_mismatch":
@@ -112,20 +102,6 @@ function labelFor(t: ProfileT, path: string, form: FormState, locale: AppLocale)
       return t("fields.subjects.legend");
     case "priorHigherEducationYears":
       return t("fields.years.label");
-    case "fields":
-      return t("fields.fieldsOfStudy.legend");
-    case "studyLanguages":
-      return t("fields.studyLanguages.legend");
-    case "destinations":
-      return t("fields.destinations.legend");
-    case "institutionType":
-      return t("fields.institution.legend");
-    case "budget.amount":
-      return t("fields.budget.amount.label");
-    case "budget.currency":
-      return t("fields.budget.currency.label");
-    case "budget.period":
-      return t("fields.budget.period.label");
     default:
       return null;
   }

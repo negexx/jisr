@@ -14,7 +14,7 @@ import { profileStore } from "@/lib/profile/store";
 import type { SnapshotBundle, SnapshotClient } from "@/lib/snapshot/client";
 import { SnapshotError } from "@/lib/snapshot/errors";
 import { shardsForMatches } from "@/lib/snapshot/plan";
-import { E2E_NOW, E2E_PROFILE, E2E_SLUGS, filtersFromProfile } from "../../fixtures/e2e/profiles";
+import { E2E_FILTERS, E2E_NOW, E2E_PROFILE, E2E_SLUGS } from "../../fixtures/e2e/profiles";
 import { forbidConsole } from "../../lib/profile/no-console";
 import { LOCALES } from "../trust-helpers";
 import { bundleClient, catalogs, Providers, renderMatches, withFixtureClient } from "./helpers";
@@ -213,7 +213,7 @@ describe("My Matches: data states", () => {
     // Every fixture program is outside a destination nobody published.
     profileStore.save(E2E_PROFILE);
     writeMatchFilters(window.localStorage, {
-      ...filtersFromProfile(E2E_PROFILE),
+      ...E2E_FILTERS,
       destinations: ["XZ"],
     });
     renderMatches(locale, bundleClient(bundle));
@@ -234,9 +234,9 @@ describe("My Matches: data states", () => {
   });
 });
 
-it("applies the stored match filters rather than the profile's preference fields", async () => {
-  profileStore.save({ ...E2E_PROFILE, institutionType: "any" });
-  writeMatchFilters(window.localStorage, filtersFromProfile(E2E_PROFILE));
+it("applies the stored match filters", async () => {
+  profileStore.save(E2E_PROFILE);
+  writeMatchFilters(window.localStorage, E2E_FILTERS);
   const bundle = await loadedBundle();
   const load = vi.fn<SnapshotClient["load"]>(async () => bundle);
   renderMatches("en", { load });

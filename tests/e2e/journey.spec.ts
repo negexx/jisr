@@ -3,8 +3,8 @@ import type { Page } from "@playwright/test";
 import {
   DRAFT_KEY,
   E2E_EXPECTED,
+  E2E_FILTERS_WITH_BUDGET,
   E2E_PROFILE,
-  E2E_PROFILE_WITH_BUDGET,
   E2E_SLUGS,
   PROFILE_KEY,
   PROGRAM_SECTION_IDS,
@@ -23,7 +23,7 @@ import {
 import { escapeRegExp, startsWith, translatorFor } from "./support/messages";
 import { rangeSeparator } from "./support/money";
 import { JOURNEY_FORM, ProfileFormDriver } from "./support/profile-form";
-import { seedProfile } from "./support/seed";
+import { seedFilters, seedProfile } from "./support/seed";
 
 const OFFICIAL_WORDS = /official|officiel|رسمي|الرسمية/i;
 
@@ -314,7 +314,8 @@ for (const { locale, dir } of E2E_LOCALES) {
       // The form only offers EUR and MAD, so a budget that can be compared with the XTS costs of
       // the fixture can only come from storage.
       test.beforeEach(async ({ page }) => {
-        await seedProfile(page, E2E_PROFILE_WITH_BUDGET);
+        await seedProfile(page, E2E_PROFILE);
+        await seedFilters(page, E2E_FILTERS_WITH_BUDGET);
       });
 
       test("the budget is compared with the estimate and never hides a program", async ({

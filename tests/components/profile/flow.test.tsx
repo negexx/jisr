@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { cleanup, screen, waitFor, within } from "@testing-library/react";
+import { cleanup, screen, within } from "@testing-library/react";
 import type userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
@@ -75,11 +75,6 @@ async function toReview(user: User) {
   await stepHeading("Languages");
   await fillLanguages(user);
   await next(user);
-  await stepHeading("What you want");
-  await user.click(screen.getByRole("checkbox", { name: "Test computer science" }));
-  await next(user);
-  await stepHeading("Budget");
-  await next(user);
   await stepHeading("Review");
 }
 
@@ -134,7 +129,7 @@ describe("step navigation", () => {
     await next(user);
     const heading = await stepHeading("Languages");
     expect(document.activeElement).toBe(heading);
-    expect(screen.getByText("Step 2 of 4: Languages", { selector: "[aria-live]" })).toBeTruthy();
+    expect(screen.getByText("Step 2 of 2: Languages", { selector: "[aria-live]" })).toBeTruthy();
   });
 
   it("Back never loses data", async () => {
@@ -386,88 +381,7 @@ describe("languages step", () => {
     await stepHeading("Languages");
     await fillLanguages(user);
     await next(user);
-    expect(await stepHeading("What you want")).toBeTruthy();
-  });
-});
-
-describe("preferences and budget", () => {
-  it("needs at least one field of study", async () => {
-    const { user } = renderProfileForm("en", fixtureClient());
-    await stepHeading("Your Bac");
-    await fillBac(user);
-    await next(user);
-    await stepHeading("Languages");
-    await fillLanguages(user);
-    await next(user);
-    await stepHeading("What you want");
-    await next(user);
-    expect(screen.getAllByText("Choose at least one field of study").length).toBeGreaterThan(0);
-    await user.click(screen.getByRole("checkbox", { name: "Test computer science" }));
-    await waitFor(() => expect(screen.queryByRole("alert")).toBeNull());
-    await next(user);
-    expect(await stepHeading("Budget")).toBeTruthy();
-  });
-
-  it("rejects 10.000 as a budget with the whole-number message", async () => {
-    const { user } = renderProfileForm("en", fixtureClient());
-    await stepHeading("Your Bac");
-    await fillBac(user);
-    await next(user);
-    await stepHeading("Languages");
-    await fillLanguages(user);
-    await next(user);
-    await user.click(await screen.findByRole("checkbox", { name: "Test computer science" }));
-    await next(user);
-    await stepHeading("Budget");
-    const amount = textbox(/^Amount you can spend/);
-    expect(amount.getAttribute("inputmode")).toBe("numeric");
-    await user.type(amount, "10.000");
-    await next(user);
-    expect(
-      screen.getAllByText(/Write the amount as a whole number, without dots or commas/).length,
-    ).toBeGreaterThan(0);
-    expect(screen.getByRole("heading", { level: 2, name: "Budget" })).toBeTruthy();
-  });
-
-  it("says a budget above the cap is too large, not out of a range", async () => {
-    const { user } = renderProfileForm("en", fixtureClient());
-    await stepHeading("Your Bac");
-    await fillBac(user);
-    await next(user);
-    await stepHeading("Languages");
-    await fillLanguages(user);
-    await next(user);
-    await user.click(await screen.findByRole("checkbox", { name: "Test computer science" }));
-    await next(user);
-    await stepHeading("Budget");
-    await user.type(textbox(/^Amount you can spend/), "12345678");
-    await next(user);
-    expect(
-      screen.getAllByText("Enter an amount of 9999999 at most, as a whole number").length,
-    ).toBeGreaterThan(0);
-  });
-
-  it("shows the MAD note only for MAD and always says the budget never hides programs", async () => {
-    const { user } = renderProfileForm("en", fixtureClient());
-    await stepHeading("Your Bac");
-    await fillBac(user);
-    await next(user);
-    await stepHeading("Languages");
-    await fillLanguages(user);
-    await next(user);
-    await user.click(await screen.findByRole("checkbox", { name: "Test computer science" }));
-    await next(user);
-    await stepHeading("Budget");
-    expect(screen.getByText(/Your budget never hides a program/)).toBeTruthy();
-    expect(screen.queryByText(/cannot be compared with the costs in euros yet/)).toBeNull();
-    await user.selectOptions(combobox(/^Currency/), "MAD");
-    expect(screen.getByText(/cannot be compared with the costs in euros yet/)).toBeTruthy();
-  });
-
-  it("accepts an empty budget", async () => {
-    const { user } = renderProfileForm("en", fixtureClient());
-    await toReview(user);
-    expect(screen.getAllByText("Not given", { selector: "dd" }).length).toBeGreaterThan(0);
+    expect(await stepHeading("Review")).toBeTruthy();
   });
 });
 

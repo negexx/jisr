@@ -66,10 +66,8 @@ const cases: [ProfileIssueCode, string, Profile][] = [
     "languages.0.certificate",
     profile({ languages: [{ language: "fr", level: "B2", certificate: "xx-test-cert-en" }] }),
   ],
-  ["unknown_field", "fields.1", profile({ fields: ["xx-test-field", "xx-test-nofield"] })],
   ["unknown_country", "nationality", profile({ nationality: "ZZ" })],
   ["unknown_country", "credential.country", profile({ credential: { country: "ZZ" } })],
-  ["unknown_country", "destinations.1", profile({ destinations: ["XB", "ZZ"] })],
 ];
 
 describe("checkProfileAgainstReference", () => {
@@ -77,11 +75,10 @@ describe("checkProfileAgainstReference", () => {
     expect(checkProfileAgainstReference(profile(), core)).toEqual([]);
   });
 
-  it("accepts a profile with no overall grade, no certificate and a destination", () => {
+  it("accepts a profile with no overall grade and no certificate", () => {
     const clean = profile({
       credential: { overall: null, subjects: [] },
       languages: [{ language: "en", level: "unknown", certificate: null }],
-      destinations: ["XB"],
     });
     expect(checkProfileAgainstReference(clean, core)).toEqual([]);
   });

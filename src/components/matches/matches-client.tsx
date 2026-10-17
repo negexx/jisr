@@ -31,7 +31,6 @@ import {
   NoProgramsState,
   ResetNotice,
 } from "./matches-states";
-import { ProfileSummary } from "./profile-summary";
 
 type OkView = Extract<MatchesView, { kind: "ok" }>;
 
@@ -169,16 +168,10 @@ export function MatchesClient({ locale, client }: { locale: AppLocale; client?: 
 
     const { view, bundle } = outcome;
     if (view.kind === "no_programs") return { loading: false, node: <NoProgramsState /> };
-    const { core } = bundle;
-    // `ok` needs the core shard, which buildMatchesView already required.
-    const summary =
-      core === undefined ? null : (
-        <ProfileSummary profile={profile} core={core} text={bundle.text} locale={locale} />
-      );
     return {
       loading: false,
       node: (
-        <MatchesLayout aside={summary}>
+        <MatchesLayout aside={null}>
           <Results
             view={view}
             budgetProvided={filters.budget !== null}

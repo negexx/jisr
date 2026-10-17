@@ -9,12 +9,16 @@ import { MatchStatusBadge } from "@/components/match-status-badge";
 import { ReasonList } from "@/components/reason-list";
 import { ReportSnapshot } from "@/components/report-outdated/report-context";
 import { Button } from "@/components/ui/button";
+import type { MatchFilters } from "@/data-schema/match-filters";
 import type { CountryCode, Slug } from "@/data-schema/primitives";
 import type { Profile } from "@/data-schema/profile";
 import { Link } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
 import { useSessionHint } from "@/lib/auth/session-hint";
 import { todayIso } from "@/lib/clock";
+import { getLocalStorage } from "@/lib/local-storage";
+import { readMatchFilters } from "@/lib/matches/filter-store";
+import { EMPTY_MATCH_FILTERS } from "@/lib/matches/filters";
 import { useProfile } from "@/lib/profile/use-profile";
 import type { SnapshotBundle, SnapshotClient } from "@/lib/snapshot/client";
 import { shardsForProgram } from "@/lib/snapshot/plan";
@@ -216,6 +220,12 @@ export function PersonalMatch({
   const t = useTranslations("program.personal");
   const { state: profileState } = useProfile();
   const profile = profileState.status === "ok" ? profileState.profile : null;
+  // The budget is a transient filter, read once after mount; it only annotates the cost, never renders
+  // before the result is computed, so the server and first client render are unaffected.
+  const [filters] = useState<MatchFilters>(() => {
+    const storage = getLocalStorage();
+    return storage === null ? EMPTY_MATCH_FILTERS : readMatchFilters(storage);
+  });
   const country = profile?.credential.country ?? null;
   // The key names every input of the plan (this program and the credential country), per the useSnapshotBundle contract.
   const request: SnapshotRequest | null =
@@ -234,7 +244,14 @@ export function PersonalMatch({
     let current = true;
     import("./personal-outcome").then(
       (module) => {
-        const outcome = module.personalOutcome(profile, bundle, program.slug, locale, todayIso());
+        const outcome = module.personalOutcome(
+          profile,
+          filters.budget,
+          bundle,
+          program.slug,
+          locale,
+          todayIso(),
+        );
         if (current) setComputed({ bundle, profile, locale, outcome });
       },
       () => {
@@ -244,7 +261,7 @@ export function PersonalMatch({
     return () => {
       current = false;
     };
-  }, [profile, bundle, program.slug, locale]);
+  }, [profile, filters, bundle, program.slug, locale]);
   // Only a result computed for exactly this profile, bundle and locale is shown.
   const outcome =
     computed !== null &&
@@ -270,7 +287,7 @@ export function PersonalMatch({
       <ReportSnapshot version={bundle?.snapshotVersion ?? null}>
         <ResultDetails
           result={outcome.result}
-          budgetProvided={profile.budget !== null}
+          budgetProvided={filters.budget !== null}
           scholarshipSlugs={scholarshipSlugs}
         />
       </ReportSnapshot>

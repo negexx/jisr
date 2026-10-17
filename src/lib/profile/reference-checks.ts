@@ -14,7 +14,6 @@ export type ProfileIssueCode =
   | "unknown_subject"
   | "unknown_certificate"
   | "certificate_language_mismatch"
-  | "unknown_field"
   | "unknown_country";
 
 // A code and a path only: an issue never carries the student's value.
@@ -43,9 +42,6 @@ export function checkProfileAgainstReference(profile: Profile, core: CoreShard):
 
   checkCountry(profile.nationality, "nationality");
   checkCountry(profile.credential.country, "credential.country");
-  profile.destinations.forEach((code, index) => {
-    checkCountry(code, `destinations.${index}`);
-  });
 
   const type = core.credentialTypes.find(
     (candidate) =>
@@ -74,11 +70,6 @@ export function checkProfileAgainstReference(profile: Profile, core: CoreShard):
     const path = `languages.${index}.certificate`;
     if (!certificate) add("unknown_certificate", path);
     else if (certificate.language !== entry.language) add("certificate_language_mismatch", path);
-  });
-
-  const fields = new Set(core.fields.map((field) => field.slug));
-  profile.fields.forEach((slug, index) => {
-    if (!fields.has(slug)) add("unknown_field", `fields.${index}`);
   });
 
   return issues;
