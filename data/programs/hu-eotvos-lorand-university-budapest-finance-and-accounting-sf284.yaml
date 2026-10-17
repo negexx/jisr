@@ -97,6 +97,3 @@ sources:
   page-2:
     url: https://tempus.tpf.hu/studyfinder/index/show/284
     last_verified_at: 2026-10-05
-  page-1:
-    url: https://oif.gov.hu/factsheets/residence-of-the-student-pupil
-    last_verified_at: 2026-10-10
