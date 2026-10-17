@@ -221,6 +221,17 @@ describe.each(["fr", "ar", "en"] as const)("SignInForm (%s)", (locale) => {
       additionalData: { ageConfirmed: true, consentVersion: CURRENT_CONSENT_VERSION },
     });
   });
+
+  it("draws the decorative Google mark without changing the button name, and labels the email submit with submit", () => {
+    renderSignup(<SignInForm locale={locale} />, locale);
+    const google = screen.getByRole("button", { name: t.google });
+    const mark = google.querySelector('svg[aria-hidden="true"]');
+    expect(mark).not.toBeNull();
+    expect(mark?.getAttribute("focusable")).toBe("false");
+    expect(google.textContent).toBe(t.google);
+    const submit = screen.getByRole("button", { name: t.submit });
+    expect(submit.textContent).toBe(t.submit);
+  });
 });
 
 describe.each(["fr", "ar", "en"] as const)("FinishSignupGate (%s)", (locale) => {

@@ -1150,7 +1150,7 @@
       "hintSignedIn": "Moins de 16 ans ? Vous pouvez utiliser Jisr sans compte : tout fonctionne."
     },
     "required": "obligatoire",
-    "submit": "Recevoir un lien de connexion",
+    "submit": "Continuer avec",
     "sending": "Envoi du lien…",
     "orEmail": "Ou continuer avec un e-mail",
     "google": "Continuer avec Google",

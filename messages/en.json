@@ -1150,7 +1150,7 @@
       "hintSignedIn": "Under 16? You can use Jisr without an account: everything works."
     },
     "required": "required",
-    "submit": "Email me a sign-in link",
+    "submit": "Continue with",
     "sending": "Sending the link…",
     "orEmail": "Or continue with email",
     "google": "Continue with Google",

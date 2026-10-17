@@ -15,6 +15,7 @@ import { requestSignInLink } from "@/lib/server/signup";
 import { cn } from "@/lib/utils";
 
 import { ConfirmationCheckbox, PrivacyNoticeLink } from "./confirmation-checkbox";
+import { GoogleMark } from "./google-mark";
 
 type FieldErrors = { email?: string; consent?: string; age?: string };
 
@@ -169,6 +170,7 @@ export function SignInForm({ locale }: { locale: AppLocale }) {
         aria-disabled={busy}
         onClick={continueWithGoogle}
       >
+        <GoogleMark />
         {t("google")}
       </Button>
 
