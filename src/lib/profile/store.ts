@@ -16,6 +16,7 @@ import {
   decodeProfile,
   getLocalStorage,
   PROFILE_KEY,
+  persistMigratedProfile,
   type ResetReason,
   removeQuietly,
   type StorageLike,
@@ -97,12 +98,17 @@ export function createProfileStore(getStorage: () => StorageLike | null): Profil
       else if (stored.status === "ok") resetReason = null;
 
       if (stored.status === "ok") {
-        // A profile migrated from v1 hands over the preference values it stripped; seed them once.
+        // A profile migrated from v1 hands over the preference values it stripped; seed them once and
+        // persist the v2 record so a later read cannot seed again after the filters are emptied. The
+        // evidence keeps the key aligned with what is now stored, so the rewrite is not read back as
+        // an external change on the next refresh.
         if (stored.legacyPreferences !== undefined && storage) {
           seedFiltersFromLegacy(storage, stored.legacyPreferences);
+          evidence = persistMigratedProfile(storage, stored.profile) ?? raw ?? "";
+        } else {
+          evidence = raw ?? "";
         }
         state = { status: "ok", profile: stored.profile, storageAvailable };
-        evidence = raw ?? "";
       } else if (resetReason) {
         state = { status: "reset", reason: resetReason, storageAvailable };
         evidence = "";

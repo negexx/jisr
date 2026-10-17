@@ -3,6 +3,8 @@ import { act, cleanup, render, renderHook } from "@testing-library/react";
 import { hydrateRoot } from "react-dom/client";
 import { renderToString } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { MATCH_FILTERS_KEY, readMatchFilters, writeMatchFilters } from "@/lib/matches/filter-store";
+import { EMPTY_MATCH_FILTERS } from "@/lib/matches/filters";
 import { writeDraft } from "@/lib/profile/draft";
 import { DRAFT_KEY, PROFILE_KEY } from "@/lib/profile/storage";
 import { createProfileStore, type ProfileState } from "@/lib/profile/store";
@@ -12,6 +14,26 @@ import { createFakeStorage } from "./fake-storage";
 import { forbidConsole } from "./no-console";
 
 forbidConsole();
+
+const V1 = {
+  schemaVersion: 1,
+  nationality: "XA",
+  credential: {
+    country: "XA",
+    type: "xx-test-cred",
+    track: "xx-test-track-sci",
+    status: "obtained",
+    overall: { scale: "xx-test-scale-20", value: 14 },
+    subjects: [{ subject: "xx-test-math", grade: { scale: "xx-test-scale-20", value: 15 } }],
+  },
+  priorHigherEducationYears: 0,
+  languages: [{ language: "fr", level: "B2", certificate: "xx-test-cert-fr" }],
+  fields: ["xx-test-field"],
+  studyLanguages: ["fr"],
+  destinations: ["XB"],
+  budget: null,
+  institutionType: "any",
+};
 
 function fireStorageEvent(key: string | null): void {
   window.dispatchEvent(new StorageEvent("storage", { key }));
@@ -438,6 +460,34 @@ describe("createProfileStore", () => {
       });
       expect(store.getSnapshot()).toEqual({ status: "none", storageAvailable: false });
     });
+  });
+});
+
+describe("v1 profile migration in the store", () => {
+  it("seeds the filters once and never re-seeds after the student empties them", () => {
+    const storage = createFakeStorage();
+    storage.seed(PROFILE_KEY, JSON.stringify(V1));
+    const store = createProfileStore(() => storage);
+    expect(store.getSnapshot().status).toBe("ok");
+    expect(readMatchFilters(storage).fields).toEqual(["xx-test-field"]);
+    expect(storage.raw(PROFILE_KEY)).toContain('"schemaVersion":2');
+
+    writeMatchFilters(storage, EMPTY_MATCH_FILTERS);
+    // Without subscribers getSnapshot re-reads storage, so the migrated record is read again.
+    expect(store.getSnapshot().status).toBe("ok");
+    expect(readMatchFilters(storage)).toEqual(EMPTY_MATCH_FILTERS);
+
+    storage.removeItem(MATCH_FILTERS_KEY);
+    store.getSnapshot();
+    expect(storage.raw(MATCH_FILTERS_KEY)).toBeNull();
+  });
+
+  it("keeps the same snapshot object when a migrated profile is read again", () => {
+    const storage = createFakeStorage();
+    storage.seed(PROFILE_KEY, JSON.stringify(V1));
+    const store = createProfileStore(() => storage);
+    const first = store.getSnapshot();
+    expect(store.getSnapshot()).toBe(first);
   });
 });
 

@@ -126,6 +126,19 @@ export function decodeProfile(raw: string | null): StoredProfile {
     : { status: "ok", profile: migrated.profile, legacyPreferences: migrated.legacyPreferences };
 }
 
+// The one-shot half of the migration: a v1 record is rewritten as its v2 form on the first read, so
+// later reads carry no `legacyPreferences` and cannot re-seed the filter store once the student has
+// emptied it. Returns the string that is now stored, or null when the write was refused.
+export function persistMigratedProfile(storage: StorageLike, profile: Profile): string | null {
+  const json = JSON.stringify(profile);
+  try {
+    storage.setItem(PROFILE_KEY, json);
+    return json;
+  } catch {
+    return null;
+  }
+}
+
 // App code must go through the store (save/clear), not call this directly: a same-tab write fires
 // no `storage` event, so a direct write would leave the store's cached snapshot stale.
 export function readProfile(storage: StorageLike): StoredProfile {
@@ -138,6 +151,7 @@ export function readProfile(storage: StorageLike): StoredProfile {
   const stored = decodeProfile(raw);
   if (stored.status === "reset") removeQuietly(storage, PROFILE_KEY);
   if (stored.status === "ok" && stored.legacyPreferences !== undefined) {
+    persistMigratedProfile(storage, stored.profile);
     seedFiltersFromLegacy(storage, stored.legacyPreferences);
   }
   return stored;

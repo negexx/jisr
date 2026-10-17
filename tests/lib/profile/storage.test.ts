@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { MATCH_FILTERS_VERSION } from "@/lib/constants";
 import { MATCH_FILTERS_KEY, readMatchFilters, writeMatchFilters } from "@/lib/matches/filter-store";
+import { EMPTY_MATCH_FILTERS } from "@/lib/matches/filters";
 import {
   clearLocalData,
   DRAFT_KEY,
@@ -106,7 +107,7 @@ describe("v1 to v2 migration", () => {
     });
   });
 
-  it("seeds jisr.matches-filters once from the removed values", () => {
+  it("seeds jisr.matches-filters from the removed values", () => {
     const storage = createFakeStorage();
     storage.seed(PROFILE_KEY, JSON.stringify(V1));
     readProfile(storage);
@@ -118,6 +119,34 @@ describe("v1 to v2 migration", () => {
       institutionType: "public",
       budget: { amountMinor: 90_000, currency: "EUR", period: "month" },
     });
+  });
+
+  it("rewrites the v1 record as v2, so a later read carries no legacy preferences", () => {
+    const storage = createFakeStorage();
+    storage.seed(PROFILE_KEY, JSON.stringify(V1));
+    readProfile(storage);
+    const persisted = JSON.parse(storage.raw(PROFILE_KEY) ?? "null") as Record<string, unknown>;
+    expect(persisted.schemaVersion).toBe(2);
+    expect(persisted).not.toHaveProperty("fields");
+    const second = readProfile(storage);
+    expect(second.status).toBe("ok");
+    expect(second.status === "ok" && second.legacyPreferences).toBeUndefined();
+  });
+
+  it("seeds once: emptying the filter store does not resurrect the legacy values", () => {
+    const storage = createFakeStorage();
+    storage.seed(PROFILE_KEY, JSON.stringify(V1));
+    readProfile(storage);
+    expect(readMatchFilters(storage).fields).toEqual(["xx-test-field"]);
+
+    // The student clears the filters: an empty document, then a removed key.
+    storage.setItem(MATCH_FILTERS_KEY, JSON.stringify(EMPTY_MATCH_FILTERS));
+    readProfile(storage);
+    expect(readMatchFilters(storage)).toEqual(EMPTY_MATCH_FILTERS);
+
+    storage.removeItem(MATCH_FILTERS_KEY);
+    readProfile(storage);
+    expect(storage.raw(MATCH_FILTERS_KEY)).toBeNull();
   });
 
   it("does not overwrite an already-set filter store", () => {
