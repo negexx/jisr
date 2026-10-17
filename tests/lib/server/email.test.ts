@@ -28,7 +28,7 @@ const BASE_ENV = {
 const BREVO_ENV = {
   ...BASE_ENV,
   BREVO_API_KEY: "xkeysib-test-key",
-  BREVO_SENDER: "Jisr <no-reply@jisrr.org>",
+  BREVO_SENDER: "Jisrr <no-reply@jisrr.org>",
 };
 
 function request(overrides: Partial<Parameters<typeof sendAuthEmail>[0]> = {}) {
@@ -144,12 +144,12 @@ describe("renderAuthEmail for a sign-up link", () => {
   // and accepts this notice version, and an unasked-for email is ignored with no account created.
   const WORDING = {
     fr: {
-      creates: /ouvrir ce lien crée ou ouvre votre compte Jisr/i,
+      creates: /ouvrir ce lien crée ou ouvre votre compte Jisrr/i,
       age: /16 ans ou plus/,
       ignore: /ignorez ce message[\s\S]*aucun compte n'est créé/i,
     },
     en: {
-      creates: /opening this link creates or opens your Jisr account/i,
+      creates: /opening this link creates or opens your Jisrr account/i,
       age: /16 or older/,
       ignore: /ignore this email[\s\S]*no account is created/i,
     },
@@ -207,7 +207,7 @@ describe("sendAuthEmail template choice", () => {
 
   it("sends the sign-up wording only when the metadata mode is signup", async () => {
     expect(await writtenText({ locale: "en", mode: "signup" })).toMatch(
-      /opening this link creates or opens your Jisr account/i,
+      /opening this link creates or opens your Jisrr account/i,
     );
     for (const metadata of [
       undefined,
@@ -218,7 +218,7 @@ describe("sendAuthEmail template choice", () => {
         mode: "SIGNUP",
       },
     ]) {
-      expect(await writtenText(metadata)).not.toMatch(/creates or opens your Jisr account/i);
+      expect(await writtenText(metadata)).not.toMatch(/creates or opens your Jisrr account/i);
     }
   });
 });
@@ -367,7 +367,7 @@ describe("sendAuthEmail transport selection", () => {
   });
 
   it("throws a named error when a key is set but the sender is missing or malformed", async () => {
-    for (const sender of ["", "not-an-address", "Jisr <broken>"]) {
+    for (const sender of ["", "not-an-address", "Jisrr <broken>"]) {
       const { fetchMock } = recordingFetch();
       await expect(
         sendAuthEmail(request(), {
@@ -434,7 +434,7 @@ describe("sendAuthEmail through Brevo", () => {
     expect(headers.get("accept")).toBe("application/json");
     const rendered = renderAuthEmail("magic-link", "ar", URL_IN);
     expect(sentBody(calls)).toEqual({
-      sender: { email: "no-reply@jisrr.org", name: "Jisr" },
+      sender: { email: "no-reply@jisrr.org", name: "Jisrr" },
       to: [{ email: ADDRESS }],
       subject: rendered.subject,
       textContent: rendered.text,
@@ -448,7 +448,7 @@ describe("sendAuthEmail through Brevo", () => {
       fetch: fetchMock,
       waitUntil: waitUntilNoop,
     });
-    expect(sentBody(calls).sender).toEqual({ email: "no-reply@jisrr.org", name: "Jisr" });
+    expect(sentBody(calls).sender).toEqual({ email: "no-reply@jisrr.org", name: "Jisrr" });
   });
 
   it("sends the delete-account email with its own subject", async () => {

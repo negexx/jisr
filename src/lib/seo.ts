@@ -17,7 +17,7 @@ export const INDEXABLE_PATHS: readonly LocalePath[] = [
   "/terms",
 ];
 
-const SITE_NAME = "Jisr";
+const SITE_NAME = "Jisrr";
 
 const OPEN_GRAPH_LOCALE: Record<AppLocale, string> = {
   fr: "fr_FR",

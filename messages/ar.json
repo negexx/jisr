@@ -144,7 +144,7 @@
     }
   },
   "shell": {
-    "siteName": "Jisr",
+    "siteName": "Jisrr",
     "siteNameArabic": "جسر",
     "homeLink": "الصفحة الرئيسية",
     "skipToContent": "انتقل إلى المحتوى"
@@ -744,8 +744,8 @@
   },
   "program": {
     "meta": {
-      "title": "{program}، {institution} | Jisr",
-      "titleWithoutInstitution": "{program} | Jisr",
+      "title": "{program}، {institution} | Jisrr",
+      "titleWithoutInstitution": "{program} | Jisrr",
       "description": "شروط الالتحاق والتكاليف والمواعيد النهائية وطريقة التقديم في {program}، مع مصدر كل معلومة."
     },
     "header": {

@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Wire Spain as a Jisr destination and build + unit-test the thin RUCT importer, so `pnpm data:import spain` stages Spanish Grado candidates; this plan promotes no ES programme (the data runs are Plan 2).
+**Goal:** Wire Spain as a Jisrr destination and build + unit-test the thin RUCT importer, so `pnpm data:import spain` stages Spanish Grado candidates; this plan promotes no ES programme (the data runs are Plan 2).
 
 **Architecture:** Three layers. (1) A data-first skeleton — `data/countries/ES.yaml`, two application channels, the route `ma-bac-to-es.yaml` — validated by `data:check`, no code. (2) A small set of code touchpoints that enumerate destination countries. (3) A new register importer `scripts/import/sources/ruct.ts`, mirroring `scripts/import/sources/mur.ts`: pure parsers/builders unit-tested over captured HTML fixtures, plus one `importSpain()` that fetches and assembles. An ADR records the decision.
 

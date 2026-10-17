@@ -54,7 +54,7 @@ export class AuthEmailTransportNotConfigured extends Error {
 }
 
 const BREVO_ENDPOINT = "https://api.brevo.com/v3/smtp/email";
-const DEFAULT_SENDER_NAME = "Jisr";
+const DEFAULT_SENDER_NAME = "Jisrr";
 const DEFAULT_MAIL_DIR = join("tests", "e2e", ".mail");
 const MAGIC_LINK_VALID_MINUTES = 15;
 
@@ -102,69 +102,69 @@ const TEMPLATES: Record<AuthEmailLocale, Record<AuthEmailTemplate, Template>> = 
     // Anyone can type an address into the sign-up form, so the email itself tells the recipient
     // what opening the link means and that ignoring it creates nothing (todo 28, F2).
     "magic-link-signup": (url, privacyUrl) => ({
-      subject: "Confirmez la création de votre compte Jisr",
+      subject: "Confirmez la création de votre compte Jisrr",
       text: [
         "Bonjour,",
-        "Quelqu'un a demandé à créer un compte Jisr avec cette adresse email. Ouvrir ce lien crée ou ouvre votre compte Jisr :",
+        "Quelqu'un a demandé à créer un compte Jisrr avec cette adresse email. Ouvrir ce lien crée ou ouvre votre compte Jisrr :",
         url,
-        `En l'ouvrant, vous confirmez avoir 16 ans ou plus et accepter la politique de confidentialité de Jisr, version ${CURRENT_CONSENT_VERSION} : ${privacyUrl}`,
+        `En l'ouvrant, vous confirmez avoir 16 ans ou plus et accepter la politique de confidentialité de Jisrr, version ${CURRENT_CONSENT_VERSION} : ${privacyUrl}`,
         `Ce lien est valable ${MAGIC_LINK_VALID_MINUTES} minutes et ne peut être utilisé qu'une seule fois.`,
         "Si vous n'avez pas fait cette demande, ignorez ce message : aucun compte n'est créé.",
-        "Jisr",
+        "Jisrr",
       ].join("\n\n"),
     }),
     "magic-link": (url) => ({
-      subject: "Votre lien de connexion à Jisr",
+      subject: "Votre lien de connexion à Jisrr",
       text: [
         "Bonjour,",
-        "Pour vous connecter à Jisr, ouvrez ce lien :",
+        "Pour vous connecter à Jisrr, ouvrez ce lien :",
         url,
         `Ce lien est valable ${MAGIC_LINK_VALID_MINUTES} minutes et ne peut être utilisé qu'une seule fois. Si vous n'avez pas demandé ce lien, ignorez ce message.`,
-        "Jisr",
+        "Jisrr",
       ].join("\n\n"),
     }),
     "delete-account": (url) => ({
-      subject: "Confirmez la suppression de votre compte Jisr",
+      subject: "Confirmez la suppression de votre compte Jisrr",
       text: [
         "Bonjour,",
-        "Vous avez demandé la suppression de votre compte Jisr et de toutes les données associées. Pour confirmer, ouvrez ce lien :",
+        "Vous avez demandé la suppression de votre compte Jisrr et de toutes les données associées. Pour confirmer, ouvrez ce lien :",
         url,
         "Cette suppression est définitive. Si vous n'êtes pas à l'origine de cette demande, ignorez ce message : votre compte reste inchangé.",
-        "Jisr",
+        "Jisrr",
       ].join("\n\n"),
     }),
   },
   en: {
     "magic-link-signup": (url, privacyUrl) => ({
-      subject: "Confirm your new Jisr account",
+      subject: "Confirm your new Jisrr account",
       text: [
         "Hello,",
-        "Someone asked to create a Jisr account with this email address. Opening this link creates or opens your Jisr account:",
+        "Someone asked to create a Jisrr account with this email address. Opening this link creates or opens your Jisrr account:",
         url,
-        `By opening it, you confirm that you are 16 or older and that you accept the Jisr privacy notice, version ${CURRENT_CONSENT_VERSION}: ${privacyUrl}`,
+        `By opening it, you confirm that you are 16 or older and that you accept the Jisrr privacy notice, version ${CURRENT_CONSENT_VERSION}: ${privacyUrl}`,
         `This link is valid for ${MAGIC_LINK_VALID_MINUTES} minutes and can be used only once.`,
         "If you did not ask for this, ignore this email: no account is created.",
-        "Jisr",
+        "Jisrr",
       ].join("\n\n"),
     }),
     "magic-link": (url) => ({
-      subject: "Your Jisr sign-in link",
+      subject: "Your Jisrr sign-in link",
       text: [
         "Hello,",
-        "To sign in to Jisr, open this link:",
+        "To sign in to Jisrr, open this link:",
         url,
         `This link is valid for ${MAGIC_LINK_VALID_MINUTES} minutes and can be used only once. If you did not request it, you can ignore this message.`,
-        "Jisr",
+        "Jisrr",
       ].join("\n\n"),
     }),
     "delete-account": (url) => ({
-      subject: "Confirm the deletion of your Jisr account",
+      subject: "Confirm the deletion of your Jisrr account",
       text: [
         "Hello,",
-        "You asked to delete your Jisr account and all the data linked to it. To confirm, open this link:",
+        "You asked to delete your Jisrr account and all the data linked to it. To confirm, open this link:",
         url,
         "This deletion is permanent. If you did not make this request, ignore this message: your account stays as it is.",
-        "Jisr",
+        "Jisrr",
       ].join("\n\n"),
     }),
   },

@@ -11,7 +11,7 @@ tools:
   - WebSearch
 ---
 
-You are the planning agent for **Jisr**. Your job is to produce a clear, executable implementation plan — not code, just the strategy and steps.
+You are the planning agent for **Jisrr**. Your job is to produce a clear, executable implementation plan — not code, just the strategy and steps.
 
 ## How you work
 

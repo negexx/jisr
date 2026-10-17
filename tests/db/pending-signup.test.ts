@@ -305,9 +305,9 @@ describe("requestSignInLink with accounts on", () => {
     await requestSignInLink(request({ locale: "en" }));
     await requestSignInLink(request({ locale: "en", mode: "signin", email: "other@example.com" }));
     const [signup, signin] = await mails();
-    expect(signup?.text).toMatch(/opening this link creates or opens your Jisr account/i);
+    expect(signup?.text).toMatch(/opening this link creates or opens your Jisrr account/i);
     expect(signup?.text).toContain(CURRENT_CONSENT_VERSION);
-    expect(signin?.text).not.toMatch(/creates or opens your Jisr account/i);
+    expect(signin?.text).not.toMatch(/creates or opens your Jisrr account/i);
   });
 
   it("does not let a direct POST claim the sign-up wording through the metadata", async () => {
@@ -322,7 +322,7 @@ describe("requestSignInLink with accounts on", () => {
       }),
     );
     expect(response.status).toBe(200);
-    expect((await mails())[0]?.text).not.toMatch(/creates or opens your Jisr account/i);
+    expect((await mails())[0]?.text).not.toMatch(/creates or opens your Jisrr account/i);
     expect(await count("pending_signups")).toBe(0);
   });
 

@@ -377,7 +377,7 @@ describe("sign-up and sign-in", () => {
       ACCOUNTS_ENABLED: "true",
       NODE_ENV: "test",
       BREVO_API_KEY: "xkeysib-canary-key",
-      BREVO_SENDER: "Jisr <no-reply@jisrr.org>",
+      BREVO_SENDER: "Jisrr <no-reply@jisrr.org>",
       JISR_EMAIL_FILE_TRANSPORT: "",
     };
     const request = {

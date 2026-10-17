@@ -1,10 +1,10 @@
-# Architecture — Jisr
+# Architecture — Jisrr
 
 > A map for AI agents and humans. Update when the shape of the system changes, not for every leaf-level edit. Rationale: ADR 0003.
 
 ## One-paragraph overview
 
-Jisr is a free web app that turns a Moroccan Bac graduate's profile into a realistic, costed path to a European Bachelor's degree. Curated, provenance-tagged reference data lives as YAML files in the repo; a build step validates it and publishes immutable JSON snapshots. A pure TypeScript domain core (eligibility, matching, costs, checklist) runs in the browser against a cached snapshot, so the main journey costs almost nothing to serve at any scale. A small Neon Postgres database stores only user data (accounts, saved programs, checklist progress, feedback). The UI is trilingual (en, fr, ar with RTL). Built by one developer, closed source, designed so data sources, origin countries, destinations and contributors can grow without rewrites.
+Jisrr is a free web app that turns a Moroccan Bac graduate's profile into a realistic, costed path to a European Bachelor's degree. Curated, provenance-tagged reference data lives as YAML files in the repo; a build step validates it and publishes immutable JSON snapshots. A pure TypeScript domain core (eligibility, matching, costs, checklist) runs in the browser against a cached snapshot, so the main journey costs almost nothing to serve at any scale. A small Neon Postgres database stores only user data (accounts, saved programs, checklist progress, feedback). The UI is trilingual (en, fr, ar with RTL). Built by one developer, closed source, designed so data sources, origin countries, destinations and contributors can grow without rewrites.
 
 ## System diagram
 

@@ -1,4 +1,4 @@
-# Jisr Foundation, Part C: Milestone 2 (domain core), T12–T19 (incl. T16A filter)
+# Jisrr Foundation, Part C: Milestone 2 (domain core), T12–T19 (incl. T16A filter)
 
 > **For agentic workers:** REQUIRED SUB-SKILL: `superpowers:subagent-driven-development`. Each task stands on its own. An implementer sees only its task, plus "Global Constraints" and the "Shared type contract" from Part A (`C:\Users\dagda\Downloads\nex\UniWay\docs\plans\2026-09-29-foundation-part-a-contract-m0.md`). Use TDD throughout: write the test, run it and see it FAIL, write the minimal code, run it and see it PASS, then commit.
 

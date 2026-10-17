@@ -537,7 +537,7 @@ English:
 "scholarshipsPage": {
   "meta": {
     "title": "Scholarships for Bachelor's studies in Europe",
-    "description": "The scholarships listed on Jisr, with amounts, what they cover, deadlines and official sources."
+    "description": "The scholarships listed on Jisrr, with amounts, what they cover, deadlines and official sources."
   },
   "title": "Scholarships",
   "intro": "Scholarships we have listed for Bachelor's students, by country. Each fact shows its source and the date it was checked. Where the sources we read do not publish a value, we say so instead of guessing.",
@@ -584,7 +584,7 @@ French:
 "scholarshipsPage": {
   "meta": {
     "title": "Bourses d'études pour la licence en Europe",
-    "description": "Les bourses répertoriées sur Jisr, avec montants, ce qu'elles couvrent, dates limites et sources officielles."
+    "description": "Les bourses répertoriées sur Jisrr, avec montants, ce qu'elles couvrent, dates limites et sources officielles."
   },
   "title": "Bourses",
   "intro": "Les bourses que nous avons répertoriées pour les études de licence, par pays. Chaque information indique sa source et la date de sa vérification. Quand les sources que nous avons lues ne publient pas une valeur, nous l'indiquons au lieu de deviner.",

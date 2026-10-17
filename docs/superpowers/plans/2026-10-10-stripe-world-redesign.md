@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Replace Jisr's "Plain Bridge" look with a Stripe-grade visual world on the landing page and the global shell, and add a hero match mini-demo plus journey micro-interactions, without changing product truth or trust semantics.
+**Goal:** Replace Jisrr's "Plain Bridge" look with a Stripe-grade visual world on the landing page and the global shell, and add a hero match mini-demo plus journey micro-interactions, without changing product truth or trust semantics.
 
 **Architecture:** New design tokens (`globals.css` `@theme`/`:root`) drive a restyled shell and primitives; the home gains a server-rendered hero/questions/trust-band and one small client leaf (the demo) that reuses the pure `src/domain` matching on a curated bundle of real programme facts, lazily loaded so the home JS budget holds.
 
@@ -74,7 +74,7 @@
 **Interfaces:**
 - Keeps: `NavItem`, `NavLinks({label, items})`, `LocaleSwitcher({current, label, names})`, `SiteHeader({locale})`, `SiteFooter({locale})` — **unchanged**. Client leaves still receive strings as props (`messages={null}` root).
 
-- [ ] **Step 1: Header**: sticky, translucent (`bg-white/70 backdrop-blur`), hairline bottom border, 64px bar, `Jisr جسر` wordmark; keep passing `label`/`items` to `NavLinks` (server → client props).
+- [ ] **Step 1: Header**: sticky, translucent (`bg-white/70 backdrop-blur`), hairline bottom border, 64px bar, `Jisrr جسر` wordmark; keep passing `label`/`items` to `NavLinks` (server → client props).
 - [ ] **Step 2: NavLinks**: animated indigo current underline (`after:` pseudo, logical `inset-inline`); hover fill `--color-canvas-soft`; keep `aria-current`, the saved-count badge and the `prefetch` logic verbatim.
 - [ ] **Step 3: LocaleSwitcher**: pill group (soft track, current = white pill + soft shadow) using logical utilities; keep `aria-current`, `lang`/`hrefLang`, `prefetch` logic.
 - [ ] **Step 4: Footer**: light (`--color-canvas-soft`), keep every string/`ClearDataButton` prop unchanged.

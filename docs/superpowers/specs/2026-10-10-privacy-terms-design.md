@@ -6,7 +6,7 @@
 
 ## Goal
 
-Ship two static, trilingual legal pages — a **privacy notice** (`/privacy`) and **terms of use** (`/terms`) — that describe what Jisr actually does today (the guest release) and satisfy the A4 launch gate. Linked from the footer, indexable, no new client JavaScript.
+Ship two static, trilingual legal pages — a **privacy notice** (`/privacy`) and **terms of use** (`/terms`) — that describe what Jisrr actually does today (the guest release) and satisfy the A4 launch gate. Linked from the footer, indexable, no new client JavaScript.
 
 ## Decisions (from brainstorming)
 
@@ -66,7 +66,7 @@ Each MDX file is the full document body (H1 + sections + lists + links). `ar` is
 
 **Privacy notice**
 1. Who we are — controller (individual in Italy), `[CONTACT EMAIL]`, GDPR + Law 09-08.
-2. What Jisr does with your data — guest journey; profile/saved/plan stay in your browser; nothing personal sent.
+2. What Jisrr does with your data — guest journey; profile/saved/plan stay in your browser; nothing personal sent.
 3. What our host sees — Vercel `fra1` standard server logs (IP, URL, time, user agent); no cookies.
 4. Analytics — GoatCounter (EU, cookieless), what it records, DNT/GPC honoured, currently off until this notice is live.
 5. The data files your browser downloads — snapshot shards naming credential country, destinations and fields; never grades or nationality.
@@ -76,7 +76,7 @@ Each MDX file is the full document body (H1 + sections + lists + links). `ar` is
 9. Changes to this notice — last updated.
 
 **Terms of use**
-1. What Jisr is — free, non-commercial, informational; not a university, not admission advice; no account.
+1. What Jisrr is — free, non-commercial, informational; not a university, not admission advice; no account.
 2. Accuracy and sources — hand-checked and dated; data ages; confirm on the official page; no warranty.
 3. Acceptable use.
 4. Intellectual property — official names/logos belong to their owners.
