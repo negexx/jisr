@@ -3,11 +3,14 @@ import { describe, expect, it } from "vitest";
 import type { MatchFilters } from "@/data-schema/match-filters";
 import {
   decodeFilters,
+  dropUnknownFilters,
   encodeFilters,
   filtersSearch,
   hasMatchFilterParams,
 } from "@/lib/matches/filter-url";
 import { EMPTY_MATCH_FILTERS } from "@/lib/matches/filters";
+
+import { coreShard } from "../profile/core-fixture";
 
 // The filter store's twin on the wire: the URL is a public entry point (shared links, bookmarks,
 // hand-edited addresses), so every decoded value is re-validated and an unknown one is dropped,
@@ -121,18 +124,46 @@ describe("decodeFilters", () => {
     });
   });
 
-  it("keeps a well-formed value the current catalogue may not know", () => {
-    // A country with no published program is still a filter the student chose; the view reports
-    // that nothing matches and offers Clear, rather than silently dropping the choice.
-    expect(decodeFilters(new URLSearchParams("dest=QQ")).destinations).toEqual(["QQ"]);
-  });
-
   it("ignores parameters it does not own", () => {
     const params = new URLSearchParams("utm_source=x&field=xx-test-field-cs&type=any");
     expect(decodeFilters(params)).toEqual({
       ...EMPTY_MATCH_FILTERS,
       fields: ["xx-test-field-cs"],
     });
+  });
+});
+
+describe("dropUnknownFilters", () => {
+  it("drops a well-formed country the catalogue does not know", () => {
+    const filters = decodeFilters(new URLSearchParams("dest=QQ"));
+    expect(filters.destinations).toEqual(["QQ"]);
+    expect(dropUnknownFilters(filters, coreShard()).destinations).toEqual([]);
+  });
+
+  it("drops a well-formed field and language the catalogue does not know, keeping the known ones", () => {
+    const filters = decodeFilters(
+      new URLSearchParams("field=xx-test-field&field=old-removed-field&lang=fr&lang=zz"),
+    );
+    const known = dropUnknownFilters(filters, coreShard());
+    expect(known.fields).toEqual(["xx-test-field"]);
+    expect(known.studyLanguages).toEqual(["fr"]);
+  });
+
+  it("returns the same object when every value is known", () => {
+    const filters = decodeFilters(new URLSearchParams("field=xx-test-field&lang=en&dest=XB"));
+    expect(dropUnknownFilters(filters, coreShard())).toBe(filters);
+  });
+
+  it("keeps the institution type and the budget untouched", () => {
+    const filters: MatchFilters = {
+      ...EMPTY_MATCH_FILTERS,
+      fields: ["old-removed-field"],
+      institutionType: "private",
+      budget: { amountMinor: 80_000, currency: "EUR", period: "month" },
+    };
+    const known = dropUnknownFilters(filters, coreShard());
+    expect(known.institutionType).toBe("private");
+    expect(known.budget).toEqual({ amountMinor: 80_000, currency: "EUR", period: "month" });
   });
 });
 

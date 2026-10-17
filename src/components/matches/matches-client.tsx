@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { type ReactNode, useEffect, useMemo, useRef, useState } from "react";
+import { type ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { ReportSnapshot } from "@/components/report-outdated/report-context";
 import type { IsoDate } from "@/data-schema/dates";
@@ -14,7 +14,12 @@ import { todayIso } from "@/lib/clock";
 import { buildMatchesView, MATCH_GROUPS, type MatchesView } from "@/lib/journey/matches-view";
 import { getLocalStorage } from "@/lib/local-storage";
 import { readMatchFilters, writeMatchFilters } from "@/lib/matches/filter-store";
-import { decodeFilters, filtersSearch, hasMatchFilterParams } from "@/lib/matches/filter-url";
+import {
+  decodeFilters,
+  dropUnknownFilters,
+  filtersSearch,
+  hasMatchFilterParams,
+} from "@/lib/matches/filter-url";
 import { EMPTY_MATCH_FILTERS } from "@/lib/matches/filters";
 import { useProfile } from "@/lib/profile/use-profile";
 import type { SnapshotBundle, SnapshotClient } from "@/lib/snapshot/client";
@@ -149,7 +154,7 @@ export function MatchesClient({ locale, client }: { locale: AppLocale; client?: 
 
   // A choice is written to both places it lives, the device store and the URL, so a reload and a
   // shared link show the same view.
-  function changeFilters(next: MatchFilters): void {
+  const changeFilters = useCallback((next: MatchFilters): void => {
     setFilters(next);
     const storage = getLocalStorage();
     if (storage !== null) writeMatchFilters(storage, next);
@@ -159,7 +164,7 @@ export function MatchesClient({ locale, client }: { locale: AppLocale; client?: 
       "",
       `${window.location.pathname}${search}${window.location.hash}`,
     );
-  }
+  }, []);
 
   const request = matchesRequest(profile);
   const { state, retry } = useSnapshotBundle(request, locale, client);
@@ -178,6 +183,19 @@ export function MatchesClient({ locale, client }: { locale: AppLocale; client?: 
       return { status: "failed" };
     }
   }, [profile, filters, now, state, locale]);
+
+  // A URL or a stored choice can name a field, country or language the catalogue no longer knows,
+  // and a filter on it would hide every program. Once the bundle is loaded, drop those values and
+  // mirror the sanitized choice in the store and the URL.
+  const catalogueChecked = useRef(false);
+  useEffect(() => {
+    if (catalogueChecked.current || outcome.status !== "view") return;
+    const core = outcome.bundle.core;
+    if (core === undefined) return;
+    catalogueChecked.current = true;
+    const known = dropUnknownFilters(filters, core);
+    if (known !== filters) changeFilters(known);
+  }, [filters, outcome, changeFilters]);
 
   // The band's summary (a sibling island) reads these through the store: one snapshot load for the
   // whole page, so a shard-404 recovery re-reads the manifest once, not once per island.

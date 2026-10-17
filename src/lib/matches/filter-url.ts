@@ -1,11 +1,13 @@
 import type { MatchFilters } from "@/data-schema/match-filters";
 import type { Budget } from "@/data-schema/profile";
+import type { CoreShard } from "@/data-schema/snapshot";
 import { MATCH_FILTERS_VERSION } from "@/lib/constants";
 import { isInteger, isOneOf, matches } from "@/lib/guards";
+import { fieldOptions, studyLanguageOptions } from "@/lib/profile/form/options";
 
 // The filter list on the wire. The URL is a public entry point (shared links, bookmarks, hand-edited
-// addresses), so every decoded value is re-validated by shape and an unknown one is dropped rather
-// than trusted: decoding never throws and never puts anything in `MatchFilters` the store would not.
+// addresses): decoding never throws, it shape-validates every value, and dropUnknownFilters
+// reconciles the result with the loaded catalogue before the view uses it.
 const FIELD_PARAM = "field";
 const LANGUAGE_PARAM = "lang";
 const DESTINATION_PARAM = "dest";
@@ -84,4 +86,29 @@ export function decodeFilters(params: URLSearchParams): MatchFilters {
     institutionType: isOneOf(type, INSTITUTION_TYPES) ? type : "any",
     budget: parseBudgetParam(params.get(BUDGET_PARAM)),
   };
+}
+
+function keepKnown(values: readonly string[], catalogue: ReadonlySet<string>): string[] {
+  return values.filter((value) => catalogue.has(value));
+}
+
+// The wire grammar cannot know which values exist: a field, country or language removed from the
+// catalogue still decodes, and a filter on it hides every program. Callers run this once the core
+// shard is loaded and mirror the result in both the store and the URL. Returns the same object when
+// nothing was dropped, so a caller can tell "no change" from "sanitized".
+export function dropUnknownFilters(filters: MatchFilters, core: CoreShard): MatchFilters {
+  const fields = keepKnown(filters.fields, new Set(fieldOptions(core).map((field) => field.slug)));
+  const studyLanguages = keepKnown(filters.studyLanguages, new Set(studyLanguageOptions(core)));
+  const destinations = keepKnown(
+    filters.destinations,
+    new Set(core.countries.map((country) => country.code)),
+  );
+  if (
+    fields.length === filters.fields.length &&
+    studyLanguages.length === filters.studyLanguages.length &&
+    destinations.length === filters.destinations.length
+  ) {
+    return filters;
+  }
+  return { ...filters, fields, studyLanguages, destinations };
 }

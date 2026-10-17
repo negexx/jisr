@@ -7,7 +7,7 @@ import { displayNumber } from "@/components/matches/display-number";
 import { lookupName } from "@/components/profile/display-names";
 import type { CoreShard } from "@/data-schema/snapshot";
 import type { AppLocale } from "@/i18n/routing";
-import { writeMatchFilters } from "@/lib/matches/filter-store";
+import { readMatchFilters, writeMatchFilters } from "@/lib/matches/filter-store";
 import { EMPTY_MATCH_FILTERS } from "@/lib/matches/filters";
 import { profileStore } from "@/lib/profile/store";
 import type { SnapshotBundle } from "@/lib/snapshot/client";
@@ -153,6 +153,18 @@ describe.each(LOCALES)("My Matches: the filter panel (%s)", (locale) => {
 
     const total = bundle.programs.flatMap((shard) => shard.programs).length;
     await waitFor(() => expect(articleSlugs(container)).toHaveLength(total));
+  });
+
+  it("drops a well-formed slug the catalogue does not know, once the bundle is loaded", async () => {
+    profileStore.save(E2E_PROFILE);
+    window.history.replaceState(null, "", "/?field=old-removed-field&lang=zz&dest=QQ");
+    const bundle = await loadedBundle(locale);
+    const { container } = renderMatches(locale, bundleClient(bundle));
+
+    const total = bundle.programs.flatMap((shard) => shard.programs).length;
+    await waitFor(() => expect(articleSlugs(container)).toHaveLength(total));
+    expect(window.location.search).toBe("");
+    expect(readMatchFilters(window.localStorage)).toEqual(EMPTY_MATCH_FILTERS);
   });
 
   it("offers Clear filters when the filters hide every program, and Clear restores the list", async () => {
