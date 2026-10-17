@@ -94,6 +94,8 @@ describe("a refused sign-in link", () => {
     expect(failure).toBeDefined();
     expect(failure?.[1]).toMatchObject({
       code: expect.stringMatching(CODE),
+      // pg-protocol's DatabaseError, innermost in Drizzle's cause chain.
+      error: "DatabaseError",
       sqlState: "42P01",
     });
     expect(JSON.stringify(errors.mock.calls)).not.toContain(email);

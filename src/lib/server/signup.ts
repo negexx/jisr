@@ -80,13 +80,14 @@ function reasonOf(error: unknown): string | null {
   return null;
 }
 
-// Drizzle wraps the driver's error as `cause`; the class name that matters is the innermost one.
+// Drizzle wraps the driver's error as `cause`; the class that matters is the innermost one. Its
+// `name` is unusable (pg-protocol's DatabaseError sets it to "error"), so log the constructor name.
 function deepestErrorName(error: unknown): string {
   let at: unknown = error;
   while (at instanceof Error && at.cause instanceof Error) {
     at = at.cause;
   }
-  return at instanceof Error ? at.name : typeof at;
+  return at instanceof Error ? at.constructor.name : typeof at;
 }
 
 // Never logs the address, the link or an arbitrary error message: a whitelisted class's message
