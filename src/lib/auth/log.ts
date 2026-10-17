@@ -52,12 +52,16 @@ export function scrubbedAuthLog(level: LogLevel, message: string, ...args: unkno
 // Better Auth's `onAPIError.onError`. An APIError is an ordinary refusal and becomes its response;
 // only a 500 is worth a line. Anything else is a bug or an outage: it is logged scrubbed and turned
 // into a 500 whose body is only {"code":"INTERNAL_SERVER_ERROR"} (no message, nothing of the original
-// error), because better-call would otherwise print the raw error itself.
+// error), because better-call would otherwise print the raw error itself. The original is kept as
+// `cause` so the Server Action that called in can still name the failing layer (signup.ts
+// `failureOf`) without ever printing its message.
 export function onAuthApiError(error: unknown): void {
   if (isAPIError(error)) {
     if (error.status === "INTERNAL_SERVER_ERROR") scrubbedAuthLog("error", error.status, error);
     return;
   }
   scrubbedAuthLog("error", "unexpected error", error);
-  throw new APIError("INTERNAL_SERVER_ERROR", { code: "INTERNAL_SERVER_ERROR" });
+  const wrapped = new APIError("INTERNAL_SERVER_ERROR", { code: "INTERNAL_SERVER_ERROR" });
+  if (error instanceof Error) wrapped.cause = error;
+  throw wrapped;
 }

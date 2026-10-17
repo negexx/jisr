@@ -16,6 +16,8 @@ import { runAsSignup } from "@/lib/auth/signup-intent";
 import { LOCALES } from "@/lib/constants";
 
 import { SignInEmailSchema } from "./account-inputs";
+import { sqlState } from "./account-store";
+import { AuthEmailAccountsDisabled, AuthEmailTransportNotConfigured } from "./email";
 
 export type SignInLinkMode = "signup" | "signin";
 
@@ -57,13 +59,57 @@ function errorCode(error: unknown): string | undefined {
   return typeof code === "string" ? code : undefined;
 }
 
-// Never logs the address, the link or the error text: only the kind of failure.
+// Only these three classes may contribute their own message: each names a variable or a state,
+// never a value (see AuthMisconfiguredError, AuthEmailTransportNotConfigured,
+// AuthEmailAccountsDisabled). Every other error contributes only its class name and SQLSTATE — a
+// driver error's message can carry the address or the token as a query parameter.
+function whitelistedMessage(error: Error): string | null {
+  if (
+    error instanceof AuthMisconfiguredError ||
+    error instanceof AuthEmailTransportNotConfigured ||
+    error instanceof AuthEmailAccountsDisabled
+  ) {
+    return error.message;
+  }
+  return null;
+}
+
+function reasonOf(error: unknown): string | null {
+  let at: unknown = error;
+  while (at instanceof Error) {
+    const reason = whitelistedMessage(at);
+    if (reason !== null) return reason;
+    at = at.cause;
+  }
+  return null;
+}
+
+// Drizzle wraps the driver's error as `cause`; the class name that matters is the innermost one.
+function deepestErrorName(error: unknown): string {
+  let at: unknown = error;
+  while (at instanceof Error && at.cause instanceof Error) {
+    at = at.cause;
+  }
+  return at instanceof Error ? at.name : typeof at;
+}
+
+// Never logs the address, the link or an arbitrary error message: a whitelisted class's message
+// names variables, never values; an unknown error is reduced to its name and SQLSTATE.
 function failureOf(error: unknown): SignInLinkError {
   const code = errorCode(error);
   if (code === "EMAIL_COOLDOWN") return "cooldown";
   if (code === ACCOUNTS_DISABLED_CODE) return "accounts_disabled";
-  if (error instanceof AuthMisconfiguredError) console.error(error.message);
-  else console.error("sign-in link request failed", { code: code ?? "unexpected" });
+  const logCode = code ?? "unexpected";
+  const reason = reasonOf(error);
+  if (reason !== null) {
+    console.error("sign-in link request failed", { code: logCode, reason });
+  } else {
+    console.error("sign-in link request failed", {
+      code: logCode,
+      error: deepestErrorName(error),
+      sqlState: sqlState(error),
+    });
+  }
   return "failed";
 }
 

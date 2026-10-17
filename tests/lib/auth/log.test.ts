@@ -95,9 +95,10 @@ describe("onAuthApiError", () => {
 
   it("turns any other error into a 500 whose body is only its code, after one scrubbed line", () => {
     const spies = spyOnConsole();
+    const original = new Error("boom ana@example.com");
     const thrown = (() => {
       try {
-        onAuthApiError(new Error("boom ana@example.com"));
+        onAuthApiError(original);
       } catch (error) {
         return error;
       }
@@ -108,6 +109,7 @@ describe("onAuthApiError", () => {
       status: "INTERNAL_SERVER_ERROR",
       body: { code: "INTERNAL_SERVER_ERROR" },
     });
+    expect((thrown as Error).cause).toBe(original);
     expect(spies.error).toHaveBeenCalledExactlyOnceWith("[better-auth] unexpected error", [
       "Error",
     ]);
