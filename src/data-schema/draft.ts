@@ -8,7 +8,7 @@ const GradeInputSchema = z.strictObject({ scale: TYPED, value: TYPED });
 // final profile would not contain out of local storage. Server, scripts and tests only: client code
 // uses the hand-written twin in src/lib/profile/draft-validate.ts (differential-tested against this).
 export const DraftSchema = z.strictObject({
-  schemaVersion: z.literal(1),
+  schemaVersion: z.literal(2),
   step: z.number().int().nonnegative(),
   nationality: TYPED.optional(),
   credential: z
@@ -31,18 +31,6 @@ export const DraftSchema = z.strictObject({
       }),
     )
     .optional(),
-  fields: z.array(TYPED).optional(),
-  studyLanguages: z.array(TYPED).optional(),
-  destinations: z.array(TYPED).optional(),
-  budget: z
-    .strictObject({
-      amount: TYPED.optional(),
-      currency: TYPED.optional(),
-      period: z.enum(["month", "year"]).optional(),
-    })
-    .nullable()
-    .optional(),
-  institutionType: z.enum(["public", "private", "any"]).optional(),
 });
 
 export type ProfileDraft = z.infer<typeof DraftSchema>;

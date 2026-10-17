@@ -3,8 +3,6 @@ import type { TextKey } from "@/data-schema/resolved";
 
 export type LanguageLevel = "" | Cefr | "unknown";
 export type CredentialStatus = "" | "obtained" | "expected";
-export type InstitutionType = "public" | "private" | "any";
-export type BudgetPeriod = "month" | "year";
 
 export type SubjectRow = { subject: string; grade: string };
 export type LanguageRow = { language: string; level: LanguageLevel; certificate: string };
@@ -22,11 +20,6 @@ export type FormState = {
   };
   priorHigherEducationYears: string;
   languages: LanguageRow[];
-  fields: string[];
-  studyLanguages: string[];
-  destinations: string[];
-  institutionType: InstitutionType;
-  budget: { amount: string; currency: string; period: BudgetPeriod };
 };
 
 export type CountryOption = { code: string; name: TextKey };

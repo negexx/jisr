@@ -128,7 +128,7 @@ function program(slug: string, overrides: Partial<SavedProgram> = {}): SavedProg
 }
 
 const PROFILE: Profile = ProfileSchema.parse({
-  schemaVersion: 1,
+  schemaVersion: 2,
   nationality: "MA",
   credential: {
     country: "MA",
@@ -140,14 +140,9 @@ const PROFILE: Profile = ProfileSchema.parse({
   },
   priorHigherEducationYears: 0,
   languages: [{ language: "fr", level: "B2", certificate: null }],
-  fields: ["computer-science"],
-  studyLanguages: ["fr", "en"],
-  destinations: ["FR", "DE"],
-  budget: { amountMinor: 900_00, currency: "EUR", period: "month" },
-  institutionType: "any",
 });
 
-const SERVER_PROFILE: Profile = { ...PROFILE, destinations: ["NL"] };
+const SERVER_PROFILE: Profile = { ...PROFILE, priorHigherEducationYears: 1 };
 
 // Same-day saves on purpose: their order can only come from created_at.
 const GUEST: GuestImportPayload = {
@@ -434,7 +429,9 @@ describe("importGuestData replace (the student's explicit choice)", () => {
   it("makes the other device's next profile save a conflict, not an overwrite", async () => {
     await seedServerData();
     await importer.importGuestData(GUEST, "replace");
-    expect(await actions.saveProfile({ ...SERVER_PROFILE, destinations: ["IT"] }, 2)).toEqual({
+    expect(
+      await actions.saveProfile({ ...SERVER_PROFILE, priorHigherEducationYears: 2 }, 2),
+    ).toEqual({
       ok: false,
       error: "conflict",
       current: { profile: PROFILE, revision: 3 },
@@ -479,7 +476,7 @@ describe("importGuestData replace (the student's explicit choice)", () => {
 });
 
 describe("profile revisions never repeat after a profile row is deleted", () => {
-  const STALE: Profile = { ...SERVER_PROFILE, destinations: ["IT"] };
+  const STALE: Profile = { ...SERVER_PROFILE, priorHigherEducationYears: 2 };
 
   it("clear, then import: a device still holding revision 1 gets conflict, not an overwrite", async () => {
     expect(await actions.saveProfile(SERVER_PROFILE, 0)).toEqual({

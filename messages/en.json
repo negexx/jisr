@@ -170,7 +170,7 @@
   "clearData": {
     "trigger": "Clear my data",
     "title": "Clear my data?",
-    "description": "This removes your profile, your saved programs, your plan progress and any unfinished answers from this device only.",
+    "description": "This removes your profile, your match filters, your saved programs, your plan progress and any unfinished answers from this device only.",
     "cancel": "Cancel",
     "confirm": "Clear my data"
   },
@@ -440,14 +440,6 @@
         "title": "Languages",
         "why": "Programs may ask for a language level. Don't know yours? Choose \"I don't know\": the result will be marked \"to be checked\"."
       },
-      "preferences": {
-        "title": "What you want",
-        "why": "Your choices decide which programs we look at. Leave a group empty if you have no preference: we then keep everything open."
-      },
-      "budget": {
-        "title": "Budget",
-        "why": "A budget helps us say whether costs look within reach. It never hides a program."
-      },
       "review": {
         "title": "Review",
         "why": "Read your answers. You can change any of them before saving."
@@ -533,41 +525,6 @@
         "label": "Certificate",
         "hint": "Only if you already passed an official language test.",
         "none": "No certificate"
-      },
-      "fieldsOfStudy": {
-        "legend": "Fields of study",
-        "hint": "Choose at least one."
-      },
-      "studyLanguages": {
-        "legend": "Language of teaching",
-        "hint": "The language you want to study in. Leave everything unchecked if you have no preference."
-      },
-      "destinations": {
-        "legend": "Countries",
-        "hint": "Where you would like to study. Leave everything unchecked to see all countries."
-      },
-      "institution": {
-        "legend": "Type of university",
-        "hint": "Choose \"Public or private\" if you have no preference.",
-        "any": "Public or private",
-        "public": "Public only",
-        "private": "Private only"
-      },
-      "budget": {
-        "amount": {
-          "label": "Amount you can spend",
-          "hint": "A whole number, digits 0 to 9, for example 800. Leave it empty if you prefer not to say."
-        },
-        "currency": {
-          "label": "Currency"
-        },
-        "period": {
-          "label": "Period",
-          "month": "per month",
-          "year": "per year"
-        },
-        "madNote": "A budget in MAD cannot be compared with the costs in euros yet, so we will not show whether a program fits it.",
-        "neverHides": "Your budget never hides a program. It only tells you, program by program, whether the costs look within reach."
       }
     },
     "notices": {
@@ -698,6 +655,50 @@
       "failed": "{count} with published requirements not met",
       "navLabel": "Jump to a group"
     },
+    "filters": {
+      "title": "Filters",
+      "toggle": "Filter your results",
+      "clear": "Clear filters",
+      "field": {
+        "legend": "Fields of study",
+        "hint": "Leave everything unchecked to see all fields."
+      },
+      "studyLanguage": {
+        "legend": "Language of teaching",
+        "hint": "The language you want to study in. Leave everything unchecked if you have no preference."
+      },
+      "destination": {
+        "legend": "Countries",
+        "hint": "Where you would like to study. Leave everything unchecked to see all countries."
+      },
+      "institution": {
+        "legend": "Type of university",
+        "hint": "Choose \"Public or private\" if you have no preference.",
+        "any": "Public or private",
+        "public": "Public only",
+        "private": "Private only"
+      },
+      "budget": {
+        "amount": {
+          "label": "Amount you can spend",
+          "hint": "A whole number, digits 0 to 9, for example 800. Leave it empty if you prefer not to say."
+        },
+        "currency": {
+          "label": "Currency"
+        },
+        "period": {
+          "label": "Period",
+          "month": "per month",
+          "year": "per year"
+        },
+        "madNote": "A budget in MAD cannot be compared with the costs in euros yet, so we will not show whether a program fits it.",
+        "neverHides": "Your budget never hides a program. It only tells you, program by program, whether the costs look within reach.",
+        "per": {
+          "month": "<money>{amount}</money> per month",
+          "year": "<money>{amount}</money> per year"
+        }
+      }
+    },
     "groups": {
       "foundation": {
         "title": "Possible through a foundation year",
@@ -709,22 +710,9 @@
       },
       "more": "Show more programs ({count} left)"
     },
-    "summary": {
-      "title": "Your profile",
-      "fields": "Fields",
-      "destinations": "Countries",
-      "allCountries": "All countries",
-      "budget": "Budget",
-      "budgetNotSet": "Not set",
-      "budgetPer": {
-        "month": "<money>{amount}</money> per month",
-        "year": "<money>{amount}</money> per year"
-      },
-      "edit": "Edit profile"
-    },
     "hidden": {
-      "summary": "{n, plural, one {{count} program hidden by your preferences} other {{count} programs hidden by your preferences}}",
-      "note": "We do not compare these programs with your profile. Change your preferences in your profile to see them.",
+      "summary": "{n, plural, one {{count} program hidden by your filters} other {{count} programs hidden by your filters}}",
+      "filtersNote": "We do not compare these programs with your profile. Change your filters to see them.",
       "reasonCount": "{reason}: {count}"
     },
     "states": {
@@ -748,13 +736,9 @@
         "title": "We are still verifying official data",
         "description": "No programs are published yet. This is on our side, not yours. Please come back later."
       },
-      "noProgramsForFields": {
-        "title": "No programs are published yet for the fields you chose",
-        "description": "We are still adding data. This says nothing about your profile. You can change your fields in your profile."
-      },
-      "allHidden": {
-        "title": "{n, plural, one {Your preferences hide the only program published so far in your fields} other {Your preferences hide all {count} programs published in your fields}}",
-        "description": "Change your preferences in your profile to see them. Your budget never hides a program."
+      "noMatches": {
+        "title": "{n, plural, one {Your filters hide the only program published so far} other {Your filters hide all {count} published programs}}",
+        "description": "Clear your filters to see them. Your budget never hides a program."
       }
     }
   },

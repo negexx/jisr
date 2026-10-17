@@ -9,16 +9,6 @@ import {
 import type { StorageLike } from "@/lib/profile/storage";
 import type { ProfileState } from "@/lib/profile/store";
 
-const CURRENCIES = ["EUR", "MAD"];
-const PERIODS = ["month", "year"];
-
-// The budget selects have no blank choice, so a value they do not offer (an older draft wrote a
-// blank one) becomes the default: what the control shows is then what the form holds.
-function withOfferedBudgetChoices(form: FormState): void {
-  if (!CURRENCIES.includes(form.budget.currency)) form.budget.currency = "EUR";
-  if (!PERIODS.includes(form.budget.period)) form.budget.period = "month";
-}
-
 export type InitialWizardState = {
   form: FormState;
   stepIndex: number;
@@ -42,6 +32,5 @@ export function initialWizardState(
   if (draft === null)
     return { form: structuredClone(baseline), stepIndex: 0, mode, draftRestored: false, baseline };
   const { form, step } = formFromDraft(draft, core);
-  withOfferedBudgetChoices(form);
   return { form, stepIndex: step, mode, draftRestored: true, baseline };
 }

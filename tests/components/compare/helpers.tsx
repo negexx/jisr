@@ -11,7 +11,7 @@ import { pickMessages } from "@/lib/i18n/client-messages";
 import { buildCompareView, type CompareView } from "@/lib/journey/compare-view";
 import type { SnapshotClient } from "@/lib/snapshot/client";
 import { shardsForPlan } from "@/lib/snapshot/plan";
-import { E2E_NOW, E2E_PROFILE, E2E_SLUGS } from "../../fixtures/e2e/profiles";
+import { E2E_FILTERS, E2E_NOW, E2E_PROFILE, E2E_SLUGS } from "../../fixtures/e2e/profiles";
 import { catalogs } from "../matches/helpers";
 import { type SavedRef, seedProfile, seedSaved, VERSION } from "../plan/helpers";
 
@@ -73,7 +73,14 @@ export async function compareView(
     (manifest) => shardsForPlan(refs, profile.credential.country, manifest),
     locale,
   );
-  return buildCompareView({ profile, bundle, slugs, now: E2E_NOW, locale });
+  return buildCompareView({
+    profile,
+    filters: E2E_FILTERS,
+    bundle,
+    slugs,
+    now: E2E_NOW,
+    locale,
+  });
 }
 
 export function seedAll(...refs: SavedRef[]): void {

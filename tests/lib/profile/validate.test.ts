@@ -11,15 +11,11 @@ import {
 import { CEFR_LEVELS, INFO_KINDS, PROFILE_SCHEMA_VERSION } from "@/lib/constants";
 import { parseProfile } from "@/lib/profile/validate";
 
-import {
-  E2E_PROFILE,
-  E2E_PROFILE_WITH_BUDGET,
-  E2E_PROFILE_XB_ONLY,
-} from "../../fixtures/e2e/profiles";
+import { E2E_PROFILE } from "../../fixtures/e2e/profiles";
 import { cloneValue, compare, fuzz, newTally } from "../differential";
 
 const BASE: Record<string, unknown> = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   nationality: "MA",
   credential: {
     country: "MA",
@@ -37,11 +33,6 @@ const BASE: Record<string, unknown> = {
     { language: "fr", level: "B2", certificate: "delf" },
     { language: "en", level: "unknown", certificate: null },
   ],
-  fields: ["computer-science"],
-  studyLanguages: ["fr", "en"],
-  destinations: ["FR", "DE"],
-  budget: { amountMinor: 900_000, currency: "EUR", period: "year" },
-  institutionType: "any",
 };
 
 type Editable = Record<string, unknown> & { credential: Record<string, unknown> };
@@ -64,8 +55,6 @@ const VALID: Array<[string, unknown]> = [
   ["inherited enumerable keys that are all in the shape", Object.create(BASE)],
   ["class instance root", Object.assign(new (class Loaded {})(), BASE)],
   ["symbol key is ignored", { ...BASE, [Symbol("ignored")]: 1 }],
-  ["e2e profile with budget", E2E_PROFILE_WITH_BUDGET],
-  ["e2e profile, one destination", E2E_PROFILE_XB_ONLY],
   ["no overall grade", withCredential("overall", null)],
   ["no subjects", withCredential("subjects", [])],
   ["expected credential", withCredential("status", "expected")],
@@ -73,17 +62,7 @@ const VALID: Array<[string, unknown]> = [
   ["huge grade", withCredential("overall", { scale: "s", value: 1e300 })],
   ["negative zero grade", withCredential("overall", { scale: "s", value: -0 })],
   ["no languages", edited((p) => (p.languages = []))],
-  ["no destinations", edited((p) => (p.destinations = []))],
-  ["no study languages", edited((p) => (p.studyLanguages = []))],
-  ["no budget", edited((p) => (p.budget = null))],
-  [
-    "monthly budget",
-    edited((p) => (p.budget = { amountMinor: 0, currency: "MAD", period: "month" })),
-  ],
   ["prior years 3", edited((p) => (p.priorHigherEducationYears = 3))],
-  ["public only", edited((p) => (p.institutionType = "public"))],
-  ["private only", edited((p) => (p.institutionType = "private"))],
-  ["multi-word slug", edited((p) => (p.fields = ["a1-b2-c3", "x"]))],
   [
     "every CEFR level",
     edited((p) => {
@@ -104,10 +83,10 @@ const INVALID: Array<[string, unknown]> = [
   ["boolean root", true],
   ["array root", [BASE]],
   ["empty object", {}],
-  ["schemaVersion 2", edited((p) => (p.schemaVersion = 2))],
+  ["schemaVersion 1", edited((p) => (p.schemaVersion = 1))],
   ["schemaVersion 0", edited((p) => (p.schemaVersion = 0))],
-  ["schemaVersion as string", edited((p) => (p.schemaVersion = "1"))],
-  ["schemaVersion 1.0000001", edited((p) => (p.schemaVersion = 1.0000001))],
+  ["schemaVersion as string", edited((p) => (p.schemaVersion = "2"))],
+  ["schemaVersion 2.0000001", edited((p) => (p.schemaVersion = 2.0000001))],
   ["missing schemaVersion", edited((p) => delete p.schemaVersion)],
   ["unknown top-level key", edited((p) => (p.extra = 1))],
   ["own __proto__ key", JSON.parse(`${JSON.stringify(BASE).slice(0, -1)},"__proto__":{"x":1}}`)],
@@ -227,71 +206,14 @@ const INVALID: Array<[string, unknown]> = [
         ]),
     ),
   ],
-  ["fields empty", edited((p) => (p.fields = []))],
-  ["fields missing", edited((p) => delete p.fields)],
-  ["fields bad slug", edited((p) => (p.fields = ["Computer Science"]))],
-  ["fields empty string", edited((p) => (p.fields = [""]))],
-  ["fields string", edited((p) => (p.fields = "computer-science"))],
-  ["studyLanguages bad code", edited((p) => (p.studyLanguages = ["FR"]))],
-  ["studyLanguages missing", edited((p) => delete p.studyLanguages)],
-  ["destinations lowercase", edited((p) => (p.destinations = ["fr"]))],
-  ["destinations missing", edited((p) => delete p.destinations)],
-  ["destinations not array", edited((p) => (p.destinations = "FR"))],
-  ["budget undefined", edited((p) => (p.budget = undefined))],
-  ["budget missing", edited((p) => delete p.budget)],
-  ["budget array", edited((p) => (p.budget = []))],
+  ["legacy fields key", edited((p) => (p.fields = ["computer-science"]))],
+  ["legacy studyLanguages key", edited((p) => (p.studyLanguages = ["fr"]))],
+  ["legacy destinations key", edited((p) => (p.destinations = ["FR"]))],
   [
-    "budget unknown key",
-    edited((p) => (p.budget = { amountMinor: 1, currency: "EUR", period: "year", x: 1 })),
+    "legacy budget key",
+    edited((p) => (p.budget = { amountMinor: 1, currency: "EUR", period: "year" })),
   ],
-  [
-    "budget negative",
-    edited((p) => (p.budget = { amountMinor: -1, currency: "EUR", period: "year" })),
-  ],
-  [
-    "budget float",
-    edited((p) => (p.budget = { amountMinor: 10.5, currency: "EUR", period: "year" })),
-  ],
-  [
-    "budget NaN",
-    edited((p) => (p.budget = { amountMinor: Number.NaN, currency: "EUR", period: "year" })),
-  ],
-  [
-    "budget Infinity",
-    edited(
-      (p) =>
-        (p.budget = { amountMinor: Number.POSITIVE_INFINITY, currency: "EUR", period: "year" }),
-    ),
-  ],
-  [
-    "budget unsafe integer",
-    edited((p) => (p.budget = { amountMinor: 2 ** 53, currency: "EUR", period: "year" })),
-  ],
-  [
-    "budget huge float",
-    edited((p) => (p.budget = { amountMinor: 1e300, currency: "EUR", period: "year" })),
-  ],
-  [
-    "budget string amount",
-    edited((p) => (p.budget = { amountMinor: "10", currency: "EUR", period: "year" })),
-  ],
-  [
-    "budget currency lowercase",
-    edited((p) => (p.budget = { amountMinor: 1, currency: "eur", period: "year" })),
-  ],
-  [
-    "budget currency two letters",
-    edited((p) => (p.budget = { amountMinor: 1, currency: "EU", period: "year" })),
-  ],
-  ["budget currency missing", edited((p) => (p.budget = { amountMinor: 1, period: "year" }))],
-  [
-    "budget period week",
-    edited((p) => (p.budget = { amountMinor: 1, currency: "EUR", period: "week" })),
-  ],
-  ["budget period missing", edited((p) => (p.budget = { amountMinor: 1, currency: "EUR" }))],
-  ["institution type unknown", edited((p) => (p.institutionType = "charter"))],
-  ["institution type missing", edited((p) => delete p.institutionType)],
-  ["institution type null", edited((p) => (p.institutionType = null))],
+  ["legacy institutionType key", edited((p) => (p.institutionType = "any"))],
 ];
 
 describe("parseProfile against ProfileSchema", () => {
@@ -336,9 +258,6 @@ describe("parseProfile against ProfileSchema", () => {
       p.credential.overall = null;
       p.credential.subjects = [];
       p.languages = [];
-      p.destinations = [];
-      p.studyLanguages = [];
-      p.budget = null;
     });
     const tally = fuzz(ProfileSchema, parseProfile, minimal, 1000, 42);
     expect(tally.disagreements).toEqual([]);

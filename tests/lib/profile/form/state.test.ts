@@ -12,11 +12,7 @@ import {
   STEPS,
 } from "@/lib/profile/form/state";
 
-import {
-  E2E_PROFILE,
-  E2E_PROFILE_WITH_BUDGET,
-  E2E_PROFILE_XB_ONLY,
-} from "../../../fixtures/e2e/profiles";
+import { E2E_PROFILE } from "../../../fixtures/e2e/profiles";
 import { coreShard } from "../core-fixture";
 import { forbidConsole } from "../no-console";
 import { at, edited, multiOriginCore, validForm, withRealCore } from "./helpers";
@@ -26,8 +22,8 @@ forbidConsole();
 const realCore = withRealCore();
 
 describe("STEPS", () => {
-  it("lists the four steps then the review", () => {
-    expect(STEPS).toEqual(["bac", "languages", "preferences", "budget", "review"]);
+  it("lists the two steps then the review", () => {
+    expect(STEPS).toEqual(["bac", "languages", "review"]);
   });
 });
 
@@ -66,20 +62,15 @@ describe("emptyFormState", () => {
         { language: "fr", level: "", certificate: "" },
         { language: "en", level: "", certificate: "" },
       ],
-      fields: [],
-      studyLanguages: [],
-      destinations: [],
-      institutionType: "any",
-      budget: { amount: "", currency: "EUR", period: "month" },
     });
   });
 
   it("returns a fresh object each time", () => {
     const a = emptyFormState(coreShard());
     const b = emptyFormState(coreShard());
-    a.fields.push("x");
+    a.credential.subjects.push({ subject: "x", grade: "1" });
     at(a.languages, 0).level = "B1";
-    expect(b.fields).toEqual([]);
+    expect(b.credential.subjects).toEqual([]);
     expect(at(b.languages, 0).level).toBe("");
   });
 });
@@ -90,7 +81,6 @@ describe("formFromProfile", () => {
     expect(form.credential.overall).toBe("14");
     expect(form.credential.subjects).toEqual([{ subject: "xx-test-subject-math", grade: "14" }]);
     expect(form.priorHigherEducationYears).toBe("0");
-    expect(form.budget).toEqual({ amount: "", currency: "EUR", period: "month" });
   });
 
   it("writes decimals with a dot", () => {
@@ -109,27 +99,6 @@ describe("formFromProfile", () => {
     const form = formFromProfile(profile);
     expect(form.credential.status).toBe("expected");
     expect(form.credential.overall).toBe("");
-  });
-
-  it("turns the budget minor units back into a whole amount", () => {
-    const profile: Profile = {
-      ...E2E_PROFILE,
-      budget: { amountMinor: 100_000, currency: "EUR", period: "year" },
-    };
-    expect(formFromProfile(profile).budget).toEqual({
-      amount: "1000",
-      currency: "EUR",
-      period: "year",
-    });
-    expect(formFromProfile(E2E_PROFILE_WITH_BUDGET).budget.amount).toBe("900");
-  });
-
-  it("uses the currency's own minor unit digits", () => {
-    const yen: Profile = {
-      ...E2E_PROFILE,
-      budget: { amountMinor: 5000, currency: "JPY", period: "month" },
-    };
-    expect(formFromProfile(yen).budget.amount).toBe("5000");
   });
 
   it("maps null certificates to empty strings", () => {
@@ -156,12 +125,10 @@ describe("formFromProfile", () => {
     ]);
   });
 
-  it("does not share arrays with the profile", () => {
-    const form = formFromProfile(E2E_PROFILE_XB_ONLY);
-    form.destinations.push("XC");
-    form.fields.push("x");
-    expect(E2E_PROFILE_XB_ONLY.destinations).toEqual(["XB"]);
-    expect(E2E_PROFILE_XB_ONLY.fields).toHaveLength(2);
+  it("does not share the subjects array with the profile", () => {
+    const form = formFromProfile(E2E_PROFILE);
+    form.credential.subjects.push({ subject: "x", grade: "1" });
+    expect(E2E_PROFILE.credential.subjects).toHaveLength(1);
   });
 });
 
@@ -182,18 +149,13 @@ describe("draftFromForm and formFromDraft", () => {
       { language: "en", level: "", certificate: "" },
       { language: "de", level: "unknown", certificate: "" },
     ],
-    fields: ["xx-test-field-cs"],
-    studyLanguages: ["fr", "en"],
-    destinations: ["XB"],
-    institutionType: "public",
-    budget: { amount: "9000", currency: "MAD", period: "year" },
   };
 
   it("produces a draft that passes parseDraft and the strict Zod schema", () => {
-    const draft = draftFromForm(full, 2);
+    const draft = draftFromForm(full, 1);
     expect(parseDraft(draft)).toEqual(draft);
     expect(DraftSchema.parse(draft)).toEqual(draft);
-    expect(draft.step).toBe(2);
+    expect(draft.step).toBe(1);
   });
 
   it("produces a valid draft from an untouched empty form", () => {
@@ -208,9 +170,9 @@ describe("draftFromForm and formFromDraft", () => {
   });
 
   it("round-trips a form through a draft", () => {
-    const { form, step } = formFromDraft(draftFromForm(full, 3), coreShard());
+    const { form, step } = formFromDraft(draftFromForm(full, 2), coreShard());
     expect(form).toEqual(full);
-    expect(step).toBe(3);
+    expect(step).toBe(2);
   });
 
   it("round-trips the empty form through a draft", () => {
@@ -219,11 +181,9 @@ describe("draftFromForm and formFromDraft", () => {
     expect(formFromDraft(draftFromForm(empty, 0), core).form).toEqual(empty);
   });
 
-  it("round-trips the E2E profiles through form and draft", () => {
-    for (const profile of [E2E_PROFILE, E2E_PROFILE_WITH_BUDGET, E2E_PROFILE_XB_ONLY]) {
-      const form = formFromProfile(profile);
-      expect(formFromDraft(draftFromForm(form, 1), realCore()).form).toEqual(form);
-    }
+  it("round-trips the E2E profile through form and draft", () => {
+    const form = formFromProfile(E2E_PROFILE);
+    expect(formFromDraft(draftFromForm(form, 1), realCore()).form).toEqual(form);
   });
 
   it("survives a JSON round trip", () => {
@@ -239,11 +199,7 @@ describe("draftFromForm and formFromDraft", () => {
       f.credential.overall = long;
       f.credential.subjects = [{ subject: long, grade: long }];
       f.languages = [{ language: long, level: "B1", certificate: long }];
-      f.fields = [long];
-      f.studyLanguages = [long];
-      f.destinations = [long];
       f.priorHigherEducationYears = long;
-      f.budget = { amount: long, currency: long, period: "month" };
     });
     const draft = draftFromForm(form, 0);
     expect(parseDraft(draft)).not.toBeNull();
@@ -252,8 +208,6 @@ describe("draftFromForm and formFromDraft", () => {
     expect(draft.credential?.overall?.value).toHaveLength(200);
     expect(at(draft.credential?.subjects ?? [], 0).subject).toHaveLength(200);
     expect(at(draft.languages ?? [], 0).certificate).toHaveLength(200);
-    expect(draft.fields?.at(0)).toHaveLength(200);
-    expect(draft.budget?.amount).toHaveLength(200);
   });
 
   it("never emits a key the strict draft schema rejects", () => {
@@ -279,8 +233,8 @@ describe("draftFromForm and formFromDraft", () => {
 
   it("overlays only the fields present in the draft", () => {
     const core = coreShard();
-    const { form, step } = formFromDraft({ schemaVersion: 1, step: 1, fields: ["a"] }, core);
-    expect(form).toEqual({ ...emptyFormState(core), fields: ["a"] });
+    const { form, step } = formFromDraft({ schemaVersion: 2, step: 1, nationality: "XB" }, core);
+    expect(form).toEqual({ ...emptyFormState(core), nationality: "XB" });
     expect(step).toBe(1);
   });
 
@@ -288,7 +242,7 @@ describe("draftFromForm and formFromDraft", () => {
     const core = coreShard();
     const { form } = formFromDraft(
       {
-        schemaVersion: 1,
+        schemaVersion: 2,
         step: 0,
         nationality: "ZZ",
         credential: {
@@ -296,7 +250,6 @@ describe("draftFromForm and formFromDraft", () => {
           overall: { scale: "whatever", value: "abc" },
           subjects: [{ subject: "nope", grade: { scale: "s", value: "١٤" } }],
         },
-        fields: ["nope"],
         languages: [{ language: "xx", level: "Z9", certificate: "nope" }],
       },
       core,
@@ -305,33 +258,29 @@ describe("draftFromForm and formFromDraft", () => {
     expect(form.credential.type).toBe("not-a-type");
     expect(form.credential.overall).toBe("abc");
     expect(form.credential.subjects).toEqual([{ subject: "nope", grade: "١٤" }]);
-    expect(form.fields).toEqual(["nope"]);
     expect(form.languages.map((row) => row.language)).toEqual(["fr", "en", "xx"]);
     expect(at(form.languages, 2)).toEqual({ language: "xx", level: "", certificate: "nope" });
   });
 
-  it("treats a null overall grade and a null budget as empty", () => {
+  it("treats a null overall grade as empty", () => {
     const core = coreShard();
     const { form } = formFromDraft(
-      { schemaVersion: 1, step: 0, credential: { overall: null }, budget: null },
+      { schemaVersion: 2, step: 0, credential: { overall: null } },
       core,
     );
     expect(form.credential.overall).toBe("");
-    expect(form.budget).toEqual({ amount: "", currency: "EUR", period: "month" });
   });
 
-  it("restores partial budget and language rows", () => {
+  it("restores partial language rows", () => {
     const core = coreShard();
     const { form } = formFromDraft(
       {
-        schemaVersion: 1,
+        schemaVersion: 2,
         step: 0,
-        budget: { currency: "MAD" },
         languages: [{ language: "fr" }, { language: "en", certificate: null }],
       },
       core,
     );
-    expect(form.budget).toEqual({ amount: "", currency: "MAD", period: "month" });
     expect(form.languages).toEqual([
       { language: "fr", level: "", certificate: "" },
       { language: "en", level: "", certificate: "" },
@@ -341,13 +290,12 @@ describe("draftFromForm and formFromDraft", () => {
   it("returns a form that shares nothing with the draft", () => {
     const draft = draftFromForm(full, 0);
     const { form } = formFromDraft(draft, coreShard());
-    form.fields.push("x");
-    at(form.credential.subjects, 0).grade = "0";
-    expect(draft.fields).toEqual(["xx-test-field-cs"]);
+    form.credential.subjects.push({ subject: "x", grade: "1" });
+    expect(draft.credential?.subjects).toHaveLength(1);
     expect(at(draft.credential?.subjects ?? [], 0).grade.value).toBe("15.5");
   });
 
   it("emits a schema-valid draft for a form that passes validation", () => {
-    expect(DraftSchema.safeParse(draftFromForm(validForm(), 4)).success).toBe(true);
+    expect(DraftSchema.safeParse(draftFromForm(validForm(), 2)).success).toBe(true);
   });
 });

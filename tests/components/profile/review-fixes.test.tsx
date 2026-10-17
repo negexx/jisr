@@ -192,7 +192,6 @@ describe("error summary", () => {
 
 describe("fact notes describe the text that is shown", () => {
   const MACHINE = /تمت ترجمته تلقائيًا/;
-  const FRENCH = /معروض بالفرنسية/;
 
   it("shows a note for the selected country only, and none when nothing is selected", async () => {
     const { user } = renderProfileForm("ar", fixtureClient());
@@ -204,32 +203,6 @@ describe("fact notes describe the text that is shown", () => {
     expect(within(field).queryByText(MACHINE)).toBeNull();
     await user.selectOptions(nationality, "");
     expect(within(field).queryByText(MACHINE)).toBeNull();
-  });
-
-  it("shows notes for the checked items of a checkbox group only", async () => {
-    const { user } = renderProfileForm("ar", fixtureClient());
-    await screen.findByRole("heading", { level: 2, name: "البكالوريا" });
-    fireEvent.change(screen.getByRole("combobox", { name: /^الشهادة/ }), {
-      target: { value: "xx-test-cred" },
-    });
-    await user.selectOptions(
-      screen.getByRole("combobox", { name: /^المسلك/ }),
-      "xx-test-track-sci",
-    );
-    await user.click(screen.getByRole("radio", { name: "ليس بعد، سأجتازها هذه السنة" }));
-    await user.click(screen.getByRole("button", { name: "التالي" }));
-    await stepHeading("اللغات");
-    for (const level of screen.getAllByRole("combobox", { name: /^مستواك/ })) {
-      await user.selectOptions(level, "unknown");
-    }
-    await user.click(screen.getByRole("button", { name: "التالي" }));
-    await stepHeading("ما الذي تريده");
-    const group = screen.getByRole("group", { name: /^مجالات الدراسة/ });
-    expect(within(group).queryByText(MACHINE)).toBeNull();
-    expect(within(group).queryByText(FRENCH)).toBeNull();
-    await user.click(within(group).getByRole("checkbox", { name: "علوم الحاسوب للاختبار" }));
-    expect(within(group).getByText(MACHINE)).toBeTruthy();
-    expect(within(group).queryByText(FRENCH)).toBeNull();
   });
 
   it("has no note element and no dangling aria-describedby when there is nothing to say", async () => {
@@ -292,17 +265,8 @@ describe("review with an old or tampered draft", () => {
   function reviewDraft(change: (form: ReturnType<typeof emptyFormState>) => void) {
     const form = emptyFormState(coreShard());
     change(form);
-    window.localStorage.setItem(DRAFT_KEY, JSON.stringify(draftFromForm(form, 4)));
+    window.localStorage.setItem(DRAFT_KEY, JSON.stringify(draftFromForm(form, 2)));
   }
-
-  it("does not throw on a blank or malformed currency: the default currency is used", async () => {
-    reviewDraft((form) => {
-      form.budget = { amount: "800", currency: "", period: "month" };
-    });
-    renderProfileForm("en", clientFor(coreShard()));
-    await stepHeading("Review");
-    expect(screen.getByText(/800/, { selector: "dd" }).textContent).toMatch(/€\s?800/);
-  });
 
   it("shows Not given for empty nationality, years and subject", async () => {
     reviewDraft((form) => {
@@ -322,20 +286,6 @@ describe("review with an old or tampered draft", () => {
   });
 });
 
-describe("a blank currency from an older draft", () => {
-  it("becomes the default one, so the select and the form state agree", async () => {
-    const form = emptyFormState(coreShard());
-    form.budget = { amount: "800", currency: "", period: "month" };
-    window.localStorage.setItem(DRAFT_KEY, JSON.stringify(draftFromForm(form, 3)));
-    const { user } = renderProfileForm("en", clientFor(coreShard()));
-    await stepHeading("Budget");
-    expect(combobox(/^Currency/).value).toBe("EUR");
-    await user.click(screen.getByRole("button", { name: "Next" }));
-    await stepHeading("Review");
-    expect(screen.getByText(/800/, { selector: "dd" }).textContent).toMatch(/€\s?800/);
-  });
-});
-
 describe("smaller behaviours", () => {
   it("gives the subject group an id that a summary link can focus", async () => {
     renderProfileForm("en", fixtureClient());
@@ -344,20 +294,6 @@ describe("smaller behaviours", () => {
     expect(group?.tagName).toBe("FIELDSET");
     expect(group?.getAttribute("tabindex")).toBe("-1");
     expect(document.querySelectorAll("#field-fields, #field-institutionType").length).toBe(0);
-  });
-
-  it("offers only EUR and MAD for the budget, with no blank choice", async () => {
-    window.localStorage.setItem(
-      DRAFT_KEY,
-      JSON.stringify(draftFromForm(emptyFormState(coreShard()), 3)),
-    );
-    renderProfileForm("en", clientFor(coreShard()));
-    await stepHeading("Budget");
-    for (const name of [/^Currency/, /^Period/]) {
-      const options = within(combobox(name)).getAllByRole("option");
-      expect(options.map((option) => option.textContent)).not.toContain("Choose");
-    }
-    expect(within(combobox(/^Currency/)).getAllByRole("option")).toHaveLength(2);
   });
 
   it("closes the draft notice on the first step change", async () => {
@@ -384,13 +320,13 @@ describe("smaller behaviours", () => {
     expect(screen.queryByText(/We kept your unfinished answers/)).toBeNull();
   });
 
-  it("draws one segment per step and fills the last one on step 4 and on the review", async () => {
-    const draft = draftFromForm(emptyFormState(coreShard()), 3);
+  it("draws one segment per step and fills them on the review", async () => {
+    const draft = draftFromForm(emptyFormState(coreShard()), 2);
     window.localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
     renderProfileForm("en", clientFor(coreShard()));
-    await stepHeading("Budget");
+    await stepHeading("Review");
     const segments = document.querySelectorAll("[aria-hidden='true'].flex > span");
-    expect(segments).toHaveLength(4);
+    expect(segments).toHaveLength(2);
     expect([...segments].every((segment) => segment.className.includes("bg-primary"))).toBe(true);
   });
 
@@ -410,9 +346,8 @@ describe("smaller behaviours", () => {
           { language: "fr", level: "B2", certificate: "" },
           { language: "en", level: "unknown", certificate: "" },
         ],
-        fields: ["xx-test-field"],
       },
-      4,
+      2,
     );
     const save = vi.spyOn(profileStore, "save");
     window.localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));

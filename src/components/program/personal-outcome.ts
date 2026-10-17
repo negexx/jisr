@@ -2,7 +2,7 @@
 // loads this module with import() once a profile exists, so visitors without one never download the
 // matching code. Nothing here logs: an error could carry profile values.
 import type { IsoDate } from "@/data-schema/dates";
-import type { Profile } from "@/data-schema/profile";
+import type { Budget, Profile } from "@/data-schema/profile";
 import { estimateCost } from "@/domain/costs";
 import { matchProgram } from "@/domain/match";
 import { resolveRoute } from "@/domain/route";
@@ -29,8 +29,11 @@ export type Outcome =
   | { kind: "missing" }
   | { kind: "compute_error" };
 
+// `budget` is the transient filter's budget (jisr.matches-filters), not the profile's: the profile
+// is eligibility-only and a budget never hides a program, only annotates the cost range.
 export function personalOutcome(
   profile: Profile,
+  budget: Budget | null,
   bundle: SnapshotBundle,
   slug: string,
   locale: AppLocale,
@@ -46,7 +49,7 @@ export function personalOutcome(
     const cost = estimateCost({
       program,
       costProfiles: bundle.costProfiles.flatMap((shard) => shard.profiles),
-      budget: profile.budget,
+      budget,
       now,
     });
     const context = {

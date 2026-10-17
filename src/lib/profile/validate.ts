@@ -18,11 +18,8 @@ import {
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const COUNTRY_CODE = /^[A-Z]{2}$/;
 const LANGUAGE_CODE = /^[a-z]{2}$/;
-const CURRENCY = /^[A-Z]{3}$/;
 
 const CREDENTIAL_STATUSES = ["obtained", "expected"] as const;
-const BUDGET_PERIODS = ["month", "year"] as const;
-const INSTITUTION_TYPES = ["public", "private", "any"] as const;
 const LANGUAGE_LEVELS = [...CEFR_LEVELS, "unknown"] as const;
 
 function strictRecord(value: unknown, keys: readonly string[]): UnknownRecord | null {
@@ -95,21 +92,6 @@ function parseLanguage(value: unknown): Profile["languages"][number] | null {
   return { language, level, certificate };
 }
 
-function parseBudget(value: unknown): NonNullable<Profile["budget"]> | null {
-  const record = strictRecord(value, ["amountMinor", "currency", "period"]);
-  if (record === null) return null;
-  const { amountMinor, currency, period } = record;
-  if (
-    !isInteger(amountMinor) ||
-    amountMinor < 0 ||
-    !matches(currency, CURRENCY) ||
-    !isOneOf(period, BUDGET_PERIODS)
-  ) {
-    return null;
-  }
-  return { amountMinor, currency, period };
-}
-
 function hasDuplicate(values: readonly string[]): boolean {
   return new Set(values).size !== values.length;
 }
@@ -121,11 +103,6 @@ export function parseProfile(raw: unknown): Profile | null {
     "credential",
     "priorHigherEducationYears",
     "languages",
-    "fields",
-    "studyLanguages",
-    "destinations",
-    "budget",
-    "institutionType",
   ]);
   if (record === null || record.schemaVersion !== PROFILE_SCHEMA_VERSION) return null;
 
@@ -133,11 +110,6 @@ export function parseProfile(raw: unknown): Profile | null {
   const credential = parseCredential(record.credential);
   const years = record.priorHigherEducationYears;
   const languages = parseEach(record.languages, parseLanguage);
-  const fields = parseEach(record.fields, parseSlug);
-  const studyLanguages = parseEach(record.studyLanguages, parseLanguageCode);
-  const destinations = parseEach(record.destinations, parseCountry);
-  const budget = record.budget === null ? null : parseBudget(record.budget);
-  const { institutionType } = record;
 
   if (
     nationality === null ||
@@ -145,13 +117,7 @@ export function parseProfile(raw: unknown): Profile | null {
     !isInteger(years) ||
     years < 0 ||
     years > 3 ||
-    languages === null ||
-    fields === null ||
-    fields.length < 1 ||
-    studyLanguages === null ||
-    destinations === null ||
-    (budget === null && record.budget !== null) ||
-    !isOneOf(institutionType, INSTITUTION_TYPES)
+    languages === null
   ) {
     return null;
   }
@@ -164,10 +130,5 @@ export function parseProfile(raw: unknown): Profile | null {
     credential,
     priorHigherEducationYears: years,
     languages,
-    fields,
-    studyLanguages,
-    destinations,
-    budget,
-    institutionType,
   };
 }

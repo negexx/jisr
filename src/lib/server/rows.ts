@@ -4,6 +4,7 @@ import { CHECKLIST_STEP_IDS, type ChecklistStepId } from "@/domain/types";
 import { PLAN_SCHEMA_VERSION, SAVED_SCHEMA_VERSION } from "@/lib/constants";
 import { isOneOf } from "@/lib/guards";
 import { MAX_PLAN_PROGRAMS, type PlanProgress } from "@/lib/plan/progress";
+import { migrateProfileRecord } from "@/lib/profile/storage";
 import type { SavedList, SavedProgram } from "@/lib/saved/saved";
 
 // Pure mappers between the per-item user-data rows and the guest document shapes the UI
@@ -95,8 +96,9 @@ export function profileToRow(
 }
 
 // The jsonb column is typed, not checked: a document from an older or newer build can
-// fail the schema, and the caller then treats the account as having no usable profile.
+// fail the schema, and the caller then treats the account as having no usable profile. A v1
+// document is stripped to the v2 shape first, so accounts synced before the change still read.
 export function rowToProfile(row: ProfileRow): Profile | null {
-  const parsed = ProfileSchema.safeParse(row.data);
+  const parsed = ProfileSchema.safeParse(migrateProfileRecord(row.data));
   return parsed.success ? parsed.data : null;
 }

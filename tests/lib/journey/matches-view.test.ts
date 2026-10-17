@@ -1,5 +1,5 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import type { Profile } from "@/data-schema/profile";
+import type { MatchFilters } from "@/data-schema/match-filters";
 import type { Intake } from "@/data-schema/records/program";
 import type { AdmissionRoute, Program } from "@/data-schema/resolved";
 import type { PreferenceMismatch } from "@/domain/filter";
@@ -14,14 +14,16 @@ import {
   routeKeyOf,
   topReasons,
 } from "@/lib/journey/matches-view";
+import { EMPTY_MATCH_FILTERS } from "@/lib/matches/filters";
 import type { SnapshotBundle } from "@/lib/snapshot/client";
 
 import {
   E2E_EXPECTED,
+  E2E_FILTERS,
+  E2E_FILTERS_WITH_BUDGET,
+  E2E_FILTERS_XB_ONLY,
   E2E_NOW,
   E2E_PROFILE,
-  E2E_PROFILE_WITH_BUDGET,
-  E2E_PROFILE_XB_ONLY,
   E2E_SLUGS,
 } from "../../fixtures/e2e/profiles";
 import { forbidConsole } from "../profile/no-console";
@@ -47,8 +49,26 @@ function okView(view: MatchesView): Extract<MatchesView, { kind: "ok" }> {
   return view;
 }
 
-function viewFor(profile: Profile, bundle: SnapshotBundle = frBundle) {
-  return okView(buildMatchesView({ profile, bundle, now: E2E_NOW, locale: "fr" }));
+function viewFor(filterSet: MatchFilters = E2E_FILTERS, bundle: SnapshotBundle = frBundle) {
+  return okView(
+    buildMatchesView({
+      profile: E2E_PROFILE,
+      filters: filterSet,
+      bundle,
+      now: E2E_NOW,
+      locale: "fr",
+    }),
+  );
+}
+
+function filters(o: Partial<MatchFilters> = {}): MatchFilters {
+  return { ...EMPTY_MATCH_FILTERS, ...o };
+}
+
+function viewForFilters(input: MatchFilters, bundle: SnapshotBundle = frBundle) {
+  return okView(
+    buildMatchesView({ profile: E2E_PROFILE, filters: input, bundle, now: E2E_NOW, locale: "fr" }),
+  );
 }
 
 function cards(view: Extract<MatchesView, { kind: "ok" }>): MatchCardModel[] {
@@ -169,19 +189,19 @@ describe("topReasons", () => {
   });
 });
 
-const PROFILES = [
-  ["E2E_PROFILE", E2E_PROFILE],
-  ["E2E_PROFILE_WITH_BUDGET", E2E_PROFILE_WITH_BUDGET],
-  ["E2E_PROFILE_XB_ONLY", E2E_PROFILE_XB_ONLY],
+const FILTER_CASES = [
+  ["E2E_PROFILE", E2E_FILTERS],
+  ["E2E_PROFILE_WITH_BUDGET", E2E_FILTERS_WITH_BUDGET],
+  ["E2E_PROFILE_XB_ONLY", E2E_FILTERS_XB_ONLY],
 ] as const;
 
 describe("buildMatchesView on the e2e fixture", () => {
-  describe.each(PROFILES)("with %s", (name, profile) => {
+  describe.each(FILTER_CASES)("with %s", (name, filterSet) => {
     const hidden: Partial<Record<string, readonly PreferenceMismatch[]>> =
       E2E_EXPECTED.hidden[name];
 
     it("puts each kept program in the group E2E_EXPECTED gives", () => {
-      const view = viewFor(profile);
+      const view = viewFor(filterSet);
       const expected = Object.entries(E2E_EXPECTED.programs).filter(
         ([slug]) => hidden[slug] === undefined,
       );
@@ -198,7 +218,7 @@ describe("buildMatchesView on the e2e fixture", () => {
     });
 
     it("hides exactly the expected programs with their mismatch kinds, unmatched", () => {
-      const view = viewFor(profile);
+      const view = viewFor(filterSet);
       const actual = Object.fromEntries(view.hidden.map((h) => [h.slug, h.mismatches]));
       expect(actual).toEqual(hidden);
       for (const program of view.hidden) {
@@ -213,7 +233,7 @@ describe("buildMatchesView on the e2e fixture", () => {
     });
 
     it("has counts that add up", () => {
-      const view = viewFor(profile);
+      const view = viewFor(filterSet);
       for (const group of MATCH_GROUPS) {
         expect(view.counts[group]).toBe(view.groups[group].length);
       }
@@ -224,7 +244,7 @@ describe("buildMatchesView on the e2e fixture", () => {
   });
 
   it("puts the stale program in check, never ok or failed", () => {
-    const view = viewFor(E2E_PROFILE);
+    const view = viewFor(E2E_FILTERS);
     expect(card(view, E2E_SLUGS.stale).group).toBe("check");
     expect(card(view, E2E_SLUGS.stale).match.reasons.some((r) => r.code === "stale_source")).toBe(
       true,
@@ -232,8 +252,8 @@ describe("buildMatchesView on the e2e fixture", () => {
   });
 
   it("lets the budget change only the budget fit, never the group", () => {
-    const plain = viewFor(E2E_PROFILE);
-    const budget = viewFor(E2E_PROFILE_WITH_BUDGET);
+    const plain = viewFor(E2E_FILTERS);
+    const budget = viewFor(E2E_FILTERS_WITH_BUDGET);
     for (const group of MATCH_GROUPS) {
       expect(slugsIn(budget, group)).toEqual(slugsIn(plain, group));
     }
@@ -244,7 +264,7 @@ describe("buildMatchesView on the e2e fixture", () => {
   });
 
   it("each card carries its country, field and the bundle's snapshot version (the save button needs them)", () => {
-    const view = viewFor(E2E_PROFILE);
+    const view = viewFor(E2E_FILTERS);
     const c = card(view, E2E_SLUGS.ok);
     const program = programOf(frBundle, E2E_SLUGS.ok);
     expect(c.country).toBe(program.country);
@@ -253,7 +273,7 @@ describe("buildMatchesView on the e2e fixture", () => {
   });
 
   it("builds the ok program card from the program, institution, channel and text", () => {
-    const view = viewFor(E2E_PROFILE);
+    const view = viewFor(E2E_FILTERS);
     const ok = card(view, E2E_SLUGS.ok);
     const program = programOf(frBundle, E2E_SLUGS.ok);
     expect(ok.name).toBe("XX Test Programme OK");
@@ -279,7 +299,7 @@ describe("buildMatchesView on the e2e fixture", () => {
   });
 
   it("lists every fact the card shows, once", () => {
-    const ok = card(viewFor(E2E_PROFILE), E2E_SLUGS.ok);
+    const ok = card(viewFor(E2E_FILTERS), E2E_SLUGS.ok);
     const ids = ok.factRefs.map((f) => `${f.record}#${f.path}`);
     expect(new Set(ids).size).toBe(ids.length);
     for (const id of [
@@ -300,14 +320,20 @@ describe("buildMatchesView on the e2e fixture", () => {
   });
 
   it("gives the foundation card its route reason first", () => {
-    const foundation = card(viewFor(E2E_PROFILE), E2E_SLUGS.foundation);
+    const foundation = card(viewFor(E2E_FILTERS), E2E_SLUGS.foundation);
     expect(foundation.topReasons[0]?.code).toBe("route_foundation");
     expect(foundation.topReasons[0]?.kind).toBe("route");
   });
 
   it("carries the text note of the summary in the page locale", () => {
     const view = okView(
-      buildMatchesView({ profile: E2E_PROFILE, bundle: arBundle, now: E2E_NOW, locale: "ar" }),
+      buildMatchesView({
+        profile: E2E_PROFILE,
+        filters: filters(),
+        bundle: arBundle,
+        now: E2E_NOW,
+        locale: "ar",
+      }),
     );
     expect(card(view, E2E_SLUGS.frOnly).summaryText?.note).toBe("french_fallback");
     expect(card(view, E2E_SLUGS.frOnly).intake.kind).toBe("unknown");
@@ -315,7 +341,7 @@ describe("buildMatchesView on the e2e fixture", () => {
 
   it("falls back to the slugs when institution data is missing, without throwing", () => {
     const bundle: SnapshotBundle = { ...frBundle, institutions: [] };
-    const ok = card(viewFor(E2E_PROFILE, bundle), E2E_SLUGS.ok);
+    const ok = card(viewFor(E2E_FILTERS, bundle), E2E_SLUGS.ok);
     expect(ok.institutionName).toBe("xx-test-inst-pub-b");
     expect(ok.cityName).toBe("xx-test-city-b");
     expect(ok.factRefs.some((f) => f.record.startsWith("institutions/"))).toBe(false);
@@ -323,13 +349,21 @@ describe("buildMatchesView on the e2e fixture", () => {
 
   it("returns no_programs for an empty catalogue", () => {
     const bundle: SnapshotBundle = { ...frBundle, programs: [], hasPrograms: false };
-    expect(buildMatchesView({ profile: E2E_PROFILE, bundle, now: E2E_NOW, locale: "fr" })).toEqual({
+    expect(
+      buildMatchesView({
+        profile: E2E_PROFILE,
+        filters: filters(),
+        bundle,
+        now: E2E_NOW,
+        locale: "fr",
+      }),
+    ).toEqual({
       kind: "no_programs",
     });
   });
 
   it("returns ok with empty groups when every program is hidden", () => {
-    const view = viewFor({ ...E2E_PROFILE, destinations: ["XZ"] });
+    const view = viewForFilters(filters({ destinations: ["XZ"] }));
     for (const group of MATCH_GROUPS) expect(view.groups[group]).toEqual([]);
     expect(view.hiddenCount).toBe(view.totalPrograms);
     expect(view.totalPrograms).toBeGreaterThan(0);
@@ -339,7 +373,7 @@ describe("buildMatchesView on the e2e fixture", () => {
   it("counts a field mismatch if a program of another field is present", () => {
     const ok = programOf(frBundle, E2E_SLUGS.ok);
     const other: Program = { ...ok, slug: "xx-test-other-field", field: "xx-test-field-other" };
-    const view = viewFor(E2E_PROFILE, withPrograms(frBundle, [ok, other]));
+    const view = viewFor(E2E_FILTERS, withPrograms(frBundle, [ok, other]));
     expect(view.hidden).toEqual([
       { slug: "xx-test-other-field", name: ok.name, mismatches: ["field"] },
     ]);
@@ -350,7 +384,13 @@ describe("buildMatchesView on the e2e fixture", () => {
   it("throws when the core shard is missing: that is a programmer error", () => {
     const bundle: SnapshotBundle = { ...frBundle, core: undefined };
     expect(() =>
-      buildMatchesView({ profile: E2E_PROFILE, bundle, now: E2E_NOW, locale: "fr" }),
+      buildMatchesView({
+        profile: E2E_PROFILE,
+        filters: filters(),
+        bundle,
+        now: E2E_NOW,
+        locale: "fr",
+      }),
     ).toThrow();
   });
 
@@ -376,7 +416,7 @@ describe("buildMatchesView on the e2e fixture", () => {
       variant(ok, "xx-sort-c-early", [intake("2026-12-01")]),
       variant(fail, "xx-sort-0-failed-earliest", [intake("2026-10-01")]),
     ];
-    const view = viewFor(E2E_PROFILE, withPrograms(frBundle, programs));
+    const view = viewFor(E2E_FILTERS, withPrograms(frBundle, programs));
     expect(slugsIn(view, "ok")).toEqual([
       "xx-sort-c-early",
       "xx-sort-d-early",
@@ -390,11 +430,20 @@ describe("buildMatchesView on the e2e fixture", () => {
     expect(card(view, "xx-sort-a-unknown").intake.kind).toBe("unknown");
   });
 
-  it("returns no_programs_for_fields when programs exist but none for the student's fields", () => {
+  it("returns ok with no groups when programs exist but the catalogue lists none", () => {
     const bundle: SnapshotBundle = { ...frBundle, programs: [] };
-    expect(buildMatchesView({ profile: E2E_PROFILE, bundle, now: E2E_NOW, locale: "fr" })).toEqual({
-      kind: "no_programs_for_fields",
-    });
+    const view = okView(
+      buildMatchesView({
+        profile: E2E_PROFILE,
+        filters: filters(),
+        bundle,
+        now: E2E_NOW,
+        locale: "fr",
+      }),
+    );
+    for (const group of MATCH_GROUPS) expect(view.groups[group]).toEqual([]);
+    expect(view.totalPrograms).toBe(0);
+    expect(view.hiddenCount).toBe(0);
   });
 
   it("sorts hidden programs by slug", () => {
@@ -404,15 +453,56 @@ describe("buildMatchesView on the e2e fixture", () => {
       programOf(frBundle, E2E_SLUGS.ok),
       { ...priv, slug: "xx-a-private" },
     ];
-    const view = viewFor(E2E_PROFILE, withPrograms(frBundle, programs));
+    const view = viewFor(E2E_FILTERS, withPrograms(frBundle, programs));
     expect(view.hidden.map((h) => h.slug)).toEqual(["xx-a-private", "xx-z-private"]);
   });
 
   it("is JSON-serialisable, so it can cross an island boundary", () => {
-    for (const [, profile] of PROFILES) {
-      const view = viewFor(profile);
+    for (const [, filterSet] of FILTER_CASES) {
+      const view = viewFor(filterSet);
       expect(JSON.parse(JSON.stringify(view))).toStrictEqual(view);
     }
+  });
+});
+
+describe("buildMatchesView: filters drive matching", () => {
+  it("keeps every eligible program when the filters are empty", () => {
+    const view = viewForFilters(filters());
+    expect(view.hiddenCount).toBe(0);
+    expect(view.totalPrograms).toBe(allPrograms(frBundle).length);
+    expect(
+      cards(view)
+        .map((c) => c.slug)
+        .sort(),
+    ).toEqual(
+      allPrograms(frBundle)
+        .map((p) => p.slug)
+        .sort(),
+    );
+  });
+
+  it("narrows by field and lists the excluded programs with their mismatch", () => {
+    const view = viewForFilters(filters({ fields: ["xx-test-field-cs"] }));
+    expect(view.hidden.map((h) => h.slug)).toEqual([E2E_SLUGS.check, E2E_SLUGS.stale]);
+    expect(view.hiddenByMismatch.field).toBe(2);
+    expect(cards(view).every((c) => c.field === "xx-test-field-cs")).toBe(true);
+  });
+
+  it("narrows by destination and lists the excluded programs with their mismatch", () => {
+    const view = viewForFilters(filters({ destinations: ["XC"] }));
+    expect(view.hiddenCount).toBeGreaterThan(0);
+    expect(view.hidden.every((h) => h.mismatches.includes("destination"))).toBe(true);
+    expect(cards(view).every((c) => c.country === "XC")).toBe(true);
+  });
+
+  it("computes budgetFit when a budget is set, without changing the grouping", () => {
+    const plain = viewForFilters(filters());
+    const budget = viewForFilters(
+      filters({ budget: { amountMinor: 90_000, currency: "XTS", period: "month" } }),
+    );
+    for (const group of MATCH_GROUPS) expect(slugsIn(budget, group)).toEqual(slugsIn(plain, group));
+    expect(card(plain, E2E_SLUGS.ok).cost.budgetFit).toBe("unknown");
+    expect(card(budget, E2E_SLUGS.ok).cost.budgetFit).not.toBe("unknown");
   });
 });
 
@@ -436,11 +526,11 @@ const STALE_DATE = "2020-01-01";
 
 describe("route message key", () => {
   function okCard(bundle: SnapshotBundle): MatchCardModel {
-    return card(viewFor(E2E_PROFILE, bundle), E2E_SLUGS.ok);
+    return card(viewFor(E2E_FILTERS, bundle), E2E_SLUGS.ok);
   }
 
   it("names the route when its fact is decisive, or for foundation / check / missing", () => {
-    const view = viewFor(E2E_PROFILE);
+    const view = viewFor(E2E_FILTERS);
     expect(card(view, E2E_SLUGS.ok).routeKey).toBe("domain.route.direct");
     expect(card(view, E2E_SLUGS.foundation).routeKey).toBe("domain.route.foundation");
 

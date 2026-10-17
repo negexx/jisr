@@ -1,4 +1,5 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { planKey } from "@/components/matches/matches-request";
 import type { Manifest } from "@/data-schema/snapshot";
 import {
   shardsForMatches,
@@ -7,7 +8,7 @@ import {
   shardsForProgram,
 } from "@/lib/snapshot/plan";
 
-import { E2E_PROFILE, E2E_PROFILE_XB_ONLY } from "../../fixtures/e2e/profiles";
+import { E2E_PROFILE } from "../../fixtures/e2e/profiles";
 import { buildSnapshot, E2E_DATA_DIR, readManifest, removeTempDirs } from "./fixture";
 
 let manifest: Manifest;
@@ -27,8 +28,7 @@ describe("shardsForProfileForm", () => {
 });
 
 describe("shardsForMatches", () => {
-  it("loads every destination x the profile's fields when destinations is empty", () => {
-    expect(E2E_PROFILE.destinations).toEqual([]);
+  it("loads every program shard and each destination's aux shards", () => {
     const plan = shardsForMatches(E2E_PROFILE, manifest);
     expect(sorted(plan.structural)).toEqual(
       sorted([
@@ -47,24 +47,22 @@ describe("shardsForMatches", () => {
     );
   });
 
-  it("still loads unchosen destinations so destination mismatches can be counted", () => {
-    expect(sorted(shardsForMatches(E2E_PROFILE_XB_ONLY, manifest).structural)).toEqual(
+  it("still loads every destination's programs, so a filter change never changes the plan", () => {
+    const changed = { ...E2E_PROFILE, nationality: "XZ" };
+    expect(sorted(shardsForMatches(changed, manifest).structural)).toEqual(
       sorted(shardsForMatches(E2E_PROFILE, manifest).structural),
     );
   });
 
-  it("ignores (destination, field) pairs absent from the manifest", () => {
-    const plan = shardsForMatches({ ...E2E_PROFILE, fields: ["xx-test-field-eng"] }, manifest);
-    expect(sorted(plan.structural)).toEqual(
-      sorted([
-        "core",
-        "routes.XA",
-        "programs.XB.xx-test-field-eng",
-        "institutions.XB",
-        "costs.XB",
-        "scholarships.XB",
-      ]),
-    );
+  it("loads all program shards, so changing a match filter never changes the plan", () => {
+    const planNames = shardsForMatches(E2E_PROFILE, manifest).structural;
+    for (const name of [
+      "programs.XB.xx-test-field-cs",
+      "programs.XB.xx-test-field-eng",
+      "programs.XC.xx-test-field-cs",
+    ]) {
+      expect(planNames).toContain(name);
+    }
   });
 
   it("skips a routes shard the manifest does not list", () => {
@@ -135,5 +133,14 @@ describe("shardsForPlan", () => {
     );
     expect(plan.structural).not.toContain("programs.XB.xx-gone");
     expect(new Set(plan.structural).size).toBe(plan.structural.length);
+  });
+});
+
+describe("planKey", () => {
+  it("depends only on the credential country, so a filter change never refetches", () => {
+    const base = planKey(E2E_PROFILE);
+    expect(
+      planKey({ ...E2E_PROFILE, credential: { ...E2E_PROFILE.credential, country: "XZ" } }),
+    ).not.toBe(base);
   });
 });

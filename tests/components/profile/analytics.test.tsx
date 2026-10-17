@@ -52,11 +52,6 @@ async function completeFixtureForm(user: User) {
   await user.selectOptions(levels[0] as HTMLElement, "B2");
   await user.selectOptions(levels[1] as HTMLElement, "unknown");
   await user.click(screen.getByRole("button", { name: "Next" }));
-  await user.click(await screen.findByRole("checkbox", { name: "Test computer science" }));
-  await user.click(screen.getByRole("button", { name: "Next" }));
-  await stepHeading("Budget");
-  await user.type(screen.getByRole("textbox", { name: /^Amount you can spend/ }), "800");
-  await user.click(screen.getByRole("button", { name: "Next" }));
   await stepHeading("Review");
 }
 
@@ -108,8 +103,6 @@ describe("profile form analytics: edit mode", () => {
     await stepHeading("Languages");
     const levels = screen.getAllByRole("combobox", { name: /^Your level/ });
     await user.selectOptions(levels[1] as HTMLElement, "unknown");
-    await user.click(screen.getByRole("button", { name: "Next" }));
-    await user.click(screen.getByRole("button", { name: "Next" }));
     await user.click(screen.getByRole("button", { name: "Next" }));
     await stepHeading("Review");
     await user.click(screen.getByRole("button", { name: "Save changes" }));

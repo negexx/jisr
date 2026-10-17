@@ -24,10 +24,11 @@ import { scholarshipsForProgram } from "@/domain/scholarships";
 import type { MatchResult } from "@/domain/types";
 import {
   E2E_EXPECTED,
+  E2E_FILTERS,
+  E2E_FILTERS_WITH_BUDGET,
+  E2E_FILTERS_XB_ONLY,
   E2E_NOW,
   E2E_PROFILE,
-  E2E_PROFILE_WITH_BUDGET,
-  E2E_PROFILE_XB_ONLY,
   E2E_SLUGS,
   type E2eGroup,
   type E2eIntakeKind,
@@ -118,10 +119,10 @@ function intakeKindOf(slug: string): E2eIntakeKind {
 }
 
 const expectedSlugs = Object.keys(E2E_EXPECTED.programs).sort();
-const profiles = [
-  ["E2E_PROFILE", E2E_PROFILE],
-  ["E2E_PROFILE_WITH_BUDGET", E2E_PROFILE_WITH_BUDGET],
-  ["E2E_PROFILE_XB_ONLY", E2E_PROFILE_XB_ONLY],
+const filterCases = [
+  ["E2E_PROFILE", E2E_FILTERS],
+  ["E2E_PROFILE_WITH_BUDGET", E2E_FILTERS_WITH_BUDGET],
+  ["E2E_PROFILE_XB_ONLY", E2E_FILTERS_XB_ONLY],
 ] as const;
 
 describe("e2e-journey fixture: dataset guards", () => {
@@ -171,10 +172,10 @@ describe("e2e-journey fixture: dataset guards", () => {
   });
 });
 
-describe.each(profiles)("%s", (profileName, profile) => {
+describe.each(filterCases)("%s", (profileName, filterSet) => {
   it.each(expectedSlugs)("matchProgram: %s", (slug) => {
     const expected = E2E_EXPECTED.programs[slug as keyof typeof E2E_EXPECTED.programs];
-    const result = match(profile, slug);
+    const result = match(E2E_PROFILE, slug);
 
     expect({ status: result.status, route: result.route, group: groupOf(result) }).toEqual({
       status: expected.status,
@@ -185,7 +186,7 @@ describe.each(profiles)("%s", (profileName, profile) => {
 
   it("filterPrograms hides exactly the expected programs with the expected mismatches", () => {
     const expectedHidden = E2E_EXPECTED.hidden[profileName];
-    const result = filterPrograms(profile, built.programs, E2E_NOW);
+    const result = filterPrograms(filterSet, built.programs, E2E_NOW);
 
     expect(Object.fromEntries(result.excluded.map((e) => [e.programSlug, e.mismatches]))).toEqual(
       expectedHidden,
@@ -257,7 +258,7 @@ describe("why each program gets its status (ADR 0005 semantics)", () => {
   it("private: satisfied for the profile, hidden only by the institution type preference", () => {
     expect(match(E2E_PROFILE, E2E_SLUGS.private).status).toBe("satisfied");
     expect(program(E2E_SLUGS.private).institutionType).toBe("private");
-    const anyType = { ...E2E_PROFILE, institutionType: "any" } as const;
+    const anyType = { ...E2E_FILTERS, institutionType: "any" as const };
     expect(filterPrograms(anyType, built.programs, E2E_NOW).excluded).toEqual([]);
   });
 
@@ -286,13 +287,13 @@ describe("costs, scholarships and channels", () => {
     const complete = estimateCost({
       program: program(E2E_SLUGS.ok),
       costProfiles: built.costProfiles,
-      budget: E2E_PROFILE_WITH_BUDGET.budget,
+      budget: E2E_FILTERS_WITH_BUDGET.budget,
       now: E2E_NOW,
     });
     const incomplete = estimateCost({
       program: program(E2E_SLUGS.foundation),
       costProfiles: built.costProfiles,
-      budget: E2E_PROFILE_WITH_BUDGET.budget,
+      budget: E2E_FILTERS_WITH_BUDGET.budget,
       now: E2E_NOW,
     });
 

@@ -8,12 +8,13 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { MatchesClient } from "@/components/matches/matches-client";
 import type { Profile } from "@/data-schema/profile";
 import type { AppLocale } from "@/i18n/routing";
+import { writeMatchFilters } from "@/lib/matches/filter-store";
 import { PROFILE_KEY } from "@/lib/profile/storage";
 import { profileStore } from "@/lib/profile/store";
 import type { SnapshotBundle, SnapshotClient } from "@/lib/snapshot/client";
 import { SnapshotError } from "@/lib/snapshot/errors";
 import { shardsForMatches } from "@/lib/snapshot/plan";
-import { E2E_NOW, E2E_PROFILE, E2E_PROFILE_XB_ONLY } from "../../fixtures/e2e/profiles";
+import { E2E_FILTERS, E2E_NOW, E2E_PROFILE, E2E_SLUGS } from "../../fixtures/e2e/profiles";
 import { forbidConsole } from "../../lib/profile/no-console";
 import { LOCALES } from "../trust-helpers";
 import { bundleClient, catalogs, Providers, renderMatches, withFixtureClient } from "./helpers";
@@ -196,19 +197,6 @@ describe("My Matches: data states", () => {
     expect(screen.queryByRole("alert")).toBeNull();
   });
 
-  it.each(
-    LOCALES,
-  )("says the chosen fields have no programs yet, with an edit link (%s)", async (locale) => {
-    profileStore.save(E2E_PROFILE);
-    const bundle = await loadedBundle(locale);
-    renderMatches(locale, bundleClient({ ...bundle, programs: [], hasPrograms: true }));
-    await screen.findByRole("heading", { name: texts(locale).states.noProgramsForFields.title });
-    const links = screen.getAllByRole("link", { name: texts(locale).summary.edit });
-    expect(links.length).toBeGreaterThan(0);
-    for (const link of links) expect(link.getAttribute("href")).toBe(`/${locale}/profile`);
-    expect(screen.queryByRole("article")).toBeNull();
-  });
-
   it("shows the error state, not a crash, when the bundle has programs but no core", async () => {
     profileStore.save(E2E_PROFILE);
     const bundle = await loadedBundle("en");
@@ -220,39 +208,41 @@ describe("My Matches: data states", () => {
 
   it.each(
     LOCALES,
-  )("says every program is hidden by the preferences and opens the hidden list (%s)", async (locale) => {
+  )("says the filters hide every program, opens the panel and offers Clear (%s)", async (locale) => {
     const bundle = await loadedBundle(locale);
     // Every fixture program is outside a destination nobody published.
-    const profile = { ...E2E_PROFILE_XB_ONLY, destinations: ["XZ"] };
-    profileStore.save(profile);
+    profileStore.save(E2E_PROFILE);
+    writeMatchFilters(window.localStorage, {
+      ...E2E_FILTERS,
+      destinations: ["XZ"],
+    });
     renderMatches(locale, bundleClient(bundle));
 
     const total = bundle.programs.flatMap((shard) => shard.programs).length;
     const title = createTranslator({
       locale,
       messages: catalogs[locale],
-      namespace: "matches.states.allHidden",
+      namespace: "matches.states.noMatches",
     })("title", { n: total, count: String(total) });
     await screen.findByRole("heading", { name: title });
     expect(screen.queryByRole("article")).toBeNull();
-    const details = document.querySelector("details");
-    expect(details?.open).toBe(true);
+    const panel = [...document.querySelectorAll("details")].find((element) =>
+      element.textContent?.includes(texts(locale).filters.toggle),
+    );
+    expect(panel?.open).toBe(true);
     expect(
-      screen.getAllByRole("link", { name: texts(locale).summary.edit }).length,
+      screen.getAllByRole("button", { name: texts(locale).filters.clear }).length,
     ).toBeGreaterThan(0);
   });
 });
 
-it("re-renders the results when the profile changes without reloading the shards", async () => {
+it("applies the stored match filters", async () => {
   profileStore.save(E2E_PROFILE);
+  writeMatchFilters(window.localStorage, E2E_FILTERS);
   const bundle = await loadedBundle();
   const load = vi.fn<SnapshotClient["load"]>(async () => bundle);
   renderMatches("en", { load });
   await waitFor(() => expect(screen.getAllByRole("article").length).toBeGreaterThan(0));
-  const before = screen.getAllByRole("article").length;
-  act(() => {
-    profileStore.save({ ...E2E_PROFILE, institutionType: "any" });
-  });
-  await waitFor(() => expect(screen.getAllByRole("article").length).toBeGreaterThan(before));
+  expect(document.querySelector(`article[data-slug="${E2E_SLUGS.private}"]`)).toBeNull();
   expect(load).toHaveBeenCalledTimes(1);
 });

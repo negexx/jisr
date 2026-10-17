@@ -48,7 +48,7 @@ let closeAppPool: () => Promise<void>;
 let serial = 0;
 
 const PROFILE: Profile = ProfileSchema.parse({
-  schemaVersion: 1,
+  schemaVersion: 2,
   nationality: "MA",
   credential: {
     country: "MA",
@@ -60,11 +60,6 @@ const PROFILE: Profile = ProfileSchema.parse({
   },
   priorHigherEducationYears: 0,
   languages: [{ language: "fr", level: "B2", certificate: null }],
-  fields: ["computer-science"],
-  studyLanguages: ["fr"],
-  destinations: ["FR"],
-  budget: { amountMinor: 800_00, currency: "EUR", period: "month" },
-  institutionType: "any",
 });
 
 async function mails(): Promise<Mail[]> {

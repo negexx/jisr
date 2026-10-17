@@ -1,4 +1,5 @@
 import type { IsoDate } from "@/data-schema/dates";
+import type { MatchFilters } from "@/data-schema/match-filters";
 import type { Profile } from "@/data-schema/profile";
 import type { ApplicationChannel, Program } from "@/data-schema/resolved";
 import { scholarshipsForProgram } from "@/domain/scholarships";
@@ -59,6 +60,7 @@ export type CompareView = {
 
 export type CompareInput = {
   profile: Profile;
+  filters: MatchFilters;
   bundle: SnapshotBundle;
   slugs: readonly string[];
   now: IsoDate;
@@ -132,7 +134,7 @@ function rowDiffers(row: CompareRowId, programs: readonly CompareProgram[]): boo
 // Pure: every value comes from the same `cardFor` as the matches page, so the two can never
 // disagree. Nothing here logs, because an error could carry profile values.
 export function buildCompareView(input: CompareInput): CompareView {
-  const { profile, bundle, slugs, now, locale } = input;
+  const { profile, filters, bundle, slugs, now, locale } = input;
   const core = bundle.core;
   if (core === undefined) throw new Error("buildCompareView: the bundle has no core shard");
   const catalogue = bundle.programs.flatMap((shard) => shard.programs);
@@ -147,7 +149,7 @@ export function buildCompareView(input: CompareInput): CompareView {
       missing.push(slug);
       continue;
     }
-    const card = cardFor({ profile, bundle, now, locale, core, program });
+    const card = cardFor({ profile, filters, bundle, now, locale, core, program });
     const context = reasonContext({ profile, bundle, locale, core, program });
     const channel = core.applicationChannels.find(
       (c) => c.slug === program.applicationChannel.value,

@@ -128,11 +128,7 @@ describe("profile messages: number entry guidance", () => {
   it.each(
     LOCALES,
   )("%s tells the student to use the digits 0 to 9 on the number errors", (locale) => {
-    for (const key of [
-      "profile.errors.not_a_number",
-      "profile.errors.not_a_whole_number",
-      "profile.fields.budget.amount.hint",
-    ]) {
+    for (const key of ["profile.errors.not_a_number", "profile.errors.not_a_whole_number"]) {
       const value = profile[locale].get(key) ?? "";
       expect(value, key).toContain("0");
       expect(value, key).toContain("9");
@@ -156,12 +152,19 @@ describe("profile messages: number entry guidance", () => {
     expect(profile[locale].get("profile.errors.out_of_range.budget")).toContain(phrase);
     expect(profile[locale].get("profile.errors.out_of_range.grade")).not.toContain(phrase);
   });
+});
 
-  it.each([
-    ["fr", "ne peut pas encore être comparé"],
-    ["en", "cannot be compared with the costs in euros yet"],
-    ["ar", "لا يمكن بعد مقارنة"],
-  ] as const)("%s says a MAD budget cannot be compared yet", (locale, phrase) => {
-    expect(profile[locale].get("profile.fields.budget.madNote")).toContain(phrase);
+// The browsing preferences (fields, study languages, destinations, institution type, budget) are
+// My-matches filters now; their copy lives under matches.filters.* (tests/i18n/matches-messages
+// .test.ts). A key left here would mean the wizard still asks for them.
+describe("profile messages: the retired preference keys", () => {
+  it.each(LOCALES)("%s carries none of the moved preference keys", (locale) => {
+    const retired = [...profile[locale].keys()].filter(
+      (key) =>
+        /^profile\.fields\.(fieldsOfStudy|studyLanguages|destinations|institution|budget)\./.test(
+          key,
+        ) || /^profile\.steps\.(preferences|budget)\./.test(key),
+    );
+    expect(retired).toEqual([]);
   });
 });

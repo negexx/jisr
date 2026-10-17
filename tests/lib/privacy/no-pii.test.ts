@@ -8,6 +8,7 @@ import { Pool } from "pg";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { type Profile, ProfileSchema } from "@/data-schema/profile";
+import { JOURNEY_EVENTS, track } from "@/lib/analytics";
 import type { SignInLinkRequest } from "@/lib/server/signup";
 
 import { confirmRequest } from "../../support/magic-link";
@@ -65,7 +66,7 @@ type Actions = typeof import("@/lib/server/account-actions");
 type Student = { cookie: string; id: string; email: string; sessionToken: string };
 
 const PROFILE: Profile = ProfileSchema.parse({
-  schemaVersion: 1,
+  schemaVersion: 2,
   nationality: "MA",
   credential: {
     country: "MA",
@@ -77,11 +78,6 @@ const PROFILE: Profile = ProfileSchema.parse({
   },
   priorHigherEducationYears: 0,
   languages: [{ language: "fr", level: "B2", certificate: null }],
-  fields: ["computer-science"],
-  studyLanguages: ["fr"],
-  destinations: ["FR"],
-  budget: { amountMinor: 900_00, currency: "EUR", period: "month" },
-  institutionType: "any",
 });
 
 // What a leak would carry. Strings are searched case-insensitively.
@@ -442,7 +438,7 @@ describe("account actions", () => {
       expect(await actions.saveProgram({ slug: "Not A Slug" } as never)).toMatchObject({
         ok: false,
       });
-      expect(await actions.saveProfile({ ...PROFILE, schemaVersion: 2 } as never, 0)).toMatchObject(
+      expect(await actions.saveProfile({ ...PROFILE, schemaVersion: 3 } as never, 0)).toMatchObject(
         {
           ok: false,
         },
@@ -588,6 +584,21 @@ describe("deletion", () => {
       expect(await (await get(carol, "/get-session")).json()).toBeNull();
     });
     expect(leaksIn(logs, [...identityCanaries(carol), magicToken, "carol.canary"])).toEqual([]);
+  });
+});
+
+describe("match filters and analytics", () => {
+  it("sends only the matches-viewed event name, never a match filter value", () => {
+    const count = vi.fn();
+    vi.stubGlobal("window", { __jisrAnalytics: true, goatcounter: { count } });
+    try {
+      track("matches-viewed");
+      expect(count).toHaveBeenCalledTimes(1);
+      expect(count).toHaveBeenCalledWith({ path: "matches-viewed", event: true });
+    } finally {
+      vi.unstubAllGlobals();
+    }
+    expect(JOURNEY_EVENTS.filter((event) => event.includes("matches"))).toEqual(["matches-viewed"]);
   });
 });
 

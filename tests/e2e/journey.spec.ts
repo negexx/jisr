@@ -3,8 +3,9 @@ import type { Page } from "@playwright/test";
 import {
   DRAFT_KEY,
   E2E_EXPECTED,
+  E2E_FILTERS,
+  E2E_FILTERS_WITH_BUDGET,
   E2E_PROFILE,
-  E2E_PROFILE_WITH_BUDGET,
   E2E_SLUGS,
   PROFILE_KEY,
   PROGRAM_SECTION_IDS,
@@ -17,13 +18,12 @@ import {
   expectMatchesLoaded,
   GROUP_NAMES,
   groupTitle,
-  HIDDEN_SLUGS,
   openMatches,
 } from "./support/matches";
 import { escapeRegExp, startsWith, translatorFor } from "./support/messages";
 import { rangeSeparator } from "./support/money";
 import { JOURNEY_FORM, ProfileFormDriver } from "./support/profile-form";
-import { seedProfile } from "./support/seed";
+import { seedFilters, seedProfile } from "./support/seed";
 
 const OFFICIAL_WORDS = /official|officiel|رسمي|الرسمية/i;
 
@@ -80,13 +80,10 @@ for (const { locale, dir } of E2E_LOCALES) {
         await expect(certificate.locator('option[value="xx-test-cert-fr"]')).toHaveCount(1);
         await expect(certificate.locator('option[value="xx-test-cert-en"]')).toHaveCount(0);
         await form.fillLanguages(JOURNEY_FORM);
-        await form.advance("preferences");
+        await form.advance("review");
       });
 
-      await test.step("profile steps 3 and 4 and the review", async () => {
-        await form.fillPreferences(JOURNEY_FORM);
-        await form.advance("budget");
-        await form.advance("review");
+      await test.step("profile review", async () => {
         await expect(
           page.getByRole("heading", { level: 3, name: t("profile.review.saveTitle") }),
         ).toBeVisible();
@@ -103,12 +100,25 @@ for (const { locale, dir } of E2E_LOCALES) {
       });
 
       await test.step("matches: each fixture program sits in its group", async () => {
-        for (const group of GROUP_NAMES) {
-          for (const slug of expectedSlugs(group)) {
-            await expect(card(page, slug)).toHaveAttribute("data-group", group);
-          }
+        for (const [slug, program] of Object.entries(E2E_EXPECTED.programs)) {
+          await expect(card(page, slug)).toHaveAttribute("data-group", program.group);
         }
-        for (const slug of HIDDEN_SLUGS) await expect(card(page, slug)).toHaveCount(0);
+      });
+
+      await test.step("matches: a filter narrows the results and Clear restores them", async () => {
+        await form.fillFilters({ fields: ["xx-test-field-health"] });
+        await expect(
+          page.getByRole("heading", {
+            level: 2,
+            name: t("matches.states.noMatches.title", { n: 7, count: "7" }),
+          }),
+        ).toBeVisible();
+        expect(new URL(page.url()).searchParams.getAll("field")).toEqual(["xx-test-field-health"]);
+
+        await form.clearFilters();
+        await expectMatchesLoaded(page, t);
+        await expect(card(page, E2E_SLUGS.ok)).toHaveAttribute("data-group", "ok");
+        expect(new URL(page.url()).search).toBe("");
       });
 
       await test.step("program page of a program that appears met", async () => {
@@ -155,6 +165,7 @@ for (const { locale, dir } of E2E_LOCALES) {
     test.describe("with a saved profile", () => {
       test.beforeEach(async ({ page }) => {
         await seedProfile(page, E2E_PROFILE);
+        await seedFilters(page, E2E_FILTERS);
       });
 
       test("matches: groups, counts, hidden programs and the foundation explanation", async ({
@@ -314,7 +325,8 @@ for (const { locale, dir } of E2E_LOCALES) {
       // The form only offers EUR and MAD, so a budget that can be compared with the XTS costs of
       // the fixture can only come from storage.
       test.beforeEach(async ({ page }) => {
-        await seedProfile(page, E2E_PROFILE_WITH_BUDGET);
+        await seedProfile(page, E2E_PROFILE);
+        await seedFilters(page, E2E_FILTERS_WITH_BUDGET);
       });
 
       test("the budget is compared with the estimate and never hides a program", async ({

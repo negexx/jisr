@@ -624,6 +624,20 @@ const ACCOUNT_PROFILE_INVALID: Array<[string, unknown]> = [
   ["an array", [ACCOUNT_PROFILE_BASE]],
   ["an empty object", {}],
   ["the bare profile (a guest document)", E2E_PROFILE],
+  [
+    "a cache holding a v1 profile document",
+    accountProfile({
+      profile: {
+        ...E2E_PROFILE,
+        schemaVersion: 1,
+        fields: ["xx-test-field-cs"],
+        studyLanguages: ["fr"],
+        destinations: ["XB"],
+        institutionType: "public",
+        budget: null,
+      },
+    }),
+  ],
   ["schemaVersion 2", accountProfile({ schemaVersion: 2 })],
   ["schemaVersion as a string", accountProfile({ schemaVersion: "1" })],
   ["a missing schemaVersion", { profile: null, revision: 0 }],
@@ -685,6 +699,13 @@ describe("parseAccountProfile against its Zod twin", () => {
     const tally = fuzz(AccountProfileTwin, parseAccountProfile, base, 1000, 5);
     expect(tally.disagreements).toEqual([]);
     expect(tally.accepted).toBeGreaterThan(20);
+  });
+
+  it("rejects a cache holding a v1 profile document, so the store re-hydrates from the server", () => {
+    const cached = accountProfile({
+      profile: { ...E2E_PROFILE, schemaVersion: 1 },
+    });
+    expect(parseAccountProfile(cached)).toBeNull();
   });
 });
 

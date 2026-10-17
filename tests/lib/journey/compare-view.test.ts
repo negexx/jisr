@@ -6,6 +6,7 @@ import { buildMatchesView, type MatchCardModel } from "@/lib/journey/matches-vie
 import type { SnapshotBundle } from "@/lib/snapshot/client";
 
 import {
+  E2E_FILTERS,
   E2E_NOW,
   E2E_PROFILE,
   E2E_SCHOLARSHIP_SLUGS,
@@ -94,7 +95,14 @@ function view(
   from: SnapshotBundle = bundle,
   profile: Profile = E2E_PROFILE,
 ) {
-  return buildCompareView({ profile, bundle: from, slugs, now: E2E_NOW, locale: "fr" });
+  return buildCompareView({
+    profile,
+    filters: E2E_FILTERS,
+    bundle: from,
+    slugs,
+    now: E2E_NOW,
+    locale: "fr",
+  });
 }
 
 function programOf(slug: string, from: SnapshotBundle = bundle): CompareProgram {
@@ -198,6 +206,7 @@ describe("buildCompareView", () => {
   it("gives the same tuition, cost, languages, deadline, group and route as the matches page", () => {
     const matches = buildMatchesView({
       profile: E2E_PROFILE,
+      filters: E2E_FILTERS,
       bundle,
       now: E2E_NOW,
       locale: "fr",

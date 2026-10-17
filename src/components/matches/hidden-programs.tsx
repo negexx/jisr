@@ -51,7 +51,7 @@ export function HiddenPrograms({
           </span>
         </summary>
         <div className="flex flex-col gap-4 pb-4 pt-1">
-          <p className="max-w-prose text-base text-muted-foreground">{t("note")}</p>
+          <p className="max-w-prose text-base text-muted-foreground">{t("filtersNote")}</p>
           {total > 1 ? (
             <ul className="flex flex-wrap gap-2">
               {counted.map((mismatch) => (

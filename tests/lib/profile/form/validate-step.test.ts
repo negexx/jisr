@@ -50,7 +50,7 @@ const setLevel = (row: { level: string }, level: string) => Object.assign(row, {
 
 describe("a valid form", () => {
   it("passes every step and the review, on the synthetic and the real core", () => {
-    for (const step of ["bac", "languages", "preferences", "budget", "review"] as const) {
+    for (const step of ["bac", "languages", "review"] as const) {
       expect(issuesOf(validForm(), step)).toEqual([]);
     }
   });
@@ -59,7 +59,6 @@ describe("a valid form", () => {
     const form = edited(validForm(), (f) => {
       f.credential.type = "xx-test-cred";
       f.credential.subjects = [{ subject: "xx-test-subject-math", grade: "14" }];
-      f.fields = ["xx-test-field-cs"];
       at(f.languages, 0).certificate = "xx-test-cert-fr";
     });
     expect(issuesOf(form, "review", realCore())).toEqual([]);
@@ -431,136 +430,15 @@ describe("languages", () => {
   });
 });
 
-describe("preferences", () => {
-  const preferences = (change: (form: ReturnType<typeof validForm>) => void) =>
-    issuesOf(edited(validForm(), change), "preferences");
-
-  it("requires at least one field", () => {
-    expect(preferences((f) => (f.fields = []))).toEqual(only("required", "fields"));
-  });
-
-  it("rejects unknown fields, study languages and destinations at their index", () => {
-    expect(preferences((f) => (f.fields = ["xx-test-field", "nope"]))).toEqual(
-      only("unknown_option", "fields.1"),
-    );
-    expect(preferences((f) => (f.studyLanguages = ["fr", "zz"]))).toEqual(
-      only("unknown_option", "studyLanguages.1"),
-    );
-    expect(preferences((f) => (f.destinations = ["ZZ"]))).toEqual(
-      only("unknown_option", "destinations.0"),
-    );
-  });
-
-  it("accepts an empty list of study languages and destinations", () => {
-    expect(
-      preferences((f) => {
-        f.studyLanguages = [];
-        f.destinations = [];
-      }),
-    ).toEqual([]);
-  });
-
-  it("accepts known study languages and destinations", () => {
-    expect(
-      preferences((f) => {
-        f.studyLanguages = ["fr", "en"];
-        f.destinations = ["XA", "XB"];
-      }),
-    ).toEqual([]);
-  });
-
-  it("checks the institution type against its three values", () => {
-    for (const value of ["public", "private", "any"] as const) {
-      expect(preferences((f) => (f.institutionType = value))).toEqual([]);
-    }
-    expect(preferences((f) => Object.assign(f, { institutionType: "state" }))).toEqual(
-      only("unknown_option", "institutionType"),
-    );
-  });
-});
-
-describe("budget", () => {
-  const budget = (amount: string, currency = "EUR", period: "month" | "year" = "month") =>
-    issuesOf(
-      edited(validForm(), (f) => {
-        f.budget = { amount, currency, period };
-      }),
-      "budget",
-    );
-
-  it("is optional as a whole", () => {
-    expect(budget("")).toEqual([]);
-    expect(budget("   ")).toEqual([]);
-    expect(budget("", "not-a-currency")).toEqual([]);
-  });
-
-  it.each([["1000"], ["0"], ["7"], [" 1000 "], ["9999999"], ["0500"]])("accepts %j", (amount) => {
-    expect(budget(amount)).toEqual([]);
-  });
-
-  it.each([
-    ["10.000"],
-    ["1,000"],
-    ["1 000"],
-    ["12e3"],
-    ["-5"],
-    ["+5"],
-    ["1.5"],
-    ["abc"],
-    ["1_000"],
-    ["١٠"],
-  ])("rejects %j as not a whole number", (amount) => {
-    expect(budget(amount)).toEqual(only("not_a_whole_number", "budget.amount"));
-  });
-
-  it("rejects a whole amount beyond seven digits as out of range", () => {
-    expect(budget("12345678")).toEqual(
-      only("out_of_range", "budget.amount", { min: "0", max: "9999999" }),
-    );
-  });
-
-  it("accepts EUR and MAD only", () => {
-    expect(budget("100", "EUR")).toEqual([]);
-    expect(budget("100", "MAD")).toEqual([]);
-    expect(budget("100", "USD")).toEqual(only("unknown_option", "budget.currency"));
-    expect(budget("100", "eur")).toEqual(only("unknown_option", "budget.currency"));
-    expect(budget("100", "")).toEqual(only("unknown_option", "budget.currency"));
-  });
-
-  it("accepts month and year only", () => {
-    expect(budget("100", "EUR", "year")).toEqual([]);
-    expect(
-      issuesOf(
-        edited(validForm(), (f) => {
-          f.budget = { amount: "100", currency: "EUR", period: "week" as "month" };
-        }),
-        "budget",
-      ),
-    ).toEqual(only("unknown_option", "budget.period"));
-  });
-});
-
 describe("review", () => {
-  it("returns the union of the four steps in step order", () => {
+  it("returns the union of the steps in step order", () => {
     const form = edited(validForm(), (f) => {
       f.nationality = "";
       at(f.languages, 0).level = "";
-      f.fields = [];
-      f.budget.amount = "1,5";
     });
     const review = issuesOf(form, "review");
-    expect(review).toEqual([
-      ...issuesOf(form, "bac"),
-      ...issuesOf(form, "languages"),
-      ...issuesOf(form, "preferences"),
-      ...issuesOf(form, "budget"),
-    ]);
-    expect(review.map((issue) => issue.path)).toEqual([
-      "nationality",
-      "languages.0.level",
-      "fields",
-      "budget.amount",
-    ]);
+    expect(review).toEqual([...issuesOf(form, "bac"), ...issuesOf(form, "languages")]);
+    expect(review.map((issue) => issue.path)).toEqual(["nationality", "languages.0.level"]);
   });
 });
 
@@ -600,7 +478,7 @@ describe("issue codes", () => {
         }));
       }),
     );
-    collect(edited(validForm(), (f) => (f.budget.amount = "1,5")));
+    collect(edited(validForm(), (f) => (f.priorHigherEducationYears = "1.5")));
     collect(edited(validForm(), (f) => (f.priorHigherEducationYears = "9")));
     expect([...produced].sort()).toEqual([...ALL_CODES].sort());
   });
@@ -634,17 +512,10 @@ describe("pathStep and stepOfFirstIssue", () => {
     ["priorHigherEducationYears", "bac"],
     ["languages", "languages"],
     ["languages.1.certificate", "languages"],
-    ["fields", "preferences"],
-    ["fields.0", "preferences"],
-    ["studyLanguages.1", "preferences"],
-    ["destinations.0", "preferences"],
-    ["institutionType", "preferences"],
-    ["budget", "budget"],
-    ["budget.amount", "budget"],
     ["", "review"],
     ["something.else", "review"],
     ["credentialX", "review"],
-    ["fieldsX", "review"],
+    ["languagesX", "review"],
   ] as const)("puts %j on step %s", (path, step) => {
     expect(pathStep(path)).toBe(step);
   });
@@ -653,10 +524,10 @@ describe("pathStep and stepOfFirstIssue", () => {
     expect(stepOfFirstIssue([])).toBe("review");
     expect(
       stepOfFirstIssue([
-        { code: "required", path: "fields" },
+        { code: "required", path: "languages.0.level" },
         { code: "required", path: "nationality" },
       ]),
-    ).toBe("preferences");
+    ).toBe("languages");
   });
 
   it("agrees with validateStep: every issue of a step lies on that step", () => {
@@ -665,11 +536,8 @@ describe("pathStep and stepOfFirstIssue", () => {
       f.credential.subjects = [{ subject: "x", grade: "y" }];
       at(f.languages, 0).level = "";
       at(f.languages, 1).certificate = "nope";
-      f.fields = [];
-      f.destinations = ["ZZ"];
-      f.budget.amount = "x";
     });
-    for (const step of ["bac", "languages", "preferences", "budget"] as const) {
+    for (const step of ["bac", "languages"] as const) {
       const issues = issuesOf(broken, step);
       expect(issues.length).toBeGreaterThan(0);
       for (const issue of issues) expect(pathStep(issue.path)).toBe(step);
@@ -686,9 +554,7 @@ describe("totality", () => {
         f.credential.overall = text;
         f.credential.subjects = [{ subject: text, grade: text }];
         f.priorHigherEducationYears = text;
-        f.budget = { amount: text, currency: text, period: "month" };
         f.languages.push({ language: text, level: "A1", certificate: text });
-        f.fields = [text];
       });
       expect(() => issuesOf(form, "review")).not.toThrow();
     }

@@ -15,8 +15,6 @@ import {
 // or null: never anything derived from the input.
 const MAX_TYPED_LENGTH = 200;
 const CREDENTIAL_STATUSES = ["obtained", "expected"] as const;
-const BUDGET_PERIODS = ["month", "year"] as const;
-const INSTITUTION_TYPES = ["public", "private", "any"] as const;
 
 // A parsed value is wrapped so that a legitimate `null` or `undefined` is not mistaken for failure.
 type Parsed<T> = { value: T } | null;
@@ -122,24 +120,6 @@ const parseLanguage: Parser<DraftLanguage> = (value) => {
   );
 };
 
-type DraftBudget = NonNullable<ProfileDraft["budget"]>;
-
-const parseBudget: Parser<DraftBudget> = (value) => {
-  const record = strictRecord(value, ["amount", "currency", "period"]);
-  if (record === null) return null;
-  const amount = optional(typed)(record.amount);
-  const currency = optional(typed)(record.currency);
-  const period = optional(oneOf(BUDGET_PERIODS))(record.period);
-  if (!amount || !currency || !period) return null;
-  return ok(
-    withoutUndefined({
-      amount: amount.value,
-      currency: currency.value,
-      period: period.value,
-    }),
-  );
-};
-
 export function parseDraft(raw: unknown): ProfileDraft | null {
   const record = strictRecord(raw, [
     "schemaVersion",
@@ -148,11 +128,6 @@ export function parseDraft(raw: unknown): ProfileDraft | null {
     "credential",
     "priorHigherEducationYears",
     "languages",
-    "fields",
-    "studyLanguages",
-    "destinations",
-    "budget",
-    "institutionType",
   ]);
   if (record === null || record.schemaVersion !== DRAFT_SCHEMA_VERSION) return null;
   const { step } = record;
@@ -162,22 +137,7 @@ export function parseDraft(raw: unknown): ProfileDraft | null {
   const credential = optional(parseCredential)(record.credential);
   const years = optional(typed)(record.priorHigherEducationYears);
   const languages = optional(listOf(parseLanguage))(record.languages);
-  const fields = optional(listOf(typed))(record.fields);
-  const studyLanguages = optional(listOf(typed))(record.studyLanguages);
-  const destinations = optional(listOf(typed))(record.destinations);
-  const budget = optional(nullable(parseBudget))(record.budget);
-  const institutionType = optional(oneOf(INSTITUTION_TYPES))(record.institutionType);
-  if (
-    !nationality ||
-    !credential ||
-    !years ||
-    !languages ||
-    !fields ||
-    !studyLanguages ||
-    !destinations ||
-    !budget ||
-    !institutionType
-  ) {
+  if (!nationality || !credential || !years || !languages) {
     return null;
   }
 
@@ -188,10 +148,5 @@ export function parseDraft(raw: unknown): ProfileDraft | null {
     credential: credential.value,
     priorHigherEducationYears: years.value,
     languages: languages.value,
-    fields: fields.value,
-    studyLanguages: studyLanguages.value,
-    destinations: destinations.value,
-    budget: budget.value,
-    institutionType: institutionType.value,
   });
 }

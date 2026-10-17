@@ -6,11 +6,9 @@ import { parseLocaleDecimal } from "@/lib/format";
 import {
   certificateOptionsFor,
   credentialTypeOptions,
-  fieldOptions,
   gradingScaleFor,
   languageRowOptions,
   MAX_SUBJECT_ROWS,
-  studyLanguageOptions,
   trackOptions,
 } from "./options";
 import { STEPS, type StepId } from "./state";
@@ -24,11 +22,6 @@ export const AMBIGUOUS_THOUSANDS = /^[0-9]{1,3}[.,][0-9]{3}$/;
 
 const MAX_DECIMALS = 2;
 const WHOLE_NUMBER = /^[0-9]+$/;
-const BUDGET_AMOUNT = /^[0-9]{1,7}$/;
-const MAX_BUDGET_AMOUNT = "9999999";
-const BUDGET_CURRENCIES = ["EUR", "MAD"];
-const BUDGET_PERIODS = ["month", "year"];
-const INSTITUTION_TYPES = ["public", "private", "any"];
 const CREDENTIAL_STATUSES = ["obtained", "expected"];
 const LANGUAGE_LEVELS: readonly string[] = [...CEFR_LEVELS, "unknown"];
 const MIN_YEARS = 0;
@@ -192,40 +185,6 @@ function validateLanguages(form: FormState, core: CoreShard, found: Collector): 
   });
 }
 
-function validatePreferences(form: FormState, core: CoreShard, found: Collector): void {
-  if (form.fields.length === 0) found.add("required", "fields");
-  const fieldSlugs = fieldOptions(core).map((field) => field.slug);
-  form.fields.forEach((slug, index) => {
-    if (!isKnown(slug, fieldSlugs)) found.add("unknown_option", `fields.${index}`);
-  });
-  const languages = studyLanguageOptions(core);
-  form.studyLanguages.forEach((code, index) => {
-    if (!isKnown(code, languages)) found.add("unknown_option", `studyLanguages.${index}`);
-  });
-  const countries = core.countries.map((country) => country.code);
-  form.destinations.forEach((code, index) => {
-    if (!isKnown(code, countries)) found.add("unknown_option", `destinations.${index}`);
-  });
-  if (!isKnown(form.institutionType, INSTITUTION_TYPES))
-    found.add("unknown_option", "institutionType");
-}
-
-// Money is whole-number digits only: parseLocaleDecimal would read "10.000" as ten (see src/lib/format.ts).
-function validateBudget(form: FormState, found: Collector): void {
-  const amount = form.budget.amount.trim();
-  if (amount === "") return;
-  if (!BUDGET_AMOUNT.test(amount)) {
-    if (WHOLE_NUMBER.test(amount)) {
-      found.add("out_of_range", "budget.amount", { min: "0", max: MAX_BUDGET_AMOUNT });
-    } else {
-      found.add("not_a_whole_number", "budget.amount");
-    }
-  }
-  if (!isKnown(form.budget.currency, BUDGET_CURRENCIES))
-    found.add("unknown_option", "budget.currency");
-  if (!isKnown(form.budget.period, BUDGET_PERIODS)) found.add("unknown_option", "budget.period");
-}
-
 export function validateStep(step: StepId, form: FormState, core: CoreShard): StepIssue[] {
   if (step === "review") {
     return STEPS.filter((id): id is Exclude<StepId, "review"> => id !== "review").flatMap((id) =>
@@ -234,9 +193,7 @@ export function validateStep(step: StepId, form: FormState, core: CoreShard): St
   }
   const found = collector();
   if (step === "bac") validateBac(form, core, found);
-  else if (step === "languages") validateLanguages(form, core, found);
-  else if (step === "preferences") validatePreferences(form, core, found);
-  else validateBudget(form, found);
+  else validateLanguages(form, core, found);
   return found.issues;
 }
 
@@ -253,15 +210,6 @@ export function pathStep(path: string): StepId {
     return "bac";
   }
   if (startsPath(path, "languages")) return "languages";
-  if (
-    startsPath(path, "fields") ||
-    startsPath(path, "studyLanguages") ||
-    startsPath(path, "destinations") ||
-    startsPath(path, "institutionType")
-  ) {
-    return "preferences";
-  }
-  if (startsPath(path, "budget")) return "budget";
   return "review";
 }
 

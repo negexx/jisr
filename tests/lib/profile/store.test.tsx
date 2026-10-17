@@ -3,6 +3,8 @@ import { act, cleanup, render, renderHook } from "@testing-library/react";
 import { hydrateRoot } from "react-dom/client";
 import { renderToString } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { MATCH_FILTERS_KEY, readMatchFilters, writeMatchFilters } from "@/lib/matches/filter-store";
+import { EMPTY_MATCH_FILTERS } from "@/lib/matches/filters";
 import { writeDraft } from "@/lib/profile/draft";
 import { DRAFT_KEY, PROFILE_KEY } from "@/lib/profile/storage";
 import { createProfileStore, type ProfileState } from "@/lib/profile/store";
@@ -12,6 +14,26 @@ import { createFakeStorage } from "./fake-storage";
 import { forbidConsole } from "./no-console";
 
 forbidConsole();
+
+const V1 = {
+  schemaVersion: 1,
+  nationality: "XA",
+  credential: {
+    country: "XA",
+    type: "xx-test-cred",
+    track: "xx-test-track-sci",
+    status: "obtained",
+    overall: { scale: "xx-test-scale-20", value: 14 },
+    subjects: [{ subject: "xx-test-math", grade: { scale: "xx-test-scale-20", value: 15 } }],
+  },
+  priorHigherEducationYears: 0,
+  languages: [{ language: "fr", level: "B2", certificate: "xx-test-cert-fr" }],
+  fields: ["xx-test-field"],
+  studyLanguages: ["fr"],
+  destinations: ["XB"],
+  budget: null,
+  institutionType: "any",
+};
 
 function fireStorageEvent(key: string | null): void {
   window.dispatchEvent(new StorageEvent("storage", { key }));
@@ -84,7 +106,7 @@ describe("createProfileStore", () => {
 
   it("save validates, writes, clears the draft and notifies", () => {
     const storage = createFakeStorage();
-    writeDraft(storage, { schemaVersion: 1, step: 2 });
+    writeDraft(storage, { schemaVersion: 2, step: 2 });
     const store = createProfileStore(() => storage);
     const listener = vi.fn();
     store.subscribe(listener);
@@ -101,7 +123,7 @@ describe("createProfileStore", () => {
 
   it("save refuses an invalid profile and keeps the draft", () => {
     const storage = createFakeStorage();
-    writeDraft(storage, { schemaVersion: 1, step: 2 });
+    writeDraft(storage, { schemaVersion: 2, step: 2 });
     const store = createProfileStore(() => storage);
     const listener = vi.fn();
     store.subscribe(listener);
@@ -342,7 +364,7 @@ describe("createProfileStore", () => {
       storage.seed("other.key", "keep");
       const store = createProfileStore(() => storage);
       store.save(profile());
-      writeDraft(storage, { schemaVersion: 1, step: 1 });
+      writeDraft(storage, { schemaVersion: 2, step: 1 });
       const listener = vi.fn();
       store.subscribe(listener);
       store.clear();
@@ -441,12 +463,40 @@ describe("createProfileStore", () => {
   });
 });
 
+describe("v1 profile migration in the store", () => {
+  it("seeds the filters once and never re-seeds after the student empties them", () => {
+    const storage = createFakeStorage();
+    storage.seed(PROFILE_KEY, JSON.stringify(V1));
+    const store = createProfileStore(() => storage);
+    expect(store.getSnapshot().status).toBe("ok");
+    expect(readMatchFilters(storage).fields).toEqual(["xx-test-field"]);
+    expect(storage.raw(PROFILE_KEY)).toContain('"schemaVersion":2');
+
+    writeMatchFilters(storage, EMPTY_MATCH_FILTERS);
+    // Without subscribers getSnapshot re-reads storage, so the migrated record is read again.
+    expect(store.getSnapshot().status).toBe("ok");
+    expect(readMatchFilters(storage)).toEqual(EMPTY_MATCH_FILTERS);
+
+    storage.removeItem(MATCH_FILTERS_KEY);
+    store.getSnapshot();
+    expect(storage.raw(MATCH_FILTERS_KEY)).toBeNull();
+  });
+
+  it("keeps the same snapshot object when a migrated profile is read again", () => {
+    const storage = createFakeStorage();
+    storage.seed(PROFILE_KEY, JSON.stringify(V1));
+    const store = createProfileStore(() => storage);
+    const first = store.getSnapshot();
+    expect(store.getSnapshot()).toBe(first);
+  });
+});
+
 describe("privacy", () => {
   it("leaves only jisr.* keys after save and never touches other keys", async () => {
     window.localStorage.setItem("other.key", "keep");
     const { profileStore } = await loadHookModules();
     profileStore.save(profile());
-    writeDraft(window.localStorage, { schemaVersion: 1, step: 1 });
+    writeDraft(window.localStorage, { schemaVersion: 2, step: 1 });
     const keys = Object.keys(window.localStorage).filter((key) => key !== "other.key");
     expect(keys.length).toBeGreaterThan(0);
     expect(keys.every((key) => key.startsWith("jisr."))).toBe(true);

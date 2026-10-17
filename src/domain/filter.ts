@@ -1,6 +1,6 @@
 import type { IsoDate } from "@/data-schema/dates";
+import type { MatchFilters } from "@/data-schema/match-filters";
 import type { Slug } from "@/data-schema/primitives";
-import type { Profile } from "@/data-schema/profile";
 import type { Program } from "@/data-schema/resolved";
 import { isDecisive } from "./facts";
 
@@ -12,29 +12,31 @@ export type ProgramFilterResult = {
 };
 
 export function preferenceMismatches(
-  profile: Profile,
+  filters: MatchFilters,
   program: Program,
   now: IsoDate,
 ): PreferenceMismatch[] {
   const mismatches: PreferenceMismatch[] = [];
-  if (profile.destinations.length > 0 && !profile.destinations.includes(program.country)) {
+  if (filters.destinations.length > 0 && !filters.destinations.includes(program.country)) {
     mismatches.push("destination");
   }
-  if (!profile.fields.includes(program.field)) mismatches.push("field");
+  if (filters.fields.length > 0 && !filters.fields.includes(program.field)) {
+    mismatches.push("field");
+  }
   // an unknown type never counts against the preference: it is shown as "to be checked" instead
   if (
-    profile.institutionType !== "any" &&
+    filters.institutionType !== "any" &&
     program.institutionType !== null &&
-    program.institutionType !== profile.institutionType
+    program.institutionType !== filters.institutionType
   ) {
     mismatches.push("institution_type");
   }
   const taught = program.teachingLanguages.value;
   if (
-    profile.studyLanguages.length > 0 &&
+    filters.studyLanguages.length > 0 &&
     taught !== null &&
     isDecisive(program.teachingLanguages, now) &&
-    !taught.some((language) => profile.studyLanguages.includes(language))
+    !taught.some((language) => filters.studyLanguages.includes(language))
   ) {
     mismatches.push("study_language");
   }
@@ -42,13 +44,13 @@ export function preferenceMismatches(
 }
 
 export function filterPrograms(
-  profile: Profile,
+  filters: MatchFilters,
   programs: readonly Program[],
   now: IsoDate,
 ): ProgramFilterResult {
   const result: ProgramFilterResult = { kept: [], excluded: [] };
   for (const program of programs) {
-    const mismatches = preferenceMismatches(profile, program, now);
+    const mismatches = preferenceMismatches(filters, program, now);
     if (mismatches.length === 0) result.kept.push(program);
     else result.excluded.push({ programSlug: program.slug, mismatches });
   }

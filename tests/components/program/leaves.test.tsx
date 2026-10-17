@@ -13,13 +13,14 @@ import type { Profile } from "@/data-schema/profile";
 import type { FactMeta, Program } from "@/data-schema/resolved";
 import { matchProgram } from "@/domain/match";
 import type { AppLocale } from "@/i18n/routing";
+import { writeMatchFilters } from "@/lib/matches/filter-store";
 import { profileStore } from "@/lib/profile/store";
 import type { SnapshotBundle, SnapshotClient } from "@/lib/snapshot/client";
 
 import {
+  E2E_FILTERS_WITH_BUDGET,
   E2E_NOW,
   E2E_PROFILE,
-  E2E_PROFILE_WITH_BUDGET,
   E2E_SCHOLARSHIP_SLUGS,
   E2E_SLUGS,
 } from "../../fixtures/e2e/profiles";
@@ -346,7 +347,7 @@ describe("PersonalMatch", () => {
     expect(box.dataset.group).toBe("check");
   });
 
-  it("shows the budget fit only when the profile has a budget", async () => {
+  it("shows the budget fit only when the filter store has a budget", async () => {
     saveProfile(E2E_PROFILE);
     renderLeaf(personal(E2E_SLUGS.ok));
     const plain = await result();
@@ -354,7 +355,8 @@ describe("PersonalMatch", () => {
     cleanup();
     profileStore.clear();
 
-    saveProfile(E2E_PROFILE_WITH_BUDGET);
+    saveProfile(E2E_PROFILE);
+    writeMatchFilters(window.localStorage, E2E_FILTERS_WITH_BUDGET);
     renderLeaf(personal(E2E_SLUGS.ok));
     const withBudget = await result();
     const fit = withBudget.querySelector('[data-slot="budget-fit"]');
@@ -533,7 +535,8 @@ describe("PersonalMatch", () => {
 
   it("keeps the student's values out of the URL and the title", async () => {
     const before = { href: window.location.href, title: document.title };
-    saveProfile(E2E_PROFILE_WITH_BUDGET);
+    saveProfile(E2E_PROFILE);
+    writeMatchFilters(window.localStorage, E2E_FILTERS_WITH_BUDGET);
     renderLeaf(personal(E2E_SLUGS.ok));
     await result();
     expect(window.location.href).toBe(before.href);

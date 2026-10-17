@@ -119,7 +119,7 @@ function program(slug: string, overrides: Partial<SavedProgram> = {}): SavedProg
 }
 
 const PROFILE: Profile = ProfileSchema.parse({
-  schemaVersion: 1,
+  schemaVersion: 2,
   nationality: "MA",
   credential: {
     country: "MA",
@@ -131,14 +131,9 @@ const PROFILE: Profile = ProfileSchema.parse({
   },
   priorHigherEducationYears: 0,
   languages: [{ language: "fr", level: "B2", certificate: null }],
-  fields: ["computer-science"],
-  studyLanguages: ["fr", "en"],
-  destinations: ["FR", "DE"],
-  budget: { amountMinor: 900_00, currency: "EUR", period: "month" },
-  institutionType: "any",
 });
 
-const OTHER_PROFILE: Profile = { ...PROFILE, destinations: ["NL"] };
+const OTHER_PROFILE: Profile = { ...PROFILE, priorHigherEducationYears: 1 };
 
 const FEEDBACK = {
   record: "programs/xx-test-prog",
@@ -473,7 +468,7 @@ describe("saveProfile compare-and-set", () => {
     await actions.saveProfile(PROFILE, 0);
     await actions.saveProfile(OTHER_PROFILE, 1);
     const before = await pool.query("select * from profiles");
-    const stale = await actions.saveProfile({ ...PROFILE, destinations: ["IT"] }, 1);
+    const stale = await actions.saveProfile({ ...PROFILE, priorHigherEducationYears: 2 }, 1);
     expect(stale).toEqual({
       ok: false,
       error: "conflict",

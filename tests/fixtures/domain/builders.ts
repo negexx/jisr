@@ -124,7 +124,7 @@ type ProfileOverrides = Omit<Partial<Profile>, "credential"> & {
 export function profile(o: ProfileOverrides = {}): Profile {
   const { credential, ...rest } = o;
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     nationality: "XA",
     credential: {
       country: "XA",
@@ -137,11 +137,6 @@ export function profile(o: ProfileOverrides = {}): Profile {
     },
     priorHigherEducationYears: 0,
     languages: [{ language: "fr", level: "B2", certificate: "xx-test-cert-fr" }],
-    fields: ["xx-test-field"],
-    studyLanguages: ["fr"],
-    destinations: [],
-    budget: null,
-    institutionType: "any",
     ...rest,
   };
 }

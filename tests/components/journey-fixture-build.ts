@@ -5,13 +5,18 @@ import { REASON_CODES, REASON_KINDS } from "@/lib/i18n/vocabulary";
 import { buildMatchesView } from "@/lib/journey/matches-view";
 import { describeReason, ruleIndex } from "@/lib/journey/reasons";
 
-import { E2E_NOW, E2E_PROFILE, E2E_PROFILE_WITH_BUDGET } from "../fixtures/e2e/profiles";
+import {
+  E2E_FILTERS,
+  E2E_FILTERS_WITH_BUDGET,
+  E2E_NOW,
+  E2E_PROFILE,
+} from "../fixtures/e2e/profiles";
 import { loadMatchesBundle, programOf } from "../lib/journey/bundle";
 import { buildSnapshot, E2E_DATA_DIR, removeTempDirs } from "../lib/snapshot/fixture";
 
 const LOCALES = ["fr", "en", "ar"] as const;
 const OUTCOMES: readonly RuleOutcome[] = ["pass", "fail", "unknown"];
-const PROFILES = { plain: E2E_PROFILE, budget: E2E_PROFILE_WITH_BUDGET };
+const FILTER_SETS = { plain: E2E_FILTERS, budget: E2E_FILTERS_WITH_BUDGET };
 
 async function main() {
   const dir = buildSnapshot(E2E_DATA_DIR);
@@ -19,8 +24,14 @@ async function main() {
   for (const locale of LOCALES) {
     const bundle = await loadMatchesBundle(dir, E2E_PROFILE, locale);
     const cards: Record<string, unknown> = {};
-    for (const [name, profile] of Object.entries(PROFILES)) {
-      const view = buildMatchesView({ profile, bundle, now: E2E_NOW, locale });
+    for (const [name, filters] of Object.entries(FILTER_SETS)) {
+      const view = buildMatchesView({
+        profile: E2E_PROFILE,
+        filters,
+        bundle,
+        now: E2E_NOW,
+        locale,
+      });
       if (view.kind !== "ok") throw new Error(`expected an ok view, got ${view.kind}`);
       cards[name] = [
         ...view.groups.ok,

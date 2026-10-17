@@ -6,20 +6,22 @@ import { renderToString } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { MatchesClient } from "@/components/matches/matches-client";
+import type { MatchFilters } from "@/data-schema/match-filters";
 import type { Profile } from "@/data-schema/profile";
 import type { AppLocale } from "@/i18n/routing";
-import { formatMoney } from "@/lib/format";
 import { buildMatchesView, MATCH_GROUPS, type MatchGroup } from "@/lib/journey/matches-view";
+import { writeMatchFilters } from "@/lib/matches/filter-store";
 import { profileStore } from "@/lib/profile/store";
 import { savedStore } from "@/lib/saved/store";
 import type { SnapshotBundle } from "@/lib/snapshot/client";
 import { shardsForMatches } from "@/lib/snapshot/plan";
 import {
   E2E_EXPECTED,
+  E2E_FILTERS,
+  E2E_FILTERS_WITH_BUDGET,
+  E2E_FILTERS_XB_ONLY,
   E2E_NOW,
   E2E_PROFILE,
-  E2E_PROFILE_WITH_BUDGET,
-  E2E_PROFILE_XB_ONLY,
   E2E_SLUGS,
 } from "../../fixtures/e2e/profiles";
 import { FORBIDDEN } from "../../i18n/forbidden-wording";
@@ -50,8 +52,9 @@ function bundleFor(locale: AppLocale, profile: Profile): Promise<SnapshotBundle>
   return fixture.client().load((manifest) => shardsForMatches(profile, manifest), locale);
 }
 
-async function renderFor(locale: AppLocale, profile: Profile) {
+async function renderFor(locale: AppLocale, profile: Profile, filters: MatchFilters = E2E_FILTERS) {
   profileStore.save(profile);
+  writeMatchFilters(window.localStorage, filters);
   const view = renderMatches(locale, fixture.client());
   await waitFor(() => expect(screen.getAllByRole("article").length).toBeGreaterThan(0));
   return view;
@@ -69,7 +72,7 @@ function slugsIn(element: HTMLElement | null): string[] {
 
 function hiddenDisclosure(container: HTMLElement, locale: AppLocale): HTMLDetailsElement {
   const found = [...container.querySelectorAll<HTMLDetailsElement>("details")].find((element) =>
-    element.textContent?.includes(catalogs[locale].matches.hidden.note),
+    element.textContent?.includes(catalogs[locale].matches.hidden.filtersNote),
   );
   if (found === undefined) throw new Error("no hidden-programs disclosure");
   return found;
@@ -107,6 +110,7 @@ describe.each(LOCALES)("My Matches: the four groups (%s)", (locale) => {
     const { container } = await renderFor(locale, E2E_PROFILE);
     const view = buildMatchesView({
       profile: E2E_PROFILE,
+      filters: E2E_FILTERS,
       bundle: await bundleFor(locale, E2E_PROFILE),
       now: E2E_NOW,
       locale,
@@ -237,7 +241,7 @@ describe.each(LOCALES)("My Matches: hidden by preferences (%s)", (locale) => {
   });
 
   it("lists each hidden program with its own reasons when destinations narrow the list", async () => {
-    const { container } = await renderFor(locale, E2E_PROFILE_XB_ONLY);
+    const { container } = await renderFor(locale, E2E_PROFILE, E2E_FILTERS_XB_ONLY);
     const hidden = hiddenDisclosure(container, locale);
     expect(hidden.querySelector("summary")?.textContent).toBe(hiddenSummary(locale, 2));
     const text = hidden.textContent ?? "";
@@ -253,8 +257,9 @@ describe.each(LOCALES)("My Matches: hidden by preferences (%s)", (locale) => {
     // Hidden programs are never matched: no cards, and the foundation program is not in a group.
     expect(section(container, "foundation")).toBeNull();
     const view = buildMatchesView({
-      profile: E2E_PROFILE_XB_ONLY,
-      bundle: await bundleFor(locale, E2E_PROFILE_XB_ONLY),
+      profile: E2E_PROFILE,
+      filters: E2E_FILTERS_XB_ONLY,
+      bundle: await bundleFor(locale, E2E_PROFILE),
       now: E2E_NOW,
       locale,
     });
@@ -263,45 +268,14 @@ describe.each(LOCALES)("My Matches: hidden by preferences (%s)", (locale) => {
   });
 });
 
-describe.each(LOCALES)("My Matches: profile summary (%s)", (locale) => {
+describe.each(LOCALES)("My Matches: budget is an annotation (%s)", (locale) => {
   const t = catalogs[locale];
 
-  it("shows the chosen fields, all countries, no budget and an edit link", async () => {
-    const { container } = await renderFor(locale, E2E_PROFILE);
-    const bundle = await bundleFor(locale, E2E_PROFILE);
-    const aside = container.querySelector("aside") as HTMLElement;
-    expect(within(aside).getByRole("heading", { level: 2 }).textContent).toBe(
-      t.matches.summary.title,
-    );
-    for (const slug of E2E_PROFILE.fields) {
-      const key = bundle.core?.fields.find((field) => field.slug === slug)?.name;
-      const name = key === undefined ? slug : (bundle.text(key)?.text ?? slug);
-      expect(within(aside).getByText(name).closest("li")).not.toBeNull();
-    }
-    expect(within(aside).getByText(t.matches.summary.allCountries)).toBeTruthy();
-    expect(within(aside).getByText(t.matches.summary.budgetNotSet)).toBeTruthy();
-    const edit = within(aside).getByRole("link", { name: t.matches.summary.edit });
-    expect(edit.getAttribute("href")).toBe(`/${locale}/profile`);
-  });
-
-  it("shows a budget with its currency and lists the chosen destinations", async () => {
-    const { container } = await renderFor(locale, {
-      ...E2E_PROFILE_WITH_BUDGET,
-      destinations: ["XB"],
-    });
-    const aside = container.querySelector("aside") as HTMLElement;
-    const amount = formatMoney(90_000, "XTS", locale);
-    expect(aside.textContent).toContain(amount);
-    expect(aside.textContent).not.toContain(t.matches.summary.budgetNotSet);
-    expect(aside.textContent).not.toContain(t.matches.summary.allCountries);
-    expect(aside.querySelector("bdi[dir='ltr']")?.textContent).toBe(amount);
-  });
-
-  it("does not change the groups when a budget is set", async () => {
+  it("does not change the groups when a budget is set, and shows a fit wording", async () => {
     const plain = await renderFor(locale, E2E_PROFILE);
     const before = MATCH_GROUPS.map((group) => slugsIn(section(plain.container, group)));
     cleanup();
-    const withBudget = await renderFor(locale, E2E_PROFILE_WITH_BUDGET);
+    const withBudget = await renderFor(locale, E2E_PROFILE, E2E_FILTERS_WITH_BUDGET);
     const after = MATCH_GROUPS.map((group) => slugsIn(section(withBudget.container, group)));
     expect(after).toEqual(before);
     expect(withBudget.container.textContent).toMatch(
@@ -325,18 +299,6 @@ describe.each(LOCALES)("My Matches: page chrome (%s)", (locale) => {
     const status = container.querySelector("output.sr-only");
     expect(status).not.toBeNull();
     expect(status?.textContent).toBe("");
-  });
-
-  it("renders the profile summary as one chip strip on phones: labels are screen-reader-only", async () => {
-    const { container } = await renderFor(locale, E2E_PROFILE);
-    const aside = container.querySelector("aside") as HTMLElement;
-    const labels = [...aside.querySelectorAll("dt")];
-    expect(labels).toHaveLength(3);
-    for (const label of labels) {
-      expect(label.classList.contains("sr-only")).toBe(true);
-      expect(label.classList.contains("lg:not-sr-only")).toBe(true);
-    }
-    expect(aside.querySelectorAll("li").length).toBeGreaterThanOrEqual(4);
   });
 });
 
@@ -365,7 +327,7 @@ describe.each(LOCALES)("My Matches: trust, direction and privacy (%s)", (locale)
   });
 
   it("keeps every profile value out of the URL, the title, attributes and the network", async () => {
-    const { container } = await renderFor(locale, E2E_PROFILE_WITH_BUDGET);
+    const { container } = await renderFor(locale, E2E_PROFILE, E2E_FILTERS_WITH_BUDGET);
     expect(window.location.href).toBe("http://localhost:3000/");
     expect(document.title).toBe("");
     const secrets = ["xx-test-cred", "xx-test-track", "xx-test-subject-math", "90000"];

@@ -2,14 +2,13 @@ import type { ProfileDraft } from "@/data-schema/draft";
 import type { Profile } from "@/data-schema/profile";
 import type { CoreShard } from "@/data-schema/snapshot";
 import { CEFR_LEVELS, DRAFT_SCHEMA_VERSION } from "@/lib/constants";
-import { minorUnitDigits } from "@/lib/format";
 import { isOneOf } from "@/lib/guards";
 
 import type { FormState, LanguageLevel, LanguageRow } from "./types";
 
 export type { FormState };
 
-export const STEPS = ["bac", "languages", "preferences", "budget", "review"] as const;
+export const STEPS = ["bac", "languages", "review"] as const;
 export type StepId = (typeof STEPS)[number];
 
 // The draft schema's cap on every typed string (src/data-schema/draft.ts).
@@ -46,16 +45,11 @@ export function emptyFormState(core: CoreShard): FormState {
     },
     priorHigherEducationYears: "0",
     languages: REQUIRED_LANGUAGES.map(emptyLanguageRow),
-    fields: [],
-    studyLanguages: [],
-    destinations: [],
-    institutionType: "any",
-    budget: { amount: "", currency: "EUR", period: "month" },
   };
 }
 
 export function formFromProfile(profile: Profile): FormState {
-  const { credential, budget } = profile;
+  const { credential } = profile;
   return {
     nationality: profile.nationality,
     credential: {
@@ -77,18 +71,6 @@ export function formFromProfile(profile: Profile): FormState {
         certificate: row.certificate ?? "",
       })),
     ),
-    fields: [...profile.fields],
-    studyLanguages: [...profile.studyLanguages],
-    destinations: [...profile.destinations],
-    institutionType: profile.institutionType,
-    budget:
-      budget === null
-        ? { amount: "", currency: "EUR", period: "month" }
-        : {
-            amount: String(Math.round(budget.amountMinor / 10 ** minorUnitDigits(budget.currency))),
-            currency: budget.currency,
-            period: budget.period,
-          },
   };
 }
 
@@ -134,17 +116,6 @@ export function formFromDraft(
       })),
     );
   }
-  if (draft.fields !== undefined) form.fields = [...draft.fields];
-  if (draft.studyLanguages !== undefined) form.studyLanguages = [...draft.studyLanguages];
-  if (draft.destinations !== undefined) form.destinations = [...draft.destinations];
-  if (draft.institutionType !== undefined) form.institutionType = draft.institutionType;
-  if (draft.budget !== undefined && draft.budget !== null) {
-    form.budget = {
-      amount: draft.budget.amount ?? form.budget.amount,
-      currency: draft.budget.currency ?? form.budget.currency,
-      period: draft.budget.period ?? form.budget.period,
-    };
-  }
 
   return { form, step: Math.min(Math.max(draft.step, 0), STEPS.length - 1) };
 }
@@ -185,14 +156,5 @@ export function draftFromForm(form: FormState, step: number): ProfileDraft {
       ...(row.level === "" ? {} : { level: row.level }),
       certificate: row.certificate === "" ? null : capped(row.certificate),
     })),
-    fields: form.fields.map(capped),
-    studyLanguages: form.studyLanguages.map(capped),
-    destinations: form.destinations.map(capped),
-    institutionType: form.institutionType,
-    budget: {
-      amount: capped(form.budget.amount),
-      currency: capped(form.budget.currency),
-      period: form.budget.period,
-    },
   };
 }

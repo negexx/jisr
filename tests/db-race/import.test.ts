@@ -26,7 +26,7 @@ function program(slug: string): SavedProgram {
 
 function profile(destination: "FR" | "NL"): Profile {
   return ProfileSchema.parse({
-    schemaVersion: 1,
+    schemaVersion: 2,
     nationality: "MA",
     credential: {
       country: "MA",
@@ -36,13 +36,8 @@ function profile(destination: "FR" | "NL"): Profile {
       overall: { scale: "ma-20", value: 14 },
       subjects: [],
     },
-    priorHigherEducationYears: 0,
+    priorHigherEducationYears: destination === "FR" ? 1 : 2,
     languages: [{ language: "fr", level: "B2", certificate: null }],
-    fields: ["computer-science"],
-    studyLanguages: ["fr"],
-    destinations: [destination],
-    budget: { amountMinor: 900_00, currency: "EUR", period: "month" },
-    institutionType: "any",
   });
 }
 

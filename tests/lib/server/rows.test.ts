@@ -6,6 +6,7 @@ import { MAX_SAVED_PROGRAMS } from "@/lib/constants";
 import { MAX_PLAN_PROGRAMS, type PlanProgress, parsePlanProgress } from "@/lib/plan/progress";
 import { parseSaved, type SavedList, type SavedProgram } from "@/lib/saved/saved";
 import {
+  type ProfileRow,
   planProgressToRows,
   profileToRow,
   rowsToPlanProgress,
@@ -39,7 +40,7 @@ const SAVED: SavedList = {
 };
 
 const PROFILE = ProfileSchema.parse({
-  schemaVersion: 1,
+  schemaVersion: 2,
   nationality: "MA",
   credential: {
     country: "MA",
@@ -51,11 +52,6 @@ const PROFILE = ProfileSchema.parse({
   },
   priorHigherEducationYears: 0,
   languages: [{ language: "fr", level: "B2", certificate: null }],
-  fields: ["computer-science"],
-  studyLanguages: ["fr", "en"],
-  destinations: ["FR", "DE"],
-  budget: { amountMinor: 900_00, currency: "EUR", period: "month" },
-  institutionType: "any",
 });
 
 // What the database returns: the insert shape plus created_at, `step` seconds after DONE_AT.
@@ -240,8 +236,30 @@ describe("profile row", () => {
 
   it("returns null for a stored document the schema no longer accepts", () => {
     // What the jsonb column can hold after a schema change: the database returns it untyped.
-    const outdated = JSON.parse('{"schemaVersion":2}');
+    const outdated = JSON.parse('{"schemaVersion":3}');
     const row = { userId: USER_ID, data: outdated, revision: 0, updatedAt: DONE_AT };
     expect(rowToProfile(row)).toBeNull();
+  });
+
+  it("reads an account-synced v1 row as a v2 profile, stripping the five preference keys", () => {
+    const v1 = {
+      ...PROFILE,
+      schemaVersion: 1,
+      fields: ["computer-science"],
+      studyLanguages: ["fr"],
+      destinations: ["FR"],
+      budget: null,
+      institutionType: "any",
+    };
+    const row = {
+      userId: USER_ID,
+      data: v1,
+      revision: 1,
+      updatedAt: DONE_AT,
+    } as unknown as ProfileRow;
+    const parsed = rowToProfile(row);
+    expect(parsed?.schemaVersion).toBe(2);
+    expect(parsed).not.toHaveProperty("fields");
+    expect(parsed?.nationality).toBe("MA");
   });
 });

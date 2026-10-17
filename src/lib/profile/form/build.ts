@@ -1,7 +1,7 @@
 import type { GradeValue, Profile } from "@/data-schema/profile";
 import type { CoreShard } from "@/data-schema/snapshot";
 import { PROFILE_SCHEMA_VERSION } from "@/lib/constants";
-import { minorUnitDigits, parseLocaleDecimal } from "@/lib/format";
+import { parseLocaleDecimal } from "@/lib/format";
 import {
   checkProfileAgainstReference,
   type ProfileIssue,
@@ -24,7 +24,6 @@ export const PROFILE_ISSUE_TO_STEP_CODE: Record<ProfileIssueCode, StepIssueCode>
   unknown_subject: "unknown_option",
   unknown_certificate: "unknown_option",
   certificate_language_mismatch: "certificate_language_mismatch",
-  unknown_field: "unknown_option",
   unknown_country: "unknown_option",
 };
 
@@ -64,7 +63,6 @@ function candidateFrom(form: FormState, core: CoreShard): unknown {
     return scale === undefined || value === null ? null : { scale, value };
   };
   const { credential } = form;
-  const amount = form.budget.amount.trim();
 
   return {
     schemaVersion: PROFILE_SCHEMA_VERSION,
@@ -86,18 +84,6 @@ function candidateFrom(form: FormState, core: CoreShard): unknown {
       level: row.level,
       certificate: row.certificate === "" ? null : row.certificate,
     })),
-    fields: form.fields,
-    studyLanguages: form.studyLanguages,
-    destinations: form.destinations,
-    budget:
-      amount === ""
-        ? null
-        : {
-            amountMinor: Number(amount) * 10 ** minorUnitDigits(form.budget.currency),
-            currency: form.budget.currency,
-            period: form.budget.period,
-          },
-    institutionType: form.institutionType,
   };
 }
 

@@ -21,7 +21,7 @@ const KEYS = {
 };
 
 const PROFILE: Profile = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   nationality: "MA",
   credential: {
     country: "MA",
@@ -33,11 +33,6 @@ const PROFILE: Profile = {
   },
   priorHigherEducationYears: 0,
   languages: [{ language: "fr", level: "B2", certificate: null }],
-  fields: ["computer-science"],
-  studyLanguages: ["fr", "en"],
-  destinations: ["FR", "DE"],
-  budget: { amountMinor: 900_00, currency: "EUR", period: "month" },
-  institutionType: "any",
 };
 
 function item(slug: string): SavedProgram {
@@ -175,7 +170,7 @@ describe("two tabs of one account", () => {
     b.sync.saveProfile(PROFILE);
     await settle();
     broadcast(KEYS.profile);
-    const MINE: Profile = { ...PROFILE, destinations: ["IT"] };
+    const MINE: Profile = { ...PROFILE, priorHigherEducationYears: 1 };
     a.sync.saveProfile(MINE);
     await settle();
     expect(profileCalls.at(-1)).toEqual([MINE, 1]);

@@ -1,4 +1,5 @@
 import { compareIso, type IsoDate } from "@/data-schema/dates";
+import type { MatchFilters } from "@/data-schema/match-filters";
 import type { Profile } from "@/data-schema/profile";
 import type { Tuition } from "@/data-schema/records/program";
 import type { ApplicationChannel, Program, ResolvedFact } from "@/data-schema/resolved";
@@ -50,11 +51,8 @@ export type MatchCardModel = {
 export type HiddenProgram = { slug: string; name: string; mismatches: PreferenceMismatch[] };
 
 // no_programs: the snapshot publishes no program at all.
-// no_programs_for_fields: programs exist, but none in the fields the student chose (their program
-// shards were not loaded), so there is nothing to match or hide.
 export type MatchesView =
   | { kind: "no_programs" }
-  | { kind: "no_programs_for_fields" }
   | {
       kind: "ok";
       groups: Record<MatchGroup, MatchCardModel[]>;
@@ -67,6 +65,7 @@ export type MatchesView =
 
 export type MatchesViewInput = {
   profile: Profile;
+  filters: MatchFilters;
   bundle: SnapshotBundle;
   now: IsoDate;
   locale: AppLocale;
@@ -188,13 +187,13 @@ export function reasonContext(
 }
 
 export function cardFor(input: CardInput): MatchCardModel {
-  const { profile, bundle, now, core, program } = input;
+  const { profile, filters, bundle, now, core, program } = input;
   const routes = bundle.routes?.routes ?? [];
   const match = matchProgram({ profile, program, routes, reference: core, now });
   const cost = estimateCost({
     program,
     costProfiles: bundle.costProfiles.flatMap((shard) => shard.profiles),
-    budget: profile.budget,
+    budget: filters.budget,
     now,
   });
   const intake = nextIntake(program, now);
@@ -250,7 +249,7 @@ export function cardFor(input: CardInput): MatchCardModel {
 }
 
 export function buildMatchesView(input: MatchesViewInput): MatchesView {
-  const { profile, bundle, now } = input;
+  const { filters, bundle, now } = input;
   if (!bundle.hasPrograms) return { kind: "no_programs" };
   const core = bundle.core;
   if (core === undefined) {
@@ -258,8 +257,7 @@ export function buildMatchesView(input: MatchesViewInput): MatchesView {
   }
 
   const programs = bundle.programs.flatMap((shard) => shard.programs);
-  if (programs.length === 0) return { kind: "no_programs_for_fields" };
-  const { kept, excluded } = filterPrograms(profile, programs, now);
+  const { kept, excluded } = filterPrograms(filters, programs, now);
 
   const groups = emptyGroups<MatchCardModel[]>(() => []);
   for (const program of kept) {

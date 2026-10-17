@@ -1,11 +1,30 @@
 import type { ProfileDraft } from "@/data-schema/draft";
 import { ACCOUNT_DRAFT_KEY, inAccountMode } from "@/lib/account-cache";
+import { DRAFT_SCHEMA_VERSION } from "@/lib/constants";
+import { isRecord } from "@/lib/guards";
 
 import { parseDraft } from "./draft-validate";
 import { DRAFT_KEY, removeQuietly, type StorageLike } from "./storage";
 
-export { DRAFT_SCHEMA_VERSION } from "@/lib/constants";
+export { DRAFT_SCHEMA_VERSION };
 export type { ProfileDraft };
+
+// A draft from v1 still carries the preference fields the profile no longer has: strip them (and
+// bump the version) so a half-finished form keeps its bac and languages answers.
+const LEGACY_PREFERENCE_KEYS = [
+  "fields",
+  "studyLanguages",
+  "destinations",
+  "budget",
+  "institutionType",
+] as const;
+
+function migrateDraft(raw: unknown): unknown {
+  if (!isRecord(raw) || raw.schemaVersion !== 1) return raw;
+  const record: Record<string, unknown> = { ...raw, schemaVersion: DRAFT_SCHEMA_VERSION };
+  for (const key of LEGACY_PREFERENCE_KEYS) delete record[key];
+  return record;
+}
 
 // Signed in, the form's draft (grades, nationality) belongs to the account cache: it is wiped at
 // sign-out with the rest of `jisr.account.`, and the guest's own draft is left as it was.
@@ -28,7 +47,7 @@ export function readDraft(storage: StorageLike): ProfileDraft | null {
   }
   if (raw === null) return null;
   try {
-    const parsed = parseDraft(JSON.parse(raw));
+    const parsed = parseDraft(migrateDraft(JSON.parse(raw)));
     if (parsed !== null) return parsed;
   } catch {
     // Corrupt JSON is handled like any other invalid draft.

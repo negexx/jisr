@@ -67,7 +67,7 @@ async function labelsFor(locale: keyof typeof catalogues) {
   return entry.props.labels;
 }
 
-const SERVER = { schemaVersion: 1 } as Profile;
+const SERVER = { schemaVersion: 2 } as unknown as Profile;
 
 beforeEach(() => {
   window.localStorage.clear();

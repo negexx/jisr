@@ -50,11 +50,6 @@ async function completeFixtureForm(user: User) {
   await user.selectOptions(levels[0] as HTMLElement, "B2");
   await user.selectOptions(levels[1] as HTMLElement, "unknown");
   await user.click(screen.getByRole("button", { name: "Next" }));
-  await user.click(await screen.findByRole("checkbox", { name: "Test computer science" }));
-  await user.click(screen.getByRole("button", { name: "Next" }));
-  await stepHeading("Budget");
-  await user.type(screen.getByRole("textbox", { name: /^Amount you can spend/ }), "800");
-  await user.click(screen.getByRole("button", { name: "Next" }));
   await stepHeading("Review");
 }
 
@@ -89,7 +84,6 @@ describe("final submit", () => {
     const stored = parseProfile(JSON.parse(window.localStorage.getItem(PROFILE_KEY) ?? "null"));
     expect(stored?.credential.overall?.value).toBe(14.5);
     expect(stored?.credential.type).toBe("xx-test-cred");
-    expect(stored?.budget).toEqual({ amountMinor: 80000, currency: "EUR", period: "month" });
     expect(stored?.languages.map((row) => row.language)).toEqual(["fr", "en"]);
     expect(profileStore.getSnapshot().status).toBe("ok");
   });
@@ -151,8 +145,6 @@ describe("edit mode", () => {
     expect(levels[0]?.value).toBe("B2");
     await user.selectOptions(levels[1] as HTMLElement, "unknown");
     await user.click(screen.getByRole("button", { name: "Next" }));
-    await user.click(screen.getByRole("button", { name: "Next" }));
-    await user.click(screen.getByRole("button", { name: "Next" }));
     await stepHeading("Review");
     await user.click(screen.getByRole("button", { name: "Save changes" }));
     await waitFor(() => expect(navigation.push).toHaveBeenCalledWith("/matches"));
@@ -206,9 +198,6 @@ describe("draft autosave", () => {
     const levels = screen.getAllByRole("combobox", { name: /^Your level/ });
     await user.selectOptions(levels[0] as HTMLElement, "B2");
     await user.selectOptions(levels[1] as HTMLElement, "unknown");
-    await user.click(screen.getByRole("button", { name: "Next" }));
-    await user.click(await screen.findByRole("checkbox", { name: "xx-test-field" }));
-    await user.click(screen.getByRole("button", { name: "Next" }));
     await user.click(screen.getByRole("button", { name: "Next" }));
     await stepHeading("Review");
     await user.click(screen.getByRole("button", { name: "See my matches" }));
