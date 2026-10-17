@@ -164,15 +164,15 @@ POSTs):
   implementation; if not, fall back to logging the full class/SQLSTATE at this point in `log.ts`).
 - `failureOf` describes the deepest error in the cause chain:
   - `sqlState(error)` reused from `src/lib/server/account-store.ts`;
-  - error class name (`error.name`, or `typeof` for non-Errors);
+  - error class name (`error.constructor.name` of the innermost error, or `typeof` for non-Errors);
   - a `reason` **only** for the three whitelisted classes whose messages name variables and never
     values: `AuthMisconfiguredError` (existing behaviour, keeps its full message), and now
     `AuthEmailTransportNotConfigured` / `AuthEmailAccountsDisabled`.
   - Never an arbitrary `error.message` (driver errors can carry parameters).
-- Result: one line, e.g. `sign-in link request failed { code: "INTERNAL_SERVER_ERROR",
-  error: "AuthEmailTransportNotConfigured", sqlState: null, reason: "Auth email transport is not
-  configured: BREVO_API_KEY is empty on Vercel..." }` — or `{ code: "INTERNAL_SERVER_ERROR",
-  error: "DrizzleQueryError", sqlState: "42P01" }`.
+- Result: one line in one of two shapes: `sign-in link request failed { code: "INTERNAL_SERVER_ERROR",
+  reason: "Auth email transport is not configured: BREVO_API_KEY is empty on Vercel..." }` for a
+  whitelisted class, or `{ code: "INTERNAL_SERVER_ERROR", error: "DatabaseError", sqlState: "42P01" }`
+  otherwise, where `error` is the innermost error's constructor name.
 - The UI keeps its generic `errors.failed`; cooldown and disabled keep their messages.
 
 ### 5.2 Regression tests
