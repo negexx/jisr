@@ -1,4 +1,4 @@
-# Conventions — Jisr
+# Conventions — Jisrr
 
 > The rules an agent should match before introducing new patterns. If something here is wrong or outdated, fix the doc — don't quietly diverge in code.
 

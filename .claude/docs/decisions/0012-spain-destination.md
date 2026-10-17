@@ -11,7 +11,7 @@ Spec: `docs/superpowers/specs/2026-10-13-spain-destination-design.md`. Plan: `do
 
 ## Decision
 
-1. **Spain (ES) is Jisr's 6th destination**, delivered inside the existing model, with no change to the domain shape: `level: bachelor`; eligibility is `(origin credential country, credential type) → (destination, level)` routes first, then program rules. No new credential type — the route uses the existing `ma-bac`.
+1. **Spain (ES) is Jisrr's 6th destination**, delivered inside the existing model, with no change to the domain shape: `level: bachelor`; eligibility is `(origin credential country, credential type) → (destination, level)` routes first, then program rules. No new credential type — the route uses the existing `ma-bac`.
 
 2. **Teaching language is two-wave.** Wave 1 is English-taught Grado first: it proves ES end-to-end (country, route, channels, programme page, matches, save, plan) from a smaller, cleaner set. Wave 2 is Spanish-taught Grado, the national norm: English-taught Grados are rare, and Spanish-taught is the mass. The two waves share one pipeline; only the discovery input differs.
 

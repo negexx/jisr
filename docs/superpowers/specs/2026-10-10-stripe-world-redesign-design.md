@@ -6,7 +6,7 @@
 
 ## Goal
 
-Raise Jisr's visual craft from the incumbent "Plain Bridge" (warm paper, flat, teal, deliberately plain) to a **Stripe-grade** system — confident, atmospheric, tactile — across the **landing page and the global shell**, so the product reads as modern and "catchy" without becoming hype. Add two kinds of genuine interactivity: a **hero match mini-demo** that shows the real product, and **journey micro-interactions** that reward every touch.
+Raise Jisrr's visual craft from the incumbent "Plain Bridge" (warm paper, flat, teal, deliberately plain) to a **Stripe-grade** system — confident, atmospheric, tactile — across the **landing page and the global shell**, so the product reads as modern and "catchy" without becoming hype. Add two kinds of genuine interactivity: a **hero match mini-demo** that shows the real product, and **journey micro-interactions** that reward every touch.
 
 "More visually appealing and aggressive and catchy, but not too much." The Stripe world is chosen precisely because its punch is *craft* (gradient, thin display type, depth, motion), not marketing gloss.
 

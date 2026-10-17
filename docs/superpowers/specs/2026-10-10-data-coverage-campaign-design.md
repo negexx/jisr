@@ -6,7 +6,7 @@
 
 ## Goal
 
-Raise the quantity and completeness of Jisr's reference data for the five Release-1 destinations by running the repository's existing import/enrichment pipeline end to end, country by country, most-deficient first. Two kinds of work per country:
+Raise the quantity and completeness of Jisrr's reference data for the five Release-1 destinations by running the repository's existing import/enrichment pipeline end to end, country by country, most-deficient first. Two kinds of work per country:
 
 1. **Add missing programmes** (where a Release-1 cell is thin, above all Italy × Computer Science).
 2. **Fill missing facts on existing programmes** (tuition, deadlines, teaching language, language-proficiency rules, documents, application channel, requirement rules).

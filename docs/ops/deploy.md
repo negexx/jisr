@@ -1,4 +1,4 @@
-# Deploying Jisr (Vercel Hobby, region fra1)
+# Deploying Jisrr (Vercel Hobby, region fra1)
 
 Last updated 2026-10-10. Decisions and reasons: `.claude/docs/decisions/0011-deployment.md`. Limits: `docs/ops/limits-runbook.md`. Launch gates: `docs/ops/prelaunch-checklist.md`.
 

@@ -1,5 +1,5 @@
 ---
-name: Jisr
+name: Jisrr
 description: A confident, atmospheric bridge from a school-leaver's profile to real, honestly labelled study options in Europe. Navy ink on a cool near-white canvas, one electric-indigo accent, thin display type, and soft navy-tinted depth — trust carried by source badges, never by gloss.
 colors:
   navy-ink: "oklch(0.2591 0.0544 250.72)"
@@ -204,13 +204,13 @@ components:
     padding: "48px"
 ---
 
-# Design System: Jisr
+# Design System: Jisrr
 
 ## 1. Overview
 
 **Creative North Star: "The Gradient Bridge"**
 
-Jisr means bridge. The product is still a calm, plainly spoken crossing from a school-leaver's profile to real, honestly labelled options — but it now looks and feels like the craft is on purpose. The interface opens with an atmospheric indigo wash over a cool near-white canvas, sets its headline in thin Geist with tight tracking, and floats one near-white card of real product (the hero match demo) at the gradient's edge. Depth is soft and navy-tinted; motion is small and physical. The student decides alone on a mid-range phone, so every flourish stays cheap, legible and task-serving.
+Jisrr means bridge. The product is still a calm, plainly spoken crossing from a school-leaver's profile to real, honestly labelled options — but it now looks and feels like the craft is on purpose. The interface opens with an atmospheric indigo wash over a cool near-white canvas, sets its headline in thin Geist with tight tracking, and floats one near-white card of real product (the hero match demo) at the gradient's edge. Depth is soft and navy-tinted; motion is small and physical. The student decides alone on a mid-range phone, so every flourish stays cheap, legible and task-serving.
 
 **This world supersedes "The Plain Bridge."** The incumbent system (warm paper, hue-90 neutrals, deep teal ink, flat surfaces, a ban on shadows) is kept only as evidence and anti-reference. The trust semantics, product truth, copy voice, content, RTL discipline and privacy rules are unchanged; the *look* is replaced. Where a later component still reads warm-paper or teal-accented, it is un-migrated, not a deliberate exception.
 
@@ -362,7 +362,7 @@ Decorative blocks that reserve the layout's height while data loads, inside the 
 - **Focus / Error:** Global indigo focus ring. Invalid fields take an Error Red border and a message with an alert icon; an error summary (Error Red border, Error Blush fill) links to each field.
 
 ### Navigation / Shell
-- **Header:** Sticky, translucent (`bg-canvas/70` with `backdrop-blur`), 1px Hairline bottom border, 64px bar. Wordmark "Jisr" plus Arabic "جسر" in Ink Muted, 20px semibold.
+- **Header:** Sticky, translucent (`bg-canvas/70` with `backdrop-blur`), 1px Hairline bottom border, 64px bar. Wordmark "Jisrr" plus Arabic "جسر" in Ink Muted, 20px semibold.
 - **Nav links:** 15px medium; the current item draws a 2px indigo underline via a logical `inset-inline` pseudo-element; hover fills with Canvas Soft.
 - **Locale switcher:** A pill group on a Canvas Soft track; the current locale is a Canvas pill with `shadow-sm`.
 - **Footer:** Canvas Soft with a top hairline; the privacy line and the "Clear my data" outline button opening a modal alert dialog.

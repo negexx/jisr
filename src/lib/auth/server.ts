@@ -256,7 +256,7 @@ function createAuth(secret: string, baseURL: string) {
     },
   });
   return betterAuth({
-    appName: "Jisr",
+    appName: "Jisrr",
     baseURL,
     secret,
     database: drizzleAdapter(db, { provider: "pg", schema }),

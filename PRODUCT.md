@@ -16,7 +16,7 @@ Usage conditions (confirmed): general. Students arrive on laptops and MacBooks, 
 
 ## Product Purpose
 
-Jisr is a free, non-commercial web app that runs one journey: student profile, realistic options, costs, scholarships, application steps. It answers four questions: where can I study, can I apply, how much will it cost, what do I need to do. It is not a university directory. Release 1 covers France, Germany, the Netherlands, Hungary and Italy, in Computer Science, Engineering and Business/Economics. Success is that the student ends with realistic options, approximate costs, scholarships they may qualify for, and a clear next step, and trusts the information enough to use Jisr as their starting point.
+Jisrr is a free, non-commercial web app that runs one journey: student profile, realistic options, costs, scholarships, application steps. It answers four questions: where can I study, can I apply, how much will it cost, what do I need to do. It is not a university directory. Release 1 covers France, Germany, the Netherlands, Hungary and Italy, in Computer Science, Engineering and Business/Economics. Success is that the student ends with realistic options, approximate costs, scholarships they may qualify for, and a clear next step, and trusts the information enough to use Jisrr as their starting point.
 
 ## Positioning
 
@@ -40,7 +40,7 @@ Trust is the product. Every important fact carries an official source and a last
 
 ## Brand Commitments
 
-- The name is Jisr (جسر, "bridge"). It is fixed.
+- The name is Jisrr (جسر, "bridge"). It is fixed.
 - Voice rule: plain, calm and honest. No hype, no guarantees, never "eligible" or "admitted" as a promise; say what appears met, what to check and where.
 - No other brand assets, colours or visual identity are committed; those are open for design.
 

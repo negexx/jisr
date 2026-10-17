@@ -4,13 +4,13 @@
     "privacy": {
       "meta": {
         "title": "Privacy notice",
-        "description": "How Jisr handles your data, as a guest or with an account: what your browser keeps, what we store, who processes it, and your rights under the GDPR and Moroccan Law 09-08."
+        "description": "How Jisrr handles your data, as a guest or with an account: what your browser keeps, what we store, who processes it, and your rights under the GDPR and Moroccan Law 09-08."
       }
     },
     "terms": {
       "meta": {
         "title": "Terms of use",
-        "description": "The rules for using Jisr: a free, informational service with an optional account, no fees and no warranty, governed by Italian law."
+        "description": "The rules for using Jisrr: a free, informational service with an optional account, no fees and no warranty, governed by Italian law."
       }
     }
   },
@@ -35,7 +35,7 @@
     "backToGuides": "Back to guides",
     "studying-in-europe": {
       "title": "Studying in Europe after the Moroccan bac",
-      "lead": "The six countries Jisr follows, the shape of the journey and how to read every source.",
+      "lead": "The six countries Jisrr follows, the shape of the journey and how to read every source.",
       "meta": {
         "title": "Studying in Europe after the Moroccan bac",
         "description": "An overview guide to applying for a Bachelor's in Europe after a Moroccan bac, with official sources."
@@ -75,12 +75,12 @@
     }
   },
   "metadata": {
-    "title": "Jisr | Study in Europe after the Bac",
+    "title": "Jisrr | Study in Europe after the Bac",
     "description": "Find realistic Bachelor's programmes in France, Germany, the Netherlands, Hungary, Italy and Spain, with costs, scholarships and application steps."
   },
   "home": {
     "title": "Study in Europe after the Bac",
-    "lead": "Jisr helps you find Bachelor's programmes that are realistic for your profile, estimate the costs and prepare your application.",
+    "lead": "Jisrr helps you find Bachelor's programmes that are realistic for your profile, estimate the costs and prepare your application.",
     "cta": "Create my profile",
     "ctaNote": "Your answers stay on this device.",
     "ctaNoteSignedIn": "Your answers are saved to your account.",
@@ -91,7 +91,7 @@
       "titleLead": "Study in Europe",
       "titleAccent": "after the Bac"
     },
-    "questionsTitle": "What Jisr helps you find out",
+    "questionsTitle": "What Jisrr helps you find out",
     "questions": {
       "kicker": "How it works",
       "where": {
@@ -144,7 +144,7 @@
     }
   },
   "shell": {
-    "siteName": "Jisr",
+    "siteName": "Jisrr",
     "siteNameArabic": "جسر",
     "homeLink": "Home",
     "skipToContent": "Skip to content"
@@ -158,8 +158,8 @@
     "savedCount": "{count} saved"
   },
   "footer": {
-    "privacy": "Your profile, saved programs and plan progress stay on this device. Jisr uses no cookies.",
-    "privacySignedIn": "Your profile, saved programs and plan progress are saved to your account, and you can export or delete them. Jisr uses no tracking cookies.",
+    "privacy": "Your profile, saved programs and plan progress stay on this device. Jisrr uses no cookies.",
+    "privacySignedIn": "Your profile, saved programs and plan progress are saved to your account, and you can export or delete them. Jisrr uses no tracking cookies.",
     "privacyLogs": "As on any website, our host sees the pages you open. To show your results and your plan, your browser also downloads data files whose names include your diploma's country, destination countries and fields: the ones you chose and those of the programs you open or save. Your grades, your nationality and the programs on your saved list are never sent.",
     "privacyLogsSignedIn": "As on any website, our host sees the pages you open. To show your results and your plan, your browser also downloads data files whose names include your diploma's country, destination countries and fields: the ones you chose and those of the programs you open or save. Your profile, saved programs and plan progress are sent to our server to be saved in your account.",
     "sources": "Data and sources are checked by hand; every fact shows its source.",
@@ -416,7 +416,7 @@
   },
   "profile": {
     "meta": {
-      "title": "Jisr | Create your profile",
+      "title": "Jisrr | Create your profile",
       "description": "Tell us about your Bac, your languages and what you want to study to see programs that look realistic for you. Free, with or without an account."
     },
     "title": {
@@ -639,7 +639,7 @@
   },
   "matches": {
     "meta": {
-      "title": "Jisr | Your matches",
+      "title": "Jisrr | Your matches",
       "description": "Programs compared with your profile: what looks possible, what to check, costs and deadlines, with the source of each fact."
     },
     "title": "Your matches",
@@ -744,8 +744,8 @@
   },
   "program": {
     "meta": {
-      "title": "{program}, {institution} | Jisr",
-      "titleWithoutInstitution": "{program} | Jisr",
+      "title": "{program}, {institution} | Jisrr",
+      "titleWithoutInstitution": "{program} | Jisrr",
       "description": "Admission requirements, costs, deadlines and how to apply for {program}, with the source of each fact."
     },
     "header": {
@@ -1080,7 +1080,7 @@
   "scholarshipsPage": {
     "meta": {
       "title": "Scholarships for Bachelor's studies in Europe",
-      "description": "The scholarships listed on Jisr, with amounts, what they cover, deadlines and official sources."
+      "description": "The scholarships listed on Jisrr, with amounts, what they cover, deadlines and official sources."
     },
     "title": "Scholarships",
     "eyebrow": "Help with funding",
@@ -1131,9 +1131,9 @@
   "signup": {
     "meta": {
       "title": "Sign in or create an account",
-      "description": "Create a free Jisr account to keep your profile, saved programmes and plan on all your devices."
+      "description": "Create a free Jisrr account to keep your profile, saved programmes and plan on all your devices."
     },
-    "title": "Your Jisr account",
+    "title": "Your Jisrr account",
     "lead": "An account is optional. Without one, everything keeps working and your data stays on this device. With one, your profile, saved programmes and plan follow you on all your devices.",
     "leadSignedIn": "You are signed in. Your profile, saved programmes and plan are saved to your account and follow you on all your devices. You can export or delete them.",
     "modes": {
@@ -1146,13 +1146,13 @@
       "hint": "We send you a link to sign in. No password."
     },
     "consent": {
-      "label": "I agree that Jisr keeps my email address, profile, saved programmes and plan progress to provide my account, as described in the privacy notice.",
+      "label": "I agree that Jisrr keeps my email address, profile, saved programmes and plan progress to provide my account, as described in the privacy notice.",
       "privacyLink": "Read the privacy notice"
     },
     "age": {
       "label": "I am 16 or older.",
-      "hint": "Under 16? Keep using Jisr without an account: everything works, and your data stays on this device.",
-      "hintSignedIn": "Under 16? You can use Jisr without an account: everything works."
+      "hint": "Under 16? Keep using Jisrr without an account: everything works, and your data stays on this device.",
+      "hintSignedIn": "Under 16? You can use Jisrr without an account: everything works."
     },
     "required": "required",
     "submit": "Email me a sign-in link",
@@ -1170,7 +1170,7 @@
       "ageRequired": "To create an account, confirm that you are 16 or older.",
       "emailInvalid": "Enter an email address such as name@example.com.",
       "cooldown": "We cannot send another link to this address right now. Try again later.",
-      "disabled": "Accounts are not available yet. You can keep using Jisr without one.",
+      "disabled": "Accounts are not available yet. You can keep using Jisrr without one.",
       "failed": "The link could not be sent. Try again in a moment.",
       "noAccount": "There is no account with this address yet. To create one, choose Create an account and tick both boxes.",
       "linkFailed": "Sign-in did not work. The link may have expired or been used already: ask for a new one."
@@ -1178,8 +1178,8 @@
     "gate": {
       "titleNew": "Finish creating your account",
       "titleChanged": "Our privacy notice has changed",
-      "bodyNew": "Before your account can keep your data, agree to the privacy notice. Until then, Jisr keeps working on this device as before.",
-      "bodyChanged": "We updated the privacy notice since you agreed to it. Read it and agree to the new version to keep using your account. Until then, Jisr keeps working on this device as before.",
+      "bodyNew": "Before your account can keep your data, agree to the privacy notice. Until then, Jisrr keeps working on this device as before.",
+      "bodyChanged": "We updated the privacy notice since you agreed to it. Read it and agree to the new version to keep using your account. Until then, Jisrr keeps working on this device as before.",
       "submit": "Continue",
       "sending": "Saving…",
       "required": "Tick the box to agree to the privacy notice.",
@@ -1200,7 +1200,7 @@
   "welcome": {
     "meta": {
       "title": "Finishing sign-in",
-      "description": "Completing your sign-in to Jisr."
+      "description": "Completing your sign-in to Jisrr."
     },
     "title": "Signing you in",
     "lead": "One moment, we are finishing your sign-in.",
@@ -1240,24 +1240,24 @@
   "accountDelete": {
     "meta": {
       "title": "Delete your account",
-      "description": "Confirm the deletion of your Jisr account."
+      "description": "Confirm the deletion of your Jisrr account."
     },
     "title": "Delete your account",
     "lead": "This confirms the deletion you asked for by email.",
     "reading": "Reading the link…",
-    "warning": "Your account and everything it holds on Jisr (profile, saved programs, ticked steps, reports) will be deleted for good, and this device's copy of your data will be removed too. This cannot be undone.",
+    "warning": "Your account and everything it holds on Jisrr (profile, saved programs, ticked steps, reports) will be deleted for good, and this device's copy of your data will be removed too. This cannot be undone.",
     "confirm": "Delete my account",
     "working": "Deleting…",
     "deleted": {
       "title": "Your account has been deleted",
-      "body": "Your account and its data are gone from Jisr and from this device. You can keep using Jisr without an account.",
+      "body": "Your account and its data are gone from Jisrr and from this device. You can keep using Jisrr without an account.",
       "home": "Back to the home page"
     },
     "errors": {
       "invalidToken": "This link is not valid or has expired. Ask for a new deletion email from your account page.",
-      "signedOut": "This device is not signed in, so we cannot confirm the deletion here. If you already confirmed it a moment ago, your account has probably been deleted, and you can erase Jisr's data from this device. If not, sign in to the account you want to delete, then open the link in the email again.",
+      "signedOut": "This device is not signed in, so we cannot confirm the deletion here. If you already confirmed it a moment ago, your account has probably been deleted, and you can erase Jisrr's data from this device. If not, sign in to the account you want to delete, then open the link in the email again.",
       "eraseDevice": "Erase this device",
-      "erased": "Jisr's data has been erased from this device.",
+      "erased": "Jisrr's data has been erased from this device.",
       "signIn": "Sign in",
       "unavailable": "Accounts are not available at the moment. Nothing was deleted.",
       "failed": "We could not confirm the deletion. Check your connection and try again."
@@ -1268,7 +1268,7 @@
       "title": "Confirm your sign-in",
       "description": "Confirm the sign-in link you asked for by email."
     },
-    "title": "Sign in to Jisr",
+    "title": "Sign in to Jisrr",
     "lead": "You opened a sign-in link. Nothing happens until you confirm below.",
     "reading": "Reading the link…",
     "signin": {
@@ -1276,14 +1276,14 @@
       "confirm": "Sign in"
     },
     "signup": {
-      "body": "Press the button to create your Jisr account and sign in on this browser.",
+      "body": "Press the button to create your Jisrr account and sign in on this browser.",
       "confirm": "Create my account"
     },
     "working": "Signing in…",
     "notYou": "If you did not ask for this link, close this page: nothing has been done.",
     "errors": {
       "noToken": "This link is incomplete or has been opened already. Ask for a new sign-in link.",
-      "unavailable": "Accounts are not available at the moment. You can keep using Jisr without one.",
+      "unavailable": "Accounts are not available at the moment. You can keep using Jisrr without one.",
       "failed": "Sign-in did not go through. Check your connection and try again."
     },
     "newLink": "Ask for a new link"
@@ -1291,10 +1291,10 @@
   "accountPage": {
     "meta": {
       "title": "Your account",
-      "description": "Download your data or delete your Jisr account."
+      "description": "Download your data or delete your Jisrr account."
     },
     "title": "Your account",
-    "lead": "Download a copy of your data or delete your Jisr account.",
+    "lead": "Download a copy of your data or delete your Jisrr account.",
     "checking": "Checking your sign-in…",
     "signedIn": "Signed in as <value>{email}</value>",
     "signedOut": {
@@ -1324,7 +1324,7 @@
     },
     "delete": {
       "title": "Delete my account",
-      "body": "Your account and everything it holds on Jisr (profile, saved programmes, ticked steps, reports) will be deleted for good. To prevent a deletion by mistake, we first send a confirmation link to <value>{email}</value>.",
+      "body": "Your account and everything it holds on Jisrr (profile, saved programmes, ticked steps, reports) will be deleted for good. To prevent a deletion by mistake, we first send a confirmation link to <value>{email}</value>.",
       "button": "Delete my account",
       "working": "Sending…",
       "sent": {
@@ -1356,7 +1356,7 @@
   },
   "clearDataAccount": {
     "title": "Clear your account's data?",
-    "description": "This removes your profile, your saved programs and your plan progress from your account, on all your devices, and all Jisr data from this device. You stay signed in and your account is not deleted.",
+    "description": "This removes your profile, your saved programs and your plan progress from your account, on all your devices, and all Jisrr data from this device. You stay signed in and your account is not deleted.",
     "confirm": "Clear my data",
     "working": "Clearing…",
     "failed": "We could not clear your account's data. Nothing was removed. Try again.",

@@ -1,4 +1,4 @@
-# Jisr Foundation (Milestones 0–2): Implementation Plan, Part A
+# Jisrr Foundation (Milestones 0–2): Implementation Plan, Part A
 
 > **For agentic workers:** REQUIRED SUB-SKILL: use `superpowers:subagent-driven-development` (recommended) or `superpowers:executing-plans` to run this plan task by task. Steps use checkbox (`- [ ]`) syntax for tracking. Each task is self-contained: an implementer only sees its own task plus the "Global Constraints" and "Shared type contract" sections.
 
@@ -690,7 +690,7 @@ export function generateChecklist(input: ChecklistInput): Checklist;
     (Decision 2026-09-29 after review: a certificate below the required level, or a language condition on the admission route, must never make the exam step disappear.)
   - `application_account` is skipped (`no_account_required`) only when the channel is non-null, `channel.slug === program.applicationChannel.value`, `program.applicationChannel` is decisive, `accountRequired === false` and the channel fact is decisive. A null channel gives todo `unknown_data`.
   - `submit` is todo; its `deadline` comes from `nextIntake` when upcoming, else null.
-  - `scholarships` is skipped (`no_scholarships_listed`) when the list is empty. The UI wording is "none listed in Jisr".
+  - `scholarships` is skipped (`no_scholarships_listed`) when the list is empty. The UI wording is "none listed in Jisrr".
   - All other steps are todo `applies`, or `unknown_data` when their input fact value is null.
   - Unknown data never produces `skipped`.
 
@@ -825,7 +825,7 @@ process.exit(1);
 - [ ] **Step 9: Create `.env.example`**
 
 ```
-# Jisr environment variables. Copy to .env.local for local overrides; never commit real values.
+# Jisrr environment variables. Copy to .env.local for local overrides; never commit real values.
 # The guest release (M0-M2) needs none.
 # Phase 2 (accounts, Neon EU, Better Auth) — not used yet:
 # DATABASE_URL=
@@ -850,7 +850,7 @@ Also set `"exclude": ["node_modules", "public/snapshots"]`. Confirm `"strict": t
 Replace `src/app/page.tsx` with:
 ```tsx
 export default function Home() {
-  return <main>Jisr</main>;
+  return <main>Jisrr</main>;
 }
 ```
 Leave `src/app/layout.tsx` as generated; T5 replaces it. Delete any `public/*.svg` that were copied: `git ls-files --others public`.
@@ -1511,12 +1511,12 @@ declare module "next-intl" {
 ```json
 {
   "metadata": {
-    "title": "Jisr — Étudier en Europe après le Bac",
+    "title": "Jisrr — Étudier en Europe après le Bac",
     "description": "Trouvez des licences réalistes en France, en Allemagne et aux Pays-Bas, avec les coûts, les bourses et les étapes pour candidater."
   },
   "home": {
     "title": "Étudier en Europe après le Bac",
-    "lead": "Jisr vous aide à trouver des licences réalistes pour votre profil, à estimer les coûts et à préparer votre candidature.",
+    "lead": "Jisrr vous aide à trouver des licences réalistes pour votre profil, à estimer les coûts et à préparer votre candidature.",
     "stepsTitle": "Votre parcours",
     "steps": {
       "profile": "Votre profil",
@@ -1525,7 +1525,7 @@ declare module "next-intl" {
       "scholarships": "Les bourses",
       "plan": "Votre plan de candidature"
     },
-    "comingSoon": "Jisr est en construction. Le parcours complet arrive bientôt."
+    "comingSoon": "Jisrr est en construction. Le parcours complet arrive bientôt."
   },
   "localeSwitcher": {
     "label": "Langue",
@@ -1537,12 +1537,12 @@ declare module "next-intl" {
 ```json
 {
   "metadata": {
-    "title": "Jisr — Study in Europe after the Bac",
+    "title": "Jisrr — Study in Europe after the Bac",
     "description": "Find realistic Bachelor's programmes in France, Germany and the Netherlands, with costs, scholarships and application steps."
   },
   "home": {
     "title": "Study in Europe after the Bac",
-    "lead": "Jisr helps you find Bachelor's programmes that are realistic for your profile, estimate the costs and prepare your application.",
+    "lead": "Jisrr helps you find Bachelor's programmes that are realistic for your profile, estimate the costs and prepare your application.",
     "stepsTitle": "Your journey",
     "steps": {
       "profile": "Your profile",
@@ -1551,7 +1551,7 @@ declare module "next-intl" {
       "scholarships": "Scholarships",
       "plan": "Your application plan"
     },
-    "comingSoon": "Jisr is being built. The full journey is coming soon."
+    "comingSoon": "Jisrr is being built. The full journey is coming soon."
   },
   "localeSwitcher": {
     "label": "Language",

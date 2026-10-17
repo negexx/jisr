@@ -6,7 +6,7 @@ argument-hint: "[--ui to also smoke-test the UI in a browser]"
 
 # /verify — Pre-completion gate
 
-Run the standard verification commands for **Jisr** and report results honestly.
+Run the standard verification commands for **Jisrr** and report results honestly.
 
 ## Commands to run (in this order)
 

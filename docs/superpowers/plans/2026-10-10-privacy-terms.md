@@ -67,12 +67,12 @@ Expected: FAIL — `no legal namespace in fr` (the `namespaceMessages` throw) / 
 ```json
 "legal": {
   "updated": "Last updated: 10/10/2026",
-  "privacy": { "meta": { "title": "Privacy notice", "description": "How Jisr handles your data: what stays in your browser, what our host and analytics see, and your rights under the GDPR and Moroccan Law 09-08." } },
-  "terms": { "meta": { "title": "Terms of use", "description": "The rules for using Jisr: a free, informational service with no account, no fees and no warranty, governed by Italian law." } }
+  "privacy": { "meta": { "title": "Privacy notice", "description": "How Jisrr handles your data: what stays in your browser, what our host and analytics see, and your rights under the GDPR and Moroccan Law 09-08." } },
+  "terms": { "meta": { "title": "Terms of use", "description": "The rules for using Jisrr: a free, informational service with no account, no fees and no warranty, governed by Italian law." } }
 },
 "footer": { "privacyLink": "Privacy", "termsLink": "Terms", ...existing keys unchanged }
 ```
-`fr.json`: `updated` = `"Dernière mise à jour\u00a0: 10/10/2026"` (NBSP before the colon — write the literal U+00A0 character, not `\u00a0`), `privacy.meta.title` = `"Politique de confidentialité"`, `privacy.meta.description` = `"Comment Jisr traite vos données\u00a0: ce qui reste dans votre navigateur, ce que voient notre hébergeur et nos statistiques, et vos droits au titre du RGPD et de la loi marocaine 09-08."`, `terms.meta.title` = `"Conditions d'utilisation"`, `terms.meta.description` = `"Les règles d'utilisation de Jisr\u00a0: un service gratuit et informatif, sans compte, sans frais et sans engagement, régi par le droit italien."`, `footer.privacyLink` = `"Confidentialité"`, `footer.termsLink` = `"Conditions d'utilisation"`.
+`fr.json`: `updated` = `"Dernière mise à jour\u00a0: 10/10/2026"` (NBSP before the colon — write the literal U+00A0 character, not `\u00a0`), `privacy.meta.title` = `"Politique de confidentialité"`, `privacy.meta.description` = `"Comment Jisrr traite vos données\u00a0: ce qui reste dans votre navigateur, ce que voient notre hébergeur et nos statistiques, et vos droits au titre du RGPD et de la loi marocaine 09-08."`, `terms.meta.title` = `"Conditions d'utilisation"`, `terms.meta.description` = `"Les règles d'utilisation de Jisrr\u00a0: un service gratuit et informatif, sans compte, sans frais et sans engagement, régi par le droit italien."`, `footer.privacyLink` = `"Confidentialité"`, `footer.termsLink` = `"Conditions d'utilisation"`.
 
 `ar.json`: `updated` = `"آخر تحديث: 10/10/2026"`, `privacy.meta.title` = `"إشعار الخصوصية"`, `privacy.meta.description` = `"كيف يتعامل جسر مع بياناتك: ما يبقى في متصفحك، وما يراه مزوّد الاستضافة والتحليلات، وحقوقك بموجب النظام الأوروبي RGPD والقانون المغربي 09-08."`, `terms.meta.title` = `"شروط الاستخدام"`, `terms.meta.description` = `"قواعد استخدام جسر: خدمة مجانية إعلامية، بدون حساب وبدون رسوم وبدون تعهّد، يخضع للقانون الإيطالي."`, `footer.privacyLink` = `"الخصوصية"`, `footer.termsLink` = `"شروط الاستخدام"`.
 
@@ -112,23 +112,23 @@ Expected: FAIL — `ENOENT: no such file ... content/en/privacy.mdx`.
 - [ ] **Step 3: Write the six documents.** Each is the full document. English is the reference; `fr` and `ar` are faithful, equally-authoritative translations (keep proper nouns `Vercel`, `GoatCounter`, `Garante`, `CNDP`, `RGPD`/`GDPR` as needed, and the literal placeholders `[CONTROLLER NAME]` / `[CONTACT EMAIL]`). Use `##` for every section, `-`/`1.` lists, `**bold**` for terms, and links: internal as `[text](/privacy)` / `[text](/terms)`, external as `[text](https://…)` only. `ar` uses الإجازة for the Bachelor's and Latin digits.
 
 `content/{locale}/privacy.mdx` — H1 = the privacy title; sections:
-1. **Who we are** — Jisr is run by one individual established in Italy; controller name `[CONTROLLER NAME]`, contact `[CONTACT EMAIL]`; note it is the data controller under the GDPR and a handler under Moroccan Law 09-08.
-2. **What Jisr does with your data** — one guest journey: profile → options → costs → scholarships → application plan; the profile, saved list and ticked steps live only in your browser (local storage); nothing personal is sent to us.
-3. **What our host sees** — Vercel hosts Jisr (Frankfurt, `fra1`); like any host it keeps standard server logs (IP, URL, time, user agent); no cookies are set.
+1. **Who we are** — Jisrr is run by one individual established in Italy; controller name `[CONTROLLER NAME]`, contact `[CONTACT EMAIL]`; note it is the data controller under the GDPR and a handler under Moroccan Law 09-08.
+2. **What Jisrr does with your data** — one guest journey: profile → options → costs → scholarships → application plan; the profile, saved list and ticked steps live only in your browser (local storage); nothing personal is sent to us.
+3. **What our host sees** — Vercel hosts Jisrr (Frankfurt, `fra1`); like any host it keeps standard server logs (IP, URL, time, user agent); no cookies are set.
 4. **Analytics** — GoatCounter: cookieless, EU, loaded from `gc.zgo.at`; records page views without a persistent identifier; Do Not Track / Global Privacy Control honoured; analytics is off until this notice is live.
 5. **The data files your browser downloads** — to compute results your browser downloads reference files whose names include your diploma's country, destination countries and fields (the ones you chose plus those of programs you open or save).
 6. **What we never collect** — grades, nationality, your saved list, and the rest; never sent.
 7. **Your rights** — under the GDPR and Law 09-08 (access, rectification, erasure, objection…); write to `[CONTACT EMAIL]`; complain to the Garante (Italy) or the CNDP (Morocco).
-8. **How long we keep data** — only the host's standard log retention; Jisr stores nothing else about you.
+8. **How long we keep data** — only the host's standard log retention; Jisrr stores nothing else about you.
 9. **Changes to this notice** — updated before accounts (phase 2) launch; link to `/terms`.
 
 `content/{locale}/terms.mdx` — H1 = the terms title; sections:
-1. **What Jisr is** — free, non-commercial, informational; not a university and not admission advice; no account.
-2. **Accuracy and sources** — facts are hand-checked and dated, age over time; confirm on the official page; Jisr gives **no warranty**.
+1. **What Jisrr is** — free, non-commercial, informational; not a university and not admission advice; no account.
+2. **Accuracy and sources** — facts are hand-checked and dated, age over time; confirm on the official page; Jisrr gives **no warranty**.
 3. **Acceptable use** — no scraping-at-scale, no attempts to break or overload the service.
 4. **Intellectual property** — university and program names and logos belong to their owners.
 5. **No account, no fees** — nothing to pay, nothing to register.
-6. **Limitation of liability** — Jisr is not liable for decisions taken from its information.
+6. **Limitation of liability** — Jisrr is not liable for decisions taken from its information.
 7. **Governing law** — Italian law; mandatory protections where you live still apply.
 8. **Changes and contact** — write to `[CONTACT EMAIL]`; link to `/privacy`.
 

@@ -5,7 +5,7 @@
 
 ## Context
 
-Jisr is a free, non-commercial product with no revenue, built and run by one developer, closed source for now, but expected to grow (more origin countries, destination countries, fields, languages, and eventually other contributors). Traffic is spiky (Bac results, application deadlines). Running cost must stay near zero as traffic grows, and operations work must fit one person. The product's value is trustworthy, verified data.
+Jisrr is a free, non-commercial product with no revenue, built and run by one developer, closed source for now, but expected to grow (more origin countries, destination countries, fields, languages, and eventually other contributors). Traffic is spiky (Bac results, application deadlines). Running cost must stay near zero as traffic grows, and operations work must fit one person. The product's value is trustworthy, verified data.
 
 ## Decision
 
