@@ -8,14 +8,13 @@ import type { AppLocale } from "@/i18n/routing";
 import {
   authCallbackUrls,
   readSignInLink,
-  type SignInLink,
   signInErrorPath,
   signInPath,
 } from "@/lib/auth/callback-urls";
 import { rememberSignInBrowser } from "@/lib/auth/sign-in-browser";
 import { confirmSignIn } from "@/lib/auth/sign-in-confirm";
 
-type Ready = SignInLink & { token: string };
+type Ready = { token: string; returnPath: string | null };
 
 type Stage =
   | { kind: "reading" }
@@ -134,7 +133,7 @@ export function SignInConfirm({
   return (
     <section className="flex max-w-prose flex-col items-start gap-4 text-start">
       <p id={bodyId} className="text-base">
-        {t(`${link.mode}.body`)}
+        {t("body")}
       </p>
       {failed ? (
         <p ref={alertRef} role="alert" tabIndex={-1} className={ALERT_CLASS}>
@@ -147,7 +146,7 @@ export function SignInConfirm({
         disabled={working}
         onClick={() => void confirm(link)}
       >
-        {working ? t("working") : t(`${link.mode}.confirm`)}
+        {working ? t("working") : t("confirm")}
       </Button>
       <p className="text-sm text-muted-foreground">{t("notYou")}</p>
     </section>

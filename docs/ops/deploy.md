@@ -312,6 +312,28 @@ What `pnpm ops:smoke` checks (read-only GET requests, exit code 1 if anything fa
 | Production site returns `503 DEPLOYMENT_PAUSED` | A Hobby usage cap was reached. See `docs/ops/limits-runbook.md`. |
 | Smoke test fails on the sitemap with `NEXT_PUBLIC_SITE_URL` unset | The production build was not indexable: set the variable (section 3.3) and redeploy. |
 
+### Sign-in emails fail while accounts are on
+
+Symptom: a student submits the sign-in form and the page shows "The link could not be sent. Try again in a moment." while accounts are on. The refusal is deliberately not shown in the UI (an address that exists and one that does not must look the same), so the reason is only in the server log.
+
+**Where to look.** Vercel dashboard, your project, then **Deployments**, the deployment that was live when it failed, then **Runtime Logs**. On Hobby the logs are kept for about **1 hour**, so read them soon. Search the log for two lines:
+
+- `sign-in link request failed` — written by the Server Action (`src/lib/server/signup.ts`). It carries the failing layer as either `{ code, reason }`, where `reason` names the missing or empty variable, or `{ code, error, sqlState }`, where `error` is the innermost error's constructor name (for example `DatabaseError` for a Drizzle/pg failure) and `sqlState` the Postgres SQLSTATE. It never carries the address or the link.
+- `[better-auth] unexpected error` — written by Better Auth's scrubbed error hook (`src/lib/auth/log.ts`) when a provider call throws before the action can classify it.
+
+**Cause table.**
+
+| What the log says | Cause and fix |
+|---|---|
+| `reason` starts with "Auth email transport is not configured" and names `BREVO_API_KEY` or `BREVO_SENDER` | The email transport is not configured. Check `BREVO_API_KEY` and `BREVO_SENDER` in the **Production** scope (prelaunch checklist D4/D6), correct them, then **redeploy** (section 5). |
+| `reason` starts with "Accounts are on but the auth configuration is invalid" and names `BETTER_AUTH_SECRET` or `BETTER_AUTH_URL` | The auth instance cannot start. Check both variables in the Production scope; `BETTER_AUTH_URL` must be the live origin (`https://jisrr.org`). A missing secret or URL answers `500 AUTH_MISCONFIGURED` on `/api/auth/*`. Correct them, then redeploy. |
+| `error` is a Drizzle or driver class with a `sqlState` (a Postgres SQLSTATE, for example `42P01`, "undefined table") | The database layer failed. Check `DATABASE_URL` (the Neon pooled string) and that the migrations ran on the production Neon branch: `DATABASE_URL_UNPOOLED=<production branch direct string> pnpm db:migrate` (never `drizzle-kit push`). No CI or deploy job runs migrations, so a schema change needs this before the deploy that depends on it (prelaunch checklist D8). Correct a variable if one changed, then redeploy. |
+| `[better-auth] unexpected error` with no matching `sign-in link request failed` line | The failure happened inside Better Auth before the action's own error. Retry once; if it repeats, read the whole runtime log around that line for a variable name, then follow the rows above. |
+
+**The Production-scope variables for accounts** (the complete list: prelaunch checklist D6): `BETTER_AUTH_URL`, `BETTER_AUTH_SECRET`, `DATABASE_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `BREVO_API_KEY`, `BREVO_SENDER`, and `ACCOUNTS_ENABLED` set to `true` to switch accounts on. `DATABASE_URL_UNPOOLED` is needed only where `pnpm db:migrate` runs from your shell, never on Vercel. Set every one of them in the **Production** scope only.
+
+**Every environment change needs a redeploy** to take effect (section 5): editing a variable in the dashboard does not change a deployment that is already running.
+
 ## 10. First-deployment results and what is still unverified
 
 ### Results of the first real deployment (2026-10-09)

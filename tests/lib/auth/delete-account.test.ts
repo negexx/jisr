@@ -87,7 +87,6 @@ async function signUp(name: string): Promise<Student> {
   const email = `${name}-${serial}@example.com`;
   const { requestSignInLink } = await import("@/lib/server/signup");
   const request: SignInLinkRequest = {
-    mode: "signup",
     email,
     consent: true,
     ageConfirmed: true,

@@ -11,10 +11,11 @@ import { authCallbackUrls, RETURN_PARAM } from "@/lib/auth/callback-urls";
 import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
 import { looksLikeEmail } from "@/lib/auth/email-shape";
 import { useSessionHint } from "@/lib/auth/session-hint";
-import { requestSignInLink, type SignInLinkMode } from "@/lib/server/signup";
+import { requestSignInLink } from "@/lib/server/signup";
 import { cn } from "@/lib/utils";
 
 import { ConfirmationCheckbox, PrivacyNoticeLink } from "./confirmation-checkbox";
+import { GoogleMark } from "./google-mark";
 
 type FieldErrors = { email?: string; consent?: string; age?: string };
 
@@ -23,11 +24,6 @@ type Status =
   | { kind: "sending" }
   | { kind: "sent"; email: string }
   | { kind: "failed"; message: string };
-
-// Codes Better Auth puts on the landing redirect (?error=). AGE_NOT_CONFIRMED on a magic-link
-// verify means no account exists for the address: the student asked for a sign-in link instead of
-// creating an account (ruling P5). Only the inbox owner reaches it, so it reveals nothing.
-const NO_ACCOUNT_ERROR = "AGE_NOT_CONFIRMED";
 
 function readLocation(): { returnPath: string | null; error: string | null } {
   const params = new URLSearchParams(window.location.search);
@@ -38,7 +34,6 @@ export function SignInForm({ locale }: { locale: AppLocale }) {
   const t = useTranslations("signup");
   const signedIn = useSessionHint();
   const ids = useId();
-  const [mode, setMode] = useState<SignInLinkMode>("signup");
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
   const [ageConfirmed, setAgeConfirmed] = useState(false);
@@ -56,12 +51,10 @@ export function SignInForm({ locale }: { locale: AppLocale }) {
     if (error !== null && error !== "") setLinkError(error);
   }, []);
 
-  const creating = mode === "signup";
   const emailId = `${ids}-email`;
   const busy = status.kind === "sending";
 
   function confirmationErrors(): FieldErrors {
-    if (!creating) return {};
     return {
       ...(consent ? {} : { consent: t("errors.consentRequired") }),
       ...(ageConfirmed ? {} : { age: t("errors.ageRequired") }),
@@ -91,7 +84,6 @@ export function SignInForm({ locale }: { locale: AppLocale }) {
     setStatus({ kind: "sending" });
     try {
       const result = await requestSignInLink({
-        mode,
         email,
         consent,
         ageConfirmed,
@@ -135,20 +127,12 @@ export function SignInForm({ locale }: { locale: AppLocale }) {
       const { error } = await authClient.signIn.social({
         provider: "google",
         ...authCallbackUrls(locale, readLocation().returnPath),
-        ...(creating
-          ? { additionalData: { ageConfirmed: true, consentVersion: CURRENT_CONSENT_VERSION } }
-          : {}),
+        additionalData: { ageConfirmed: true, consentVersion: CURRENT_CONSENT_VERSION },
       });
       if (error) setStatus({ kind: "failed", message: failureMessage(error.code ?? "") });
     } catch {
       setStatus({ kind: "failed", message: t("errors.failed") });
     }
-  }
-
-  function switchMode(next: SignInLinkMode): void {
-    setMode(next);
-    setErrors({});
-    setStatus({ kind: "idle" });
   }
 
   if (status.kind === "sent") {
@@ -166,13 +150,7 @@ export function SignInForm({ locale }: { locale: AppLocale }) {
   }
 
   const notice =
-    status.kind === "failed"
-      ? status.message
-      : linkError === null
-        ? null
-        : linkError === NO_ACCOUNT_ERROR
-          ? t("errors.noAccount")
-          : t("errors.linkFailed");
+    status.kind === "failed" ? status.message : linkError === null ? null : t("errors.linkFailed");
 
   return (
     <div className="flex max-w-xl flex-col gap-6 text-start">
@@ -185,28 +163,6 @@ export function SignInForm({ locale }: { locale: AppLocale }) {
         )}
       </div>
 
-      <fieldset className="flex flex-col gap-2">
-        <legend className="mb-2 text-base font-medium">{t("modes.label")}</legend>
-        <div className="grid gap-2 sm:grid-cols-2">
-          {(["signup", "signin"] as const).map((option) => (
-            <label
-              key={option}
-              className="flex min-h-12 cursor-pointer items-center gap-3 rounded-lg border border-input bg-background px-3 py-2 text-base has-checked:border-primary has-checked:bg-accent"
-            >
-              <input
-                type="radio"
-                name={`${ids}-mode`}
-                value={option}
-                checked={mode === option}
-                onChange={() => switchMode(option)}
-                className="size-5 shrink-0 accent-primary"
-              />
-              <span>{t(`modes.${option}`)}</span>
-            </label>
-          ))}
-        </div>
-      </fieldset>
-
       <Button
         type="button"
         className="w-full"
@@ -214,6 +170,7 @@ export function SignInForm({ locale }: { locale: AppLocale }) {
         aria-disabled={busy}
         onClick={continueWithGoogle}
       >
+        <GoogleMark />
         {t("google")}
       </Button>
 
@@ -260,28 +217,26 @@ export function SignInForm({ locale }: { locale: AppLocale }) {
           )}
         </div>
 
-        {creating ? (
-          <div className="flex flex-col gap-4">
-            <ConfirmationCheckbox
-              id={`${ids}-consent`}
-              inputRef={consentRef}
-              label={t("consent.label")}
-              hint={<PrivacyNoticeLink />}
-              error={errors.consent}
-              checked={consent}
-              onChange={setConsent}
-            />
-            <ConfirmationCheckbox
-              id={`${ids}-age`}
-              inputRef={ageRef}
-              label={t("age.label")}
-              hint={t(signedIn ? "age.hintSignedIn" : "age.hint")}
-              error={errors.age}
-              checked={ageConfirmed}
-              onChange={setAgeConfirmed}
-            />
-          </div>
-        ) : null}
+        <div className="flex flex-col gap-4">
+          <ConfirmationCheckbox
+            id={`${ids}-consent`}
+            inputRef={consentRef}
+            label={t("consent.label")}
+            hint={<PrivacyNoticeLink />}
+            error={errors.consent}
+            checked={consent}
+            onChange={setConsent}
+          />
+          <ConfirmationCheckbox
+            id={`${ids}-age`}
+            inputRef={ageRef}
+            label={t("age.label")}
+            hint={t(signedIn ? "age.hintSignedIn" : "age.hint")}
+            error={errors.age}
+            checked={ageConfirmed}
+            onChange={setAgeConfirmed}
+          />
+        </div>
 
         <div>
           <Button type="submit" disabled={busy} aria-disabled={busy}>

@@ -63,7 +63,6 @@ async function lastMail(): Promise<Mail> {
 
 function request(overrides: Partial<SignInLinkRequest> = {}): SignInLinkRequest {
   return {
-    mode: "signup",
     email: "new@example.com",
     consent: true,
     ageConfirmed: true,
@@ -126,15 +125,10 @@ describe("the emailed link", () => {
     expect(link.search).toBe("");
     const fragment = new URLSearchParams(link.hash.slice(1));
     expect(fragment.get("token")).toMatch(/^[A-Za-z]{32}$/);
-    expect(fragment.get("mode")).toBe("signup");
+    expect(fragment.has("mode")).toBe(false);
     expect(fragment.get("return")).toBe("/ar/compare");
     // The mail still goes out in the student's language, read from the request, not the link.
     expect((await lastMail()).text).toContain("جسر");
-  });
-
-  it("says signin for a sign-in request", async () => {
-    const link = new URL(await signupLink({ mode: "signin", consent: false, ageConfirmed: false }));
-    expect(new URLSearchParams(link.hash.slice(1)).get("mode")).toBe("signin");
   });
 
   it("opening the link alone signs nobody in: the page is static, the token never reaches the server", async () => {
@@ -208,30 +202,18 @@ describe("POST /magic-link/confirm", () => {
     expect([null, ""]).toContain(rows[0]?.ua);
   });
 
-  it("signs an existing account in from a signin link without touching its consent", async () => {
+  it("signs an existing account in through the form without touching its consent", async () => {
     await pool.query(
       `insert into "user" (id, name, email, email_verified, consent_version, consented_at)
        values ('existing', 'Student', 'known@example.com', true, '2026-01-01', '2026-01-02')`,
     );
-    const link = await signupLink({ mode: "signin", email: "known@example.com", consent: false });
+    const link = await signupLink({ email: "known@example.com" });
     const response = await route.POST(confirmRequest(link));
     expect(response.status).toBe(200);
     const { rows } = await pool.query<{ consent_version: string | null }>(
       'select consent_version from "user"',
     );
     expect(rows).toEqual([{ consent_version: "2026-01-01" }]);
-  });
-
-  it("refuses a signin link for an unknown address with AGE_NOT_CONFIRMED and creates nothing", async () => {
-    const link = await signupLink({ mode: "signin", consent: false, ageConfirmed: false });
-    const response = await route.POST(confirmRequest(link));
-    expect(response.status).toBe(400);
-    expect(await response.json()).toMatchObject({ code: "AGE_NOT_CONFIRMED" });
-    expect(response.headers.getSetCookie().some((value) => value.includes("session_token"))).toBe(
-      false,
-    );
-    expect(await count("user")).toBe(0);
-    expect(await count("session")).toBe(0);
   });
 
   it("refuses a direct POST's link (no signup intent) for a new address", async () => {
@@ -244,7 +226,7 @@ describe("POST /magic-link/confirm", () => {
     );
     expect(response.status).toBe(200);
     const link = (await lastMail()).url;
-    expect(new URLSearchParams(new URL(link).hash.slice(1)).get("mode")).toBe("signin");
+    expect(new URLSearchParams(new URL(link).hash.slice(1)).has("mode")).toBe(false);
     const confirm = await route.POST(confirmRequest(link));
     expect(await confirm.json()).toMatchObject({ code: "AGE_NOT_CONFIRMED" });
     expect(await count("user")).toBe(0);

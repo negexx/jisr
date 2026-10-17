@@ -15,6 +15,10 @@ const COLD_BUILD_TIMEOUT_MS = 10 * 60 * 1000;
 export default defineConfig({
   testDir: "tests/e2e-accounts",
   fullyParallel: true,
+  // One shared PGlite instance is single-connection (tests/db-race/README.md), so tests cannot
+  // create accounts concurrently: their interleaved extended-protocol messages fail with
+  // 08P01/55000. One worker keeps the local suite deterministic.
+  workers: 1,
   forbidOnly: Boolean(process.env.CI),
   // No retries: the journey shares one database and real cooldowns, so a retry would mask a real
   // ordering bug as flakiness.

@@ -140,23 +140,23 @@ describe("renderAuthEmail", () => {
 describe("renderAuthEmail for a sign-up link", () => {
   const LINK = "https://jisr.example/api/auth/magic-link/verify?token=abc";
 
-  // What each locale must say: the link creates an account, the recipient confirms 16 or older
-  // and accepts this notice version, and an unasked-for email is ignored with no account created.
+  // What each locale must say: the link signs in or creates an account, an account's creation
+  // confirms 16 or older and accepts this notice version, and an unasked-for email creates nothing.
   const WORDING = {
     fr: {
-      creates: /ouvrir ce lien crée ou ouvre votre compte Jisrr/i,
+      creates: /vous vous connectez[\s\S]*il est créé/i,
       age: /16 ans ou plus/,
-      ignore: /ignorez ce message[\s\S]*aucun compte n'est créé/i,
+      ignore: /ignorez ce message[\s\S]*rien n'est créé/i,
     },
     en: {
-      creates: /opening this link creates or opens your Jisrr account/i,
+      creates: /signs you in[\s\S]*it creates one/i,
       age: /16 or older/,
-      ignore: /ignore this email[\s\S]*no account is created/i,
+      ignore: /ignore this email[\s\S]*nothing is created/i,
     },
     ar: {
-      creates: /فتح هذا الرابط يُنشئ حسابك في جسر أو يفتحه/,
+      creates: /تسجيل الدخول[\s\S]*فسيُنشأ حساب/,
       age: /16 سنة أو أكثر/,
-      ignore: /فتجاهل هذه الرسالة[\s\S]*لن يُنشأ أي حساب/,
+      ignore: /فتجاهل هذه الرسالة[\s\S]*لا يُنشأ أي شيء/,
     },
   } as const;
 
@@ -207,7 +207,7 @@ describe("sendAuthEmail template choice", () => {
 
   it("sends the sign-up wording only when the metadata mode is signup", async () => {
     expect(await writtenText({ locale: "en", mode: "signup" })).toMatch(
-      /opening this link creates or opens your Jisrr account/i,
+      /opening this link signs you in/i,
     );
     for (const metadata of [
       undefined,
@@ -218,7 +218,7 @@ describe("sendAuthEmail template choice", () => {
         mode: "SIGNUP",
       },
     ]) {
-      expect(await writtenText(metadata)).not.toMatch(/creates or opens your Jisrr account/i);
+      expect(await writtenText(metadata)).not.toMatch(/signs you in/i);
     }
   });
 });

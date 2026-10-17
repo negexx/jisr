@@ -1136,11 +1136,6 @@
     "title": "Votre compte Jisrr",
     "lead": "Le compte est facultatif. Sans compte, tout continue de fonctionner et vos données restent sur cet appareil. Avec un compte, votre profil, vos programmes enregistrés et votre plan vous suivent sur tous vos appareils.",
     "leadSignedIn": "Vous êtes connecté. Votre profil, vos programmes enregistrés et votre plan sont enregistrés dans votre compte et vous suivent sur tous vos appareils. Vous pouvez les exporter ou les supprimer.",
-    "modes": {
-      "label": "Que voulez-vous faire ?",
-      "signup": "Créer un compte",
-      "signin": "J'ai déjà un compte"
-    },
     "email": {
       "label": "Adresse e-mail",
       "hint": "Nous vous envoyons un lien pour vous connecter. Pas de mot de passe."
@@ -1155,7 +1150,7 @@
       "hintSignedIn": "Moins de 16 ans ? Vous pouvez utiliser Jisrr sans compte : tout fonctionne."
     },
     "required": "obligatoire",
-    "submit": "Recevoir un lien de connexion",
+    "submit": "Continuer avec",
     "sending": "Envoi du lien…",
     "orEmail": "Ou continuer avec un e-mail",
     "google": "Continuer avec Google",
@@ -1172,7 +1167,6 @@
       "cooldown": "Nous ne pouvons pas envoyer d'autre lien à cette adresse pour le moment. Réessayez plus tard.",
       "disabled": "Les comptes ne sont pas encore disponibles. Vous pouvez continuer à utiliser Jisrr sans compte.",
       "failed": "Le lien n'a pas pu être envoyé. Réessayez dans un instant.",
-      "noAccount": "Aucun compte n'existe encore avec cette adresse. Pour en créer un, choisissez Créer un compte et cochez les deux cases.",
       "linkFailed": "La connexion n'a pas fonctionné. Le lien a peut-être expiré ou déjà servi : demandez-en un nouveau."
     },
     "gate": {
@@ -1271,14 +1265,8 @@
     "title": "Se connecter à Jisrr",
     "lead": "Vous avez ouvert un lien de connexion. Rien ne se passe tant que vous ne confirmez pas ci-dessous.",
     "reading": "Lecture du lien…",
-    "signin": {
-      "body": "Appuyez sur le bouton pour vous connecter sur ce navigateur.",
-      "confirm": "Me connecter"
-    },
-    "signup": {
-      "body": "Appuyez sur le bouton pour créer votre compte Jisrr et vous connecter sur ce navigateur.",
-      "confirm": "Créer mon compte"
-    },
+    "body": "Appuyez sur le bouton pour vous connecter. Si vous n'avez pas encore de compte, il sera créé.",
+    "confirm": "Continuer",
     "working": "Connexion…",
     "notYou": "Si vous n'avez pas demandé ce lien, fermez cette page : rien n'a été fait.",
     "errors": {

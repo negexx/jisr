@@ -16,13 +16,12 @@ import { runAsSignup } from "@/lib/auth/signup-intent";
 import { LOCALES } from "@/lib/constants";
 
 import { SignInEmailSchema } from "./account-inputs";
-
-export type SignInLinkMode = "signup" | "signin";
+import { sqlState } from "./account-store";
+import { AuthEmailAccountsDisabled, AuthEmailTransportNotConfigured } from "./email";
 
 export type SignInLinkRequest = {
-  // "signup" creates an account and needs both confirmations; "signin" is for an existing account
-  // and records nothing (ruling P5). A "signin" link for an unknown address is refused at verify.
-  mode: SignInLinkMode;
+  // Every form request carries the signup intent (consent evidence); an existing address simply
+  // signs in and its pending row is never consumed. A direct POST never sets the intent.
   email: string;
   consent: boolean;
   ageConfirmed: boolean;
@@ -43,7 +42,6 @@ export type SignInLinkResult = { ok: true } | { ok: false; error: SignInLinkErro
 const RETURN_PATH_MAX_LENGTH = 2048;
 
 const RequestSchema = z.object({
-  mode: z.enum(["signup", "signin"]),
   email: z.string(),
   consent: z.boolean(),
   ageConfirmed: z.boolean(),
@@ -57,13 +55,58 @@ function errorCode(error: unknown): string | undefined {
   return typeof code === "string" ? code : undefined;
 }
 
-// Never logs the address, the link or the error text: only the kind of failure.
+// Only these three classes may contribute their own message: each names a variable or a state,
+// never a value (see AuthMisconfiguredError, AuthEmailTransportNotConfigured,
+// AuthEmailAccountsDisabled). Every other error contributes only its class name and SQLSTATE — a
+// driver error's message can carry the address or the token as a query parameter.
+function whitelistedMessage(error: Error): string | null {
+  if (
+    error instanceof AuthMisconfiguredError ||
+    error instanceof AuthEmailTransportNotConfigured ||
+    error instanceof AuthEmailAccountsDisabled
+  ) {
+    return error.message;
+  }
+  return null;
+}
+
+function reasonOf(error: unknown): string | null {
+  let at: unknown = error;
+  while (at instanceof Error) {
+    const reason = whitelistedMessage(at);
+    if (reason !== null) return reason;
+    at = at.cause;
+  }
+  return null;
+}
+
+// Drizzle wraps the driver's error as `cause`; the class that matters is the innermost one. Its
+// `name` is unusable (pg-protocol's DatabaseError sets it to "error"), so log the constructor name.
+function deepestErrorName(error: unknown): string {
+  let at: unknown = error;
+  while (at instanceof Error && at.cause instanceof Error) {
+    at = at.cause;
+  }
+  return at instanceof Error ? at.constructor.name : typeof at;
+}
+
+// Never logs the address, the link or an arbitrary error message: a whitelisted class's message
+// names variables, never values; an unknown error is reduced to its name and SQLSTATE.
 function failureOf(error: unknown): SignInLinkError {
   const code = errorCode(error);
   if (code === "EMAIL_COOLDOWN") return "cooldown";
   if (code === ACCOUNTS_DISABLED_CODE) return "accounts_disabled";
-  if (error instanceof AuthMisconfiguredError) console.error(error.message);
-  else console.error("sign-in link request failed", { code: code ?? "unexpected" });
+  const logCode = code ?? "unexpected";
+  const reason = reasonOf(error);
+  if (reason !== null) {
+    console.error("sign-in link request failed", { code: logCode, reason });
+  } else {
+    console.error("sign-in link request failed", {
+      code: logCode,
+      error: deepestErrorName(error),
+      sqlState: sqlState(error),
+    });
+  }
   return "failed";
 }
 
@@ -75,8 +118,8 @@ export async function requestSignInLink(input: SignInLinkRequest): Promise<SignI
   if (!request.success) return { ok: false, error: "invalid_request" };
   const parsedEmail = SignInEmailSchema.safeParse(request.data.email);
   if (!parsedEmail.success) return { ok: false, error: "invalid_email" };
-  const { mode, consent, ageConfirmed, locale, returnPath } = request.data;
-  if (mode === "signup" && !(consent && ageConfirmed)) {
+  const { consent, ageConfirmed, locale, returnPath } = request.data;
+  if (!(consent && ageConfirmed)) {
     return { ok: false, error: "confirmation_required" };
   }
   const email = normalizeEmail(parsedEmail.data);
@@ -84,15 +127,15 @@ export async function requestSignInLink(input: SignInLinkRequest): Promise<SignI
     // Resolved first so a misconfigured deployment records nothing.
     const auth = getAuth();
     const requestHeaders = await headers();
-    // The auth instance's before hook claims the send slot inside this call and, for a signup
-    // (marked by runAsSignup, which only this action can set), writes the pending row right
-    // after the claim and before the verification row and the email.
+    // The auth instance's before hook claims the send slot inside this call and, for a request
+    // marked by runAsSignup (which only this action can set), writes the pending row right after
+    // the claim and before the verification row and the email. The server derives the wording.
     const send = () =>
       auth.api.signInMagicLink({
-        body: { email, ...authCallbackUrls(locale, returnPath), metadata: { locale, mode } },
+        body: { email, ...authCallbackUrls(locale, returnPath), metadata: { locale } },
         headers: requestHeaders,
       });
-    await (mode === "signup" ? runAsSignup(email, send) : send());
+    await runAsSignup(email, send);
   } catch (error) {
     return { ok: false, error: failureOf(error) };
   }

@@ -152,7 +152,6 @@ describe.each(["fr", "ar", "en"] as const)("SignInForm (%s)", (locale) => {
     await user.click(checkbox(t.age.label));
     await user.click(screen.getByRole("button", { name: t.submit }));
     expect(sentRequest()).toEqual({
-      mode: "signup",
       email: "ana@example.com",
       consent: true,
       ageConfirmed: true,
@@ -163,36 +162,39 @@ describe.each(["fr", "ar", "en"] as const)("SignInForm (%s)", (locale) => {
     expect(screen.getByText(new RegExp(escapeRegExp("ana@example.com")))).toBeTruthy();
   });
 
-  it("asks a returning user for the address only, in signin mode", async () => {
-    const user = userEvent.setup();
-    renderSignup(<SignInForm locale={locale} />, locale);
-    await user.click(screen.getByRole("radio", { name: t.modes.signin }));
-    expect(screen.queryByRole("checkbox")).toBeNull();
-    await user.type(
-      screen.getByLabelText(new RegExp(escapeRegExp(t.email.label))),
-      "ana@example.com",
-    );
-    await user.click(screen.getByRole("button", { name: t.submit }));
-    expect(sentRequest()).toMatchObject({ mode: "signin", email: "ana@example.com" });
-  });
-
   it("maps a cooldown refusal to its message", async () => {
     server.requestSignInLink.mockResolvedValue({ ok: false, error: "cooldown" });
     const user = userEvent.setup();
     renderSignup(<SignInForm locale={locale} />, locale);
-    await user.click(screen.getByRole("radio", { name: t.modes.signin }));
     await user.type(
       screen.getByLabelText(new RegExp(escapeRegExp(t.email.label))),
       "ana@example.com",
     );
+    await user.click(checkbox(t.consent.label));
+    await user.click(checkbox(t.age.label));
     await user.click(screen.getByRole("button", { name: t.submit }));
     expect(await screen.findByText(t.errors.cooldown)).toBeTruthy();
   });
 
-  it("explains a refused link for an address with no account", async () => {
+  it("maps an unknown failure to the generic message", async () => {
+    server.requestSignInLink.mockResolvedValue({ ok: false, error: "failed" });
+    const user = userEvent.setup();
+    renderSignup(<SignInForm locale={locale} />, locale);
+    await user.type(
+      screen.getByLabelText(new RegExp(escapeRegExp(t.email.label))),
+      "ana@example.com",
+    );
+    await user.click(checkbox(t.consent.label));
+    await user.click(checkbox(t.age.label));
+    await user.click(screen.getByRole("button", { name: t.submit }));
+    expect(await screen.findByText(t.errors.failed)).toBeTruthy();
+  });
+
+  it("shows the link-failed notice for any landing error", async () => {
     setUrl("?return=%2Ffr&error=AGE_NOT_CONFIRMED");
     renderSignup(<SignInForm locale={locale} />, locale);
-    expect(await screen.findByText(t.errors.noAccount)).toBeTruthy();
+    const alert = await screen.findByRole("alert");
+    expect(alert.textContent).toBe(t.errors.linkFailed);
   });
 
   it("does not start Google sign-up without both confirmations", async () => {
@@ -220,13 +222,15 @@ describe.each(["fr", "ar", "en"] as const)("SignInForm (%s)", (locale) => {
     });
   });
 
-  it("starts a Google sign-in without confirmations in signin mode", async () => {
-    const user = userEvent.setup();
+  it("draws the decorative Google mark without changing the button name, and labels the email submit with submit", () => {
     renderSignup(<SignInForm locale={locale} />, locale);
-    await user.click(screen.getByRole("radio", { name: t.modes.signin }));
-    await user.click(screen.getByRole("button", { name: t.google }));
-    await waitFor(() => expect(server.signInSocial).toHaveBeenCalledTimes(1));
-    expect(server.signInSocial.mock.calls[0]?.[0]).not.toHaveProperty("additionalData");
+    const google = screen.getByRole("button", { name: t.google });
+    const mark = google.querySelector('svg[aria-hidden="true"]');
+    expect(mark).not.toBeNull();
+    expect(mark?.getAttribute("focusable")).toBe("false");
+    expect(google.textContent).toBe(t.google);
+    const submit = screen.getByRole("button", { name: t.submit });
+    expect(submit.textContent).toBe(t.submit);
   });
 });
 

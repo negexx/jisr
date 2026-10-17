@@ -205,7 +205,6 @@ function signInLinkUrl(
   baseURL: string,
   verifyUrl: string,
   token: string,
-  mode: SignInLinkMode,
   metadata: Record<string, unknown> | undefined,
 ) {
   const locale = resolveAuthEmailLocale(verifyUrl, metadata);
@@ -218,7 +217,7 @@ function signInLinkUrl(
   } catch {
     // An unparsable URL keeps no return path: the landing then continues to the plan.
   }
-  const path = signInConfirmPath(locale, token, mode, returnPath);
+  const path = signInConfirmPath(locale, token, returnPath);
   return { locale, url: new URL(path, baseURL).toString() };
 }
 
@@ -228,11 +227,11 @@ function createAuth(secret: string, baseURL: string) {
     disableSignUp: false,
     storeToken: "hashed",
     sendMagicLink: async ({ email, url: verifyUrl, token, metadata }, ctx) => {
-      // The cooldown slot was claimed by the before hook (beforeAuthEndpoint). The sign-up
-      // wording is chosen by the mode the Server Action sent, but only when the signup intent
-      // backs it: metadata alone is caller-controlled on a direct POST.
-      const mode = metadata?.mode === "signup" && isSignupFor(email) ? "signup" : "signin";
-      const { locale, url } = signInLinkUrl(baseURL, verifyUrl, token, mode, metadata);
+      // The cooldown slot was claimed by the before hook (beforeAuthEndpoint). The wording is
+      // derived from the signup intent the Server Action set, never from caller-supplied metadata,
+      // so a direct POST always gets the plain sign-in wording.
+      const mode: SignInLinkMode = isSignupFor(email) ? "signup" : "signin";
+      const { locale, url } = signInLinkUrl(baseURL, verifyUrl, token, metadata);
       // Ruling Q19: bind this link, softly, to the browser that asked for it. The cookie holds a
       // random nonce; only its hash is stored, keyed to the token, in a second verification row that
       // expires with the link (Better Auth's own record is `.strict()`, so it has no metadata slot).

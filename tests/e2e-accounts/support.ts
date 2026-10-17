@@ -179,20 +179,13 @@ function startsWithText(text: string): RegExp {
   return new RegExp(`^${escapeRegExp(text)}`);
 }
 
-// The sign-in form, filled and sent. The sign-up path also ticks the consent and age boxes.
-export async function requestLink(
-  page: Page,
-  t: Translate,
-  email: string,
-  mode: "signup" | "signin",
-): Promise<void> {
-  await page.getByRole("radio", { name: t(`signup.modes.${mode}`) }).check();
+// The sign-in form, filled and sent. One flow: both confirmations (consent + age) are always
+// required, for email and Google alike.
+export async function requestLink(page: Page, t: Translate, email: string): Promise<void> {
   await page.getByLabel(startsWithText(t("signup.email.label"))).fill(email);
-  if (mode === "signup") {
-    await page.getByRole("checkbox", { name: startsWithText(t("signup.consent.label")) }).check();
-    await page.getByRole("checkbox", { name: startsWithText(t("signup.age.label")) }).check();
-  }
-  await page.getByRole("button", { name: t("signup.submit") }).click();
+  await page.getByRole("checkbox", { name: startsWithText(t("signup.consent.label")) }).check();
+  await page.getByRole("checkbox", { name: startsWithText(t("signup.age.label")) }).check();
+  await page.getByRole("button", { name: t("signup.submit"), exact: true }).click();
   await expect(page.getByRole("heading", { name: t("signup.sent.title") })).toBeVisible();
 }
 
@@ -209,27 +202,20 @@ export async function signInOnDevice(
   await resetEmailCooldown(email);
   const since = Date.now();
   await page.goto(`/${locale}/sign-in?return=${encodeURIComponent(returnPath)}`);
-  await requestLink(page, t, email, "signin");
+  await requestLink(page, t, email);
   const link = await readMailLink(email, "magic-link", since);
-  await confirmSignInLink(page, t, link, "signin");
+  await confirmSignInLink(page, t, link);
 }
 
 // Todo 28, F3: the emailed link opens the confirm page, which signs in only on its button. The link
 // carries the token in its fragment and nothing in its query; opening it alone creates no session.
-export async function confirmSignInLink(
-  page: Page,
-  t: Translate,
-  link: URL,
-  mode: "signup" | "signin",
-): Promise<void> {
+export async function confirmSignInLink(page: Page, t: Translate, link: URL): Promise<void> {
   expect(link.pathname).toMatch(/^\/(?:fr|en|ar)\/sign-in\/confirm$/);
   expect(link.search).toBe("");
   expect(new URLSearchParams(link.hash.slice(1)).get("token")).toMatch(/^[A-Za-z]{32}$/);
   await page.goto(link.toString());
   // Scoped to the page: the header's account menu has a "Sign in" button too.
-  const button = page
-    .getByRole("main")
-    .getByRole("button", { name: t(`signInConfirm.${mode}.confirm`) });
+  const button = page.getByRole("main").getByRole("button", { name: t("signInConfirm.confirm") });
   await expect(button).toBeVisible();
   // The page has taken the token out of the address bar and nothing has signed in yet.
   expect(new URL(page.url()).hash).toBe("");

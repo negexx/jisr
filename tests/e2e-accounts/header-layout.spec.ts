@@ -35,9 +35,9 @@ for (const { locale } of E2E_LOCALES) {
     await page.setViewportSize({ width: 1280, height: 800 });
 
     const since = Date.now();
-    await requestLink(page, t, email, "signup");
+    await requestLink(page, t, email);
     const link = await readMailLink(email, "magic-link", since);
-    await confirmSignInLink(page, t, link, "signup");
+    await confirmSignInLink(page, t, link);
     await page.getByRole("button", { name: t("welcome.confirm.add") }).click();
     await expect(card(page, E2E_SLUGS.ok)).toBeVisible();
 

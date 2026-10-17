@@ -1136,11 +1136,6 @@
     "title": "Your Jisrr account",
     "lead": "An account is optional. Without one, everything keeps working and your data stays on this device. With one, your profile, saved programmes and plan follow you on all your devices.",
     "leadSignedIn": "You are signed in. Your profile, saved programmes and plan are saved to your account and follow you on all your devices. You can export or delete them.",
-    "modes": {
-      "label": "What do you want to do?",
-      "signup": "Create an account",
-      "signin": "I already have an account"
-    },
     "email": {
       "label": "Email address",
       "hint": "We send you a link to sign in. No password."
@@ -1155,7 +1150,7 @@
       "hintSignedIn": "Under 16? You can use Jisrr without an account: everything works."
     },
     "required": "required",
-    "submit": "Email me a sign-in link",
+    "submit": "Continue with",
     "sending": "Sending the link…",
     "orEmail": "Or continue with email",
     "google": "Continue with Google",
@@ -1172,7 +1167,6 @@
       "cooldown": "We cannot send another link to this address right now. Try again later.",
       "disabled": "Accounts are not available yet. You can keep using Jisrr without one.",
       "failed": "The link could not be sent. Try again in a moment.",
-      "noAccount": "There is no account with this address yet. To create one, choose Create an account and tick both boxes.",
       "linkFailed": "Sign-in did not work. The link may have expired or been used already: ask for a new one."
     },
     "gate": {
@@ -1271,14 +1265,8 @@
     "title": "Sign in to Jisrr",
     "lead": "You opened a sign-in link. Nothing happens until you confirm below.",
     "reading": "Reading the link…",
-    "signin": {
-      "body": "Press the button to sign in on this browser.",
-      "confirm": "Sign in"
-    },
-    "signup": {
-      "body": "Press the button to create your Jisrr account and sign in on this browser.",
-      "confirm": "Create my account"
-    },
+    "body": "Press the button to sign in. If there is no account yet, it will be created.",
+    "confirm": "Continue",
     "working": "Signing in…",
     "notYou": "If you did not ask for this link, close this page: nothing has been done.",
     "errors": {

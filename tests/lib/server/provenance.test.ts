@@ -247,7 +247,6 @@ async function lastLink(): Promise<string> {
 async function signUp(email: string): Promise<Student> {
   const { requestSignInLink } = await import("@/lib/server/signup");
   const request: SignInLinkRequest = {
-    mode: "signup",
     email,
     consent: true,
     ageConfirmed: true,
