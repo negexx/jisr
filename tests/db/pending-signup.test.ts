@@ -329,7 +329,7 @@ describe("requestSignInLink with accounts on", () => {
       }),
     );
     expect(response.status).toBe(200);
-    expect((await mails())[0]?.text).not.toMatch(/creates or opens your Jisr account/i);
+    expect((await mails())[0]?.text).not.toMatch(/opening this link signs you in/i);
     expect(await count("pending_signups")).toBe(0);
   });
 

@@ -19,7 +19,12 @@ import {
   confirmationFromOAuthState,
   evaluateAdmission,
 } from "./admission";
-import { accountDeleteConfirmPath, RETURN_PARAM, signInConfirmPath } from "./callback-urls";
+import {
+  accountDeleteConfirmPath,
+  RETURN_PARAM,
+  type SignInLinkMode,
+  signInConfirmPath,
+} from "./callback-urls";
 import { CURRENT_CONSENT_VERSION } from "./consent";
 import { looksLikeEmail } from "./email-shape";
 import { onAuthApiError, scrubbedAuthLog } from "./log";
@@ -225,7 +230,7 @@ function createAuth(secret: string, baseURL: string) {
       // The cooldown slot was claimed by the before hook (beforeAuthEndpoint). The wording is
       // derived from the signup intent the Server Action set, never from caller-supplied metadata,
       // so a direct POST always gets the plain sign-in wording.
-      const mode = isSignupFor(email) ? "signup" : "signin";
+      const mode: SignInLinkMode = isSignupFor(email) ? "signup" : "signin";
       const { locale, url } = signInLinkUrl(baseURL, verifyUrl, token, metadata);
       // Ruling Q19: bind this link, softly, to the browser that asked for it. The cookie holds a
       // random nonce; only its hash is stored, keyed to the token, in a second verification row that
