@@ -1,8 +1,13 @@
 import type { MatchFilters } from "@/data-schema/match-filters";
 import type { Profile } from "@/data-schema/profile";
-import { AUTH_HINT_KEY } from "@/lib/auth/session-hint";
 import { MATCH_FILTERS_VERSION, PROFILE_SCHEMA_VERSION } from "@/lib/constants";
-import { getLocalStorage, KEY_PREFIX, removeQuietly, type StorageLike } from "@/lib/local-storage";
+import {
+  AUTH_HINT_KEY,
+  getLocalStorage,
+  KEY_PREFIX,
+  removeQuietly,
+  type StorageLike,
+} from "@/lib/local-storage";
 import { seedFiltersFromLegacy } from "@/lib/matches/filter-store";
 import { parseMatchFilters } from "@/lib/matches/filters";
 

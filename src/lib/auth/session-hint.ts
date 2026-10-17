@@ -1,11 +1,18 @@
 import { useSyncExternalStore } from "react";
 
-import { getLocalStorage, KEY_PREFIX, removeQuietly, type StorageLike } from "@/lib/local-storage";
+import {
+  AUTH_HINT_KEY,
+  getLocalStorage,
+  KEY_PREFIX,
+  removeQuietly,
+  type StorageLike,
+} from "@/lib/local-storage";
 
 // Zod-free: the shell reads the hint on every page. The hint says "this browser signed in", never
 // "the session is valid": the session cookie is HttpOnly, so the server is the only judge. A guest
-// has no hint and so makes no auth request at all.
-export const AUTH_HINT_KEY = `${KEY_PREFIX}auth`;
+// has no hint and so makes no auth request at all. The key itself lives in local-storage.ts so a
+// server module can import it without this hook.
+export { AUTH_HINT_KEY };
 
 // Everything a signed-in account keeps on this device lives under this prefix and never in the
 // guest keys (`jisr.profile`, `jisr.saved`, `jisr.plan`): signing out removes it, and a guest's own
