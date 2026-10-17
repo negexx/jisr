@@ -69,20 +69,20 @@ for (const { locale, dir } of E2E_LOCALES) {
           }
         });
         await page.getByLabel(startsWith(t("signup.email.label"))).fill(email);
-        await page.getByRole("button", { name: t("signup.submit") }).click();
+        await page.getByRole("button", { name: t("signup.submit"), exact: true }).click();
         await expect(page.getByText(t("signup.errors.consentRequired"))).toBeVisible();
         await expect(page.getByText(t("signup.errors.ageRequired"))).toBeVisible();
         expect(actionCalls).toHaveLength(0);
         await shot(page, testInfo, `02-unticked-boxes-${locale}`);
 
         const since = Date.now();
-        await requestLink(page, t, email, "signup");
+        await requestLink(page, t, email);
         await expect(page.getByText(email)).toBeVisible();
         await shot(page, testInfo, `03-check-inbox-${locale}`);
 
         const link = await readMailLink(email, "magic-link", since);
         expect(link.pathname).toBe(`/${locale}/sign-in/confirm`);
-        await confirmSignInLink(page, t, link, "signup");
+        await confirmSignInLink(page, t, link);
 
         // IS-2: the landing names the account and asks BEFORE anything is imported.
         const confirmTitle = page.getByRole("heading", {
@@ -313,13 +313,13 @@ for (const locale of ["fr", "ar"] as const) {
     const asker = await openDevice(browser);
     const since = Date.now();
     await asker.page.goto(`/${locale}/sign-in?return=%2F${locale}%2Fplan`);
-    await requestLink(asker.page, t, email, "signup");
+    await requestLink(asker.page, t, email);
     const link = await readMailLink(email, "magic-link", since);
     await asker.context.close();
 
     const other = await openDevice(browser);
     await seedGuestData(other.page, locale, [OK]);
-    await confirmSignInLink(other.page, t, link, "signup");
+    await confirmSignInLink(other.page, t, link);
 
     await expect(
       other.page.getByRole("heading", { name: t("welcome.otherBrowser.title") }),
