@@ -25,7 +25,7 @@ teachingLanguages:
     - de
     - en
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
   value:
     amountMinor: 0
