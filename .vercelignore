@@ -1,8 +1,10 @@
 # Guards a manual `vercel deploy` from a checkout against the CLI source-upload caps (100 MB and
 # 15,000 files). It also applies to Vercel Git builds (the ignored folders are absent from the
 # build), so nothing the build imports or type-checks may live in an ignored folder: build-included
-# code never imports from tests/ (tests/vercel-config.test.ts enforces it). It has no effect on
-# `vercel deploy --prebuilt` (which uploads .vercel/output, not the source).
+# code never imports from tests/ (tests/vercel-config.test.ts enforces it). For
+# `vercel deploy --prebuilt`, the CLI uploads .vercel/output plus the source files its traces
+# reference, and this file filters those too: a traced file inside an ignored folder fails the
+# deploy with `ENOENT: readlink`, so the ignored folders stay out of Next's traces (next.config.ts).
 # The build needs data/, public/, scripts/, src/, messages/, content/, package.json and
 # pnpm-lock.yaml: never list them here (tests/vercel-config.test.ts enforces it).
 data-staging/
