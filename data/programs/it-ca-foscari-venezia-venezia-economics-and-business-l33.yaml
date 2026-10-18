@@ -30,7 +30,7 @@ tuition:
     amountMinor: 130000
     currency: EUR
     period: year
-  source: page-5
+  source: page-7
   info_kind: official
 intakes:
   value:
@@ -134,12 +134,9 @@ sources:
   page-4:
     url: https://www.unive.it/web/en/12613/admission-and-enrolment
     last_verified_at: 2026-10-05
-  page-1:
-    url: https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf
-    last_verified_at: 2026-10-09
-  page-5:
-    url: https://www.unive.it/pag/49913/
-    last_verified_at: 2026-10-18
   page-6:
     url: https://www.unive.it/pag/40976/
+    last_verified_at: 2026-10-18
+  page-7:
+    url: https://www.unive.it/pag/fileadmin/user_upload/inglese/international/doc/degree-seeking/CaFoscari_EnglishDegreeProgrammes.pdf
     last_verified_at: 2026-10-18

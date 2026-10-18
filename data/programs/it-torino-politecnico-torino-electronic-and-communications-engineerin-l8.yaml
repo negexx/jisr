@@ -35,7 +35,7 @@ tuition:
 intakes:
   value:
     - startDate: null
-      applicationOpens: 2025-01-22
+      applicationOpens: 2026-01-22
       applicationDeadline: 2026-05-22
   source: page-7
   info_kind: official

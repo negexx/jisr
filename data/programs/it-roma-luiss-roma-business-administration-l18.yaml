@@ -98,9 +98,6 @@ sources:
   page-1:
     url: https://www.luiss.it/en/university/luiss-life/student-affairs-office/bachelors-degrees/single-contribution-deadlines-and-amounts
     last_verified_at: 2026-10-08
-  page-2:
-    url: https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf
-    last_verified_at: 2026-10-09
   page-3:
     url: https://www.luiss.it/en/orientation-and-admissions/admission-procedures/admission-to-bachelor's-degrees-and-the-single-cycle-law-degree/non-eu-schengen-students/direct-admission-to-bachelor's-and-master's-degrees-for-non-eu-students-with-certificates
     last_verified_at: 2026-10-18
