@@ -51,16 +51,19 @@ function routeReason(route: AdmissionRoute | null, now: IsoDate): Reason {
       }
     }
   })();
-  if (route.note !== null) reason.note = route.note;
+  if (route.note != null) reason.note = route.note;
   return reason;
 }
 
 function coverageReason(program: Program, now: IsoDate): Reason | null {
   const { coverage, fact } = program.requirements;
-  if (coverage === "complete" && isDecisive(fact, now)) return null;
+  // `complete` with zero published rules never proves anything was evaluated (ADR 0005 item 10),
+  // so the vacuous case is unknown, never satisfied: fail closed at the domain boundary.
+  const vacuous = coverage === "complete" && program.requirements.rules.length === 0;
+  if (coverage === "complete" && !vacuous && isDecisive(fact, now)) return null;
   const ref: FactRef = toFactRef(`programs/${program.slug}`, "requirements", fact, now);
   const code =
-    coverage === "partial"
+    coverage === "partial" || (vacuous && isDecisive(fact, now))
       ? "coverage_partial"
       : ref.freshness === "stale"
         ? "stale_source"
