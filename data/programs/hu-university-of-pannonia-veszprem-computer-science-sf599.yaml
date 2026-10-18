@@ -37,8 +37,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: hu-university-direct
+  source: page-3
   info_kind: official
 documents:
   value:
@@ -134,3 +134,6 @@ sources:
   page-2:
     url: https://mik.uni-pannon.hu/en/for-admissions/application-procedure
     last_verified_at: 2026-10-05
+  page-3:
+    url: https://studyinhungary.hu/study-in-hungary/menu/studying-in-hungary/application-timeline.html
+    last_verified_at: 2026-10-18

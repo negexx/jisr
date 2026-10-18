@@ -37,11 +37,74 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: hu-university-direct
+  source: page-1
   info_kind: official
 documents:
-  value: null
+  value:
+    - slug: secondary-school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary School leaving certificate
+          status: draft
+      translationRequired: true
+    - slug: transcript-of-academic-records
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Transcript of academic records
+          status: draft
+      translationRequired: null
+    - slug: english-language-proficiency-certificate
+      name:
+        fr:
+          text: Certificat de compétence en langue anglaise
+          status: draft
+        en:
+          text: English language proficiency certificate
+          status: draft
+      translationRequired: null
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation letter
+          status: draft
+      translationRequired: null
+    - slug: passport-copy
+      name:
+        fr:
+          text: Copie du passeport
+          status: draft
+        en:
+          text: Copy of passport
+          status: draft
+      translationRequired: null
+    - slug: medical-documents
+      name:
+        fr:
+          text: Documents médicaux
+          status: draft
+        en:
+          text: Medical documents
+          status: draft
+      translationRequired: null
   source: programme
   info_kind: official
 requirements:
@@ -123,3 +186,6 @@ sources:
   page-3:
     url: https://international.pte.hu/admission/how-apply
     last_verified_at: 2026-10-12
+  page-1:
+    url: https://studyinhungary.hu/study-in-hungary/menu/studying-in-hungary/application-timeline.html
+    last_verified_at: 2026-10-18

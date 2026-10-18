@@ -37,11 +37,20 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: hu-university-direct
+  source: page-1
   info_kind: official
 documents:
-  value: null
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary School Leaving Certificate
+          status: draft
+      translationRequired: null
   source: programme
   info_kind: official
 requirements:
@@ -79,3 +88,6 @@ sources:
   page-2:
     url: https://tempus.tpf.hu/studyfinder/index/show/1031
     last_verified_at: 2026-10-12
+  page-1:
+    url: https://studyinhungary.hu/study-in-hungary/menu/studying-in-hungary/application-timeline.html
+    last_verified_at: 2026-10-18
