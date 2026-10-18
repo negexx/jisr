@@ -33,7 +33,7 @@ intakes:
   source: ruct
   info_kind: official
 applicationChannel:
-  value: es-unedasiss
+  value: null
   source: page-2
   info_kind: official
 documents:
