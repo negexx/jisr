@@ -1682,4 +1682,102 @@ describe("runVerify --revise", () => {
     expect(at(promoted, "name")).toBe("Aurora 2027");
     expect(at(promoted, "_review")).toBeUndefined();
   });
+
+  // The proposal schema only carries fr/en, so a reviewed ar translation is added by hand to the
+  // record the verifier built — as it would already be in data/.
+  const withArabic = (record: Record<string, unknown>): Record<string, unknown> => {
+    const addAr = (field: string, text: string) => ({
+      ...(at(record, field) as Record<string, unknown>),
+      ar: { text, status: "reviewed" },
+    });
+    return {
+      ...record,
+      summary: addAr("summary", "منحة لدراسة في ألمانيا."),
+      howToApply: addAr("howToApply", "التقديم عبر الإنترنت."),
+    };
+  };
+
+  it("keeps the existing ar text when a revision provides only fr and en", async () => {
+    await writeFile(dataFile(), stringify(withArabic(await writeExisting())));
+    await writeFile(file, JSON.stringify(raw({ name: "Aurora 2027" })));
+    const out = await runVerify({ file, dryRun: false, revise: true }, deps());
+    expect(out.ok).toBe(true);
+    const staged = await readStaged();
+    expect(at(staged, "summary.ar")).toEqual({
+      text: "منحة لدراسة في ألمانيا.",
+      status: "reviewed",
+    });
+    expect(at(staged, "howToApply.ar")).toEqual({
+      text: "التقديم عبر الإنترنت.",
+      status: "reviewed",
+    });
+  });
+
+  it("replaces fr and en with the verified values", async () => {
+    await writeExisting();
+    await writeFile(
+      file,
+      JSON.stringify(
+        raw({
+          summary: { fr: "Une bourse révisée.", en: "A revised grant." },
+          howToApply: { fr: "Candidature révisée.", en: "Revised application." },
+        }),
+      ),
+    );
+    const out = await runVerify({ file, dryRun: false, revise: true }, deps());
+    expect(out.ok).toBe(true);
+    const staged = await readStaged();
+    expect(at(staged, "summary")).toMatchObject({
+      fr: { text: "Une bourse révisée.", status: "draft" },
+      en: { text: "A revised grant.", status: "draft" },
+    });
+    expect(at(staged, "howToApply")).toMatchObject({
+      fr: { text: "Candidature révisée.", status: "draft" },
+      en: { text: "Revised application.", status: "draft" },
+    });
+  });
+
+  it("keeps a document's existing ar name when a fresh list replaces the documents", async () => {
+    const base = await writeExisting();
+    const docs = at(base, "documents.value") as Record<string, unknown>[];
+    const withDocAr = {
+      ...base,
+      documents: {
+        ...(at(base, "documents") as Record<string, unknown>),
+        value: docs.map((doc) =>
+          doc.slug === "cv"
+            ? {
+                ...doc,
+                name: {
+                  ...(doc.name as Record<string, unknown>),
+                  ar: { text: "السيرة الذاتية", status: "reviewed" },
+                },
+              }
+            : doc,
+        ),
+      },
+    };
+    await writeFile(dataFile(), stringify(withDocAr));
+    await writeFile(file, JSON.stringify(raw({ name: "Aurora 2027" })));
+    const out = await runVerify({ file, dryRun: false, revise: true }, deps());
+    expect(out.ok).toBe(true);
+    const staged = await readStaged();
+    const stagedDocs = at(staged, "documents.value") as {
+      slug: string;
+      name: Record<string, unknown>;
+    }[];
+    expect(stagedDocs.find((doc) => doc.slug === "cv")?.name.ar).toEqual({
+      text: "السيرة الذاتية",
+      status: "reviewed",
+    });
+  });
+
+  it("records the preserved locales in the notes", async () => {
+    await writeFile(dataFile(), stringify(withArabic(await writeExisting())));
+    await writeFile(file, JSON.stringify(raw({ name: "Aurora 2027" })));
+    const out = await runVerify({ file, dryRun: false, revise: true }, deps());
+    expect(out.ok).toBe(true);
+    const staged = await readStaged();
+    expect(at(staged, "_review.notes")).toMatch(/locales kept: ar/);
+  });
 });

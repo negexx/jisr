@@ -764,6 +764,41 @@ export async function verifyScholarship(
 const asRecord = (value: unknown): Record<string, unknown> =>
   typeof value === "object" && value !== null ? (value as Record<string, unknown>) : {};
 
+// A fresh LocalizedText wins for the locales it provides (fr, en); every locale it does not provide
+// (notably ar, which the proposal schema never carries) is preserved verbatim.
+function mergeLocalized(
+  existing: unknown,
+  fresh: unknown,
+): { value: Record<string, unknown>; kept: string[] } {
+  const before = asRecord(existing);
+  const after = asRecord(fresh);
+  const kept = Object.keys(before).filter((locale) => !(locale in after));
+  return { value: { ...before, ...after }, kept };
+}
+
+// The fresh list replaces the existing one, but a document whose slug is unchanged keeps the name
+// locales the fresh reading does not provide (notably ar).
+function mergeDocuments(existing: unknown, fresh: unknown, keptLocales: Set<string>): unknown {
+  const freshFact = asRecord(fresh);
+  const existingFact = asRecord(existing);
+  const existingItems: unknown[] = Array.isArray(existingFact.value) ? existingFact.value : [];
+  const previous = new Map<string, Record<string, unknown>>();
+  for (const item of existingItems) {
+    const doc = asRecord(item);
+    if (typeof doc.slug === "string") previous.set(doc.slug, doc);
+  }
+  const freshItems: unknown[] = Array.isArray(freshFact.value) ? freshFact.value : [];
+  const value = freshItems.map((item) => {
+    const doc = asRecord(item);
+    const prior = typeof doc.slug === "string" ? previous.get(doc.slug) : undefined;
+    if (prior === undefined) return item;
+    const merged = mergeLocalized(prior.name, doc.name);
+    for (const locale of merged.kept) keptLocales.add(locale);
+    return { ...doc, name: merged.value };
+  });
+  return { ...freshFact, value };
+}
+
 // Facts a verified proposal always states (without eligibility, level and howToApply it is rejected).
 const REVISED_ALWAYS = [
   "name",
@@ -819,7 +854,16 @@ export function reviseScholarship(
   };
 
   const next: Record<string, unknown> = { ...existing, slug: proposal.slug };
-  for (const field of REVISED_ALWAYS) next[field] = verified.record[field];
+  const keptLocales = new Set<string>();
+  for (const field of REVISED_ALWAYS) {
+    if (field === "summary" || field === "howToApply") {
+      const merged = mergeLocalized(existing[field], verified.record[field]);
+      next[field] = merged.value;
+      for (const locale of merged.kept) keptLocales.add(locale);
+      continue;
+    }
+    next[field] = verified.record[field];
+  }
   next.requirements = remapped(verified.record.requirements);
   if (proposal.institutions !== undefined) {
     if (proposal.institutions.length > 0) next.institutions = verified.record.institutions;
@@ -843,7 +887,10 @@ export function reviseScholarship(
       kept.push(field);
       continue;
     }
-    const value = remapped(verified.record[field]);
+    const value =
+      field === "documents"
+        ? mergeDocuments(existing[field], remapped(verified.record[field]), keptLocales)
+        : remapped(verified.record[field]);
     if (JSON.stringify(existing[field]) !== JSON.stringify(value)) changed.push(field);
     next[field] = value;
   }
@@ -851,6 +898,7 @@ export function reviseScholarship(
   const notes = [
     changed.length > 0 ? `changed: ${changed.join(", ")}` : "",
     kept.length > 0 ? `kept: ${kept.join(", ")}` : "",
+    keptLocales.size > 0 ? `locales kept: ${[...keptLocales].sort().join(", ")}` : "",
   ]
     .filter((part) => part !== "")
     .join("; ");

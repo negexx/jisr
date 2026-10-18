@@ -56,6 +56,10 @@ a slug already in `data/` stops the run.
 
 - **Verified facts replace** the existing values (this is the point of a revision; the proposal is a
   fresh, code-checked reading).
+- **Localized text is merged, not replaced.** The proposal schema carries only `fr`/`en`, so the
+  fresh value wins for the locales it provides and every locale it does not (notably `ar`) is kept
+  verbatim, at the top level (`summary`, `howToApply`) and inside a document whose `slug` is
+  unchanged; `_review.notes` records `locales kept: <locales>`.
 - **Silent or unsupported facts keep** the existing value — a proposal that sets `deadline: null`, or
   claims a support amount no quote states, never clears or overwrites the record.
 - **Sources are merged by url**: an existing page keeps its key and its (older) `last_verified_at`; a
@@ -93,7 +97,8 @@ Results:
 - `pnpm exec vitest run tests/scripts/import/official-costs.test.ts` — 129 passed.
 - `pnpm test` (whole suite) — 328 files, 8045 passed, 25 skipped, 0 failed.
 - `pnpm typecheck` — clean.
-- `pnpm lint` — clean (2 pre-existing infos in `scripts/import/sources/studyfinder.ts`, untouched).
+- `pnpm lint` — clean (2 pre-existing infos, untouched: `scripts/import/sources/hrk.ts:49` and
+  `scripts/import/sources/studyfinder.ts:44`).
 
 ## Design decisions and uncertainties
 
