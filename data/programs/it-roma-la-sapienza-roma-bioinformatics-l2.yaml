@@ -25,20 +25,63 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 30000
+    maxAmountMinor: 150000
+    currency: EUR
+    period: year
+  source: page-1
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: 2025-12-22
+      applicationDeadline: 2026-05-15
+  source: page-1
   info_kind: official
 applicationChannel:
   value: it-universitaly
   source: page-2
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+    - slug: high-school-diploma
+      name:
+        fr:
+          text: Diplôme d'études secondaires
+          status: draft
+        en:
+          text: High School Diploma
+          status: draft
+      translationRequired: null
+    - slug: transcript-of-records
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Transcript of Records
+          status: draft
+      translationRequired: null
+    - slug: language-certificate
+      name:
+        fr:
+          text: Certificat de langue
+          status: draft
+        en:
+          text: Language Certificate
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -69,3 +112,6 @@ sources:
   page-2:
     url: https://www.uniroma1.it/en/pagina/international-student-office
     last_verified_at: 2026-10-12
+  page-1:
+    url: https://www.uniroma1.it/it/pagina/international-admissions-2026-2027
+    last_verified_at: 2026-10-18
