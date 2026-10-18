@@ -69,6 +69,3 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4210/
     last_verified_at: 2026-10-01
-  page-1:
-    url: https://www.uni-assist.de/en/tools/info-country-by-country/details-country/country/ma/
-    last_verified_at: 2026-10-09

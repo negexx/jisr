@@ -26,8 +26,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 1920000
+    currency: EUR
+    period: year
+  source: page-1
   info_kind: official
 intakes:
   value: null
@@ -38,8 +41,17 @@ applicationChannel:
   source: page-2
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: passeport valide ou carte d'identité européenne
+          status: draft
+        en:
+          text: valid passport or European ID card
+          status: draft
+      translationRequired: null
+  source: page-2
   info_kind: official
 requirements:
   coverage: partial
@@ -76,3 +88,6 @@ sources:
   page-2:
     url: https://www.universiteitleiden.nl/en/education/admission-and-application/bachelors/application-procedure
     last_verified_at: 2026-10-12
+  page-1:
+    url: https://www.universiteitleiden.nl/onderwijs/toelating-en-aanmelding/bachelors/collegegeld
+    last_verified_at: 2026-10-18

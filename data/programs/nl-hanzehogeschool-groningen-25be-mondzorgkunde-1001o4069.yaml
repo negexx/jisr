@@ -17,7 +17,7 @@ summary:
     status: draft
 officialUrl: https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/mondzorgkunde
 durationYears:
-  value: null
+  value: 4
   source: programme
   info_kind: official
 teachingLanguages:
@@ -30,7 +30,13 @@ tuition:
   source: programme
   info_kind: official
 intakes:
-  value: null
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 1
+        day: 15
   source: programme
   info_kind: official
 applicationChannel:

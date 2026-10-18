@@ -15,13 +15,14 @@ summary:
   ar:
     text: Opleiding tot Verpleegkundige (Nursing), Capabel Hogeschool (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
     status: draft
-officialUrl: https://www.capabel.nl/opleidingen/zorg-welzijn/verkorte-hbo-bachelor-verpleegkundige-2-jaar
+officialUrl: https://www.capabel.nl/opleidingen/zorg-welzijn/hbo-bachelor-verpleegkundige
 durationYears:
-  value: null
+  value: 4
   source: programme
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - nl
   source: programme
   info_kind: official
 tuition:
@@ -29,7 +30,16 @@ tuition:
   source: programme
   info_kind: official
 intakes:
-  value: null
+  value:
+    - startDate: 2026-12-08
+      applicationOpens: null
+      applicationDeadline: null
+    - startDate: 2027-04-06
+      applicationOpens: null
+      applicationDeadline: null
+    - startDate: 2027-08-24
+      applicationOpens: null
+      applicationDeadline: null
   source: programme
   info_kind: official
 applicationChannel:
@@ -37,7 +47,16 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
+  value:
+    - slug: diploma
+      name:
+        fr:
+          text: Diplôme pertinent
+          status: draft
+        en:
+          text: Relevant diploma
+          status: draft
+      translationRequired: null
   source: programme
   info_kind: official
 requirements:
@@ -48,24 +67,21 @@ requirements:
     - id: req-1
       source: programme
       info_kind: official
-      kind: manual_check
-      note:
-        fr:
-          text: Un diplôme MBO 4 Verpleegkunde ou Inservice et une inscription BIG active sont requis.
-          status: draft
-        en:
-          text: An MBO 4 Nursing or Inservice diploma and an active BIG registration are required.
-          status: draft
+      kind: language_proficiency
+      language: nl
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
     - id: req-2
       source: programme
       info_kind: official
       kind: manual_check
       note:
         fr:
-          text: "Diplôme étranger : évaluation Nuffic (contenu et niveau NLQF 4) et exigences linguistiques et mathématiques (niveau 3F) requises."
+          text: Un diplôme HAVO, VWO ou MBO 4 est requis ; si vous ne l'avez pas mais avez 21 ans ou plus, un test d'admission 21+ est possible.
           status: draft
         en:
-          text: "Foreign diploma: Nuffic evaluation (content and NLQF level 4) and language and mathematics requirements (level 3F) required."
+          text: A HAVO, VWO or MBO 4 diploma is required; if you do not have one but are 21 or older, a 21+ admission test is possible.
           status: draft
     - id: req-3
       source: programme
@@ -73,13 +89,13 @@ requirements:
       kind: manual_check
       note:
         fr:
-          text: Le programme passerelle Verkort Verpleegkunde fait partie de la procédure d'admission.
+          text: "Diplôme étranger : une évaluation (diplomawaardering) du diplôme obtenu dans le pays d'origine est requise, ainsi qu'un niveau B2 en néerlandais."
           status: draft
         en:
-          text: The Verkort Verpleegkunde bridging programme is part of the admission procedure.
+          text: "Foreign diploma: an evaluation (diplomawaardering) of the diploma obtained in the country of origin is required, together with a B2 level in Dutch."
           status: draft
 scholarships: []
 sources:
   programme:
-    url: https://www.capabel.nl/opleidingen/zorg-welzijn/verkorte-hbo-bachelor-verpleegkundige-2-jaar
-    last_verified_at: 2026-10-12
+    url: https://www.capabel.nl/opleidingen/zorg-welzijn/hbo-bachelor-verpleegkundige
+    last_verified_at: 2026-10-18
