@@ -221,6 +221,46 @@ describe("discoverTopicPages", () => {
     expect(search.languages).toEqual(["es", "es", "es", "es"]);
   });
 
+  it("asks four Hungarian queries for Hungary, in Hungarian, with the search language hu", async () => {
+    const search = provider(() => []);
+    await discoverTopicPages({ country: "HU", website: "https://www.uni-example.hu/", search });
+    expect(search.queries).toHaveLength(4);
+    expect(search.queries.every((q) => q.startsWith("site:uni-example.hu "))).toBe(true);
+    expect(search.queries.some((q) => q.includes("tandíj"))).toBe(true);
+    expect(search.queries.some((q) => q.includes("oktatási nyelv"))).toBe(true);
+    expect(search.queries.some((q) => q.includes("jelentkezési határidő"))).toBe(true);
+    expect(search.queries.some((q) => q.includes("dokumentumok"))).toBe(true);
+    expect(search.languages).toEqual(["hu", "hu", "hu", "hu"]);
+  });
+
+  it("scores Hungarian fee, language, deadline and document pages", () => {
+    const score = (url: string, text: string, topic: Topic) => scoreTopicLink({ url, text }, topic);
+    expect(
+      score("https://www.uni-example.hu/tandij", "Tandíj és költségtérítés", "fees"),
+    ).toBeGreaterThanOrEqual(0.4);
+    expect(
+      score("https://www.uni-example.hu/oktatasi-nyelv", "Oktatási nyelv", "language"),
+    ).toBeGreaterThanOrEqual(0.4);
+    expect(
+      score(
+        "https://www.uni-example.hu/jelentkezesi-hatarido",
+        "Jelentkezési határidő",
+        "deadline",
+      ),
+    ).toBeGreaterThanOrEqual(0.4);
+    expect(
+      score(
+        "https://www.uni-example.hu/szukseges-dokumentumok",
+        "Szükséges dokumentumok",
+        "documents",
+      ),
+    ).toBeGreaterThanOrEqual(0.4);
+    expect(score("https://www.uni-example.hu/konyvtar", "Könyvtár", "fees")).toBeLessThan(0.4);
+    expect(score("https://www.uni-example.hu/konyvtar", "Könyvtár", "deadline")).toBeLessThan(0.4);
+    expect(score("https://www.uni-example.hu/konyvtar", "Könyvtár", "language")).toBeLessThan(0.4);
+    expect(score("https://www.uni-example.hu/konyvtar", "Könyvtár", "documents")).toBeLessThan(0.4);
+  });
+
   it("scores Italian fee, language, deadline and document pages", () => {
     const score = (url: string, text: string, topic: Topic) => scoreTopicLink({ url, text }, topic);
     expect(

@@ -30,6 +30,13 @@ const WORDS: Record<string, Record<Topic, string>> = {
     deadline: "date limite de candidature étudiants internationaux",
     documents: "pièces justificatives dossier de candidature étudiants internationaux",
   },
+  HU: {
+    fees: "tandíj költségtérítés önköltséges nemzetközi hallgatók tuition fees",
+    language: "oktatási nyelv képzés nyelve angol nyelvű képzés language of instruction",
+    deadline: "jelentkezési határidő nemzetközi jelentkezők felvételi application deadline",
+    documents:
+      "szükséges dokumentumok jelentkezési dokumentumok nemzetközi hallgatók required documents",
+  },
   IT: {
     fees: "tasse universitarie contributi studenti internazionali non UE tuition fees",
     language: "lingua di erogazione lingua inglese language of instruction",
@@ -44,16 +51,23 @@ const WORDS: Record<string, Record<Topic, string>> = {
   },
 };
 
-const LANGUAGE: Record<string, string> = { DE: "de", ES: "es", FR: "fr", IT: "it", NL: "nl" };
+const LANGUAGE: Record<string, string> = {
+  DE: "de",
+  ES: "es",
+  FR: "fr",
+  HU: "hu",
+  IT: "it",
+  NL: "nl",
+};
 
 const PATTERN: Record<Topic, RegExp> = {
-  fees: /tuition|\bfees?\b|\bcosts?\b|gebu(?:e)?hr|studienbeitr|semesterbeitr|collegegeld|\btarie(?:f|ven)\b|kosten|droits?[ _-]d[ '_-]?inscription|frais[ _-]de[ _-]scolarit|droits[ _-]de[ _-]scolarit|\btasse\b|contribut[io]|\bretta\b|\bcosti\b/,
+  fees: /tuition|\bfees?\b|\bcosts?\b|gebu(?:e)?hr|studienbeitr|semesterbeitr|collegegeld|\btarie(?:f|ven)\b|kosten|droits?[ _-]d[ '_-]?inscription|frais[ _-]de[ _-]scolarit|droits[ _-]de[ _-]scolarit|\btasse\b|contribut[io]|\bretta\b|\bcosti\b|tandij|koltsegterit|onkoltseges|\bdij(?:ak|tetelek)?\b/,
   language:
-    /language of instruction|teaching language|instruction|unterrichtssprache|studiensprache|\bsprache|voertaal|\btaal\b|language|langue[ _-]d[ '_-]?enseignement|enseigne[ _-]en\b|langue[ _-]de[ _-]la[ _-]formation|\blingua\b|erogazione/,
+    /language of instruction|teaching language|instruction|unterrichtssprache|studiensprache|\bsprache|voertaal|\btaal\b|language|langue[ _-]d[ '_-]?enseignement|enseigne[ _-]en\b|langue[ _-]de[ _-]la[ _-]formation|\blingua\b|erogazione|oktatasi[ _-]nyelv|tanitasi[ _-]nyelv|kepzes[ _-]nyelv|nyelvu[ _-]kepzes|angol[ _-]nyelv/,
   deadline:
-    /deadline|frist|termine?\b|aanmeld|application period|dates|date[ _-]limite|calendrier|candidat(?:ure|er)|scadenz[ae]|preiscrizion[ei]|calendario/,
+    /deadline|frist|termine?\b|aanmeld|application period|dates|date[ _-]limite|calendrier|candidat(?:ure|er)|scadenz[ae]|preiscrizion[ei]|calendario|jelentkezesi[ _-]hatarido|\bhatarido\b|jelentkezes|felveteli|beiratkozas/,
   documents:
-    /documents?|unterlagen|nachweis|documenten|required|checklist|erforderlich|benodigde|pieces|justificatifs|dossier[ _-]de[ _-]candidature|documenti|titolo[ _-]estero|allegati/,
+    /documents?|unterlagen|nachweis|documenten|required|checklist|erforderlich|benodigde|pieces|justificatifs|dossier[ _-]de[ _-]candidature|documenti|titolo[ _-]estero|allegati|dokumentum|melleklet|igazolas|csatolando|benyujtando/,
 };
 
 const NEWSISH = /\/(news|blog|events?|actualit|presse|press|agenda|nieuws|aktuell|veranstaltung)/;
