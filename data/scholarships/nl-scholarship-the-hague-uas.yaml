@@ -12,10 +12,10 @@ institutions:
 level: bachelor
 summary:
   fr:
-    text: Bourse de 5 000 EUR (NL Scholarship) pour les étudiants hors Espace économique européen et hors Suisse qui entrent en licence à La Haye ; il faut une candidature acceptée sous condition et un essai ; les dates changent chaque année.
+    text: Bourse de 5 000 EUR (NL Scholarship) pour les étudiants hors Espace économique européen et hors Suisse qui entrent en licence à La Haye.
     status: draft
   en:
-    text: EUR 5,000 NL Scholarship for students from outside the EEA and Switzerland starting a bachelor’s at The Hague University of Applied Sciences; you need a conditional acceptance and an essay; dates change every year.
+    text: EUR 5,000 NL Scholarship for students from outside the EEA and Switzerland starting a bachelor’s at The Hague University of Applied Sciences.
     status: draft
   ar:
     text: منحة قدرها 5 000 EUR (NL Scholarship) لطلبة من خارج المنطقة الاقتصادية الأوروبية وسويسرا الذين يبدؤون الإجازة في لاهاي؛ يلزم قبول مشروط للطلب ومقالة؛ وتتغير المواعيد كل سنة.
@@ -28,7 +28,7 @@ support:
       currency: EUR
       per: once
     covers: []
-  source: page-2
+  source: page-3
   info_kind: official
 deadline:
   value: null
@@ -45,10 +45,10 @@ documents:
   info_kind: official
 howToApply:
   fr:
-    text: Postulez à votre programme à THUAS, puis soumettez l'essai demandé avant la date limite de la session en cours (voir la page de la bourse).
+    text: Postulez à votre programme à THUAS, puis soumettez l'essai demandé avant la date limite.
     status: draft
   en:
-    text: Apply to your programme at THUAS, then submit the required essay before the deadline of the current round (see the scholarship page).
+    text: Apply to your programme at THUAS, then submit the required essay before the deadline.
     status: draft
   ar:
     text: قدّم طلبك إلى برنامجك في THUAS، ثم أرسل المقال المطلوب قبل الموعد النهائي للدورة الحالية (انظر صفحة المنحة).
@@ -58,6 +58,6 @@ sources:
   page-1:
     url: https://www.thuas.com/study-choice/applications-finances-and-moving-here/study-finance-scholarships
     last_verified_at: 2026-10-04
-  page-2:
-    url: https://www.studyinholland.nl/finances/nl-scholarship
-    last_verified_at: 2026-10-04
+  page-3:
+    url: https://www.studyinnl.org/finances/nl-scholarship
+    last_verified_at: 2026-10-18
