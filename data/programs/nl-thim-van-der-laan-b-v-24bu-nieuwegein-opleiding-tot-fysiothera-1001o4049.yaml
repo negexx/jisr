@@ -26,8 +26,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 990000
+    currency: EUR
+    period: year
+  source: page-1
   info_kind: official
 intakes:
   value: null
@@ -108,3 +111,6 @@ sources:
   programme:
     url: https://nl.thim.nl/physiotherapy-deeltijd/
     last_verified_at: 2026-10-12
+  page-1:
+    url: https://nl.thim.nl/physiotherapy-voltijd/
+    last_verified_at: 2026-10-18

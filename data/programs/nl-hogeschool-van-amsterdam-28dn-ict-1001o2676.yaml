@@ -40,8 +40,35 @@ applicationChannel:
   source: page-1
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: id-passport-or-residence-permit
+      name:
+        fr:
+          text: Carte d'identité, passeport ou permis de séjour
+          status: draft
+        en:
+          text: ID, passport or residence permit
+          status: draft
+      translationRequired: null
+    - slug: grade-transcripts
+      name:
+        fr:
+          text: Relevés de notes des deux dernières années et de l'année en cours
+          status: draft
+        en:
+          text: Grade transcripts of the current year and at least 2 previous years
+          status: draft
+      translationRequired: null
+    - slug: language-proficiency-certificate
+      name:
+        fr:
+          text: Certificat de compétence linguistique en anglais ou en néerlandais
+          status: draft
+        en:
+          text: English or Dutch language proficiency certificate
+          status: draft
+      translationRequired: null
+  source: page-3
   info_kind: official
 requirements:
   coverage: partial
@@ -59,3 +86,6 @@ sources:
   page-2:
     url: https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/collegegeld/collegegeldtarieven
     last_verified_at: 2026-10-04
+  page-3:
+    url: https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/diplomawaardering/documentatie-vooropleiding-niet-afgerond
+    last_verified_at: 2026-10-18
