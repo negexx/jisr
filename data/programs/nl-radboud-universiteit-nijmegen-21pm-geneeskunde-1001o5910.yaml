@@ -38,8 +38,26 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport valide ou carte d'identité européenne
+          status: draft
+        en:
+          text: Valid passport or European identity card
+          status: draft
+      translationRequired: null
+    - slug: diploma
+      name:
+        fr:
+          text: Diplôme
+          status: draft
+        en:
+          text: Diploma
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -62,3 +80,6 @@ sources:
   programme:
     url: https://www.ru.nl/opleidingen/bachelors/geneeskunde
     last_verified_at: 2026-10-12
+  page-1:
+    url: https://www.ru.nl/opleidingen/aanmelding-en-toelating/aanmeldprocedure-bachelors/aanmelden-met-een-internationale-vooropleiding/aanmelden-voor-reguliere-bacheloropleidingen
+    last_verified_at: 2026-10-18

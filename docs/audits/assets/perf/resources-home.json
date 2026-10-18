@@ -1,0 +1,71 @@
+{
+  "agg": {
+    "font": {
+      "count": 1,
+      "transfer": 29588,
+      "decoded": 29288
+    },
+    "image": {
+      "count": 1,
+      "transfer": 10568,
+      "decoded": 10268
+    },
+    "css": {
+      "count": 2,
+      "transfer": 181154,
+      "decoded": 232013
+    },
+    "other": {
+      "count": 2,
+      "transfer": 4047,
+      "decoded": 12648
+    },
+    "script": {
+      "count": 20,
+      "transfer": 246462,
+      "decoded": 745315
+    },
+    "fetch": {
+      "count": 7,
+      "transfer": 28074,
+      "decoded": 82864
+    }
+  },
+  "names": {
+    "/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2": 29588,
+    "/logo-mark.png": 10568,
+    "/_next/static/chunks/3tii3q64ubzq7.css": 14702,
+    "/_next/static/chunks/1vbrjani843wc.js": 4047,
+    "/_next/static/chunks/0mejhm4-8--q2.js": 9060,
+    "/_next/static/chunks/333w8o06i_zn0.js": 73266,
+    "/_next/static/chunks/1rebfos8fk18d.js": 35766,
+    "/_next/static/chunks/1qptv8bioy-54.js": 9104,
+    "/_next/static/chunks/turbopack-3ci3ny00h-_fw.js": 4806,
+    "/_next/static/chunks/14jnzq0f0m_wd.js": 4096,
+    "/_next/static/chunks/0caay31ajrzi_.js": 4796,
+    "/_next/static/chunks/3uw2647b-4qj5.js": 20859,
+    "/_next/static/chunks/0ibeborkj0p66.js": 13096,
+    "/_next/static/chunks/21bev622nx-rm.js": 7579,
+    "/_next/static/media/3fd1b3eda9c5392f-s.28efgb-r-zxeb.woff2": 166452,
+    "/fr": 7891,
+    "/fr/profile": 10767,
+    "/fr/matches": 9416,
+    "/_next/static/chunks/1lad7vidj5duj.js": 2897,
+    "/count.js": 0,
+    "/count": 0,
+    "/_next/static/chunks/1r3naicumk4i2.js": 616,
+    "/_next/static/chunks/25me1s6dg510u.js": 13419,
+    "/_next/static/chunks/3dbst0r0kc3ll.js": 8299,
+    "/_next/static/chunks/1pgh2mfarh30j.js": 1572,
+    "/_next/static/chunks/2-fkitn6cs6rk.js": 616,
+    "/_next/static/chunks/0g3jbu9zkjnv-.js": 8761,
+    "/_next/static/chunks/16qvek7u-y6ec.js": 13358,
+    "/_next/static/chunks/1s_62z2tn-e5e.js": 14496
+  },
+  "byOrigin": {
+    "https://jisrr.org": 499893,
+    "https://gc.zgo.at": 0,
+    "https://negexx.goatcounter.com": 0
+  },
+  "resourceCount": 33
+}

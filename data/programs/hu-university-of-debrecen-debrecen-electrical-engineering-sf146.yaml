@@ -151,6 +151,9 @@ requirements:
         fr:
           text: Des examens d'entrée en mathématiques et en physique (écrit et oral) sont requis. Préparez-vous en conséquence.
           status: draft
+        en:
+          text: Entrance examinations in mathematics and physics (written and oral) are required. Prepare accordingly.
+          status: draft
         ar:
           text: تُطلب امتحانات دخول في الرياضيات والفيزياء (كتابية وشفوية). استعد لذلك.
           status: draft

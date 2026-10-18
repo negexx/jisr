@@ -26,8 +26,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 130000
+    currency: EUR
+    period: year
+  source: page-7
   info_kind: official
 intakes:
   value:
@@ -42,56 +45,35 @@ applicationChannel:
   info_kind: official
 documents:
   value:
-    - slug: secondary-school-diploma
+    - slug: school-leaving-certificate
       name:
         fr:
-          text: Titre final des études secondaires obtenu avec au moins 12 ans de scolarité
+          text: Diplôme de fin d'études secondaires
           status: draft
         en:
-          text: Final secondary school qualification obtained after at least 12 years of schooling
+          text: Higher Secondary School final Diploma
           status: draft
-        ar:
-          text: الشهادة النهائية للدراسة الثانوية المحصَّل عليها بعد 12 سنة دراسية على الأقل
-          status: draft
-      translationRequired: null
-    - slug: cimea-statement-or-declaration-of-value
+      translationRequired: true
+    - slug: transcript-of-records
       name:
         fr:
-          text: Attestation CIMEA ou déclaration de valeur, si l’établissement la demande
+          text: Relevé de notes
           status: draft
         en:
-          text: CIMEA statement or Declaration of value, if the institution asks for it
+          text: transcript of records
           status: draft
-        ar:
-          text: إفادة CIMEA أو بيان القيمة، إذا طلبته المؤسسة
-          status: draft
-      translationRequired: null
-    - slug: university-entrance-aptitude-certificate
+      translationRequired: true
+    - slug: english-language-certificate
       name:
         fr:
-          text: Certificat de réussite à l’épreuve d’aptitude académique d’accès à l’université du pays d’origine, s’il en existe une
+          text: Certificat de langue anglaise
           status: draft
         en:
-          text: Certificate of passing the academic aptitude test for university entrance in the home country, where one exists
-          status: draft
-        ar:
-          text: شهادة النجاح في اختبار الكفاءة الأكاديمية للولوج إلى الجامعة في بلد المنشأ، إن وُجد هذا الاختبار
+          text: English language certificate
           status: draft
       translationRequired: null
-    - slug: italian-translation-of-documents
-      name:
-        fr:
-          text: Traductions en italien des documents ci-dessus, si l’établissement les demande
-          status: draft
-        en:
-          text: Italian translations of the documents above, where the institution asks for them
-          status: draft
-        ar:
-          text: ترجمات الوثائق أعلاه إلى الإيطالية، إذا طلبتها المؤسسة
-          status: draft
-      translationRequired: null
-  source: page-1
-  info_kind: guidance
+  source: page-6
+  info_kind: official
 requirements:
   coverage: partial
   source: programme
@@ -152,6 +134,9 @@ sources:
   page-4:
     url: https://www.unive.it/web/en/12613/admission-and-enrolment
     last_verified_at: 2026-10-05
-  page-1:
-    url: https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf
-    last_verified_at: 2026-10-09
+  page-6:
+    url: https://www.unive.it/pag/40976/
+    last_verified_at: 2026-10-18
+  page-7:
+    url: https://www.unive.it/pag/fileadmin/user_upload/inglese/international/doc/degree-seeking/CaFoscari_EnglishDegreeProgrammes.pdf
+    last_verified_at: 2026-10-18
