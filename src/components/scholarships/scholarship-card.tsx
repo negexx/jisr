@@ -54,9 +54,10 @@ export function ScholarshipCard({
   const deadline = scholarship.deadline.value;
   // One badge when both facts share a source, date, kind and class: two identical badges would only add noise.
   const sharedSource = sameSource(scholarship.support, scholarship.deadline);
-  // A card whose support and deadline are both unpublished would otherwise carry no badge at all: its
-  // "not published" statements still need a source, so the record's own support fact stands in next
-  // to the official link (design audit D2).
+  // The always-visible facts are the amount and the deadline; documents and requirement badges live
+  // inside the collapsed details. When both visible facts are unpublished the card would otherwise
+  // show no badge at all, though its "not published" statements still need a source, so the record's
+  // own support fact stands in next to the official link (design audit D2).
   const factsSourced = amount !== null || covers !== null || deadline !== null;
   const countryNames = (codes: readonly string[]) =>
     formatList(
