@@ -1,0 +1,34 @@
+{
+  "slug": "stipendium-hungaricum",
+  "name": "Stipendium Hungaricum",
+  "provider": "Tempus Public Foundation (Hungarian government)",
+  "destinations": ["HU"],
+  "eligibleNationalities": ["MA"],
+  "fields": ["computer-science", "engineering", "business-economics"],
+  "institutions": ["hu-budapest-university-of-economics-and-bus-budapest","hu-corvinus-university-of-budapest-budapest","hu-eotvos-lorand-university-budapest","hu-eotvos-lorand-university-szombathely","hu-hungarian-university-of-agriculture-and-budapest","hu-hungarian-university-of-agriculture-and-godollo","hu-hungarian-university-of-agriculture-and-gyongyos","hu-john-von-neumann-university-kecskemet","hu-obuda-university-budapest","hu-university-of-debrecen-debrecen","hu-university-of-dunaujvaros-dunaujvaros","hu-university-of-miskolc-miskolc","hu-university-of-nyiregyhaza-nyiregyhaza","hu-university-of-pecs-pecs","hu-university-of-public-service-baja","hu-university-of-sopron-sopron","hu-university-of-szeged-szeged","hu-university-of-pannonia-nagykanizsa","hu-university-of-pannonia-veszprem"],
+  "summary": {"fr": "Bourse du gouvernement hongrois pour les études de licence complètes : frais de scolarité pris en charge, allocation mensuelle et contribution au logement (montants sur la page officielle).", "en": "Hungarian government scholarship for full-degree Bachelor studies: tuition covered, a monthly stipend and an accommodation contribution."},
+  "howToApply": {"fr": "Candidature en ligne sur la plateforme Stipendium Hungaricum, et auprès de l'autorité marocaine responsable.", "en": "Apply online on the Stipendium Hungaricum platform and to the responsible Moroccan authority."},
+  "officialUrl": "https://stipendiumhungaricum.hu/apply/",
+  "support": {"amount": {"min": 43700, "max": 43700, "currency": "HUF", "per": "month"}, "covers": ["living"]},
+  "deadline": "2026-01-15",
+  "documents": null,
+  "evidence": {
+    "eligibility": [
+      {"url": "https://stipendiumhungaricum.hu/about/", "quote": "offers a wide range of courses for high-achieving international students with an excellent academic track record"},
+      {"url": "https://stipendiumhungaricum.hu/about/", "quote": "attracting tens of thousands of international students each year"},
+      {"url": "https://stipendiumhungaricum.hu/wp-content/uploads/2025/10/BA_MA_OTM_Call_for_Applications_2026_27.pdf", "quote": "Kingdom of Cambodia, Kingdom of Morocco, Kingdom of Thailand"}
+    ],
+    "level": [
+      {"url": "https://stipendiumhungaricum.hu/partners/", "quote": "Full degree bachelor studies: in the fields of Agricultural Sciences, Arts and Humanities, Social Sciences, Computer Science and Information Technology, Legal Science, Economic Science, Engineering Science, Health Science, Political Science and Public Governance, Sport Science, Natural Science, Arts and Art Education agreed upon by the Participants in accordance with the relevant Hungarian legal regulations"}
+    ],
+    "support": [
+      {"url": "https://stipendiumhungaricum.hu/about/", "quote": "Monthly stipend – non-degree, bachelor’s, master’s and one-tier master’s level: monthly amount of HUF 43,700 (cca EUR 110) contribution to the living expenses in Hungary, for 12 months a year"}
+    ],
+    "deadline": [
+      {"url": "https://stipendiumhungaricum.hu/apply/", "quote": "15th January 2026, 2 pm (CET) APPLICATION DEADLINE"}
+    ],
+    "howToApply": [
+      {"url": "https://stipendiumhungaricum.hu/apply/", "quote": "All applications shall be submitted through the online application system of Tempus Public Foundation."}
+    ]
+  }
+}

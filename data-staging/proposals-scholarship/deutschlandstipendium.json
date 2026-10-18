@@ -1,0 +1,68 @@
+{
+  "slug": "deutschlandstipendium",
+  "name": "Deutschlandstipendium",
+  "provider": "Deutschlandstipendium (Bundesministerium für Forschung, Technologie und Raumfahrt, with the universities and private sponsors)",
+  "destinations": [
+    "DE"
+  ],
+  "eligibleNationalities": [],
+  "fields": [],
+  "summary": {
+    "fr": "Bourse au mérite de 300 € par mois (150 € de l'État fédéral, 150 € de parrains privés), attribuée par les universités qui participent au programme.",
+    "en": "Merit scholarship of EUR 300 a month (EUR 150 from the federal government, EUR 150 from private sponsors), awarded by the universities that take part."
+  },
+  "howToApply": {
+    "fr": "Candidatez directement auprès de votre université, selon ses critères, ses pièces et ses dates.",
+    "en": "Apply directly to your university, following its criteria, documents and dates."
+  },
+  "officialUrl": "https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html",
+  "support": {
+    "amount": {
+      "min": 300,
+      "max": 300,
+      "currency": "EUR",
+      "per": "month"
+    },
+    "covers": []
+  },
+  "deadline": null,
+  "documents": null,
+  "evidence": {
+    "eligibility": [
+      {
+        "url": "https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html",
+        "quote": "First- and higher-semester students of all nationalities can apply directly to their university"
+      },
+      {
+        "url": "https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html",
+        "quote": "financial and non-material support to high-achieving and committed students from all over the world"
+      }
+    ],
+    "level": [
+      {
+        "url": "https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html",
+        "quote": "The Deutschlandstipendium supports highly talented students at all participating universities in Germany."
+      },
+      {
+        "url": "https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html",
+        "quote": "First- and higher-semester students of all nationalities can apply directly to their university"
+      },
+      {
+        "url": "https://www.deutschlandstipendium.de/deutschlandstipendium/de/studierende/haeufig-gestellte-fragen/haeufig-gestellte-fragen_node.html",
+        "quote": "Grundsätzlich ist jedes Studium an einer staatlichen oder staatlich anerkannten Hochschule förderungsfähig."
+      }
+    ],
+    "support": [
+      {
+        "url": "https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html",
+        "quote": "300 euros per month for international top-class talent"
+      }
+    ],
+    "howToApply": [
+      {
+        "url": "https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html",
+        "quote": "The Deutschlandstipendium is awarded by the universities. Applicants must meet the requirements of the individual institutions."
+      }
+    ]
+  }
+}
