@@ -128,9 +128,6 @@ sources:
   page-1:
     url: https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/803/
     last_verified_at: 2026-10-09
-  page-4:
-    url: https://www.uni-assist.de/en/tools/info-country-by-country/details-country/country/ma/
-    last_verified_at: 2026-10-09
   page-5:
     url: https://www.hs-heilbronn.de/en/application-for-international-applicants-2628bd72c149a41d
     last_verified_at: 2026-10-10
