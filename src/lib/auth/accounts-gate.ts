@@ -41,10 +41,10 @@ export function accountsOffResponse(request: Request, basePath: string): Respons
 export function accountsGate(): BetterAuthPlugin {
   return {
     id: "accounts-gate",
-    onRequest: async (request, context) => {
+    onRequest: async (request) => {
       if (accountsEnabled()) return;
       return {
-        response: accountsOffResponse(request, new URL(context.baseURL).pathname),
+        response: accountsOffResponse(request, AUTH_BASE_PATH),
       };
     },
   };
