@@ -15,7 +15,7 @@ summary:
   ar:
     text: Opleiding tot Fysiotherapeut (Physiotherapy), Hogeschool Rotterdam (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
     status: draft
-officialUrl: https://www.hogeschoolrotterdam.nl/globalassets/documenten/hogeschool/publicaties/hogeschoolgidsen/hogeschoolgids-bacheloropleidingen-ivg-2020-2021.pdf
+officialUrl: https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/fysiotherapie/voltijd/
 durationYears:
   value: null
   source: programme
@@ -59,8 +59,8 @@ requirements:
 scholarships: []
 sources:
   programme:
-    url: https://www.hogeschoolrotterdam.nl/globalassets/documenten/hogeschool/publicaties/hogeschoolgidsen/hogeschoolgids-bacheloropleidingen-ivg-2020-2021.pdf
-    last_verified_at: 2026-10-12
+    url: https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/fysiotherapie/voltijd/
+    last_verified_at: 2026-10-17
   page-2:
     url: https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/
     last_verified_at: 2026-10-12
