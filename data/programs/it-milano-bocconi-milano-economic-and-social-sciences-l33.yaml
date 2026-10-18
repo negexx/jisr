@@ -33,8 +33,11 @@ tuition:
   source: page-1
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2027-01-26
+  source: page-3
   info_kind: official
 applicationChannel:
   value: null
@@ -96,3 +99,6 @@ sources:
   page-2:
     url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admissions
     last_verified_at: 2026-10-08
+  page-3:
+    url: https://www.unibocconi.it/en/programs/bachelor-science/application-and-admission/selection-process
+    last_verified_at: 2026-10-18

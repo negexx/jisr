@@ -33,8 +33,11 @@ tuition:
   source: page-1
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: 2026-01-22
+      applicationDeadline: 2026-05-22
+  source: page-7
   info_kind: official
 applicationChannel:
   value: it-universitaly
@@ -133,3 +136,6 @@ sources:
   page-6:
     url: https://www.polito.it/en/education/applying-studying-graduating/admissions-and-enrolment/bachelor-s-degree-programmes/applicants-with-a-non-italian-qualification
     last_verified_at: 2026-10-12
+  page-7:
+    url: https://www.polito.it/sites/default/files/2025-12/Call%20for%20applications%20for%20admissions%20Engineering%20_%20LP%202026-27.pdf
+    last_verified_at: 2026-10-18

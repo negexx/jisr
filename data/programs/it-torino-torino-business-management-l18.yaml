@@ -33,8 +33,11 @@ tuition:
   source: page-5
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: 2026-02-19
+      applicationDeadline: 2026-04-15
+  source: page-6
   info_kind: official
 applicationChannel:
   value: it-universitaly
@@ -103,3 +106,6 @@ sources:
   page-4:
     url: https://en.unito.it/studying-unito/international-degree-seeking-students/required-documents-international-students
     last_verified_at: 2026-10-12
+  page-6:
+    url: https://en.unito.it/studying-unito/international-degree-seeking-students/application-international-students
+    last_verified_at: 2026-10-18
