@@ -26,8 +26,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 1920000
+    currency: EUR
+    period: year
+  source: page-1
   info_kind: official
 intakes:
   value: null
@@ -54,3 +57,6 @@ sources:
   page-2:
     url: https://www.universiteitleiden.nl/en/education/admission-and-application/bachelors/application-procedure
     last_verified_at: 2026-10-12
+  page-1:
+    url: https://www.universiteitleiden.nl/onderwijs/toelating-en-aanmelding/bachelors/collegegeld
+    last_verified_at: 2026-10-18
