@@ -22,11 +22,12 @@ const nextConfig: NextConfig = {
     // 404 page, with no lang and in English only.
     globalNotFound: true,
   },
-  // The route handlers' output-file traces pick up test-only fixtures under tests/ (nothing in the
-  // app reads them at runtime). `.vercelignore` excludes tests/, so `vercel deploy --prebuilt` cannot
-  // upload them and the deployment fails with `ENOENT: readlink`. Keep tests/ out of the traces.
+  // The route handlers' output-file traces pick up files nothing imports at runtime: test-only
+  // fixtures under tests/ and the audit captures under docs/. `.vercelignore` excludes both
+  // folders, so `vercel deploy --prebuilt` cannot upload them and the deployment fails with
+  // `ENOENT: readlink`. Keep them out of the traces.
   outputFileTracingExcludes: {
-    "*": ["tests/**"],
+    "*": ["tests/**", "docs/**"],
   },
   async headers() {
     return [...SNAPSHOT_HEADER_RULES, ...securityHeaderRules(siteEnv.indexable)];
