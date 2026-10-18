@@ -1666,6 +1666,15 @@ describe("runVerify --revise", () => {
     expect(at(staged, "_review.notes")).toMatch(/kept:.*documents/);
   });
 
+  it("does not list an optional gated field the record never had as kept", async () => {
+    await writeExisting();
+    await writeFile(file, JSON.stringify(raw({ name: "Aurora 2027" })));
+    const out = await runVerify({ file, dryRun: false, revise: true }, deps());
+    expect(out.ok).toBe(true);
+    const staged = await readStaged();
+    expect(at(staged, "_review.notes")).not.toMatch(/kept:.*recurringDeadline/);
+  });
+
   it("a revision that proves a recurring deadline clears the dated one", async () => {
     await writeExisting();
     await writeFile(

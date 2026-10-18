@@ -961,7 +961,8 @@ export function reviseScholarship(
     changed.push("institutions");
   for (const field of REVISED_GATED) {
     if (!established.has(field)) {
-      kept.push(field);
+      // An unproven optional field the record never had stays absent, so it is not "kept".
+      if (Object.hasOwn(existing, field)) kept.push(field);
       continue;
     }
     const value =

@@ -2,7 +2,7 @@ import type { IsoDate } from "./dates";
 import type { Cefr, CountryCode, Currency, InfoKind, LanguageCode, Slug } from "./primitives";
 import type { CostAmount, LivingCostCategory } from "./records/cost-profile";
 import type { GradeConversionMethod } from "./records/grade-conversion";
-import type { Intake, Tuition } from "./records/program";
+import type { Intake, MonthDay, Tuition } from "./records/program";
 import type { ScholarshipSupport } from "./records/scholarship";
 import type { Coverage } from "./rules";
 import type { StalenessClass } from "./staleness";
@@ -149,6 +149,8 @@ export type Scholarship = {
   summary: TextKey;
   support: ResolvedFact<ScholarshipSupport>;
   deadline: ResolvedFact<IsoDate>;
+  // Present only when the source states a yearless deadline, so a record without it keeps its snapshot bytes.
+  recurringDeadline?: ResolvedFact<MonthDay>;
   requirements: ResolvedRequirements;
   documents: ResolvedFact<ResolvedDocument[]>;
   howToApply: TextKey;

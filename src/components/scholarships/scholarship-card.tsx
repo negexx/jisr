@@ -9,7 +9,7 @@ import { ExternalLink } from "@/components/external-link";
 import { LocalizedDataText } from "@/components/localized-data-text";
 import { sameSource } from "@/components/program/program-sections";
 import { SourceBadge } from "@/components/source-badge";
-import { formatDate, formatMoneyRange } from "@/lib/format";
+import { formatDate, formatMoneyRange, formatMonthDay } from "@/lib/format";
 import { formatList, type Params } from "@/lib/journey/reasons";
 import { describeRule } from "@/lib/journey/requirements";
 import type { ScholarshipEntry } from "@/lib/scholarships/sections";
@@ -52,8 +52,11 @@ export function ScholarshipCard({
     locale,
   );
   const deadline = scholarship.deadline.value;
+  const recurring = scholarship.recurringDeadline ?? null;
+  const recurringDate = recurring?.value ?? null;
   // One badge when both facts share a source, date, kind and class: two identical badges would only add noise.
   const sharedSource = sameSource(scholarship.support, scholarship.deadline);
+  const sharedRecurring = recurring !== null && sameSource(scholarship.support, recurring);
   const countryNames = (codes: readonly string[]) =>
     formatList(
       codes.map((code) => {
@@ -135,9 +138,7 @@ export function ScholarshipCard({
       </div>
 
       <div data-testid="scholarship-deadline" className="flex flex-col gap-1.5">
-        {deadline === null ? (
-          <ToCheck>{t("deadline.unknown")}</ToCheck>
-        ) : (
+        {deadline !== null ? (
           <>
             <p className="text-base">
               <bdi>
@@ -153,6 +154,21 @@ export function ScholarshipCard({
               />
             )}
           </>
+        ) : recurringDate !== null && recurring !== null ? (
+          // no year is published: usual guidance, never a <time> or an upcoming date (ADR 0009)
+          <>
+            <p className="text-base">
+              <bdi>{t("deadline.recurring", { date: formatMonthDay(recurringDate) })}</bdi>
+            </p>
+            {sharedRecurring && !(amount === null && covers === null) ? null : (
+              <SourceBadge
+                meta={recurring}
+                report={{ record: `scholarships/${scholarship.slug}`, path: "recurringDeadline" }}
+              />
+            )}
+          </>
+        ) : (
+          <ToCheck>{t("deadline.unknown")}</ToCheck>
         )}
       </div>
 

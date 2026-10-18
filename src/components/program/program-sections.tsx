@@ -529,8 +529,11 @@ function ScholarshipItem({
     locale,
   );
   const deadline = scholarship.deadline.value;
+  const recurring = scholarship.recurringDeadline ?? null;
+  const recurringDate = recurring?.value ?? null;
+  const shownDeadline = deadline === null && recurring !== null ? recurring : scholarship.deadline;
   // One badge when both facts share a source, date and kind: two identical badges would only add noise.
-  const sharedSource = sameSource(scholarship.support, scholarship.deadline);
+  const sharedSource = sameSource(scholarship.support, shownDeadline);
 
   return (
     <li
@@ -568,12 +571,14 @@ function ScholarshipItem({
       </p>
       {covers === null ? null : <p className="text-base">{t("covers", { items: covers })}</p>}
       <p className="text-base">
-        {deadline === null ? (
-          <span className="text-muted-foreground">{t("deadlineUnknown")}</span>
-        ) : (
+        {deadline !== null ? (
           <bdi>
             <time dateTime={deadline}>{t("deadline", { date: formatDate(deadline, locale) })}</time>
           </bdi>
+        ) : recurringDate !== null ? (
+          <bdi>{t("recurring", { date: formatMonthDay(recurringDate) })}</bdi>
+        ) : (
+          <span className="text-muted-foreground">{t("deadlineUnknown")}</span>
         )}
       </p>
       <ExternalLink href={scholarship.officialUrl} className="min-h-11 w-fit text-base md:min-h-8">
@@ -585,8 +590,11 @@ function ScholarshipItem({
       />
       {sharedSource ? null : (
         <SourceBadge
-          meta={scholarship.deadline}
-          report={{ record: `scholarships/${scholarship.slug}`, path: "deadline" }}
+          meta={shownDeadline}
+          report={{
+            record: `scholarships/${scholarship.slug}`,
+            path: deadline === null && recurring !== null ? "recurringDeadline" : "deadline",
+          }}
         />
       )}
     </li>
