@@ -670,3 +670,34 @@ describe("intake recurringDeadline", () => {
     ).toBe(false);
   });
 });
+
+describe("scholarship recurringDeadline", () => {
+  const { schema } = COLLECTIONS.scholarships;
+  const recurring = F({ month: 7, day: 15 });
+
+  it("accepts a yearless deadline as a volatile fact when there is no dated one", () => {
+    const parsed = schema.parse(scholarship({ deadline: F(null), recurringDeadline: recurring }));
+    expect(parsed.recurringDeadline?.value).toEqual({ month: 7, day: 15 });
+    expect(parsed.recurringDeadline?.class).toBe("volatile");
+  });
+
+  it("still accepts a record without the field", () => {
+    expect(schema.safeParse(scholarship()).success).toBe(true);
+  });
+
+  it("rejects a record that has both a dated and a recurring deadline", () => {
+    expect(schema.safeParse(scholarship({ recurringDeadline: recurring })).success).toBe(false);
+  });
+
+  it.each([
+    [{ month: 2, day: 30 }],
+    [{ month: 13, day: 1 }],
+    [{ month: 4, day: 31 }],
+    [{ month: 0, day: 5 }],
+    [{ month: 7, day: 15, year: 2026 }],
+  ])("rejects %j", (value) => {
+    expect(
+      schema.safeParse(scholarship({ deadline: F(null), recurringDeadline: F(value) })).success,
+    ).toBe(false);
+  });
+});

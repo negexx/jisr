@@ -47,6 +47,8 @@ const pages: Record<string, string> = {
   "https://www.daad.de/en/aurora":
     "Applicants from non-EU countries, including Morocco, holding a school-leaving certificate may apply.",
 };
+const RECUR = `${HOME}/recurring`;
+pages[RECUR] = "Applications from non-EU students close on 15 January.";
 const getText = async (url: string) => {
   const text = pages[url];
   if (text === undefined) throw new Error("404");
@@ -775,6 +777,76 @@ describe("deadline: it must name international applicants", () => {
     if (!result.ok) return;
     expect(at(result.record, "deadline.value")).toBeNull();
     expect(result.notes.join(" ")).toMatch(/deadline.*international/i);
+  });
+});
+
+// ADR 0009 for scholarships: a deadline the source states with a day and a month but no year is kept
+// as a recurring one, never turned into a guessed dated deadline.
+describe("recurring deadline", () => {
+  const yearless = {
+    url: RECUR,
+    quote: "Applications from non-EU students close on 15 January",
+  };
+
+  it("keeps a yearless deadline as recurringDeadline without a dated deadline", async () => {
+    const result = await verifyScholarship(
+      proposal({
+        deadline: null,
+        recurringDeadline: { month: 1, day: 15 },
+        evidence: evidence({ deadline: [yearless] }),
+      }),
+      getText,
+    );
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    expect(at(result.record, "recurringDeadline.value")).toEqual({ month: 1, day: 15 });
+    expect(at(result.record, "deadline.value")).toBeNull();
+    expect(result.evidence.some((e) => e.fact === "recurringDeadline")).toBe(true);
+    expect(validAfterReview(result.record)).toBe(true);
+  });
+
+  it("does not keep a recurring deadline when the quote states a year", async () => {
+    const result = await verifyScholarship(
+      proposal({
+        deadline: null,
+        recurringDeadline: { month: 3, day: 15 },
+        evidence: evidence({
+          deadline: [
+            { url: RULES, quote: "Applications from non-EU students close on 15 March 2027" },
+          ],
+        }),
+      }),
+      getText,
+    );
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    expect(at(result.record, "recurringDeadline")).toBeUndefined();
+    expect(result.notes.join(" ")).toMatch(/year|dated/i);
+  });
+
+  it("keeps nothing when no accepted quote supports the recurring deadline", async () => {
+    const result = await verifyScholarship(
+      proposal({
+        deadline: null,
+        recurringDeadline: { month: 1, day: 15 },
+        evidence: evidence({ deadline: undefined }),
+      }),
+      getText,
+    );
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    expect(at(result.record, "recurringDeadline")).toBeUndefined();
+    expect(result.notes.join(" ")).toMatch(/recurringDeadline/);
+  });
+
+  it("refuses a proposal that carries both a dated and a recurring deadline", () => {
+    expect(() =>
+      proposal({ deadline: "2027-03-15", recurringDeadline: { month: 1, day: 15 } }),
+    ).toThrow();
+  });
+
+  it("refuses a recurring date that does not exist", () => {
+    expect(() => proposal({ deadline: null, recurringDeadline: { month: 2, day: 30 } })).toThrow();
   });
 });
 
@@ -1592,6 +1664,44 @@ describe("runVerify --revise", () => {
     expect(at(staged, "documents.value")).toEqual(at(before, "documents.value"));
     expect(at(staged, "_review.notes")).toMatch(/kept:.*deadline/);
     expect(at(staged, "_review.notes")).toMatch(/kept:.*documents/);
+  });
+
+  it("a revision that proves a recurring deadline clears the dated one", async () => {
+    await writeExisting();
+    await writeFile(
+      file,
+      JSON.stringify(
+        raw({
+          name: "Aurora 2027",
+          deadline: null,
+          recurringDeadline: { month: 1, day: 15 },
+          evidence: evidence({
+            deadline: [
+              { url: RECUR, quote: "Applications from non-EU students close on 15 January" },
+            ],
+          }),
+        }),
+      ),
+    );
+    const out = await runVerify({ file, dryRun: false, revise: true }, deps());
+    expect(out.ok).toBe(true);
+    const staged = await readStaged();
+    expect(at(staged, "recurringDeadline.value")).toEqual({ month: 1, day: 15 });
+    expect(at(staged, "deadline.value")).toBeNull();
+    const { _review: _dropped, ...record } = staged;
+    expect(validAfterReview(record)).toBe(true);
+  });
+
+  it("a revision that proves a dated deadline drops a kept recurring one", async () => {
+    await writeExisting({ deadline: null, recurringDeadline: { month: 1, day: 15 } });
+    await writeFile(file, JSON.stringify(raw({ name: "Aurora 2027" })));
+    const out = await runVerify({ file, dryRun: false, revise: true }, deps());
+    expect(out.ok).toBe(true);
+    const staged = await readStaged();
+    expect(at(staged, "deadline.value")).toBe("2027-03-15");
+    expect(at(staged, "recurringDeadline")).toBeUndefined();
+    const { _review: _dropped, ...record } = staged;
+    expect(validAfterReview(record)).toBe(true);
   });
 
   it("does not apply a proposal fact that no accepted quote supports", async () => {
