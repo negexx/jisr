@@ -17,12 +17,13 @@ summary:
     status: draft
 officialUrl: https://www.scuolapsb.unina.it/en/degrees/
 durationYears:
-  value: null
+  value: 3
   source: programme
   info_kind: official
 teachingLanguages:
-  value: null
-  source: programme
+  value:
+    - en
+  source: page-1
   info_kind: official
 tuition:
   value: null
@@ -86,3 +87,6 @@ sources:
   page-2:
     url: https://www.international.unina.it/education/admission-regulation/
     last_verified_at: 2026-10-12
+  page-1:
+    url: https://www.dipartimentodibiologia.unina.it/corsi-di-laurea/biology-for-one-health/
+    last_verified_at: 2026-10-18

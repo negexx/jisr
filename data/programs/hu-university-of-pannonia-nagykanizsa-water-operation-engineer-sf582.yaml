@@ -37,58 +37,22 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: hu-university-direct
+  source: page-3
   info_kind: official
 documents:
   value:
-    - slug: valid-passport
+    - slug: school-leaving-certificate
       name:
         fr:
-          text: Passeport en cours de validité
+          text: Diplôme de fin d'études secondaires
           status: draft
         en:
-          text: Valid passport
+          text: School-leaving certificate
           status: draft
       translationRequired: null
-    - slug: certificate-of-admission
-      name:
-        fr:
-          text: Certificat d’admission délivré par l’établissement d’enseignement
-          status: draft
-        en:
-          text: Certificate of admission issued by the educational institution
-          status: draft
-      translationRequired: null
-    - slug: proof-of-tuition-payment
-      name:
-        fr:
-          text: Preuve du paiement des frais de scolarité
-          status: draft
-        en:
-          text: Proof of payment of tuition fees
-          status: draft
-      translationRequired: null
-    - slug: proof-of-means-of-subsistence
-      name:
-        fr:
-          text: Preuve de ressources suffisantes pour la subsistance et le séjour
-          status: draft
-        en:
-          text: Proof of sufficient means of subsistence
-          status: draft
-      translationRequired: null
-    - slug: comprehensive-health-insurance
-      name:
-        fr:
-          text: Assurance maladie couvrant l’ensemble des soins de santé
-          status: draft
-        en:
-          text: Comprehensive health insurance covering all healthcare services
-          status: draft
-      translationRequired: null
-  source: page-1
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
   source: programme
@@ -126,6 +90,6 @@ sources:
   page-2:
     url: https://tempus.tpf.hu/studyfinder/index/show/582
     last_verified_at: 2026-10-05
-  page-1:
-    url: https://oif.gov.hu/factsheets/residence-of-the-student-pupil
-    last_verified_at: 2026-10-10
+  page-3:
+    url: https://studyinhungary.hu/study-in-hungary/menu/studying-in-hungary/application-timeline.html
+    last_verified_at: 2026-10-18

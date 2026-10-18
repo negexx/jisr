@@ -26,7 +26,10 @@ teachingLanguages:
   source: page-2
   info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 350000
+    currency: EUR
+    period: semester
   source: programme
   info_kind: official
 intakes:
@@ -34,12 +37,66 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: hu-university-direct
+  source: page-1
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+    - slug: high-school-diploma
+      name:
+        fr:
+          text: Diplôme d'études secondaires
+          status: draft
+        en:
+          text: High School Diploma
+          status: draft
+      translationRequired: null
+    - slug: certificate-of-subjects-and-grades
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Certificate listing subjects and grades
+          status: draft
+      translationRequired: null
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation Letter
+          status: draft
+      translationRequired: null
+    - slug: statement-of-representation
+      name:
+        fr:
+          text: Déclaration de représentation
+          status: draft
+        en:
+          text: Statement of Representation
+          status: draft
+      translationRequired: null
+  source: page-2
   info_kind: official
 requirements:
   coverage: partial
@@ -76,3 +133,6 @@ sources:
   page-2:
     url: https://apply.u-szeged.hu/en_GB/courses/course/269-bscphysio-physiotherapist
     last_verified_at: 2026-10-12
+  page-1:
+    url: https://studyinhungary.hu/study-in-hungary/menu/studying-in-hungary/application-timeline.html
+    last_verified_at: 2026-10-18

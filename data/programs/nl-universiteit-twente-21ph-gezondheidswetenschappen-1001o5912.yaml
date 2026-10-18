@@ -17,7 +17,7 @@ summary:
     status: draft
 officialUrl: https://www.utwente.nl/onderwijs/bachelor/opleidingen/gezondheidswetenschappen/
 durationYears:
-  value: null
+  value: 3
   source: programme
   info_kind: official
 teachingLanguages:
@@ -26,11 +26,20 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 1302000
+    currency: EUR
+    period: year
+  source: page-1
   info_kind: official
 intakes:
-  value: null
+  value:
+    - startDate: 2027-09-01
+      applicationOpens: null
+      applicationDeadline: null
+    - startDate: 2028-09-01
+      applicationOpens: null
+      applicationDeadline: null
   source: programme
   info_kind: official
 applicationChannel:
@@ -54,3 +63,6 @@ sources:
   page-2:
     url: https://www.utwente.nl/onderwijs/bachelor/toelating-en-inschrijving/aanmelden/
     last_verified_at: 2026-10-12
+  page-1:
+    url: https://www.utwente.nl/onderwijs/student-services/ik-word-student/geldzaken/
+    last_verified_at: 2026-10-18

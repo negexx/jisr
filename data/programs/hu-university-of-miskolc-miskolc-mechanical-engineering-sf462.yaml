@@ -17,7 +17,7 @@ summary:
     status: draft
 officialUrl: https://tempus.tpf.hu/studyfinder/index/show/462
 durationYears:
-  value: null
+  value: 3.5
   source: programme
   info_kind: official
 teachingLanguages:
@@ -34,8 +34,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: hu-university-direct
+  source: page-2
   info_kind: official
 documents:
   value:
@@ -127,3 +127,6 @@ sources:
   page-1:
     url: https://oif.gov.hu/factsheets/residence-of-the-student-pupil
     last_verified_at: 2026-10-10
+  page-2:
+    url: https://studyinhungary.hu/study-in-hungary/menu/studying-in-hungary/application-timeline.html
+    last_verified_at: 2026-10-18

@@ -37,12 +37,30 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: de-university-direct
+  source: page-1
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -75,3 +93,6 @@ sources:
   programme:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11104/
     last_verified_at: 2026-10-12
+  page-1:
+    url: https://www.hs-fresenius.com/application-process/
+    last_verified_at: 2026-10-18

@@ -26,7 +26,10 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 380000
+    currency: EUR
+    period: semester
   source: programme
   info_kind: official
 intakes:
@@ -38,7 +41,61 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary School Leaving Certificate
+          status: draft
+      translationRequired: null
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Certificat de langue anglaise
+          status: draft
+        en:
+          text: English language certificate
+          status: draft
+      translationRequired: null
+    - slug: medical-report
+      name:
+        fr:
+          text: Rapport médical
+          status: draft
+        en:
+          text: Medical report
+          status: draft
+      translationRequired: null
+    - slug: photograph
+      name:
+        fr:
+          text: Photographie
+          status: draft
+        en:
+          text: Photograph
+          status: draft
+      translationRequired: null
+    - slug: passport-id-copy
+      name:
+        fr:
+          text: Copie du passeport / de la carte d'identité
+          status: draft
+        en:
+          text: Copy of Passport/ID card
+          status: draft
+      translationRequired: null
+    - slug: payment-certificate
+      name:
+        fr:
+          text: Certificat de paiement
+          status: draft
+        en:
+          text: Payment Certificate
+          status: draft
+      translationRequired: null
   source: programme
   info_kind: official
 requirements:

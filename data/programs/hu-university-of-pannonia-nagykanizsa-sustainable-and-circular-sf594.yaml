@@ -37,8 +37,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: hu-university-direct
+  source: page-1
   info_kind: official
 documents:
   value:
@@ -93,3 +93,6 @@ sources:
   page-2:
     url: https://tempus.tpf.hu/studyfinder/index/show/594
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://studyinhungary.hu/study-in-hungary/menu/studying-in-hungary/application-timeline.html
+    last_verified_at: 2026-10-18

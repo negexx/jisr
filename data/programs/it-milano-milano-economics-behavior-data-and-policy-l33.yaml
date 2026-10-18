@@ -46,56 +46,53 @@ applicationChannel:
   info_kind: official
 documents:
   value:
-    - slug: secondary-school-diploma
+    - slug: school-leaving-certificate
       name:
         fr:
-          text: Titre final des études secondaires obtenu avec au moins 12 ans de scolarité
+          text: Diplôme de fin d'études secondaires
           status: draft
         en:
-          text: Final secondary school qualification obtained after at least 12 years of schooling
-          status: draft
-        ar:
-          text: الشهادة النهائية للدراسة الثانوية المحصَّل عليها بعد 12 سنة دراسية على الأقل
+          text: High school diploma
           status: draft
       translationRequired: null
-    - slug: cimea-statement-or-declaration-of-value
+    - slug: certificate-of-academic-eligibility
       name:
         fr:
-          text: Attestation CIMEA ou déclaration de valeur, si l’établissement la demande
+          text: Certificat d'aptitude académique
           status: draft
         en:
-          text: CIMEA statement or Declaration of value, if the institution asks for it
-          status: draft
-        ar:
-          text: إفادة CIMEA أو بيان القيمة، إذا طلبته المؤسسة
+          text: Certificate of academic eligibility
           status: draft
       translationRequired: null
-    - slug: university-entrance-aptitude-certificate
+    - slug: statement-of-comparability-cimea
       name:
         fr:
-          text: Certificat de réussite à l’épreuve d’aptitude académique d’accès à l’université du pays d’origine, s’il en existe une
+          text: Déclaration de comparabilité (CIMEA) ou Déclaration de valeur
           status: draft
         en:
-          text: Certificate of passing the academic aptitude test for university entrance in the home country, where one exists
-          status: draft
-        ar:
-          text: شهادة النجاح في اختبار الكفاءة الأكاديمية للولوج إلى الجامعة في بلد المنشأ، إن وُجد هذا الاختبار
+          text: Statement of Comparability issued by CIMEA or Declaration of Value
           status: draft
       translationRequired: null
-    - slug: italian-translation-of-documents
+    - slug: italian-tax-code
       name:
         fr:
-          text: Traductions en italien des documents ci-dessus, si l’établissement les demande
+          text: Code fiscal italien
           status: draft
         en:
-          text: Italian translations of the documents above, where the institution asks for them
-          status: draft
-        ar:
-          text: ترجمات الوثائق أعلاه إلى الإيطالية، إذا طلبتها المؤسسة
+          text: Italian tax code
           status: draft
       translationRequired: null
-  source: page-3
-  info_kind: guidance
+    - slug: residence-permit
+      name:
+        fr:
+          text: Récépissé de demande de permis de séjour ou titre de séjour valide
+          status: draft
+        en:
+          text: Receipt of the residence permit application or a valid residence permit
+          status: draft
+      translationRequired: null
+  source: page-4
+  info_kind: official
 requirements:
   coverage: partial
   source: programme
@@ -131,6 +128,6 @@ sources:
   page-2:
     url: https://www.unimi.it/en/study/bachelor-and-master-study/fees-and-how-pay-them/fees-2026/2027
     last_verified_at: 2026-10-08
-  page-3:
-    url: https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf
-    last_verified_at: 2026-10-09
+  page-4:
+    url: https://apps.unimi.it/files/bandi/bando-2027-1-economics-behavior-data-and-policy-(classe-l-33-r).pdf?24-APR-26=
+    last_verified_at: 2026-10-18

@@ -114,9 +114,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11217/
     last_verified_at: 2026-10-01
-  page-1:
-    url: https://www.uni-assist.de/en/tools/info-country-by-country/details-country/country/ma/
-    last_verified_at: 2026-10-09
   page-2:
     url: https://www.hs-osnabrueck.de/studium/rund-ums-studium/bewerbung/bewerbung-mit-internationalen-zeugnissen/
     last_verified_at: 2026-10-12

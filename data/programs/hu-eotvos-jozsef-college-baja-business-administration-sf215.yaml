@@ -1,4 +1,6 @@
 slug: hu-eotvos-jozsef-college-baja-business-administration-sf215
+formerSlugs:
+  - hu-eotvos-jozsef-college-baja-business-administration-sf216
 institution: hu-eotvos-jozsef-college-baja
 country: HU
 city: baja
@@ -17,7 +19,7 @@ summary:
     status: draft
 officialUrl: https://ejf.hu/en/business-and-management-ba
 durationYears:
-  value: null
+  value: 3.5
   source: programme
   info_kind: official
 teachingLanguages:
@@ -34,8 +36,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: hu-university-direct
+  source: page-1
   info_kind: official
 documents:
   value:
@@ -146,6 +148,20 @@ requirements:
         ar:
           text: مخصص شهري قدره 43 700 HUF للحاصلين على منحة Stipendium Hungaricum؛ ولا يغطي هذا المبلغ كامل تكاليف المعيشة.
           status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Passeport : doit être valable au moins 5 ans. Les documents peuvent être envoyés en copies scannées lisibles."
+          status: draft
+        en:
+          text: Passport must be valid for at least 5 years. Documents may be submitted as clear scanned copies.
+          status: draft
+        ar:
+          text: "جواز السفر: يجب أن يكون ساري المفعول 5 سنوات على الأقل. ويمكن إرسال الوثائق في شكل نسخ ممسوحة ضوئيًا وواضحة."
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -157,3 +173,6 @@ sources:
   page-3:
     url: https://ejf.hu/en/admission
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://studyinhungary.hu/study-in-hungary/menu/studying-in-hungary/application-timeline.html
+    last_verified_at: 2026-10-18

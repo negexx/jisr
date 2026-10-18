@@ -34,17 +34,59 @@ tuition:
   source: daad
   info_kind: official
 intakes:
-  value: null
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 12
+        day: 1
   source: daad
-  info_kind: guidance
+  info_kind: official
 applicationChannel:
   value: de-university-direct
   source: page-2
   info_kind: official
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: university-entrance-qualification
+      name:
+        fr:
+          text: Diplôme d'accès à l'université (certificat de fin d'études secondaires)
+          status: draft
+        en:
+          text: University entrance qualification
+          status: draft
+      translationRequired: null
+    - slug: identity-card-copy
+      name:
+        fr:
+          text: Copie de la carte d'identité
+          status: draft
+        en:
+          text: Copy of your identity card
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum vitae
+          status: draft
+        en:
+          text: Curriculum vitae
+          status: draft
+      translationRequired: null
+    - slug: proof-of-language-proficiency
+      name:
+        fr:
+          text: Preuve de compétence linguistique
+          status: draft
+        en:
+          text: Proof of language proficiency
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
   source: daad

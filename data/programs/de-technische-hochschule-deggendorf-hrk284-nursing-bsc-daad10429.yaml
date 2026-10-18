@@ -27,7 +27,10 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 50000
+    currency: EUR
+    period: semester
   source: programme
   info_kind: official
 intakes:
@@ -35,12 +38,93 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: de-university-direct
+  source: page-1
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+    - slug: german-language-certificate
+      name:
+        fr:
+          text: Certificat de langue allemande
+          status: draft
+        en:
+          text: German language certificate
+          status: draft
+      translationRequired: null
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Certificat de langue anglaise
+          status: draft
+        en:
+          text: English language certificate
+          status: draft
+      translationRequired: null
+    - slug: training-contract
+      name:
+        fr:
+          text: Contrat de formation
+          status: draft
+        en:
+          text: Training contract
+          status: draft
+      translationRequired: null
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+    - slug: university-entrance-qualification
+      name:
+        fr:
+          text: Certificat d'accès à l'université
+          status: draft
+        en:
+          text: University entrance qualification
+          status: draft
+      translationRequired: null
+    - slug: identity-card-copy
+      name:
+        fr:
+          text: Copie de la carte d'identité
+          status: draft
+        en:
+          text: Copy of identity card
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum vitae
+          status: draft
+        en:
+          text: Curriculum vitae
+          status: draft
+      translationRequired: null
+    - slug: proof-of-language-proficiency
+      name:
+        fr:
+          text: Preuve de compétence linguistique
+          status: draft
+        en:
+          text: Proof of language proficiency
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -102,3 +186,6 @@ sources:
   page-3:
     url: https://th-deg.de/en/apply
     last_verified_at: 2026-10-12
+  page-1:
+    url: https://ec.th-deg.de/Fakult%C3%A4ten/agw/nursing-b/FAQ_Nursing_2026_deutsch.pdf
+    last_verified_at: 2026-10-18

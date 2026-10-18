@@ -42,56 +42,35 @@ applicationChannel:
   info_kind: official
 documents:
   value:
-    - slug: secondary-school-diploma
+    - slug: identity-document-or-passport
       name:
         fr:
-          text: Titre final des études secondaires obtenu avec au moins 12 ans de scolarité
+          text: Document d'identité ou passeport
           status: draft
         en:
-          text: Final secondary school qualification obtained after at least 12 years of schooling
-          status: draft
-        ar:
-          text: الشهادة النهائية للدراسة الثانوية المحصَّل عليها بعد 12 سنة دراسية على الأقل
+          text: Identity document or passport
           status: draft
       translationRequired: null
-    - slug: cimea-statement-or-declaration-of-value
+    - slug: documentation-to-verify-educational-qualification
       name:
         fr:
-          text: Attestation CIMEA ou déclaration de valeur, si l’établissement la demande
+          text: Documentation nécessaire pour vérifier le titre d'études
           status: draft
         en:
-          text: CIMEA statement or Declaration of value, if the institution asks for it
-          status: draft
-        ar:
-          text: إفادة CIMEA أو بيان القيمة، إذا طلبته المؤسسة
+          text: documentation required to verify the educational qualification
           status: draft
       translationRequired: null
-    - slug: university-entrance-aptitude-certificate
+    - slug: school-report-cards
       name:
         fr:
-          text: Certificat de réussite à l’épreuve d’aptitude académique d’accès à l’université du pays d’origine, s’il en existe une
+          text: Bulletins scolaires
           status: draft
         en:
-          text: Certificate of passing the academic aptitude test for university entrance in the home country, where one exists
-          status: draft
-        ar:
-          text: شهادة النجاح في اختبار الكفاءة الأكاديمية للولوج إلى الجامعة في بلد المنشأ، إن وُجد هذا الاختبار
+          text: school report cards
           status: draft
       translationRequired: null
-    - slug: italian-translation-of-documents
-      name:
-        fr:
-          text: Traductions en italien des documents ci-dessus, si l’établissement les demande
-          status: draft
-        en:
-          text: Italian translations of the documents above, where the institution asks for them
-          status: draft
-        ar:
-          text: ترجمات الوثائق أعلاه إلى الإيطالية، إذا طلبتها المؤسسة
-          status: draft
-      translationRequired: null
-  source: page-2
-  info_kind: guidance
+  source: page-3
+  info_kind: official
 requirements:
   coverage: partial
   source: programme
@@ -119,6 +98,6 @@ sources:
   page-1:
     url: https://www.luiss.it/en/university/luiss-life/student-affairs-office/bachelors-degrees/single-contribution-deadlines-and-amounts
     last_verified_at: 2026-10-08
-  page-2:
-    url: https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf
-    last_verified_at: 2026-10-09
+  page-3:
+    url: https://www.luiss.it/en/orientation-and-admissions/admission-procedures/admission-to-bachelor's-degrees-and-the-single-cycle-law-degree/non-eu-schengen-students/direct-admission-to-bachelor's-and-master's-degrees-for-non-eu-students-with-certificates
+    last_verified_at: 2026-10-18
