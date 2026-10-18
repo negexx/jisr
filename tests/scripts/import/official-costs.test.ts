@@ -4,7 +4,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { parse } from "yaml";
+import { parse, stringify } from "yaml";
 
 import { CostProfileRecordSchema } from "@/data-schema/records/cost-profile";
 
@@ -17,11 +17,12 @@ import {
   type VerifyDeps,
   yearsIn,
 } from "../../../scripts/import/official-costs";
-import { stampVerified } from "../../../scripts/import/promote";
+import { promoteApproved, stampVerified } from "../../../scripts/import/promote";
 import { listStaged, stageFile } from "../../../scripts/import/staging";
 import { makePdf } from "./pdf-fixture";
 
 const COST_PAGE = "https://www.campusfrance.org/en/cost-of-living";
+const FOOD_2026 = "https://www.campusfrance.org/en/cost-of-living-2026";
 const FEES_PAGE = "https://www.service-public.gouv.fr/fees";
 const OLD_PAGE = "https://www.campusfrance.org/en/archive";
 const UNDATED_PAGE = "https://www.campusfrance.org/en/undated";
@@ -34,6 +35,7 @@ const HOUSING_PAGE = "https://www.campusfrance.org/en/housing";
 const pages: Record<string, string> = {
   [COST_PAGE]:
     "Campus France, updated in 2026. Food: about 300 EUR per month. Housing in a Crous residence costs between 400 EUR and 500 EUR per month. Local transport: 7,50 EUR per month.",
+  [FOOD_2026]: "Campus France, updated in 2026. Food: about 350 EUR per month.",
   [FEES_PAGE]: `The CVEC student contribution is 105 EUR per year. The student visa costs 1.200 EUR once. A set-up deposit of 150,000 HUF applies. ${PAGE_DATE}`,
   [OLD_PAGE]: "Study in Hungary 2019: housing costs 400 EUR per month.",
   [UNDATED_PAGE]: "Housing costs 400 EUR per month in a Crous residence.",
@@ -117,11 +119,15 @@ beforeEach(async () => {
 });
 afterEach(() => rm(root, { recursive: true, force: true }));
 
-async function run(proposal: unknown, deps: VerifyDeps = {}, options: { dryRun?: boolean } = {}) {
+async function run(
+  proposal: unknown,
+  deps: VerifyDeps = {},
+  options: { dryRun?: boolean; revise?: boolean } = {},
+) {
   const file = path.join(root, "proposal.json");
   await writeFile(file, JSON.stringify(proposal));
   return runVerify(
-    { file, dryRun: options.dryRun ?? false },
+    { file, dryRun: options.dryRun ?? false, revise: options.revise },
     {
       getText: serve(),
       sleep: async () => {},
@@ -1054,5 +1060,146 @@ describe("a duration cue never swallows the amount's own period", () => {
   ])("keeps %j (amount %s, proposed per %s)", async (quote, value, per) => {
     const outcome = await withQuote(value, quote, per);
     expect(outcome.ok).toBe(true);
+  });
+});
+
+describe("runVerify --revise", () => {
+  const dataFile = () => path.join(dataDir, "cost-profiles", "fr-official.yaml");
+  const stagedFile = () => stageFile("cost-profiles", "fr-official", stagingDir);
+  const readStaged = async (): Promise<Record<string, unknown>> =>
+    parse(await readFile(stagedFile(), "utf8")) as Record<string, unknown>;
+
+  async function existing(): Promise<Record<string, unknown>> {
+    const outcome = await run(proposalOf({ food: food(), housing: housing() }));
+    expect(outcome.ok).toBe(true);
+    const { _review: _dropped, ...record } = parse(await readFile(stagedFile(), "utf8")) as Record<
+      string,
+      unknown
+    >;
+    await mkdir(path.dirname(dataFile()), { recursive: true });
+    await writeFile(dataFile(), stringify(stampVerified(record, "2026-09-01")));
+    await rm(stagingDir, { recursive: true, force: true });
+    return record;
+  }
+  const updatedFood = () =>
+    food({
+      min: 350,
+      max: 350,
+      evidence: {
+        url: FOOD_2026,
+        quote: "Food: about 350 EUR per month.",
+        dateQuote: DATE_QUOTE,
+      },
+    });
+
+  it("without --revise still refuses a slug already in data/ and stages nothing", async () => {
+    await existing();
+    const outcome = await run(proposalOf({ food: food() }));
+    expect(outcome.ok).toBe(false);
+    expect(outcome.lines.join("\n")).toMatch(/already in/);
+    expect(existsSync(stagedFile())).toBe(false);
+  });
+
+  it("with --revise merges the kept lines over the existing profile and keeps the others", async () => {
+    const before = await existing();
+    const outcome = await run(proposalOf({ food: updatedFood() }), {}, { revise: true });
+    expect(outcome.ok).toBe(true);
+    const staged = await readStaged();
+    expect(staged._review).toMatchObject({
+      kind: "cost-profiles",
+      slug: "fr-official",
+      preparedBy: "assistant",
+      revises: true,
+    });
+    const lines = staged.lines as Record<string, { value: Record<string, number> }>;
+    expect(lines.food?.value).toMatchObject({ min: 35000, max: 35000 });
+    expect(lines.housing).toEqual((before.lines as Record<string, unknown>).housing);
+    expect((staged._review as Record<string, unknown>).notes).toMatch(/housing/);
+  });
+
+  it("does not apply a line whose quote is not on the page", async () => {
+    const before = await existing();
+    const outcome = await run(
+      proposalOf({
+        food: updatedFood(),
+        housing: housing({
+          min: 999,
+          max: 999,
+          evidence: {
+            url: COST_PAGE,
+            quote: "Housing is 999 EUR per month everywhere.",
+            dateQuote: DATE_QUOTE,
+          },
+        }),
+      }),
+      {},
+      { revise: true },
+    );
+    expect(outcome.ok).toBe(true);
+    const lines = (await readStaged()).lines as Record<string, unknown>;
+    expect(lines.housing).toEqual((before.lines as Record<string, unknown>).housing);
+    expect(outcome.lines.join("\n")).toMatch(/housing.*not.*on the page/i);
+  });
+
+  it("drops the promoted profile's audit row so the revision needs a fresh batch", async () => {
+    await existing();
+    await mkdir(stagingDir, { recursive: true });
+    await writeFile(
+      path.join(stagingDir, "AUDIT.csv"),
+      "key,batch,inSample,audited,outcome,notes\ncost-profiles/fr-official,b0,y,y,ok,\ncost-profiles/other,b0,y,y,ok,\n",
+    );
+    const outcome = await run(proposalOf({ food: updatedFood() }), {}, { revise: true });
+    expect(outcome.ok).toBe(true);
+    const audit = await readFile(path.join(stagingDir, "AUDIT.csv"), "utf8");
+    expect(audit).not.toContain("cost-profiles/fr-official");
+    expect(audit).toContain("cost-profiles/other");
+  });
+
+  it("refuses --revise when the slug is not in data/", async () => {
+    const outcome = await run(proposalOf({ food: food() }), {}, { revise: true });
+    expect(outcome.ok).toBe(false);
+    expect(outcome.lines.join("\n")).toMatch(/not in .*data/i);
+    expect(existsSync(stagedFile())).toBe(false);
+  });
+
+  it("writes nothing with --revise --dry-run", async () => {
+    await existing();
+    const outcome = await run(
+      proposalOf({ food: updatedFood() }),
+      {},
+      { revise: true, dryRun: true },
+    );
+    expect(outcome.ok).toBe(true);
+    expect(outcome.lines.join("\n")).toMatch(/dry run: nothing written/);
+    expect(existsSync(stagedFile())).toBe(false);
+  });
+
+  it("a staged revision promotes with --replace-revisions and a passed audit", async () => {
+    await existing();
+    const staged = await run(proposalOf({ food: updatedFood() }), {}, { revise: true });
+    expect(staged.ok).toBe(true);
+    const key = "cost-profiles/fr-official";
+    const row = { key, batch: "b1", inSample: true, audited: "y", outcome: "ok", notes: "" };
+    const refused = await promoteApproved({
+      approved: new Set([key]),
+      date: "2026-10-18",
+      stagingDir,
+      dataDir,
+      audit: [row],
+    });
+    expect(refused.promoted).toEqual([]);
+    const done = await promoteApproved({
+      approved: new Set([key]),
+      date: "2026-10-18",
+      stagingDir,
+      dataDir,
+      audit: [row],
+      replaceRevisions: true,
+    });
+    expect(done.promoted).toEqual([key]);
+    const promoted = parse(await readFile(dataFile(), "utf8")) as Record<string, unknown>;
+    const lines = promoted.lines as Record<string, { value: Record<string, number> }>;
+    expect(lines.food?.value).toMatchObject({ min: 35000, max: 35000 });
+    expect(promoted._review).toBeUndefined();
   });
 });

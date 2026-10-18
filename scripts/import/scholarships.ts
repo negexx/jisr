@@ -2,11 +2,13 @@ import { existsSync } from "node:fs";
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
+import { parse } from "yaml";
 import { z } from "zod";
 
 import { isValidIsoDate } from "@/data-schema/dates";
-import { SUPPORT_COVERS } from "@/data-schema/records/scholarship";
+import { ScholarshipRecordSchema, SUPPORT_COVERS } from "@/data-schema/records/scholarship";
 
+import { dropAuditRows } from "./audit";
 import { sameSite } from "./discover";
 import {
   amountMatches,
@@ -22,6 +24,7 @@ import {
   wholeWord,
 } from "./evidence";
 import { toMinor } from "./money";
+import { stampVerified } from "./promote";
 import { DocumentProposalSchema, type GetText } from "./proposals";
 import { DATA_DIR, STAGING_DIR, stageFile, toYaml } from "./staging";
 
@@ -753,6 +756,155 @@ export async function verifyScholarship(
   return { ok: true, record, evidence, notes: [...dropped, ...notes] };
 }
 
+// --- revision -------------------------------------------------------------------------------------
+// A revision of a scholarship already in data/ (W5). The proposal is verified as a new one would be
+// (same quotes, hosts, level and nationality rules), then only the facts it proved replace the record;
+// a silent or unproven fact keeps its existing value, and `_review.revises` is what
+// `data:promote --replace-revisions` requires. The revision still goes through the 100% audit.
+const asRecord = (value: unknown): Record<string, unknown> =>
+  typeof value === "object" && value !== null ? (value as Record<string, unknown>) : {};
+
+// A fresh LocalizedText wins for the locales it provides (fr, en); every locale it does not provide
+// (notably ar, which the proposal schema never carries) is preserved verbatim.
+function mergeLocalized(
+  existing: unknown,
+  fresh: unknown,
+): { value: Record<string, unknown>; kept: string[] } {
+  const before = asRecord(existing);
+  const after = asRecord(fresh);
+  const kept = Object.keys(before).filter((locale) => !(locale in after));
+  return { value: { ...before, ...after }, kept };
+}
+
+// The fresh list replaces the existing one, but a document whose slug is unchanged keeps the name
+// locales the fresh reading does not provide (notably ar).
+function mergeDocuments(existing: unknown, fresh: unknown, keptLocales: Set<string>): unknown {
+  const freshFact = asRecord(fresh);
+  const existingFact = asRecord(existing);
+  const existingItems: unknown[] = Array.isArray(existingFact.value) ? existingFact.value : [];
+  const previous = new Map<string, Record<string, unknown>>();
+  for (const item of existingItems) {
+    const doc = asRecord(item);
+    if (typeof doc.slug === "string") previous.set(doc.slug, doc);
+  }
+  const freshItems: unknown[] = Array.isArray(freshFact.value) ? freshFact.value : [];
+  const value = freshItems.map((item) => {
+    const doc = asRecord(item);
+    const prior = typeof doc.slug === "string" ? previous.get(doc.slug) : undefined;
+    if (prior === undefined) return item;
+    const merged = mergeLocalized(prior.name, doc.name);
+    for (const locale of merged.kept) keptLocales.add(locale);
+    return { ...doc, name: merged.value };
+  });
+  return { ...freshFact, value };
+}
+
+// Facts a verified proposal always states (without eligibility, level and howToApply it is rejected).
+const REVISED_ALWAYS = [
+  "name",
+  "provider",
+  "destinations",
+  "eligibleNationalities",
+  "fields",
+  "level",
+  "summary",
+  "howToApply",
+  "officialUrl",
+] as const;
+// Quote-gated facts: an unproven one keeps the existing value, never resets to null.
+const REVISED_GATED = ["support", "deadline", "documents"] as const;
+
+export type RevisedScholarship = { record: Record<string, unknown>; notes: string };
+
+export function reviseScholarship(
+  rawExisting: Record<string, unknown>,
+  verified: Extract<ScholarshipVerified, { ok: true }>,
+  proposal: ScholarshipProposal,
+): RevisedScholarship {
+  const { _review: _ignored, ...existing } = rawExisting;
+  const sources = { ...asRecord(existing.sources) };
+  const keyOfUrl = new Map<string, string>();
+  for (const [key, value] of Object.entries(sources)) {
+    const url = asRecord(value).url;
+    if (typeof url === "string") keyOfUrl.set(url, key);
+  }
+  // Every page the fresh reading cites gets a key: an existing url keeps its key (and its older
+  // date), a new url takes the next free "page-N".
+  const remap = new Map<string, string>();
+  for (const [oldKey, value] of Object.entries(asRecord(verified.record.sources))) {
+    const url = asRecord(value).url;
+    if (typeof url !== "string") continue;
+    const known = keyOfUrl.get(url);
+    if (known !== undefined) {
+      remap.set(oldKey, known);
+      continue;
+    }
+    let n = 1;
+    while (`page-${n}` in sources) n++;
+    const key = `page-${n}`;
+    sources[key] = { url, last_verified_at: null };
+    keyOfUrl.set(url, key);
+    remap.set(oldKey, key);
+  }
+  const remapped = (fact: unknown): unknown => {
+    const record = asRecord(fact);
+    return typeof record.source === "string"
+      ? { ...record, source: remap.get(record.source) ?? record.source }
+      : fact;
+  };
+
+  const next: Record<string, unknown> = { ...existing, slug: proposal.slug };
+  const keptLocales = new Set<string>();
+  for (const field of REVISED_ALWAYS) {
+    if (field === "summary" || field === "howToApply") {
+      const merged = mergeLocalized(existing[field], verified.record[field]);
+      next[field] = merged.value;
+      for (const locale of merged.kept) keptLocales.add(locale);
+      continue;
+    }
+    next[field] = verified.record[field];
+  }
+  next.requirements = remapped(verified.record.requirements);
+  if (proposal.institutions !== undefined) {
+    if (proposal.institutions.length > 0) next.institutions = verified.record.institutions;
+    else delete next.institutions;
+  }
+
+  const established = new Set(verified.evidence.map((e) => e.fact));
+  const changed: string[] = [];
+  const kept: string[] = [];
+  for (const field of REVISED_ALWAYS)
+    if (JSON.stringify(existing[field]) !== JSON.stringify(next[field])) changed.push(field);
+  if (JSON.stringify(existing.requirements) !== JSON.stringify(next.requirements))
+    changed.push("requirements");
+  if (
+    proposal.institutions !== undefined &&
+    JSON.stringify(existing.institutions) !== JSON.stringify(next.institutions)
+  )
+    changed.push("institutions");
+  for (const field of REVISED_GATED) {
+    if (!established.has(field)) {
+      kept.push(field);
+      continue;
+    }
+    const value =
+      field === "documents"
+        ? mergeDocuments(existing[field], remapped(verified.record[field]), keptLocales)
+        : remapped(verified.record[field]);
+    if (JSON.stringify(existing[field]) !== JSON.stringify(value)) changed.push(field);
+    next[field] = value;
+  }
+  next.sources = sources;
+  const notes = [
+    changed.length > 0 ? `changed: ${changed.join(", ")}` : "",
+    kept.length > 0 ? `kept: ${kept.join(", ")}` : "",
+    keptLocales.size > 0 ? `locales kept: ${[...keptLocales].sort().join(", ")}` : "",
+  ]
+    .filter((part) => part !== "")
+    .join("; ");
+  return { record: next, notes };
+}
+
 // --- command line --------------------------------------------------------------------------------
 export type VerifyDeps = {
   getText?: GetText;
@@ -765,6 +917,9 @@ export type VerifyOutcome = { ok: boolean; lines: string[] };
 const PREPARED_TODO =
   "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw";
 
+const REVISION_TODO =
+  "revision of the record already in data/: promote with --replace-revisions after the audit (included in the audit sample draw)";
+
 // null when the folder does not exist: nothing can then be checked.
 async function institutionSlugs(dataDir: string): Promise<Set<string> | null> {
   const dir = path.join(dataDir, "institutions");
@@ -775,9 +930,10 @@ async function institutionSlugs(dataDir: string): Promise<Set<string> | null> {
 }
 
 // Verifies one proposal file and, unless it is a dry run, stages the record. Never overwrites a
-// staged file, nor a slug already promoted into data/.
+// staged file, nor a slug already promoted into data/. With `revise`, a slug already in data/ is
+// rebuilt as a revision of that record instead of being refused.
 export async function runVerify(
-  options: { file: string; dryRun: boolean },
+  options: { file: string; dryRun: boolean; revise?: boolean },
   deps: VerifyDeps = {},
 ): Promise<VerifyOutcome> {
   const stagingDir = deps.stagingDir ?? STAGING_DIR;
@@ -795,11 +951,21 @@ export async function runVerify(
           : String(error);
     return { ok: false, lines: [`invalid proposal ${options.file}: ${detail}`] };
   }
+  const revise = options.revise === true;
   const target = stageFile("scholarships", proposal.slug, stagingDir);
+  const promotedPath = path.join(dataDir, "scholarships", `${proposal.slug}.yaml`);
+  const inData = existsSync(promotedPath);
   if (!options.dryRun) {
     if (existsSync(target))
       return { ok: false, lines: [`${target} already exists: never overwritten`] };
-    if (existsSync(path.join(dataDir, "scholarships", `${proposal.slug}.yaml`)))
+    if (revise && !inData)
+      return {
+        ok: false,
+        lines: [
+          `scholarships/${proposal.slug} is not in ${dataDir}/: nothing to revise (drop --revise to stage it as new)`,
+        ],
+      };
+    if (!revise && inData)
       return {
         ok: false,
         lines: [`scholarships/${proposal.slug} is already in ${dataDir}/: never overwritten`],
@@ -823,6 +989,63 @@ export async function runVerify(
     ...verified.evidence.map((e) => `accepted ${e.fact}: "${e.quote}" (${e.url})`),
     ...verified.notes.map((note) => `rejected ${note}`),
   ];
+
+  if (revise) {
+    if (!inData)
+      return {
+        ok: false,
+        lines: [
+          ...lines,
+          `scholarships/${proposal.slug} is not in ${dataDir}/: nothing to revise (drop --revise to stage it as new)`,
+        ],
+      };
+    const existing = asRecord(parse(await readFile(promotedPath, "utf8")));
+    const revised = reviseScholarship(existing, verified, proposal);
+    const { _review: _ignored, ...record } = revised.record;
+    const check = ScholarshipRecordSchema.safeParse(stampVerified(record, today));
+    if (!check.success) {
+      const issue = check.error.issues[0];
+      return {
+        ok: false,
+        lines: [
+          ...lines,
+          `revision still invalid at ${issue?.path.join(".") ?? "?"}: ${issue?.message ?? "?"}`,
+        ],
+      };
+    }
+    const summary = revised.notes === "" ? [] : [revised.notes];
+    if (options.dryRun)
+      return { ok: true, lines: [...lines, ...summary, "dry run: nothing written"] };
+    const review = {
+      kind: "scholarships",
+      slug: proposal.slug,
+      name: proposal.name,
+      preparedBy: "assistant",
+      preparedAt: today,
+      officialUrl: proposal.officialUrl,
+      evidence: verified.evidence,
+      ...(verified.notes.length > 0 ? { rejected: verified.notes } : {}),
+      revises: true,
+      ...(revised.notes === "" ? {} : { notes: revised.notes }),
+      todo: REVISION_TODO,
+    };
+    await mkdir(path.dirname(target), { recursive: true });
+    await writeFile(target, toYaml({ ...revised.record, _review: review }), { flag: "wx" });
+    const dropped =
+      (await dropAuditRows(new Set([`scholarships/${proposal.slug}`]), stagingDir)).length > 0;
+    return {
+      ok: true,
+      lines: [
+        ...lines,
+        ...summary,
+        `staged revision ${target}`,
+        dropped
+          ? "dropped its earlier audit row: the revision needs a new audit batch (pnpm data:audit draw)"
+          : "the revision needs an audit batch (pnpm data:audit draw)",
+      ],
+    };
+  }
+
   if (options.dryRun) return { ok: true, lines: [...lines, "dry run: nothing written"] };
   const review = {
     kind: "scholarships",
@@ -844,8 +1067,12 @@ export async function runVerify(
 async function main(argv: readonly string[]): Promise<void> {
   const [command, file] = argv;
   if (command !== "verify" || file === undefined || file.startsWith("--"))
-    throw new Error("usage: data:scholarship verify <proposal.json> [--dry-run]");
-  const outcome = await runVerify({ file, dryRun: argv.includes("--dry-run") });
+    throw new Error("usage: data:scholarship verify <proposal.json> [--dry-run] [--revise]");
+  const outcome = await runVerify({
+    file,
+    dryRun: argv.includes("--dry-run"),
+    revise: argv.includes("--revise"),
+  });
   for (const line of outcome.lines) console.log(line);
   if (!outcome.ok) process.exitCode = 1;
 }
