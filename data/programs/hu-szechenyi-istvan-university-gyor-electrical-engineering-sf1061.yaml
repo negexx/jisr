@@ -39,53 +39,44 @@ applicationChannel:
   info_kind: official
 documents:
   value:
-    - slug: valid-passport
+    - slug: secondary-school-graduation-results
       name:
         fr:
-          text: Passeport en cours de validité
+          text: Copie des résultats de fin d'études secondaires
           status: draft
         en:
-          text: Valid passport
+          text: Copy of secondary/high school graduation results
           status: draft
       translationRequired: null
-    - slug: certificate-of-admission
+    - slug: record-of-courses-studied
       name:
         fr:
-          text: Certificat d’admission délivré par l’établissement d’enseignement
+          text: Relevé des cours suivis
           status: draft
         en:
-          text: Certificate of admission issued by the educational institution
+          text: Record of courses studied
           status: draft
       translationRequired: null
-    - slug: proof-of-tuition-payment
+    - slug: english-cv
       name:
         fr:
-          text: Preuve du paiement des frais de scolarité
+          text: CV en anglais
           status: draft
         en:
-          text: Proof of payment of tuition fees
+          text: English CV
           status: draft
       translationRequired: null
-    - slug: proof-of-means-of-subsistence
+    - slug: motivation-letter
       name:
         fr:
-          text: Preuve de ressources suffisantes pour la subsistance et le séjour
+          text: Lettre de motivation
           status: draft
         en:
-          text: Proof of sufficient means of subsistence
+          text: Motivation letter
           status: draft
       translationRequired: null
-    - slug: comprehensive-health-insurance
-      name:
-        fr:
-          text: Assurance maladie couvrant l’ensemble des soins de santé
-          status: draft
-        en:
-          text: Comprehensive health insurance covering all healthcare services
-          status: draft
-      translationRequired: null
-  source: page-1
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
   source: programme

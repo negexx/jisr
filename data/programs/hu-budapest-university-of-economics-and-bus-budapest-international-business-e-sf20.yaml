@@ -42,53 +42,35 @@ applicationChannel:
   info_kind: official
 documents:
   value:
-    - slug: valid-passport
+    - slug: school-leaving-certificate
       name:
         fr:
-          text: Passeport en cours de validité
+          text: Diplôme de fin d'études secondaires
           status: draft
         en:
-          text: Valid passport
+          text: Secondary school leaving certificate
           status: draft
       translationRequired: null
-    - slug: certificate-of-admission
+    - slug: language-certificate
       name:
         fr:
-          text: Certificat d’admission délivré par l’établissement d’enseignement
+          text: Certificat de langue anglaise
           status: draft
         en:
-          text: Certificate of admission issued by the educational institution
+          text: English language certificate
           status: draft
       translationRequired: null
-    - slug: proof-of-tuition-payment
+    - slug: motivation-letter
       name:
         fr:
-          text: Preuve du paiement des frais de scolarité
+          text: Lettre de motivation
           status: draft
         en:
-          text: Proof of payment of tuition fees
+          text: Motivation letter
           status: draft
       translationRequired: null
-    - slug: proof-of-means-of-subsistence
-      name:
-        fr:
-          text: Preuve de ressources suffisantes pour la subsistance et le séjour
-          status: draft
-        en:
-          text: Proof of sufficient means of subsistence
-          status: draft
-      translationRequired: null
-    - slug: comprehensive-health-insurance
-      name:
-        fr:
-          text: Assurance maladie couvrant l’ensemble des soins de santé
-          status: draft
-        en:
-          text: Comprehensive health insurance covering all healthcare services
-          status: draft
-      translationRequired: null
-  source: page-1
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
   source: programme

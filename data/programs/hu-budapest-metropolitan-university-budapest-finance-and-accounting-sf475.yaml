@@ -17,8 +17,8 @@ summary:
     status: draft
 officialUrl: https://www.metubudapest.hu/programs/finance-and-accounting-bsc
 durationYears:
-  value: null
-  source: programme
+  value: 3.5
+  source: page-2
   info_kind: official
 teachingLanguages:
   value:

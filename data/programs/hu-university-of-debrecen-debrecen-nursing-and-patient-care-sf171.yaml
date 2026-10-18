@@ -17,11 +17,12 @@ summary:
     status: draft
 officialUrl: https://tempus.tpf.hu/studyfinder/index/show/171
 durationYears:
-  value: null
+  value: 4
   source: programme
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - en
   source: programme
   info_kind: official
 tuition:
