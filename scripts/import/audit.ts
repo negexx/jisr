@@ -208,6 +208,19 @@ export async function readAudit(dir = STAGING_DIR): Promise<AuditRow[]> {
   return existsSync(file) ? parseAudit(await readFile(file, "utf8")) : [];
 }
 
+// Reopening records for a new audit: their rows are removed so the next draw puts them in a fresh
+// batch, because an earlier passed batch must not clear content that changed since.
+export async function dropAuditRows(
+  keys: ReadonlySet<string>,
+  dir = STAGING_DIR,
+): Promise<string[]> {
+  const rows = await readAudit(dir);
+  const dropped = rows.filter((row) => keys.has(row.key)).map((row) => row.key);
+  if (dropped.length > 0)
+    await writeFile(path.join(dir, AUDIT_FILE), auditCsv(rows.filter((row) => !keys.has(row.key))));
+  return dropped;
+}
+
 // Every staged record whose _review says the assistant prepared it.
 export async function findPrepared(dir = STAGING_DIR): Promise<string[]> {
   const keys: string[] = [];

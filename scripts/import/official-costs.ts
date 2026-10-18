@@ -2,6 +2,7 @@ import { existsSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
+import { parse } from "yaml";
 import { z } from "zod";
 
 import {
@@ -17,6 +18,7 @@ import {
 } from "@/data-schema/records/cost-profile";
 import { minorUnitDigits } from "@/lib/format";
 
+import { dropAuditRows } from "./audit";
 import { httpStatusOf, isStopStatus, type StagedBasis, type StagedCostProfile } from "./costs";
 import { pageText } from "./evidence";
 import { fetchText, isCached } from "./http";
@@ -246,6 +248,75 @@ function stagedLine(line: LineProposal, source: string): StagedLine {
   };
 }
 
+const asRecord = (value: unknown): Record<string, unknown> =>
+  typeof value === "object" && value !== null ? (value as Record<string, unknown>) : {};
+
+// The source key shape sourceKeyer builds from a url ("www.campusfrance.org" -> "campusfrance-org").
+const hostKeyOf = (url: string): string =>
+  new URL(url).hostname
+    .toLowerCase()
+    .replace(/^www\./, "")
+    .replace(/[^a-z0-9]+/g, "-");
+
+// A revision of a profile already in data/: the lines this run kept replace the record's, while a
+// line the proposal omits or that failed a check keeps the existing one. Sources keep their urls and
+// older dates; a page the proposal adds is new (null, stamped on promotion).
+function reviseProfile(
+  rawExisting: Record<string, unknown>,
+  fresh: Record<string, unknown>,
+): { record: Record<string, unknown>; changed: string[]; kept: string[] } {
+  const { _review: _ignored, ...existing } = rawExisting;
+  const sources = { ...asRecord(existing.sources) };
+  const keyOfUrl = new Map<string, string>();
+  for (const [key, value] of Object.entries(sources)) {
+    const url = asRecord(value).url;
+    if (typeof url === "string") keyOfUrl.set(url, key);
+  }
+  const remap = new Map<string, string>();
+  for (const [oldKey, value] of Object.entries(asRecord(fresh.sources))) {
+    const url = asRecord(value).url;
+    if (typeof url !== "string") continue;
+    const known = keyOfUrl.get(url);
+    if (known !== undefined) {
+      remap.set(oldKey, known);
+      continue;
+    }
+    const host = hostKeyOf(url);
+    let n = 1;
+    let key = host;
+    while (key in sources) {
+      n++;
+      key = `${host}-${n}`;
+    }
+    sources[key] = { url, last_verified_at: null };
+    keyOfUrl.set(url, key);
+    remap.set(oldKey, key);
+  }
+  const existingLines = asRecord(existing.lines);
+  const freshLines = asRecord(fresh.lines);
+  const lines: Record<string, unknown> = { ...existingLines };
+  const changed: string[] = [];
+  const kept: string[] = [];
+  for (const name of LIVING_COST_CATEGORIES) {
+    const freshLine = freshLines[name];
+    if (freshLine === undefined) {
+      if (existingLines[name] !== undefined) kept.push(name);
+      continue;
+    }
+    const line = asRecord(freshLine);
+    const source =
+      typeof line.source === "string" ? (remap.get(line.source) ?? line.source) : line.source;
+    const remapped = { ...line, source };
+    if (JSON.stringify(existingLines[name]) !== JSON.stringify(remapped)) changed.push(name);
+    lines[name] = remapped;
+  }
+  return {
+    record: { slug: fresh.slug, country: fresh.country, city: fresh.city, lines, sources },
+    changed,
+    kept,
+  };
+}
+
 type Verified =
   | { kind: "stopped"; lines: string[] }
   | { kind: "none"; lines: string[] }
@@ -255,7 +326,6 @@ type Verified =
       record: Record<string, unknown>;
       review: Record<string, unknown>;
     };
-
 async function verifyProposal(
   proposal: OfficialCostProposal,
   deps: PageDeps,
@@ -358,10 +428,19 @@ const describeError = (error: unknown): string =>
       ? error.message
       : String(error);
 
+// `last_verified_at: null` becomes the review date so the record validates before promotion stamps it.
+const stampedForCheck = (record: Record<string, unknown>, date: string): unknown =>
+  JSON.parse(
+    JSON.stringify(record, (key: string, value: unknown) =>
+      key === "last_verified_at" && value === null ? date : value,
+    ),
+  );
+
 // Verifies one proposal file and, unless it is a dry run, stages the profile. Never overwrites a
-// staged file, nor a slug already promoted into data/.
+// staged file, nor a slug already promoted into data/. With `revise`, a slug already in data/ is
+// rebuilt as a revision of that profile instead of being refused.
 export async function runVerify(
-  options: { file: string; dryRun: boolean },
+  options: { file: string; dryRun: boolean; revise?: boolean },
   deps: VerifyDeps = {},
 ): Promise<VerifyOutcome> {
   const stagingDir = deps.stagingDir ?? STAGING_DIR;
@@ -378,11 +457,21 @@ export async function runVerify(
   } catch (error) {
     return { ok: false, lines: [`invalid proposal ${options.file}: ${describeError(error)}`] };
   }
+  const revise = options.revise === true;
   const target = stageFile(COLLECTION, proposal.slug, stagingDir);
+  const promotedPath = path.join(dataDir, COLLECTION, `${proposal.slug}.yaml`);
+  const inData = existsSync(promotedPath);
   if (!options.dryRun) {
     if (existsSync(target))
       return { ok: false, lines: [`${target} already exists: never overwritten`] };
-    if (existsSync(path.join(dataDir, COLLECTION, `${proposal.slug}.yaml`)))
+    if (revise && !inData)
+      return {
+        ok: false,
+        lines: [
+          `${COLLECTION}/${proposal.slug} is not in ${dataDir}/: nothing to revise (drop --revise to stage it as new)`,
+        ],
+      };
+    if (!revise && inData)
       return {
         ok: false,
         lines: [`${COLLECTION}/${proposal.slug} is already in ${dataDir}/: never overwritten`],
@@ -393,11 +482,72 @@ export async function runVerify(
   if (verified.kind === "stopped") return { ok: false, lines: verified.lines };
   if (verified.kind === "none") return { ok: false, lines: verified.lines };
 
-  const check = CostProfileRecordSchema.safeParse(
-    JSON.parse(JSON.stringify(verified.record), (key: string, value: unknown) =>
-      key === "last_verified_at" && value === null ? today : value,
-    ),
-  );
+  if (revise) {
+    if (!inData)
+      return {
+        ok: false,
+        lines: [
+          ...verified.lines,
+          `${COLLECTION}/${proposal.slug} is not in ${dataDir}/: nothing to revise (drop --revise to stage it as new)`,
+        ],
+      };
+    const existing = asRecord(parse(await readFile(promotedPath, "utf8")));
+    const merged = reviseProfile(existing, verified.record);
+    const check = CostProfileRecordSchema.safeParse(stampedForCheck(merged.record, today));
+    if (!check.success) {
+      const issue = check.error.issues[0];
+      return {
+        ok: false,
+        lines: [
+          ...verified.lines,
+          `revision still invalid at ${issue?.path.join(".") ?? "?"}: ${issue?.message ?? "?"}`,
+        ],
+      };
+    }
+    const summary = [
+      merged.changed.length > 0 ? `changed: ${merged.changed.join(", ")}` : "",
+      merged.kept.length > 0 ? `kept: ${merged.kept.join(", ")}` : "",
+    ]
+      .filter((part) => part !== "")
+      .join("; ");
+    if (options.dryRun)
+      return {
+        ok: true,
+        lines: [
+          ...verified.lines,
+          ...(summary === "" ? [] : [summary]),
+          "dry run: nothing written",
+        ],
+      };
+    const review = {
+      ...verified.review,
+      revises: true,
+      ...(summary === ""
+        ? {}
+        : {
+            notes: [String(asRecord(verified.review).notes ?? ""), summary]
+              .filter((part) => part !== "")
+              .join(" "),
+          }),
+    };
+    await mkdir(path.dirname(target), { recursive: true });
+    await writeFile(target, toYaml({ ...merged.record, _review: review }), { flag: "wx" });
+    const dropped =
+      (await dropAuditRows(new Set([`${COLLECTION}/${proposal.slug}`]), stagingDir)).length > 0;
+    return {
+      ok: true,
+      lines: [
+        ...verified.lines,
+        ...(summary === "" ? [] : [summary]),
+        `staged revision ${target}`,
+        dropped
+          ? "dropped its earlier audit row: the revision needs a new audit batch (pnpm data:audit draw)"
+          : "the revision needs an audit batch (pnpm data:audit draw)",
+      ],
+    };
+  }
+
+  const check = CostProfileRecordSchema.safeParse(stampedForCheck(verified.record, today));
   if (!check.success) {
     const issue = check.error.issues[0];
     return {
@@ -428,10 +578,10 @@ async function main(argv: readonly string[]): Promise<void> {
   const [command, file] = argv;
   if (command !== "verify" || file === undefined || file.startsWith("--"))
     throw new Error(
-      "usage: data:costs-official verify <proposal.json> [--dry-run] [--delay-ms 4000] [--use-cache]",
+      "usage: data:costs-official verify <proposal.json> [--dry-run] [--revise] [--delay-ms 4000] [--use-cache]",
     );
   const outcome = await runVerify(
-    { file, dryRun: argv.includes("--dry-run") },
+    { file, dryRun: argv.includes("--dry-run"), revise: argv.includes("--revise") },
     { delayMs: delayFlag(argv), useCache: argv.includes("--use-cache") },
   );
   for (const line of outcome.lines) console.log(line);

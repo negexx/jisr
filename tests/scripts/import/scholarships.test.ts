@@ -4,11 +4,11 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { parse } from "yaml";
+import { parse, stringify } from "yaml";
 
 import { findPrepared } from "../../../scripts/import/audit";
 import { amountInQuote } from "../../../scripts/import/evidence";
-import { stampVerified } from "../../../scripts/import/promote";
+import { promoteApproved, stampVerified } from "../../../scripts/import/promote";
 import {
   isOfficialSource,
   runVerify,
@@ -21,6 +21,7 @@ import { ScholarshipRecordSchema } from "../../../src/data-schema/records/schola
 const HOME = "https://grants.example/aurora";
 const RULES = "https://grants.example/aurora/rules";
 const APPLY = "https://grants.example/aurora/apply";
+const UPDATED = `${HOME}/updated`;
 
 const pages: Record<string, string> = {
   [HOME]:
@@ -29,6 +30,7 @@ const pages: Record<string, string> = {
     "Applicants from non-EU countries, including Morocco, holding a school-leaving certificate may apply. The scholarship is open to first-year undergraduate students. It pays EUR 5,000 one-time towards tuition and living costs. Applications from non-EU students close on 15 March 2027.",
   [APPLY]:
     "Apply online through the Aurora portal and upload a CV and a motivation letter. Certified translations are required for a motivation letter.",
+  [UPDATED]: "The updated Aurora grant pays EUR 6,000 one-time towards tuition and living costs.",
   [`${HOME}/master`]:
     "This scholarship is open to non-EU students. Applicants must hold a Bachelor's degree to apply for this Master scholarship. Les titulaires d'une licence peuvent candidater pour un master. Bachelor's degree holders from abroad may apply. Postgraduate students and doctoral candidates are welcome. The scholarship is for Bachelor students from abroad. Das Stipendium ist für ein Erststudium im Ausland gedacht. Le programme est ouvert pour la licence aux étudiants étrangers. The scholarship is for Bachelor graduates. Applicants must have finished a Bachelor in any subject. Bachelor degree alumni may apply. Students enrolled in a Bachelor programme may apply. The scholarship is for Bachelor students enrolled in a Bachelor programme.",
   [`${HOME}/who`]:
@@ -1490,5 +1492,194 @@ describe("re-review: the whole amount sentence and an allow-list for the next on
         "SEK",
       ),
     ).not.toBeNull();
+  });
+});
+
+describe("runVerify --revise", () => {
+  let dir: string;
+  let stagingDir: string;
+  let dataDir: string;
+  let file: string;
+  beforeEach(async () => {
+    dir = await mkdtemp(path.join(tmpdir(), "jisr-scholarship-revise-"));
+    stagingDir = path.join(dir, "data-staging");
+    dataDir = path.join(dir, "data");
+    await mkdir(path.join(dataDir, "institutions"), { recursive: true });
+    await writeFile(path.join(dataDir, "institutions", "tu-berlin.yaml"), "slug: tu-berlin\n");
+    file = path.join(dir, "aurora.json");
+    await writeFile(file, JSON.stringify(raw()));
+  });
+  afterEach(async () => {
+    await rm(dir, { recursive: true, force: true });
+  });
+  const deps = () => ({ getText, stagingDir, dataDir, today: "2026-10-18" });
+  const dataFile = () => path.join(dataDir, "scholarships", "aurora-scholarship.yaml");
+  const stagedFile = () => path.join(stagingDir, "scholarships", "aurora-scholarship.yaml");
+
+  // A valid record already in data/: built by the verifier itself, then stamped (as promotion would).
+  async function writeExisting(
+    over: Record<string, unknown> = {},
+  ): Promise<Record<string, unknown>> {
+    const verified = await verifyScholarship(proposal(over), getText);
+    if (!verified.ok) throw new Error(verified.reasons.join(" | "));
+    const record = stampVerified(verified.record, "2026-09-01") as Record<string, unknown>;
+    await mkdir(path.dirname(dataFile()), { recursive: true });
+    await writeFile(dataFile(), stringify(record));
+    return record;
+  }
+  const readStaged = async (): Promise<Record<string, unknown>> =>
+    parse(await readFile(stagedFile(), "utf8")) as Record<string, unknown>;
+
+  it("without --revise still refuses a slug already in data/ and stages nothing", async () => {
+    await writeExisting();
+    const out = await runVerify({ file, dryRun: false }, deps());
+    expect(out.ok).toBe(false);
+    expect(out.lines.join("\n")).toMatch(/already in/);
+    expect(existsSync(stagedFile())).toBe(false);
+  });
+
+  it("with --revise stages a revision that merges the verified facts over the existing record", async () => {
+    const before = await writeExisting();
+    await writeFile(
+      file,
+      JSON.stringify(
+        raw({
+          name: "Aurora Scholarship 2027",
+          support: {
+            amount: { min: 6000, max: 6000, currency: "EUR", per: "once" },
+            covers: ["tuition"],
+          },
+          evidence: evidence({
+            support: [
+              {
+                url: UPDATED,
+                quote: "The updated Aurora grant pays EUR 6,000 one-time towards tuition",
+              },
+            ],
+          }),
+        }),
+      ),
+    );
+    const out = await runVerify({ file, dryRun: false, revise: true }, deps());
+    expect(out.ok).toBe(true);
+    const staged = await readStaged();
+    expect(at(staged, "_review")).toMatchObject({
+      kind: "scholarships",
+      slug: "aurora-scholarship",
+      preparedBy: "assistant",
+      preparedAt: "2026-10-18",
+      revises: true,
+    });
+    expect((at(staged, "_review.evidence") as unknown[]).length).toBeGreaterThan(0);
+    expect(at(staged, "name")).toBe("Aurora Scholarship 2027");
+    expect(at(staged, "support.value.amount.min")).toBe(600000);
+    expect(before.name).toBe("Aurora Scholarship"); // the old record was not touched
+    expect(at(staged, "_review.notes")).toMatch(/changed:.*support/);
+    const { _review: _dropped, ...record } = staged;
+    expect(validAfterReview(record)).toBe(true);
+  });
+
+  it("keeps the existing values where the proposal is silent", async () => {
+    const before = await writeExisting();
+    await writeFile(
+      file,
+      JSON.stringify(raw({ name: "Aurora 2027", deadline: null, documents: null })),
+    );
+    const out = await runVerify({ file, dryRun: false, revise: true }, deps());
+    expect(out.ok).toBe(true);
+    const staged = await readStaged();
+    expect(at(staged, "deadline.value")).toBe(at(before, "deadline.value"));
+    expect(at(staged, "documents.value")).toEqual(at(before, "documents.value"));
+    expect(at(staged, "_review.notes")).toMatch(/kept:.*deadline/);
+    expect(at(staged, "_review.notes")).toMatch(/kept:.*documents/);
+  });
+
+  it("does not apply a proposal fact that no accepted quote supports", async () => {
+    await writeExisting();
+    await writeFile(
+      file,
+      JSON.stringify(
+        raw({
+          name: "Aurora 2027",
+          support: {
+            amount: { min: 4000, max: 4000, currency: "EUR", per: "once" },
+            covers: ["tuition"],
+          },
+        }),
+      ),
+    );
+    const out = await runVerify({ file, dryRun: false, revise: true }, deps());
+    expect(out.ok).toBe(true);
+    const staged = await readStaged();
+    expect(at(staged, "support.value.amount.min")).toBe(500000);
+    expect(at(staged, "_review.notes")).toMatch(/kept:.*support/);
+  });
+
+  it("drops the promoted record's audit row so the revision needs a fresh batch", async () => {
+    await writeExisting();
+    await mkdir(stagingDir, { recursive: true });
+    await writeFile(
+      path.join(stagingDir, "AUDIT.csv"),
+      "key,batch,inSample,audited,outcome,notes\nscholarships/aurora-scholarship,b0,y,y,ok,\nscholarships/other,b0,y,y,ok,\n",
+    );
+    await writeFile(file, JSON.stringify(raw({ name: "Aurora 2027" })));
+    const out = await runVerify({ file, dryRun: false, revise: true }, deps());
+    expect(out.ok).toBe(true);
+    const audit = await readFile(path.join(stagingDir, "AUDIT.csv"), "utf8");
+    expect(audit).not.toContain("scholarships/aurora-scholarship");
+    expect(audit).toContain("scholarships/other");
+  });
+
+  it("refuses --revise when the slug is not in data/", async () => {
+    const out = await runVerify({ file, dryRun: false, revise: true }, deps());
+    expect(out.ok).toBe(false);
+    expect(out.lines.join("\n")).toMatch(/not in .*data/i);
+    expect(existsSync(stagedFile())).toBe(false);
+  });
+
+  it("writes nothing with --revise --dry-run", async () => {
+    await writeExisting();
+    await writeFile(file, JSON.stringify(raw({ name: "Aurora 2027" })));
+    const out = await runVerify({ file, dryRun: true, revise: true }, deps());
+    expect(out.ok).toBe(true);
+    expect(out.lines.join("\n")).toMatch(/dry run: nothing written/);
+    expect(existsSync(stagedFile())).toBe(false);
+  });
+
+  it("a staged revision promotes with --replace-revisions and a passed audit", async () => {
+    await writeExisting();
+    await writeFile(file, JSON.stringify(raw({ name: "Aurora 2027" })));
+    const staged = await runVerify({ file, dryRun: false, revise: true }, deps());
+    expect(staged.ok).toBe(true);
+    const key = "scholarships/aurora-scholarship";
+    const row = {
+      key,
+      batch: "b1",
+      inSample: true,
+      audited: "y",
+      outcome: "ok",
+      notes: "",
+    };
+    const refused = await promoteApproved({
+      approved: new Set([key]),
+      date: "2026-10-18",
+      stagingDir,
+      dataDir,
+      audit: [row],
+    });
+    expect(refused.promoted).toEqual([]);
+    expect(refused.skipped[0]?.reason).toMatch(/never overwritten/);
+    const done = await promoteApproved({
+      approved: new Set([key]),
+      date: "2026-10-18",
+      stagingDir,
+      dataDir,
+      audit: [row],
+      replaceRevisions: true,
+    });
+    expect(done.promoted).toEqual([key]);
+    const promoted = parse(await readFile(dataFile(), "utf8")) as Record<string, unknown>;
+    expect(at(promoted, "name")).toBe("Aurora 2027");
+    expect(at(promoted, "_review")).toBeUndefined();
   });
 });
