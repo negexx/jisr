@@ -20,6 +20,7 @@ describe("loadScholarshipsPageData", () => {
     const slugs = data.sections.flatMap((s) => s.entries.map((e) => e.scholarship.slug));
     expect(slugs).toEqual([
       E2E_SCHOLARSHIP_SLUGS.open,
+      E2E_SCHOLARSHIP_SLUGS.unknown,
       E2E_SCHOLARSHIP_SLUGS.xaOnly,
       E2E_SCHOLARSHIP_SLUGS.xzOnly,
     ]);

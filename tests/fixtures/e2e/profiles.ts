@@ -23,6 +23,8 @@ export const E2E_SCHOLARSHIP_SLUGS = {
   open: "xx-test-schol-open",
   xaOnly: "xx-test-schol-xa",
   xzOnly: "xx-test-schol-xz",
+  // Support and deadline both unpublished: the card's only source is the record-level badge.
+  unknown: "xx-test-schol-unknown",
 } as const;
 
 function baseProfile(overrides: Partial<Profile> = {}): Profile {
