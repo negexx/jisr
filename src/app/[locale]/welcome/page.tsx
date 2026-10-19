@@ -39,7 +39,10 @@ export default async function WelcomePage({ params }: Props) {
   return (
     <>
       <PageBand title={t("title")} lead={t("lead")} />
-      <div className="pt-8">
+      {/* Reserves a viewport-height placeholder so the footer starts below the fold before the
+          landing resolves; it cannot then jump off-screen when the post-auth redirect swaps in the
+          sign-in page (design audit D1). */}
+      <div className="min-h-[calc(100dvh-8rem)] pt-8">
         <NextIntlClientProvider
           locale={locale}
           messages={pickMessages(messages, WELCOME_MESSAGE_NAMESPACES)}

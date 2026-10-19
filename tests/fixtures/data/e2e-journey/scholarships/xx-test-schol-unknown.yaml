@@ -1,0 +1,33 @@
+slug: xx-test-schol-unknown
+name: XX Test Unknown Scholarship
+provider: XX Test Provider
+destinations: [XB]
+eligibleNationalities: [XQ]
+fields: []
+level: bachelor
+summary:
+  fr: { text: Bourse test dont le montant et la date limite ne sont pas publies, status: draft }
+support:
+  value: null
+  source: main
+  info_kind: official
+deadline:
+  value: null
+  source: main
+  info_kind: official
+requirements:
+  coverage: partial
+  source: main
+  info_kind: official
+  rules: []
+documents:
+  value: null
+  source: main
+  info_kind: official
+howToApply:
+  fr: { text: Voir la page officielle de la bourse, status: draft }
+officialUrl: https://example.org/xx-test-schol-unknown
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01
