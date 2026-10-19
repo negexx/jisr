@@ -847,6 +847,7 @@
       },
       "deadline": "Date limite de la bourse : {date}",
       "deadlineUnknown": "Date limite de la bourse : non publiée, à vérifier",
+      "recurring": "Date limite de la bourse : en général le {date} chaque année (année non publiée, à vérifier)",
       "link": "Site de la bourse",
       "aid": {
         "heading": "À savoir sur les aides du pays",
@@ -1095,7 +1096,8 @@
     },
     "deadline": {
       "known": "Date limite : {date}",
-      "unknown": "Date limite : non publiée dans les sources que nous avons lues, à vérifier"
+      "unknown": "Date limite : non publiée dans les sources que nous avons lues, à vérifier",
+      "recurring": "Date limite : en général le {date} chaque année (année non publiée, à vérifier)"
     },
     "details": {
       "summary": "Conditions, pièces et démarche",

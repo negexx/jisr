@@ -181,6 +181,33 @@ describe("ScholarshipsPageView: amount, covers and deadline", () => {
     expect(textOf(time)).toBe(translate("scholarshipsPage.deadline.known", { date: "01/03/2027" }));
   });
 
+  it.each([
+    ["fr", messages],
+    ["ar", ar],
+  ] as const)("shows a recurring-only deadline as usual guidance, never as not published (%s)", (locale, catalog) => {
+    const doc = renderData(
+      dataOf([
+        {
+          country: "XB",
+          entries: [
+            entry({
+              deadline: fact(null, { class: "volatile" }),
+              recurringDeadline: fact({ month: 6, day: 30 }, { class: "volatile" }),
+            }),
+          ],
+        },
+      ]),
+      locale,
+    );
+    const deadline = inCard(doc, "scholarship-deadline");
+    expect(textOf(deadline)).toContain(
+      catalog.scholarshipsPage.deadline.recurring.replace("{date}", "30/06"),
+    );
+    expect(textOf(deadline)).not.toContain(catalog.scholarshipsPage.deadline.unknown);
+    // no year is published, so no ISO date and no <time> for the deadline
+    expect(deadline.querySelector("time")).toBeNull();
+  });
+
   it("prints nothing for an empty covers list", () => {
     const doc = render([
       entry({

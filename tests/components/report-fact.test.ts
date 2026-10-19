@@ -23,6 +23,7 @@ describe("reportContext with the copy a page builds", () => {
     ["programs/x", "somethingNew", "program"],
     ["scholarships/x", "support", "scholarshipAmount"],
     ["scholarships/x", "deadline", "scholarshipDeadline"],
+    ["scholarships/x", "recurringDeadline", "scholarshipDeadline"],
     ["scholarships/x", "documents", "scholarshipDocuments"],
     ["scholarships/x", "requirements.rules.r1", "scholarshipEligibility"],
     ["scholarships/x", "", "scholarship"],

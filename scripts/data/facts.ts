@@ -78,6 +78,9 @@ export function factUses(
       return [
         fact(file, "support", s.support),
         fact(file, "deadline", s.deadline),
+        ...(s.recurringDeadline === undefined
+          ? []
+          : [fact(file, "recurringDeadline", s.recurringDeadline)]),
         fact(file, "documents", s.documents),
         ...requirementUses(file, s.requirements),
       ];
@@ -144,7 +147,7 @@ export function localizedTexts(
       return [
         s.summary,
         s.howToApply,
-        ...basisOf([s.support, s.deadline, s.documents]),
+        ...basisOf([s.support, s.deadline, s.recurringDeadline, s.documents]),
         ...(s.documents.value ?? []).map((d) => d.name),
         ...ruleNotes(s.requirements.rules),
       ];

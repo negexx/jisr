@@ -6,6 +6,7 @@ import { parse } from "yaml";
 import { z } from "zod";
 
 import { isValidIsoDate } from "@/data-schema/dates";
+import { MonthDaySchema } from "@/data-schema/records/program";
 import { ScholarshipRecordSchema, SUPPORT_COVERS } from "@/data-schema/records/scholarship";
 
 import { dropAuditRows } from "./audit";
@@ -13,6 +14,7 @@ import { sameSite } from "./discover";
 import {
   amountMatches,
   checkDeadline,
+  checkRecurringDeadline,
   countDates,
   dateSpans,
   type FactCheck,
@@ -42,7 +44,7 @@ const Text = z.object({
   en: z.string().trim().min(1).max(400).optional(),
 });
 
-export const ScholarshipProposalSchema = z.object({
+const ScholarshipProposalObject = z.object({
   slug: Slug,
   name: z.string().trim().min(1),
   provider: z.string().trim().min(1),
@@ -72,6 +74,9 @@ export const ScholarshipProposalSchema = z.object({
     .string()
     .refine(isValidIsoDate, { message: "Expected a real date YYYY-MM-DD" })
     .nullable(),
+  // A deadline the source states with a day and a month but no year ("15 January"): it repeats every
+  // year. Never together with a dated deadline (ADR 0009).
+  recurringDeadline: MonthDaySchema.nullable().optional(),
   documents: z.array(DocumentProposalSchema).nullable(),
   evidence: z.object({
     eligibility: z.array(Ev),
@@ -81,6 +86,10 @@ export const ScholarshipProposalSchema = z.object({
     howToApply: z.array(Ev),
   }),
 });
+export const ScholarshipProposalSchema = ScholarshipProposalObject.refine(
+  (p) => !(p.deadline !== null && (p.recurringDeadline ?? null) !== null),
+  { message: "a scholarship has a dated deadline or a recurring one, not both" },
+);
 export type ScholarshipProposal = z.infer<typeof ScholarshipProposalSchema>;
 
 type Quote = { url: string; quote: string };
@@ -317,13 +326,46 @@ function cleanDeadline(isoDate: string, text: string): FactCheck {
   return { ok: true };
 }
 
-function deadlineFor(isoDate: string, quote: string): FactCheck {
+// A dated deadline and a yearless one obey the same clause rules (one applicant group, a deadline
+// word, international applicants): only the date check differs.
+function inAnyClause(quote: string, check: (text: string) => FactCheck): FactCheck {
   const clauses = quote
     .split(CLAUSE_BREAK)
     .map((c) => c.trim())
     .filter((c) => c !== "");
-  if (clauses.some((c) => cleanDeadline(isoDate, c).ok)) return { ok: true };
-  return cleanDeadline(isoDate, quote);
+  if (clauses.some((c) => check(c).ok)) return { ok: true };
+  return check(quote);
+}
+
+function deadlineFor(isoDate: string, quote: string): FactCheck {
+  return inAnyClause(quote, (text) => cleanDeadline(isoDate, text));
+}
+
+function cleanRecurringDeadline(month: number, day: number, text: string): FactCheck {
+  const stated = checkRecurringDeadline(month, day, text);
+  if (!stated.ok) return stated;
+  if (!namesInternational(text))
+    return {
+      ok: false,
+      reason: "no accepted quote says the deadline is for international (non-EU) applicants",
+    };
+  if (countDates(text) !== 1)
+    return {
+      ok: false,
+      reason:
+        "the quote gives several dates (several applicant groups or steps) and no clause ties this date alone to international applicants",
+    };
+  if (!statesDeadline(text))
+    return {
+      ok: false,
+      reason:
+        "the clause with this date does not say it is the application deadline (deadline, apply by, until, close ...), or it is a results, interview or opening date",
+    };
+  return { ok: true };
+}
+
+function recurringDeadlineFor(month: number, day: number, quote: string): FactCheck {
+  return inAnyClause(quote, (text) => cleanRecurringDeadline(month, day, text));
 }
 
 // --- support --------------------------------------------------------------------------------------
@@ -685,6 +727,32 @@ export async function verifyScholarship(
     }
   }
 
+  let recurringDeadline: { month: number; day: number } | null = null;
+  let recurringDeadlineSource = officialKey;
+  if (proposal.recurringDeadline != null) {
+    const claim = proposal.recurringDeadline;
+    const quotes = await accept("recurringDeadline", proposal.evidence.deadline);
+    if (quotes.length === 0) {
+      notes.push("recurringDeadline: no quote was found verbatim on the cited page(s)");
+    } else {
+      const checks = quotes.map((q) => ({
+        q,
+        check: recurringDeadlineFor(claim.month, claim.day, q.quote),
+      }));
+      const passed = checks.find((c) => c.check.ok);
+      if (passed === undefined) {
+        const first = checks[0]?.check;
+        notes.push(
+          `recurringDeadline: ${first !== undefined && !first.ok ? first.reason : "not supported"}`,
+        );
+      } else {
+        recurringDeadline = { month: claim.month, day: claim.day };
+        recurringDeadlineSource = keyFor(passed.q.url);
+        cite("recurringDeadline", [passed.q]);
+      }
+    }
+  }
+
   // --- documents ---------------------------------------------------------------------------
   // A document is kept only when an accepted quote names it as the page writes it; a translation
   // claim needs a quote that names the document and mentions translation, otherwise it is unknown.
@@ -742,6 +810,15 @@ export async function verifyScholarship(
     summary: lt(proposal.summary),
     support: { value: support, source: supportSource, info_kind: "official" },
     deadline: { value: deadline, source: deadlineSource, info_kind: "official" },
+    ...(recurringDeadline === null
+      ? {}
+      : {
+          recurringDeadline: {
+            value: recurringDeadline,
+            source: recurringDeadlineSource,
+            info_kind: "official",
+          },
+        }),
     requirements: {
       coverage: "partial",
       source: keyFor(firstInternational.url),
@@ -812,7 +889,7 @@ const REVISED_ALWAYS = [
   "officialUrl",
 ] as const;
 // Quote-gated facts: an unproven one keeps the existing value, never resets to null.
-const REVISED_GATED = ["support", "deadline", "documents"] as const;
+const REVISED_GATED = ["support", "deadline", "recurringDeadline", "documents"] as const;
 
 export type RevisedScholarship = { record: Record<string, unknown>; notes: string };
 
@@ -884,7 +961,8 @@ export function reviseScholarship(
     changed.push("institutions");
   for (const field of REVISED_GATED) {
     if (!established.has(field)) {
-      kept.push(field);
+      // An unproven optional field the record never had stays absent, so it is not "kept".
+      if (Object.hasOwn(existing, field)) kept.push(field);
       continue;
     }
     const value =
@@ -893,6 +971,21 @@ export function reviseScholarship(
         : remapped(verified.record[field]);
     if (JSON.stringify(existing[field]) !== JSON.stringify(value)) changed.push(field);
     next[field] = value;
+  }
+  // A deadline is dated or recurring, never both: the form this proposal proved replaces the other.
+  if (established.has("recurringDeadline")) {
+    const dated = asRecord(next.deadline);
+    if (dated.value !== null && dated.value !== undefined) {
+      next.deadline = { ...dated, value: null };
+      if (!changed.includes("deadline")) changed.push("deadline");
+    }
+    const at = kept.indexOf("deadline");
+    if (at >= 0) kept.splice(at, 1);
+  } else if (established.has("deadline") && "recurringDeadline" in next) {
+    delete next.recurringDeadline;
+    if (!changed.includes("recurringDeadline")) changed.push("recurringDeadline");
+    const at = kept.indexOf("recurringDeadline");
+    if (at >= 0) kept.splice(at, 1);
   }
   next.sources = sources;
   const notes = [

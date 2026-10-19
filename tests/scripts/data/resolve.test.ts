@@ -225,6 +225,36 @@ describe("resolveCatalog edge cases", () => {
     expect(keys.some((key) => /#documents\.\d+\.name$/.test(key))).toBe(false);
   });
 
+  it("maps a scholarship's recurring deadline as a volatile fact, and omits it when the record has none", () => {
+    const catalog = catalogOf("valid-minimal");
+    expect(only(resolveCatalog(catalog).scholarships).value).not.toHaveProperty(
+      "recurringDeadline",
+    );
+    const scholarship = only([...catalog.scholarships.values()]).record;
+    catalog.scholarships.set(scholarship.slug, {
+      file: "x",
+      record: {
+        ...scholarship,
+        deadline: { ...scholarship.deadline, value: null },
+        recurringDeadline: {
+          value: { month: 6, day: 30 },
+          source: "main",
+          info_kind: "official",
+          class: "volatile",
+        },
+      },
+    });
+    const resolved = only(resolveCatalog(catalog).scholarships).value;
+    expect(resolved.deadline.value).toBeNull();
+    expect(resolved.recurringDeadline).toEqual({
+      value: { month: 6, day: 30 },
+      source_url: "https://example.org/xx-test",
+      info_kind: "official",
+      last_verified_at: "2026-09-01",
+      class: "volatile",
+    });
+  });
+
   it("throws BuildError when a program's institution is missing", () => {
     const catalog = catalogOf("valid-minimal");
     catalog.institutions.clear();
