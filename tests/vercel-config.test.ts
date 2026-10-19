@@ -90,13 +90,15 @@ describe(".vercelignore", () => {
   });
 
   it("keeps the ignored directories out of Next's output-file tracing", () => {
-    // Next's tracer pulls files nothing imports into the route handlers' functions (test fixtures
-    // under tests/, audit captures under docs/); `.vercelignore` then refuses to upload them and
-    // the prebuilt deploy fails (`ENOENT: readlink`). next.config.ts excludes both from the traces.
+    // Next's tracer pulls files nothing imports at runtime into the route handlers' functions;
+    // `.vercelignore` then refuses to upload them and the prebuilt deploy fails (`ENOENT: readlink`).
+    // Every ignored folder that can hold traced files must be excluded in next.config.ts: tests/
+    // (fixtures), docs/ (audit captures) and data-staging/ (committed proposal JSONs).
     const nextConfig = readRepoFile("next.config.ts");
     expect(nextConfig).toMatch(/outputFileTracingExcludes\s*:/);
-    expect(nextConfig).toContain('"tests/**"');
-    expect(nextConfig).toContain('"docs/**"');
+    for (const folder of ["tests", "docs", "data-staging"]) {
+      expect(nextConfig).toContain(`"${folder}/**"`);
+    }
   });
 });
 
