@@ -35,6 +35,7 @@ export function preferenceMismatches(
   if (
     filters.studyLanguages.length > 0 &&
     taught !== null &&
+    taught.length > 0 &&
     isDecisive(program.teachingLanguages, now) &&
     !taught.some((language) => filters.studyLanguages.includes(language))
   ) {
