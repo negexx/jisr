@@ -1,0 +1,25 @@
+{
+  "slug": "fr-excellence-major",
+  "name": "France Excellence-Major",
+  "provider": "Ministère de l'Europe et des Affaires étrangères / AEFE",
+  "destinations": ["FR"],
+  "eligibleNationalities": [],
+  "fields": [],
+  "summary": {"fr": "Bourse du gouvernement français (AEFE et MEAE) pour les meilleurs bacheliers non français d'un lycée français à l'étranger.", "en": "French government scholarship (AEFE and MEAE) for the best non-French leavers of a French school abroad."},
+  "howToApply": {"fr": "L'élève est présélectionné par le proviseur du lycée français à l'étranger, puis saisit son dossier en ligne.", "en": "The student is shortlisted by the head of the French school abroad, then submits the application online."},
+  "officialUrl": "https://aefe.gouv.fr/fr/enseignement-francais/poursuite-des-etudes-dans-le-superieur/devenir-boursier-france-excellence-major",
+  "support": null,
+  "deadline": null,
+  "documents": null,
+  "evidence": {
+    "eligibility": [
+      {"url": "https://aefe.gouv.fr/fr/enseignement-francais/poursuite-des-etudes-dans-le-superieur/devenir-boursier-france-excellence-major", "quote": "Ces bourses permettent aux meilleurs bacheliers étrangers d’un lycée français du monde de poursuivre un cursus de haut niveau dans l’enseignement supérieur français."}
+    ],
+    "level": [
+      {"url": "https://aefe.gouv.fr/fr/enseignement-francais/poursuite-des-etudes-dans-le-superieur/devenir-boursier-france-excellence-major", "quote": "Ces bourses permettent aux meilleurs bacheliers étrangers d’un lycée français du monde de poursuivre un cursus de haut niveau dans l’enseignement supérieur français."}
+    ],
+    "howToApply": [
+      {"url": "https://aefe.gouv.fr/fr/enseignement-francais/poursuite-des-etudes-dans-le-superieur/devenir-boursier-france-excellence-major", "quote": "doivent être présélectionnés par le proviseur ou la proviseure du lycée français à l’étranger"}
+    ]
+  }
+}
