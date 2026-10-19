@@ -4,21 +4,27 @@ import { EMPTY_MATCH_FILTERS, isEmptyFilters, parseMatchFilters } from "@/lib/ma
 
 export const MATCH_FILTERS_KEY = "jisr.matches-filters";
 
+// A fresh copy of the shared empty document: a reader owns what it returns, so a caller's
+// in-place edit (sort/push) cannot change what "no filters" means for the whole session.
+function emptyMatchFilters(): MatchFilters {
+  return { ...EMPTY_MATCH_FILTERS, fields: [], studyLanguages: [], destinations: [] };
+}
+
 export function readMatchFilters(storage: StorageLike): MatchFilters {
   let raw: string | null;
   try {
     raw = storage.getItem(MATCH_FILTERS_KEY);
   } catch {
-    return EMPTY_MATCH_FILTERS;
+    return emptyMatchFilters();
   }
-  if (raw === null) return EMPTY_MATCH_FILTERS;
+  if (raw === null) return emptyMatchFilters();
   let json: unknown;
   try {
     json = JSON.parse(raw);
   } catch {
-    return EMPTY_MATCH_FILTERS;
+    return emptyMatchFilters();
   }
-  return parseMatchFilters(json) ?? EMPTY_MATCH_FILTERS;
+  return parseMatchFilters(json) ?? emptyMatchFilters();
 }
 
 // Mirrors writeProfile: parse before writing, so an invalid value never lands.

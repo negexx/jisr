@@ -1,0 +1,18 @@
+{
+  "slug": "fr-paris-official",
+  "country": "FR",
+  "city": "paris",
+  "lines": {
+    "food": {
+      "min": 220,
+      "max": 250,
+      "currency": "EUR",
+      "per": "month",
+      "info_kind": "official",
+      "evidence": {
+        "url": "https://www.maroc.campusfrance.org/system/files/medias/documents/2026-06/Co%C3%BBt%20de%20la%20vie%20en%20France%202026-2027.pdf",
+        "quote": "Courses mensuelles entre 220€ et 250€"
+      }
+    }
+  }
+}

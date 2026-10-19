@@ -80,6 +80,12 @@ describe("preferenceMismatches", () => {
       [],
     ],
     [
+      "language published empty never hides (audit T1a-F2)",
+      { studyLanguages: ["fr"] },
+      { teachingLanguages: fact<string[]>([]) },
+      [],
+    ],
+    [
       "several mismatches in fixed order",
       {
         destinations: ["XC"],

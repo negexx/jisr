@@ -521,3 +521,20 @@ describe("sessions", () => {
     expect(rows).toEqual([{ user_agent: null, ip_address: null }]);
   });
 });
+
+describe("erasure of pre-account rows for another spelling of the mailbox (audit T1c-F1)", () => {
+  it("erases a pending row keyed by a Gmail-dot spelling of the account's mailbox", async () => {
+    const { eraseAccountResidue } = await import("@/lib/server/account-erasure");
+    const { db } = await import("@/db");
+    await pool.query(
+      `insert into pending_signups (email, consent_version, consented_at, age_confirmed, expires_at)
+       values ('f1audit@gmail.com', '2026-01-01', now(), true, now() + interval '5 minutes')`,
+    );
+    await eraseAccountResidue(db, { id: "audit-u-f1", email: "f1.audit@gmail.com" });
+    expect(
+      await scalar("select count(*) as count from pending_signups where email = $1", [
+        "f1audit@gmail.com",
+      ]),
+    ).toBe(0);
+  });
+});

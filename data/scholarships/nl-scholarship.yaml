@@ -20,10 +20,10 @@ institutions:
 level: bachelor
 summary:
   fr:
-    text: "Bourse nationale néerlandaise (ex-Holland Scholarship), financée par le ministère de l'Éducation et les établissements participants : 5 000 EUR versés la première année d'études, en licence. Réservée aux étudiants venant de hors de l'EEE admis dans un établissement participant ; ce n'est pas une bourse qui couvre la totalité des frais de scolarité."
+    text: "Bourse nationale néerlandaise (ex-Holland Scholarship) : 5 000 EUR versés la première année d'études, en licence."
     status: draft
   en:
-    text: "Dutch national scholarship (formerly the Holland Scholarship), funded by the Ministry of Education and the participating institutions: EUR 5,000 paid in the first year of Bachelor studies. For students from outside the EEA admitted to a participating institution; it does not cover full tuition."
+    text: "Dutch national scholarship (formerly the Holland Scholarship): EUR 5,000 paid in the first year of Bachelor studies."
     status: draft
   ar:
     text: "منحة هولندية وطنية (كانت تُعرف سابقاً بمنحة هولندا)، تموّلها وزارة التعليم والمؤسسات المشاركة: 5 000 EUR تُدفع في السنة الأولى من الإجازة. مخصّصة للطلبة القادمين من خارج المنطقة الاقتصادية الأوروبية المقبولين في مؤسسة مشاركة؛ ولا تغطي كامل الرسوم الدراسية."
@@ -53,10 +53,10 @@ documents:
   info_kind: official
 howToApply:
   fr:
-    text: Vérifiez les critères sur le site de l'établissement participant que vous visez, postulez à votre programme, puis suivez la procédure de bourse de cet établissement (chaque établissement fixe sa propre date limite).
+    text: Vérifiez les critères sur le site de l'établissement participant que vous visez.
     status: draft
   en:
-    text: Check the criteria on the website of the participating institution you choose, apply to your programme, then follow that institution's scholarship procedure (each institution sets its own closing date).
+    text: Check the criteria on the website of the participating institution you choose.
     status: draft
   ar:
     text: تحقق من الشروط على موقع المؤسسة المشاركة التي تستهدفها، وقدّم طلبك إلى برنامجك، ثم اتبع إجراء المنحة الخاص بتلك المؤسسة (كل مؤسسة تحدّد موعدها النهائي).

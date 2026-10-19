@@ -1,0 +1,30 @@
+{
+  "slug": "nl-scholarship",
+  "name": "NL Scholarship",
+  "provider": "Dutch Ministry of Education, Culture and Science and the participating Dutch institutions (Study in NL / Nuffic)",
+  "destinations": ["NL"],
+  "eligibleNationalities": [],
+  "fields": [],
+  "institutions": ["nl-breda-university-of-applied-sciences-21ui","nl-de-haagse-hogeschool-27um","nl-de-haagse-hogeschool-27um-delft","nl-de-haagse-hogeschool-27um-zoetermeer","nl-fontys-hogeschool-30gb","nl-fontys-hogeschool-30gb-tilburg","nl-fontys-hogeschool-30gb-venlo","nl-hogeschool-rotterdam-22oj","nl-hogeschool-utrecht-25dw","nl-hogeschool-van-amsterdam-28dn","nl-hogeschool-van-arnhem-en-nijmegen-25kb"],
+  "summary": {"fr": "Bourse nationale néerlandaise (ex-Holland Scholarship) : 5 000 EUR versés la première année d'études, en licence.", "en": "Dutch national scholarship (formerly the Holland Scholarship): EUR 5,000 paid in the first year of Bachelor studies."},
+  "howToApply": {"fr": "Vérifiez les critères sur le site de l'établissement participant que vous visez.", "en": "Check the criteria on the website of the participating institution you choose."},
+  "officialUrl": "https://www.studyinnl.org/finances/nl-scholarship",
+  "support": {"amount": {"min": 5000, "max": 5000, "currency": "EUR", "per": "once"}, "covers": []},
+  "deadline": null,
+  "documents": null,
+  "evidence": {
+    "eligibility": [
+      {"url": "https://www.studyinnl.org/finances/nl-scholarship", "quote": "The NL Scholarship (formerly known as Holland Scholarship) is meant for international students from outside the European Economic Area (EEA)"},
+      {"url": "https://www.studyinnl.org/finances/nl-scholarship", "quote": "Your nationality is non-EEA."}
+    ],
+    "level": [
+      {"url": "https://www.studyinnl.org/finances/nl-scholarship", "quote": "You are applying for a full-time bachelor’s or master’s programme at one of the participating Dutch higher education institutions."}
+    ],
+    "support": [
+      {"url": "https://www.studyinnl.org/finances/nl-scholarship", "quote": "The scholarship amounts to € 5,000. You will receive this in the first year of your studies."}
+    ],
+    "howToApply": [
+      {"url": "https://www.studyinnl.org/finances/nl-scholarship", "quote": "Please check the website of the institution you want to apply to for the specific deadline(s)."}
+    ]
+  }
+}

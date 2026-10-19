@@ -57,6 +57,12 @@ export function ScholarshipCard({
   // One badge when both facts share a source, date, kind and class: two identical badges would only add noise.
   const sharedSource = sameSource(scholarship.support, scholarship.deadline);
   const sharedRecurring = recurring !== null && sameSource(scholarship.support, recurring);
+  // The always-visible facts are the amount and the deadline (dated or yearless); documents and
+  // requirement badges live inside the collapsed details. When every visible fact is unpublished the
+  // card would otherwise show no badge at all, though its "not published" statements still need a
+  // source, so the record's own support fact stands in next to the official link (design audit D2).
+  const factsSourced =
+    amount !== null || covers !== null || deadline !== null || recurringDate !== null;
   const countryNames = (codes: readonly string[]) =>
     formatList(
       codes.map((code) => {
@@ -172,9 +178,20 @@ export function ScholarshipCard({
         )}
       </div>
 
-      <ExternalLink href={scholarship.officialUrl} className="min-h-11 w-fit text-base md:min-h-8">
-        {tProg("link")}
-      </ExternalLink>
+      <div className="flex flex-col gap-1.5">
+        <ExternalLink
+          href={scholarship.officialUrl}
+          className="min-h-11 w-fit text-base md:min-h-8"
+        >
+          {tProg("link")}
+        </ExternalLink>
+        {factsSourced ? null : (
+          <SourceBadge
+            meta={scholarship.support}
+            report={{ record: `scholarships/${scholarship.slug}`, path: "support" }}
+          />
+        )}
+      </div>
 
       <details className="rounded-xl border border-border bg-secondary px-4">
         <summary className={cn(DISCLOSURE_SUMMARY_CLASS, "min-h-11 w-full py-2")}>
