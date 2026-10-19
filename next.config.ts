@@ -23,11 +23,11 @@ const nextConfig: NextConfig = {
     globalNotFound: true,
   },
   // The route handlers' output-file traces pick up files nothing imports at runtime: test-only
-  // fixtures under tests/ and the audit captures under docs/. `.vercelignore` excludes both
-  // folders, so `vercel deploy --prebuilt` cannot upload them and the deployment fails with
-  // `ENOENT: readlink`. Keep them out of the traces.
+  // fixtures under tests/, the audit captures under docs/, and the committed proposal JSONs under
+  // data-staging/. `.vercelignore` excludes all three folders, so `vercel deploy --prebuilt` cannot
+  // upload them and the deployment fails with `ENOENT: readlink`. Keep them out of the traces.
   outputFileTracingExcludes: {
-    "*": ["tests/**", "docs/**"],
+    "*": ["tests/**", "docs/**", "data-staging/**"],
   },
   async headers() {
     return [...SNAPSHOT_HEADER_RULES, ...securityHeaderRules(siteEnv.indexable)];
