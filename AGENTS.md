@@ -4,15 +4,15 @@ This is the opencode entry point for **Jisrr**. The full operating manual is `.c
 
 ## Model policy
 
-**Every agent and every tier runs on `opencode-go/deepseek-v4.1-flash`** — the six workflow agents, the oh-my-openagent orchestration agents, the built-ins, and the title/summary/compaction helpers. Where `.claude/CLAUDE.md`'s "Model dispatch" table names Claude models (Haiku / Sonnet / Opus), substitute `opencode-go/deepseek-v4.1-flash`. The pins live in three places:
+**Every agent and every tier runs on `opencode-go/deepseek-v4.1-flash`** — the seven workflow agents, the oh-my-openagent orchestration agents, the built-ins, and the title/summary/compaction helpers. Where `.claude/CLAUDE.md`'s "Model dispatch" table names Claude models (Haiku / Sonnet / Opus), substitute `opencode-go/deepseek-v4.1-flash`. The pins live in three places:
 
-- `opencode.json` (this project): the default `model` / `small_model`, plus the `agent` block for `researcher`, `planner`, `implementer`, `implementer-hard`, `implementer-complex`, `reviewer`.
+- `opencode.json` (this project): the default `model` / `small_model`, plus the `agent` block for `researcher`, `planner`, `implementer`, `implementer-hard`, `implementer-complex`, `reviewer`, `reviewer-complex`.
 - `~/.omo/omo.jsonc` (the oh-my-openagent plugin): every orchestration agent (`sisyphus`, `prometheus`, `atlas`, `hephaestus`, `oracle`, `explore`, `librarian`, `metis`, `momus`, `multimodal-looker`, `sisyphus-junior`, `build`, `plan`) and every task category (`quick`, `deep-low`, `deep-high`, `ultrabrain`, `unspecified-low`, `unspecified-high`, `visual-engineering`, `artistry`, `writing`).
 - Subagents that name no model inherit the primary agent's model, which is also deepseek-v4.1-flash.
 
 ## Agents
 
-Six workflow agents, defined by `.claude/agents/*.md` and model-pinned in `opencode.json`:
+Seven workflow agents, defined by `.claude/agents/*.md` and model-pinned in `opencode.json`:
 
 | Agent | Role |
 |---|---|
@@ -22,6 +22,7 @@ Six workflow agents, defined by `.claude/agents/*.md` and model-pinned in `openc
 | `implementer-hard` | Executes medium-to-hard steps (domain logic, schemas, importers). |
 | `implementer-complex` | Executes really long or complex steps of an agreed plan. |
 | `reviewer` | Reviews a diff for correctness, trust/data integrity, security, conventions. |
+| `reviewer-complex` | High-complexity reviews (security-critical, architectural, schema/migrations, concurrency) and the final whole-branch review before a PR. |
 
 The `oh-my-openagent` plugin provides the orchestration agents (`oracle`, `explore`, `librarian`, `metis`, `momus`, `multimodal-looker`, `sisyphus`, `prometheus`, `atlas`, …); they are all model-pinned to deepseek-v4.1-flash in `~/.omo/omo.jsonc`, not re-modelled here.
 
