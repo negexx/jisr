@@ -114,12 +114,13 @@ describe.each(LOCALES)("scholarships page server render (%s)", (locale) => {
     expect(metadata.description).toBe(message(locale, "scholarshipsPage.meta.description"));
   });
 
-  it("renders the three fixture scholarships under one h1", async () => {
+  it("renders the four fixture scholarships under one h1", async () => {
     const { document } = await renderPage(locale);
     const data = await loadScholarshipsPageData(locale);
     const names = data.sections.flatMap((s) => s.entries.map((e) => e.scholarship.name));
     expect(names.sort()).toEqual([
       "XX Test Open Scholarship",
+      "XX Test Unknown Scholarship",
       "XX Test XA Scholarship",
       "XX Test XZ Scholarship",
     ]);
@@ -127,7 +128,17 @@ describe.each(LOCALES)("scholarships page server render (%s)", (locale) => {
     for (const name of names) expect(text).toContain(name);
     expect(document.querySelectorAll("h1")).toHaveLength(1);
     expect(textOf(document.querySelector("h1"))).toBe(message(locale, "scholarshipsPage.title"));
-    expect(document.querySelectorAll('[data-testid="scholarship-card"]')).toHaveLength(3);
+    expect(document.querySelectorAll('[data-testid="scholarship-card"]')).toHaveLength(4);
+  });
+
+  it("shows a source badge on every scholarship card", async () => {
+    const { document } = await renderPage(locale);
+    const cards = [...document.querySelectorAll('[data-testid="scholarship-card"]')];
+    expect(cards).toHaveLength(4);
+    const unsourced = cards
+      .filter((card) => card.querySelector('[data-slot="source-badge"]') === null)
+      .map((card) => card.id);
+    expect(unsourced).toEqual([]);
   });
 
   it("shows a neutral placeholder for each nationality-restricted scholarship only", async () => {
@@ -139,8 +150,9 @@ describe.each(LOCALES)("scholarships page server render (%s)", (locale) => {
         ?.getAttribute("data-state");
     expect(stateOf(E2E_SCHOLARSHIP_SLUGS.xaOnly)).toBe("placeholder");
     expect(stateOf(E2E_SCHOLARSHIP_SLUGS.xzOnly)).toBe("placeholder");
+    expect(stateOf(E2E_SCHOLARSHIP_SLUGS.unknown)).toBe("placeholder");
     expect(stateOf(E2E_SCHOLARSHIP_SLUGS.open)).toBeUndefined();
-    expect(document.querySelectorAll('[data-state="placeholder"]')).toHaveLength(2);
+    expect(document.querySelectorAll('[data-state="placeholder"]')).toHaveLength(3);
   });
 
   it("makes no nationality, freshness or clock claim on the server", async () => {

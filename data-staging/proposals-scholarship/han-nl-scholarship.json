@@ -1,0 +1,26 @@
+{
+  "slug": "han-nl-scholarship",
+  "name": "HAN NL Scholarship",
+  "provider": "HAN University of Applied Sciences",
+  "destinations": ["NL"],
+  "eligibleNationalities": [],
+  "fields": [],
+  "institutions": ["nl-hogeschool-van-arnhem-en-nijmegen-25kb"],
+  "summary": {"fr": "Bourse HAN pour les étudiants de licence hors UE/EEE : jusqu'à 12 500 EUR au total.", "en": "HAN scholarship for bachelor students from outside the EU/EEA: up to EUR 12,500 in total."},
+  "howToApply": {"fr": "Voir la page des bourses de HAN pour les conditions et la procédure.", "en": "See HAN's scholarships page for the conditions and procedure."},
+  "officialUrl": "https://www.han.nl/international/en/study-and-living/scholarships/",
+  "support": null,
+  "deadline": null,
+  "documents": null,
+  "evidence": {
+    "eligibility": [
+      {"url": "https://www.han.nl/international/en/study-and-living/scholarships/", "quote": "Are you from a country outside the EU/EEA?"}
+    ],
+    "level": [
+      {"url": "https://www.han.nl/international/en/study-and-living/scholarships/", "quote": "Decided to enroll in a bachelor or master degree at HAN University of Applied Sciences in the Netherlands?"}
+    ],
+    "howToApply": [
+      {"url": "https://www.han.nl/international/en/study-and-living/scholarships/", "quote": "Decided to enroll in a bachelor or master degree at HAN University of Applied Sciences in the Netherlands?"}
+    ]
+  }
+}

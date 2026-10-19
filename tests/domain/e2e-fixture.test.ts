@@ -167,7 +167,7 @@ describe("e2e-journey fixture: dataset guards", () => {
       expect(p.officialUrl.startsWith("https://example.org/")).toBe(true);
     }
     const countries = built.core.countries.map((c) => c.code).sort();
-    expect(countries).toEqual(["XA", "XB", "XC", "XZ"]);
+    expect(countries).toEqual(["XA", "XB", "XC", "XQ", "XZ"]);
     expect(built.core.countries.every((c) => c.currency === "XTS")).toBe(true);
   });
 });

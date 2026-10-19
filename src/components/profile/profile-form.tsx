@@ -37,8 +37,10 @@ function Shell({ children }: { children: ReactNode }) {
 
 function FormSkeleton({ label }: { label: string }) {
   const block = "rounded-xl bg-secondary motion-safe:animate-pulse";
+  // The min-height keeps the footer below the fold while the form loads, so it cannot jump when the
+  // wizard replaces the skeleton (design audit D1).
   return (
-    <output aria-busy="true" className="flex flex-col gap-6">
+    <output aria-busy="true" className="flex min-h-[calc(100dvh-5rem)] flex-col gap-6">
       <span className="sr-only">{label}</span>
       <div aria-hidden="true" className="flex flex-col gap-6">
         <div className={`${block} h-6 w-2/3`} />

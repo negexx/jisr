@@ -375,6 +375,11 @@ function resolveScholarship(record: ScholarshipRecord): Resolved<Scholarship> {
     summary: text(scope, "summary", record.summary),
     support: fact(scope, "support", record.support, copied),
     deadline: fact(scope, "deadline", record.deadline, copied),
+    ...(record.recurringDeadline === undefined
+      ? {}
+      : {
+          recurringDeadline: fact(scope, "recurringDeadline", record.recurringDeadline, copied),
+        }),
     requirements: requirements(scope, record.requirements),
     documents: documents(scope, "documents", record.documents),
     howToApply: text(scope, "howToApply", record.howToApply),

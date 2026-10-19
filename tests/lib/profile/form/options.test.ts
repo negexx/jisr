@@ -36,7 +36,12 @@ describe("countries", () => {
   it("finds the single origin of the real fixture and every other country as destination", () => {
     const core = realCore();
     expect(originCountries(core).map((country) => country.code)).toEqual(["XA"]);
-    expect(destinationOptions(core).map((country) => country.code)).toEqual(["XB", "XC", "XZ"]);
+    expect(destinationOptions(core).map((country) => country.code)).toEqual([
+      "XB",
+      "XC",
+      "XQ",
+      "XZ",
+    ]);
   });
 
   it("lists each origin once, even with several credential types", () => {

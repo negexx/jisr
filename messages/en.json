@@ -847,6 +847,7 @@
       },
       "deadline": "Scholarship deadline: {date}",
       "deadlineUnknown": "Scholarship deadline: not published, to be checked",
+      "recurring": "Scholarship deadline: usually {date} each year (year not published, to be checked)",
       "link": "Scholarship website",
       "aid": {
         "heading": "Good to know about the country's student aid",
@@ -1095,7 +1096,8 @@
     },
     "deadline": {
       "known": "Deadline: {date}",
-      "unknown": "Deadline: not published in the sources we read, to check"
+      "unknown": "Deadline: not published in the sources we read, to check",
+      "recurring": "Deadline: usually {date} each year (year not published, to check)"
     },
     "details": {
       "summary": "Requirements, documents and how to apply",

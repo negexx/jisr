@@ -64,6 +64,15 @@ describe("readMatchFilters", () => {
   it("does not crash when getItem throws", () => {
     expect(readMatchFilters(createFakeStorage({ get: true }))).toEqual(EMPTY_MATCH_FILTERS);
   });
+
+  it("hands out a fresh object, never the shared EMPTY_MATCH_FILTERS constant (audit T1b-F1)", () => {
+    const storage = createFakeStorage();
+    const first = readMatchFilters(storage);
+    expect(first).not.toBe(EMPTY_MATCH_FILTERS);
+    expect(first).toEqual(EMPTY_MATCH_FILTERS);
+    first.fields.push("xx-test-field" as never);
+    expect(readMatchFilters(storage)).toEqual(EMPTY_MATCH_FILTERS);
+  });
 });
 
 describe("writeMatchFilters", () => {

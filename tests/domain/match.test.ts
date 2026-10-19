@@ -44,14 +44,21 @@ describe("resolveRoute", () => {
 
 describe("matchProgram route handling", () => {
   it.each([
-    ["direct, no rules", [route()], program(), "satisfied", "direct", ["route:pass:ok"]],
+    [
+      "direct, no rules (vacuous complete coverage)",
+      [route()],
+      program(),
+      "check",
+      "direct",
+      ["route:pass:ok", "coverage:unknown:coverage_partial"],
+    ],
     [
       "direct but stale route",
       [route({ fact: staleMeta() })],
       program(),
       "check",
       "direct",
-      ["route:unknown:stale_source"],
+      ["route:unknown:stale_source", "coverage:unknown:coverage_partial"],
     ],
     [
       "direct but estimate route",
@@ -59,7 +66,7 @@ describe("matchProgram route handling", () => {
       program(),
       "check",
       "direct",
-      ["route:unknown:non_official_source"],
+      ["route:unknown:non_official_source", "coverage:unknown:coverage_partial"],
     ],
     [
       "missing route, rules still evaluated",
@@ -127,7 +134,11 @@ describe("matchProgram route handling", () => {
       program(),
       "not_satisfied",
       "direct",
-      ["route:pass:ok", "route:xx-test-cond:fail:below_threshold"],
+      [
+        "route:pass:ok",
+        "route:xx-test-cond:fail:below_threshold",
+        "coverage:unknown:coverage_partial",
+      ],
     ],
     [
       "foundation skips conditions",
@@ -209,6 +220,24 @@ describe("matchProgram route handling", () => {
       reasons: brief(r.reasons),
       programSlug: r.programSlug,
     }).toEqual({ status, route: routeOutcome, reasons: [...reasons], programSlug: "xx-test-prog" });
+  });
+
+  it("complete coverage with no published rules is check, never satisfied (audit T1a-F1)", () => {
+    const r = run(
+      [route()],
+      program({ requirements: requirements({ coverage: "complete", rules: [] }) }),
+    );
+    expect(r.status).toBe("check");
+    expect(brief(r.reasons)).toEqual(["route:pass:ok", "coverage:unknown:coverage_partial"]);
+  });
+
+  it("complete coverage with one passing rule is still satisfied (audit T1a-F1)", () => {
+    expect(run([route()], withRules(passRule)).status).toBe("satisfied");
+  });
+
+  it("an undefined route note never sets a note key (audit T1a-F3)", () => {
+    const malformed = { ...route(), note: undefined } as unknown as AdmissionRoute;
+    expect(run([malformed]).reasons[0]).not.toHaveProperty("note");
   });
 
   it("orders route, conditions, program rules in data order, coverage", () => {

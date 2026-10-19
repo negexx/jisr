@@ -48,6 +48,7 @@ const LOOKUP: Record<string, ReportFactKey> = {
   programs: "program",
   "scholarships:support": "scholarshipAmount",
   "scholarships:deadline": "scholarshipDeadline",
+  "scholarships:recurringDeadline": "scholarshipDeadline",
   "scholarships:documents": "scholarshipDocuments",
   "scholarships:requirements": "scholarshipEligibility",
   scholarships: "scholarship",

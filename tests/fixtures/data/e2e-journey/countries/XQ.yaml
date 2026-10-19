@@ -1,0 +1,6 @@
+code: XQ
+name:
+  fr: { text: Pays test Q, status: reviewed }
+  en: { text: Test country Q, status: reviewed }
+  ar: { text: بلد الاختبار ق, status: reviewed }
+currency: XTS

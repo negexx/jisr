@@ -9,9 +9,12 @@ import { useSessionHint } from "@/lib/auth/session-hint";
 const BLOCK = "rounded-lg bg-muted motion-safe:animate-pulse";
 
 // Decorative: the busy container that holds it, and the separate live status, carry the meaning.
+// The min-height reserves a viewport-height placeholder so the footer starts below the fold while
+// the island loads; it cannot then jump when the records replace the skeleton (a 0.195 layout shift
+// on desktop, design audit D1).
 export function CompareSkeleton() {
   return (
-    <div aria-busy="true" className="flex flex-col gap-6">
+    <div aria-busy="true" className="flex min-h-[calc(100dvh-8rem)] flex-col gap-6">
       <div aria-hidden="true" className="flex flex-col gap-4">
         <div className={`${BLOCK} h-16`} />
         <div className={`${BLOCK} h-12 w-2/3`} />

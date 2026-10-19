@@ -41,7 +41,11 @@ export async function eraseAccountResidue(db: AccountDb, user: ErasedUser): Prom
       await tx
         .delete(emailCooldowns)
         .where(inArray(emailCooldowns.email, [email, cooldownKey(email)]));
-      await tx.delete(pendingSignups).where(eq(pendingSignups.email, email));
+      // pending_signups is written by normalizeEmail, so a row for the same mailbox can carry a
+      // different spelling (a Gmail dot or a `+tag`); sweep both forms, as the cooldown does.
+      await tx
+        .delete(pendingSignups)
+        .where(inArray(pendingSignups.email, [email, cooldownKey(email)]));
     });
   } catch (error) {
     // Drizzle puts the statement's parameters (the address) into its message.
