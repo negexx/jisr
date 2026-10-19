@@ -27,6 +27,10 @@
     "reviewer": {
       "description": "Reviews a diff or change set for correctness, security and project conventions before merge.",
       "model": "opencode-go/deepseek-v4.1-flash"
+    },
+    "reviewer-complex": {
+      "description": "High-complexity reviewer. Reviews security-critical, architectural, schema/migration or concurrency changes, and the final whole-branch review of a PR, for correctness, security and project conventions. Use only where the default reviewer is not enough.",
+      "model": "opencode-go/deepseek-v4.1-flash"
     }
   }
 }
