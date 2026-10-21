@@ -1,0 +1,67 @@
+slug: nl-fontys-hogeschool-30gb-international-business-1001o2703
+institution: nl-fontys-hogeschool-30gb
+country: NL
+city: eindhoven
+field: business-economics
+level: bachelor
+name: International Business
+summary:
+  fr:
+    text: International Business (International Business), Fontys Hogeschool (Eindhoven). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: International Business (International Business), Fontys Hogeschool (Eindhoven). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Business (International Business), Fontys Hogeschool (Eindhoven). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.fontys.nl/en/Programmes/International-Business-bachelor-full-time.htm
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez les conditions d'admission détaillées : diplôme étranger équivalent au niveau néerlandais et niveau d'anglais requis (à confirmer auprès de l'établissement)."
+          status: draft
+        en:
+          text: "Check the detailed admission requirements: foreign diploma equivalent to Dutch standards and the required English level (confirm with the institution)."
+          status: draft
+        ar:
+          text: "تحقّق من شروط القبول التفصيلية: شهادة أجنبية معادلة للمستوى الهولندي ومستوى الإنجليزية المطلوب (يلزم التأكد لدى المؤسسة)."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.fontys.nl/en/Programmes/International-Business-bachelor-full-time.htm
+    last_verified_at: 2026-10-21

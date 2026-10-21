@@ -1,0 +1,90 @@
+slug: nl-universiteit-twente-21ph-advanced-technology-1001o5619
+institution: nl-universiteit-twente-21ph
+country: NL
+city: enschede
+field: engineering
+level: bachelor
+name: Advanced Technology
+summary:
+  fr:
+    text: Advanced Technology, Universiteit Twente (Enschede). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Advanced Technology, Universiteit Twente (Enschede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Advanced Technology, Universiteit Twente (Enschede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.utwente.nl/onderwijs/bachelor/opleidingen/advanced-technology/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-09-01
+      applicationOpens: null
+      applicationDeadline: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La participation à l'activité de matching (studiekeuzecheck) est obligatoire pour Advanced Technology ; vérifiez les dates et la procédure auprès de la formation.
+          status: draft
+        en:
+          text: Participation in the matching activity (studiekeuzecheck) is compulsory for Advanced Technology; check the dates and procedure with the programme.
+          status: draft
+        ar:
+          text: المشاركة في نشاط المطابقة (studiekeuzecheck) إلزامية لبرنامج Advanced Technology؛ تحقق من المواعيد والإجراء لدى البرنامج.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un applicant avec une vooropleiding étrangère (comme le baccalauréat marocain) doit vérifier les exigences d'admission et les deadlines internationales auprès de l'université.
+          status: draft
+        en:
+          text: An applicant with a foreign qualification (such as a Moroccan baccalauréat) must check the admission requirements and international deadlines with the university.
+          status: draft
+        ar:
+          text: يجب على المتقدم الذي لديه vooropleiding أجنبية (مثل البكالوريا المغربية) التحقق من متطلبات القبول والمواعيد النهائية الدولية لدى الجامعة.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.utwente.nl/onderwijs/bachelor/opleidingen/advanced-technology/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.utwente.nl/onderwijs/bachelor/toelating-en-inschrijving/aanmelden/
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.utwente.nl/onderwijs/student-services/ik-word-student/inschrijving/studiekeuzecheck/
+    last_verified_at: 2026-10-21

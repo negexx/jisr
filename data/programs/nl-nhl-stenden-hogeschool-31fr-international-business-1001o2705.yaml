@@ -1,0 +1,53 @@
+slug: nl-nhl-stenden-hogeschool-31fr-international-business-1001o2705
+institution: nl-nhl-stenden-hogeschool-31fr
+country: NL
+city: leeuwarden
+field: business-economics
+level: bachelor
+name: International Business
+summary:
+  fr:
+    text: International Business (International Business), NHL Stenden Hogeschool (Leeuwarden). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: International Business (International Business), NHL Stenden Hogeschool (Leeuwarden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Business (International Business), NHL Stenden Hogeschool (Leeuwarden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.nhlstenden.com/en/courses/international-business
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.nhlstenden.com/en/courses/international-business
+    last_verified_at: 2026-10-21

@@ -1,0 +1,144 @@
+slug: nl-radboud-universiteit-nijmegen-21pm-artificial-intelligence-1001o6129
+institution: nl-radboud-universiteit-nijmegen-21pm
+country: NL
+city: nijmegen
+field: computer-science
+level: bachelor
+name: Artificial Intelligence
+summary:
+  fr:
+    text: Artificial Intelligence (Artificial Intelligence), Radboud Universiteit Nijmegen (Nijmegen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Artificial Intelligence (Artificial Intelligence), Radboud Universiteit Nijmegen (Nijmegen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Artificial Intelligence (Artificial Intelligence), Radboud Universiteit Nijmegen (Nijmegen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.ru.nl/opleidingen/bachelors/artificial-intelligence
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport valide ou carte d'identité européenne
+          status: draft
+        en:
+          text: Valid passport or European identity card
+          status: draft
+        ar:
+          text: جواز سفر ساري أو بطاقة هوية أوروبية
+          status: draft
+      translationRequired: null
+    - slug: transcripts
+      name:
+        fr:
+          text: Relevés de notes
+          status: draft
+        en:
+          text: Transcripts
+          status: draft
+        ar:
+          text: كشوف النقاط
+          status: draft
+      translationRequired: true
+    - slug: personal-statement
+      name:
+        fr:
+          text: Déclaration personnelle
+          status: draft
+        en:
+          text: Personal statement
+          status: draft
+        ar:
+          text: بيان شخصي
+          status: draft
+      translationRequired: null
+    - slug: cv-overview
+      name:
+        fr:
+          text: Aperçu de la formation et de l'expérience
+          status: draft
+        en:
+          text: Overview of education/experience
+          status: draft
+        ar:
+          text: نظرة عامة على التكوين والخبرة
+          status: draft
+      translationRequired: null
+    - slug: language-proficiency-proof
+      name:
+        fr:
+          text: Preuve de maîtrise linguistique
+          status: draft
+        en:
+          text: Proof of language proficiency
+          status: draft
+        ar:
+          text: إثبات الكفاءة اللغوية
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Frais de candidature non remboursables de 100 euros pour les candidats titulaires d'un diplôme international, à payer avant le traitement de la demande.
+          status: draft
+        en:
+          text: Non-refundable application fee of 100 euros for applicants with an international diploma, to be paid before the application is processed.
+          status: draft
+        ar:
+          text: رسوم تقديم غير قابلة للاسترداد قدرها 100 يورو للمتقدمين الحاصلين على شهادة دولية، تُدفع قبل معالجة الطلب.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez vous-même les conditions d'admission de la formation (diplôme étranger, niveau d'anglais) ; la page néerlandaise de la formation renvoie à la page anglaise pour les informations détaillées.
+          status: draft
+        en:
+          text: Check the programme's admission requirements yourself (foreign qualification, English level); the Dutch programme page refers to the English page for detailed programme information.
+          status: draft
+        ar:
+          text: تحقّق بنفسك من شروط القبول الخاصة بالبرنامج (الشهادة الأجنبية، ومستوى الإنجليزية)؛ فالصفحة الهولندية للبرنامج تُحيل إلى الصفحة الإنجليزية للاطلاع على المعلومات التفصيلية.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.ru.nl/opleidingen/bachelors/artificial-intelligence
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.ru.nl/opleidingen/aanmelding-en-toelating/aanmeldprocedure-bachelors/aanmelden-met-een-internationale-vooropleiding/aanmelden-voor-reguliere-bacheloropleidingen
+    last_verified_at: 2026-10-21

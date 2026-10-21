@@ -1,0 +1,131 @@
+slug: nl-rijksuniversiteit-groningen-21pc-informatiekunde-1001o6095
+institution: nl-rijksuniversiteit-groningen-21pc
+country: NL
+city: groningen
+field: computer-science
+level: bachelor
+name: Informatiekunde
+summary:
+  fr:
+    text: Informatiekunde (Information Science), Rijksuniversiteit Groningen (Groningen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Informatiekunde (Information Science), Rijksuniversiteit Groningen (Groningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Informatiekunde (Information Science), Rijksuniversiteit Groningen (Groningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.rug.nl/bachelors/information-science/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1400000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-09-01
+      applicationOpens: null
+      applicationDeadline: 2027-05-01
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-3
+  info_kind: official
+documents:
+  value:
+    - slug: diploma
+      name:
+        fr:
+          text: Diplôme (copie certifiée)
+          status: draft
+        en:
+          text: Diploma (certified copy)
+          status: draft
+        ar:
+          text: الشهادة (نسخة مصدَّقة)
+          status: draft
+      translationRequired: null
+    - slug: transcript
+      name:
+        fr:
+          text: Relevé de notes final (copie certifiée)
+          status: draft
+        en:
+          text: Final transcript (certified copy)
+          status: draft
+        ar:
+          text: كشف العلامات النهائي (نسخة مصدَّقة)
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme équivalent au VWO néerlandais est requis ; vérifiez si votre Baccalauréat marocain est reconnu équivalent (évaluation individuelle).
+          status: draft
+        en:
+          text: A diploma equivalent to the Dutch VWO is required; check whether your Moroccan Baccalauréat is recognised as equivalent (individual assessment).
+          status: draft
+        ar:
+          text: مطلوب شهادة معادِلة لشهادة VWO الهولندية؛ تحقق مما إذا كانت البكالوريا المغربية الخاصة بك معترفًا بها كمعادِلة (تقييم فردي).
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Une connaissance en mathématiques est indiquée ; l'admission directe ou un examen d'entrée sera déterminé selon le contenu de vos cours de mathématiques.
+          status: draft
+        en:
+          text: Mathematics background is indicated; direct admission or an entrance exam will be determined based on the content of your mathematics courses.
+          status: draft
+        ar:
+          text: يُذكر أن المطلوب الإلمام بالرياضيات؛ ويتحدّد ما إذا كان القبول مباشراً أو يلزم امتحان دخول، حسب محتوى مقرراتك في الرياضيات.
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Frais de dossier non remboursables de 100 € pour les candidats avec un diplôme non néerlandais, à payer avant la date limite.
+          status: draft
+        en:
+          text: Non-refundable application fee of €100 for applicants with a non-Dutch diploma, to be paid before the deadline.
+          status: draft
+        ar:
+          text: رسوم ملف غير قابلة للاسترداد قدرها 100 يورو للمتقدمين الحاصلين على شهادة غير هولندية، تُدفع قبل الموعد النهائي.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.rug.nl/bachelors/information-science/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.rug.nl/education/application-enrolment-tuition-fees/tuition-fee/bachelor
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.rug.nl/education/application-enrolment-tuition-fees/admission/non-dutch-qualification/bachelor-non-dutch-qualification
+    last_verified_at: 2026-10-21

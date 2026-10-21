@@ -1,0 +1,90 @@
+slug: nl-universiteit-twente-21ph-business-information-tec-1001o5833
+institution: nl-universiteit-twente-21ph
+country: NL
+city: enschede
+field: computer-science
+level: bachelor
+name: Business Information Technology
+summary:
+  fr:
+    text: Business Information Technology (Business Information Technology), Universiteit Twente (Enschede). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Business Information Technology (Business Information Technology), Universiteit Twente (Enschede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Business Information Technology (Business Information Technology), Universiteit Twente (Enschede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.utwente.nl/en/education/bachelor/programmes/business-information-technology/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Comme le programme n'a pas de matching obligatoire, une inscription avant le 1 mai est conseillée mais pas obligatoire.
+          status: draft
+        en:
+          text: As this programme has no compulsory matching, applying before 1 May is advised but not required.
+          status: draft
+        ar:
+          text: بما أن البرنامج لا يتضمن مطابقة إلزامية، يُنصح بالتقديم قبل 1 مايو لكن ذلك غير إلزامي.
+          status: draft
+    - id: req-2
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les exigences linguistiques pour les étudiants étrangers (niveau d'anglais, tests acceptés) auprès du bureau des admissions de l'UT.
+          status: draft
+        en:
+          text: Check the language requirements for foreign students (English level, accepted tests) with the UT admissions office.
+          status: draft
+        ar:
+          text: تحقّق من متطلبات اللغة للطلاب الأجانب (مستوى الإنجليزية، والاختبارات المقبولة) لدى مكتب القبول التابع لـ UT.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.utwente.nl/en/education/bachelor/programmes/business-information-technology/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.utwente.nl/onderwijs/bachelor/toelating-en-inschrijving/aanmelden/
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.utwente.nl/onderwijs/student-services/ik-word-student/inschrijving/studiekeuzecheck/
+    last_verified_at: 2026-10-21
+  page-4:
+    url: https://www.utwente.nl/.utwente_base/ws2016/download.shtml?f=1yisIlaYCH8hpJKb7HovL-01OTAe4V9UridRZYp0re7Gf1KgiFfTUzyazrxv0mlT-23h5jBSCmPDFGU55arcdDdARarIRxKZUcIe4PPVkANThghnwcPOhAwCl9i0OIa-C0dxVJtX3FuhM37z-MD4d_EkkIX-RvY01clt3d9kzzuVWfT-ynt-k3D2Q6xeqF7dIRU6Q2YKX8NUHSi8Tgr4mrdE8JrLeNC_LTUrnMdEgj9LZY1hl9PNnwdJADA9CmifwA.Gad5GXyMysbqdZMM.N5MTfYjgJAAK29Xeptm0jA
+    last_verified_at: 2026-10-21

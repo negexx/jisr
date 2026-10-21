@@ -1,0 +1,115 @@
+slug: nl-has-green-academy-21cw-international-food-agrib-1001o5305
+institution: nl-has-green-academy-21cw
+country: NL
+city: s-hertogenbosch
+field: business-economics
+level: bachelor
+name: International Food & Agribusiness
+summary:
+  fr:
+    text: International Food & Agribusiness (International Food & Agribusiness), HAS green academy ('s-Hertogenbosch). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: International Food & Agribusiness (International Food & Agribusiness), HAS green academy ('s-Hertogenbosch). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Food & Agribusiness (International Food & Agribusiness), HAS green academy ('s-Hertogenbosch). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.has.nl/hbo-opleidingen/international-food-agribusiness/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1069000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les conditions d'admission sur la page anglaise pour les étudiants internationaux (diplôme non néerlandais) et contactez International Office (international@has.nl).
+          status: draft
+        en:
+          text: Check the admission requirements on the English page for international students (non-Dutch diploma) and contact the International Office (international@has.nl).
+          status: draft
+        ar:
+          text: تحقّق من شروط القبول في الصفحة الإنجليزية الخاصة بالطلاب الدوليين (شهادة غير هولندية)، وتواصل مع مكتب International Office (international@has.nl).
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Pour les diplômés du secondaire néerlandais : profils havo/vwo avec wiskunde A ou B, ou mbo niveau 4 (wiskunde recommandée). Vérifiez l'équivalence de votre Baccalauréat marocain."
+          status: draft
+        en:
+          text: "For Dutch secondary diplomas: havo/vwo profiles with mathematics A or B, or mbo level 4 (mathematics recommended). Check the equivalence of your Moroccan Baccalauréat."
+          status: draft
+        ar:
+          text: "بالنسبة إلى خريجي التعليم الثانوي الهولندي: مسارات havo/vwo مع wiskunde A أو B، أو mbo بمستوى 4 (يُستحسن wiskunde). تحقق من معادلة البكالوريا المغربية الخاصة بك."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats de 21 ans ou plus ne remplissant pas les conditions peuvent passer un test d'admission 21+ ; contactez le conseiller aux études.
+          status: draft
+        en:
+          text: Applicants aged 21 or older who do not meet the requirements may take a 21+ admission test; contact the study adviser.
+          status: draft
+        ar:
+          text: يمكن للمتقدمين البالغين 21 سنة أو أكثر ممن لا يستوفون الشروط اجتياز اختبار القبول 21+؛ تواصل مع المرشد الأكاديمي.
+          status: draft
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "La « studiekeuzecheck » (test de choix d'études) est conseillée : demandez un formulaire de motivation au conseiller aux études."
+          status: draft
+        en:
+          text: "The study-choice check (studiekeuzecheck) is recommended: request a motivation form from the study adviser."
+          status: draft
+        ar:
+          text: "يُنصح بالمشاركة في « studiekeuzecheck » (اختبار اختيار الدراسة): اطلب استمارة دافعية من المرشد الأكاديمي."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.has.nl/hbo-opleidingen/international-food-agribusiness/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.has.nl/meer-has/studeren-aan-de-has/collegegeld/
+    last_verified_at: 2026-10-21

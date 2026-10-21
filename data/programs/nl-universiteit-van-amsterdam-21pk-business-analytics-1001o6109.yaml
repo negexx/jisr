@@ -1,0 +1,158 @@
+slug: nl-universiteit-van-amsterdam-21pk-business-analytics-1001o6109
+institution: nl-universiteit-van-amsterdam-21pk
+country: NL
+city: amsterdam
+field: business-economics
+level: bachelor
+name: Business Analytics
+summary:
+  fr:
+    text: Business Analytics (Business Analytics), Universiteit van Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Business Analytics (Business Analytics), Universiteit van Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Business Analytics (Business Analytics), Universiteit van Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.uva.nl/en/programmes/bachelors/business-analytics/business-analytics.html
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value:
+    - slug: diploma-and-transcript
+      name:
+        fr:
+          text: Diplôme(s) et relevé(s) de notes
+          status: draft
+        en:
+          text: Diploma(s) and transcript(s)
+          status: draft
+        ar:
+          text: الشهادة (الشهادات) وكشف (كشوف) العلامات
+          status: draft
+      translationRequired: null
+    - slug: english-language-proficiency-certificate
+      name:
+        fr:
+          text: Certificat de maîtrise de l'anglais
+          status: draft
+        en:
+          text: English language proficiency test certificate
+          status: draft
+        ar:
+          text: شهادة إتقان اللغة الإنجليزية
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum vitae
+          status: draft
+        en:
+          text: Curriculum vitae / resume
+          status: draft
+        ar:
+          text: السيرة الذاتية
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez votre diplôme marocain (Baccalauréat) avec le 'diploma finder' de l'UvA : il doit être équivalent à un VWO néerlandais."
+          status: draft
+        en:
+          text: "Check your Moroccan Baccalauréat in the UvA diploma finder: it must be equivalent to a Dutch VWO diploma."
+          status: draft
+        ar:
+          text: "تحقّق من شهادتك المغربية (البكالوريا) عبر «diploma finder» الخاص بـ UvA: يجب أن تكون معادلة لشهادة VWO الهولندية."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Des connaissances solides en mathématiques sont attendues (le programme est très mathématique) ; consultez les conditions d'admission de la page du programme.
+          status: draft
+        en:
+          text: Strong mathematics skills are expected (the programme is heavily mathematical); check the entry requirements on the programme page.
+          status: draft
+        ar:
+          text: يُتوقع امتلاك معرفة متينة بالرياضيات (البرنامج ذو طابع رياضي كبير)؛ راجع شروط القبول في صفحة البرنامج.
+          status: draft
+    - id: req-4
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les étudiants avec un diplôme étranger doivent payer des frais de dossier non remboursables de 100 € avant le traitement de la candidature.
+          status: draft
+        en:
+          text: Students with an international diploma must pay a non-refundable €100 application fee before the application is processed.
+          status: draft
+        ar:
+          text: يجب على الطلاب الحاصلين على شهادة أجنبية دفع رسوم ملف غير قابلة للاسترداد قدرها 100 يورو قبل معالجة طلب التقديم.
+          status: draft
+    - id: req-5
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La UvA Matching est obligatoire pour les candidats ayant fait leurs études secondaires hors des Pays-Bas.
+          status: draft
+        en:
+          text: UvA Matching is mandatory for applicants who completed secondary education outside the Netherlands.
+          status: draft
+        ar:
+          text: المشاركة في UvA Matching إلزامية للمتقدمين الذين أتموا تعليمهم الثانوي خارج هولندا.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.uva.nl/en/programmes/bachelors/business-analytics/business-analytics.html
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.uva.nl/en/education/admissions/bachelors/applying-for-a-bachelors-programme.html
+    last_verified_at: 2026-10-21

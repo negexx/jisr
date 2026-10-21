@@ -1,0 +1,70 @@
+slug: nl-nhl-stenden-hogeschool-31fr-creative-business-1001o5015
+institution: nl-nhl-stenden-hogeschool-31fr
+country: NL
+city: leeuwarden
+field: business-economics
+level: bachelor
+name: Creative Business
+summary:
+  fr:
+    text: Creative Business (Creative Business), NHL Stenden Hogeschool (Leeuwarden). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Creative Business (Creative Business), NHL Stenden Hogeschool (Leeuwarden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Creative Business (Creative Business), NHL Stenden Hogeschool (Leeuwarden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.nhlstenden.com/hbo-opleidingen/creative-business-media-management-instroom-vwo
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Ton diplôme étranger doit être évalué (waardering) par la Centrale Studenten Administratie (CSA) pour être comparé à un diplôme néerlandais ; commence la procédure le plus tôt possible.
+          status: draft
+        en:
+          text: Your foreign diploma must be assessed (waardering) by the Centrale Studenten Administratie (CSA) and compared to a Dutch diploma; start the procedure as early as possible.
+          status: draft
+        ar:
+          text: يجب أن تُقيَّم شهادتك الأجنبية (waardering) من قِبل Centrale Studenten Administratie (CSA) لمقارنتها بشهادة هولندية؛ ابدأ الإجراء في أقرب وقت ممكن.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.nhlstenden.com/hbo-opleidingen/creative-business-media-management-instroom-vwo
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.nhlstenden.com/studeren-bij-nhl-stenden/toelatingseisen/buitenlandse-vooropleiding
+    last_verified_at: 2026-10-21

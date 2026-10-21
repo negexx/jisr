@@ -42,8 +42,44 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: passport-or-id-card
+      name:
+        fr:
+          text: Passeport ou carte d'identité
+          status: draft
+        en:
+          text: Passport or ID card
+          status: draft
+        ar:
+          text: جواز السفر أو بطاقة الهوية
+          status: draft
+      translationRequired: null
+    - slug: diploma
+      name:
+        fr:
+          text: Diplôme
+          status: draft
+        en:
+          text: Diploma
+          status: draft
+        ar:
+          text: الدبلوم
+          status: draft
+      translationRequired: null
+    - slug: grade-transcript
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Grade transcript
+          status: draft
+        ar:
+          text: كشف النقاط
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -58,3 +94,6 @@ sources:
   page-2:
     url: https://www.hvhl.nl/aanmelden-en-inschrijven/kosten-hbo-opleiding-collegegeld/
     last_verified_at: 2026-10-12
+  page-1:
+    url: https://www.hvhl.nl/aanmelden-en-inschrijven/
+    last_verified_at: 2026-10-21

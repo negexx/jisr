@@ -1,0 +1,70 @@
+slug: nl-universiteit-twente-21ph-applied-mathematics-1001o6243
+institution: nl-universiteit-twente-21ph
+country: NL
+city: enschede
+field: engineering
+level: bachelor
+name: Applied Mathematics
+summary:
+  fr:
+    text: Applied Mathematics (Applied Mathematics), Universiteit Twente (Enschede). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Applied Mathematics (Applied Mathematics), Universiteit Twente (Enschede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Applied Mathematics (Applied Mathematics), Universiteit Twente (Enschede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.utwente.nl/en/education/bachelor/programmes/applied-mathematics/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La sélection (studiekeuzecheck) pour Applied Mathematics n'est pas obligatoire, mais renseignez-vous auprès du programme (intake-am-eemcs@utwente.nl) sur les activités d'admission et les délais applicables aux candidats étrangers.
+          status: draft
+        en:
+          text: The studiekeuzecheck for Applied Mathematics is not compulsory, but check with the programme (intake-am-eemcs@utwente.nl) about intake activities and deadlines for applicants with a foreign qualification.
+          status: draft
+        ar:
+          text: الانتقاء (studiekeuzecheck) لبرنامج Applied Mathematics غير إلزامي، لكن استعلم لدى البرنامج (intake-am-eemcs@utwente.nl) عن أنشطة القبول والمواعيد السارية على المتقدمين الأجانب.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.utwente.nl/en/education/bachelor/programmes/applied-mathematics/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.utwente.nl/onderwijs/student-services/ik-word-student/inschrijving/studiekeuzecheck/
+    last_verified_at: 2026-10-21

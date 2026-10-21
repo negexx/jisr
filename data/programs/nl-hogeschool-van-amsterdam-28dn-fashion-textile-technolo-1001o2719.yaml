@@ -1,0 +1,133 @@
+slug: nl-hogeschool-van-amsterdam-28dn-fashion-textile-technolo-1001o2719
+institution: nl-hogeschool-van-amsterdam-28dn
+country: NL
+city: amsterdam
+field: engineering
+level: bachelor
+name: Fashion & Textile Technologies
+summary:
+  fr:
+    text: Fashion & Textile Technologies (Fashion and Textile Technologies), Hogeschool van Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Fashion & Textile Technologies (Fashion and Textile Technologies), Hogeschool van Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Fashion & Textile Technologies (Fashion and Textile Technologies), Hogeschool van Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hva.nl/opleidingen/amfi-amsterdam-fashion-institute
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1064800
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-3
+  info_kind: official
+documents:
+  value:
+    - slug: id-passport-or-residence-permit
+      name:
+        fr:
+          text: Pièce d'identité, passeport ou titre de séjour
+          status: draft
+        en:
+          text: ID, passport or residence permit
+          status: draft
+        ar:
+          text: وثيقة الهوية أو جواز السفر أو تصريح الإقامة
+          status: draft
+      translationRequired: null
+    - slug: transcripts
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Transcript of records
+          status: draft
+        ar:
+          text: كشف النقاط
+          status: draft
+      translationRequired: null
+    - slug: sworn-translations
+      name:
+        fr:
+          text: Traductions assermentées
+          status: draft
+        en:
+          text: Sworn translations
+          status: draft
+        ar:
+          text: الترجمات المحلَّفة
+          status: draft
+      translationRequired: true
+  source: page-4
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Diplôme étranger requis au niveau minimum mbo-4 ou havo ; faire évaluer le diplôme marocain (Baccalauréat) par la HvA.
+          status: draft
+        en:
+          text: Foreign diploma required at minimum mbo-4 or havo level; have the Moroccan Baccalauréat evaluated by HvA.
+          status: draft
+        ar:
+          text: الشهادة الأجنبية المطلوبة بحد أدنى مستوى mbo-4 أو havo؛ يجب تقييم الشهادة المغربية (البكالوريا) من قبل HvA.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Une procédure de sélection (devoir et entretien de motivation) est obligatoire ; le nombre de places est limité.
+          status: draft
+        en:
+          text: A selection procedure (assignment and motivation interview) is mandatory; the number of places is limited.
+          status: draft
+        ar:
+          text: إجراء الانتقاء (واجب ومقابلة الدافعية) إلزامي؛ وعدد المقاعد محدود.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hva.nl/opleidingen/amfi-amsterdam-fashion-institute
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/collegegeld/collegegeldtarieven
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/21-toelatingsonderzoek
+    last_verified_at: 2026-10-21
+  page-4:
+    url: https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/diplomawaardering/documentatie-vooropleiding-niet-afgerond
+    last_verified_at: 2026-10-21
+  page-5:
+    url: https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/toelatingseisen
+    last_verified_at: 2026-10-21

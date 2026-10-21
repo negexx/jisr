@@ -1,0 +1,100 @@
+slug: nl-wageningen-university-21pi-data-science-for-global-1016o1728
+institution: nl-wageningen-university-21pi
+country: NL
+city: wageningen
+field: computer-science
+level: bachelor
+name: Data Science for Global Challenges
+summary:
+  fr:
+    text: Data Science for Global Challenges (Data Science for Global Challenges), Wageningen University (Wageningen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Data Science for Global Challenges (Data Science for Global Challenges), Wageningen University (Wageningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Data Science for Global Challenges (Data Science for Global Challenges), Wageningen University (Wageningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.wur.nl/en/education/bachelor/bachelors-data-science-global-challenges
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1830000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 4
+        day: 15
+  source: page-3
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-4
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Votre diplôme de fin d'études secondaires doit être au moins équivalent au VWO néerlandais (niveau pré-universitaire). Consultez la Diploma Equivalency List et l'admission se fait sur évaluation de votre dossier.
+          status: draft
+        en:
+          text: Your secondary school diploma must be at least equal to the Dutch pre-university VWO level. Check the Diploma Equivalency List; admission is based on assessment of your credentials.
+          status: draft
+        ar:
+          text: يجب أن تكون شهادة إنهاء الدراسة الثانوية معادلة على الأقل لمستوى VWO الهولندي (المستوى ما قبل الجامعي). راجع «Diploma Equivalency List»، ويتم القبول بناءً على تقييم ملفك.
+          status: draft
+    - id: req-2
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vous devez satisfaire aux exigences de langue anglaise (ou anglaise et néerlandaise si vous choisissez la filière néerlandaise) ; consultez la page des exigences linguistiques de WUR.
+          status: draft
+        en:
+          text: You must meet the English language requirements (or both English and Dutch if you choose the Dutch track); see the WUR language requirements page.
+          status: draft
+        ar:
+          text: يجب استيفاء متطلبات اللغة الإنجليزية (أو الإنجليزية والهولندية إذا اخترت المسار الهولندي)؛ راجع صفحة متطلبات اللغة الخاصة بـ WUR.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.wur.nl/en/education/bachelor/bachelors-data-science-global-challenges
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.wur.nl/nl/onderwijs/bachelor/studiekosten-bachelor/collegegeld-en-studiefinanciering
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.wur.nl/nl/onderwijs/bachelor/aanmelden-en-toelating-bachelor/aanmelden-voor-een-bacheloropleiding
+    last_verified_at: 2026-10-21
+  page-4:
+    url: https://www.wur.nl/en/education/bachelor/application-admission-bachelors/apply-bachelors-programme/international-prior-education
+    last_verified_at: 2026-10-21

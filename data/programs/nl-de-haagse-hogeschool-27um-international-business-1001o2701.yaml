@@ -1,0 +1,98 @@
+slug: nl-de-haagse-hogeschool-27um-international-business-1001o2701
+institution: nl-de-haagse-hogeschool-27um
+country: NL
+city: s-gravenhage
+field: business-economics
+level: bachelor
+name: International Business
+summary:
+  fr:
+    text: International Business (International Business), De Haagse Hogeschool ('s-Gravenhage). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: International Business (International Business), De Haagse Hogeschool ('s-Gravenhage). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Business (International Business), De Haagse Hogeschool ('s-Gravenhage). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/international-business-4-jaar
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme étranger comparable à un diplôme néerlandais de havo est requis ; l'admission est évaluée selon les directives Nuffic.
+          status: draft
+        en:
+          text: A foreign diploma comparable to a Dutch havo diploma is required; admission is assessed using Nuffic guidelines.
+          status: draft
+        ar:
+          text: يُشترط الحصول على شهادة أجنبية مماثلة لشهادة havo الهولندية؛ ويُقيَّم القبول وفق إرشادات Nuffic.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Une bonne maîtrise de l'anglais est exigée ; selon le diplôme, un test de langue peut être demandé.
+          status: draft
+        en:
+          text: Good command of English is required; depending on the diploma, a language test may be required.
+          status: draft
+        ar:
+          text: يُشترط إتقان جيد للإنجليزية؛ وقد يُطلب اختبار لغوي بحسب الشهادة.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats avec un diplôme étranger doivent téléverser leurs documents de scolarité dans OSIRIS après réception de l'e-mail.
+          status: draft
+        en:
+          text: Applicants with a foreign diploma must upload their education documents in OSIRIS after receiving the email.
+          status: draft
+        ar:
+          text: يجب على المتقدمين الحاصلين على شهادة أجنبية رفع وثائق دراستهم في OSIRIS بعد استلام الرسالة الإلكترونية.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/international-business-4-jaar
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat
+    last_verified_at: 2026-10-21

@@ -1,0 +1,130 @@
+slug: nl-hogeschool-rotterdam-22oj-logistics-engineering-1001o3316
+institution: nl-hogeschool-rotterdam-22oj
+country: NL
+city: rotterdam
+field: engineering
+level: bachelor
+name: Logistics Engineering
+summary:
+  fr:
+    text: Logistics Engineering (Logistics Engineering), Hogeschool Rotterdam (Rotterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Logistics Engineering (Logistics Engineering), Hogeschool Rotterdam (Rotterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Logistics Engineering (Logistics Engineering), Hogeschool Rotterdam (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/logistics-engineering/voltijd/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Si vous avez un diplôme étranger, il doit être comparable au diplôme néerlandais requis et vous devez maîtriser suffisamment le néerlandais.
+          status: draft
+        en:
+          text: If you have a foreign diploma, it must be comparable to the required Dutch diploma and you must have sufficient command of Dutch.
+          status: draft
+        ar:
+          text: إذا كانت لديك شهادة أجنبية، فيجب أن تكون مماثلة للشهادة الهولندية المطلوبة، ويجب أن تتقن الهولندية بقدر كافٍ.
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: En tant que candidat non-UE hors des Pays-Bas, votre délai d'inscription (via Studielink et le portail) est le 1 octobre pour la rentrée de septembre.
+          status: draft
+        en:
+          text: As a non-EU applicant from outside the Netherlands, your application deadline (via Studielink and the portal) is 1 October for the September intake.
+          status: draft
+        ar:
+          text: بصفتك متقدمًا من خارج الاتحاد الأوروبي (UE) ومن خارج هولندا، فإن الموعد النهائي للتقديم (عبر Studielink والبوابة) هو 1 أكتوبر لبدء الدراسة في سبتمبر.
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Titulaires d'un diplôme étranger (full degree abroad) : date limite d'inscription le 19 juin (vendredi). Vérifiez auprès des admissions."
+          status: draft
+        en:
+          text: "Holders of a full degree from abroad: application deadline 19 June (Friday). Check with admissions."
+          status: draft
+        ar:
+          text: "حاملو الشهادات الأجنبية (الدرجة الكاملة من الخارج): الموعد النهائي للتقديم هو 19 يونيو (الجمعة). تحقق لدى قسم القبول."
+          status: draft
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un visa d'étude est requis pour les étudiants non-UE/EER ; la demande se fait via Hogeschool Rotterdam après admission conditionnelle.
+          status: draft
+        en:
+          text: A study visa is required for non-EU/EEA students; Hogeschool Rotterdam applies for it after conditional admission.
+          status: draft
+        ar:
+          text: يُشترط الحصول على تأشيرة دراسة للطلاب من خارج الاتحاد الأوروبي (UE)/EER؛ ويُقدَّم الطلب عبر Hogeschool Rotterdam بعد القبول المشروط.
+          status: draft
+    - id: req-5
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Prouvez des moyens de subsistance suffisants (norme IND, actuellement 1131 EUR par mois) ; une option est un dépôt de 13.572 EUR.
+          status: draft
+        en:
+          text: Prove sufficient means of subsistence (IND norm, currently EUR 1,131 per month); one option is the EUR 13,572 deposit.
+          status: draft
+        ar:
+          text: "أثبت أن لديك موارد مالية كافية للمعيشة (معيار IND: 1131 EUR شهريًا حاليًا)؛ ومن الخيارات المتاحة وديعة بمبلغ 13.572 EUR."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/logistics-engineering/voltijd/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/studievisum/
+    last_verified_at: 2026-10-21

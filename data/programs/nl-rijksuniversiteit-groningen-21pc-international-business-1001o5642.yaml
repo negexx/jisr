@@ -1,0 +1,159 @@
+slug: nl-rijksuniversiteit-groningen-21pc-international-business-1001o5642
+institution: nl-rijksuniversiteit-groningen-21pc
+country: NL
+city: groningen
+field: business-economics
+level: bachelor
+name: International Business
+summary:
+  fr:
+    text: International Business (International Business), Rijksuniversiteit Groningen (Groningen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: International Business (International Business), Rijksuniversiteit Groningen (Groningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Business (International Business), Rijksuniversiteit Groningen (Groningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.rug.nl/bachelors/international-business/?lang=en
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1440000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-09-01
+      applicationOpens: null
+      applicationDeadline: 2027-01-15
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: diploma
+      name:
+        fr:
+          text: Diplôme
+          status: draft
+        en:
+          text: Diploma
+          status: draft
+        ar:
+          text: الدبلوم
+          status: draft
+      translationRequired: null
+    - slug: transcript
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Transcript
+          status: draft
+        ar:
+          text: كشف النقاط
+          status: draft
+      translationRequired: null
+    - slug: english-language-test-results
+      name:
+        fr:
+          text: Résultats du test d'anglais
+          status: draft
+        en:
+          text: English language test results
+          status: draft
+        ar:
+          text: نتائج اختبار الإنجليزية
+          status: draft
+      translationRequired: null
+    - slug: id-card-or-passport
+      name:
+        fr:
+          text: Carte d'identité ou passeport
+          status: draft
+        en:
+          text: ID card or passport
+          status: draft
+        ar:
+          text: بطاقة الهوية أو جواز السفر
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: subject_taken
+      subjects:
+        - mathematics
+      mode: all
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Diplôme étranger: le niveau doit être équivalent au VWO néerlandais; l'admission est évaluée individuellement et le niveau de mathématiques est évalué par l'Admissions Board."
+          status: draft
+        en:
+          text: "Foreign diploma: the level must be equivalent to Dutch VWO; admission is assessed individually and the mathematics level is assessed by the Admissions Board."
+          status: draft
+        ar:
+          text: "الشهادة الأجنبية: يجب أن يكون المستوى معادِلًا لشهادة VWO الهولندية؛ يُقيَّم القبول على حدة، ويُقيَّم مستوى الرياضيات من قِبل مجلس القبول."
+          status: draft
+    - id: req-4
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Programme à numerus fixus (400 places): inscription via Studielink et le Progress Portal avant le 15 janvier, frais de dossier de 100 € et procédure de sélection (tests)."
+          status: draft
+        en:
+          text: "Numerus fixus programme (400 places): apply via Studielink and the Progress Portal before 15 January, €100 application fee and selection procedure (tests)."
+          status: draft
+        ar:
+          text: "برنامج numerus fixus (400 مقعد): التقديم عبر Studielink وProgress Portal قبل 15 يناير، ورسوم ملف قدرها 100 يورو، وإجراء انتقاء (اختبارات)."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.rug.nl/bachelors/international-business/?lang=en
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.rug.nl/education/application-enrolment-tuition-fees/tuition-fee/bachelor
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.rug.nl/education/application-enrolment-tuition-fees/admission/non-dutch-qualification/bachelor-non-dutch-qualification
+    last_verified_at: 2026-10-21
+  page-4:
+    url: https://www.rug.nl/education/application-enrolment-tuition-fees/admission/non-dutch-qualification/fixus-non-dutch-qualification
+    last_verified_at: 2026-10-21

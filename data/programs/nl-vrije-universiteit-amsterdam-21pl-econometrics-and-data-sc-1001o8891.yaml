@@ -1,0 +1,104 @@
+slug: nl-vrije-universiteit-amsterdam-21pl-econometrics-and-data-sc-1001o8891
+institution: nl-vrije-universiteit-amsterdam-21pl
+country: NL
+city: amsterdam
+field: computer-science
+level: bachelor
+name: Econometrics and Data Science
+summary:
+  fr:
+    text: Econometrics and Data Science (Econometrics and Data Science), Vrije Universiteit Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Econometrics and Data Science (Econometrics and Data Science), Vrije Universiteit Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Econometrics and Data Science (Econometrics and Data Science), Vrije Universiteit Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://vu.nl/en/education/bachelor/econometrics-and-data-science
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Diplôme étranger (bac marocain) : la procédure passe par l'International Office ; vérifiez l'équivalence et les exigences de la formation sur la page 'Toelating'."
+          status: draft
+        en:
+          text: "Foreign diploma (Moroccan Bac): application goes through the International Office; check equivalence and programme-specific requirements on the 'Admissions' page."
+          status: draft
+        ar:
+          text: "الشهادة الأجنبية (البكالوريا المغربية): تتم الإجراءات عبر المكتب الدولي؛ تحقق من المعادلة ومن متطلبات البرنامج في صفحة « Toelating »."
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Programme en anglais : un justificatif de niveau d'anglais (test reconnu ou diplôme exempté) est exigé ; il peut être fourni après admission conditionnelle."
+          status: draft
+        en:
+          text: "English-taught programme: proof of English proficiency (accepted test or exempting diploma) is required; it may be submitted after conditional admission."
+          status: draft
+        ar:
+          text: "البرنامج باللغة الإنجليزية: يُشترط إثبات مستوى الإنجليزية (اختبار معترف به أو شهادة معفية)، ويمكن تقديمه بعد القبول المشروط."
+          status: draft
+    - id: req-3
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Documents non numériques dans une autre langue que le néerlandais, l'anglais, le français, l'allemand ou l'espagnol : traduction assermentée en néerlandais ou en anglais requise."
+          status: draft
+        en:
+          text: "Documents not in Dutch, English, French, German or Spanish: a sworn translation into Dutch or English is required."
+          status: draft
+        ar:
+          text: "الوثائق غير الرقمية المكتوبة بلغة غير الهولندية أو الإنجليزية أو الفرنسية أو الألمانية أو الإسبانية: تُشترط ترجمة محلَّفة إلى الهولندية أو الإنجليزية."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://vu.nl/en/education/bachelor/econometrics-and-data-science
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://vu.nl/nl/onderwijs/meer-over/aanmelden-bacheloropleiding
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://vu.nl/nl/onderwijs/meer-over/documenten-voor-aanmelding
+    last_verified_at: 2026-10-21
+  page-4:
+    url: https://vu.nl/nl/onderwijs/meer-over/gecertificeerde-digitale-documenten
+    last_verified_at: 2026-10-21

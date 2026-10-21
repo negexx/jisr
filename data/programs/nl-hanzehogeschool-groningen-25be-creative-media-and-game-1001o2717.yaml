@@ -1,0 +1,102 @@
+slug: nl-hanzehogeschool-groningen-25be-creative-media-and-game-1001o2717
+institution: nl-hanzehogeschool-groningen-25be
+country: NL
+city: groningen
+field: computer-science
+level: bachelor
+name: Creative Media and Game Technologies
+summary:
+  fr:
+    text: Creative Media and Game Technologies (Creative Media and Game Technologies), Hanzehogeschool Groningen (Groningen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Creative Media and Game Technologies (Creative Media and Game Technologies), Hanzehogeschool Groningen (Groningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Creative Media and Game Technologies (Creative Media and Game Technologies), Hanzehogeschool Groningen (Groningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hanze.nl/en/programmes/full-time/bachelor/creative-media-and-game-technologies
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: subject_taken
+      subjects:
+        - mathematics
+      mode: all
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Diplôme d'études secondaires reconnu équivalent au niveau HAVO néerlandais (évalué par Nuffic) ; vérifiez votre Baccalauréat marocain dans la base de données Nuffic.
+          status: draft
+        en:
+          text: Recognised upper secondary diploma equivalent to Dutch HAVO level (assessed by Nuffic); check your Moroccan Baccalauréat in the Nuffic diploma database.
+          status: draft
+        ar:
+          text: شهادة التعليم الثانوي المعترف بها كمعادِلة لمستوى HAVO الهولندي (يقيّمها Nuffic)؛ تحقق من البكالوريا المغربية في قاعدة بيانات Nuffic.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Si votre niveau de mathématiques est insuffisant, vous pouvez passer le test OMPT-A (score minimum 55% / 5,5) ; frais supplémentaires.
+          status: draft
+        en:
+          text: If your mathematics level is insufficient, you can take the OMPT-A mathematics test (minimum score 55% / 5.5); additional costs apply.
+          status: draft
+        ar:
+          text: إذا كان مستوى الرياضيات لديك غير كافٍ، يمكنك اجتياز اختبار OMPT-A (بحد أدنى 55% / 5,5)؛ وتُطبَّق رسوم إضافية.
+          status: draft
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Tous les candidats doivent remplir l'enquête MPT (Multicultural Personality Test) ; l'invitation est envoyée après la candidature.
+          status: draft
+        en:
+          text: All applicants must complete the MPT Survey (Multicultural Personality Test); the invitation is sent after application.
+          status: draft
+        ar:
+          text: يجب على جميع المتقدمين ملء استبيان MPT (اختبار الشخصية متعددة الثقافات)؛ وتُرسَل الدعوة بعد التقديم.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hanze.nl/en/programmes/full-time/bachelor/creative-media-and-game-technologies
+    last_verified_at: 2026-10-21

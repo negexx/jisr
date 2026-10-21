@@ -16,6 +16,11 @@
       "status": "draft"
     },
     {
+      "fr": "L'admission avec un diplôme secondaire étranger (baccalauréat marocain) est évaluée au cas par cas ; contactez le Student Service Centre (inschrijvingen@hvhl.nl) pour vérifier l'éligibilité et les documents requis.",
+      "ar": "يُقيَّم القبول بشهادة ثانوية أجنبية (البكالوريا المغربية) على حدة؛ تواصل مع مركز خدمة الطلاب (inschrijvingen@hvhl.nl) للتحقق من الأهلية والوثائق المطلوبة.",
+      "status": "draft"
+    },
+    {
       "fr": "Admission limitée : test d'entrée écrit en ligne (TOLC-E ou SAT ou CEnT-S) portant sur les mathématiques et le raisonnement. Les candidats non-UE doivent avoir les résultats au moment de la soumission.",
       "ar": "قبول محدود: اختبار دخول كتابي عبر الإنترنت (TOLC-E أو SAT أو CEnT-S) في الرياضيات والاستدلال. ويجب أن تكون النتائج متوفرة لدى المتقدمين من خارج الاتحاد الأوروبي (UE) عند تقديم الطلب.",
       "status": "draft"
@@ -66,8 +71,18 @@
       "status": "draft"
     },
     {
+      "fr": "Aperçu de la formation et de l'expérience",
+      "ar": "نظرة عامة على التكوين والخبرة",
+      "status": "draft"
+    },
+    {
       "fr": "Aperçu de la formation et de l'expérience (CV)",
       "ar": "لمحة عن التكوين والخبرة (CV)",
+      "status": "draft"
+    },
+    {
+      "fr": "Après admission conditionnelle, envoyez par courrier des copies certifiées de vos documents avant le 31 août.",
+      "ar": "بعد القبول المشروط، أرسل بالبريد نسخًا مصدَّقة من وثائقك قبل 31 أغسطس.",
       "status": "draft"
     },
     {
@@ -216,8 +231,23 @@
       "status": "draft"
     },
     {
+      "fr": "Avec un diplôme étranger, l'admission en bachelor (y compris les conditions de mathématiques) se fait via le International Office ; vérifiez les exigences de la page de la formation et remplissez le VU Application Form - Bachelor.",
+      "ar": "مع الشهادة الأجنبية يتم القبول في الإجازة (بما فيها شروط الرياضيات) عبر المكتب الدولي؛ تحقق من متطلبات صفحة البرنامج واملأ استمارة VU Application Form - Bachelor.",
+      "status": "draft"
+    },
+    {
+      "fr": "Avec un diplôme étranger, le processus d'admission prend plus de temps : commencez la procédure le plus tôt possible et faites évaluer (waardering) votre diplôme par la Centrale Studenten Administratie.",
+      "ar": "مع الشهادة الأجنبية تستغرق عملية القبول وقتًا أطول، لذا ابدأ الإجراء في أقرب وقت ممكن، واطلب من Centrale Studenten Administratie تقييم شهادتك (waardering).",
+      "status": "draft"
+    },
+    {
       "fr": "Avec un diplôme étranger, vous devez d'abord introduire une demande d'inscription via Studielink et télécharger vos documents dans Osiris Aanmelding ; la Centrale Studenten Inschrijving évalue votre éligibilité.",
       "ar": "بشهادة أجنبية، عليك أولًا تقديم طلب تسجيل عبر منصة Studielink ورفع وثائقك في نظام Osiris Aanmelding؛ وتقوم الجهة المسماة Centrale Studenten Inschrijving بتقييم أهليتك.",
+      "status": "draft"
+    },
+    {
+      "fr": "Avec une formation étrangère, tu reçois un e-mail te demandant de téléverser tes documents de diplôme dans le système OSIRIS Aanmelding.",
+      "ar": "مع الدراسة الأجنبية السابقة، ستتلقى رسالة بريد إلكتروني تطلب منك رفع وثائق شهادتك في نظام OSIRIS Aanmelding.",
       "status": "draft"
     },
     {
@@ -413,6 +443,11 @@
     {
       "fr": "CV à jour",
       "ar": "سيرة ذاتية (CV) محدّثة",
+      "status": "draft"
+    },
+    {
+      "fr": "Candidater de préférence avant le 1 mai via Studielink ; après cette date, la procédure de matching (Study Choice Check) devient obligatoire.",
+      "ar": "يُفضَّل التقديم قبل 1 مايو عبر Studielink؛ وبعد هذا التاريخ تصبح إجراءات المطابقة (Study Choice Check) إلزامية.",
       "status": "draft"
     },
     {
@@ -681,6 +716,11 @@
       "status": "draft"
     },
     {
+      "fr": "Certificat de maîtrise de l'anglais",
+      "ar": "شهادة إتقان اللغة الإنجليزية",
+      "status": "draft"
+    },
+    {
       "fr": "Certificat de paiement",
       "ar": "شهادة دفع",
       "status": "draft"
@@ -821,6 +861,11 @@
       "status": "draft"
     },
     {
+      "fr": "Cette page néerlandaise ne précise pas les exigences linguistiques pour les diplômés étrangers ; vérifiez les conditions d'admission internationales (la formation est en anglais).",
+      "ar": "هذه الصفحة الهولندية لا تحدد المتطلبات اللغوية لحاملي الشهادات الأجنبية؛ تحقق من شروط القبول الدولية (البرنامج يُدرَّس بالإنجليزية).",
+      "status": "draft"
+    },
+    {
       "fr": "Code fiscal",
       "ar": "الرقم الضريبي الإيطالي (codice fiscale)",
       "status": "draft"
@@ -828,6 +873,11 @@
     {
       "fr": "Code fiscal italien",
       "ar": "الرقم الضريبي الإيطالي",
+      "status": "draft"
+    },
+    {
+      "fr": "Comme le programme n'a pas de matching obligatoire, une inscription avant le 1 mai est conseillée mais pas obligatoire.",
+      "ar": "بما أن البرنامج لا يتضمن مطابقة إلزامية، يُنصح بالتقديم قبل 1 مايو لكن ذلك غير إلزامي.",
       "status": "draft"
     },
     {
@@ -843,6 +893,11 @@
     {
       "fr": "Condition d'études : avoir terminé un programme ISCED niveau 3 ou 4 (certificat de fin d'études secondaires).",
       "ar": "شرط الدراسة: إتمام برنامج من المستوى 3 أو 4 حسب ISCED (شهادة نهاية الدراسة الثانوية).",
+      "status": "draft"
+    },
+    {
+      "fr": "Consultez la page EMI-ready pour connaître les tests d'anglais acceptés et les scores requis, ainsi que les diplômes donnant dispense.",
+      "ar": "راجع صفحة EMI-ready لمعرفة اختبارات الإنجليزية المقبولة والدرجات المطلوبة، وكذلك الشهادات المعفية.",
       "status": "draft"
     },
     {
@@ -1011,6 +1066,11 @@
       "status": "draft"
     },
     {
+      "fr": "Critères d'admission: vérifiez les conditions d'admission (diplôme étranger, mbo, havo, vwo ou 21+) sur la page des conditions d'admission de la HAN.",
+      "ar": "معايير القبول: تحقق من شروط القبول (الشهادة الأجنبية، mbo، havo، vwo أو 21+) في صفحة شروط القبول الخاصة بـ HAN.",
+      "status": "draft"
+    },
+    {
       "fr": "Curriculum Vitae",
       "ar": "السيرة الذاتية",
       "status": "draft"
@@ -1056,6 +1116,11 @@
       "status": "draft"
     },
     {
+      "fr": "De bonnes compétences orales et écrites en anglais sont exigées; aucun niveau CECR précis n'est indiqué.",
+      "ar": "يُشترط إتقان جيد لمهارات التحدث والكتابة بالإنجليزية؛ ولا يُذكر مستوى CECR محدد.",
+      "status": "draft"
+    },
+    {
       "fr": "De bons résultats en mathématiques sont attendus (High school / secondary education (or higher). Good results in Mathematics.), sans seuil chiffré précisé.",
       "ar": "يُنتظر الحصول على نتائج جيدة في الرياضيات (الدراسة الثانوية أو ما فوقها، مع نتائج جيدة في الرياضيات)، دون تحديد عتبة رقمية.",
       "status": "draft"
@@ -1063,6 +1128,11 @@
     {
       "fr": "De bons résultats en mathématiques sont attendus (aucun seuil chiffré n'est indiqué).",
       "ar": "يُنتظر الحصول على نتائج جيدة في الرياضيات (لا تُذكر أي عتبة رقمية).",
+      "status": "draft"
+    },
+    {
+      "fr": "Deadline pour les candidats non-UE/EEE : 1 avril. Les candidats avec un diplôme étranger passent par le International Office ; vérifiez les documents et l'éventuel application fee.",
+      "ar": "الموعد النهائي للمتقدمين من خارج الاتحاد الأوروبي (UE)/EEE: 1 أبريل. يمرّ المتقدمون الحاصلون على شهادة أجنبية عبر المكتب الدولي؛ تحقق من الوثائق وأي رسوم تقديم.",
       "status": "draft"
     },
     {
@@ -1113,6 +1183,11 @@
     {
       "fr": "Des bourses d'études sont disponibles pour les étudiants internationaux, avec des conditions et des dates limites spécifiques.",
       "ar": "تتوفر منح دراسية للطلبة الدوليين، بشروط ومواعيد نهائية خاصة.",
+      "status": "draft"
+    },
+    {
+      "fr": "Des connaissances solides en mathématiques sont attendues (le programme est très mathématique) ; consultez les conditions d'admission de la page du programme.",
+      "ar": "يُتوقع امتلاك معرفة متينة بالرياضيات (البرنامج ذو طابع رياضي كبير)؛ راجع شروط القبول في صفحة البرنامج.",
       "status": "draft"
     },
     {
@@ -1206,6 +1281,16 @@
       "status": "draft"
     },
     {
+      "fr": "Diplôme (copie certifiée)",
+      "ar": "الشهادة (نسخة مصدَّقة)",
+      "status": "draft"
+    },
+    {
+      "fr": "Diplôme (original)",
+      "ar": "الشهادة (الأصل)",
+      "status": "draft"
+    },
+    {
       "fr": "Diplôme d'accès à l'enseignement supérieur",
       "ar": "شهادة الولوج إلى التعليم العالي",
       "status": "draft"
@@ -1271,6 +1356,11 @@
       "status": "draft"
     },
     {
+      "fr": "Diplôme d'études secondaires reconnu équivalent au niveau HAVO néerlandais (évalué par Nuffic) ; vérifiez votre Baccalauréat marocain dans la base de données Nuffic.",
+      "ar": "شهادة التعليم الثانوي المعترف بها كمعادِلة لمستوى HAVO الهولندي (يقيّمها Nuffic)؛ تحقق من البكالوريا المغربية في قاعدة بيانات Nuffic.",
+      "status": "draft"
+    },
+    {
       "fr": "Diplôme d'études secondaires requis ; curriculum national, IB, Cambridge A-Levels, GED acceptés. Pas de moyenne minimale générale. Contactez l'université pour vérifier l'équivalence de votre Bac marocain.",
       "ar": "تُشترط شهادة الدراسة الثانوية؛ تُقبل المناهج الوطنية ونظام IB وشهادات Cambridge A-Levels وشهادة GED. لا يُشترط معدل أدنى عام. اتصل بالجامعة للتحقق من معادلة البكالوريا المغربية الخاصة بك.",
       "status": "draft"
@@ -1306,6 +1396,11 @@
       "status": "draft"
     },
     {
+      "fr": "Diplôme de fin d'études secondaires étranger comparable à un diplôme néerlandais HAVO/MBO-4 (niveau NLQF/EQF 4) ; le diplôme est vérifié par NUFFIC ou ECCTIS.",
+      "ar": "شهادة إنهاء التعليم الثانوي الأجنبية المعادِلة لشهادة هولندية من نوع HAVO/MBO-4 (المستوى NLQF/EQF 4)؛ يتم التحقق من الشهادة عبر NUFFIC أو ECCTIS.",
+      "status": "draft"
+    },
+    {
       "fr": "Diplôme donnant accès à l'université",
       "ar": "شهادة تؤهل للولوج إلى الجامعة",
       "status": "draft"
@@ -1323,6 +1418,11 @@
     {
       "fr": "Diplôme final de l'enseignement secondaire accompagné d'une traduction officielle en italien ou en anglais ; plus relevé de notes de la dernière année.",
       "ar": "شهادة نهاية التعليم الثانوي مرفقة بترجمة رسمية إلى الإيطالية أو الإنجليزية؛ إضافة إلى كشف نقاط السنة الأخيرة.",
+      "status": "draft"
+    },
+    {
+      "fr": "Diplôme non néerlandais (Bac marocain) : vous n'êtes pas admis automatiquement, une demande d'admission via le portail (uSis) est requise. Vérifiez les conditions d'admission du programme.",
+      "ar": "الشهادة غير الهولندية (البكالوريا المغربية): لا يتم القبول تلقائيًا، بل يلزم تقديم طلب قبول عبر البوابة (uSis). تحقق من شروط القبول الخاصة بالبرنامج.",
       "status": "draft"
     },
     {
@@ -1346,8 +1446,33 @@
       "status": "draft"
     },
     {
+      "fr": "Diplôme étranger (bac marocain) : la procédure passe par l'International Office ; vérifiez l'équivalence et les exigences de la formation sur la page 'Toelating'.",
+      "ar": "الشهادة الأجنبية (البكالوريا المغربية): تتم الإجراءات عبر المكتب الدولي؛ تحقق من المعادلة ومن متطلبات البرنامج في صفحة « Toelating ».",
+      "status": "draft"
+    },
+    {
+      "fr": "Diplôme étranger : Inholland évalue individuellement votre baccalauréat marocain pour vérifier son équivalence avec un diplôme néerlandais (havo/vwo/mbo-4). Envoyez les copies du diplôme et du relevé de notes.",
+      "ar": "الشهادة الأجنبية: تقوم Inholland بتقييم البكالوريا المغربية الخاصة بك على حدة للتحقق من معادلتها لشهادة هولندية (havo/vwo/mbo-4). أرسل نسخًا من الشهادة وكشف العلامات.",
+      "status": "draft"
+    },
+    {
+      "fr": "Diplôme étranger : admissible si équivalent à un diplôme havo, vwo ou mbo-4 ; vous devez aussi satisfaire aux exigences linguistiques (voir windesheim.com).",
+      "ar": "الشهادة الأجنبية: مقبولة إذا كانت معادِلة لشهادة havo أو vwo أو mbo-4؛ ويجب عليك أيضًا استيفاء المتطلبات اللغوية (انظر windesheim.com).",
+      "status": "draft"
+    },
+    {
       "fr": "Diplôme étranger : faire reconnaître votre certificat par le Studienkolleg Konstanz ou par Uni-Assist (payant) avant de postuler ; sans reconnaissance, la candidature est exclue.",
       "ar": "شهادة أجنبية: احصل على اعتراف Studienkolleg Konstanz أو Uni-Assist (خدمة مدفوعة) بشهادتك قبل التقديم؛ وبدون هذا الاعتراف، يُستبعد الطلب.",
+      "status": "draft"
+    },
+    {
+      "fr": "Diplôme étranger : il doit être évalué (waardering) par la Centrale Studenten Administratie ; commence la procédure tôt via Studielink.",
+      "ar": "الشهادة الأجنبية: يجب أن تقيّمها الإدارة المركزية لشؤون الطلبة (waardering)؛ ابدأ هذا الإجراء في وقت مبكر عبر منصة Studielink.",
+      "status": "draft"
+    },
+    {
+      "fr": "Diplôme étranger : l'admissibilité est évaluée individuellement ; le diplôme doit être équivalent à un HAVO, VWO ou MBO-4 néerlandais.",
+      "ar": "الشهادة الأجنبية: تُقيَّم الأهلية للقبول على حدة؛ ويجب أن تكون الشهادة معادِلة لشهادة HAVO أو VWO أو MBO-4 الهولندية.",
       "status": "draft"
     },
     {
@@ -1358,6 +1483,31 @@
     {
       "fr": "Diplôme étranger : évaluation Nuffic (contenu et niveau NLQF 4) et exigences linguistiques et mathématiques (niveau 3F) requises.",
       "ar": "شهادة أجنبية: تقييم Nuffic (المحتوى ومستوى NLQF 4) مع اشتراط متطلبات لغوية ورياضية (المستوى 3F).",
+      "status": "draft"
+    },
+    {
+      "fr": "Diplôme étranger requis au niveau minimum mbo-4 ou havo ; faire évaluer le diplôme marocain (Baccalauréat) par la HvA.",
+      "ar": "الشهادة الأجنبية المطلوبة بحد أدنى مستوى mbo-4 أو havo؛ يجب تقييم الشهادة المغربية (البكالوريا) من قبل HvA.",
+      "status": "draft"
+    },
+    {
+      "fr": "Diplôme étranger: le niveau doit être équivalent au VWO néerlandais; l'admission est évaluée individuellement et le niveau de mathématiques est évalué par l'Admissions Board.",
+      "ar": "الشهادة الأجنبية: يجب أن يكون المستوى معادِلًا لشهادة VWO الهولندية؛ يُقيَّم القبول على حدة، ويُقيَّم مستوى الرياضيات من قِبل مجلس القبول.",
+      "status": "draft"
+    },
+    {
+      "fr": "Diplôme(s)",
+      "ar": "الشهادة (الشهادات)",
+      "status": "draft"
+    },
+    {
+      "fr": "Diplôme(s) et relevé(s) de notes",
+      "ar": "الشهادة (الشهادات) وكشف (كشوف) العلامات",
+      "status": "draft"
+    },
+    {
+      "fr": "Diplôme(s) et relevés de notes",
+      "ar": "الشهادة (الشهادات) وكشوف العلامات",
       "status": "draft"
     },
     {
@@ -1451,6 +1601,11 @@
       "status": "draft"
     },
     {
+      "fr": "Documents non numériques dans une autre langue que le néerlandais, l'anglais, le français, l'allemand ou l'espagnol : traduction assermentée en néerlandais ou en anglais requise.",
+      "ar": "الوثائق غير الرقمية المكتوبة بلغة غير الهولندية أو الإنجليزية أو الفرنسية أو الألمانية أو الإسبانية: تُشترط ترجمة محلَّفة إلى الهولندية أو الإنجليزية.",
+      "status": "draft"
+    },
+    {
       "fr": "Documents sur les revenus et les biens à l'étranger",
       "ar": "وثائق عن الدخل والممتلكات في الخارج",
       "status": "draft"
@@ -1511,6 +1666,11 @@
       "status": "draft"
     },
     {
+      "fr": "En tant que candidat non-UE hors des Pays-Bas, votre délai d'inscription (via Studielink et le portail) est le 1 octobre pour la rentrée de septembre.",
+      "ar": "بصفتك متقدمًا من خارج الاتحاد الأوروبي (UE) ومن خارج هولندا، فإن الموعد النهائي للتقديم (عبر Studielink والبوابة) هو 1 أكتوبر لبدء الدراسة في سبتمبر.",
+      "status": "draft"
+    },
+    {
       "fr": "En tant que candidat non-UE, vous devez demander un visa et/ou un permis de séjour via la CHE auprès de l'IND (Immigratie- en Naturalisatiedienst).",
       "ar": "بصفتك متقدمًا من خارج الاتحاد الأوروبي (UE)، عليك طلب تأشيرة و/أو رخصة إقامة عن طريق CHE لدى IND (Immigratie- en Naturalisatiedienst).",
       "status": "draft"
@@ -1528,6 +1688,16 @@
     {
       "fr": "Entretien oral en ligne (Microsoft Teams) sur les compétences en anglais, l'orientation professionnelle et la motivation ; réussite si au moins 60 points sur 100.",
       "ar": "مقابلة شفوية عبر الإنترنت (Microsoft Teams) حول مهاراتك في الإنجليزية وتوجهك المهني ودافعيتك؛ يكون النجاح بالحصول على 60 نقطة من 100 على الأقل.",
+      "status": "draft"
+    },
+    {
+      "fr": "Envoyez des copies de votre diplôme et de votre relevé de notes final ; une traduction certifiée est requise si le document n'est pas en néerlandais, anglais, allemand, français ou espagnol.",
+      "ar": "أرسل نسخًا من شهادتك وكشف العلامات النهائي؛ والترجمة المصدَّقة مطلوبة إذا لم تكن الوثيقة بالهولندية أو الإنجليزية أو الألمانية أو الفرنسية أو الإسبانية.",
+      "status": "draft"
+    },
+    {
+      "fr": "Envoyez votre diplôme et relevé de notes, éventuellement avec traduction assermentée s'ils ne sont pas en néerlandais, anglais, allemand, français ou espagnol.",
+      "ar": "أرسل شهادتك وكشف علاماتك، مع ترجمة محلَّفة إذا لم تكن الوثيقتان بالهولندية أو الإنجليزية أو الألمانية أو الفرنسية أو الإسبانية.",
       "status": "draft"
     },
     {
@@ -1581,6 +1751,26 @@
       "status": "draft"
     },
     {
+      "fr": "Exigence d'anglais : un diplôme havo/vwo exige une note suffisante en anglais ; pour les candidats étrangers, les exigences linguistiques sont précisées sur windesheim.com.",
+      "ar": "متطلب الإنجليزية: تشترط شهادة havo/vwo علامة كافية في الإنجليزية؛ أما المتقدمون الأجانب فتُحدَّد لهم المتطلبات اللغوية على windesheim.com.",
+      "status": "draft"
+    },
+    {
+      "fr": "Exigence de mathématiques : niveau équivalent aux mathématiques A du VWO, évalué par l'Admissions Board sur la base des descriptions de cours.",
+      "ar": "متطلب الرياضيات: مستوى معادِل لرياضيات A في VWO، يُقيَّم من قِبل مجلس القبول بناءً على أوصاف المقررات.",
+      "status": "draft"
+    },
+    {
+      "fr": "Faites un entretien d'admission (Intake) après votre inscription dans Studielink pour vérifier votre choix d'études.",
+      "ar": "أجرِ مقابلة القبول (Intake) بعد تسجيلك في Studielink للتحقق من اختيارك الدراسي.",
+      "status": "draft"
+    },
+    {
+      "fr": "Faites évaluer votre Baccalauréat marocain par International Student Admissions : il doit être jugé équivalent à un diplôme VWO néerlandais (voir la liste d'équivalence des diplômes).",
+      "ar": "اطلب من مكتب قبول الطلاب الدوليين تقييم البكالوريا المغربية الخاصة بك: يجب أن تُعتبر معادِلة لشهادة VWO الهولندية (انظر قائمة معادلة الشهادات).",
+      "status": "draft"
+    },
+    {
       "fr": "Faites évaluer votre diplôme étranger par uni-assist (VPD) et joignez le VPD à votre candidature.",
       "ar": "اطلب من uni-assist تقييم شهادتك الأجنبية (VPD)، وأرفق وثيقة VPD بطلبك.",
       "status": "draft"
@@ -1598,6 +1788,11 @@
     {
       "fr": "Formulaire de candidature",
       "ar": "استمارة التقديم",
+      "status": "draft"
+    },
+    {
+      "fr": "Formulaire de candidature VU - Bachelor",
+      "ar": "استمارة التقديم لجامعة VU - مرحلة الإجازة",
       "status": "draft"
     },
     {
@@ -1651,6 +1846,11 @@
       "status": "draft"
     },
     {
+      "fr": "Frais de candidature non remboursables de 100 euros pour les candidats titulaires d'un diplôme international, à payer avant le traitement de la demande.",
+      "ar": "رسوم تقديم غير قابلة للاسترداد قدرها 100 يورو للمتقدمين الحاصلين على شهادة دولية، تُدفع قبل معالجة الطلب.",
+      "status": "draft"
+    },
+    {
       "fr": "Frais de dossier de 100 EUR non remboursables ; l'examen d'entrée n'a lieu qu'après réception de cette somme.",
       "ar": "رسوم ملف قدرها 100 EUR غير قابلة للاسترداد؛ ولا يُجرى امتحان الدخول إلا بعد استلام هذا المبلغ.",
       "status": "draft"
@@ -1666,6 +1866,16 @@
       "status": "draft"
     },
     {
+      "fr": "Frais de dossier non remboursables de 100 EUR pour les candidats avec un diplôme international, à payer avant le traitement du dossier.",
+      "ar": "رسوم ملف غير قابلة للاسترداد قدرها 100 EUR للمتقدمين الحاصلين على شهادة دولية، تُدفع قبل معالجة الملف.",
+      "status": "draft"
+    },
+    {
+      "fr": "Frais de dossier non remboursables de 100 € pour les candidats avec un diplôme non néerlandais, à payer avant la date limite.",
+      "ar": "رسوم ملف غير قابلة للاسترداد قدرها 100 يورو للمتقدمين الحاصلين على شهادة غير هولندية، تُدفع قبل الموعد النهائي.",
+      "status": "draft"
+    },
+    {
       "fr": "Hochschulzugangsberechtigung (diplôme d'accès à l'université)",
       "ar": "Hochschulzugangsberechtigung (شهادة الدخول إلى الجامعة، وهي المؤهل الذي يتيح لحاملها الالتحاق بها)",
       "status": "draft"
@@ -1678,6 +1888,11 @@
     {
       "fr": "Il faut réussir un examen d'entrée oral (en ligne) devant le comité d'admission de la faculté.",
       "ar": "عليك النجاح في امتحان دخول شفوي (عبر الإنترنت) أمام لجنة القبول في الكلية.",
+      "status": "draft"
+    },
+    {
+      "fr": "Il n'y a pas de numerus fixus pour ce programme, mais une activité de matching (studiekeuzecheck) est prévue ; renseigne-toi sur les modalités et les dates.",
+      "ar": "لا يوجد numerus fixus لهذا البرنامج، لكن هناك نشاط مطابقة (studiekeuzecheck) مُقرَّر؛ استعلم عن الإجراءات والمواعيد.",
       "status": "draft"
     },
     {
@@ -1713,6 +1928,11 @@
     {
       "fr": "L'admission comprend un test de langue écrit et un test professionnel écrit sur le background du candidat. Les candidats limites peuvent être invités à un entretien. La date exacte sera annoncée par le secrétariat du programme.",
       "ar": "يتضمن القبول اختبارًا لغويًا كتابيًا واختبارًا مهنيًا كتابيًا حول خلفية المتقدم. وقد يُدعى إلى مقابلة المتقدمون الذين تكون نتائجهم قريبة من عتبة القبول. وستعلن أمانة البرنامج عن التاريخ الدقيق.",
+      "status": "draft"
+    },
+    {
+      "fr": "L'admission directe est possible avec un diplôme havo/vwo (profils N&T, N&G, E&M) ou mbo-4, ou un diplôme étranger comparable. Pour C&M, des exigences supplémentaires s'appliquent.",
+      "ar": "القبول المباشر ممكن بشهادة havo/vwo (المسارات N&T وN&G وE&M) أو mbo-4، أو بشهادة أجنبية مماثلة. أما بالنسبة إلى C&M فتنطبق متطلبات إضافية.",
       "status": "draft"
     },
     {
@@ -1776,6 +1996,11 @@
       "status": "draft"
     },
     {
+      "fr": "L'admission se fait par une procédure de sélection (numerus fixus, 500 places) : participez à la sélection et respectez la date limite du 15 janvier. Vérifiez aussi votre diplôme dans le 'diploma finder'.",
+      "ar": "يتم القبول عبر إجراء انتقاء (numerus fixus، 500 مقعد): شارك في الانتقاء والتزم بالموعد النهائي 15 يناير. تحقق أيضًا من شهادتك في « diploma finder ».",
+      "status": "draft"
+    },
+    {
       "fr": "L'admission se fait sur dossier : résultats scolaires (50 %), méthodes de travail (10 %), savoir-être (10 %) et motivation (30 %), avec un niveau en mathématiques jugé essentiel. Vérifiez le niveau en mathématiques et les notes des enseignements de spécialité.",
       "ar": "يتم القبول بدراسة الملف: النتائج الدراسية (50 %) وأساليب العمل (10 %) والكفاءات السلوكية (10 %) والدافعية (30 %)، مع اعتبار مستوى الرياضيات أساسيًا. تحقق من مستوى الرياضيات ومن علامات مواد التخصص.",
       "status": "draft"
@@ -1831,6 +2056,11 @@
       "status": "draft"
     },
     {
+      "fr": "La UvA Matching est obligatoire pour les candidats ayant fait leurs études secondaires hors des Pays-Bas.",
+      "ar": "المشاركة في UvA Matching إلزامية للمتقدمين الذين أتموا تعليمهم الثانوي خارج هولندا.",
+      "status": "draft"
+    },
+    {
       "fr": "La candidature est examinée selon une grille (résultats scolaires 50 %, méthodes de travail 25 %, savoir-être 12 %, motivation 13 %) et une épreuve orale (entretien) peut être organisée ; vérifiez les critères et les dates sur la fiche Parcoursup.",
       "ar": "يُدرس الطلب وفق شبكة (النتائج الدراسية 50 %، أساليب العمل 25 %، الكفاءات السلوكية 12 %، الدافعية 13 %)، وقد تُنظَّم مقابلة شفوية؛ تحقق من المعايير والتواريخ في صفحة Parcoursup.",
       "status": "draft"
@@ -1853,6 +2083,11 @@
     {
       "fr": "La commission examine vos résultats scolaires, vos méthodes de travail, votre savoir-être, votre motivation et vos engagements",
       "ar": "تدرس اللجنة نتائجك الدراسية وأساليب عملك وكفاءاتك السلوكية ودافعيتك والتزاماتك",
+      "status": "draft"
+    },
+    {
+      "fr": "La date limite d'inscription des candidats internationaux n'est pas indiquée sur ces pages: consultez les délais internationaux de l'UT.",
+      "ar": "لا يرد الموعد النهائي للتقديم للمتقدمين الدوليين في هذه الصفحات: راجع المواعيد النهائية الدولية لدى UT.",
       "status": "draft"
     },
     {
@@ -1901,6 +2136,11 @@
       "status": "draft"
     },
     {
+      "fr": "La page indique que le diplôme marocain n'est pas équivalent au VWO : il faut avoir validé la 1re année (60 ECTS) d'un BSc/BEng dans le même domaine avec une moyenne (GPA) d'au moins 75 %.",
+      "ar": "تُفيد الصفحة بأن الشهادة المغربية غير معادِلة لشهادة VWO: يجب إتمام السنة 1 (60 ECTS) من برنامج BSc/BEng في المجال نفسه بمعدل (GPA) لا يقل عن 75%.",
+      "status": "draft"
+    },
+    {
       "fr": "La page indique que les diplômes havo, vwo ou mbo niveau 4 donnent accès, avec des exigences de profil (N&G, N&T ou E&M) ; vérifiez votre éligibilité avec un Baccalauréat marocain.",
       "ar": "تذكر الصفحة أن شهادات havo أو vwo أو mbo المستوى 4 تتيح الالتحاق، مع شروط خاصة بالمسلك (N&G أو N&T أو E&M)؛ تحقق من أهليتك بالبكالوريا المغربية.",
       "status": "draft"
@@ -1911,6 +2151,26 @@
       "status": "draft"
     },
     {
+      "fr": "La participation au 'UvA Matching' est obligatoire pour les étudiants internationaux après l'admission conditionnelle.",
+      "ar": "المشاركة في « UvA Matching » إلزامية للطلاب الدوليين بعد القبول المشروط.",
+      "status": "draft"
+    },
+    {
+      "fr": "La participation à l'activité de matching (studiekeuzecheck) est obligatoire pour Advanced Technology ; vérifiez les dates et la procédure auprès de la formation.",
+      "ar": "المشاركة في نشاط المطابقة (studiekeuzecheck) إلزامية لبرنامج Advanced Technology؛ تحقق من المواعيد والإجراء لدى البرنامج.",
+      "status": "draft"
+    },
+    {
+      "fr": "La participation à la studiekeuzecheck (matching) est obligatoire pour cette formation.",
+      "ar": "المشاركة في studiekeuzecheck (المطابقة) إلزامية لهذا البرنامج.",
+      "status": "draft"
+    },
+    {
+      "fr": "La procédure de matching (journée de matching) est obligatoire pour les étudiants inscrits à une adresse néerlandaise ; vous vivez à l'étranger, elle n'est donc pas obligatoire pour vous.",
+      "ar": "إجراء المطابقة (يوم المطابقة) إلزامي للطلاب المسجَّلين بعنوان في هولندا؛ وبما أنك تعيش في الخارج، فهو غير إلزامي بالنسبة إليك.",
+      "status": "draft"
+    },
+    {
       "fr": "La spécialité mathématiques est fortement recommandée au moins en classe de première ; si elle n'a pas été suivie en terminale, il est recommandé d'avoir suivi l'option mathématiques complémentaires.",
       "ar": "يُنصح بشدة بدراسة تخصص الرياضيات على الأقل في صف première؛ وإن لم تُدرس في صف terminale، يُنصح بدراسة خيار الرياضيات المكمّلة.",
       "status": "draft"
@@ -1918,6 +2178,11 @@
     {
       "fr": "La sélection (numerus fixus) impose de s'inscrire avant le 15 janvier via Studielink et de participer à la procédure de sélection.",
       "ar": "يفرض الاختيار (numerus fixus) التسجيل قبل 15 يناير عبر Studielink والمشاركة في إجراءات الاختيار.",
+      "status": "draft"
+    },
+    {
+      "fr": "La sélection (studiekeuzecheck) pour Applied Mathematics n'est pas obligatoire, mais renseignez-vous auprès du programme (intake-am-eemcs@utwente.nl) sur les activités d'admission et les délais applicables aux candidats étrangers.",
+      "ar": "الانتقاء (studiekeuzecheck) لبرنامج Applied Mathematics غير إلزامي، لكن استعلم لدى البرنامج (intake-am-eemcs@utwente.nl) عن أنشطة القبول والمواعيد السارية على المتقدمين الأجانب.",
       "status": "draft"
     },
     {
@@ -1956,6 +2221,16 @@
       "status": "draft"
     },
     {
+      "fr": "La « UvA Matching » est obligatoire pour les étudiants ayant fait leurs études secondaires hors des Pays-Bas.",
+      "ar": "المشاركة في « UvA Matching » إلزامية للطلاب الذين أتموا تعليمهم الثانوي خارج هولندا.",
+      "status": "draft"
+    },
+    {
+      "fr": "La « studiekeuzecheck » (test de choix d'études) est conseillée : demandez un formulaire de motivation au conseiller aux études.",
+      "ar": "يُنصح بالمشاركة في « studiekeuzecheck » (اختبار اختيار الدراسة): اطلب استمارة دافعية من المرشد الأكاديمي.",
+      "status": "draft"
+    },
+    {
       "fr": "Le Politecnico exige que le diplôme de fin d'études secondaires soit accompagné d'une traduction officielle si le document n'est pas en italien, anglais, français ou espagnol.",
       "ar": "يشترط Politecnico أن تكون شهادة نهاية الدراسة الثانوية مرفقة بترجمة رسمية إذا لم تكن الوثيقة بالإيطالية أو الإنجليزية أو الفرنسية أو الإسبانية.",
       "status": "draft"
@@ -1978,6 +2253,11 @@
     {
       "fr": "Le candidat doit fournir une garantie financière de 6.080,00 €/an pendant trois ans et souscrire une assurance maladie/santé pour le visa d'études.",
       "ar": "يجب على المتقدم تقديم ضمان مالي قدره 6.080,00 €/سنة لمدة ثلاث سنوات، وإبرام تأمين صحي لتأشيرة الدراسة.",
+      "status": "draft"
+    },
+    {
+      "fr": "Le certificat d'anglais doit être fourni avant le 1 avril pour les candidats non-UE/EEE, et le test doit dater de moins de deux ans avant le 1 septembre.",
+      "ar": "يجب تقديم شهادة الإنجليزية قبل 1 أبريل للمتقدمين من خارج الاتحاد الأوروبي (UE)/EEE، ويجب أن يكون عمر الاختبار أقل من سنتين في 1 سبتمبر.",
       "status": "draft"
     },
     {
@@ -2033,6 +2313,16 @@
     {
       "fr": "Le diplôme final de fin d'études secondaires doit être téléchargé via les Services en ligne au plus tard le 10 septembre 2026.",
       "ar": "يجب رفع شهادة نهاية الدراسة الثانوية النهائية عبر الخدمات الإلكترونية (Services en ligne) في موعد أقصاه 10 سبتمبر 2026.",
+      "status": "draft"
+    },
+    {
+      "fr": "Le diplôme marocain (Baccalauréat) doit être évalué pour l'admission; contactez l'école pour vérifier l'équivalence et les conditions d'admission pour les étudiants internationaux.",
+      "ar": "يجب تقييم الشهادة المغربية (البكالوريا) لأغراض القبول؛ تواصل مع المدرسة للتحقق من المعادلة وشروط القبول الخاصة بالطلاب الدوليين.",
+      "status": "draft"
+    },
+    {
+      "fr": "Le diplôme marocain doit être jugé équivalent au VWO néerlandais par le Central Admissions Office (diploma finder) ; prévoyez aussi le test d'admission/selection (numerus fixus, 550 places).",
+      "ar": "يجب أن تُعتبر الشهادة المغربية معادِلة لشهادة VWO الهولندية من قِبل مكتب القبول المركزي (diploma finder)؛ وخطط أيضًا لاختبار القبول/الانتقاء (numerus fixus، 550 مقعدًا).",
       "status": "draft"
     },
     {
@@ -2096,6 +2386,11 @@
       "status": "draft"
     },
     {
+      "fr": "Le programme indique pour les diplômes étrangers une exigence de maîtrise du néerlandais au niveau B2 (NT2 Programme II) ; à vérifier auprès de l'admission, car le programme est annoncé comme enseigné en anglais.",
+      "ar": "يُشير البرنامج إلى متطلب إتقان الهولندية بمستوى B2 (NT2 Programme II) لحاملي الشهادات الأجنبية؛ يُرجى التحقق لدى قسم القبول، لأن البرنامج معلَن بوصفه يُدرَّس بالإنجليزية.",
+      "status": "draft"
+    },
+    {
       "fr": "Le programme passerelle Verkort Verpleegkunde fait partie de la procédure d'admission.",
       "ar": "برنامج الجسر في التمريض المختصر جزء من إجراءات القبول.",
       "status": "draft"
@@ -2116,6 +2411,56 @@
       "status": "draft"
     },
     {
+      "fr": "Les candidats avec un diplôme international doivent payer des frais de dossier non remboursables de 100 €.",
+      "ar": "يجب على المتقدمين الحاصلين على شهادة دولية دفع رسوم ملف غير قابلة للاسترداد قدرها 100 يورو.",
+      "status": "draft"
+    },
+    {
+      "fr": "Les candidats avec un diplôme étranger (comme le Bac marocain) doivent postuler via le International Office ; vérifiez les exigences de la formation et de niveau d'anglais sur la page du programme.",
+      "ar": "يجب على المتقدمين الحاصلين على شهادة أجنبية (مثل البكالوريا المغربية) التقدم عبر المكتب الدولي؛ تحقق من متطلبات البرنامج ومستوى الإنجليزية في صفحة البرنامج.",
+      "status": "draft"
+    },
+    {
+      "fr": "Les candidats avec un diplôme étranger doivent téléverser leurs documents de scolarité dans OSIRIS après réception de l'e-mail.",
+      "ar": "يجب على المتقدمين الحاصلين على شهادة أجنبية رفع وثائق دراستهم في OSIRIS بعد استلام الرسالة الإلكترونية.",
+      "status": "draft"
+    },
+    {
+      "fr": "Les candidats avec un diplôme étranger paient des frais de dossier non remboursables de 100 € ; l'inscription se fait dans Studielink puis via le portail SIS de l'UvA.",
+      "ar": "يدفع المتقدمون الحاصلون على شهادة أجنبية رسوم ملف غير قابلة للاسترداد قدرها 100 يورو؛ ويتم التقديم عبر Studielink ثم عبر بوابة SIS الخاصة بـ UvA.",
+      "status": "draft"
+    },
+    {
+      "fr": "Les candidats avec un diplôme étranger paient des frais de dossier non remboursables de 100 € via le portail de candidature.",
+      "ar": "يدفع المتقدمون الحاصلون على شهادة أجنبية رسوم ملف غير قابلة للاسترداد قدرها 100 يورو عبر بوابة التقديم.",
+      "status": "draft"
+    },
+    {
+      "fr": "Les candidats avec une nationalité autre que néerlandaise doivent consulter les deadlines internationales spécifiques.",
+      "ar": "يجب على المتقدمين الذين يحملون جنسية غير هولندية الاطلاع على المواعيد النهائية الدولية المحددة.",
+      "status": "draft"
+    },
+    {
+      "fr": "Les candidats de 21 ans ou plus ne remplissant pas les conditions peuvent passer un test d'admission 21+ ; contactez le conseiller aux études.",
+      "ar": "يمكن للمتقدمين البالغين 21 سنة أو أكثر ممن لا يستوفون الشروط اجتياز اختبار القبول 21+؛ تواصل مع المرشد الأكاديمي.",
+      "status": "draft"
+    },
+    {
+      "fr": "Les candidats de 21 ans ou plus sans diplôme formel peuvent être admis en réussissant l'examen d'entrée ; un test de déficience peut être exigé.",
+      "ar": "يمكن قبول المتقدمين البالغين 21 سنة أو أكثر ممن لا يحملون شهادة رسمية، بنجاحهم في امتحان الدخول؛ وقد يُشترط اجتياز اختبار تعويض النقص.",
+      "status": "draft"
+    },
+    {
+      "fr": "Les candidats de 21 ans ou plus sans diplôme requis peuvent passer un examen d'entrée alternatif ; contactez HZ pour les modalités.",
+      "ar": "يمكن للمتقدمين البالغين 21 سنة أو أكثر ممن لا يحملون الشهادة المطلوبة اجتياز امتحان دخول بديل؛ تواصل مع HZ للاطلاع على التفاصيل.",
+      "status": "draft"
+    },
+    {
+      "fr": "Les candidats de 21 ans ou plus sans diplôme équivalent peuvent passer un examen d'admission (TOEFL/IELTS, mathématiques et test de compétences) ; date limite 1 juin.",
+      "ar": "يمكن للمتقدمين البالغين 21 سنة أو أكثر ممن لا يحملون شهادة معادِلة اجتياز امتحان قبول (TOEFL/IELTS والرياضيات واختبار الكفاءات)؛ والموعد النهائي 1 يونيو.",
+      "status": "draft"
+    },
+    {
       "fr": "Les candidats de certains pays ne peuvent plus postuler (liste mise à jour).",
       "ar": "لم يعد بإمكان المتقدمين من بعض البلدان التقديم (القائمة محدّثة).",
       "status": "draft"
@@ -2123,6 +2468,11 @@
     {
       "fr": "Les candidats doivent avoir plus de 18 ans dans l'année de candidature.",
       "ar": "يجب أن يكون عمر المترشحين أكثر من 18 سنة في سنة الترشح.",
+      "status": "draft"
+    },
+    {
+      "fr": "Les candidats doivent passer une journée de sélection avec des tests et un entretien.",
+      "ar": "يجب على المتقدمين حضور يوم انتقاء يتضمن اختبارات ومقابلة.",
       "status": "draft"
     },
     {
@@ -2166,6 +2516,11 @@
       "status": "draft"
     },
     {
+      "fr": "Les candidats non-UE doivent respecter des délais d'admission et de visa plus précoces (par exemple 1 avril pour l'admission, 5 juin pour les documents de visa pour la rentrée de septembre).",
+      "ar": "يجب على المتقدمين من خارج الاتحاد الأوروبي (UE) الالتزام بمواعيد قبول وتأشيرة أبكر (مثلًا 1 أبريل للقبول، و5 يونيو لوثائق التأشيرة لبداية الدراسة في سبتمبر).",
+      "status": "draft"
+    },
+    {
       "fr": "Les candidats qui obtiennent moins de 50% à la section Mathématiques du test TOLC-I reçoivent une obligation formative additionnelle (OFA) : acquérir au moins 9 CFU en MAT/05.",
       "ar": "المتقدمون الذين يحصلون على أقل من 50% في قسم الرياضيات من اختبار TOLC-I يُفرض عليهم التزام تكويني إضافي (OFA): الحصول على 9 CFU على الأقل في MAT/05.",
       "status": "draft"
@@ -2198,6 +2553,11 @@
     {
       "fr": "Les conditions d'admission précisent 'GCE' ; vérifiez l'équivalence de votre Baccalauréat marocain.",
       "ar": "تنص شروط القبول على «GCE»؛ تحقق من معادلة بكالوريتك المغربية.",
+      "status": "draft"
+    },
+    {
+      "fr": "Les copies certifiées des documents doivent être envoyées par courrier postal avant le 31 août.",
+      "ar": "يجب إرسال النسخ المصدَّقة من الوثائق بالبريد قبل 31 أغسطس.",
       "status": "draft"
     },
     {
@@ -2238,6 +2598,11 @@
     {
       "fr": "Les dossiers doivent être soumis avant la date limite du 30 avril ; les décisions d'admission sont notifiées 2 à 3 semaines après cette date.",
       "ar": "يجب تقديم الملفات قبل الموعد النهائي، وهو 30 أبريل؛ ويتم إبلاغ قرارات القبول بعد 2 إلى 3 أسابيع من هذا التاريخ.",
+      "status": "draft"
+    },
+    {
+      "fr": "Les exigences supplémentaires (procédure d'admission CMGT, PDF) s'appliquent; consultez le document d'admission.",
+      "ar": "تنطبق متطلبات إضافية (إجراء القبول CMGT، ملف PDF)؛ راجع وثيقة القبول.",
       "status": "draft"
     },
     {
@@ -2311,6 +2676,21 @@
       "status": "draft"
     },
     {
+      "fr": "Les étudiants avec un diplôme international doivent payer des frais de dossier non remboursables de 100 € avant le traitement de leur candidature.",
+      "ar": "يجب على الطلاب الحاصلين على شهادة دولية دفع رسوم ملف غير قابلة للاسترداد قدرها 100 يورو قبل معالجة طلب التقديم الخاص بهم.",
+      "status": "draft"
+    },
+    {
+      "fr": "Les étudiants avec un diplôme étranger doivent payer des frais de dossier non remboursables de 100 € avant le traitement de la candidature.",
+      "ar": "يجب على الطلاب الحاصلين على شهادة أجنبية دفع رسوم ملف غير قابلة للاسترداد قدرها 100 يورو قبل معالجة طلب التقديم.",
+      "status": "draft"
+    },
+    {
+      "fr": "Les étudiants avec une formation étrangère paient des frais de dossier (application fee) de 100 € non remboursables.",
+      "ar": "يدفع الطلاب ذوو الدراسة الأجنبية السابقة رسوم ملف (رسوم التقديم) قدرها 100 يورو، وهي غير قابلة للاسترداد.",
+      "status": "draft"
+    },
+    {
       "fr": "Les étudiants de nationalité non-EEE doivent postuler avant le 1er mai et payer les frais de scolarité avant le début de l'année universitaire.",
       "ar": "على الطلبة الذين لا تنتمي جنسيتهم إلى EEE (المنطقة الاقتصادية الأوروبية) التقديم قبل 1 مايو ودفع الرسوم الدراسية قبل بداية السنة الجامعية.",
       "status": "draft"
@@ -2323,6 +2703,11 @@
     {
       "fr": "Les étudiants non-UE résidant à l'étranger doivent présenter une pré-inscription auprès de l'ambassade ou du consulat d'Italie de leur pays de résidence.",
       "ar": "على الطلبة من خارج الاتحاد الأوروبي (UE) المقيمين في الخارج تقديم طلب التسجيل المسبق لدى سفارة إيطاليا أو قنصليتها في بلد إقامتهم.",
+      "status": "draft"
+    },
+    {
+      "fr": "Les étudiants étrangers titulaires d'un diplôme non néerlandais doivent fournir un diplôme au niveau mbo-4 ou havo et, pour une formation en néerlandais, le Staatsexamen NT2-II. Vérifiez la procédure d'équivalence (diplomawaardering) et les éventuelles exigences supplémentaires.",
+      "ar": "يجب على الطلاب الأجانب الحاصلين على شهادة غير هولندية تقديم شهادة بمستوى mbo-4 أو havo، وفي حال كان البرنامج بالهولندية يلزم Staatsexamen NT2-II. تحقق من إجراء المعادلة (diplomawaardering) وأي متطلبات إضافية.",
       "status": "draft"
     },
     {
@@ -2376,13 +2761,43 @@
       "status": "draft"
     },
     {
+      "fr": "Niveau d'anglais exigé pour les non-natifs (IELTS 6.0, TOEFL iBT 80 ou Cambridge C) : vérifiez la page de votre programme pour la liste exacte des preuves acceptées.",
+      "ar": "مستوى الإنجليزية المطلوب لغير الناطقين بها (IELTS 6.0 أو TOEFL iBT 80 أو Cambridge C): تحقق من صفحة برنامجك للاطلاع على القائمة الدقيقة للإثباتات المقبولة.",
+      "status": "draft"
+    },
+    {
+      "fr": "Non-EU sans nationalité UE et ayant besoin d'un visa : la date limite d'inscription dans Studielink est le 1 avril (au lieu du 1 mai).",
+      "ar": "غير حاملي جنسية الاتحاد الأوروبي (UE/EU) ممن يحتاجون إلى تأشيرة: الموعد النهائي للتقديم عبر Studielink هو 1 أبريل (بدلًا من 1 مايو).",
+      "status": "draft"
+    },
+    {
       "fr": "Note minimale de 70% au lycée, avec une note de mathématiques d'au moins 70%. Un diplôme de fin d'études secondaires obtenu depuis plus de 5 ans n'est pas accepté.",
       "ar": "علامة دنيا قدرها 70% في الثانوية، مع علامة في الرياضيات لا تقل عن 70%. ولا تُقبل شهادة نهاية الدراسة الثانوية إذا مضى على الحصول عليها أكثر من 5 سنوات.",
       "status": "draft"
     },
     {
+      "fr": "Numerus fixus : oui (590 places) ; la page indique une date limite d'inscription au 15 janvier (sans année) et une sélection. Vérifiez la procédure de sélection et la date exacte sur la page Studielink/DUO.",
+      "ar": "numerus fixus: نعم (590 مقعدًا)؛ تشير الصفحة إلى موعد نهائي للتقديم في 15 يناير (دون ذكر السنة) وإلى إجراء انتقاء. تحقق من إجراء الانتقاء والتاريخ الدقيق في صفحة Studielink/DUO.",
+      "status": "draft"
+    },
+    {
       "fr": "Obtenir l'ISEEU parificato auprès du CAF partenaire de Bocconi, puis déposer la demande en ligne via le lien publié sur la page de l'université pendant la période de candidature, avec les documents justificatifs.",
       "ar": "احصل على ISEEU parificato من CAF الشريك لجامعة Bocconi، ثم قدّم الطلب عبر الإنترنت من خلال الرابط المنشور في صفحة الجامعة خلال فترة التقديم، مع الوثائق الداعمة.",
+      "status": "draft"
+    },
+    {
+      "fr": "PPE est un programme sélectif : la candidature doit être complète avant le 1er avril (non-UE/EEE). Un formulaire d'évaluation fait partie de la sélection ; critères sur la page du programme.",
+      "ar": "PPE برنامج انتقائي: يجب أن يكون التقديم مكتملًا قبل 1 أبريل (من خارج الاتحاد الأوروبي (UE)/EEE). ويُعدّ نموذج التقييم جزءًا من الانتقاء؛ والمعايير موجودة في صفحة البرنامج.",
+      "status": "draft"
+    },
+    {
+      "fr": "PPLE est un programme sélectif : consultez la procédure de sélection sur le site du programme.",
+      "ar": "PPLE برنامج انتقائي: راجع إجراء الانتقاء على موقع البرنامج.",
+      "status": "draft"
+    },
+    {
+      "fr": "Participation à la studiekeuzecheck (matching) est obligatoire pour Mechanical Engineering.",
+      "ar": "المشاركة في اختبار ملاءمة التخصص (studiekeuzecheck) إلزامية لبرنامج الهندسة الميكانيكية (Mechanical Engineering).",
       "status": "draft"
     },
     {
@@ -2398,6 +2813,11 @@
     {
       "fr": "Passeport en cours de validité",
       "ar": "جواز سفر ساري المفعول",
+      "status": "draft"
+    },
+    {
+      "fr": "Passeport ou carte d'identité",
+      "ar": "جواز السفر أو بطاقة الهوية",
       "status": "draft"
     },
     {
@@ -2481,6 +2901,11 @@
       "status": "draft"
     },
     {
+      "fr": "Pièce d'identité, passeport ou titre de séjour",
+      "ar": "وثيقة الهوية أو جواز السفر أو تصريح الإقامة",
+      "status": "draft"
+    },
+    {
       "fr": "Pièce d’identité (carte nationale, passeport, carte de séjour ou récépissé)",
       "ar": "وثيقة هوية (البطاقة الوطنية أو جواز السفر أو بطاقة الإقامة أو وصل إيداع طلب بطاقة الإقامة)",
       "status": "draft"
@@ -2526,6 +2951,11 @@
       "status": "draft"
     },
     {
+      "fr": "Pour les diplômés du secondaire néerlandais : profils havo/vwo avec wiskunde A ou B, ou mbo niveau 4 (wiskunde recommandée). Vérifiez l'équivalence de votre Baccalauréat marocain.",
+      "ar": "بالنسبة إلى خريجي التعليم الثانوي الهولندي: مسارات havo/vwo مع wiskunde A أو B، أو mbo بمستوى 4 (يُستحسن wiskunde). تحقق من معادلة البكالوريا المغربية الخاصة بك.",
+      "status": "draft"
+    },
+    {
       "fr": "Pour les diplômés internationaux, l'International Office traite les candidatures des étudiants titulaires d'un diplôme non néerlandais. Contactez international@has.nl.",
       "ar": "بالنسبة للحاصلين على شهادات دولية، يتولى المكتب الدولي معالجة طلبات الطلبة الحاصلين على شهادة غير هولندية. تواصل عبر international@has.nl.",
       "status": "draft"
@@ -2548,6 +2978,11 @@
     {
       "fr": "Pour un diplôme non néerlandais, Hogeschool Leiden évalue votre diplôme sur la base d'une évaluation Nuffic ; des délais d'inscription différents s'appliquent. Consultez la page 'Studenten uit het buitenland'.",
       "ar": "إذا كانت شهادتك غير هولندية، تقيّم Hogeschool Leiden شهادتك استنادًا إلى تقييم Nuffic؛ وتنطبق مواعيد تسجيل مختلفة. راجع صفحة 'Studenten uit het buitenland'.",
+      "status": "draft"
+    },
+    {
+      "fr": "Pour un programme anglophone, vous devez prouver votre niveau d'anglais (test reconnu ou diplôme exempté). Le niveau exact est fixé dans la décision d'admission.",
+      "ar": "بالنسبة إلى برنامج يُدرَّس بالإنجليزية، يجب إثبات مستواك في الإنجليزية (اختبار معترف به أو شهادة معفية). ويُحدَّد المستوى الدقيق في قرار القبول.",
       "status": "draft"
     },
     {
@@ -2621,6 +3056,11 @@
       "status": "draft"
     },
     {
+      "fr": "Preuve de maîtrise linguistique",
+      "ar": "إثبات الكفاءة اللغوية",
+      "status": "draft"
+    },
+    {
       "fr": "Preuve de paiement des frais de candidature",
       "ar": "إثبات دفع رسوم التقديم",
       "status": "draft"
@@ -2666,6 +3106,16 @@
       "status": "draft"
     },
     {
+      "fr": "Programme en anglais : fournir un justificatif de niveau d'anglais (test accepté avec score minimum, ou diplôme dispensé). Le justificatif peut être remis après une admission conditionnelle.",
+      "ar": "البرنامج باللغة الإنجليزية: يجب تقديم إثبات مستوى الإنجليزية (اختبار مقبول بحد أدنى من الدرجات، أو شهادة معفية). ويمكن تقديم الإثبات بعد القبول المشروط.",
+      "status": "draft"
+    },
+    {
+      "fr": "Programme en anglais : un justificatif de niveau d'anglais (test reconnu ou diplôme exempté) est exigé ; il peut être fourni après admission conditionnelle.",
+      "ar": "البرنامج باللغة الإنجليزية: يُشترط إثبات مستوى الإنجليزية (اختبار معترف به أو شهادة معفية)، ويمكن تقديمه بعد القبول المشروط.",
+      "status": "draft"
+    },
+    {
       "fr": "Programme à accès restreint (80 places); la sélection se fait sur classement après le test et l'entretien éventuel.",
       "ar": "برنامج محدود الالتحاق (80 مقعدًا)؛ يتم الانتقاء حسب الترتيب بعد الاختبار والمقابلة إن وُجدت.",
       "status": "draft"
@@ -2673,6 +3123,21 @@
     {
       "fr": "Programme à admission limitée : un test d'entrée écrit en ligne (mathématiques et raisonnement) est obligatoire. Les candidats non-UE ayant besoin d'un visa doivent déjà avoir les résultats officiels d'un test d'entrée reconnu au moment de la soumission.",
       "ar": "برنامج محدود القبول: اختبار دخول كتابي عبر الإنترنت (رياضيات واستدلال) إلزامي. ويجب أن تتوفر لدى المتقدمين من خارج الاتحاد الأوروبي (UE) الذين يحتاجون إلى تأشيرة النتائج الرسمية لأحد اختبارات الدخول المعترف بها وقت تقديم الطلب.",
+      "status": "draft"
+    },
+    {
+      "fr": "Programme à numerus fixus (400 places): inscription via Studielink et le Progress Portal avant le 15 janvier, frais de dossier de 100 € et procédure de sélection (tests).",
+      "ar": "برنامج numerus fixus (400 مقعد): التقديم عبر Studielink وProgress Portal قبل 15 يناير، ورسوم ملف قدرها 100 يورو، وإجراء انتقاء (اختبارات).",
+      "status": "draft"
+    },
+    {
+      "fr": "Programme à numerus fixus : la sélection s'applique. Le paiement doit être effectué au plus tard le 1er juillet (23:59 CEST) pour les étudiants avec un diplôme étranger.",
+      "ar": "برنامج numerus fixus: يُطبَّق الانتقاء. ويجب إتمام الدفع في موعد أقصاه 1 يوليو (23:59 CEST) بالنسبة إلى الطلاب الحاصلين على شهادة أجنبية.",
+      "status": "draft"
+    },
+    {
+      "fr": "Prouvez des moyens de subsistance suffisants (norme IND, actuellement 1131 EUR par mois) ; une option est un dépôt de 13.572 EUR.",
+      "ar": "أثبت أن لديك موارد مالية كافية للمعيشة (معيار IND: 1131 EUR شهريًا حاليًا)؛ ومن الخيارات المتاحة وديعة بمبلغ 13.572 EUR.",
       "status": "draft"
     },
     {
@@ -2811,6 +3276,11 @@
       "status": "draft"
     },
     {
+      "fr": "Relevé de notes final (copie certifiée)",
+      "ar": "كشف العلامات النهائي (نسخة مصدَّقة)",
+      "status": "draft"
+    },
+    {
       "fr": "Relevé de notes officiel",
       "ar": "كشف نقاط رسمي",
       "status": "draft"
@@ -2833,6 +3303,11 @@
     {
       "fr": "Relevé des résultats de fin d'études secondaires",
       "ar": "كشف نتائج نهاية الدراسة الثانوية",
+      "status": "draft"
+    },
+    {
+      "fr": "Relevé(s) de notes",
+      "ar": "كشف (كشوف) العلامات",
       "status": "draft"
     },
     {
@@ -2926,6 +3401,11 @@
       "status": "draft"
     },
     {
+      "fr": "Résultats du test d'anglais",
+      "ar": "نتائج اختبار الإنجليزية",
+      "status": "draft"
+    },
+    {
       "fr": "Résumé des activités",
       "ar": "ملخص الأنشطة",
       "status": "draft"
@@ -2936,13 +3416,38 @@
       "status": "draft"
     },
     {
+      "fr": "Sans diplôme admissible, un test d'admission 21+ (capacité, connaissances, langue) peut être possible si vous avez 21 ans ou plus au début de la formation.",
+      "ar": "في حال عدم وجود شهادة مؤهلة للقبول، قد يكون اجتياز اختبار القبول 21+ (القدرة والمعارف واللغة) ممكنًا إذا كان عمرك 21 سنة أو أكثر عند بداية البرنامج.",
+      "status": "draft"
+    },
+    {
+      "fr": "Sans diplôme néerlandais, une épreuve de langue anglaise est généralement exigée (exemption possible); vérifiez les conditions sur la page toelatingseisen.",
+      "ar": "في غياب شهادة هولندية، يُشترط عادةً اجتياز اختبار في اللغة الإنجليزية (مع إمكانية الإعفاء)؛ تحقق من الشروط في صفحة toelatingseisen.",
+      "status": "draft"
+    },
+    {
       "fr": "Score minimum d'admission : 60 points. Les candidats obtenant moins de 5 points dans une section sont rejetés.",
       "ar": "الحد الأدنى للقبول: 60 نقطة. ويُرفض المتقدمون الذين يحصلون على أقل من 5 نقاط في أحد الأقسام.",
       "status": "draft"
     },
     {
+      "fr": "Si tu n'as pas de diplôme donnant accès et que tu as 21 ans ou plus, tu peux être admis via l'« Toelatingsonderzoek 21+ » (test de capacité numérique).",
+      "ar": "إذا لم تكن لديك شهادة تتيح الدخول وكان عمرك 21 سنة أو أكثر، يمكنك القبول عبر « Toelatingsonderzoek 21+ » (اختبار القدرة العددية).",
+      "status": "draft"
+    },
+    {
       "fr": "Si votre diplôme de fin d'études secondaires a été obtenu en moins de 12 ans, fournissez un certificat universitaire de réussite de la première année ou un Foundation Programme.",
       "ar": "إذا حصلت على شهادة إتمام التعليم الثانوي في أقل من 12 سنة، فتقدّم بشهادة جامعية لإتمام السنة الأولى أو برنامج Foundation Programme.",
+      "status": "draft"
+    },
+    {
+      "fr": "Si votre diplôme ne couvre pas les mathématiques au niveau VWO, vous devrez peut-être passer un examen de mathématiques A (Boswell-Bèta, CCVX ou OMPT-A, score minimum 75 %, 3 tentatives max.).",
+      "ar": "إذا لم تشمل شهادتك الرياضيات بمستوى VWO، فقد تحتاج إلى اجتياز امتحان الرياضيات A (Boswell-Bèta أو CCVX أو OMPT-A، بحد أدنى 75%، و3 محاولات كحد أقصى).",
+      "status": "draft"
+    },
+    {
+      "fr": "Si votre niveau de mathématiques est insuffisant, vous pouvez passer le test OMPT-A (score minimum 55% / 5,5) ; frais supplémentaires.",
+      "ar": "إذا كان مستوى الرياضيات لديك غير كافٍ، يمكنك اجتياز اختبار OMPT-A (بحد أدنى 55% / 5,5)؛ وتُطبَّق رسوم إضافية.",
       "status": "draft"
     },
     {
@@ -2961,8 +3466,23 @@
       "status": "draft"
     },
     {
+      "fr": "Si vous avez un diplôme étranger, faites-le évaluer selon les normes néerlandaises (diplomawaardering).",
+      "ar": "إذا كانت لديك شهادة أجنبية، فاطلب تقييمها وفق المعايير الهولندية (diplomawaardering).",
+      "status": "draft"
+    },
+    {
+      "fr": "Si vous avez un diplôme étranger, il doit être comparable au diplôme néerlandais requis et vous devez maîtriser suffisamment le néerlandais.",
+      "ar": "إذا كانت لديك شهادة أجنبية، فيجب أن تكون مماثلة للشهادة الهولندية المطلوبة، ويجب أن تتقن الهولندية بقدر كافٍ.",
+      "status": "draft"
+    },
+    {
       "fr": "Si vous avez un diplôme étranger, vous devez prouver votre maîtrise du néerlandais ; consultez les Taaleisen Nederlands.",
       "ar": "إذا كانت لديك شهادة أجنبية، فيجب أن تثبت إتقانك للهولندية؛ راجع Taaleisen Nederlands.",
+      "status": "draft"
+    },
+    {
+      "fr": "Si vous avez une formation étrangère, vous recevrez un e-mail pour téléverser les documents de votre formation dans OSIRIS.",
+      "ar": "إذا كانت لديك دراسة أجنبية سابقة، فستتلقى رسالة بريد إلكتروني لرفع وثائق دراستك في OSIRIS.",
       "status": "draft"
     },
     {
@@ -2971,8 +3491,18 @@
       "status": "draft"
     },
     {
+      "fr": "Si vous n'avez pas le diplôme requis et avez 21 ans ou plus, vous pouvez être admissible via l'examen d'entrée alternatif de HZ.",
+      "ar": "إذا لم تكن لديك الشهادة المطلوبة وكان عمرك 21 سنة أو أكثر، فقد تكون مؤهلًا للقبول عبر امتحان الدخول البديل الخاص بـ HZ.",
+      "status": "draft"
+    },
+    {
       "fr": "Si vous n'avez pas le diplôme requis et que vous avez 21 ans ou plus, vous pouvez passer un examen d'admission organisé par l'établissement (toelatingsonderzoek).",
       "ar": "إذا لم تكن لديك الشهادة المطلوبة وكان عمرك 21 سنة أو أكثر، يمكنك اجتياز امتحان القبول الذي تنظمه المؤسسة (toelatingsonderzoek).",
+      "status": "draft"
+    },
+    {
+      "fr": "Sélection : il n'y a de place que pour 80 nouveaux étudiants ; une procédure de sélection s'applique. Consultez la procédure d'inscription.",
+      "ar": "الانتقاء: لا توجد سوى 80 مقعدًا للطلاب الجدد؛ ويُطبَّق إجراء انتقاء. راجع إجراء التقديم.",
       "status": "draft"
     },
     {
@@ -3011,8 +3541,23 @@
       "status": "draft"
     },
     {
+      "fr": "Titulaires d'un diplôme étranger (full degree abroad) : date limite d'inscription le 19 juin (vendredi). Vérifiez auprès des admissions.",
+      "ar": "حاملو الشهادات الأجنبية (الدرجة الكاملة من الخارج): الموعد النهائي للتقديم هو 19 يونيو (الجمعة). تحقق لدى قسم القبول.",
+      "status": "draft"
+    },
+    {
+      "fr": "Ton diplôme étranger doit être évalué (waardering) par la Centrale Studenten Administratie (CSA) pour être comparé à un diplôme néerlandais ; commence la procédure le plus tôt possible.",
+      "ar": "يجب أن تُقيَّم شهادتك الأجنبية (waardering) من قِبل Centrale Studenten Administratie (CSA) لمقارنتها بشهادة هولندية؛ ابدأ الإجراء في أقرب وقت ممكن.",
+      "status": "draft"
+    },
+    {
       "fr": "Tous les candidats doivent participer à un processus d'admission en ligne : un test de mathématiques avec au moins 50 %, puis un entretien en ligne. Le score minimum d'admission est de 60 points ; en dessous, la candidature est rejetée.",
       "ar": "يجب على جميع المتقدمين المشاركة في مسار قبول عبر الإنترنت: اختبار في الرياضيات يشترط الحصول على 50% على الأقل، ثم مقابلة عبر الإنترنت. الحد الأدنى للقبول هو 60 نقطة؛ وما دون ذلك يُرفض الطلب.",
+      "status": "draft"
+    },
+    {
+      "fr": "Tous les candidats doivent remplir l'enquête MPT (Multicultural Personality Test) ; l'invitation est envoyée après la candidature.",
+      "ar": "يجب على جميع المتقدمين ملء استبيان MPT (اختبار الشخصية متعددة الثقافات)؛ وتُرسَل الدعوة بعد التقديم.",
       "status": "draft"
     },
     {
@@ -3021,8 +3566,23 @@
       "status": "draft"
     },
     {
+      "fr": "Tous les diplômes obtenus à l'étranger (dont le Bac marocain) doivent être évalués par le service des admissions ; les diplômes listés ne sont que des exemples.",
+      "ar": "يجب أن يقوم قسم القبول بتقييم جميع الشهادات المحصَّل عليها في الخارج (ومنها البكالوريا المغربية)؛ والشهادات المدرجة في القائمة ليست سوى أمثلة.",
+      "status": "draft"
+    },
+    {
+      "fr": "Tous les diplômes obtenus à l'étranger doivent être évalués par le service des admissions ; l'admission n'est pas automatique.",
+      "ar": "يجب أن يقوم قسم القبول بتقييم جميع الشهادات المحصَّل عليها في الخارج؛ والقبول ليس تلقائيًا.",
+      "status": "draft"
+    },
+    {
       "fr": "Tous les documents de candidature requis sont vérifiés par le coordinateur de la faculté : demandez la liste exacte.",
       "ar": "يراجع منسّق الكلية جميع وثائق التقديم المطلوبة: اطلب القائمة الدقيقة.",
+      "status": "draft"
+    },
+    {
+      "fr": "Toutes les filières havo et vwo sont admissibles, mais ces conditions concernent les diplômes néerlandais; vérifiez la procédure pour un diplôme étranger.",
+      "ar": "جميع مسارات havo وvwo مقبولة، لكن هذه الشروط تتعلق بالشهادات الهولندية؛ تحقق من الإجراء الخاص بالشهادة الأجنبية.",
       "status": "draft"
     },
     {
@@ -3041,6 +3601,11 @@
       "status": "draft"
     },
     {
+      "fr": "Traductions assermentées",
+      "ar": "الترجمات المحلَّفة",
+      "status": "draft"
+    },
+    {
       "fr": "Traductions certifiées",
       "ar": "ترجمات مصادق عليها",
       "status": "draft"
@@ -3053,6 +3618,11 @@
     {
       "fr": "Traductions en italien des documents ci-dessus, si l’établissement les demande",
       "ar": "ترجمات الوثائق أعلاه إلى الإيطالية، إذا طلبتها المؤسسة",
+      "status": "draft"
+    },
+    {
+      "fr": "Un applicant avec une vooropleiding étrangère (comme le baccalauréat marocain) doit vérifier les exigences d'admission et les deadlines internationales auprès de l'université.",
+      "ar": "يجب على المتقدم الذي لديه vooropleiding أجنبية (مثل البكالوريا المغربية) التحقق من متطلبات القبول والمواعيد النهائية الدولية لدى الجامعة.",
       "status": "draft"
     },
     {
@@ -3126,6 +3696,11 @@
       "status": "draft"
     },
     {
+      "fr": "Un diplôme d'études secondaires accrédité ou équivalent est requis.",
+      "ar": "مطلوب شهادة تعليم ثانوي معتمدة أو ما يعادلها.",
+      "status": "draft"
+    },
+    {
       "fr": "Un diplôme d'études secondaires et un relevé de notes sont exigés pour l'admission.",
       "ar": "تُشترط للقبول شهادة الدراسة الثانوية وكشف النقاط.",
       "status": "draft"
@@ -3141,6 +3716,11 @@
       "status": "draft"
     },
     {
+      "fr": "Un diplôme marocain (baccalauréat) n'est pas équivalent au VWO néerlandais : il faut avoir validé au moins la 1re année (60 ECTS) d'un BSc/BEng dans le même domaine avec une moyenne d'au moins 75 %.",
+      "ar": "الشهادة المغربية (البكالوريا) غير معادِلة لشهادة VWO الهولندية: يجب إتمام السنة 1 على الأقل (60 ECTS) من برنامج BSc/BEng في المجال نفسه، بمعدل لا يقل عن 75%.",
+      "status": "draft"
+    },
+    {
       "fr": "Un diplôme néerlandais havo, vwo ou mbo-4 est requis. Vérifiez si votre Baccalauréat marocain est accepté, ou passez le test 21+ si vous avez 21 ans ou plus.",
       "ar": "تُشترط شهادة هولندية havo أو vwo أو mbo-4. تحقق مما إذا كانت باكالوريتك المغربية مقبولة، أو اجتز اختبار 21+ إذا كان عمرك 21 سنة أو أكثر.",
       "status": "draft"
@@ -3151,8 +3731,43 @@
       "status": "draft"
     },
     {
+      "fr": "Un diplôme équivalent au VWO néerlandais est requis ; vérifiez si votre Baccalauréat marocain est reconnu équivalent (évaluation individuelle).",
+      "ar": "مطلوب شهادة معادِلة لشهادة VWO الهولندية؛ تحقق مما إذا كانت البكالوريا المغربية الخاصة بك معترفًا بها كمعادِلة (تقييم فردي).",
+      "status": "draft"
+    },
+    {
+      "fr": "Un diplôme équivalent au VWO néerlandais est requis; votre Baccalauréat marocain sera évalué individuellement par l'Admissions Board.",
+      "ar": "مطلوب شهادة معادِلة لشهادة VWO الهولندية؛ وستُقيَّم البكالوريا المغربية الخاصة بك على حدة من قِبل مجلس القبول.",
+      "status": "draft"
+    },
+    {
+      "fr": "Un diplôme équivalent à un HAVO, VWO ou MBO-4 néerlandais est requis; vérifiez l'équivalence de votre Baccalauréat marocain.",
+      "ar": "مطلوب شهادة معادِلة لشهادة HAVO أو VWO أو MBO-4 الهولندية؛ تحقق من معادلة البكالوريا المغربية الخاصة بك.",
+      "status": "draft"
+    },
+    {
+      "fr": "Un diplôme étranger (bac marocain) doit être reconnu comme équivalent au vwo/havo ; l'admission se fait sur décision de l'examencommissie (art. 2.8 OER). Contactez l'institution pour la procédure.",
+      "ar": "يجب الاعتراف بالشهادة الأجنبية (البكالوريا المغربية) كمعادِلة لـ vwo/havo؛ ويتم القبول بقرار من examencommissie (المادة 2.8 من OER). تواصل مع المؤسسة بشأن الإجراء.",
+      "status": "draft"
+    },
+    {
+      "fr": "Un diplôme étranger (par ex. le Baccalauréat marocain) doit être équivalent à un diplôme néerlandais havo, vwo ou mbo-4 ; il est évalué individuellement par Inholland.",
+      "ar": "يجب أن تكون الشهادة الأجنبية (مثل البكالوريا المغربية) معادلة لإحدى الشهادات الهولندية havo أو vwo أو mbo-4؛ وتقيّمها Inholland بشكل فردي.",
+      "status": "draft"
+    },
+    {
       "fr": "Un diplôme étranger (par ex. un baccalauréat marocain) doit être évalué par Hogeschool Leiden sur la base d'une évaluation de diplôme de Nuffic ; les délais d'inscription pour un diplôme étranger sont différents et sont décrits sur la page 'Studenten uit het buitenland'.",
       "ar": "يجب أن تقيّم Hogeschool Leiden الشهادة الأجنبية (مثل البكالوريا المغربية) استنادًا إلى تقييم شهادة من Nuffic؛ ومواعيد التسجيل للشهادة الأجنبية مختلفة وهي موضحة في صفحة 'Studenten uit het buitenland'.",
+      "status": "draft"
+    },
+    {
+      "fr": "Un diplôme étranger comparable à un diplôme néerlandais de havo est requis ; l'admission est évaluée selon les directives Nuffic.",
+      "ar": "يُشترط الحصول على شهادة أجنبية مماثلة لشهادة havo الهولندية؛ ويُقيَّم القبول وفق إرشادات Nuffic.",
+      "status": "draft"
+    },
+    {
+      "fr": "Un diplôme étranger doit être jugé au moins équivalent à un diplôme vwo, havo ou mbo-4 néerlandais; vérifiez la procédure d'admission internationale.",
+      "ar": "يجب أن تُعتبر الشهادة الأجنبية معادِلةً على الأقل لشهادة vwo أو havo أو mbo-4 الهولندية؛ تحقّق من إجراء القبول الدولي.",
       "status": "draft"
     },
     {
@@ -3161,8 +3776,28 @@
       "status": "draft"
     },
     {
+      "fr": "Un diplôme étranger doit être reconnu équivalent au moins à un diplôme havo, vwo ou mbo-4 néerlandais ; Studentregistratie évalue tes documents de diplôme.",
+      "ar": "يجب أن يُعترف بالشهادة الأجنبية بأنها معادلة على الأقل لشهادة havo أو vwo أو mbo-4 الهولندية؛ وتقيّم مصلحة Studentregistratie وثائق شهادتك.",
+      "status": "draft"
+    },
+    {
       "fr": "Un diplôme étranger doit être validé par la Centrale Studentenadministratie (CSA) pour vérifier son équivalence avec un diplôme néerlandais.",
       "ar": "يجب أن تُصادق الإدارة المركزية لشؤون الطلبة (CSA) على الشهادة الأجنبية للتحقق من معادلتها لشهادة هولندية.",
+      "status": "draft"
+    },
+    {
+      "fr": "Un diplôme étranger doit être équivalent à un VWO néerlandais ; vérifiez votre diplôme dans le « diploma finder » de l'UvA. Les candidats dont le diplôme n'y figure pas sont évalués individuellement.",
+      "ar": "يجب أن تكون الشهادة الأجنبية معادلة لشهادة VWO الهولندية؛ تحقّق من شهادتك في «diploma finder» الخاص بـ UvA. أما المترشحون الذين لا تظهر شهاداتهم في الأداة فيُقيَّمون بشكل فردي.",
+      "status": "draft"
+    },
+    {
+      "fr": "Un diplôme étranger doit être équivalent à un diplôme néerlandais de havo ; De Haagse Hogeschool évalue ton diplôme selon les directives de Nuffic.",
+      "ar": "يجب أن تكون الشهادة الأجنبية معادلة لشهادة havo الهولندية؛ وتقيّم De Haagse Hogeschool شهادتك وفق إرشادات Nuffic.",
+      "status": "draft"
+    },
+    {
+      "fr": "Un diplôme étranger est évalué selon les directives de Nuffic; seul le service Centrale Studenten Inschrijving décide de l'admission.",
+      "ar": "تُقيَّم الشهادة الأجنبية وفق إرشادات Nuffic؛ والخدمة الوحيدة المخوّلة بتقرير القبول هي Centrale Studenten Inschrijving.",
       "status": "draft"
     },
     {
@@ -3198,6 +3833,11 @@
     {
       "fr": "Un entretien d'admission (examen oral) en ligne est requis.",
       "ar": "تُشترط مقابلة قبول (امتحان شفوي) عبر الإنترنت.",
+      "status": "draft"
+    },
+    {
+      "fr": "Un entretien d'admission (intake) est demandé après l'inscription via Studielink.",
+      "ar": "تُطلب مقابلة قبول بعد التسجيل عبر Studielink.",
       "status": "draft"
     },
     {
@@ -3781,8 +4421,43 @@
       "status": "draft"
     },
     {
+      "fr": "Un visa d'étude est requis pour les étudiants non-UE/EER ; la demande se fait via Hogeschool Rotterdam après admission conditionnelle.",
+      "ar": "يُشترط الحصول على تأشيرة دراسة للطلاب من خارج الاتحاد الأوروبي (UE)/EER؛ ويُقدَّم الطلب عبر Hogeschool Rotterdam بعد القبول المشروط.",
+      "status": "draft"
+    },
+    {
+      "fr": "Un visa d'études est nécessaire pour les non-UE ; l'école en fait la demande après admission conditionnelle, avec preuve de moyens financiers (12x le montant mensuel de référence).",
+      "ar": "تأشيرة الدراسة مطلوبة للطلاب من خارج الاتحاد الأوروبي (UE)؛ وتتولّى المؤسسة تقديم الطلب بعد القبول المشروط، مع إثبات موارد مالية كافية (12 ضعفاً من المبلغ الشهري المرجعي).",
+      "status": "draft"
+    },
+    {
       "fr": "Un visa étudiant valide est requis selon le pays d'origine.",
       "ar": "يُشترط تأشيرة طالب سارية بحسب بلد الأصل.",
+      "status": "draft"
+    },
+    {
+      "fr": "Une activité de matching (studiekeuzecheck) est obligatoire pour Mechanical Engineering ; participez-y et vérifiez les modalités sur le site de la formation.",
+      "ar": "نشاط المطابقة (studiekeuzecheck) إلزامي لبرنامج Mechanical Engineering؛ شارك فيه وتحقّق من التفاصيل على الموقع الخاص بالبرنامج.",
+      "status": "draft"
+    },
+    {
+      "fr": "Une application fee de 100 EUR s'applique aux étudiants avec une formation étrangère pour un bachelor ; vérifie le montant et les conditions.",
+      "ar": "تُطبَّق رسوم تقديم قدرها 100 EUR على الطلاب الذين درسوا تكويناً أجنبياً للالتحاق بالإجازة؛ تحقّق من المبلغ والشروط.",
+      "status": "draft"
+    },
+    {
+      "fr": "Une bonne maîtrise de l'anglais est exigée ; selon le diplôme, un test de langue peut être demandé.",
+      "ar": "يُشترط إتقان جيد للإنجليزية؛ وقد يُطلب اختبار لغوي بحسب الشهادة.",
+      "status": "draft"
+    },
+    {
+      "fr": "Une bonne maîtrise de l'anglais est exigée pour être admis, mais aucun niveau CECR ni test précis n'est indiqué : vérifie auprès de l'école.",
+      "ar": "يُشترط إتقان جيد للإنجليزية للقبول، غير أنه لم يُحدَّد أي مستوى CECR ولا اختبار بعينه؛ تحقّق لدى المؤسسة.",
+      "status": "draft"
+    },
+    {
+      "fr": "Une connaissance en mathématiques est indiquée ; l'admission directe ou un examen d'entrée sera déterminé selon le contenu de vos cours de mathématiques.",
+      "ar": "يُذكر أن المطلوب الإلمام بالرياضيات؛ ويتحدّد ما إذا كان القبول مباشراً أو يلزم امتحان دخول، حسب محتوى مقرراتك في الرياضيات.",
       "status": "draft"
     },
     {
@@ -3811,6 +4486,11 @@
       "status": "draft"
     },
     {
+      "fr": "Une procédure de sélection (devoir et entretien de motivation) est obligatoire ; le nombre de places est limité.",
+      "ar": "إجراء الانتقاء (واجب ومقابلة الدافعية) إلزامي؛ وعدد المقاعد محدود.",
+      "status": "draft"
+    },
+    {
       "fr": "Une qualification d'entrée à l'université (Hochschulzugangsberechtigung) est requise ; vérifiez la reconnaissance de votre Baccalauréat marocain.",
       "ar": "يُشترط مؤهل ولوج إلى الجامعة (Hochschulzugangsberechtigung)؛ تحقق من الاعتراف بباكالوريتك المغربية.",
       "status": "draft"
@@ -3818,6 +4498,11 @@
     {
       "fr": "UvA Matching (obligatoire pour les candidats avec diplôme étranger) et documents certifiés à envoyer avant le 31 août après admission conditionnelle.",
       "ar": "UvA Matching (إلزامي للمترشحين بشهادة أجنبية) ووثائق مصادق عليها تُرسل قبل 31 أغسطس بعد القبول المشروط.",
+      "status": "draft"
+    },
+    {
+      "fr": "UvA Matching est obligatoire pour les étudiants internationaux après l'admission conditionnelle.",
+      "ar": "المشاركة في UvA Matching إلزامية للطلاب الدوليين بعد القبول المشروط.",
       "status": "draft"
     },
     {
@@ -3871,8 +4556,28 @@
       "status": "draft"
     },
     {
+      "fr": "Votre diplôme (baccalauréat marocain) doit être équivalent à un VWO néerlandais ; vérifiez via le « diploma finder ».",
+      "ar": "يجب أن تكون شهادتك (البكالوريا المغربية) معادلة لشهادة VWO الهولندية؛ تحقّق عبر «diploma finder».",
+      "status": "draft"
+    },
+    {
       "fr": "Votre diplôme de fin d'études secondaires doit d'abord être reconnu par le Studienkolleg Konstanz ou par Uni-Assist ; sans cette reconnaissance, votre candidature ne sera pas prise en compte.",
       "ar": "يجب أن تعترف مؤسسة Studienkolleg Konstanz أو خدمة Uni-Assist أولًا بشهادة نهاية دراستك الثانوية؛ ومن دون هذا الاعتراف لن يؤخذ طلبك بعين الاعتبار.",
+      "status": "draft"
+    },
+    {
+      "fr": "Votre diplôme de fin d'études secondaires doit être au moins équivalent au VWO néerlandais (niveau pré-universitaire). Consultez la Diploma Equivalency List et l'admission se fait sur évaluation de votre dossier.",
+      "ar": "يجب أن تكون شهادة إنهاء الدراسة الثانوية معادلة على الأقل لمستوى VWO الهولندي (المستوى ما قبل الجامعي). راجع «Diploma Equivalency List»، ويتم القبول بناءً على تقييم ملفك.",
+      "status": "draft"
+    },
+    {
+      "fr": "Votre diplôme doit être équivalent au diplôme néerlandais d'enseignement secondaire (HAVO, VWO ou MBO niveau 4) ; vérifiez s'il figure sur la liste des diplômes étrangers reconnus, sinon HZ évaluera votre dossier individuellement.",
+      "ar": "يجب أن تكون شهادتك معادلة لشهادة التعليم الثانوي الهولندية (HAVO أو VWO أو MBO المستوى 4)؛ تحقّق مما إذا كانت واردة في قائمة الشهادات الأجنبية المعترف بها، وإلا فستقيّم HZ ملفك بشكل فردي.",
+      "status": "draft"
+    },
+    {
+      "fr": "Votre diplôme doit être équivalent au diplôme néerlandais d'enseignement secondaire (HAVO, VWO ou MBO niveau 4). S'il figure sur la liste des diplômes étrangers reconnus, vous êtes admissible sous réserve des exigences supplémentaires ; sinon, votre qualification sera évaluée individuellement (via Nuffic).",
+      "ar": "يجب أن تكون شهادتك معادلة لشهادة التعليم الثانوي الهولندية (HAVO أو VWO أو MBO المستوى 4). فإن وردت في قائمة الشهادات الأجنبية المعترف بها، فأنت مؤهَّل للقبول رهناً بالمتطلبات الإضافية؛ وإلا فسيُقيَّم مؤهلك بشكل فردي (عبر Nuffic).",
       "status": "draft"
     },
     {
@@ -3888,6 +4593,16 @@
     {
       "fr": "Votre diplôme étranger (baccalauréat marocain) doit être vérifié et évalué via uni-assist (Vorprüfungsdokumentation – VPD) ; vérifiez les documents exacts et le délai sur uni-assist.",
       "ar": "يجب التحقق من شهادتك الأجنبية (البكالوريا المغربية) وتقييمها عبر خدمة uni-assist (Vorprüfungsdokumentation – VPD)؛ تحقق من الوثائق الدقيقة والموعد النهائي لدى هذه الخدمة.",
+      "status": "draft"
+    },
+    {
+      "fr": "Votre diplôme étranger (baccalauréat marocain) doit être évalué par le service des admissions ; envoyez une copie de votre diplôme et de votre relevé de notes. La commission d'admission décide de l'admission.",
+      "ar": "يجب أن تُقيَّم شهادتك الأجنبية (البكالوريا المغربية) من طرف مصلحة القبول؛ أرسل نسخة من شهادتك وكشف علاماتك. وتتخذ لجنة القبول قرار القبول.",
+      "status": "draft"
+    },
+    {
+      "fr": "Votre diplôme étranger (par ex. baccalauréat marocain) doit être évalué individuellement par Inholland ; vérifiez qu'il est jugé équivalent à un diplôme néerlandais havo, vwo ou mbo-4.",
+      "ar": "يجب أن تُقيَّم شهادتك الأجنبية (مثل البكالوريا المغربية) بشكل فردي من طرف Inholland؛ تحقّق من أنها تُعتبر معادِلة لشهادة havo أو vwo أو mbo-4 الهولندية.",
       "status": "draft"
     },
     {
@@ -3916,8 +4631,28 @@
       "status": "draft"
     },
     {
+      "fr": "Vous devez avoir un diplôme d'études secondaires supérieures équivalent au niveau néerlandais ; les exigences exactes varient selon le programme, vérifiez les critères d'admission.",
+      "ar": "يجب أن تحمل شهادة الدراسة الثانوية العليا المعادلة للمستوى الهولندي؛ وتختلف المتطلبات الدقيقة بحسب البرنامج، فتحقّق من معايير القبول.",
+      "status": "draft"
+    },
+    {
+      "fr": "Vous devez satisfaire aux exigences de langue anglaise (ou anglaise et néerlandaise si vous choisissez la filière néerlandaise) ; consultez la page des exigences linguistiques de WUR.",
+      "ar": "يجب استيفاء متطلبات اللغة الإنجليزية (أو الإنجليزية والهولندية إذا اخترت المسار الهولندي)؛ راجع صفحة متطلبات اللغة الخاصة بـ WUR.",
+      "status": "draft"
+    },
+    {
       "fr": "Vous devez satisfaire aux exigences linguistiques en anglais et en néerlandais pour les programmes enseignés en néerlandais.",
       "ar": "يجب أن تستوفي المتطلبات اللغوية في الإنكليزية والهولندية بالنسبة للبرامج المدرّسة بالهولندية.",
+      "status": "draft"
+    },
+    {
+      "fr": "Vérifiez si une candidature avec un diplôme étranger doit passer par l'International Office, quels documents sont nécessaires et si des frais de candidature s'appliquent.",
+      "ar": "استفسر عما إذا كان عليك التقدّم بشهادة أجنبية عبر مكتب International Office، وعن المستندات المطلوبة وعن رسوم التقديم إن وُجدت.",
+      "status": "draft"
+    },
+    {
+      "fr": "Vérifiez si une preuve de maîtrise de l'anglais est requise pour cette licence enseignée en anglais, et à quel niveau.",
+      "ar": "استفسر عما إذا كان يُشترط لهذه الإجازة المدرّسة بالإنجليزية إثبات الكفاءة في اللغة الإنجليزية، وما المستوى المطلوب.",
       "status": "draft"
     },
     {
@@ -3933,6 +4668,21 @@
     {
       "fr": "Vérifie les conditions d'admission pour les diplômes étrangers (Bac marocain) et la procédure de sélection (numerus fixus) sur la page du programme.",
       "ar": "تحقّق من شروط القبول للشهادات الأجنبية (الباك المغربي) وإجراءات الاختيار (numerus fixus) على صفحة البرنامج.",
+      "status": "draft"
+    },
+    {
+      "fr": "Vérifie les conditions d'admission pour un diplôme étranger (Bac marocain) sur le site de l'université ; la page ne donne pas de conditions précises pour ce profil.",
+      "ar": "تحقّق من شروط القبول الخاصة بالشهادة الأجنبية (البكالوريا المغربية) على موقع الجامعة؛ فالصفحة لا تذكر شروطاً محددة لهذا الملف.",
+      "status": "draft"
+    },
+    {
+      "fr": "Vérifie les exigences linguistiques (anglais) de la formation : la page de ce programme renvoie à l'onglet 'Requirements' et aux conditions d'admission internationales.",
+      "ar": "تحقّق من متطلبات اللغة (الإنجليزية) الخاصة بالبرنامج؛ فالصفحة تُحيل إلى تبويب 'Requirements' وإلى شروط القبول الدولية.",
+      "status": "draft"
+    },
+    {
+      "fr": "Vérifie que tu remplis les conditions d'admission pour un diplôme étranger (baccalauréat marocain) auprès de l'université ; la page ne précise pas ces conditions.",
+      "ar": "تحقّق مما إذا كنت تستوفي شروط القبول بالنسبة إلى شهادة أجنبية (البكالوريا المغربية) لدى الجامعة؛ فالصفحة لا توضّح هذه الشروط.",
       "status": "draft"
     },
     {
@@ -4086,6 +4836,11 @@
       "status": "draft"
     },
     {
+      "fr": "Vérifiez auprès de l'UT les conditions et le montant des frais de dossier (application fee) applicables aux candidats titulaires d'un diplôme étranger.",
+      "ar": "تحقّق لدى UT من شروط رسوم ملف التقديم ومبلغها المطبّقة على المترشحين الحاملين لشهادة أجنبية.",
+      "status": "draft"
+    },
+    {
       "fr": "Vérifiez auprès de l'Université si le test d'admission Cattolica en mathématiques s'applique à votre cas et le calendrier correspondant.",
       "ar": "تحقق لدى الجامعة مما إذا كان اختبار القبول Cattolica في الرياضيات ينطبق على حالتك، ومن الجدول الزمني المرتبط به.",
       "status": "draft"
@@ -4106,6 +4861,11 @@
       "status": "draft"
     },
     {
+      "fr": "Vérifiez dans le 'diploma finder' de l'UvA si votre Baccalauréat marocain est reconnu comme équivalent au VWO néerlandais et quelles matières sont exigées.",
+      "ar": "تحقّق في «diploma finder» الخاص بـ UvA مما إذا كانت بكالوريتك المغربية معترفاً بها كمعادلة لشهادة VWO الهولندية، وما المواد المطلوبة.",
+      "status": "draft"
+    },
+    {
       "fr": "Vérifiez l'obligation de passer une épreuve écrite (visite des locaux et questionnaire de motivation) : les candidats sont convoqués uniquement par mail le 20 avril 2026, les épreuves ont lieu le 29 avril 2026.",
       "ar": "تحقق من الإلزام باجتياز اختبار كتابي (زيارة المقرات واستبيان التحفيز): لا يُستدعى المتقدمون إلا بالبريد الإلكتروني في 20 أبريل 2026، وتُجرى الاختبارات في 29 أبريل 2026.",
       "status": "draft"
@@ -4123,6 +4883,11 @@
     {
       "fr": "Vérifiez l'équivalence de votre diplôme de baccalauréat marocain ; le niveau requis est au moins égal au VWO néerlandais. Utilisez la liste d'équivalence des diplômes.",
       "ar": "تحقق من معادلة شهادة باكالوريتك المغربية؛ فالمستوى المطلوب يعادل على الأقل VWO الهولندي. استخدم قائمة معادلة الشهادات.",
+      "status": "draft"
+    },
+    {
+      "fr": "Vérifiez la date limite exacte et les étapes supplémentaires pour les étudiants non-EEE auprès de l'établissement avant de postuler via Studielink.",
+      "ar": "تحقّق من الموعد النهائي الدقيق والخطوات الإضافية للطلاب من خارج EEE لدى المؤسسة قبل التقدّم عبر Studielink.",
       "status": "draft"
     },
     {
@@ -4226,6 +4991,11 @@
       "status": "draft"
     },
     {
+      "fr": "Vérifiez les conditions d'admission détaillées : diplôme étranger équivalent au niveau néerlandais et niveau d'anglais requis (à confirmer auprès de l'établissement).",
+      "ar": "تحقّق من شروط القبول التفصيلية: شهادة أجنبية معادلة للمستوى الهولندي ومستوى الإنجليزية المطلوب (يلزم التأكد لدى المؤسسة).",
+      "status": "draft"
+    },
+    {
       "fr": "Vérifiez les conditions d'admission et les documents requis pour les étudiants internationaux sur la page dédiée.",
       "ar": "تحقق من شروط القبول والوثائق المطلوبة للطلبة الدوليين في الصفحة المخصصة لذلك.",
       "status": "draft"
@@ -4266,6 +5036,21 @@
       "status": "draft"
     },
     {
+      "fr": "Vérifiez les conditions d'admission pour un diplôme étranger (bac marocain) : la page indique seulement « Toelaatbaar met alle vwo-profielen ». Contactez l'université pour l'évaluation de votre diplôme.",
+      "ar": "تحقّق من شروط القبول بالنسبة إلى شهادة أجنبية (البكالوريا المغربية): فالصفحة تذكر فقط «Toelaatbaar met alle vwo-profielen». وتواصل مع الجامعة لتقييم شهادتك.",
+      "status": "draft"
+    },
+    {
+      "fr": "Vérifiez les conditions d'admission pour un diplôme étranger (baccalauréat marocain) : équivalence avec un diplôme néerlandais et maîtrise du néerlandais ou de l'anglais selon les pages d'admission.",
+      "ar": "تحقّق من شروط القبول بالنسبة إلى شهادة أجنبية (البكالوريا المغربية): معادلتها لشهادة هولندية، وإتقان الهولندية أو الإنجليزية حسب ما تذكره صفحات القبول.",
+      "status": "draft"
+    },
+    {
+      "fr": "Vérifiez les conditions d'admission pour un diplôme étranger (baccalauréat marocain) auprès d'Avans; la page ne liste que havo/vwo/mbo néerlandais.",
+      "ar": "تحقّق من شروط القبول بالنسبة إلى شهادة أجنبية (البكالوريا المغربية) لدى Avans؛ فالصفحة لا تذكر إلا الشهادات الهولندية havo/vwo/mbo.",
+      "status": "draft"
+    },
+    {
       "fr": "Vérifiez les conditions d'admission spécifiques et, le cas échéant, l'exigence d'une convention de coopération avec une entreprise pour la variante intégrée en entreprise.",
       "ar": "تحقق من شروط القبول الخاصة، وعند الاقتضاء من اشتراط اتفاقية تعاون مع شركة بالنسبة للصيغة المدمجة بالشركة.",
       "status": "draft"
@@ -4273,6 +5058,11 @@
     {
       "fr": "Vérifiez les conditions d'admission spécifiques à Fysiotherapie (profil, diplôme équivalent) sur la page de la formation.",
       "ar": "تحقق من شروط القبول الخاصة بـ Fysiotherapie (الملف، الشهادة المعادلة) على صفحة التكوين.",
+      "status": "draft"
+    },
+    {
+      "fr": "Vérifiez les conditions d'admission sur la page anglaise pour les étudiants internationaux (diplôme non néerlandais) et contactez International Office (international@has.nl).",
+      "ar": "تحقّق من شروط القبول في الصفحة الإنجليزية الخاصة بالطلاب الدوليين (شهادة غير هولندية)، وتواصل مع مكتب International Office (international@has.nl).",
       "status": "draft"
     },
     {
@@ -4346,6 +5136,11 @@
       "status": "draft"
     },
     {
+      "fr": "Vérifiez les exigences linguistiques en anglais spécifiques au programme PPLE sur son site web.",
+      "ar": "تحقّق من متطلبات اللغة الإنجليزية الخاصة ببرنامج PPLE على موقعه الإلكتروني.",
+      "status": "draft"
+    },
+    {
       "fr": "Vérifiez les exigences linguistiques en néerlandais pour cette formation (la page ne précise pas de niveau).",
       "ar": "تحقق من شروط اللغة الهولندية لهذا البرنامج (لا تحدد الصفحة أي مستوى).",
       "status": "draft"
@@ -4361,6 +5156,11 @@
       "status": "draft"
     },
     {
+      "fr": "Vérifiez les exigences linguistiques pour les étudiants étrangers (niveau d'anglais, tests acceptés) auprès du bureau des admissions de l'UT.",
+      "ar": "تحقّق من متطلبات اللغة للطلاب الأجانب (مستوى الإنجليزية، والاختبارات المقبولة) لدى مكتب القبول التابع لـ UT.",
+      "status": "draft"
+    },
+    {
       "fr": "Vérifiez les frais de scolarité institutionnels exacts et les modalités de paiement pour les étudiants non-EEE sur la page des frais de scolarité d'Avans.",
       "ar": "تحقق من الرسوم الدراسية الدقيقة للمؤسسة ومن طرق الأداء للطلبة من خارج المنطقة الاقتصادية الأوروبية (EEE) في صفحة الرسوم الدراسية الخاصة بـ Avans.",
       "status": "draft"
@@ -4373,6 +5173,11 @@
     {
       "fr": "Vérifiez que le baccalauréat marocain est reconnu comme équivalent à un diplôme havo/vwo/mbo-4 et consultez les exigences linguistiques sur la page des taaleisen.",
       "ar": "تحقق من أن شهادة البكالوريا المغربية معترف بها كمعادلة لشهادة havo/vwo/mbo-4، وراجع شروط اللغة في صفحة taaleisen.",
+      "status": "draft"
+    },
+    {
+      "fr": "Vérifiez que votre Baccalauréat marocain est accepté comme diplôme d'accès et attendez-vous à une évaluation de votre diplôme et de vos notes.",
+      "ar": "تحقّق من أن بكالوريتك المغربية مقبولة بوصفها شهادة ولوج، وتوقّع تقييم شهادتك وعلاماتك.",
       "status": "draft"
     },
     {
@@ -4521,6 +5326,16 @@
       "status": "draft"
     },
     {
+      "fr": "Vérifiez si votre diplôme marocain est reconnu comme équivalent au VWO néerlandais (liste d'équivalence des diplômes) ; une sélection est mentionnée pour cette licence.",
+      "ar": "تحقّق مما إذا كانت شهادتك المغربية تُعتبر معادِلةً لشهادة VWO الهولندية (قائمة معادلة الشهادات)؛ ويُذكر وجود انتقاء لهذه الإجازة.",
+      "status": "draft"
+    },
+    {
+      "fr": "Vérifiez si votre diplôme marocain est reconnu comme équivalent à un havo/vwo/mbo-4 néerlandais ; la Studentregistratie évalue vos documents de diplôme.",
+      "ar": "تحقّق مما إذا كانت شهادتك المغربية تُعتبر معادِلة لشهادة havo/vwo/mbo-4 الهولندية؛ وتقيّم مصلحة Studentregistratie وثائق شهادتك.",
+      "status": "draft"
+    },
+    {
       "fr": "Vérifiez si votre diplôme étranger (Baccalauréat marocain) est reconnu comme qualification d'entrée à l'université en Allemagne et si une VPD d'uni-assist est nécessaire.",
       "ar": "تحقق مما إذا كانت شهادتك الأجنبية (البكالوريا المغربية) معترفًا بها كمؤهل للدخول إلى الجامعة في ألمانيا وما إذا كانت VPD من uni-assist لازمة.",
       "status": "draft"
@@ -4561,6 +5376,11 @@
       "status": "draft"
     },
     {
+      "fr": "Vérifiez sur la page d'admission de l'UT les exigences en matière de diplôme étranger (Bac marocain) et la procédure d'admission, y compris l'éventuel test d'anglais.",
+      "ar": "تحقّق في صفحة القبول الخاصة بـ UT من متطلبات الشهادة الأجنبية (البكالوريا المغربية) وإجراءات القبول، بما في ذلك أي اختبار للإنجليزية إن وُجد.",
+      "status": "draft"
+    },
+    {
       "fr": "Vérifiez sur la page de l'opleiding si une admission supplémentaire ou un profil spécifique est requis pour votre diplôme de baccalauréat marocain.",
       "ar": "تحقق في صفحة البرنامج (opleiding) مما إذا كان قبول إضافي أو مسار محدد مطلوبًا لشهادة البكالوريا المغربية الخاصة بك.",
       "status": "draft"
@@ -4573,6 +5393,11 @@
     {
       "fr": "Vérifiez sur la page des conditions d'admission si votre diplôme marocain (Baccalauréat) est reconnu et si des exigences de profil ou de matières s'appliquent.",
       "ar": "تحقق على صفحة شروط القبول مما إذا كانت شهادتك المغربية (الباكالوريا) معترفًا بها وما إذا كانت تنطبق متطلبات ملف أو مواد.",
+      "status": "draft"
+    },
+    {
+      "fr": "Vérifiez sur la page du programme si des exigences supplémentaires (diplôme étranger, notes) s'appliquent et si le VU Studiekeuzecheck est obligatoire.",
+      "ar": "تحقّق في صفحة البرنامج مما إذا كانت تنطبق متطلبات إضافية (شهادة أجنبية، علامات)، وما إذا كان VU Studiekeuzecheck إلزامياً.",
       "status": "draft"
     },
     {
@@ -4611,6 +5436,11 @@
       "status": "draft"
     },
     {
+      "fr": "Vérifiez votre diplôme marocain (Baccalauréat) avec le 'diploma finder' de l'UvA : il doit être équivalent à un VWO néerlandais.",
+      "ar": "تحقّق من شهادتك المغربية (البكالوريا) عبر «diploma finder» الخاص بـ UvA: يجب أن تكون معادلة لشهادة VWO الهولندية.",
+      "status": "draft"
+    },
+    {
       "fr": "Vérifiez votre qualification d'entrée aux études supérieures (Fachhochschulreife, Abitur ou équivalent) et contactez le Studienkolleg Konstanz pour faire reconnaître votre diplôme étranger.",
       "ar": "تحقق من مؤهلك للدخول إلى التعليم العالي (Fachhochschulreife أو Abitur أو ما يعادلهما) وتواصل مع Studienkolleg Konstanz للاعتراف بشهادتك الأجنبية.",
       "status": "draft"
@@ -4623,6 +5453,11 @@
     {
       "fr": "Vérifiez votre éligibilité avec votre Baccalauréat marocain via la base de données DAAD ou Anabin : votre diplôme pourrait nécessiter une année d'études supplémentaires ou un Studienkolleg.",
       "ar": "تحقق من أهليتك بشهادة البكالوريا المغربية عبر قاعدة بيانات DAAD أو Anabin: قد تتطلب شهادتك سنة دراسية إضافية أو Studienkolleg.",
+      "status": "draft"
+    },
+    {
+      "fr": "Vérifiez vous-même les conditions d'admission de la formation (diplôme étranger, niveau d'anglais) ; la page néerlandaise de la formation renvoie à la page anglaise pour les informations détaillées.",
+      "ar": "تحقّق بنفسك من شروط القبول الخاصة بالبرنامج (الشهادة الأجنبية، ومستوى الإنجليزية)؛ فالصفحة الهولندية للبرنامج تُحيل إلى الصفحة الإنجليزية للاطلاع على المعلومات التفصيلية.",
       "status": "draft"
     },
     {
@@ -4663,6 +5498,11 @@
     {
       "fr": "Épreuve de mathématiques en ligne et entretien d'admission obligatoires.",
       "ar": "اختبار الرياضيات عبر الإنترنت ومقابلة القبول إلزاميان.",
+      "status": "draft"
+    },
+    {
+      "fr": "Étudiant étranger : vérifier les conditions d'admission pour un diplôme non néerlandais auprès de l'université (les pages décrivent surtout le vwo néerlandais).",
+      "ar": "طالب أجنبي: تحقّق من شروط القبول الخاصة بشهادة غير هولندية لدى الجامعة؛ فالصفحات تصف في الغالب شهادة vwo الهولندية.",
       "status": "draft"
     },
     {

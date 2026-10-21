@@ -1,0 +1,98 @@
+slug: nl-hogeschool-van-amsterdam-28dn-international-business-1001o2702
+institution: nl-hogeschool-van-amsterdam-28dn
+country: NL
+city: amsterdam
+field: business-economics
+level: bachelor
+name: International Business
+summary:
+  fr:
+    text: International Business (International Business), Hogeschool van Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: International Business (International Business), Hogeschool van Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Business (International Business), Hogeschool van Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hva.nl/opleidingen/international-business-part-time
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme équivalent à un HAVO, VWO ou MBO-4 néerlandais est requis; vérifiez l'équivalence de votre Baccalauréat marocain.
+          status: draft
+        en:
+          text: A diploma equivalent to Dutch HAVO, VWO or MBO-4 is required; check the equivalence of your Moroccan Baccalauréat.
+          status: draft
+        ar:
+          text: مطلوب شهادة معادِلة لشهادة HAVO أو VWO أو MBO-4 الهولندية؛ تحقق من معادلة البكالوريا المغربية الخاصة بك.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: De bonnes compétences orales et écrites en anglais sont exigées; aucun niveau CECR précis n'est indiqué.
+          status: draft
+        en:
+          text: Good oral and written English skills are required; no specific CEFR level is stated.
+          status: draft
+        ar:
+          text: يُشترط إتقان جيد لمهارات التحدث والكتابة بالإنجليزية؛ ولا يُذكر مستوى CECR محدد.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Si vous avez un diplôme étranger, faites-le évaluer selon les normes néerlandaises (diplomawaardering).
+          status: draft
+        en:
+          text: If you have a foreign diploma, have it evaluated according to Dutch standards (diplomawaardering).
+          status: draft
+        ar:
+          text: إذا كانت لديك شهادة أجنبية، فاطلب تقييمها وفق المعايير الهولندية (diplomawaardering).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hva.nl/opleidingen/international-business-part-time
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/toelatingseisen
+    last_verified_at: 2026-10-21

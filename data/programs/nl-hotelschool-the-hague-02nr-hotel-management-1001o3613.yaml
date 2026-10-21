@@ -1,0 +1,97 @@
+slug: nl-hotelschool-the-hague-02nr-hotel-management-1001o3613
+institution: nl-hotelschool-the-hague-02nr
+country: NL
+city: s-gravenhage
+field: business-economics
+level: bachelor
+name: Hotel Management
+summary:
+  fr:
+    text: Hotel Management (Hospitality Management), Hotelschool The Hague ('s-Gravenhage). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Hotel Management (Hospitality Management), Hotelschool The Hague ('s-Gravenhage). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Hotel Management (Hospitality Management), Hotelschool The Hague ('s-Gravenhage). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hotelschool.nl/bachelor-hospitality-management/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1829700
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme d'études secondaires accrédité ou équivalent est requis.
+          status: draft
+        en:
+          text: An accredited high school diploma or equivalent is required.
+          status: draft
+        ar:
+          text: مطلوب شهادة تعليم ثانوي معتمدة أو ما يعادلها.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats doivent passer une journée de sélection avec des tests et un entretien.
+          status: draft
+        en:
+          text: Applicants must attend a selection day with tests and an interview.
+          status: draft
+        ar:
+          text: يجب على المتقدمين حضور يوم انتقاء يتضمن اختبارات ومقابلة.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hotelschool.nl/bachelor-hospitality-management/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.hotelschool.nl/apply/bachelor/
+    last_verified_at: 2026-10-21

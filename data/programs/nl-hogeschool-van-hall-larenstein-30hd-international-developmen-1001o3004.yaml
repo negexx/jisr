@@ -1,0 +1,90 @@
+slug: nl-hogeschool-van-hall-larenstein-30hd-international-developmen-1001o3004
+institution: nl-hogeschool-van-hall-larenstein-30hd
+country: NL
+city: velp
+field: business-economics
+level: bachelor
+name: International Development Management
+summary:
+  fr:
+    text: International Development Management (International Development Management), Hogeschool Van Hall Larenstein (Velp). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: International Development Management (International Development Management), Hogeschool Van Hall Larenstein (Velp). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Development Management (International Development Management), Hogeschool Van Hall Larenstein (Velp). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hvhl.nl/opleidingen/hbo/international-development-management/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 995000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: L'admission avec un diplôme secondaire étranger (baccalauréat marocain) est évaluée au cas par cas ; contactez le Student Service Centre (inschrijvingen@hvhl.nl) pour vérifier l'éligibilité et les documents requis.
+          status: draft
+        en:
+          text: Admission with a foreign secondary diploma (Moroccan Baccalaureate) is assessed individually; contact the Student Service Centre (inschrijvingen@hvhl.nl) to check eligibility and required documents.
+          status: draft
+        ar:
+          text: يُقيَّم القبول بشهادة ثانوية أجنبية (البكالوريا المغربية) على حدة؛ تواصل مع مركز خدمة الطلاب (inschrijvingen@hvhl.nl) للتحقق من الأهلية والوثائق المطلوبة.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Toutes les filières havo et vwo sont admissibles, mais ces conditions concernent les diplômes néerlandais; vérifiez la procédure pour un diplôme étranger.
+          status: draft
+        en:
+          text: All havo and vwo profiles are admissible, but these conditions concern Dutch diplomas; check the procedure for a foreign diploma.
+          status: draft
+        ar:
+          text: جميع مسارات havo وvwo مقبولة، لكن هذه الشروط تتعلق بالشهادات الهولندية؛ تحقق من الإجراء الخاص بالشهادة الأجنبية.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hvhl.nl/opleidingen/hbo/international-development-management/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.hvhl.nl/aanmelden-en-inschrijven/kosten-hbo-opleiding-collegegeld/
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.hvhl.nl/aanmelden-en-inschrijven/
+    last_verified_at: 2026-10-21

@@ -1,0 +1,95 @@
+slug: nl-hanzehogeschool-groningen-25be-international-business-1001o2697
+institution: nl-hanzehogeschool-groningen-25be
+country: NL
+city: groningen
+field: business-economics
+level: bachelor
+name: International Business
+summary:
+  fr:
+    text: International Business (International Business), Hanzehogeschool Groningen (Groningen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: International Business (International Business), Hanzehogeschool Groningen (Groningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Business (International Business), Hanzehogeschool Groningen (Groningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hanze.nl/en/programmes/full-time/bachelor/international-business-4-year
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Diplôme de fin d'études secondaires étranger comparable à un diplôme néerlandais HAVO/MBO-4 (niveau NLQF/EQF 4) ; le diplôme est vérifié par NUFFIC ou ECCTIS.
+          status: draft
+        en:
+          text: Foreign secondary school diploma comparable to a Dutch HAVO/MBO-4 diploma (NLQF/EQF level 4); the diploma is verified by NUFFIC or ECCTIS.
+          status: draft
+        ar:
+          text: شهادة إنهاء التعليم الثانوي الأجنبية المعادِلة لشهادة هولندية من نوع HAVO/MBO-4 (المستوى NLQF/EQF 4)؛ يتم التحقق من الشهادة عبر NUFFIC أو ECCTIS.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats de 21 ans ou plus sans diplôme équivalent peuvent passer un examen d'admission (TOEFL/IELTS, mathématiques et test de compétences) ; date limite 1 juin.
+          status: draft
+        en:
+          text: Applicants aged 21 or older without an equivalent diploma can take a 21+ admission exam (TOEFL/IELTS, mathematics and general competencies test); deadline 1 June.
+          status: draft
+        ar:
+          text: يمكن للمتقدمين البالغين 21 سنة أو أكثر ممن لا يحملون شهادة معادِلة اجتياز امتحان قبول (TOEFL/IELTS والرياضيات واختبار الكفاءات)؛ والموعد النهائي 1 يونيو.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Candidater de préférence avant le 1 mai via Studielink ; après cette date, la procédure de matching (Study Choice Check) devient obligatoire.
+          status: draft
+        en:
+          text: Apply preferably by 1 May via Studielink; if you apply after this date, the matching procedure (Study Choice Check) becomes mandatory.
+          status: draft
+        ar:
+          text: يُفضَّل التقديم قبل 1 مايو عبر Studielink؛ وبعد هذا التاريخ تصبح إجراءات المطابقة (Study Choice Check) إلزامية.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hanze.nl/en/programmes/full-time/bachelor/international-business-4-year
+    last_verified_at: 2026-10-21

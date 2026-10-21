@@ -1,0 +1,91 @@
+slug: nl-technische-universiteit-delft-21pf-technische-informatica-1001o6156
+institution: nl-technische-universiteit-delft-21pf
+country: NL
+city: delft
+field: computer-science
+level: bachelor
+name: Technische Informatica
+summary:
+  fr:
+    text: Technische Informatica (Computer Science & Engineering), Technische Universiteit Delft (Delft). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Technische Informatica (Computer Science & Engineering), Technische Universiteit Delft (Delft). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Technische Informatica (Computer Science & Engineering), Technische Universiteit Delft (Delft). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.tudelft.nl/onderwijs/opleidingen/bachelors/cse/bsc-computer-science-and-engineering
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1990600
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "La page indique que le diplôme marocain n'est pas équivalent au VWO : il faut avoir validé la 1re année (60 ECTS) d'un BSc/BEng dans le même domaine avec une moyenne (GPA) d'au moins 75 %."
+          status: draft
+        en:
+          text: "The page states the Moroccan diploma is not equivalent to VWO: you must have completed the first year (60 ECTS) of a BSc/BEng in the same field with a GPA of at least 75%."
+          status: draft
+        ar:
+          text: "تُفيد الصفحة بأن الشهادة المغربية غير معادِلة لشهادة VWO: يجب إتمام السنة 1 (60 ECTS) من برنامج BSc/BEng في المجال نفسه بمعدل (GPA) لا يقل عن 75%."
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Numerus fixus : oui (590 places) ; la page indique une date limite d'inscription au 15 janvier (sans année) et une sélection. Vérifiez la procédure de sélection et la date exacte sur la page Studielink/DUO."
+          status: draft
+        en:
+          text: "Numerus fixus: yes (590 places); the page shows an application deadline of 15 January (no year) and a selection procedure. Check the selection procedure and exact date on the Studielink/DUO page."
+          status: draft
+        ar:
+          text: "numerus fixus: نعم (590 مقعدًا)؛ تشير الصفحة إلى موعد نهائي للتقديم في 15 يناير (دون ذكر السنة) وإلى إجراء انتقاء. تحقق من إجراء الانتقاء والتاريخ الدقيق في صفحة Studielink/DUO."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.tudelft.nl/onderwijs/opleidingen/bachelors/cse/bsc-computer-science-and-engineering
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/tuition-fee-finances
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.tudelft.nl/en/education/admission-and-application/bsc-international-diploma/admission-requirements/country-specific-requirements
+    last_verified_at: 2026-10-21

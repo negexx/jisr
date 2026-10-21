@@ -1,0 +1,90 @@
+slug: nl-saxion-hogeschool-23ah-creative-media-and-game-1001o2716
+institution: nl-saxion-hogeschool-23ah
+country: NL
+city: enschede
+field: computer-science
+level: bachelor
+name: Creative Media and Game Technologies
+summary:
+  fr:
+    text: Creative Media and Game Technologies (Creative Media and Game Technologies), Saxion Hogeschool (Enschede). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Creative Media and Game Technologies (Creative Media and Game Technologies), Saxion Hogeschool (Enschede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Creative Media and Game Technologies (Creative Media and Game Technologies), Saxion Hogeschool (Enschede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.saxion.nl/opleidingen/en/fulltime/bachelor/creative-media-and-game-technologies
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 936000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme étranger doit être jugé au moins équivalent à un diplôme vwo, havo ou mbo-4 néerlandais; vérifiez la procédure d'admission internationale.
+          status: draft
+        en:
+          text: A foreign diploma must be assessed as at least equivalent to a Dutch vwo, havo or mbo-4 diploma; check the international admission procedure.
+          status: draft
+        ar:
+          text: يجب أن تُعتبر الشهادة الأجنبية معادِلةً على الأقل لشهادة vwo أو havo أو mbo-4 الهولندية؛ تحقّق من إجراء القبول الدولي.
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les exigences supplémentaires (procédure d'admission CMGT, PDF) s'appliquent; consultez le document d'admission.
+          status: draft
+        en:
+          text: Additional entry requirements (CMGT intake procedure, PDF) apply; consult the intake document.
+          status: draft
+        ar:
+          text: تنطبق متطلبات إضافية (إجراء القبول CMGT، ملف PDF)؛ راجع وثيقة القبول.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.saxion.nl/opleidingen/en/fulltime/bachelor/creative-media-and-game-technologies
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.saxion.nl/studeren-bij/opleidingskosten/collegegeld
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.saxion.nl/opleidingen/en/fulltime/bachelor/creative-media-and-game-technologies/admission
+    last_verified_at: 2026-10-21

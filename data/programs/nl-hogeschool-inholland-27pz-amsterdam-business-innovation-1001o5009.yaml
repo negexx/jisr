@@ -1,0 +1,101 @@
+slug: nl-hogeschool-inholland-27pz-amsterdam-business-innovation-1001o5009
+institution: nl-hogeschool-inholland-27pz-amsterdam
+country: NL
+city: amsterdam
+field: business-economics
+level: bachelor
+name: Business Innovation
+summary:
+  fr:
+    text: Business Innovation (Business Innovation), Hogeschool Inholland (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Business Innovation (Business Innovation), Hogeschool Inholland (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Business Innovation (Business Innovation), Hogeschool Inholland (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.inholland.nl/inhollandcom/degree-programmes/business-innovation-eng-full-time/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Diplôme étranger : Inholland évalue individuellement votre baccalauréat marocain pour vérifier son équivalence avec un diplôme néerlandais (havo/vwo/mbo-4). Envoyez les copies du diplôme et du relevé de notes."
+          status: draft
+        en:
+          text: "Foreign diploma: Inholland individually assesses your Moroccan Baccalaureate for equivalence to a Dutch diploma (havo/vwo/mbo-4). Submit copies of your diploma and final transcript."
+          status: draft
+        ar:
+          text: "الشهادة الأجنبية: تقوم Inholland بتقييم البكالوريا المغربية الخاصة بك على حدة للتحقق من معادلتها لشهادة هولندية (havo/vwo/mbo-4). أرسل نسخًا من الشهادة وكشف العلامات."
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Niveau d'anglais exigé pour les non-natifs (IELTS 6.0, TOEFL iBT 80 ou Cambridge C) : vérifiez la page de votre programme pour la liste exacte des preuves acceptées."
+          status: draft
+        en:
+          text: "English level required for non-native speakers (IELTS 6.0, TOEFL iBT 80 or Cambridge C): check your programme's page for the exact list of accepted proof."
+          status: draft
+        ar:
+          text: "مستوى الإنجليزية المطلوب لغير الناطقين بها (IELTS 6.0 أو TOEFL iBT 80 أو Cambridge C): تحقق من صفحة برنامجك للاطلاع على القائمة الدقيقة للإثباتات المقبولة."
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Envoyez votre diplôme et relevé de notes, éventuellement avec traduction assermentée s'ils ne sont pas en néerlandais, anglais, allemand, français ou espagnol.
+          status: draft
+        en:
+          text: Send your diploma and transcript, with a sworn translation if they are not in Dutch, English, German, French or Spanish.
+          status: draft
+        ar:
+          text: أرسل شهادتك وكشف علاماتك، مع ترجمة محلَّفة إذا لم تكن الوثيقتان بالهولندية أو الإنجليزية أو الألمانية أو الفرنسية أو الإسبانية.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.inholland.nl/inhollandcom/degree-programmes/business-innovation-eng-full-time/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/
+    last_verified_at: 2026-10-21

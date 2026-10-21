@@ -1,0 +1,91 @@
+slug: nl-technische-universiteit-delft-21pf-luchtvaart-en-ruimtevaar-1001o6146
+institution: nl-technische-universiteit-delft-21pf
+country: NL
+city: delft
+field: engineering
+level: bachelor
+name: Luchtvaart- en Ruimtevaarttechniek
+summary:
+  fr:
+    text: Luchtvaart- en Ruimtevaarttechniek (Aerospace Engineering), Technische Universiteit Delft (Delft). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Luchtvaart- en Ruimtevaarttechniek (Aerospace Engineering), Technische Universiteit Delft (Delft). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Luchtvaart- en Ruimtevaarttechniek (Aerospace Engineering), Technische Universiteit Delft (Delft). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.tudelft.nl/onderwijs/opleidingen/bachelors/ae/bsc-aerospace-engineering
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1990600
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un diplôme marocain (baccalauréat) n'est pas équivalent au VWO néerlandais : il faut avoir validé au moins la 1re année (60 ECTS) d'un BSc/BEng dans le même domaine avec une moyenne d'au moins 75 %."
+          status: draft
+        en:
+          text: "A Moroccan secondary diploma is not equivalent to the Dutch VWO: you must have completed at least the first year (60 ECTS) of a BSc/BEng in the same field with a GPA of at least 75%."
+          status: draft
+        ar:
+          text: "الشهادة المغربية (البكالوريا) غير معادِلة لشهادة VWO الهولندية: يجب إتمام السنة 1 على الأقل (60 ECTS) من برنامج BSc/BEng في المجال نفسه، بمعدل لا يقل عن 75%."
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Programme à numerus fixus : la sélection s'applique. Le paiement doit être effectué au plus tard le 1er juillet (23:59 CEST) pour les étudiants avec un diplôme étranger."
+          status: draft
+        en:
+          text: "This is a numerus fixus programme: selection applies. Payment must be made by 1 July (23:59 CEST) for students with a non-Dutch educational qualification."
+          status: draft
+        ar:
+          text: "برنامج numerus fixus: يُطبَّق الانتقاء. ويجب إتمام الدفع في موعد أقصاه 1 يوليو (23:59 CEST) بالنسبة إلى الطلاب الحاصلين على شهادة أجنبية."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.tudelft.nl/onderwijs/opleidingen/bachelors/ae/bsc-aerospace-engineering
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/tuition-fee-finances
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.tudelft.nl/en/education/admission-and-application/bsc-international-diploma/admission-requirements/country-specific-requirements
+    last_verified_at: 2026-10-21

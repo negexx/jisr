@@ -1,0 +1,70 @@
+slug: nl-nhl-stenden-hogeschool-31fr-hotel-management-1001o3621
+institution: nl-nhl-stenden-hogeschool-31fr
+country: NL
+city: leeuwarden
+field: business-economics
+level: bachelor
+name: Hotel Management
+summary:
+  fr:
+    text: Hotel Management (Hospitality Management), NHL Stenden Hogeschool (Leeuwarden). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Hotel Management (Hospitality Management), NHL Stenden Hogeschool (Leeuwarden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Hotel Management (Hospitality Management), NHL Stenden Hogeschool (Leeuwarden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.nhlstenden.com/hbo-opleidingen/hogere-hotelschool-instroom-vwo
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Diplôme étranger : il doit être évalué (waardering) par la Centrale Studenten Administratie ; commence la procédure tôt via Studielink."
+          status: draft
+        en:
+          text: "Foreign diploma: it must be assessed (waardering) by the Centrale Studenten Administratie; start the procedure early via Studielink."
+          status: draft
+        ar:
+          text: "الشهادة الأجنبية: يجب أن تقيّمها الإدارة المركزية لشؤون الطلبة (waardering)؛ ابدأ هذا الإجراء في وقت مبكر عبر منصة Studielink."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.nhlstenden.com/hbo-opleidingen/hogere-hotelschool-instroom-vwo
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.nhlstenden.com/studeren-bij-nhl-stenden/toelatingseisen/buitenlandse-vooropleiding
+    last_verified_at: 2026-10-21

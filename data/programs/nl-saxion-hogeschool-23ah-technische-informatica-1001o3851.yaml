@@ -1,0 +1,90 @@
+slug: nl-saxion-hogeschool-23ah-technische-informatica-1001o3851
+institution: nl-saxion-hogeschool-23ah
+country: NL
+city: enschede
+field: computer-science
+level: bachelor
+name: Technische Informatica
+summary:
+  fr:
+    text: Technische Informatica (Computer Science), Saxion Hogeschool (Enschede). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Technische Informatica (Computer Science), Saxion Hogeschool (Enschede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Technische Informatica (Computer Science), Saxion Hogeschool (Enschede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.saxion.nl/opleidingen/voltijd/bachelor/technische-informatica
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 936000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si votre diplôme marocain est reconnu comme équivalent à un havo/vwo/mbo-4 néerlandais ; la Studentregistratie évalue vos documents de diplôme.
+          status: draft
+        en:
+          text: Check whether your Moroccan diploma is recognised as equivalent to a Dutch havo/vwo/mbo-4; Student Registration assesses your diploma documents.
+          status: draft
+        ar:
+          text: تحقّق مما إذا كانت شهادتك المغربية تُعتبر معادِلة لشهادة havo/vwo/mbo-4 الهولندية؛ وتقيّم مصلحة Studentregistratie وثائق شهادتك.
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Cette page néerlandaise ne précise pas les exigences linguistiques pour les diplômés étrangers ; vérifiez les conditions d'admission internationales (la formation est en anglais).
+          status: draft
+        en:
+          text: This Dutch page does not state the language requirements for foreign-diploma holders; check the international entry requirements (the programme is taught in English).
+          status: draft
+        ar:
+          text: هذه الصفحة الهولندية لا تحدد المتطلبات اللغوية لحاملي الشهادات الأجنبية؛ تحقق من شروط القبول الدولية (البرنامج يُدرَّس بالإنجليزية).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.saxion.nl/opleidingen/voltijd/bachelor/technische-informatica
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.saxion.nl/studeren-bij/opleidingskosten/collegegeld
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.saxion.nl/studeren-bij/ik-wil-mij-inschrijven/toelating
+    last_verified_at: 2026-10-21

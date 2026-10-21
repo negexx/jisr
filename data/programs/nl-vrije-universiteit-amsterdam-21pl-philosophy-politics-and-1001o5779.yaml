@@ -1,0 +1,87 @@
+slug: nl-vrije-universiteit-amsterdam-21pl-philosophy-politics-and-1001o5779
+institution: nl-vrije-universiteit-amsterdam-21pl
+country: NL
+city: amsterdam
+field: business-economics
+level: bachelor
+name: Philosophy, Politics and Economics
+summary:
+  fr:
+    text: Philosophy, Politics and Economics (Philosophy, Politics and Economics), Vrije Universiteit Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Philosophy, Politics and Economics (Philosophy, Politics and Economics), Vrije Universiteit Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Philosophy, Politics and Economics (Philosophy, Politics and Economics), Vrije Universiteit Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://vu.nl/en/education/bachelor/philosophy-politics-and-economics
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "PPE est un programme sélectif : la candidature doit être complète avant le 1er avril (non-UE/EEE). Un formulaire d'évaluation fait partie de la sélection ; critères sur la page du programme."
+          status: draft
+        en:
+          text: "PPE is a selective programme: your application must be fully completed before 1 April (non-EU/EEA). An assessment form is part of the selection; criteria on the programme page."
+          status: draft
+        ar:
+          text: "PPE برنامج انتقائي: يجب أن يكون التقديم مكتملًا قبل 1 أبريل (من خارج الاتحاد الأوروبي (UE)/EEE). ويُعدّ نموذج التقييم جزءًا من الانتقاء؛ والمعايير موجودة في صفحة البرنامج."
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Programme en anglais : fournir un justificatif de niveau d'anglais (test accepté avec score minimum, ou diplôme dispensé). Le justificatif peut être remis après une admission conditionnelle."
+          status: draft
+        en:
+          text: "English-taught programme: submit proof of English proficiency (accepted test with minimum score, or an exempting diploma). Proof may be submitted after conditional admission."
+          status: draft
+        ar:
+          text: "البرنامج باللغة الإنجليزية: يجب تقديم إثبات مستوى الإنجليزية (اختبار مقبول بحد أدنى من الدرجات، أو شهادة معفية). ويمكن تقديم الإثبات بعد القبول المشروط."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://vu.nl/en/education/bachelor/philosophy-politics-and-economics
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://vu.nl/nl/onderwijs/meer-over/aanmelden-bacheloropleiding
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://vu.nl/nl/onderwijs/meer-over/documenten-voor-aanmelding
+    last_verified_at: 2026-10-21

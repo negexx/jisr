@@ -1,0 +1,98 @@
+slug: nl-de-haagse-hogeschool-27um-chemische-technologie-1001o3154
+institution: nl-de-haagse-hogeschool-27um
+country: NL
+city: s-gravenhage
+field: engineering
+level: bachelor
+name: Chemische Technologie
+summary:
+  fr:
+    text: Chemische Technologie (Chemical Engineering), De Haagse Hogeschool ('s-Gravenhage). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Chemische Technologie (Chemical Engineering), De Haagse Hogeschool ('s-Gravenhage). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Chemische Technologie (Chemical Engineering), De Haagse Hogeschool ('s-Gravenhage). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/process-food-technology-4-jaars
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme étranger est évalué selon les directives de Nuffic; seul le service Centrale Studenten Inschrijving décide de l'admission.
+          status: draft
+        en:
+          text: A foreign diploma is assessed using Nuffic guidelines; only the Centrale Studenten Inschrijving decides on admission.
+          status: draft
+        ar:
+          text: تُقيَّم الشهادة الأجنبية وفق إرشادات Nuffic؛ والخدمة الوحيدة المخوّلة بتقرير القبول هي Centrale Studenten Inschrijving.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Sans diplôme néerlandais, une épreuve de langue anglaise est généralement exigée (exemption possible); vérifiez les conditions sur la page toelatingseisen.
+          status: draft
+        en:
+          text: Without a Dutch diploma an English language test is usually required (exemption possible); check the toelatingseisen page for the conditions.
+          status: draft
+        ar:
+          text: في غياب شهادة هولندية، يُشترط عادةً اجتياز اختبار في اللغة الإنجليزية (مع إمكانية الإعفاء)؛ تحقق من الشروط في صفحة toelatingseisen.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Si vous avez une formation étrangère, vous recevrez un e-mail pour téléverser les documents de votre formation dans OSIRIS.
+          status: draft
+        en:
+          text: If you have a foreign prior education, you will receive an email asking you to upload documents about it in OSIRIS.
+          status: draft
+        ar:
+          text: إذا كانت لديك دراسة أجنبية سابقة، فستتلقى رسالة بريد إلكتروني لرفع وثائق دراستك في OSIRIS.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/process-food-technology-4-jaars
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat
+    last_verified_at: 2026-10-21

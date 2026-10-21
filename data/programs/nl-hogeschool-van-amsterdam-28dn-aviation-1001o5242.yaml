@@ -1,0 +1,118 @@
+slug: nl-hogeschool-van-amsterdam-28dn-aviation-1001o5242
+institution: nl-hogeschool-van-amsterdam-28dn
+country: NL
+city: amsterdam
+field: engineering
+level: bachelor
+name: Aviation
+summary:
+  fr:
+    text: Aviation (Aviation), Hogeschool van Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Aviation (Aviation), Hogeschool van Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Aviation (Aviation), Hogeschool van Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hva.nl/opleidingen/aviation
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1064800
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: id-or-passport
+      name:
+        fr:
+          text: Carte d'identité ou passeport
+          status: draft
+        en:
+          text: ID or passport
+          status: draft
+        ar:
+          text: بطاقة الهوية أو جواز السفر
+          status: draft
+      translationRequired: null
+    - slug: transcripts
+      name:
+        fr:
+          text: Relevés de notes
+          status: draft
+        en:
+          text: Transcripts
+          status: draft
+        ar:
+          text: كشوف النقاط
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: L'admission directe est possible avec un diplôme havo/vwo (profils N&T, N&G, E&M) ou mbo-4, ou un diplôme étranger comparable. Pour C&M, des exigences supplémentaires s'appliquent.
+          status: draft
+        en:
+          text: Direct admission is possible with a havo/vwo diploma (profiles N&T, N&G, E&M) or mbo-4, or a comparable foreign diploma. For C&M, additional requirements apply.
+          status: draft
+        ar:
+          text: القبول المباشر ممكن بشهادة havo/vwo (المسارات N&T وN&G وE&M) أو mbo-4، أو بشهادة أجنبية مماثلة. أما بالنسبة إلى C&M فتنطبق متطلبات إضافية.
+          status: draft
+    - id: req-2
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les étudiants étrangers titulaires d'un diplôme non néerlandais doivent fournir un diplôme au niveau mbo-4 ou havo et, pour une formation en néerlandais, le Staatsexamen NT2-II. Vérifiez la procédure d'équivalence (diplomawaardering) et les éventuelles exigences supplémentaires.
+          status: draft
+        en:
+          text: Foreign students with a non-Dutch diploma must provide a diploma at mbo-4 or havo level and, for a Dutch-taught programme, the Staatsexamen NT2-II. Check the diploma evaluation procedure (diplomawaardering) and any additional requirements.
+          status: draft
+        ar:
+          text: يجب على الطلاب الأجانب الحاصلين على شهادة غير هولندية تقديم شهادة بمستوى mbo-4 أو havo، وفي حال كان البرنامج بالهولندية يلزم Staatsexamen NT2-II. تحقق من إجراء المعادلة (diplomawaardering) وأي متطلبات إضافية.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hva.nl/opleidingen/aviation
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/collegegeld/collegegeldtarieven
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/diplomawaardering/documentatie-vooropleiding-niet-afgerond
+    last_verified_at: 2026-10-21
+  page-4:
+    url: https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/toelatingseisen
+    last_verified_at: 2026-10-21

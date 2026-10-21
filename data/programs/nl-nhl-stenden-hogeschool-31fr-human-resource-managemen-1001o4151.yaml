@@ -1,0 +1,87 @@
+slug: nl-nhl-stenden-hogeschool-31fr-human-resource-managemen-1001o4151
+institution: nl-nhl-stenden-hogeschool-31fr
+country: NL
+city: leeuwarden
+field: business-economics
+level: bachelor
+name: Human Resource Management
+summary:
+  fr:
+    text: Human Resource Management (Human Resource Management), NHL Stenden Hogeschool (Leeuwarden). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Human Resource Management (Human Resource Management), NHL Stenden Hogeschool (Leeuwarden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Human Resource Management (Human Resource Management), NHL Stenden Hogeschool (Leeuwarden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.nhlstenden.com/hbo-opleidingen/international-human-resource-management
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Avec un diplôme étranger, le processus d'admission prend plus de temps : commencez la procédure le plus tôt possible et faites évaluer (waardering) votre diplôme par la Centrale Studenten Administratie."
+          status: draft
+        en:
+          text: "With a foreign diploma the admission process takes longer: start the procedure as early as possible and have your diploma assessed (waardering) by the Centrale Studenten Administratie."
+          status: draft
+        ar:
+          text: مع الشهادة الأجنبية تستغرق عملية القبول وقتًا أطول، لذا ابدأ الإجراء في أقرب وقت ممكن، واطلب من Centrale Studenten Administratie تقييم شهادتك (waardering).
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Sans diplôme admissible, un test d'admission 21+ (capacité, connaissances, langue) peut être possible si vous avez 21 ans ou plus au début de la formation.
+          status: draft
+        en:
+          text: Without an admissible diploma, a 21+ admission test (aptitude, knowledge, language) may be possible if you are 21 or older at the start of the programme.
+          status: draft
+        ar:
+          text: في حال عدم وجود شهادة مؤهلة للقبول، قد يكون اجتياز اختبار القبول 21+ (القدرة والمعارف واللغة) ممكنًا إذا كان عمرك 21 سنة أو أكثر عند بداية البرنامج.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.nhlstenden.com/hbo-opleidingen/international-human-resource-management
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.nhlstenden.com/studeren-bij-nhl-stenden/toelatingseisen/buitenlandse-vooropleiding
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.nhlstenden.com/studeren-bij-nhl-stenden/toelatingseisen/21-plus-toelatingsonderzoek
+    last_verified_at: 2026-10-21

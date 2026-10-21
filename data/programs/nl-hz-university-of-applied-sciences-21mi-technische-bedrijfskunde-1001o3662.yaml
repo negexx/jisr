@@ -1,0 +1,70 @@
+slug: nl-hz-university-of-applied-sciences-21mi-technische-bedrijfskunde-1001o3662
+institution: nl-hz-university-of-applied-sciences-21mi
+country: NL
+city: vlissingen
+field: engineering
+level: bachelor
+name: Technische Bedrijfskunde
+summary:
+  fr:
+    text: Technische Bedrijfskunde (Industrial Engineering & Management), HZ University of Applied Sciences (Vlissingen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Technische Bedrijfskunde (Industrial Engineering & Management), HZ University of Applied Sciences (Vlissingen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Technische Bedrijfskunde (Industrial Engineering & Management), HZ University of Applied Sciences (Vlissingen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://hz.nl/opleidingen/technische-bedrijfskunde
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme étranger (bac marocain) doit être reconnu comme équivalent au vwo/havo ; l'admission se fait sur décision de l'examencommissie (art. 2.8 OER). Contactez l'institution pour la procédure.
+          status: draft
+        en:
+          text: A foreign diploma (Moroccan Bac) must be recognised as equivalent to vwo/havo; admission is decided by the examination committee (art. 2.8 OER). Contact the institution about the procedure.
+          status: draft
+        ar:
+          text: يجب الاعتراف بالشهادة الأجنبية (البكالوريا المغربية) كمعادِلة لـ vwo/havo؛ ويتم القبول بقرار من examencommissie (المادة 2.8 من OER). تواصل مع المؤسسة بشأن الإجراء.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://hz.nl/opleidingen/technische-bedrijfskunde
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://hz.nl/uploads/documents/1.4-Over-de-HZ/1.4.3.-Regelingen-en-documenten/NL/5.-Onderwijs-examenregelingen/Onderwijs-en-examenregeling/OER-HZ-Associate-Degree-voltijd-2022-2023-DEF-13-juni.pdf
+    last_verified_at: 2026-10-21
