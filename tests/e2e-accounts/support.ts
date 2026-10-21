@@ -36,6 +36,8 @@ type MailKind = "magic-link" | "delete-account";
 // The sign-in or deletion link the file transport wrote for `to`, written at or after `since`.
 // The link is a secret: it is returned to the caller and never printed.
 export async function readMailLink(to: string, kind: MailKind, since: number): Promise<URL> {
+  // Every link is opened and confirmed right after it is read.
+  await resetRequestThrottles();
   let link: string | null = null;
   await expect
     .poll(
@@ -84,6 +86,13 @@ export async function resetEmailCooldown(email: string): Promise<void> {
   await withDb((client) =>
     client.query("delete from email_cooldowns where email = $1", [cooldownKey(email)]),
   );
+}
+
+// The suite runs against a production build with no x-forwarded-for, so every request shares one
+// per-path bucket of the auth request limiter (its limits are covered by tests/db and the handler
+// test). Confirms and deletions across both locale chains would otherwise pass 5 a minute.
+export async function resetRequestThrottles(): Promise<void> {
+  await withDb((client) => client.query("delete from request_throttles"));
 }
 
 export async function accountRowCount(email: string): Promise<number> {

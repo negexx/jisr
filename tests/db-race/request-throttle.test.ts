@@ -51,17 +51,15 @@ describeRace("consumeThrottle under real concurrency", () => {
   });
 
   it("removes a row older than 24 hours and keeps a newer one", async () => {
+    const pool = race.createPool(1);
+    await pool.query("delete from request_throttles");
     await consumeThrottle("old-key", RULE, T0);
     await consumeThrottle("new-key", RULE, after(3600));
     await purgeExpiredThrottles(after(24 * 3600 + 1));
 
-    const pool = race.createPool(1);
     const { rows } = await pool.query<{ window_start: Date }>(
       "select window_start from request_throttles order by window_start",
     );
-    expect(rows.map((row) => row.window_start.toISOString())).toEqual([
-      after(60).toISOString(),
-      after(3600).toISOString(),
-    ]);
+    expect(rows.map((row) => row.window_start.toISOString())).toEqual([after(3600).toISOString()]);
   });
 });

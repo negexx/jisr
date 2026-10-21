@@ -1,3 +1,5 @@
+import { createHmac } from "node:crypto";
+
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { throttleKey } from "@/lib/server/request-throttle";
@@ -46,6 +48,21 @@ describe("throttleKey", () => {
     expect(key).toMatch(/^[A-Za-z0-9_-]{43}$/);
     expect(key).not.toContain(IP);
     expect(key).not.toContain("203.0.113.7");
+  });
+
+  it("is keyed by a domain-separated subkey, not by the secret itself", () => {
+    const secret = "unit-test-secret-0123456789abcdef";
+    const message = `2026-10-21|b|${IP}`;
+    const subkey = createHmac("sha256", secret).update("jisr:request-throttle:v1").digest();
+    const expected = createHmac("sha256", subkey).update(message).digest("base64url");
+    expect(throttleKey("b", IP, DAY_1)).toBe(expected);
+    expect(throttleKey("b", IP, DAY_1)).not.toBe(
+      createHmac("sha256", secret).update(message).digest("base64url"),
+    );
+  });
+
+  it("refuses a bucket name that contains the separator", () => {
+    expect(() => throttleKey("a|b", IP, DAY_1)).toThrow("|");
   });
 
   it("names the missing variable, never a value, when the secret is absent or blank", () => {

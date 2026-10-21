@@ -15,11 +15,6 @@ vi.mock("@/lib/server/email", async (importOriginal) => ({
   },
 }));
 
-vi.mock("@/lib/server/request-throttle", async (importOriginal) => {
-  const original = await importOriginal<typeof import("@/lib/server/request-throttle")>();
-  return { ...original, consumeThrottle: vi.fn(original.consumeThrottle) };
-});
-
 type AuthModule = typeof import("@/lib/auth/server");
 type RouteModule = typeof import("@/app/api/auth/[...all]/route");
 
@@ -28,7 +23,6 @@ let pool: Pool;
 let auth: ReturnType<AuthModule["getAuth"]>;
 let route: RouteModule;
 let closeAppPool: () => Promise<void>;
-let consumeThrottle: typeof import("@/lib/server/request-throttle").consumeThrottle;
 
 async function count(table: string): Promise<number> {
   const { rows } = await pool.query<{ count: string }>(`select count(*) as count from "${table}"`);
@@ -60,7 +54,6 @@ beforeAll(async () => {
   process.env.BETTER_AUTH_URL = ORIGIN;
   auth = (await import("@/lib/auth/server")).getAuth();
   route = await import("@/app/api/auth/[...all]/route");
-  ({ consumeThrottle } = await import("@/lib/server/request-throttle"));
   const { db } = await import("@/db");
   closeAppPool = () => db.$client.end();
 }, TIMEOUT_MS);
@@ -73,7 +66,6 @@ beforeEach(async () => {
   await pool.query("delete from pending_signups");
   await pool.query("delete from email_cooldowns");
   await pool.query("delete from request_throttles");
-  vi.mocked(consumeThrottle).mockClear();
 });
 
 afterEach(() => {
@@ -250,16 +242,26 @@ describe("request throttling (I1)", () => {
     expect((await socialStart({ "x-forwarded-for": "203.0.113.8" })).status).not.toBe(429);
   });
 
-  it("hands the store a hashed key and keeps the address out of the database", async () => {
+  it("stores a hashed key, never the address", async () => {
     await socialStart();
-    const calls = vi.mocked(consumeThrottle).mock.calls;
-    expect(calls).toHaveLength(1);
-    const [key, rule] = calls[0] ?? [];
-    expect(key).toMatch(/^[A-Za-z0-9_-]{43}$/);
-    expect(rule).toEqual({ window: 60, max: 5 });
     const { rows } = await pool.query<{ key: string }>("select key from request_throttles");
-    expect(rows).toEqual([{ key }]);
+    expect(rows).toHaveLength(1);
+    expect(rows[0]?.key).toMatch(/^[A-Za-z0-9_-]{43}$/);
     expect(rows[0]?.key).not.toContain(CLIENT_IP);
+  });
+
+  it("keeps requests to made-up paths from one address in a single row", async () => {
+    for (const path of ["/nope-1", "/nope-2", "/nope-3"]) {
+      await route.GET(
+        new Request(`${ORIGIN}/api/auth${path}`, {
+          method: "GET",
+          headers: { origin: ORIGIN, "x-forwarded-for": CLIENT_IP },
+        }),
+      );
+    }
+    expect(await count("request_throttles")).toBe(1);
+    await socialStart();
+    expect(await count("request_throttles")).toBe(2);
   });
 
   it("falls back to one shared bucket when the forwarded-for header has several values", async () => {

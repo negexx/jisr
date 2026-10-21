@@ -16,14 +16,24 @@ export class ThrottleMisconfiguredError extends Error {
   }
 }
 
+const KEY_DOMAIN = "jisr:request-throttle:v1";
+
 // Throttle rows are keyed by an HMAC, never by the address: the secret keeps the key from being
 // guessed for a known address, and the UTC day in the message makes the same address a different
-// key tomorrow, so rows cannot be linked across days. The raw key stays in process memory.
+// key tomorrow, so rows cannot be linked across days. The raw key stays in process memory. The
+// HMAC key is a subkey derived from the auth secret for this purpose alone, so the secret itself
+// never keys anything else we compute with it.
+//
+// Accepted consequence of the day rotation: every window resets at 00:00 UTC, so a one-day rule
+// is per calendar day, not a rolling 24 hours. The alternative is a key that can be followed from
+// one day to the next.
 export function throttleKey(bucket: string, rawKey: string, now: Date = new Date()): string {
+  if (bucket.includes("|")) throw new Error("A throttle bucket name cannot contain '|'");
   const secret = process.env.BETTER_AUTH_SECRET;
   if (secret === undefined || secret.trim() === "") throw new ThrottleMisconfiguredError();
+  const subkey = createHmac("sha256", secret).update(KEY_DOMAIN).digest();
   const utcDay = now.toISOString().slice(0, 10);
-  return createHmac("sha256", secret).update(`${utcDay}|${bucket}|${rawKey}`).digest("base64url");
+  return createHmac("sha256", subkey).update(`${utcDay}|${bucket}|${rawKey}`).digest("base64url");
 }
 
 export type ThrottleRule = {
@@ -44,6 +54,8 @@ export async function consumeThrottle(
   rule: ThrottleRule,
   now?: Date,
 ): Promise<ThrottleResult> {
+  // A rule that allows nothing needs no row, and the statement below would grant its first request.
+  if (rule.max < 1) return { allowed: false, retryAfter: rule.window };
   // Cast: a bare parameter beside an interval would be inferred as an interval, not a time.
   const at = now ? sql`${now.toISOString()}::timestamptz` : sql`now()`;
   const expired = sql`${requestThrottles.windowStart} <= excluded.window_start - make_interval(secs => ${rule.window})`;
@@ -62,7 +74,8 @@ export async function consumeThrottle(
   if (granted.length > 0) return { allowed: true, retryAfter: null };
 
   // The row can only be missing if the purge removed it between the two statements; a retry then
-  // succeeds, so one second is the honest answer.
+  // succeeds, so one second is the honest answer. A concurrent window reset between the two
+  // statements can make the figure overstate the wait; that is harmless.
   const left = await db
     .select({
       seconds: sql<number>`greatest(1, ceil(extract(epoch from ${requestThrottles.windowStart} + make_interval(secs => ${rule.window}) - ${at})))::int`,
@@ -93,4 +106,56 @@ export async function purgeExpiredThrottles(now?: Date): Promise<void> {
       sqlState: sqlState(error),
     });
   }
+}
+
+export const THROTTLE_PURGE_INTERVAL_MS = 10 * 60 * 1000;
+
+const ANY_OTHER_PATH = "*";
+const LIMITER_BUCKET = "better-auth";
+
+export type AuthLimiterStorageOptions = {
+  // Paths that have their own rule (AUTH_RATE_LIMIT_RULES); every other path shares one counter.
+  ruledPaths: readonly string[];
+  // The rule of that shared counter, whatever rule Better Auth resolved for the unknown path.
+  fallbackRule: ThrottleRule;
+  // Milliseconds; injectable for the purge cadence test.
+  clock?: () => number;
+};
+
+// Better Auth's `customStorage` for its request limiter. Its key is `<address>|<path>` and the
+// path is whatever the caller sent, so keying rows by the path would let one address create a row
+// per made-up path. A request for a path without a rule is therefore counted per address only
+// (`<address>|*`, under the fallback rule). The address is split at the FIRST separator: it never
+// contains one (an IP or `no-trusted-ip`), while a path may.
+//
+// Retention without a worker (ADR 0003): after a granted request, expired rows are purged at most
+// once per interval and per instance, so rows are bounded even when no auth email is ever sent.
+export function authLimiterStorage(options: AuthLimiterStorageOptions) {
+  const ruled = new Set(options.ruledPaths);
+  const clock = options.clock ?? Date.now;
+  let lastPurgeAt = Number.NEGATIVE_INFINITY;
+
+  async function purgeWhenDue(): Promise<void> {
+    const at = clock();
+    if (at - lastPurgeAt < THROTTLE_PURGE_INTERVAL_MS) return;
+    lastPurgeAt = at;
+    await purgeExpiredThrottles();
+  }
+
+  return {
+    async consume(key: string, rule: ThrottleRule): Promise<ThrottleResult> {
+      const separator = key.indexOf("|");
+      const address = separator === -1 ? key : key.slice(0, separator);
+      const path = separator === -1 ? "" : key.slice(separator + 1);
+      const isRuled = ruled.has(path);
+      const result = isRuled
+        ? await consumeThrottle(throttleKey(LIMITER_BUCKET, key), rule)
+        : await consumeThrottle(
+            throttleKey(LIMITER_BUCKET, `${address}|${ANY_OTHER_PATH}`),
+            options.fallbackRule,
+          );
+      if (result.allowed) await purgeWhenDue();
+      return result;
+    },
+  };
 }

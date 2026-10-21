@@ -12,7 +12,7 @@ import * as schema from "@/db/schema";
 import { eraseAccountResidue } from "@/lib/server/account-erasure";
 import { type AuthEmailRequest, resolveAuthEmailLocale, sendAuthEmail } from "@/lib/server/email";
 import { claimAuthEmailSend } from "@/lib/server/email-cooldown";
-import { consumeThrottle, throttleKey } from "@/lib/server/request-throttle";
+import { authLimiterStorage } from "@/lib/server/request-throttle";
 import { accountsEnabled } from "./accounts-enabled";
 import { ACCOUNTS_DISABLED_CODE, accountsGate } from "./accounts-gate";
 import {
@@ -43,6 +43,9 @@ import { isSignupFor } from "./signup-intent";
 // The pending row and the link that can use it expire together.
 export const MAGIC_LINK_EXPIRY_S = PENDING_SIGNUP_TTL_S;
 export const DELETE_TOKEN_EXPIRY_S = 60 * 60;
+
+// Every path without a rule of its own shares this one counter per address (authLimiterStorage).
+export const AUTH_DEFAULT_RATE_LIMIT = { window: 60, max: 100 };
 
 // Per address and path. Better Auth's built-in rule for every /sign-in path (3 per 10 s) is
 // replaced for the paths named here; any other path keeps the 100 per minute default.
@@ -287,15 +290,16 @@ function createAuth(secret: string, baseURL: string) {
     // Explicit because the limiter defaults to production only. The email_cooldowns slot still
     // guards each mailbox; this guards each address and path. The limiter runs for HTTP requests
     // through the router only, so the signup Server Action (an auth.api call) throttles itself.
+    // A path without a rule counts per address only, so made-up paths cannot create rows.
     // A store failure throws into Better Auth and answers 500 through onAuthApiError.
     rateLimit: {
       enabled: true,
-      window: 60,
-      max: 100,
+      ...AUTH_DEFAULT_RATE_LIMIT,
       customRules: AUTH_RATE_LIMIT_RULES,
-      customStorage: {
-        consume: (key, rule) => consumeThrottle(throttleKey("better-auth", key), rule),
-      },
+      customStorage: authLimiterStorage({
+        ruledPaths: Object.keys(AUTH_RATE_LIMIT_RULES),
+        fallbackRule: AUTH_DEFAULT_RATE_LIMIT,
+      }),
     },
     // The default logger and better-call print raw errors, which carry query parameters (tokens,
     // addresses): see log.ts.
