@@ -47,7 +47,7 @@ Trust is the product. Every important fact carries an official source and a last
 ## Evidence on Hand
 
 - Product spec: `docs/product/jisr_mvp.md`. Decisions: `.claude/docs/decisions/` (ADRs 0002 to 0011). Runbooks: `docs/ops/` (deploy, limits, prelaunch checklist).
-- A complete guest release (profile, matches, programme pages, compare, plan, scholarships) in three languages, with curated reference data: 1,126 programmes across five destinations (France, Germany, the Netherlands, Hungary, Italy).
+- A complete guest release (profile, matches, programme pages, compare, plan, scholarships) in three languages, with curated reference data: 1,240 programmes across six destinations (France, Germany, the Netherlands, Hungary, Italy, Spain; count of 2026-10-21).
 - Absent, and must not be fabricated: testimonials; usage statistics; any logo.
 
 ## Product Principles
