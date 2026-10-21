@@ -46,7 +46,7 @@ You sign in with an **email link** or with **Google**. There is no password.
 
 All of it is kept in a database hosted by Neon in Frankfurt, in the European Union. The name in brackets is the name of the record.
 
-- **Your account** (`user`): your email address, your name if you sign in with Google, the address of your Google profile picture if there is one, the date the account was created, the version of this notice you agreed to and when, and a role that is always "student". Jisrr does not use your name or your picture.
+- **Your account** (`user`): your email address, the date the account was created, the version of this notice you agreed to and when, and a role that is always "student". If you sign in with Google, Google sends your name and the address of your profile picture. Jisrr does not keep them (the name is stored blank and no picture address is stored) and does not use them.
 - **Sign-in method** (`account`): only if you use Google. Google's identifier for you, and the access and refresh tokens that Google returns. They are stored in encrypted form and Jisrr does not use them. Google's ID token is never stored.
 - **Sessions** (`session`): one record for each device where you are signed in, with a random token and the dates it was created and expires. It holds no IP address and no information about your device or browser: Jisrr is set up not to record them.
 - **Sign-in codes** (`verification`): short-lived records that make a sign-in or a deletion work. An email link has one, which contains your email address and a code stored in hashed form, valid for 15 minutes and for one use. A Google sign-in has a temporary record of its state, which includes the confirmations you gave on the form. Deleting your account also uses one. They are removed when used, and expired ones are cleaned up automatically.
@@ -95,7 +95,7 @@ To compute your results, your browser downloads reference files whose names incl
 
 ## What we never do
 
-- We never store your IP address, or details of your device or browser, in our database.
+- We never store your IP address, or details of your device or browser, in our database. To slow down abuse of sign-in, we keep a one-way fingerprint of your network address, computed with a secret key; it changes every day, is deleted about a day later and cannot be turned back into the address.
 - We never ask for your date of birth.
 - We never share your profile, grades or nationality with analytics, with a university or with anyone else, apart from the providers above that store and carry the data for us.
 - We never sell your data, show advertising or send marketing emails.

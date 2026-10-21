@@ -28,6 +28,7 @@ import { byCodeUnit } from "./rows";
 // the token, the user agent or the IP).
 
 export const ACCOUNT_EXPORT_FORMAT = "jisr-account-export";
+// Additive fields (sessions, accountId, role) do not bump this; only a removed or renamed field does.
 export const ACCOUNT_EXPORT_SCHEMA_VERSION = 1;
 
 export type AccountExport = {

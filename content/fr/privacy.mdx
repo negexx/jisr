@@ -46,7 +46,7 @@ Vous vous connectez avec un **lien reçu par e-mail** ou avec **Google**. Il n'y
 
 Tout est conservé dans une base de données hébergée par Neon à Francfort, dans l'Union européenne. Le nom entre parenthèses est le nom de l'enregistrement.
 
-- **Votre compte** (`user`) : votre adresse e-mail, votre nom si vous vous connectez avec Google, l'adresse de votre photo de profil Google s'il y en a une, la date de création du compte, la version de la présente politique que vous avez acceptée et la date, et un rôle qui est toujours « student » (élève). Jisrr n'utilise ni votre nom ni votre photo.
+- **Votre compte** (`user`) : votre adresse e-mail, la date de création du compte, la version de la présente politique que vous avez acceptée et la date, et un rôle qui est toujours « student » (élève). Si vous vous connectez avec Google, Google envoie votre nom et l'adresse de votre photo de profil. Jisrr ne les conserve pas (le nom est enregistré vide et aucune adresse de photo n'est gardée) et ne les utilise pas.
 - **Méthode de connexion** (`account`) : seulement si vous utilisez Google. L'identifiant que Google a pour vous, et les jetons d'accès et d'actualisation que Google renvoie. Ils sont conservés sous forme chiffrée et Jisrr ne les utilise pas. Le jeton d'identité (ID token) de Google n'est jamais conservé.
 - **Sessions** (`session`) : un enregistrement par appareil où vous êtes connecté, avec un jeton aléatoire et les dates de création et d'expiration. Il ne contient ni adresse IP ni information sur votre appareil ou votre navigateur : Jisrr est configuré pour ne pas les enregistrer.
 - **Codes de connexion** (`verification`) : des enregistrements de courte durée qui font fonctionner une connexion ou une suppression. Un lien par e-mail en a un, qui contient votre adresse e-mail et un code conservé sous forme hachée, valable 15 minutes et utilisable une seule fois. Une connexion Google a un enregistrement temporaire de son état, qui comprend les confirmations que vous avez données dans le formulaire. La suppression de votre compte en utilise aussi un. Ils sont supprimés quand ils sont utilisés, et ceux qui ont expiré sont nettoyés automatiquement.
@@ -95,7 +95,7 @@ Pour calculer vos résultats, votre navigateur télécharge des fichiers de réf
 
 ## Ce que nous ne faisons jamais
 
-- Nous ne conservons jamais votre adresse IP, ni des informations sur votre appareil ou votre navigateur, dans notre base de données.
+- Nous ne conservons jamais votre adresse IP, ni des informations sur votre appareil ou votre navigateur, dans notre base de données. Pour freiner les abus de la connexion, nous gardons une empreinte à sens unique de votre adresse réseau, calculée avec une clé secrète ; elle change chaque jour, est supprimée environ un jour plus tard et ne permet pas de retrouver l'adresse.
 - Nous ne demandons jamais votre date de naissance.
 - Nous ne partageons jamais votre profil, vos notes ou votre nationalité avec un outil de statistiques, une université ou qui que ce soit d'autre, sauf les prestataires ci-dessus qui conservent et transportent les données pour nous.
 - Nous ne vendons jamais vos données, n'affichons aucune publicité et n'envoyons aucun e-mail promotionnel.

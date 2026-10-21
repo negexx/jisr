@@ -335,7 +335,7 @@ describe("a signed-in student", () => {
       account: {
         email: "alice@example.com",
         emailVerified: true,
-        name: expect.any(String),
+        name: "",
         image: null,
         role: "student",
         createdAt: iso,

@@ -330,6 +330,16 @@ Symptom: a student submits the sign-in form and the page shows "The link could n
 | `error` is a Drizzle or driver class with a `sqlState` (a Postgres SQLSTATE, for example `42P01`, "undefined table") | The database layer failed. Check `DATABASE_URL` (the Neon pooled string) and that the migrations ran on the production Neon branch: `DATABASE_URL_UNPOOLED=<production branch direct string> pnpm db:migrate` (never `drizzle-kit push`). No CI or deploy job runs migrations, so a schema change needs this before the deploy that depends on it (prelaunch checklist D8). Correct a variable if one changed, then redeploy. |
 | `[better-auth] unexpected error` with no matching `sign-in link request failed` line | The failure happened inside Better Auth before the action's own error. Retry once; if it repeats, read the whole runtime log around that line for a variable name, then follow the rows above. |
 
+### Migrations before the app (next deploy after 2026-10-21)
+
+The auth throttling branch adds two migrations: `0003_grey_iron_lad` (table `request_throttles`) and `0004_blank-user-profile` (blanks the stored Google names and picture addresses of existing accounts). Run them on the production Neon branch **before** the deploy that ships the code, never after:
+
+```bash
+DATABASE_URL_UNPOOLED=<production branch direct string> pnpm db:migrate
+```
+
+If the app is deployed first, every auth path fails closed: Better Auth's request limiter and the sign-in action read `request_throttles`, so a missing table answers 500 (`[auth] request throttle failed` in the log, SQLSTATE `42P01`) on sign-in, the confirm page and deletion. Guest pages are unaffected. No CI or deploy job runs migrations (prelaunch checklist D8).
+
 **The Production-scope variables for accounts** (the complete list: prelaunch checklist D6): `BETTER_AUTH_URL`, `BETTER_AUTH_SECRET`, `DATABASE_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `BREVO_API_KEY`, `BREVO_SENDER`, and `ACCOUNTS_ENABLED` set to `true` to switch accounts on. `DATABASE_URL_UNPOOLED` is needed only where `pnpm db:migrate` runs from your shell, never on Vercel. Set every one of them in the **Production** scope only.
 
 **Every environment change needs a redeploy** to take effect (section 5): editing a variable in the dashboard does not change a deployment that is already running.
