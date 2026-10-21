@@ -33,6 +33,7 @@ A data change needs no code change: edit `data/`, run `pnpm data:check`, open a 
 
 Details of the deploy job (`.github/workflows/ci.yml`, job `deploy`):
 
+- **Migrations are not part of it.** A schema change must be applied to the production database before the pull request that needs it is merged, because the merge deploys at once (section 9, "Migrations before the merge").
 - It runs only for a push to `main`, only after `verify` and `e2e` passed, and only when the repository variable `DEPLOY_ENABLED` is `true`. Until you set that variable the job is skipped (grey in the Actions list, not red) and nothing is deployed.
 - Once enabled, a first step checks that `VERCEL_TOKEN`, `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` are set and fails fast with a clear message if one is missing. In that case production is not updated.
 - The workflow has `permissions: contents: read`, checks out with `persist-credentials: false`, and runs one deploy at a time (`concurrency: deploy-production`, never cancelled midway).
@@ -330,19 +331,27 @@ Symptom: a student submits the sign-in form and the page shows "The link could n
 | `error` is a Drizzle or driver class with a `sqlState` (a Postgres SQLSTATE, for example `42P01`, "undefined table") | The database layer failed. Check `DATABASE_URL` (the Neon pooled string) and that the migrations ran on the production Neon branch: `DATABASE_URL_UNPOOLED=<production branch direct string> pnpm db:migrate` (never `drizzle-kit push`). No CI or deploy job runs migrations, so a schema change needs this before the deploy that depends on it (prelaunch checklist D8). Correct a variable if one changed, then redeploy. |
 | `[better-auth] unexpected error` with no matching `sign-in link request failed` line | The failure happened inside Better Auth before the action's own error. Retry once; if it repeats, read the whole runtime log around that line for a variable name, then follow the rows above. |
 
-### Migrations before the app (next deploy after 2026-10-21)
+**The Production-scope variables for accounts** (the complete list: prelaunch checklist D6): `BETTER_AUTH_URL`, `BETTER_AUTH_SECRET`, `DATABASE_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `BREVO_API_KEY`, `BREVO_SENDER`, and `ACCOUNTS_ENABLED` set to `true` to switch accounts on. `DATABASE_URL_UNPOOLED` is needed only where `pnpm db:migrate` runs from your shell, never on Vercel. Set every one of them in the **Production** scope only.
 
-The auth throttling branch adds two migrations: `0003_grey_iron_lad` (table `request_throttles`) and `0004_blank-user-profile` (blanks the stored Google names and picture addresses of existing accounts). Run them on the production Neon branch **before** the deploy that ships the code, never after:
+**Every environment change needs a redeploy** to take effect (section 5): editing a variable in the dashboard does not change a deployment that is already running.
+
+### Migrations before the merge (the auth throttling branch, 2026-10-21)
+
+A merge to `main` deploys on its own while `DEPLOY_ENABLED` is `true` (section 2), and no job runs migrations. The auth throttling branch adds two: `0003_grey_iron_lad` (table `request_throttles`) and `0004_blank-user-profile` (blanks the stored Google names and picture addresses of existing accounts). Apply both to the production Neon branch **before merging that pull request**, never after:
 
 ```bash
 DATABASE_URL_UNPOOLED=<production branch direct string> pnpm db:migrate
 ```
 
-If the app is deployed first, every auth path fails closed: Better Auth's request limiter and the sign-in action read `request_throttles`, so a missing table answers 500 (`[auth] request throttle failed` in the log, SQLSTATE `42P01`) on sign-in, the confirm page and deletion. Guest pages are unaffected. No CI or deploy job runs migrations (prelaunch checklist D8).
+The old code keeps working against the new schema (it ignores the new table), so migrating first is safe. If the code deploys first, every auth path fails closed: Better Auth's request limiter and the sign-in action read `request_throttles`, so a missing table answers 500 (`[auth] request throttle failed` in the log, SQLSTATE `42P01`) on sign-in, the confirm page and deletion. Guest pages are unaffected.
 
-**The Production-scope variables for accounts** (the complete list: prelaunch checklist D6): `BETTER_AUTH_URL`, `BETTER_AUTH_SECRET`, `DATABASE_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `BREVO_API_KEY`, `BREVO_SENDER`, and `ACCOUNTS_ENABLED` set to `true` to switch accounts on. `DATABASE_URL_UNPOOLED` is needed only where `pnpm db:migrate` runs from your shell, never on Vercel. Set every one of them in the **Production** scope only.
+After the deploy, in the Neon SQL editor, check that no account kept a Google name or picture:
 
-**Every environment change needs a redeploy** to take effect (section 5): editing a variable in the dashboard does not change a deployment that is already running.
+```sql
+select count(*) from "user" where name <> '' or image is not null;
+```
+
+The answer must be 0. If it is not, an account was created between the migration and the deploy by the old code: re-run `UPDATE "user" SET "name" = '', "image" = NULL WHERE "name" <> '' OR "image" IS NOT NULL;`.
 
 ## 10. First-deployment results and what is still unverified
 
