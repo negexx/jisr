@@ -24,7 +24,7 @@ Branch `fix/auth-rate-limit`, plan `docs/superpowers/plans/2026-10-21-auth-rate-
 - An absolute session cap (a product trade-off for shared computers).
 - A Vercel WAF rule or Cloudflare Turnstile against a many-address botnet.
 - The Brevo bounce-rate alert and the `auth_email_days.sent` alert at 200 (`docs/ops/limits-runbook.md`, section 8).
-- Whether the notice change needs a consent-version bump: not bumped here (the throttle is a legitimate interest, and no new data is collected from the student), so the owner should confirm.
+- Whether the notice change needs a consent-version bump: not bumped here (the throttle is a legitimate interest, and no new data is collected from the student), so the owner should confirm. Decided 2026-10-21: the owner bumped it to 2026-10-21.
 - Run `pnpm db:migrate` (`0003`, `0004`) on the production Neon branch before merging the pull request, because the merge deploys (`docs/ops/deploy.md`, section 9).
 
 ## Summary verdict
