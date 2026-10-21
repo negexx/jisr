@@ -50,6 +50,9 @@ documents:
         en:
           text: Diploma(s) and transcript(s) of grades
           status: draft
+        ar:
+          text: الدبلوم وكشف النقاط
+          status: draft
       translationRequired: null
     - slug: english-language-proficiency-test-certificate
       name:
@@ -59,6 +62,9 @@ documents:
         en:
           text: English language proficiency test certificate
           status: draft
+        ar:
+          text: شهادة الكفاءة في اللغة الإنجليزية
+          status: draft
       translationRequired: null
     - slug: curriculum-vitae
       name:
@@ -67,6 +73,9 @@ documents:
           status: draft
         en:
           text: Curriculum vitae / resume
+          status: draft
+        ar:
+          text: السيرة الذاتية (CV)
           status: draft
       translationRequired: null
   source: page-3
@@ -86,6 +95,9 @@ requirements:
           status: draft
         en:
           text: Check the exact deadlines for applicants with an international diploma, including the final 1 May deadline and language certificate deadlines.
+          status: draft
+        ar:
+          text: تحقق من المواعيد النهائية الدقيقة للمترشحين بشهادة دولية، بما في ذلك الموعد النهائي الأخير في 1 مايو ومواعيد شهادة اللغة.
           status: draft
 scholarships: []
 sources:

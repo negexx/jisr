@@ -50,6 +50,9 @@ documents:
         en:
           text: certified copy of the diploma
           status: draft
+        ar:
+          text: نسخة مصادق عليها من الدبلوم
+          status: draft
       translationRequired: null
     - slug: transcript-of-records
       name:
@@ -59,6 +62,9 @@ documents:
         en:
           text: certified copy of the transcript of records
           status: draft
+        ar:
+          text: نسخة مصادق عليها من كشف النقاط
+          status: draft
       translationRequired: null
     - slug: passport-copy
       name:
@@ -67,6 +73,9 @@ documents:
           status: draft
         en:
           text: copy of the passport
+          status: draft
+        ar:
+          text: نسخة من جواز السفر
           status: draft
       translationRequired: null
   source: programme
@@ -95,6 +104,9 @@ requirements:
         en:
           text: Your foreign diploma must be evaluated by Nuffic to confirm it is comparable to the required Dutch diploma (HAVO or MBO4).
           status: draft
+        ar:
+          text: يجب أن تقيّم Nuffic شهادتك الأجنبية للتحقق من أنها قابلة للمقارنة بالشهادة الهولندية المطلوبة (HAVO أو MBO4).
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -105,6 +117,9 @@ requirements:
           status: draft
         en:
           text: A HAVO or MBO4 diploma (or equivalent) is required. Applicants aged 21 or older without the right diploma may possibly take a 21+ admission test.
+          status: draft
+        ar:
+          text: تُشترط شهادة HAVO أو MBO4 (أو ما يعادلها). ويمكن للمترشحين البالغين 21 سنة أو أكثر دون شهادة مناسبة اجتياز اختبار قبول 21+.
           status: draft
 scholarships: []
 sources:

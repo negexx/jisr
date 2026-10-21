@@ -57,6 +57,9 @@ requirements:
         en:
           text: High school final exam certificate required, in English. A B2 English certificate is accepted but not mandatory.
           status: draft
+        ar:
+          text: شهادة إتمام التعليم الثانوي (high school final exam certificate) مطلوبة، بالإنكليزية. تُقبل شهادة إنكليزية بمستوى B2 لكنها ليست إلزامية.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -68,6 +71,9 @@ requirements:
         en:
           text: Online oral entrance examination, plus document evaluation (motivation letter, CV in English). Minimum score of 70 points to be admitted.
           status: draft
+        ar:
+          text: مباراة دخول شفهية عبر الإنترنت، مع تقييم الوثائق (رسالة دافع، CV بالإنكليزية). الحد الأدنى للنقاط 70 للقبول.
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -78,6 +84,9 @@ requirements:
           status: draft
         en:
           text: "Medical documents to submit: general medical certificate, HIV/AIDS, hepatitis B and C, chest X-ray results, hepatitis B vaccination card."
+          status: draft
+        ar:
+          text: "وثائق طبية يجب تقديمها: شهادة طبية عامة، نتائج HIV/AIDS، التهاب الكبد B و C، صورة شعاعية للصدر، بطاقة تلقيح التهاب الكبد B."
           status: draft
 scholarships: []
 sources:

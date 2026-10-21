@@ -57,6 +57,9 @@ requirements:
         en:
           text: Check the programme website and the admission call (bando) for entry requirements (admission test, basic knowledge) for this degree; the pages do not specify them.
           status: draft
+        ar:
+          text: تحقق على موقع المسار وفي إعلان القبول (bando) من شروط الولوج (اختبار قبول، معارف أساسية) لهذه الشهادة؛ فالصفحة لا توضحها.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -68,6 +71,9 @@ requirements:
         en:
           text: If you choose this programme taught in Italian, a B2 level of Italian is required; it must be shown with a CLIQ B2 certification or an Italian language test. Check the programme's teaching language.
           status: draft
+        ar:
+          text: إذا اخترت هذا المسار بالإيطالية، يُشترط مستوى B2 في الإيطالية؛ يُثبت بشهادة CLIQ (مستوى B2) أو باختبار إيطالية. تحقق من لغة تدريس المسار.
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -78,6 +84,9 @@ requirements:
           status: draft
         en:
           text: Non-EU students residing abroad must first pre-enrol on the Universitaly portal; pre-enrolment alone does not grant admission.
+          status: draft
+        ar:
+          text: على الطلبة من غير UE المقيمين بالخارج القيام أولًا بالتسجيل الأولي على بوابة Universitaly؛ وهذا التسجيل الأولي لا يمنح القبول بحد ذاته.
           status: draft
 scholarships: []
 sources:

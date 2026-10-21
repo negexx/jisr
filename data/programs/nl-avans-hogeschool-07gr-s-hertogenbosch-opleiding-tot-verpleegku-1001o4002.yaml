@@ -66,6 +66,9 @@ requirements:
         en:
           text: Check admission requirements for foreign diploma holders (Moroccan Baccalaureate) with the institution; the Dutch havo/vwo/mbo entry requirements do not apply directly.
           status: draft
+        ar:
+          text: "تحقق من شروط القبول للحاصلين على شهادات أجنبية (الباك المغربي) لدى المؤسسة: فالمتطلبات الهولندية (havo/vwo/mbo) لا تنطبق مباشرة."
+          status: draft
 scholarships: []
 sources:
   programme:

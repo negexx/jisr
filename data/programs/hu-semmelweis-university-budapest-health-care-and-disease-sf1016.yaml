@@ -57,6 +57,9 @@ requirements:
         en:
           text: An oral entrance examination is required; exams take place online via Zoom.
           status: draft
+        ar:
+          text: يُشترط امتحان دخول شفهي؛ وتُجرى الامتحانات عبر الإنترنت بواسطة Zoom.
+          status: draft
 scholarships: []
 sources:
   programme:

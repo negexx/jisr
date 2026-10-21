@@ -47,6 +47,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: medical-certificate
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: Medical certificate
+          status: draft
+        ar:
+          text: شهادة طبية
           status: draft
       translationRequired: null
     - slug: language-exam-certificate
@@ -65,6 +71,9 @@ documents:
         en:
           text: Language exam certificate
           status: draft
+        ar:
+          text: شهادة امتحان لغة
+          status: draft
       translationRequired: null
     - slug: motivation-letter
       name:
@@ -73,6 +82,9 @@ documents:
           status: draft
         en:
           text: Motivation letter
+          status: draft
+        ar:
+          text: رسالة تحفيزية
           status: draft
       translationRequired: null
   source: programme
@@ -92,6 +104,9 @@ requirements:
           status: draft
         en:
           text: An oral interview (Skype, min. 15 minutes) is required to verify language competencies; the mean of grades from Biology and one other subject is taken into account.
+          status: draft
+        ar:
+          text: تُشترط مقابلة شفهية (عبر Skype، 15 دقيقة على الأقل) للتحقق من الكفاءات اللغوية؛ ويُؤخذ في الحسبان معدل علامات مادة الأحياء ومادة أخرى.
           status: draft
 scholarships: []
 sources:

@@ -47,6 +47,9 @@ documents:
         en:
           text: Passport
           status: draft
+        ar:
+          text: جواز السفر
+          status: draft
       translationRequired: null
     - slug: high-school-diploma
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: High School Diploma
+          status: draft
+        ar:
+          text: شهادة الدراسة الثانوية
           status: draft
       translationRequired: null
     - slug: transcript-of-records
@@ -65,6 +71,9 @@ documents:
         en:
           text: Transcript of Records
           status: draft
+        ar:
+          text: كشف النقاط
+          status: draft
       translationRequired: null
     - slug: language-certificate
       name:
@@ -73,6 +82,9 @@ documents:
           status: draft
         en:
           text: Language Certificate
+          status: draft
+        ar:
+          text: شهادة في اللغة
           status: draft
       translationRequired: null
   source: page-1
@@ -97,6 +109,9 @@ requirements:
           status: draft
         en:
           text: An admission test is required for this programme.
+          status: draft
+        ar:
+          text: يُشترط اختبار قبول لهذا البرنامج.
           status: draft
 scholarships: []
 sources:

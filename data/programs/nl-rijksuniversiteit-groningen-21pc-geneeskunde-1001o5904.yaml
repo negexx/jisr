@@ -81,6 +81,9 @@ requirements:
         en:
           text: "Check the selection procedure: the programme has a numerus fixus of 400 places; see https://www.rug.nl/umcg/education/geneeskunde/selectie/"
           status: draft
+        ar:
+          text: "تحقق من إجراءات الاختيار: للبرنامج numerus fixus بسعة 400 مقعد؛ راجع https://www.rug.nl/umcg/education/geneeskunde/selectie/"
+          status: draft
 scholarships: []
 sources:
   programme:

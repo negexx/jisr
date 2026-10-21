@@ -57,6 +57,9 @@ requirements:
         en:
           text: A compulsory entrance interview is required (oral, online or in person), assessing English, motivation and communication skills.
           status: draft
+        ar:
+          text: تُشترط مقابلة قبول إلزامية (شفهية، عبر الإنترنت أو حضوريًا) لتقييم الإنكليزية والدافع والتواصل.
+          status: draft
 scholarships: []
 sources:
   programme:

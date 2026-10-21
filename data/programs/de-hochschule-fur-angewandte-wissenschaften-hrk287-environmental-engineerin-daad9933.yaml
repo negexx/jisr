@@ -56,6 +56,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: كشف نقاط / شهادة إتمام التعليم الثانوي
+          status: draft
       translationRequired: null
     - slug: id-passport
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: Copy of your ID or passport
+          status: draft
+        ar:
+          text: نسخة من بطاقة الهوية أو جواز السفر
           status: draft
       translationRequired: null
   source: page-2

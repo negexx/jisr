@@ -60,6 +60,9 @@ requirements:
         en:
           text: An oral entrance examination is required (online via Zoom, from February to mid-August). Prepare using the recommended subjects and books.
           status: draft
+        ar:
+          text: امتحان دخول شفهي إلزامي (عبر الإنترنت بواسطة Zoom، من فبراير إلى منتصف أغسطس). استعد بالمواد والكتب الموصى بها.
+          status: draft
 scholarships: []
 sources:
   programme:

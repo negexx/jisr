@@ -52,6 +52,9 @@ documents:
         en:
           text: Passport
           status: draft
+        ar:
+          text: جواز السفر
+          status: draft
       translationRequired: null
   source: page-1
   info_kind: official
@@ -70,6 +73,9 @@ requirements:
           status: draft
         en:
           text: Check whether a Moroccan Baccalauréat is recognised as equivalent to the required Dutch diploma (hbo level); an evaluation may be needed.
+          status: draft
+        ar:
+          text: تحقق مما إذا كانت الشهادة المغربية (الباكالوريا) معترفًا بها كمعادلة للشهادة الهولندية المطلوبة (مستوى hbo)؛ وقد يلزم تقييم.
           status: draft
 scholarships: []
 sources:

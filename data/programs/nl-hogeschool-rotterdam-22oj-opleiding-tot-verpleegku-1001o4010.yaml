@@ -47,6 +47,9 @@ documents:
         en:
           text: Passport
           status: draft
+        ar:
+          text: جواز السفر
+          status: draft
       translationRequired: null
   source: page-1
   info_kind: official

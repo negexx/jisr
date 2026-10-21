@@ -50,6 +50,9 @@ documents:
         en:
           text: final transcript
           status: draft
+        ar:
+          text: كشف النقاط النهائي
+          status: draft
       translationRequired: null
     - slug: identity-document
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: identity document
+          status: draft
+        ar:
+          text: وثيقة هوية
           status: draft
       translationRequired: null
   source: page-3

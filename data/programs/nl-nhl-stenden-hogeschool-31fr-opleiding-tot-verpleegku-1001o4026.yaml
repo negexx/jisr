@@ -56,6 +56,9 @@ requirements:
         en:
           text: Check whether you hold a required diploma/profile for admission, as the application page requires checking the admission requirements.
           status: draft
+        ar:
+          text: تحقق مما إذا كنت تحمل شهادة/مستوى مطلوبًا للقبول، لأن صفحة الترشح تشترط التحقق من شروط القبول.
+          status: draft
 scholarships: []
 sources:
   programme:

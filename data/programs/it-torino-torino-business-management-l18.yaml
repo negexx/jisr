@@ -53,6 +53,9 @@ documents:
         en:
           text: Valid passport
           status: draft
+        ar:
+          text: جواز سفر صالح
+          status: draft
       translationRequired: null
     - slug: upper-secondary-study-qualification
       name:
@@ -61,6 +64,9 @@ documents:
           status: draft
         en:
           text: Upper secondary study qualification
+          status: draft
+        ar:
+          text: شهادة التعليم الثانوي العالي
           status: draft
       translationRequired: null
   source: page-4

@@ -57,6 +57,9 @@ requirements:
         en:
           text: Check admission requirements for foreign-diploma holders (equivalence with Dutch HAVO/VWO/MBO level 4) with the institution.
           status: draft
+        ar:
+          text: تحقق من شروط القبول لحاملي شهادة أجنبية (معادلة مع HAVO/VWO/MBO المستوى 4) لدى المؤسسة.
+          status: draft
 scholarships: []
 sources:
   programme:

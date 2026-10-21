@@ -47,6 +47,9 @@ documents:
         en:
           text: Valid passport or European identity card
           status: draft
+        ar:
+          text: جواز سفر ساري أو بطاقة هوية أوروبية
+          status: draft
       translationRequired: null
     - slug: diploma
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: Diploma
+          status: draft
+        ar:
+          text: الدبلوم
           status: draft
       translationRequired: null
   source: page-1
@@ -74,6 +80,9 @@ requirements:
           status: draft
         en:
           text: "Check your eligibility with your Moroccan diploma: additional conditions may apply; see the admission page and contact the university."
+          status: draft
+        ar:
+          text: "تحقق من أهليتك بشهادتك المغربية: قد تنطبق شروط إضافية؛ راجع صفحة القبول وتواصل مع الجامعة."
           status: draft
 scholarships: []
 sources:

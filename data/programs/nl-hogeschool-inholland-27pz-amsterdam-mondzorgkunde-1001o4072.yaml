@@ -60,6 +60,9 @@ requirements:
         en:
           text: English is not your first language? Prove your English proficiency (IELTS 6.0, TOEFL 80, Cambridge CAE/CPE/FCE) for an English-taught programme.
           status: draft
+        ar:
+          text: إن لم تكن الإنكليزية لغتك الأم؟ أثبت مستواك في الإنكليزية (IELTS 6.0، TOEFL 80، Cambridge CAE/CPE/FCE) إذا ترشحت لتكوين بالإنكليزية.
+          status: draft
     - id: req-2
       source: page-3
       info_kind: official
@@ -70,6 +73,9 @@ requirements:
           status: draft
         en:
           text: A foreign diploma must be validated by the Centrale Studentenadministratie (CSA) to check equivalence with a Dutch diploma.
+          status: draft
+        ar:
+          text: يجب أن تُصادق الإدارة المركزية لشؤون الطلبة (CSA) على الشهادة الأجنبية للتحقق من معادلتها لشهادة هولندية.
           status: draft
 scholarships: []
 sources:

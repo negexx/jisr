@@ -47,6 +47,9 @@ documents:
         en:
           text: Pre-registration form
           status: draft
+        ar:
+          text: ملف التسجيل الأولي
+          status: draft
       translationRequired: null
     - slug: validation-des-acquis-form
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: Validation of prior learning form
+          status: draft
+        ar:
+          text: ملف المصادقة على المكتسبات
           status: draft
       translationRequired: null
   source: page-1

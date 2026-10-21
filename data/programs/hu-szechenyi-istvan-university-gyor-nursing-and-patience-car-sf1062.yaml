@@ -57,6 +57,9 @@ requirements:
         en:
           text: An interview may be requested if the admission test is borderline. Check with the university.
           status: draft
+        ar:
+          text: قد تُطلب مقابلة إذا كان اختبار القبول على الحد. تحقق لدى الجامعة.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: A written entrance examination is required. Contact the university for details.
+          status: draft
+        ar:
+          text: يُشترط امتحان دخول كتابي. تواصل مع الجامعة للتفاصيل.
           status: draft
 scholarships: []
 sources:

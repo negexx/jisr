@@ -50,6 +50,9 @@ documents:
         en:
           text: Application form
           status: draft
+        ar:
+          text: استمارة التقديم
+          status: draft
       translationRequired: null
     - slug: school-leaving-certificate
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: School-leaving certificate
+          status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
           status: draft
       translationRequired: true
     - slug: transcripts
@@ -68,6 +74,9 @@ documents:
         en:
           text: Transcripts
           status: draft
+        ar:
+          text: كشوف النقاط
+          status: draft
       translationRequired: null
     - slug: passport
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Passport
+          status: draft
+        ar:
+          text: جواز السفر
           status: draft
       translationRequired: null
     - slug: cv
@@ -86,6 +98,9 @@ documents:
         en:
           text: CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV)
+          status: draft
       translationRequired: null
     - slug: medical-certificate
       name:
@@ -95,6 +110,9 @@ documents:
         en:
           text: Medical Certificate
           status: draft
+        ar:
+          text: شهادة طبية
+          status: draft
       translationRequired: null
     - slug: bank-receipt
       name:
@@ -103,6 +121,9 @@ documents:
           status: draft
         en:
           text: Bank receipt
+          status: draft
+        ar:
+          text: إيصال بنكي
           status: draft
       translationRequired: null
   source: page-3

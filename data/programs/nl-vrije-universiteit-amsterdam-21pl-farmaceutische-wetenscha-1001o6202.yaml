@@ -57,6 +57,9 @@ requirements:
         en:
           text: This programme applies a strict 1 May deadline; non-EU applicants must register by 1 April.
           status: draft
+        ar:
+          text: يطبّق هذا المسار موعدًا نهائيًا صارمًا في 1 مايو؛ وعلى المترشحين من غير UE التسجيل في موعد أقصاه 1 أبريل.
+          status: draft
 scholarships: []
 sources:
   programme:

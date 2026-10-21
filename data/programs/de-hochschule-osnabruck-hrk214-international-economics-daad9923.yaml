@@ -57,6 +57,9 @@ documents:
         en:
           text: Secondary school diploma or university degree recognised for admission
           status: draft
+        ar:
+          text: شهادة التعليم الثانوي أو شهادة جامعية معترف بها للقبول
+          status: draft
       translationRequired: null
     - slug: german-language-certificate
       name:
@@ -65,6 +68,9 @@ documents:
           status: draft
         en:
           text: German language certificate (C1)
+          status: draft
+        ar:
+          text: شهادة لغة ألمانية (C1)
           status: draft
       translationRequired: null
   source: daad

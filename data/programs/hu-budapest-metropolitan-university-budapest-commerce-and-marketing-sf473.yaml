@@ -50,6 +50,9 @@ documents:
         en:
           text: High school / secondary education certificate
           status: draft
+        ar:
+          text: شهادة الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: page-2
   info_kind: official

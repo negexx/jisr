@@ -50,6 +50,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: page-2
   info_kind: official
@@ -77,6 +80,9 @@ requirements:
         en:
           text: A foreign diploma must be assessed as equivalent to a Dutch havo, vwo or mbo-4 diploma by Saxion Studentregistratie.
           status: draft
+        ar:
+          text: يجب أن تعتبر الشهادة الأجنبية معادلة لشهادة هولندية havo أو vwo أو mbo-4 من طرف مكتب تسجيل الطلبة في Saxion.
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -87,6 +93,9 @@ requirements:
           status: draft
         en:
           text: No application deadline for international applicants is stated on these pages; check with the Servicepoint.
+          status: draft
+        ar:
+          text: لا يُذكر في هذه الصفحات أي موعد نهائي للتسجيل للمترشحين الدوليين؛ تحقق لدى Servicepoint.
           status: draft
 scholarships: []
 sources:

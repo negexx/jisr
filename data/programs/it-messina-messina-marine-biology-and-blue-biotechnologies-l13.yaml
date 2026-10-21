@@ -56,6 +56,9 @@ requirements:
         en:
           text: If your secondary school diploma was obtained in fewer than 12 years, provide a university certificate of completion of the first year or a Foundation Programme.
           status: draft
+        ar:
+          text: إذا حصلت على شهادة إتمام التعليم الثانوي في أقل من 12 سنة، فتقدّم بشهادة جامعية لإتمام السنة الأولى أو برنامج Foundation Programme.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -66,6 +69,9 @@ requirements:
           status: draft
         en:
           text: Provide the documents in English or with an official translation into Italian.
+          status: draft
+        ar:
+          text: قدّم الوثائق بالإنكليزية أو مرفقة بترجمة رسمية إلى الإيطالية.
           status: draft
 scholarships: []
 sources:

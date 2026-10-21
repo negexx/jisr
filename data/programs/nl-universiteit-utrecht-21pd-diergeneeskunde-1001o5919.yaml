@@ -60,6 +60,9 @@ requirements:
         en:
           text: Check the official website to see if entrance exams or an interview are required for non-EU applicants.
           status: draft
+        ar:
+          text: تحقق على الموقع الرسمي مما إذا كانت تُشترط امتحانات قبول أو مقابلة لغير EU.
+          status: draft
 scholarships: []
 sources:
   programme:

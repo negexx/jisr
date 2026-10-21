@@ -77,6 +77,9 @@ requirements:
         en:
           text: Check whether your Moroccan Baccalauréat is recognised as a HZB (university entrance qualification) for German universities.
           status: draft
+        ar:
+          text: تحقق مما إذا كانت باكالوريتك المغربية معترفًا بها كـ HZB (مؤهل ولوج إلى التعليم العالي) للجامعات الألمانية.
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -87,6 +90,9 @@ requirements:
           status: draft
         en:
           text: A minimum eight-week industrial internship must be completed before the beginning of the fourth semester.
+          status: draft
+        ar:
+          text: يجب إتمام تدريب صناعي لا يقل عن ثمانية أسابيع قبل بداية الفصل الرابع.
           status: draft
 scholarships: []
 sources:

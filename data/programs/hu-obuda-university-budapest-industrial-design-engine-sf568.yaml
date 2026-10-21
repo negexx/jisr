@@ -47,6 +47,9 @@ documents:
         en:
           text: Matriculation / School Leaving Certificate
           status: draft
+        ar:
+          text: شهادة إتمام التعليم الثانوي / Matriculation
+          status: draft
       translationRequired: null
   source: page-1
   info_kind: official

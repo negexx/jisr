@@ -69,6 +69,9 @@ requirements:
         en:
           text: "This programme has restricted access: check the admission call (entrance test) in the Course Catalogue."
           status: draft
+        ar:
+          text: "هذا البرنامج ذو ولوج مقيّد: تحقق من إعلان القبول (bando) (اختبار الدخول) في دليل المقررات."
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -80,6 +83,9 @@ requirements:
         en:
           text: Online pre-selection on MoveIN required if indicated in the programme's admission requirements.
           status: draft
+        ar:
+          text: انتقاء أولي عبر الإنترنت على MoveIN مطلوب إذا أُشير إليه في متطلبات قبول البرنامج.
+          status: draft
     - id: req-4
       source: page-2
       info_kind: official
@@ -90,6 +96,9 @@ requirements:
           status: draft
         en:
           text: A quota of places is reserved for non-EU students residing abroad in restricted access programmes.
+          status: draft
+        ar:
+          text: تُخصَّص حصة من المقاعد للطلبة من غير UE المقيمين بالخارج في البرامج ذات الولوج المقيّد.
           status: draft
 scholarships: []
 sources:

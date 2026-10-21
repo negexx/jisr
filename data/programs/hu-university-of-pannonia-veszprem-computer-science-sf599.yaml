@@ -50,6 +50,9 @@ documents:
         en:
           text: Application form
           status: draft
+        ar:
+          text: استمارة التقديم
+          status: draft
       translationRequired: null
     - slug: secondary-school-certificate
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: Officially certified copy of secondary school certificate
+          status: draft
+        ar:
+          text: نسخة مصادق عليها مطابقة لشهادة التعليم الثانوي
           status: draft
       translationRequired: null
     - slug: transcript-of-records
@@ -68,6 +74,9 @@ documents:
         en:
           text: Officially certified copy of the transcript of records
           status: draft
+        ar:
+          text: نسخة مصادق عليها مطابقة لكشف النقاط
+          status: draft
       translationRequired: null
     - slug: english-language-certificate
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Certificate of English language proficiency
+          status: draft
+        ar:
+          text: شهادة الكفاءة في اللغة الإنجليزية
           status: draft
       translationRequired: null
     - slug: passport
@@ -86,6 +98,9 @@ documents:
         en:
           text: Copy of valid passport
           status: draft
+        ar:
+          text: نسخة من جواز سفر ساري المفعول
+          status: draft
       translationRequired: null
     - slug: cv
       name:
@@ -95,6 +110,9 @@ documents:
         en:
           text: CV in English
           status: draft
+        ar:
+          text: السيرة الذاتية (CV) بالإنجليزية
+          status: draft
       translationRequired: null
     - slug: bank-transfer-verification
       name:
@@ -103,6 +121,9 @@ documents:
           status: draft
         en:
           text: Verification of the bank transfer of the registration fee
+          status: draft
+        ar:
+          text: إثبات التحويل البنكي لرسوم التسجيل
           status: draft
       translationRequired: null
   source: page-2

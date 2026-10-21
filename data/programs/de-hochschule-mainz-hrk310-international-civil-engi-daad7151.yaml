@@ -57,6 +57,9 @@ documents:
         en:
           text: Reports and documents from secondary school
           status: draft
+        ar:
+          text: كشوف نقاط ووثائق التعليم الثانوي
+          status: draft
       translationRequired: null
     - slug: passport-copy
       name:
@@ -65,6 +68,9 @@ documents:
           status: draft
         en:
           text: Certified copy of a valid passport
+          status: draft
+        ar:
+          text: نسخة مصادق عليها من جواز السفر
           status: draft
       translationRequired: null
     - slug: german-language-certificate
@@ -75,6 +81,9 @@ documents:
         en:
           text: Certificate of German language proficiency
           status: draft
+        ar:
+          text: شهادة كفاءة في اللغة الألمانية
+          status: draft
       translationRequired: null
     - slug: bank-transfer-receipt
       name:
@@ -83,6 +92,9 @@ documents:
           status: draft
         en:
           text: Copy of bank transfer
+          status: draft
+        ar:
+          text: نسخة من التحويل البنكي
           status: draft
       translationRequired: null
   source: page-3

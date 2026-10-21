@@ -13,6 +13,9 @@ summary:
   en:
     text: "French government scholarship (AEFE and the Ministry for Europe and Foreign Affairs) for the best non-French leavers of a French school abroad: five years of higher education in France, including the first cycle (preparatory classes, licence). Amounts (a monthly allowance depending on family circumstances, travel, housing) are on the official page."
     status: draft
+  ar:
+    text: "منحة الحكومة الفرنسية (AEFE ووزارة أوروبا والشؤون الخارجية) لأفضل الحاصلين على الباكالوريا من غير الفرنسيين في ثانوية فرنسية بالخارج: خمس سنوات من التعليم العالي في فرنسا، بما في ذلك المرحلة الأولى (أقسام تحضيرية، إجازة). المبالغ (منحة شهرية حسب الوضع العائلي، السفر، السكن) على الصفحة الرسمية."
+    status: draft
 support:
   value: null
   source: page-1
@@ -36,6 +39,9 @@ howToApply:
     status: draft
   en:
     text: The terminale student is shortlisted by the head of the French school abroad, then submits the application on the dedicated platform; the AEFE and the French embassy review it (see the AEFE page for the year's campaign).
+    status: draft
+  ar:
+    text: يُرشّح مدير الثانوية الفرنسية بالخارج طالب السنة النهائية ضمن قائمة أولية، ثم يُدخل ملفه عبر المنصة المخصصة؛ وتدرس AEFE وسفارة فرنسا الطلب (انظر صفحة AEFE لحملة السنة).
     status: draft
 officialUrl: https://aefe.gouv.fr/fr/enseignement-francais/poursuite-des-etudes-dans-le-superieur/devenir-boursier-france-excellence-major
 sources:

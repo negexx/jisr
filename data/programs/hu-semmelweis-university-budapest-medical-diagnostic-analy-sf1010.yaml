@@ -50,6 +50,9 @@ documents:
         en:
           text: Secondary School Leaving Certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: english-language-certificate
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: English language certificate
+          status: draft
+        ar:
+          text: شهادة في اللغة الإنجليزية
           status: draft
       translationRequired: null
     - slug: medical-report
@@ -68,6 +74,9 @@ documents:
         en:
           text: Medical report
           status: draft
+        ar:
+          text: تقرير طبي
+          status: draft
       translationRequired: null
     - slug: photograph
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Photograph
+          status: draft
+        ar:
+          text: صورة شمسية
           status: draft
       translationRequired: null
     - slug: passport-id-copy
@@ -86,6 +98,9 @@ documents:
         en:
           text: Copy of Passport/ID card
           status: draft
+        ar:
+          text: نسخة من جواز السفر / بطاقة الهوية
+          status: draft
       translationRequired: null
     - slug: payment-certificate
       name:
@@ -94,6 +109,9 @@ documents:
           status: draft
         en:
           text: Payment Certificate
+          status: draft
+        ar:
+          text: شهادة دفع
           status: draft
       translationRequired: null
   source: programme
@@ -114,6 +132,9 @@ requirements:
         en:
           text: An oral entrance examination is required.
           status: draft
+        ar:
+          text: يُشترط اجتياز امتحان دخول شفهي.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -124,6 +145,9 @@ requirements:
           status: draft
         en:
           text: A secondary school leaving certificate is required.
+          status: draft
+        ar:
+          text: تُشترط شهادة إتمام التعليم الثانوي.
           status: draft
 scholarships: []
 sources:

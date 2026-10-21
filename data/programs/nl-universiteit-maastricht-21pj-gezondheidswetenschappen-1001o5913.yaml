@@ -62,6 +62,9 @@ requirements:
         en:
           text: Check the admission requirements for foreign diploma holders (Moroccan Baccalaureate) on the programme's 'Toelatingseisen' page.
           status: draft
+        ar:
+          text: تحقق من شروط القبول للحاصلين على شهادات أجنبية (الباكالوريا المغربية) على صفحة 'Toelatingseisen' للبرنامج.
+          status: draft
 scholarships: []
 sources:
   programme:

@@ -50,6 +50,9 @@ documents:
         en:
           text: Finished secondary school studies
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: programme
   info_kind: official

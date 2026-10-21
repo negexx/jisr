@@ -57,6 +57,9 @@ requirements:
         en:
           text: "Selection for Geneeskunde: check the selection criteria and procedure on the 'selectie' page."
           status: draft
+        ar:
+          text: "الاختيار في Geneeskunde: راجع معايير الاختيار وطرقه على صفحة 'selectie'."
+          status: draft
 scholarships: []
 sources:
   programme:

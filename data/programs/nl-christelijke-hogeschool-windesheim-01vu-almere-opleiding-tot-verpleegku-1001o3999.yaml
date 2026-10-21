@@ -56,6 +56,9 @@ requirements:
         en:
           text: Check language requirements for international diplomas (required Dutch or English level).
           status: draft
+        ar:
+          text: تحقق من المتطلبات اللغوية للشهادات الأجنبية (مستوى الهولندية أو الإنكليزية المطلوب).
+          status: draft
 scholarships: []
 sources:
   programme:

@@ -53,6 +53,9 @@ documents:
         en:
           text: Higher education entrance qualification
           status: draft
+        ar:
+          text: شهادة الولوج إلى التعليم العالي
+          status: draft
       translationRequired: null
   source: daad
   info_kind: official

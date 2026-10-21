@@ -49,6 +49,9 @@ documents:
         en:
           text: ID, passport or residence permit
           status: draft
+        ar:
+          text: بطاقة التعريف أو جواز السفر أو تصريح الإقامة
+          status: draft
       translationRequired: null
     - slug: grade-transcripts
       name:
@@ -58,6 +61,9 @@ documents:
         en:
           text: Grade transcripts of the current year and at least 2 previous years
           status: draft
+        ar:
+          text: كشوف العلامات للسنتين الأخيرتين وللسنة الجارية
+          status: draft
       translationRequired: null
     - slug: language-proficiency-certificate
       name:
@@ -66,6 +72,9 @@ documents:
           status: draft
         en:
           text: English or Dutch language proficiency certificate
+          status: draft
+        ar:
+          text: شهادة الكفاءة اللغوية في الإنجليزية أو الهولندية
           status: draft
       translationRequired: null
   source: page-3

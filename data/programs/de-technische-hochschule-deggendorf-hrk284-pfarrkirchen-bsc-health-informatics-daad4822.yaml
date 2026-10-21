@@ -50,6 +50,9 @@ documents:
         en:
           text: University entrance qualification (school-leaving certificate)
           status: draft
+        ar:
+          text: شهادة إتمام التعليم الثانوي (مؤهل الولوج إلى الجامعة)
+          status: draft
       translationRequired: null
     - slug: identity-card
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: Copy of identity card
+          status: draft
+        ar:
+          text: نسخة من بطاقة الهوية
           status: draft
       translationRequired: null
     - slug: curriculum-vitae
@@ -68,6 +74,9 @@ documents:
         en:
           text: Curriculum vitae
           status: draft
+        ar:
+          text: السيرة الذاتية
+          status: draft
       translationRequired: null
     - slug: language-proficiency-proof
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Proof of language proficiency
+          status: draft
+        ar:
+          text: إثبات الكفاءة اللغوية
           status: draft
       translationRequired: null
   source: page-3

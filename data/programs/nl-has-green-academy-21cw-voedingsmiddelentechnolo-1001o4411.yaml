@@ -65,6 +65,9 @@ requirements:
         en:
           text: For international diploma holders, the International Office handles applications from students with a non-Dutch prior education. Contact international@has.nl.
           status: draft
+        ar:
+          text: بالنسبة للحاصلين على شهادات دولية، يتولى المكتب الدولي معالجة طلبات الطلبة الحاصلين على شهادة غير هولندية. تواصل عبر international@has.nl.
+          status: draft
 scholarships: []
 sources:
   programme:

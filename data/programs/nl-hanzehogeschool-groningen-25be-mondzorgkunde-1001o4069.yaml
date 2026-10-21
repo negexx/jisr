@@ -63,6 +63,9 @@ requirements:
         en:
           text: "Check recognition of your Moroccan diploma: it must be equivalent to Dutch havo/vwo (with the required subject clusters) or mbo level 4. See the 'foreign diploma' page."
           status: draft
+        ar:
+          text: "تحقق من الاعتراف بشهادتك المغربية: يجب أن تعادل havo/vwo (بالملفات المطلوبة) أو mbo-4. راجع صفحة 'buitenlands diploma'."
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -73,6 +76,9 @@ requirements:
           status: draft
         en:
           text: Selection (numerus fixus) requires applying before 15 January via Studielink and taking part in the selection procedure.
+          status: draft
+        ar:
+          text: يفرض الاختيار (numerus fixus) التسجيل قبل 15 يناير عبر Studielink والمشاركة في إجراءات الاختيار.
           status: draft
 scholarships: []
 sources:

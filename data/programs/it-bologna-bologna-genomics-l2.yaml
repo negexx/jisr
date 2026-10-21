@@ -47,6 +47,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: page-2
   info_kind: official
@@ -70,6 +73,9 @@ requirements:
           status: draft
         en:
           text: "Restricted access with TOLC-I EN entrance exam and 60 places available: check the selection methods and dates."
+          status: draft
+        ar:
+          text: "ولوج مقيّد مع امتحان دخول TOLC-I EN و60 مقعدًا متاحًا: تحقق من طرق الاختيار ومواعيده."
           status: draft
 scholarships: []
 sources:

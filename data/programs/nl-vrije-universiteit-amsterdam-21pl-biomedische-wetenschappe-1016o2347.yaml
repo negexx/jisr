@@ -57,6 +57,9 @@ requirements:
         en:
           text: Check admission requirements for foreign diploma holders (Moroccan diploma) with the programme.
           status: draft
+        ar:
+          text: تحقق من شروط القبول للحاصلين على شهادات أجنبية (شهادة مغربية) لدى البرنامج.
+          status: draft
 scholarships: []
 sources:
   programme:

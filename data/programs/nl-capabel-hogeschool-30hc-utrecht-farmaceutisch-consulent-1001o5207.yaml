@@ -65,6 +65,9 @@ requirements:
         en:
           text: An MBO-4 Apothekersassistent diploma is required for this shortened programme.
           status: draft
+        ar:
+          text: تُشترط شهادة MBO-4 في مساعد الصيدلة لهذا التكوين المختصر.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -75,6 +78,9 @@ requirements:
           status: draft
         en:
           text: At least 2 years of work experience as a pharmacy assistant after graduation is required.
+          status: draft
+        ar:
+          text: يشترط خبرة مهنية لا تقل عن 2 سنة كمساعد صيدلي بعد التخرج.
           status: draft
 scholarships: []
 sources:

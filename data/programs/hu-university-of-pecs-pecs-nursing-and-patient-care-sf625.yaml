@@ -50,6 +50,9 @@ documents:
         en:
           text: Secondary School leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: true
     - slug: transcript-of-academic-records
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: Transcript of academic records
+          status: draft
+        ar:
+          text: كشف النقاط
           status: draft
       translationRequired: null
     - slug: english-language-proficiency-certificate
@@ -68,6 +74,9 @@ documents:
         en:
           text: English language proficiency certificate
           status: draft
+        ar:
+          text: شهادة الكفاءة في اللغة الإنجليزية
+          status: draft
       translationRequired: null
     - slug: cv
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: CV
+          status: draft
+        ar:
+          text: السيرة الذاتية (CV)
           status: draft
       translationRequired: null
     - slug: motivation-letter
@@ -86,6 +98,9 @@ documents:
         en:
           text: Motivation letter
           status: draft
+        ar:
+          text: رسالة تحفيزية
+          status: draft
       translationRequired: null
     - slug: passport-copy
       name:
@@ -95,6 +110,9 @@ documents:
         en:
           text: Copy of passport
           status: draft
+        ar:
+          text: نسخة من جواز السفر
+          status: draft
       translationRequired: null
     - slug: medical-documents
       name:
@@ -103,6 +121,9 @@ documents:
           status: draft
         en:
           text: Medical documents
+          status: draft
+        ar:
+          text: وثائق طبية
           status: draft
       translationRequired: null
   source: programme
@@ -131,6 +152,9 @@ requirements:
         en:
           text: A min 15 minute long Skype interview, based on a certain protocol, to ascertain your competencies in the language
           status: draft
+        ar:
+          text: مقابلة عبر Skype لا تقل عن 15 دقيقة، وفق بروتوكول معين، للتحقق من كفاءاتك اللغوية.
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -141,6 +165,9 @@ requirements:
           status: draft
         en:
           text: "Online oral entrance examination: the mean of grades from Biology and one other subject chosen by the student counts in the average of the high school grades."
+          status: draft
+        ar:
+          text: "امتحان دخول شفهي عبر الإنترنت: يُحتسب متوسط علامات مادة الأحياء ومادة أخرى مختارة ضمن معدل علامات الثانوية."
           status: draft
     - id: req-4
       source: programme
@@ -153,6 +180,9 @@ requirements:
         en:
           text: An application fee (EUR 200) and registration fee (EUR 100) are required and must be paid so the evaluation of your application can start.
           status: draft
+        ar:
+          text: تُطلب رسوم ترشّح (200 EUR) ورسوم ملف (100 EUR) ويجب دفعها ليبدأ تقييم ملفك.
+          status: draft
     - id: req-5
       source: page-3
       info_kind: official
@@ -164,6 +194,9 @@ requirements:
         en:
           text: Your application is evaluated after the application fee is received; if you pass the entrance exam/Skype interview, you receive a Conditional Acceptance Letter.
           status: draft
+        ar:
+          text: يُقيَّم طلبك بعد استلام رسوم الترشح؛ وإذا نجحت في المقابلة/الامتحان، تتلقى رسالة قبول مشروط.
+          status: draft
     - id: req-6
       source: page-3
       info_kind: official
@@ -174,6 +207,9 @@ requirements:
           status: draft
         en:
           text: After the tuition fee is received, the Letter of Admission is issued and you can start arranging your travel to Pécs.
+          status: draft
+        ar:
+          text: بعد استلام رسوم الدراسة، تُسلَّم رسالة القبول ويمكنك تنظيم سفرك إلى Pécs.
           status: draft
 scholarships: []
 sources:

@@ -71,6 +71,9 @@ requirements:
         en:
           text: A HAVO, VWO or MBO 4 diploma is required; if you do not have one but are 21 or older, a 21+ admission test is possible.
           status: draft
+        ar:
+          text: تُشترط شهادة HAVO أو VWO أو MBO 4؛ إن لم تكن حاصلًا عليها لكن عمرك 21 سنة أو أكثر، يمكنك اجتياز اختبار قبول 21+.
+          status: draft
 scholarships: []
 sources:
   programme:

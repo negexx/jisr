@@ -53,6 +53,9 @@ documents:
         en:
           text: Secondary school diploma
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: passport
       name:
@@ -61,6 +64,9 @@ documents:
           status: draft
         en:
           text: Passport
+          status: draft
+        ar:
+          text: جواز السفر
           status: draft
       translationRequired: null
     - slug: language-certificate
@@ -71,6 +77,9 @@ documents:
         en:
           text: English and/or Italian language certificate
           status: draft
+        ar:
+          text: شهادة لغة إنكليزية و/أو إيطالية
+          status: draft
       translationRequired: null
     - slug: statement-of-validity
       name:
@@ -79,6 +88,9 @@ documents:
           status: draft
         en:
           text: Dichiarazione di valore (Statement of Validity) of the high school diploma
+          status: draft
+        ar:
+          text: بيان القيمة لشهادة التعليم الثانوي
           status: draft
       translationRequired: null
   source: page-6

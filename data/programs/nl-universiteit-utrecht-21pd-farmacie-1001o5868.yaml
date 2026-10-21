@@ -66,6 +66,9 @@ requirements:
         en:
           text: Check whether your foreign diploma is considered equivalent to a Dutch VWO diploma; International Student Admissions determines this.
           status: draft
+        ar:
+          text: تحقق مما إذا كانت شهادتك الأجنبية معتبرة معادلة لـ VWO الهولندي؛ فجهة International Student Admissions هي التي تحدد ذلك.
+          status: draft
     - id: req-2
       source: page-3
       info_kind: official

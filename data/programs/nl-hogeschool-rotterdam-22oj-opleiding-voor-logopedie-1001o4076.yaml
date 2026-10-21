@@ -62,6 +62,9 @@ requirements:
         en:
           text: Study the admission conditions on the programme's Toelatingsvoorwaarden page and check the requirements for your Moroccan diploma.
           status: draft
+        ar:
+          text: ادرس شروط القبول على صفحة Toelatingsvoorwaarden للتكوين، وتحقق من المتطلبات الخاصة بشهادتك المغربية.
+          status: draft
 scholarships: []
 sources:
   programme:
