@@ -1256,7 +1256,7 @@
       "erased": "Jisrr's data has been erased from this device.",
       "signIn": "Sign in",
       "unavailable": "Accounts are not available at the moment. Nothing was deleted.",
-      "tryLater": "Too many deletion requests came from your network just now. Nothing was deleted. Wait a little and press the button again.",
+      "tryLater": "Too many deletion requests came from your network just now. Nothing was deleted. Wait a little and press the button again. If the link in your email has expired, ask for a new link from your account page.",
       "failed": "We could not confirm the deletion. Check your connection and try again."
     }
   },
@@ -1326,7 +1326,8 @@
       },
       "errors": {
         "failed": "The request did not go through. Nothing was deleted. Check your connection and try again.",
-        "unavailable": "Accounts are not available right now. Nothing was deleted."
+        "unavailable": "Accounts are not available right now. Nothing was deleted.",
+        "tryLater": "Too many deletion requests came from your network just now. Nothing was deleted. Wait a little and try again."
       }
     }
   },

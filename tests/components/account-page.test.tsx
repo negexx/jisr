@@ -307,6 +307,20 @@ describe("AccountPage deletion failures", () => {
     expect(screen.getByRole("button", { name: fr.accountPage.delete.button })).toBeTruthy();
   });
 
+  it("asks to wait and keeps the delete button when the hourly limit refuses", async () => {
+    mocks.deleteUser.mockResolvedValue({ data: null, error: { status: 429 } });
+    renderPage();
+    await userEvent
+      .setup()
+      .click(await screen.findByRole("button", { name: fr.accountPage.delete.button }));
+    expect((await screen.findByRole("alert")).textContent).toBe(
+      fr.accountPage.delete.errors.tryLater,
+    );
+    expect(fr.accountPage.delete.errors.tryLater).not.toBe(fr.accountPage.delete.errors.failed);
+    expect(screen.queryByRole("heading", { name: fr.accountPage.delete.sent.title })).toBeNull();
+    expect(screen.getByRole("button", { name: fr.accountPage.delete.button })).toBeTruthy();
+  });
+
   it("shows the sign-in prompt when the session is gone", async () => {
     mocks.deleteUser.mockResolvedValue({
       data: null,

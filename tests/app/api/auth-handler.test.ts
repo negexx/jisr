@@ -111,6 +111,11 @@ describe.each([
     else vi.stubEnv("ACCOUNTS_ENABLED", value);
   });
 
+  // The route handler answers before Better Auth, and so before its limiter, can touch the store.
+  afterEach(async () => {
+    expect(await count("request_throttles")).toBe(0);
+  });
+
   it("refuses a magic-link sign-in and writes no row and no email", async () => {
     const response = await route.POST(
       postRequest("/api/auth/sign-in/magic-link", { email: "new@example.com" }),

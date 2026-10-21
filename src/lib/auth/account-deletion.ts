@@ -9,7 +9,7 @@ import { clearSignInBrowser } from "./sign-in-browser";
 // The browser half of account deletion (todo 19). Zod-free, and the auth client is imported only
 // when a request is made, so a page that mounts these helpers loads it on click, not on render.
 
-export type DeletionRequestOutcome = "sent" | "signed-out" | "unavailable" | "failed";
+export type DeletionRequestOutcome = "sent" | "signed-out" | "unavailable" | "try-later" | "failed";
 export type DeletionConfirmOutcome =
   | "deleted"
   | "invalid-token"
@@ -20,18 +20,15 @@ export type DeletionConfirmOutcome =
 
 type AuthError = { status: number; code?: string } | null;
 
-function refusal(error: NonNullable<AuthError>): "signed-out" | "unavailable" | "failed" {
+// The email request and the token confirmation share one hourly bucket per network address, so on a
+// shared address (carrier-grade NAT) either can meet a full bucket: waiting fixes it.
+function refusal(
+  error: NonNullable<AuthError>,
+): "signed-out" | "unavailable" | "try-later" | "failed" {
   if (error.status === 401) return "signed-out";
   if (error.code === "ACCOUNTS_DISABLED") return "unavailable";
-  return "failed";
-}
-
-// The email request and the token confirmation share one hourly bucket per network address, so on a
-// shared address (carrier-grade NAT) a valid token can meet a full bucket: waiting fixes it.
-function confirmRefusal(error: NonNullable<AuthError>): DeletionConfirmOutcome {
-  if (error.code === "INVALID_TOKEN") return "invalid-token";
   if (error.status === 429) return "try-later";
-  return refusal(error);
+  return "failed";
 }
 
 /**
@@ -77,7 +74,7 @@ export async function confirmAccountDeletion(token: string): Promise<DeletionCon
   } catch {
     return "failed";
   }
-  if (error) return confirmRefusal(error);
+  if (error) return error.code === "INVALID_TOKEN" ? "invalid-token" : refusal(error);
   eraseThisDevice();
   return "deleted";
 }
