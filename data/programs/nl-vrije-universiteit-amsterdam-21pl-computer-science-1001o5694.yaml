@@ -52,7 +52,7 @@ requirements:
       kind: manual_check
       note:
         fr:
-          text: Vraag na of je met een buitenlands diploma via het International Office moet aanmelden en welke documenten en eventuele application fee gelden.
+          text: Vérifiez si une candidature avec un diplôme étranger doit passer par l'International Office, quels documents sont nécessaires et si des frais de candidature s'appliquent.
           status: draft
         en:
           text: Check whether applying with a foreign diploma requires the International Office route, which documents are needed and whether an application fee applies.
@@ -66,7 +66,7 @@ requirements:
       kind: manual_check
       note:
         fr:
-          text: Vraag na of voor deze Engelstalige bachelor een bewijs van Engelse taalvaardigheid vereist is en welk niveau.
+          text: Vérifiez si une preuve de maîtrise de l'anglais est requise pour cette licence enseignée en anglais, et à quel niveau.
           status: draft
         en:
           text: Check whether proof of English proficiency is required for this English-taught bachelor and at which level.

@@ -55,7 +55,7 @@ requirements:
       kind: manual_check
       note:
         fr:
-          text: Admission for a foreign secondary diploma (Moroccan Baccalauréat) is assessed individually; contact the Student Service Centre (inschrijvingen@hvhl.nl) to check eligibility and required documents.
+          text: L'admission avec un diplôme secondaire étranger (baccalauréat marocain) est évaluée au cas par cas ; contactez le Student Service Centre (inschrijvingen@hvhl.nl) pour vérifier l'éligibilité et les documents requis.
           status: draft
         en:
           text: Admission with a foreign secondary diploma (Moroccan Baccalaureate) is assessed individually; contact the Student Service Centre (inschrijvingen@hvhl.nl) to check eligibility and required documents.

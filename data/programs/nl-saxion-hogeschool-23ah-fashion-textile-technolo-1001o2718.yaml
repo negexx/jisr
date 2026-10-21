@@ -61,7 +61,7 @@ requirements:
           text: A foreign diploma must be assessed as at least equivalent to a Dutch havo, vwo or mbo-4 diploma; Studentregistratie assesses your diploma documents.
           status: draft
         ar:
-          text: يجب أن تُعترف الشهادة الأجنبية بأنها معادلة على الأقل لشهادة havo أو vwo أو mbo-4 الهولندية؛ وتقيّم مصلحة Studentregistratie وثائق شهادتك.
+          text: يجب أن يُعترف بالشهادة الأجنبية بأنها معادلة على الأقل لشهادة havo أو vwo أو mbo-4 الهولندية؛ وتقيّم مصلحة Studentregistratie وثائق شهادتك.
           status: draft
     - id: req-2
       source: page-3

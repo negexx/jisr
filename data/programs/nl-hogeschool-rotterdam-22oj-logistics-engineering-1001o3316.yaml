@@ -109,7 +109,7 @@ requirements:
       kind: manual_check
       note:
         fr:
-          text: Prouvez des moyens de subsistance suffisants (norme IND, actuellement 1131 EUR par mois) ; une option est la bourse de 13.572 EUR.
+          text: Prouvez des moyens de subsistance suffisants (norme IND, actuellement 1131 EUR par mois) ; une option est un dépôt de 13.572 EUR.
           status: draft
         en:
           text: Prove sufficient means of subsistence (IND norm, currently EUR 1,131 per month); one option is the EUR 13,572 deposit.
