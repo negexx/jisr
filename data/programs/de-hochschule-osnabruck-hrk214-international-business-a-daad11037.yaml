@@ -63,6 +63,9 @@ documents:
         en:
           text: Completed application form
           status: draft
+        ar:
+          text: استمارة طلب معبّأة
+          status: draft
       translationRequired: null
     - slug: school-leaving-certificate
       name:
@@ -71,6 +74,9 @@ documents:
           status: draft
         en:
           text: School-leaving certificate
+          status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
           status: draft
       translationRequired: true
     - slug: transcript-of-records
@@ -81,6 +87,9 @@ documents:
         en:
           text: Transcript of records
           status: draft
+        ar:
+          text: كشف النقاط
+          status: draft
       translationRequired: null
     - slug: german-language-certificate
       name:
@@ -90,6 +99,9 @@ documents:
         en:
           text: Proof of German language skills
           status: draft
+        ar:
+          text: شهادة إثبات معرفة باللغة الألمانية
+          status: draft
       translationRequired: null
     - slug: passport-copy
       name:
@@ -98,6 +110,9 @@ documents:
           status: draft
         en:
           text: Passport copy
+          status: draft
+        ar:
+          text: نسخة من جواز السفر
           status: draft
       translationRequired: null
   source: page-4

@@ -50,6 +50,9 @@ documents:
         en:
           text: Passport sized photo
           status: draft
+        ar:
+          text: صورة هوية بمقاس جواز السفر
+          status: draft
       translationRequired: null
     - slug: passport-copy
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: Copy of the photo-page(s) of your passport
+          status: draft
+        ar:
+          text: نسخة من صفحة الصورة في جواز السفر
           status: draft
       translationRequired: null
     - slug: high-school-diploma
@@ -68,6 +74,9 @@ documents:
         en:
           text: High School Diploma
           status: draft
+        ar:
+          text: شهادة الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: transcript-of-records
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Transcript of Records
+          status: draft
+        ar:
+          text: كشف النقاط
           status: draft
       translationRequired: null
     - slug: medical-certificate
@@ -86,6 +98,9 @@ documents:
         en:
           text: Medical Certificate
           status: draft
+        ar:
+          text: شهادة طبية
+          status: draft
       translationRequired: null
     - slug: curriculum-vitae
       name:
@@ -94,6 +109,9 @@ documents:
           status: draft
         en:
           text: Curriculum Vitae in English
+          status: draft
+        ar:
+          text: السيرة الذاتية (CV) بالإنجليزية
           status: draft
       translationRequired: null
     - slug: motivation-letter
@@ -104,6 +122,9 @@ documents:
         en:
           text: Motivation Letter
           status: draft
+        ar:
+          text: رسالة تحفيزية
+          status: draft
       translationRequired: null
     - slug: portfolio
       name:
@@ -113,6 +134,9 @@ documents:
         en:
           text: Portfolio
           status: draft
+        ar:
+          text: ملف الأعمال
+          status: draft
       translationRequired: null
     - slug: recommendation-letters
       name:
@@ -121,6 +145,9 @@ documents:
           status: draft
         en:
           text: Recommendation letters
+          status: draft
+        ar:
+          text: رسائل التوصية
           status: draft
       translationRequired: null
   source: page-2

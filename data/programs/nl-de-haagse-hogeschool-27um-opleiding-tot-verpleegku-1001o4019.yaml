@@ -57,6 +57,9 @@ requirements:
         en:
           text: Prove your Dutch proficiency with an NT2 programme II diploma or a CNaVT certificate; see the exact conditions on the page.
           status: draft
+        ar:
+          text: أثبت مستواك في الهولندية بشهادة NT2 programme II أو شهادة CNaVT؛ انظر الشروط الدقيقة على الصفحة.
+          status: draft
 scholarships: []
 sources:
   programme:

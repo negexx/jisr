@@ -50,6 +50,9 @@ documents:
         en:
           text: Academic certificates (secondary school leaving certificate or university degree)
           status: draft
+        ar:
+          text: شهادات أكاديمية (شهادة إتمام التعليم الثانوي أو شهادة جامعية)
+          status: draft
       translationRequired: true
     - slug: transcript-of-records
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: Transcript of Records
+          status: draft
+        ar:
+          text: كشف النقاط
           status: draft
       translationRequired: true
   source: page-2

@@ -57,6 +57,9 @@ requirements:
         en:
           text: Check the equivalence of your Moroccan Baccalauréat diploma; the required level is at least equal to Dutch VWO. Use the Diploma Equivalency List.
           status: draft
+        ar:
+          text: تحقق من معادلة شهادة باكالوريتك المغربية؛ فالمستوى المطلوب يعادل على الأقل VWO الهولندي. استخدم قائمة معادلة الشهادات.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official

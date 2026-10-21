@@ -62,6 +62,9 @@ requirements:
         en:
           text: "With a foreign diploma: admissible with a diploma equivalent to havo, vwo or mbo-4 and must meet the language requirements (see taaleisen)."
           status: draft
+        ar:
+          text: "مع شهادة أجنبية: أن تكون مقبولًا بشهادة معادلة لـ havo أو vwo أو mbo-4 واستيفاء المتطلبات اللغوية (انظر taaleisen)."
+          status: draft
 scholarships: []
 sources:
   programme:

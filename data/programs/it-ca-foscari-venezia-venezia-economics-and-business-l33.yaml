@@ -53,6 +53,9 @@ documents:
         en:
           text: Higher Secondary School final Diploma
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: true
     - slug: transcript-of-records
       name:
@@ -62,6 +65,9 @@ documents:
         en:
           text: transcript of records
           status: draft
+        ar:
+          text: كشف النقاط
+          status: draft
       translationRequired: true
     - slug: english-language-certificate
       name:
@@ -70,6 +76,9 @@ documents:
           status: draft
         en:
           text: English language certificate
+          status: draft
+        ar:
+          text: شهادة في اللغة الإنجليزية
           status: draft
       translationRequired: null
   source: page-6

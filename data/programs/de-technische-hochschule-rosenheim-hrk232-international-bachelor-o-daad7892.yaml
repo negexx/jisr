@@ -54,6 +54,9 @@ documents:
         en:
           text: University entrance qualification certificate
           status: draft
+        ar:
+          text: شهادة التأهيل للدخول إلى الجامعة
+          status: draft
       translationRequired: null
     - slug: english-language-certificate
       name:
@@ -63,6 +66,9 @@ documents:
         en:
           text: English language certificate
           status: draft
+        ar:
+          text: شهادة الكفاءة في اللغة الإنجليزية
+          status: draft
       translationRequired: null
     - slug: german-language-certificate
       name:
@@ -71,6 +77,9 @@ documents:
           status: draft
         en:
           text: German language certificate
+          status: draft
+        ar:
+          text: شهادة كفاءة في اللغة الألمانية
           status: draft
       translationRequired: null
   source: page-1

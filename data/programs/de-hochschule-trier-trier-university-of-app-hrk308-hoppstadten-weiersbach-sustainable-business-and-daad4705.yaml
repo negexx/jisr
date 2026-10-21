@@ -56,6 +56,9 @@ documents:
         en:
           text: higher education entrance qualification
           status: draft
+        ar:
+          text: مؤهل الولوج إلى التعليم العالي
+          status: draft
       translationRequired: null
   source: page-1
   info_kind: official

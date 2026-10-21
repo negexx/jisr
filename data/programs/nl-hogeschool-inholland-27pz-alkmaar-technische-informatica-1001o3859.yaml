@@ -55,6 +55,9 @@ documents:
         en:
           text: Diploma
           status: draft
+        ar:
+          text: الدبلوم
+          status: draft
       translationRequired: null
     - slug: transcript
       name:
@@ -63,6 +66,9 @@ documents:
           status: draft
         en:
           text: Transcript
+          status: draft
+        ar:
+          text: كشف النقاط
           status: draft
       translationRequired: null
   source: page-4

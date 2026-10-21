@@ -56,6 +56,9 @@ documents:
         en:
           text: English language certificate
           status: draft
+        ar:
+          text: شهادة الكفاءة اللغوية في الإنجليزية
+          status: draft
       translationRequired: null
   source: daad
   info_kind: official

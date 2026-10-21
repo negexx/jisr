@@ -50,6 +50,9 @@ documents:
         en:
           text: High school diploma
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: true
     - slug: transcript-last-two-years
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: School report/subject certificate of the last two years
+          status: draft
+        ar:
+          text: كشف نقاط / شهادة مواد السنتين الأخيرتين
           status: draft
       translationRequired: null
     - slug: passport
@@ -68,6 +74,9 @@ documents:
         en:
           text: Copy of a valid passport
           status: draft
+        ar:
+          text: نسخة من جواز سفر ساري المفعول
+          status: draft
       translationRequired: null
     - slug: cv
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Curriculum vitae
+          status: draft
+        ar:
+          text: السيرة الذاتية
           status: draft
       translationRequired: null
     - slug: english-language-certificate
@@ -86,6 +98,9 @@ documents:
         en:
           text: B2 level English certification
           status: draft
+        ar:
+          text: شهادة كفاءة في اللغة الإنكليزية بمستوى B2
+          status: draft
       translationRequired: null
     - slug: cimea-statement-verification-or-comparability
       name:
@@ -94,6 +109,9 @@ documents:
           status: draft
         en:
           text: Statement of verification or comparability of academic qualification by CIMEA
+          status: draft
+        ar:
+          text: شهادة تحقق أو معادلة للشهادة من CIMEA
           status: draft
       translationRequired: null
   source: page-5

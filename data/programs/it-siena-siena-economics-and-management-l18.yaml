@@ -50,6 +50,9 @@ documents:
         en:
           text: Valid passport
           status: draft
+        ar:
+          text: جواز سفر صالح
+          status: draft
       translationRequired: null
     - slug: high-school-diploma
       name:
@@ -59,6 +62,9 @@ documents:
         en:
           text: Original high school diploma
           status: draft
+        ar:
+          text: شهادة إتمام التعليم الثانوي (الأصل)
+          status: draft
       translationRequired: true
     - slug: cv
       name:
@@ -67,6 +73,9 @@ documents:
           status: draft
         en:
           text: Curriculum Vitae (CV)
+          status: draft
+        ar:
+          text: السيرة الذاتية (CV)
           status: draft
       translationRequired: null
   source: page-6

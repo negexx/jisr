@@ -57,6 +57,9 @@ requirements:
         en:
           text: Check that your foreign diploma is equivalent to the Dutch HAVO, VWO or MBO level 4.
           status: draft
+        ar:
+          text: تحقق من أن شهادتك الأجنبية معادلة لـ HAVO أو VWO أو MBO المستوى 4 الهولندي.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: The study choice check is mandatory if you apply after 1 May.
+          status: draft
+        ar:
+          text: اختبار اختيار الدراسة (studiekeuzecheck) إلزامي إذا ترشحت بعد 1 مايو.
           status: draft
 scholarships: []
 sources:

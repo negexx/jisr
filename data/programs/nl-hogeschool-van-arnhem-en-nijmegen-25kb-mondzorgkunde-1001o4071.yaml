@@ -56,6 +56,9 @@ requirements:
         en:
           text: "Mondzorgkunde is a numerus fixus programme: application is due before 15 January and a selection procedure applies."
           status: draft
+        ar:
+          text: "Mondzorgkunde تكوين يخضع لنظام numerus fixus: يتم التسجيل قبل 15 يناير وتُطبَّق إجراءات اختيار."
+          status: draft
 scholarships: []
 sources:
   programme:

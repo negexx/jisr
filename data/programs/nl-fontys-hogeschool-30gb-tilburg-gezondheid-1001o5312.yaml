@@ -57,6 +57,9 @@ requirements:
         en:
           text: "Check admission requirements: a havo, vwo or mbo level 4 diploma gives direct access; other admission routes exist."
           status: draft
+        ar:
+          text: "تحقق من شروط القبول: شهادة havo أو vwo أو mbo المستوى 4 تمنح ولوجًا مباشرًا؛ وتوجد طرق قبول أخرى."
+          status: draft
 scholarships: []
 sources:
   programme:

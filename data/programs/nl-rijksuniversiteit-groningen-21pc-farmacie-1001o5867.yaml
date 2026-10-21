@@ -76,6 +76,9 @@ requirements:
         en:
           text: Check whether your diploma is equivalent to the Dutch VWO; consult the list of international qualifications.
           status: draft
+        ar:
+          text: تحقق مما إذا كانت شهادتك معادلة لـ VWO الهولندي؛ راجع قائمة المؤهلات الدولية.
+          status: draft
 scholarships: []
 sources:
   programme:

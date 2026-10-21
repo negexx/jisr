@@ -47,6 +47,9 @@ documents:
         en:
           text: Detailed grades from the last three years of school
           status: draft
+        ar:
+          text: كشوف نقاط السنوات الثلاث الأخيرة من التعليم الثانوي
+          status: draft
       translationRequired: null
   source: page-4
   info_kind: official

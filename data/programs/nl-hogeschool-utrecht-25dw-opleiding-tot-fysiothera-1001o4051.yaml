@@ -59,6 +59,9 @@ requirements:
         en:
           text: "Required diploma: havo, vwo or mbo-4. Without it and aged 21+, take a toelatingsonderzoek (admission assessment)."
           status: draft
+        ar:
+          text: "الشهادة المطلوبة: havo أو vwo أو mbo-4. إن لم تكن حاصلًا عليها وبلغت 21 سنة أو أكثر، اجتز toelatingsonderzoek (اختبار قبول)."
+          status: draft
     - id: req-2
       source: page-3
       info_kind: official
@@ -69,6 +72,9 @@ requirements:
           status: draft
         en:
           text: "Applicants with a foreign diploma: the application process and deadlines differ, see the English Admissions page."
+          status: draft
+        ar:
+          text: "المترشحون بشهادة أجنبية: تختلف إجراءات القبول والمواعيد، راجع صفحة Admissions (بالإنكليزية)."
           status: draft
 scholarships: []
 sources:

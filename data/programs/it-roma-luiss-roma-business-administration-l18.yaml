@@ -50,6 +50,9 @@ documents:
         en:
           text: Identity document or passport
           status: draft
+        ar:
+          text: وثيقة هوية أو جواز سفر
+          status: draft
       translationRequired: null
     - slug: documentation-to-verify-educational-qualification
       name:
@@ -59,6 +62,9 @@ documents:
         en:
           text: documentation required to verify the educational qualification
           status: draft
+        ar:
+          text: الوثائق اللازمة للتحقق من المؤهل الدراسي
+          status: draft
       translationRequired: null
     - slug: school-report-cards
       name:
@@ -67,6 +73,9 @@ documents:
           status: draft
         en:
           text: school report cards
+          status: draft
+        ar:
+          text: كشوف النقاط المدرسية
           status: draft
       translationRequired: null
   source: page-3

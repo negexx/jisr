@@ -62,6 +62,9 @@ requirements:
         en:
           text: Check the admission requirements for foreign diplomas (Moroccan Baccalaureate) and the selection procedure (numerus fixus) on the programme page.
           status: draft
+        ar:
+          text: تحقّق من شروط القبول للشهادات الأجنبية (الباك المغربي) وإجراءات الاختيار (numerus fixus) على صفحة البرنامج.
+          status: draft
 scholarships: []
 sources:
   programme:

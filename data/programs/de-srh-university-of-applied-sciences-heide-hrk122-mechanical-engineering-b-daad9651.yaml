@@ -50,6 +50,9 @@ documents:
         en:
           text: University entrance qualification
           status: draft
+        ar:
+          text: التأهيل للدخول إلى الجامعة
+          status: draft
       translationRequired: null
   source: daad
   info_kind: official

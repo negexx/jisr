@@ -54,6 +54,9 @@ documents:
         en:
           text: High school diploma
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: certificate-of-academic-eligibility
       name:
@@ -62,6 +65,9 @@ documents:
           status: draft
         en:
           text: Certificate of academic eligibility
+          status: draft
+        ar:
+          text: شهادة الأهلية الأكاديمية
           status: draft
       translationRequired: null
     - slug: statement-of-comparability-cimea
@@ -72,6 +78,9 @@ documents:
         en:
           text: Statement of Comparability issued by CIMEA or Declaration of Value
           status: draft
+        ar:
+          text: إفادة قابلية المقارنة (CIMEA) أو إفادة القيمة
+          status: draft
       translationRequired: null
     - slug: italian-tax-code
       name:
@@ -81,6 +90,9 @@ documents:
         en:
           text: Italian tax code
           status: draft
+        ar:
+          text: الرقم الضريبي الإيطالي
+          status: draft
       translationRequired: null
     - slug: residence-permit
       name:
@@ -89,6 +101,9 @@ documents:
           status: draft
         en:
           text: Receipt of the residence permit application or a valid residence permit
+          status: draft
+        ar:
+          text: وصل طلب تصريح الإقامة أو بطاقة إقامة سارية المفعول
           status: draft
       translationRequired: null
   source: page-4

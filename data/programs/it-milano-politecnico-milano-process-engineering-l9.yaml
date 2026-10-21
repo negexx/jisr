@@ -47,6 +47,9 @@ documents:
         en:
           text: Final secondary school diploma
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: true
     - slug: school-grades
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: Grades from the last three years of school
+          status: draft
+        ar:
+          text: كشوف نقاط السنوات الثلاث الأخيرة
           status: draft
       translationRequired: null
   source: page-4

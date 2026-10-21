@@ -60,6 +60,9 @@ requirements:
         en:
           text: "Check the required diploma: vwo with N&T profile + biology or N&G + physics, or a foreign equivalent. The diploma is assessed via the UvA diploma finder."
           status: draft
+        ar:
+          text: "تحقق من الشهادة المطلوبة: vwo بملف N&T + الأحياء أو N&G + الفيزياء، أو ما يعادلها من شهادات أجنبية. تُقيَّم الشهادة عبر diploma finder الخاص بـ UvA."
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -70,6 +73,9 @@ requirements:
           status: draft
         en:
           text: The programme has a numerus fixus (capacity of 175 places) with selection by lottery. Check the selection procedure and application deadline.
+          status: draft
+        ar:
+          text: يخضع البرنامج لنظام numerus fixus (سعة 175 مقعدًا) مع اختيار بالقرعة. تحقق من إجراءات الاختيار والموعد النهائي للتسجيل.
           status: draft
     - id: req-3
       source: page-3
@@ -82,6 +88,9 @@ requirements:
         en:
           text: Proof of English proficiency required (approved test with minimum scores). Possible exemptions are listed in the diploma finder.
           status: draft
+        ar:
+          text: يُشترط إثبات إتقان الإنكليزية (اختبار معتمد بحد أدنى من النقاط). الإعفاءات الممكنة مذكورة في diploma finder.
+          status: draft
     - id: req-4
       source: page-3
       info_kind: official
@@ -92,6 +101,9 @@ requirements:
           status: draft
         en:
           text: UvA Matching (mandatory for applicants with a foreign diploma) and certified documents to be sent before 31 August after conditional admission.
+          status: draft
+        ar:
+          text: UvA Matching (إلزامي للمترشحين بشهادة أجنبية) ووثائق مصادق عليها تُرسل قبل 31 أغسطس بعد القبول المشروط.
           status: draft
 scholarships: []
 sources:

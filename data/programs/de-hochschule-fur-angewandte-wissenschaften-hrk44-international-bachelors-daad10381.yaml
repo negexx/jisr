@@ -54,6 +54,9 @@ documents:
         en:
           text: Curriculum vitae
           status: draft
+        ar:
+          text: السيرة الذاتية
+          status: draft
       translationRequired: null
     - slug: english-language-certificate
       name:
@@ -62,6 +65,9 @@ documents:
           status: draft
         en:
           text: Official proof of English language proficiency
+          status: draft
+        ar:
+          text: شهادة رسمية للكفاءة في اللغة الإنكليزية
           status: draft
       translationRequired: null
   source: page-1

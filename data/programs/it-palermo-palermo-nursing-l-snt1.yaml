@@ -61,6 +61,9 @@ requirements:
         en:
           text: If you have completed fewer than 12 years of schooling, provide a document covering the gap (university transcripts, an Italian foundation course qualification, or a 1/2-year post-secondary qualification).
           status: draft
+        ar:
+          text: إذا درست أقل من 12 سنة، فتقدّم بوثيقة تثبت تغطيتك للفارق (كشوف امتحانات جامعية، أو شهادة إيطالية foundation، أو مؤهل بعد ثانوي مدته 1/2 سنة).
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -71,6 +74,9 @@ requirements:
           status: draft
         en:
           text: "This programme has limited access (numero programmato): check the call for participation and pass the admission test. Your secondary school leaving qualification must be recognised as valid for access to further academic studies in the country where it was awarded."
+          status: draft
+        ar:
+          text: "هذا البرنامج ذو ولوج مقيّد بعدد مقاعد: راجع إعلان المشاركة (bando) واجتز اختبار القبول. يجب أن تُعترف بشهادة إتمام التعليم الثانوي كصالح للولوج إلى التعليم العالي في البلد الذي مُنحت فيه."
           status: draft
 scholarships: []
 sources:

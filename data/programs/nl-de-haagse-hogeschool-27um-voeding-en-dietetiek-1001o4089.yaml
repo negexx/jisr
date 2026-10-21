@@ -57,6 +57,9 @@ requirements:
         en:
           text: Check whether your Moroccan diploma is deemed equivalent and whether you need to provide a Dutch language test.
           status: draft
+        ar:
+          text: تحقق مما إذا كانت شهادتك المغربية معتبرة معادلة، وما إذا كان عليك تقديم اختبار لغة هولندية.
+          status: draft
 scholarships: []
 sources:
   programme:

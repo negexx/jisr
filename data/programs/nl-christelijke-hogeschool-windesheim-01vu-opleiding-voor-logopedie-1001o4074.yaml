@@ -56,6 +56,9 @@ requirements:
         en:
           text: Your foreign diploma must be assessed as equivalent to a Dutch havo, vwo or mbo-4 diploma. Have this equivalence assessed.
           status: draft
+        ar:
+          text: يجب أن تُعتبر شهادتك الأجنبية معادلة لشهادة هولندية havo أو vwo أو mbo-4. اطلب تقييم هذه المعادلة.
+          status: draft
 scholarships: []
 sources:
   programme:

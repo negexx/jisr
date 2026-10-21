@@ -59,6 +59,9 @@ requirements:
         en:
           text: "Check the full admission requirements: the school states you need a havo, vwo or mbo-4 diploma, or an admission assessment if you are 21 or older."
           status: draft
+        ar:
+          text: "تحقق من شروط القبول الكاملة: تشير المدرسة إلى ضرورة شهادة havo أو vwo أو mbo-4، أو اختبار قبول لمن عمرهم 21 سنة وأكثر."
+          status: draft
 scholarships: []
 sources:
   programme:

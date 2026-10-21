@@ -56,6 +56,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: certified-translations
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: Certified translations
+          status: draft
+        ar:
+          text: ترجمات مصادق عليها
           status: draft
       translationRequired: true
     - slug: language-proficiency-proof
@@ -74,6 +80,9 @@ documents:
         en:
           text: Proof of language proficiency
           status: draft
+        ar:
+          text: إثبات الكفاءة اللغوية
+          status: draft
       translationRequired: null
     - slug: passport
       name:
@@ -83,6 +92,9 @@ documents:
         en:
           text: Passport copy
           status: draft
+        ar:
+          text: نسخة من جواز السفر
+          status: draft
       translationRequired: null
     - slug: statement-of-purpose
       name:
@@ -91,6 +103,9 @@ documents:
           status: draft
         en:
           text: Statement of purpose
+          status: draft
+        ar:
+          text: رسالة تحفيزية
           status: draft
       translationRequired: null
   source: page-2

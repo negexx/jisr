@@ -59,6 +59,9 @@ requirements:
         en:
           text: Check the specific admission requirements of the school (e.g., having taken chemistry).
           status: draft
+        ar:
+          text: تحقق من متطلبات القبول الخاصة بالمدرسة (مثل دراسة مادة الكيمياء).
+          status: draft
 scholarships: []
 sources:
   programme:

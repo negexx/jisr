@@ -50,6 +50,9 @@ documents:
         en:
           text: Secondary School Leaving Certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: programme
   info_kind: official
@@ -69,6 +72,9 @@ requirements:
         en:
           text: An oral entrance examination is required.
           status: draft
+        ar:
+          text: يُشترط اجتياز امتحان دخول شفهي.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -79,6 +85,9 @@ requirements:
           status: draft
         en:
           text: Check the admission threshold for selection.
+          status: draft
+        ar:
+          text: تحقق من عتبة القبول في الاختيار.
           status: draft
 scholarships: []
 sources:

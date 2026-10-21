@@ -60,6 +60,9 @@ requirements:
         en:
           text: Check that your secondary school diploma is at least equal to the Dutch pre-university VWO level and consult the diploma equivalency list.
           status: draft
+        ar:
+          text: تحقق من أن شهادة إتمام تعليمك الثانوي معادلة على الأقل لـ VWO الهولندي، وراجع قائمة معادلة الشهادات.
+          status: draft
     - id: req-2
       source: page-3
       info_kind: official
@@ -71,6 +74,9 @@ requirements:
         en:
           text: Check the mandatory subjects for your diploma and any additional VWO-level exams.
           status: draft
+        ar:
+          text: تحقق من المواد الإلزامية لشهادتك ومن أي امتحان تكميلي بمستوى VWO.
+          status: draft
     - id: req-3
       source: page-3
       info_kind: official
@@ -81,6 +87,9 @@ requirements:
           status: draft
         en:
           text: You must meet both the English and Dutch language requirements for Dutch taught bachelor's programmes.
+          status: draft
+        ar:
+          text: يجب أن تستوفي المتطلبات اللغوية في الإنكليزية والهولندية بالنسبة للبرامج المدرّسة بالهولندية.
           status: draft
 scholarships: []
 sources:

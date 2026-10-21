@@ -57,6 +57,9 @@ documents:
         en:
           text: University entrance certificate
           status: draft
+        ar:
+          text: شهادة الولوج إلى الجامعة
+          status: draft
       translationRequired: null
     - slug: passport-scan
       name:
@@ -65,6 +68,9 @@ documents:
           status: draft
         en:
           text: Passport scan
+          status: draft
+        ar:
+          text: نسخة من جواز السفر
           status: draft
       translationRequired: null
     - slug: language-certificates
@@ -75,6 +81,9 @@ documents:
         en:
           text: Language certificates
           status: draft
+        ar:
+          text: شهادات اللغات
+          status: draft
       translationRequired: null
     - slug: proof-of-health-insurance
       name:
@@ -84,6 +93,9 @@ documents:
         en:
           text: Proof of health insurance coverage
           status: draft
+        ar:
+          text: شهادة تأمين صحي
+          status: draft
       translationRequired: null
     - slug: passport-photo
       name:
@@ -92,6 +104,9 @@ documents:
           status: draft
         en:
           text: Passport photo
+          status: draft
+        ar:
+          text: صورة شخصية
           status: draft
       translationRequired: null
   source: page-3

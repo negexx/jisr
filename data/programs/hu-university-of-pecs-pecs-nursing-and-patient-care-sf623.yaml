@@ -68,6 +68,9 @@ requirements:
         en:
           text: Admission includes an oral entrance examination (min. 15 minutes, Skype/online) and the average of grades in Biology and one other subject.
           status: draft
+        ar:
+          text: تُؤخذ في الحسبان مقابلة قبول (شفهية، 15 دقيقة على الأقل، عبر Skype أو الإنترنت) ومعدل علامات مادة الأحياء ومادة أخرى.
+          status: draft
 scholarships: []
 sources:
   programme:

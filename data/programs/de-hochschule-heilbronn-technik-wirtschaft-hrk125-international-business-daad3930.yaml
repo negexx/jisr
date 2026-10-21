@@ -56,6 +56,9 @@ documents:
         en:
           text: Printed and signed Application Request
           status: draft
+        ar:
+          text: طلب تسجيل مطبوع وموقّع
+          status: draft
       translationRequired: null
     - slug: university-entrance-qualification
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: University entrance qualification
+          status: draft
+        ar:
+          text: شهادة الولوج إلى التعليم العالي
           status: draft
       translationRequired: null
     - slug: certificate-recognition
@@ -74,6 +80,9 @@ documents:
         en:
           text: Recognition of certificates from the Center for International Students in Konstanz
           status: draft
+        ar:
+          text: الاعتراف بالشهادات من مركز الطلبة الدوليين في Konstanz
+          status: draft
       translationRequired: null
     - slug: english-language-certificate
       name:
@@ -83,6 +92,9 @@ documents:
         en:
           text: Proof of English language skills
           status: draft
+        ar:
+          text: إثبات المهارات في اللغة الإنجليزية
+          status: draft
       translationRequired: null
     - slug: cv
       name:
@@ -91,6 +103,9 @@ documents:
           status: draft
         en:
           text: Chronological CV
+          status: draft
+        ar:
+          text: سيرة ذاتية زمنية (CV)
           status: draft
       translationRequired: null
   source: page-5

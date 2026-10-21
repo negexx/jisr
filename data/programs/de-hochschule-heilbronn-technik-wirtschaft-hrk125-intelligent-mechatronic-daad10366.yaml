@@ -53,6 +53,9 @@ documents:
         en:
           text: Recognition of school-leaving certificate
           status: draft
+        ar:
+          text: الاعتراف بشهادة إتمام الدراسة
+          status: draft
       translationRequired: null
   source: page-3
   info_kind: official

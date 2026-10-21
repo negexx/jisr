@@ -57,6 +57,9 @@ requirements:
         en:
           text: "Check whether your diploma (Moroccan Baccalauréat) gives direct access: the page mentions a havo, vwo or mbo level 4 diploma. Contact the school about your case."
           status: draft
+        ar:
+          text: "تحقق مما إذا كانت شهادتك (الباكالوريا المغربية) تمنح ولوجًا مباشرًا: تشير الصفحة إلى شهادة havo أو vwo أو mbo المستوى 4. تواصل مع المدرسة بشأن حالتك."
+          status: draft
 scholarships: []
 sources:
   programme:

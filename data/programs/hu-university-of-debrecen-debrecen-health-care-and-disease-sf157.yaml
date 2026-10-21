@@ -57,6 +57,9 @@ requirements:
         en:
           text: A compulsory oral entrance interview (online or in person) assesses English, motivation and communication skills.
           status: draft
+        ar:
+          text: مقابلة قبول شفهية إلزامية (عبر الإنترنت أو حضوريًا) لتقييم الإنكليزية والدافع والتواصل.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: The Faculty first examines the documents of previous studies (level, subjects, results) to decide on eligibility.
+          status: draft
+        ar:
+          text: تقيّم الكلية أولًا مستوى ومواد ونتائج الدراسات السابقة لتقرر الأهلية.
           status: draft
 scholarships: []
 sources:

@@ -47,6 +47,9 @@ documents:
         en:
           text: High school diploma
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: programme
   info_kind: official

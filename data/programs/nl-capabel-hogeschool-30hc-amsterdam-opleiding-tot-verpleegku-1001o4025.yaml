@@ -56,6 +56,9 @@ documents:
         en:
           text: Relevant diploma
           status: draft
+        ar:
+          text: الشهادة ذات الصلة
+          status: draft
       translationRequired: null
   source: programme
   info_kind: official
@@ -83,6 +86,9 @@ requirements:
         en:
           text: A HAVO, VWO or MBO 4 diploma is required; if you do not have one but are 21 or older, a 21+ admission test is possible.
           status: draft
+        ar:
+          text: تُشترط شهادة HAVO أو VWO أو MBO 4؛ إن لم تكن حاصلًا عليها لكن عمرك 21 سنة أو أكثر، يمكنك اجتياز اختبار قبول 21+.
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -93,6 +99,9 @@ requirements:
           status: draft
         en:
           text: "Foreign diploma: an evaluation (diplomawaardering) of the diploma obtained in the country of origin is required, together with a B2 level in Dutch."
+          status: draft
+        ar:
+          text: "شهادة أجنبية: يُشترط تقييم (diplomawaardering) للشهادة المحصل عليها في البلد الأصلي، إضافة إلى مستوى B2 في اللغة الهولندية."
           status: draft
 scholarships: []
 sources:

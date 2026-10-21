@@ -68,6 +68,9 @@ requirements:
         en:
           text: An entrance examination (oral, online via Skype) is required.
           status: draft
+        ar:
+          text: يُشترط امتحان دخول (شفهي، عبر الإنترنت بواسطة Skype).
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -78,6 +81,9 @@ requirements:
           status: draft
         en:
           text: The mean of grades from Biology and one other subject chosen by the student counts weighted.
+          status: draft
+        ar:
+          text: يُرجَّح معدل علامات مادة الأحياء ومادة أخرى.
           status: draft
 scholarships: []
 sources:

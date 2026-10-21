@@ -47,6 +47,9 @@ documents:
         en:
           text: Secondary school leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: programme
   info_kind: official
@@ -66,6 +69,9 @@ requirements:
         en:
           text: A written entrance examination is required; selection is based on the best entrance exam results.
           status: draft
+        ar:
+          text: يُشترط امتحان دخول كتابي؛ ويتم الاختيار على أساس أفضل النتائج في هذا الامتحان.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -76,6 +82,9 @@ requirements:
           status: draft
         en:
           text: "You apply through the university's online admission portal (SEMAPHOR): register and submit your application there."
+          status: draft
+        ar:
+          text: "يتم التسجيل عبر بوابة القبول الإلكترونية للجامعة (SEMAPHOR): أنشئ حسابًا وقدّم طلبك."
           status: draft
 scholarships: []
 sources:

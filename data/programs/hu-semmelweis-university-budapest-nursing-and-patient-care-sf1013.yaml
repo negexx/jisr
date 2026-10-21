@@ -57,6 +57,9 @@ requirements:
         en:
           text: Mandatory oral entrance examination (online) on the field of study; applicants with the best entrance exam results are admitted.
           status: draft
+        ar:
+          text: امتحان دخول شفهي إلزامي (عبر الإنترنت) يشمل مجال الدراسة؛ ويُقبل المترشحون الحاصلون على أفضل النتائج.
+          status: draft
 scholarships: []
 sources:
   programme:

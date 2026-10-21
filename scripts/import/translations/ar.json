@@ -476,6 +476,11 @@
       "status": "draft"
     },
     {
+      "fr": "Carte d'identité, passeport ou permis de séjour",
+      "ar": "بطاقة التعريف أو جواز السفر أو تصريح الإقامة",
+      "status": "draft"
+    },
+    {
       "fr": "Ce programme est à accès programmé (numéro limité) : consultez le bando de participation et réussissez le test d'admission. Le diplôme de fin d'études secondaires doit être reconnu valable pour l'accès à l'enseignement supérieur dans le pays où il a été obtenu.",
       "ar": "هذا البرنامج ذو ولوج مقيّد بعدد مقاعد: راجع إعلان المشاركة (bando) واجتز اختبار القبول. يجب أن تُعترف بشهادة إتمام التعليم الثانوي كصالح للولوج إلى التعليم العالي في البلد الذي مُنحت فيه.",
       "status": "draft"
@@ -523,6 +528,11 @@
     {
       "fr": "Certificat d'anglais ou certificat MOI",
       "ar": "شهادة في الإنجليزية أو شهادة MOI",
+      "status": "draft"
+    },
+    {
+      "fr": "Certificat d'aptitude académique",
+      "ar": "شهادة الأهلية الأكاديمية",
       "status": "draft"
     },
     {
@@ -576,8 +586,18 @@
       "status": "draft"
     },
     {
+      "fr": "Certificat de compétence en langue anglaise",
+      "ar": "شهادة الكفاءة في اللغة الإنجليزية",
+      "status": "draft"
+    },
+    {
       "fr": "Certificat de compétence linguistique en anglais",
       "ar": "شهادة الكفاءة اللغوية في الإنجليزية",
+      "status": "draft"
+    },
+    {
+      "fr": "Certificat de compétence linguistique en anglais ou en néerlandais",
+      "ar": "شهادة الكفاءة اللغوية في الإنجليزية أو الهولندية",
       "status": "draft"
     },
     {
@@ -756,6 +776,11 @@
       "status": "draft"
     },
     {
+      "fr": "Certificats académiques (diplôme de fin d'études secondaires ou diplôme universitaire) et relevé de notes",
+      "ar": "الشهادات الأكاديمية (شهادة إتمام الدراسة الثانوية أو شهادة جامعية) وكشف العلامات",
+      "status": "draft"
+    },
+    {
       "fr": "Certificats de fin d'études secondaires",
       "ar": "شهادات نهاية الدراسة الثانوية",
       "status": "draft"
@@ -828,6 +853,11 @@
     {
       "fr": "Consultez la page « informations pour les candidats de pays tiers » du programme : un formulaire d'épreuve d'aptitude peut être demandé.",
       "ar": "راجع صفحة « معلومات للمترشحين من دول ثالثة » الخاصة بالبرنامج: قد يُطلب نموذج اختبار الكفاءة.",
+      "status": "draft"
+    },
+    {
+      "fr": "Contrat de formation",
+      "ar": "عقد التدريب",
       "status": "draft"
     },
     {
@@ -913,6 +943,11 @@
     {
       "fr": "Copie de votre passeport",
       "ar": "نسخة من جواز سفرك",
+      "status": "draft"
+    },
+    {
+      "fr": "Copie des pages photo du passeport",
+      "ar": "نسخة من صفحات الصورة في جواز السفر",
       "status": "draft"
     },
     {
@@ -1291,6 +1326,11 @@
       "status": "draft"
     },
     {
+      "fr": "Diplôme pertinent",
+      "ar": "الشهادة ذات الصلة",
+      "status": "draft"
+    },
+    {
       "fr": "Diplôme requis : havo, vwo ou mbo-4. Si vous ne l'avez pas et avez 21 ans ou plus, passez un toelatingsonderzoek (examen d'admission).",
       "ar": "الشهادة المطلوبة: havo أو vwo أو mbo-4. إن لم تكن حاصلًا عليها وبلغت 21 سنة أو أكثر، اجتز toelatingsonderzoek (اختبار قبول).",
       "status": "draft"
@@ -1311,6 +1351,11 @@
       "status": "draft"
     },
     {
+      "fr": "Diplôme étranger : une évaluation (diplomawaardering) du diplôme obtenu dans le pays d'origine est requise, ainsi qu'un niveau B2 en néerlandais.",
+      "ar": "شهادة أجنبية: يُشترط تقييم (diplomawaardering) للشهادة المحصل عليها في البلد الأصلي، إضافة إلى مستوى B2 في اللغة الهولندية.",
+      "status": "draft"
+    },
+    {
       "fr": "Diplôme étranger : évaluation Nuffic (contenu et niveau NLQF 4) et exigences linguistiques et mathématiques (niveau 3F) requises.",
       "ar": "شهادة أجنبية: تقييم Nuffic (المحتوى ومستوى NLQF 4) مع اشتراط متطلبات لغوية ورياضية (المستوى 3F).",
       "status": "draft"
@@ -1318,6 +1363,11 @@
     {
       "fr": "Document d'identité en cours de validité",
       "ar": "وثيقة هوية سارية المفعول",
+      "status": "draft"
+    },
+    {
+      "fr": "Document d'identité ou passeport",
+      "ar": "وثيقة هوية أو جواز سفر",
       "status": "draft"
     },
     {
@@ -1343,6 +1393,11 @@
     {
       "fr": "Documentation de l'Orientierungstest",
       "ar": "الوثائق الخاصة باختبار التوجيه المسمى Orientierungstest",
+      "status": "draft"
+    },
+    {
+      "fr": "Documentation nécessaire pour vérifier le titre d'études",
+      "ar": "الوثائق اللازمة للتحقق من المؤهل الدراسي",
       "status": "draft"
     },
     {
@@ -1386,6 +1441,11 @@
       "status": "draft"
     },
     {
+      "fr": "Documents médicaux",
+      "ar": "وثائق طبية",
+      "status": "draft"
+    },
+    {
       "fr": "Documents médicaux à fournir : certificat médical général, résultats HIV/AIDS, hépatite B et C, radiographie pulmonaire, carte de vaccination hépatite B.",
       "ar": "وثائق طبية يجب تقديمها: شهادة طبية عامة، نتائج HIV/AIDS، التهاب الكبد B و C، صورة شعاعية للصدر، بطاقة تلقيح التهاب الكبد B.",
       "status": "draft"
@@ -1408,6 +1468,11 @@
     {
       "fr": "Dossier de validation des acquis",
       "ar": "ملف المصادقة على المكتسبات",
+      "status": "draft"
+    },
+    {
+      "fr": "Déclaration de comparabilité (CIMEA) ou Déclaration de valeur",
+      "ar": "إفادة قابلية المقارنة (CIMEA) أو إفادة القيمة",
       "status": "draft"
     },
     {
@@ -1623,6 +1688,11 @@
     {
       "fr": "Justificatif de niveau d'anglais",
       "ar": "إثبات مستوى اللغة الإنكليزية",
+      "status": "draft"
+    },
+    {
+      "fr": "Justificatif de paiement des frais de candidature",
+      "ar": "إثبات دفع رسوم الترشيح",
       "status": "draft"
     },
     {
@@ -2376,6 +2446,11 @@
       "status": "draft"
     },
     {
+      "fr": "Photo d'identité au format passeport",
+      "ar": "صورة شمسية بمقاس جواز السفر",
+      "status": "draft"
+    },
+    {
       "fr": "Photo d'identité format passeport",
       "ar": "صورة هوية بمقاس جواز السفر",
       "status": "draft"
@@ -2388,6 +2463,11 @@
     {
       "fr": "Photo format passeport",
       "ar": "صورة بحجم صورة جواز السفر",
+      "status": "draft"
+    },
+    {
+      "fr": "Photographie",
+      "ar": "صورة شمسية",
       "status": "draft"
     },
     {
@@ -2781,6 +2861,11 @@
       "status": "draft"
     },
     {
+      "fr": "Relevés de notes des deux dernières années et de l'année en cours",
+      "ar": "كشوف العلامات للسنتين الأخيرتين وللسنة الجارية",
+      "status": "draft"
+    },
+    {
       "fr": "Relevés de notes des trois dernières années",
       "ar": "كشوف نقاط السنوات الثلاث الأخيرة",
       "status": "draft"
@@ -2823,6 +2908,11 @@
     {
       "fr": "Reçu du frais de dossier",
       "ar": "وصل رسوم الملف",
+      "status": "draft"
+    },
+    {
+      "fr": "Récépissé de demande de permis de séjour ou titre de séjour valide",
+      "ar": "وصل طلب تصريح الإقامة أو بطاقة إقامة سارية المفعول",
       "status": "draft"
     },
     {
@@ -4553,6 +4643,11 @@
     {
       "fr": "lettre de motivation",
       "ar": "رسالة تحفيزية",
+      "status": "draft"
+    },
+    {
+      "fr": "passeport valide ou carte d'identité européenne",
+      "ar": "جواز سفر ساري المفعول أو بطاقة تعريف أوروبية",
       "status": "draft"
     },
     {

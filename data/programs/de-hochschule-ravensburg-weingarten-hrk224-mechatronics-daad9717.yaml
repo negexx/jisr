@@ -56,6 +56,9 @@ documents:
         en:
           text: Signed application form (original)
           status: draft
+        ar:
+          text: استمارة ترشّح موقّعة (الأصل)
+          status: draft
       translationRequired: null
     - slug: school-leaving-certificate
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: Certified copy of the university entrance certificate
+          status: draft
+        ar:
+          text: نسخة مصادق عليها مطابقة لشهادة الولوج إلى التعليم العالي
           status: draft
       translationRequired: null
     - slug: english-language-certificate
@@ -74,6 +80,9 @@ documents:
         en:
           text: English language certificate (TOEFL iBT or IELTS)
           status: draft
+        ar:
+          text: شهادة كفاءة في اللغة الإنكليزية (TOEFL iBT أو IELTS)
+          status: draft
       translationRequired: null
     - slug: curriculum-vitae
       name:
@@ -83,6 +92,9 @@ documents:
         en:
           text: Curriculum vitae (CV)
           status: draft
+        ar:
+          text: السيرة الذاتية (CV)
+          status: draft
       translationRequired: null
     - slug: passport-copy
       name:
@@ -91,6 +103,9 @@ documents:
           status: draft
         en:
           text: Copy of passport
+          status: draft
+        ar:
+          text: نسخة من جواز السفر
           status: draft
       translationRequired: null
   source: programme

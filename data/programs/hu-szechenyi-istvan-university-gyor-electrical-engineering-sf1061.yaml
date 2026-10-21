@@ -47,6 +47,9 @@ documents:
         en:
           text: Copy of secondary/high school graduation results
           status: draft
+        ar:
+          text: نسخة من نتائج نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: record-of-courses-studied
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: Record of courses studied
+          status: draft
+        ar:
+          text: كشف بالمواد التي درستموها
           status: draft
       translationRequired: null
     - slug: english-cv
@@ -65,6 +71,9 @@ documents:
         en:
           text: English CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV) بالإنجليزية
+          status: draft
       translationRequired: null
     - slug: motivation-letter
       name:
@@ -73,6 +82,9 @@ documents:
           status: draft
         en:
           text: Motivation letter
+          status: draft
+        ar:
+          text: رسالة تحفيزية
           status: draft
       translationRequired: null
   source: programme

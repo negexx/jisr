@@ -59,6 +59,9 @@ requirements:
         en:
           text: "Check admission requirements: havo, vwo or mbo-4 diploma required. If you do not have this and are 21 or older, a toelatingsonderzoek is required."
           status: draft
+        ar:
+          text: "تحقق من شروط القبول: تُشترط شهادة havo أو vwo أو mbo-4. إن لم تكن حاصلًا عليها وكان عمرك 21 سنة أو أكثر، يلزم toelatingsonderzoek."
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -69,6 +72,9 @@ requirements:
           status: draft
         en:
           text: "This programme has a numerus fixus: limited places and a selection procedure. Apply before 15 January."
+          status: draft
+        ar:
+          text: "هذا التكوين يخضع لنظام numerus fixus: عدد محدود من المقاعد وإجراءات اختيار. سجّل قبل 15 يناير."
           status: draft
     - id: req-3
       source: page-3
@@ -81,6 +87,9 @@ requirements:
         en:
           text: For applicants with a foreign qualification, the application procedure is different and deadlines may vary. Check the Admissions page for international students.
           status: draft
+        ar:
+          text: بالنسبة للمترشحين بشهادة أجنبية، تختلف إجراءات القبول وقد تتفاوت المواعيد. راجع صفحة Admissions للطلبة الدوليين.
+          status: draft
     - id: req-4
       source: page-3
       info_kind: official
@@ -92,6 +101,9 @@ requirements:
         en:
           text: Registration is done via Studielink and requires DigiD. DigiD may take up to 3 working days after applying.
           status: draft
+        ar:
+          text: يتم التسجيل عبر Studielink ويتطلب DigiD. وقد يستغرق DigiD حتى 3 أيام عمل بعد الطلب.
+          status: draft
     - id: req-5
       source: programme
       info_kind: official
@@ -102,6 +114,9 @@ requirements:
           status: draft
         en:
           text: Check Dutch language requirements, as the programme is taught in Dutch and a good command is essential.
+          status: draft
+        ar:
+          text: تحقق من المتطلبات اللغوية في الهولندية، لأن الدروس تُقدَّم بالهولندية ويُعدّ إتقانها الجيد أمرًا ضروريًا.
           status: draft
 scholarships: []
 sources:

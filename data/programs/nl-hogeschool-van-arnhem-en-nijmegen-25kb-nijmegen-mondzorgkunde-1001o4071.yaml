@@ -49,6 +49,9 @@ documents:
         en:
           text: Copy of a valid identity document (passport or identity card)
           status: draft
+        ar:
+          text: نسخة من وثيقة هوية سارية (جواز سفر أو بطاقة هوية)
+          status: draft
       translationRequired: null
   source: page-2
   info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: Check the admission requirements page whether your Moroccan diploma (Baccalauréat) is recognised and whether profile or subject requirements apply.
+          status: draft
+        ar:
+          text: تحقق على صفحة شروط القبول مما إذا كانت شهادتك المغربية (الباكالوريا) معترفًا بها وما إذا كانت تنطبق متطلبات ملف أو مواد.
           status: draft
 scholarships: []
 sources:

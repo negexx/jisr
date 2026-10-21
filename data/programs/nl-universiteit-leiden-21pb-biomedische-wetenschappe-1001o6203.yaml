@@ -50,6 +50,9 @@ documents:
         en:
           text: valid passport or European ID card
           status: draft
+        ar:
+          text: جواز سفر ساري المفعول أو بطاقة تعريف أوروبية
+          status: draft
       translationRequired: null
   source: page-2
   info_kind: official
@@ -69,6 +72,9 @@ requirements:
         en:
           text: Check whether you must follow the selection and placement procedure (numerus fixus) for this programme.
           status: draft
+        ar:
+          text: تحقق مما إذا كان عليك اتباع إجراءات الاختيار والتوزيع (numerus fixus) لهذا التكوين.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -79,6 +85,9 @@ requirements:
           status: draft
         en:
           text: The €100 application fee applies to degree programmes and is non-refundable.
+          status: draft
+        ar:
+          text: تُطبَّق رسوم ملف قدرها 100 € على برامج الإجازة وهي غير قابلة للاسترداد.
           status: draft
 scholarships: []
 sources:

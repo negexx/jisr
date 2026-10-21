@@ -47,6 +47,9 @@ documents:
         en:
           text: Copy of relevant diploma
           status: draft
+        ar:
+          text: نسخة من الشهادة المعنية
+          status: draft
       translationRequired: null
     - slug: id
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: Copy of ID
+          status: draft
+        ar:
+          text: نسخة من وثيقة الهوية
           status: draft
       translationRequired: null
   source: programme
@@ -82,6 +88,9 @@ requirements:
           status: draft
         en:
           text: "Check admission requirements: HAVO, VWO or MBO 4, or 21+ test."
+          status: draft
+        ar:
+          text: "تحقق من شروط القبول: HAVO أو VWO أو MBO 4، أو اختبار القبول 21+."
           status: draft
 scholarships: []
 sources:
