@@ -260,6 +260,7 @@ const DATA_TABLES = ["saved_programs", "checklist_progress", "profiles", "feedba
 beforeEach(async () => {
   vi.stubEnv("ACCOUNTS_ENABLED", "true");
   for (const table of DATA_TABLES) await pool.query(`delete from "${table}"`);
+  await pool.query("delete from request_throttles");
   signedInAs(alice);
 });
 

@@ -151,6 +151,7 @@ beforeEach(async () => {
   await pool.query("delete from verification");
   await pool.query("delete from session");
   await pool.query("delete from pending_signups");
+  await pool.query("delete from request_throttles");
 });
 
 afterEach(() => {

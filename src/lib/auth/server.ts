@@ -12,6 +12,7 @@ import * as schema from "@/db/schema";
 import { eraseAccountResidue } from "@/lib/server/account-erasure";
 import { type AuthEmailRequest, resolveAuthEmailLocale, sendAuthEmail } from "@/lib/server/email";
 import { claimAuthEmailSend } from "@/lib/server/email-cooldown";
+import { consumeThrottle, throttleKey } from "@/lib/server/request-throttle";
 import { accountsEnabled } from "./accounts-enabled";
 import { ACCOUNTS_DISABLED_CODE, accountsGate } from "./accounts-gate";
 import {
@@ -42,6 +43,17 @@ import { isSignupFor } from "./signup-intent";
 // The pending row and the link that can use it expire together.
 export const MAGIC_LINK_EXPIRY_S = PENDING_SIGNUP_TTL_S;
 export const DELETE_TOKEN_EXPIRY_S = 60 * 60;
+
+// Per address and path. Better Auth's built-in rule for every /sign-in path (3 per 10 s) is
+// replaced for the paths named here; any other path keeps the 100 per minute default.
+export const AUTH_RATE_LIMIT_RULES: Record<string, { window: number; max: number } | false> = {
+  // Read on every page load; a rule of false skips the limiter, so no throttle row is written.
+  "/get-session": false,
+  "/sign-in/magic-link": { window: 60, max: 3 },
+  "/sign-in/social": { window: 60, max: 5 },
+  "/magic-link/confirm": { window: 60, max: 5 },
+  "/delete-user": { window: 3600, max: 5 },
+};
 
 const OAUTH_CALLBACK_PATH = "/callback/:id";
 const MAGIC_LINK_VERIFY_PATH = "/magic-link/verify";
@@ -259,12 +271,32 @@ function createAuth(secret: string, baseURL: string) {
     baseURL,
     secret,
     database: drizzleAdapter(db, { provider: "pg", schema }),
-    // Project rule: never record IPs. Better Auth then also skips its IP-keyed rate limiter, so
-    // throttling of auth emails must live in our own code (the email_cooldowns slot).
+    // The client address is read only to throttle requests (rateLimit below), and never stored:
+    // the limiter's storage hashes the `<address>|<path>` key with an HMAC before it reaches the
+    // database (request-throttle.ts), and the session hook below nulls session.ip_address and
+    // user_agent, which Better Auth fills from this same lookup. Vercel overwrites x-forwarded-for
+    // with the single client address; a header with several values is not trusted (no
+    // trustedProxies), so such a request lands in Better Auth's shared `no-trusted-ip` bucket.
     // disableOriginCheck: false is the production default already; Better Auth turns the origin and
     // CSRF checks off by default under NODE_ENV=test, so stating it keeps the test suites on the
     // production behaviour (the magic-link confirm's login-CSRF guard is tested through it).
-    advanced: { ipAddress: { disableIpTracking: true }, disableOriginCheck: false },
+    advanced: {
+      ipAddress: { ipAddressHeaders: ["x-forwarded-for"], ipv6Subnet: 64 },
+      disableOriginCheck: false,
+    },
+    // Explicit because the limiter defaults to production only. The email_cooldowns slot still
+    // guards each mailbox; this guards each address and path. The limiter runs for HTTP requests
+    // through the router only, so the signup Server Action (an auth.api call) throttles itself.
+    // A store failure throws into Better Auth and answers 500 through onAuthApiError.
+    rateLimit: {
+      enabled: true,
+      window: 60,
+      max: 100,
+      customRules: AUTH_RATE_LIMIT_RULES,
+      customStorage: {
+        consume: (key, rule) => consumeThrottle(throttleKey("better-auth", key), rule),
+      },
+    },
     // The default logger and better-call print raw errors, which carry query parameters (tokens,
     // addresses): see log.ts.
     logger: { log: scrubbedAuthLog },

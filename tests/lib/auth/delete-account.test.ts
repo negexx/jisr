@@ -257,8 +257,9 @@ beforeAll(async () => {
   closeAppPool = () => db.$client.end();
 }, TIMEOUT_MS);
 
-beforeEach(() => {
+beforeEach(async () => {
   vi.stubEnv("ACCOUNTS_ENABLED", "true");
+  await pool.query("delete from request_throttles");
 });
 
 afterEach(() => {

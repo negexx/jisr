@@ -55,6 +55,7 @@ beforeEach(async () => {
   await pool.query("delete from verification");
   await pool.query("delete from email_cooldowns");
   await pool.query("delete from auth_email_days");
+  await pool.query("delete from request_throttles");
 });
 
 afterEach(() => {

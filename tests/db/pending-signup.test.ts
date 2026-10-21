@@ -127,6 +127,7 @@ beforeEach(async () => {
     await pool.query(`delete from "${table}"`);
   }
   await pool.query("delete from email_cooldowns");
+  await pool.query("delete from request_throttles");
 });
 
 afterEach(async () => {

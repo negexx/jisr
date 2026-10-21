@@ -104,6 +104,7 @@ beforeEach(async () => {
     await pool.query(`delete from "${table}"`);
   }
   await pool.query("delete from email_cooldowns");
+  await pool.query("delete from request_throttles");
 });
 
 afterEach(async () => {
@@ -198,8 +199,8 @@ describe("POST /magic-link/confirm", () => {
       "select ip_address as ip, user_agent as ua from session",
     );
     expect(rows).toHaveLength(1);
-    expect([null, ""]).toContain(rows[0]?.ip);
-    expect([null, ""]).toContain(rows[0]?.ua);
+    expect(rows[0]?.ip).toBeNull();
+    expect(rows[0]?.ua).toBeNull();
   });
 
   it("signs an existing account in through the form without touching its consent", async () => {

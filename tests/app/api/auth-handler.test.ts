@@ -15,6 +15,11 @@ vi.mock("@/lib/server/email", async (importOriginal) => ({
   },
 }));
 
+vi.mock("@/lib/server/request-throttle", async (importOriginal) => {
+  const original = await importOriginal<typeof import("@/lib/server/request-throttle")>();
+  return { ...original, consumeThrottle: vi.fn(original.consumeThrottle) };
+});
+
 type AuthModule = typeof import("@/lib/auth/server");
 type RouteModule = typeof import("@/app/api/auth/[...all]/route");
 
@@ -23,6 +28,7 @@ let pool: Pool;
 let auth: ReturnType<AuthModule["getAuth"]>;
 let route: RouteModule;
 let closeAppPool: () => Promise<void>;
+let consumeThrottle: typeof import("@/lib/server/request-throttle").consumeThrottle;
 
 async function count(table: string): Promise<number> {
   const { rows } = await pool.query<{ count: string }>(`select count(*) as count from "${table}"`);
@@ -54,6 +60,7 @@ beforeAll(async () => {
   process.env.BETTER_AUTH_URL = ORIGIN;
   auth = (await import("@/lib/auth/server")).getAuth();
   route = await import("@/app/api/auth/[...all]/route");
+  ({ consumeThrottle } = await import("@/lib/server/request-throttle"));
   const { db } = await import("@/db");
   closeAppPool = () => db.$client.end();
 }, TIMEOUT_MS);
@@ -65,6 +72,8 @@ beforeEach(async () => {
   await pool.query("delete from session");
   await pool.query("delete from pending_signups");
   await pool.query("delete from email_cooldowns");
+  await pool.query("delete from request_throttles");
+  vi.mocked(consumeThrottle).mockClear();
 });
 
 afterEach(() => {
@@ -207,6 +216,57 @@ describe("with ACCOUNTS_ENABLED on", () => {
     expect(response.status).toBe(200);
     expect(sentEmails).toEqual(["new@example.com"]);
     expect(await count("user")).toBe(0);
+  });
+});
+
+describe("request throttling (I1)", () => {
+  const CLIENT_IP = "203.0.113.7";
+
+  function socialStart(headers: Record<string, string> = { "x-forwarded-for": CLIENT_IP }) {
+    return route.POST(
+      new Request(`${ORIGIN}/api/auth/sign-in/social`, {
+        method: "POST",
+        headers: { origin: ORIGIN, "content-type": "application/json", ...headers },
+        body: JSON.stringify({ provider: "google" }),
+      }),
+    );
+  }
+
+  beforeEach(() => {
+    vi.stubEnv("ACCOUNTS_ENABLED", "true");
+  });
+
+  it("answers 429 from the sixth Google start in a minute from one address", async () => {
+    for (let attempt = 1; attempt <= 5; attempt += 1) {
+      expect((await socialStart()).status, `attempt ${attempt}`).not.toBe(429);
+    }
+    const refused = await socialStart();
+    expect(refused.status).toBe(429);
+    expect(Number(refused.headers.get("x-retry-after"))).toBeGreaterThanOrEqual(1);
+  });
+
+  it("counts another address separately", async () => {
+    for (let attempt = 1; attempt <= 6; attempt += 1) await socialStart();
+    expect((await socialStart({ "x-forwarded-for": "203.0.113.8" })).status).not.toBe(429);
+  });
+
+  it("hands the store a hashed key and keeps the address out of the database", async () => {
+    await socialStart();
+    const calls = vi.mocked(consumeThrottle).mock.calls;
+    expect(calls).toHaveLength(1);
+    const [key, rule] = calls[0] ?? [];
+    expect(key).toMatch(/^[A-Za-z0-9_-]{43}$/);
+    expect(rule).toEqual({ window: 60, max: 5 });
+    const { rows } = await pool.query<{ key: string }>("select key from request_throttles");
+    expect(rows).toEqual([{ key }]);
+    expect(rows[0]?.key).not.toContain(CLIENT_IP);
+  });
+
+  it("falls back to one shared bucket when the forwarded-for header has several values", async () => {
+    for (let attempt = 1; attempt <= 5; attempt += 1) {
+      await socialStart({ "x-forwarded-for": `198.51.100.${attempt}, 203.0.113.9` });
+    }
+    expect((await socialStart({})).status).toBe(429);
   });
 });
 
