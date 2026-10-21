@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 
+import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
+
 import {
   auditDeviceClaims,
   CATALOGS,
@@ -18,14 +20,23 @@ const real = {
   source: readSource,
 };
 
+// The notice's "last updated" date must follow the notice, so it is the one key allowed to move;
+// it is pinned to the consent version instead (a notice change bumps both, ADR 0013 decision 2).
+const NOTICE_DATE_KEY = "legal.updated";
+
 describe.each(
   LOCALES,
 )("guest copy is byte-identical to the pre-accounts catalogue (%s)", (locale) => {
   it("keeps every pre-existing key's value", () => {
     const changed = Object.entries(GUEST_GOLDEN[locale]).filter(
-      ([key, value]) => CATALOGS[locale][key] !== value,
+      ([key, value]) => key !== NOTICE_DATE_KEY && CATALOGS[locale][key] !== value,
     );
     expect(changed.map(([key]) => key)).toEqual([]);
+  });
+
+  it("dates the notice with the current consent version", () => {
+    const [year, month, day] = CURRENT_CONSENT_VERSION.split("-");
+    expect(CATALOGS[locale][NOTICE_DATE_KEY]).toContain(`${day}/${month}/${year}`);
   });
 });
 

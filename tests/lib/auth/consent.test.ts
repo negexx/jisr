@@ -13,6 +13,11 @@ describe("hasCurrentConsent", () => {
     expect(hasCurrentConsent({ consentVersion: CURRENT_CONSENT_VERSION })).toBe(true);
   });
 
+  it("gates the 2026-10-16 notice and accepts the 2026-10-21 notice", () => {
+    expect(hasCurrentConsent({ consentVersion: "2026-10-16" })).toBe(false);
+    expect(hasCurrentConsent({ consentVersion: "2026-10-21" })).toBe(true);
+  });
+
   it.each<[string, string | null | undefined]>([
     ["no consent", null],
     ["an undefined consent", undefined],

@@ -284,7 +284,7 @@ The following measures are in the repository and are the ones to describe in the
 | Arabic body | `content/ar/privacy.mdx`, `content/ar/terms.mdx` |
 | Page components | `src/app/[locale]/privacy/page.tsx`, `src/app/[locale]/terms/page.tsx` |
 | Consent constant | `CURRENT_CONSENT_VERSION` in `src/lib/auth/consent.ts` |
-| Consent version value | `2026-10-16` |
+| Consent version value | `2026-10-21` |
 | Version tie test | `tests/app/legal-pages.test.tsx` ties the constant to the frontmatter in all three privacy files |
 | Controller in the notice | Hamza Dagdagui, established in Italy; contact dagdaguihamza@gmail.com |
 | Languages | English, French, Modern Standard Arabic (RTL) |
@@ -320,7 +320,7 @@ The notice describes:
 - **International-transfer wording.** The notice names the processors and the EU hosting but not the transfer mechanism. Decide the mechanism before filing the F118, and update the notice and consent text if needed.
 - **Backups.** The notice says copies may remain for a short time in technical backups and that the provider sets the period. This was not checked against Neon's real retention.
 - **Brevo.** The notice makes no region or DPA claim for Brevo. Check where Brevo stores data and accept the DPA if offered.
-- **Google.** The notice discloses that Google's name and picture are stored but unused. Decide whether to keep storing them or drop them with `mapProfileToUser`.
+- **Google.** Resolved 2026-10-21 (PR #91): Google's name and picture address are received but not kept (stored blank; migration 0004 blanked existing rows), and the notice says so.
 
 ## 6. Owner checklist
 

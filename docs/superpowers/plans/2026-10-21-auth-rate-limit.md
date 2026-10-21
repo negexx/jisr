@@ -129,4 +129,4 @@ Exact notice sentence (appended to the IP bullet):
 - S1: read-only sync after "continue" on another browser (UX change to ruling Q19).
 - An absolute session cap (product trade-off for shared computers).
 - Vercel WAF rule or Turnstile against a many-address botnet; the Brevo bounce alert itself.
-- Whether the notice change needs a consent-version bump (this plan says no).
+- Whether the notice change needs a consent-version bump (this plan says no). Decided 2026-10-21: bumped to 2026-10-21.
