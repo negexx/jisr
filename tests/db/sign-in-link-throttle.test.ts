@@ -198,6 +198,27 @@ describe("the sign-in link action, per address", () => {
     expect(await requestSignInLink(request(unique(1)))).toEqual({ ok: true });
   });
 
+  it("answers a throttle store failure with `failed` and logs no query text and no key", async () => {
+    const { db } = await import("@/db");
+    vi.spyOn(db, "insert").mockImplementation((() => {
+      throw Object.assign(
+        new Error(`Failed query: insert into "request_throttles" params: ${CLIENT_IP}`),
+        { cause: { code: "08006" } },
+      );
+    }) as unknown as typeof db.insert);
+    const spies = (["log", "info", "warn", "error", "debug"] as const).map((method) =>
+      vi.spyOn(console, method).mockImplementation(() => undefined),
+    );
+    expect(await requestSignInLink(request(unique(1)))).toEqual({ ok: false, error: "failed" });
+    const output = JSON.stringify(spies.flatMap((spy) => spy.mock.calls));
+    expect(output).toContain("08006");
+    expect(output).not.toContain("Failed query");
+    expect(output).not.toContain(CLIENT_IP);
+    expect(output).not.toContain(unique(1));
+    vi.restoreAllMocks();
+    expect(await count("email_cooldowns")).toBe(0);
+  });
+
   it("takes no throttle slot while the confirmations are missing", async () => {
     expect(await requestSignInLink({ ...request(unique(1)), consent: false })).toEqual({
       ok: false,

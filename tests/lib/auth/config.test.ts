@@ -75,14 +75,22 @@ describe("better auth server config", () => {
     expect(AUTH_RATE_LIMIT_RULES["/get-session"]).toBe(false);
   });
 
+  // Sized for carrier-grade NAT: many mobile users in Morocco share one IPv4 address.
   it("limits sign-in links, Google starts, link confirms and deletions", () => {
     expect(AUTH_RATE_LIMIT_RULES).toEqual({
       "/get-session": false,
       "/sign-in/magic-link": { window: 60, max: 3 },
-      "/sign-in/social": { window: 60, max: 5 },
-      "/magic-link/confirm": { window: 60, max: 5 },
-      "/delete-user": { window: 3600, max: 5 },
+      "/sign-in/social": { window: 60, max: 20 },
+      "/magic-link/confirm": { window: 60, max: 20 },
+      "/delete-user": { window: 3600, max: 10 },
     });
+  });
+
+  it("names exact paths only: the storage matches a path by equality, never a wildcard", () => {
+    for (const path of Object.keys(AUTH_RATE_LIMIT_RULES)) {
+      expect(path, path).not.toContain("*");
+      expect(path, path).toMatch(/^\/[a-z-]+(\/[a-z-]+)*$/);
+    }
   });
 
   it("enables account deletion with a verification email callback", () => {

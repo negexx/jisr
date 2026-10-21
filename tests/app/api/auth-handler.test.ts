@@ -70,6 +70,7 @@ beforeEach(async () => {
 
 afterEach(() => {
   vi.unstubAllEnvs();
+  vi.restoreAllMocks();
 });
 
 afterAll(async () => {
@@ -241,8 +242,8 @@ describe("request throttling (I1)", () => {
     vi.stubEnv("ACCOUNTS_ENABLED", "true");
   });
 
-  it("answers 429 from the sixth Google start in a minute from one address", async () => {
-    for (let attempt = 1; attempt <= 5; attempt += 1) {
+  it("answers 429 from the twenty-first Google start in a minute from one address", async () => {
+    for (let attempt = 1; attempt <= 20; attempt += 1) {
       expect((await socialStart()).status, `attempt ${attempt}`).not.toBe(429);
     }
     const refused = await socialStart();
@@ -251,7 +252,8 @@ describe("request throttling (I1)", () => {
   });
 
   it("counts another address separately", async () => {
-    for (let attempt = 1; attempt <= 6; attempt += 1) await socialStart();
+    for (let attempt = 1; attempt <= 21; attempt += 1) await socialStart();
+    expect((await socialStart()).status).toBe(429);
     expect((await socialStart({ "x-forwarded-for": "203.0.113.8" })).status).not.toBe(429);
   });
 
@@ -277,11 +279,37 @@ describe("request throttling (I1)", () => {
     expect(await count("request_throttles")).toBe(2);
   });
 
-  it("falls back to one shared bucket when the forwarded-for header has several values", async () => {
-    for (let attempt = 1; attempt <= 5; attempt += 1) {
+  // Under NODE_ENV=test Better Auth resolves "no trusted address" to localhost (in production, to
+  // its shared no-trusted-ip bucket); either way every such request lands in one shared row.
+  it("puts requests with an untrusted or missing forwarded-for in one shared bucket (test-mode address)", async () => {
+    for (let attempt = 1; attempt <= 20; attempt += 1) {
       await socialStart({ "x-forwarded-for": `198.51.100.${attempt}, 203.0.113.9` });
     }
     expect((await socialStart({})).status).toBe(429);
+  });
+
+  it("answers a throttle store failure with a 5xx and prints neither the query nor the key", async () => {
+    const { db } = await import("@/db");
+    vi.spyOn(db, "insert").mockImplementation((() => {
+      throw Object.assign(
+        new Error(`Failed query: insert into "request_throttles" params: ${CLIENT_IP}`),
+        { cause: { code: "08006" } },
+      );
+    }) as unknown as typeof db.insert);
+    const spies = (["log", "info", "warn", "error", "debug"] as const).map((method) =>
+      vi.spyOn(console, method).mockImplementation(() => undefined),
+    );
+    const outcome = await socialStart().then(
+      (response) => ({ status: response.status, text: "" }),
+      (error: unknown) => ({
+        status: 500,
+        text: `${error instanceof Error ? `${error.message}${error.stack ?? ""}` : String(error)}`,
+      }),
+    );
+    expect(outcome.status).toBeGreaterThanOrEqual(500);
+    const output = `${outcome.text}${JSON.stringify(spies.flatMap((spy) => spy.mock.calls))}`;
+    expect(output).not.toContain("Failed query");
+    expect(output).not.toContain(CLIENT_IP);
   });
 });
 

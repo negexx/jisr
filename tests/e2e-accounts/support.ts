@@ -36,8 +36,6 @@ type MailKind = "magic-link" | "delete-account";
 // The sign-in or deletion link the file transport wrote for `to`, written at or after `since`.
 // The link is a secret: it is returned to the caller and never printed.
 export async function readMailLink(to: string, kind: MailKind, since: number): Promise<URL> {
-  // Every link is opened and confirmed right after it is read.
-  await resetRequestThrottles();
   let link: string | null = null;
   await expect
     .poll(
@@ -89,8 +87,9 @@ export async function resetEmailCooldown(email: string): Promise<void> {
 }
 
 // The suite runs against a production build with no x-forwarded-for, so every request shares one
-// per-path bucket of the auth request limiter (its limits are covered by tests/db and the handler
-// test). Confirms and deletions across both locale chains would otherwise pass 5 a minute.
+// address key, in the auth request limiter and in the sign-in form's own per-address slots (their
+// limits are covered by tests/db and the handler test). Each spec file calls this in a beforeEach
+// so one test's sign-ins and confirms do not count against the next.
 export async function resetRequestThrottles(): Promise<void> {
   await withDb((client) => client.query("delete from request_throttles"));
 }
@@ -191,9 +190,6 @@ function startsWithText(text: string): RegExp {
 // The sign-in form, filled and sent. One flow: both confirmations (consent + age) are always
 // required, for email and Google alike.
 export async function requestLink(page: Page, t: Translate, email: string): Promise<void> {
-  // Every request of this server shares the "no trusted address" key, and the sign-in form takes
-  // per-address slots of its own (covered by tests/db/sign-in-link-throttle.test.ts).
-  await resetRequestThrottles();
   await page.getByLabel(startsWithText(t("signup.email.label"))).fill(email);
   await page.getByRole("checkbox", { name: startsWithText(t("signup.consent.label")) }).check();
   await page.getByRole("checkbox", { name: startsWithText(t("signup.age.label")) }).check();

@@ -185,13 +185,14 @@ describe("authLimiterStorage", () => {
   const ADDRESS = "203.0.113.7";
   const SOCIAL = `${ADDRESS}|/sign-in/social`;
   const SOCIAL_RULE = { window: 60, max: 5 };
+  // Better Auth resolves a rule for every path: its own defaults for the ones it knows, ours for
+  // the rest. The storage receives that resolved rule.
   const FALLBACK = { window: 60, max: 100 };
   const PURGE_EVERY_MS = 10 * 60 * 1000;
 
   function storage(clock?: () => number) {
     return authLimiterStorage({
       ruledPaths: ["/sign-in/social", "/delete-user"],
-      fallbackRule: FALLBACK,
       ...(clock ? { clock } : {}),
     });
   }
@@ -200,14 +201,16 @@ describe("authLimiterStorage", () => {
     return (await counts()).map((row) => row.key);
   }
 
-  it("keeps unruled paths of one address in a single row and a ruled path in its own", async () => {
+  const UNRULED = `${ADDRESS}|*${FALLBACK.window}/${FALLBACK.max}`;
+
+  it("keeps unruled paths of one address and one rule in a single row, a ruled path in its own", async () => {
     const limiter = storage();
     for (const path of ["/nope-1", "/nope-2", "/nope-3"]) {
       expect(await limiter.consume(`${ADDRESS}|${path}`, FALLBACK)).toMatchObject({
         allowed: true,
       });
     }
-    expect(await counts()).toEqual([{ key: throttleKey("better-auth", `${ADDRESS}|*`), count: 3 }]);
+    expect(await counts()).toEqual([{ key: throttleKey("better-auth", UNRULED), count: 3 }]);
 
     await limiter.consume(SOCIAL, SOCIAL_RULE);
     expect(await keys()).toHaveLength(2);
@@ -218,7 +221,7 @@ describe("authLimiterStorage", () => {
     const limiter = storage();
     await limiter.consume(`${ADDRESS}|/x|y`, FALLBACK);
     await limiter.consume(`${ADDRESS}|/x|z|w`, FALLBACK);
-    expect(await counts()).toEqual([{ key: throttleKey("better-auth", `${ADDRESS}|*`), count: 2 }]);
+    expect(await counts()).toEqual([{ key: throttleKey("better-auth", UNRULED), count: 2 }]);
   });
 
   it("keeps another address apart", async () => {
@@ -228,14 +231,36 @@ describe("authLimiterStorage", () => {
     expect(await keys()).toHaveLength(2);
   });
 
-  it("applies the fallback rule to an unruled path, whatever rule the caller passes", async () => {
+  it("enforces Better Auth's own stricter rule on an unruled path", async () => {
     const limiter = storage();
-    for (let index = 0; index < 4; index += 1) {
-      expect(await limiter.consume(`${ADDRESS}|/sign-in/email`, { window: 10, max: 3 })).toEqual({
+    const builtIn = { window: 10, max: 3 };
+    for (let index = 0; index < builtIn.max; index += 1) {
+      expect(await limiter.consume(`${ADDRESS}|/sign-in/email`, builtIn)).toEqual({
         allowed: true,
         retryAfter: null,
       });
     }
+    expect(await limiter.consume(`${ADDRESS}|/sign-in/email`, builtIn)).toMatchObject({
+      allowed: false,
+    });
+  });
+
+  it("does not let the default counter share a row with a stricter built-in rule", async () => {
+    const limiter = storage();
+    await limiter.consume(`${ADDRESS}|/nope`, FALLBACK);
+    await limiter.consume(`${ADDRESS}|/sign-in/email`, { window: 10, max: 3 });
+    await limiter.consume(`${ADDRESS}|/magic-link/verify`, { window: 60, max: 5 });
+    expect(await keys()).toHaveLength(3);
+  });
+
+  it("takes the shared no-trusted-address bucket for a ruled path like any other address", async () => {
+    const limiter = storage();
+    const key = "no-trusted-ip|/sign-in/social";
+    for (let index = 0; index < SOCIAL_RULE.max; index += 1) {
+      await limiter.consume(key, SOCIAL_RULE);
+    }
+    expect(await limiter.consume(key, SOCIAL_RULE)).toMatchObject({ allowed: false });
+    expect(await keys()).toEqual([throttleKey("better-auth", key)]);
   });
 
   it("applies the caller's rule to a ruled path", async () => {
@@ -249,6 +274,47 @@ describe("authLimiterStorage", () => {
   it("stores no part of the address", async () => {
     await storage().consume(SOCIAL, SOCIAL_RULE);
     for (const key of await keys()) expect(key).toMatch(/^[A-Za-z0-9_-]{43}$/);
+  });
+
+  describe("when the throttle store fails", () => {
+    const DRIVER_TEXT = `Failed query: insert into "request_throttles" params: ${ADDRESS}`;
+
+    function failInsert(): void {
+      vi.spyOn(appDb, "insert").mockImplementation((() => {
+        throw Object.assign(new Error(DRIVER_TEXT), { cause: { code: "08006" } });
+      }) as unknown as typeof appDb.insert);
+    }
+
+    it("rejects with a fixed message and no cause, so nothing downstream can print the query", async () => {
+      failInsert();
+      vi.spyOn(console, "error").mockImplementation(() => undefined);
+      const failure = await storage()
+        .consume(SOCIAL, SOCIAL_RULE)
+        .then(
+          () => null,
+          (error: unknown) => error,
+        );
+      expect(failure).toBeInstanceOf(Error);
+      expect((failure as Error).message).not.toContain("Failed query");
+      expect((failure as Error).message).not.toContain(ADDRESS);
+      expect((failure as Error).cause).toBeUndefined();
+    });
+
+    it("logs the bucket and the SQLSTATE only", async () => {
+      failInsert();
+      const logged = vi.spyOn(console, "error").mockImplementation(() => undefined);
+      await storage()
+        .consume(SOCIAL, SOCIAL_RULE)
+        .catch(() => undefined);
+      expect(logged).toHaveBeenCalledWith("[auth] request throttle failed", {
+        bucket: "better-auth",
+        sqlState: "08006",
+      });
+      const output = JSON.stringify(logged.mock.calls);
+      expect(output).not.toContain("Failed query");
+      expect(output).not.toContain(ADDRESS);
+      expect(output).not.toContain(throttleKey("better-auth", SOCIAL));
+    });
   });
 
   describe("retention", () => {

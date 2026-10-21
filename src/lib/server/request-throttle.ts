@@ -114,19 +114,25 @@ const ANY_OTHER_PATH = "*";
 const LIMITER_BUCKET = "better-auth";
 
 export type AuthLimiterStorageOptions = {
-  // Paths that have their own rule (AUTH_RATE_LIMIT_RULES); every other path shares one counter.
+  // Paths that have their own rule (AUTH_RATE_LIMIT_RULES), matched by equality; every other path
+  // shares one counter per resolved rule.
   ruledPaths: readonly string[];
-  // The rule of that shared counter, whatever rule Better Auth resolved for the unknown path.
-  fallbackRule: ThrottleRule;
   // Milliseconds; injectable for the purge cadence test.
   clock?: () => number;
 };
 
 // Better Auth's `customStorage` for its request limiter. Its key is `<address>|<path>` and the
 // path is whatever the caller sent, so keying rows by the path would let one address create a row
-// per made-up path. A request for a path without a rule is therefore counted per address only
-// (`<address>|*`, under the fallback rule). The address is split at the FIRST separator: it never
-// contains one (an IP or `no-trusted-ip`), while a path may.
+// per made-up path. A request for a path without a rule of ours is therefore counted per address
+// and per resolved rule (`<address>|*<window>/<max>`): the rule is Better Auth's own for the path
+// (its stricter built-in ones for /sign-in/*, /change-password and so on, or our default), and the
+// set of rules is finite, so rows per address stay bounded. The address is split at the FIRST
+// separator: it never contains one (an IP or `no-trusted-ip`), while a path may.
+//
+// Better Auth runs the limiter outside its error handling, so a failing store would reach Next with
+// the driver's message, which carries the statement and its parameters (the key). It is therefore
+// caught here, logged as the bucket and SQLSTATE only, and replaced by a fresh error with a fixed
+// message and no cause.
 //
 // Retention without a worker (ADR 0003): after a granted request, expired rows are purged at most
 // once per interval and per instance, so rows are bounded even when no auth email is ever sent.
@@ -147,13 +153,19 @@ export function authLimiterStorage(options: AuthLimiterStorageOptions) {
       const separator = key.indexOf("|");
       const address = separator === -1 ? key : key.slice(0, separator);
       const path = separator === -1 ? "" : key.slice(separator + 1);
-      const isRuled = ruled.has(path);
-      const result = isRuled
-        ? await consumeThrottle(throttleKey(LIMITER_BUCKET, key), rule)
-        : await consumeThrottle(
-            throttleKey(LIMITER_BUCKET, `${address}|${ANY_OTHER_PATH}`),
-            options.fallbackRule,
-          );
+      const rawKey = ruled.has(path)
+        ? key
+        : `${address}|${ANY_OTHER_PATH}${rule.window}/${rule.max}`;
+      let result: ThrottleResult;
+      try {
+        result = await consumeThrottle(throttleKey(LIMITER_BUCKET, rawKey), rule);
+      } catch (error) {
+        console.error("[auth] request throttle failed", {
+          bucket: LIMITER_BUCKET,
+          sqlState: sqlState(error),
+        });
+        throw new Error("The request throttle is unavailable");
+      }
       if (result.allowed) await purgeWhenDue();
       return result;
     },

@@ -45,18 +45,21 @@ import { isSignupFor } from "./signup-intent";
 export const MAGIC_LINK_EXPIRY_S = PENDING_SIGNUP_TTL_S;
 export const DELETE_TOKEN_EXPIRY_S = 60 * 60;
 
-// Every path without a rule of its own shares this one counter per address (authLimiterStorage).
+// Better Auth's default rule, for a path that neither it nor we give a rule of its own.
 export const AUTH_DEFAULT_RATE_LIMIT = { window: 60, max: 100 };
 
-// Per address and path. Better Auth's built-in rule for every /sign-in path (3 per 10 s) is
-// replaced for the paths named here; any other path keeps the 100 per minute default.
+// Per address and path, matched by exact path (no wildcards). The paths named here replace Better
+// Auth's built-in rule for them (3 per 10 s for every /sign-in path); every other path keeps
+// Better Auth's own rule (its stricter built-in ones, or the default above), counted per address and
+// rule by authLimiterStorage. The ceilings are generous because many mobile users share one IPv4
+// address behind carrier-grade NAT.
 export const AUTH_RATE_LIMIT_RULES: Record<string, { window: number; max: number } | false> = {
   // Read on every page load; a rule of false skips the limiter, so no throttle row is written.
   "/get-session": false,
   "/sign-in/magic-link": { window: 60, max: 3 },
-  "/sign-in/social": { window: 60, max: 5 },
-  "/magic-link/confirm": { window: 60, max: 5 },
-  "/delete-user": { window: 3600, max: 5 },
+  "/sign-in/social": { window: 60, max: 20 },
+  "/magic-link/confirm": { window: 60, max: 20 },
+  "/delete-user": { window: 3600, max: 10 },
 };
 
 // Per address, for the signup Server Action, which calls auth.api and so skips the limiter above.
@@ -310,10 +313,7 @@ function createAuth(secret: string, baseURL: string) {
       enabled: true,
       ...AUTH_DEFAULT_RATE_LIMIT,
       customRules: AUTH_RATE_LIMIT_RULES,
-      customStorage: authLimiterStorage({
-        ruledPaths: Object.keys(AUTH_RATE_LIMIT_RULES),
-        fallbackRule: AUTH_DEFAULT_RATE_LIMIT,
-      }),
+      customStorage: authLimiterStorage({ ruledPaths: Object.keys(AUTH_RATE_LIMIT_RULES) }),
     },
     // The default logger and better-call print raw errors, which carry query parameters (tokens,
     // addresses): see log.ts.

@@ -10,9 +10,14 @@ import {
   openDevice,
   readMailLink,
   requestLink,
+  resetRequestThrottles,
   seedGuestData,
   shot,
 } from "./support";
+
+test.beforeEach(async () => {
+  await resetRequestThrottles();
+});
 
 // A signed-in account menu ("My account" + "Sign out") must leave the nav on ONE row at desktop
 // width: the four items used to wrap, dropping "My plan" under the logo. The screenshots recorded
