@@ -31,6 +31,7 @@ What a pause looks like: the site answers `503` with the code `DEPLOYMENT_PAUSED
 7. Function Invocations now include account traffic (section 1). In the Vercel dashboard (Usage, Function Invocations) look at which routes invoke: `/api/auth/*` and the Server Action requests on `/fr/...` pages are expected, anything else is not. If a reading is at or above 60%, follow section 4.
 8. Neon: open the Neon console, the project's Usage page, and read compute (CU-hours) and storage. The Free plan gives each project 100 CU-hours of compute a month (compute scales to zero when idle) and 1 GB of Postgres storage (https://neon.com/pricing, read 2026-10-15; re-read it at each quarterly review). The 60% marks are 60 CU-hours and 0.6 GB.
 9. Add one row to the accounts log in section 7.
+10. Check the auth throttling alerts and log lines (section 8).
 
 ## 3. The 60% rule: what to do
 
@@ -119,3 +120,28 @@ Reading: the request cap binds well before the transfer cap for every case (abou
 | Date | Brevo: busiest day (emails) | Neon: compute (CU-hours) | Neon: storage | Notes |
 |---|---|---|---|---|
 | (first check after accounts launch) | | | | |
+
+## 8. Auth throttling: alerts and log lines
+
+Context: ADR 0013 decision 3 (request throttling) and the review `docs/ops/security-review-accounts-opus-2026-10.md` (I1). The per-address limits cannot stop a botnet spread over many addresses and cannot see a bounce, so two alerts watch the budget the abuse would spend. **You set both up; nothing in the repository does.**
+
+### Alerts to set up
+
+1. **Daily auth emails at 200 or more.** `auth_email_days.sent` is the day's count of sign-in and deletion emails (ceiling 250, sign-in links stop at 230). In the Neon console SQL editor: `select day, sent from auth_email_days order by day desc limit 3;`. Check it on the monthly check, and add a scheduled Neon or Vercel reminder if you want it daily. At 200 or more on a day that is not a known spike (a Bac-results day), look at the Brevo statistics for the same day before assuming real traffic.
+2. **Brevo bounce rate.** In Brevo, Statistics, transactional email, watch the hard-bounce rate and add Brevo's own alert on it if it offers one. Made-up addresses on real domains still bounce, and Brevo reviews or suspends accounts with high bounce rates; a suspended sender also stops the deletion emails. Rule of thumb: act on a hard-bounce rate above a few percent for a day.
+
+If either fires: look at the Vercel request logs for `POST /api/auth/sign-in/*` and the sign-in Server Action, then consider a Vercel WAF rate-limit rule (check that the rule type is available on Hobby) or Cloudflare Turnstile on the sign-in form (a new processor: the privacy notice and ADR 0013 would need an update first).
+
+### How to read the refusal log lines
+
+Runtime Logs only keep about 1 hour on Hobby (`docs/ops/deploy.md`, section 9). No line holds an address, an email, a key or a token.
+
+| Log line | Meaning and what to do |
+|---|---|
+| `sign-in link request refused by the address throttle { bucket: 'sign-in-link-hour' }` (or `'sign-in-link-day'`) | The sign-in Server Action refused one request: that network address went over 10 an hour or 30 a UTC day. The student saw the neutral "try again later" message. A few are normal; many in a row from a quiet period is the abuse signal above. A school or a mobile carrier sharing one address can also trigger it: wait. |
+| `auth throttle: no trusted client address, requests share one bucket` | Once per server instance. Requests arrived without a single `x-forwarded-for` value, so every one of them shares one bucket and one noisy client can lock everyone out. Check that the proxy still overwrites `x-forwarded-for` (Cloudflare in front of Vercel, a custom domain change) before anything else. |
+| `[auth] request throttle failed { bucket, sqlState }` | The throttle table could not be read or written, and the request failed closed (500). Check `DATABASE_URL`, and that the migrations ran (`0003` creates `request_throttles`): `docs/ops/deploy.md`, section 9. |
+| `[auth] purge of expired request throttles failed { sqlState }` | Best effort; the old rows stay until the next purge. Only worth acting on if it repeats. |
+| `sign-in link request failed` | Not a throttle line: see `docs/ops/deploy.md`, section 9, "Sign-in emails fail while accounts are on". |
+
+Better Auth's own limiter (`/api/auth/*`) answers `429` and writes no line of ours: look for status 429 in the Vercel request logs. A student blocked when confirming a deletion sees "too many deletion requests from your network, wait and try again" (the email request and the confirmation share 10 an hour per address).

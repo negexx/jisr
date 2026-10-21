@@ -12,6 +12,9 @@ const CODE = /^(INTERNAL_SERVER_ERROR|unexpected)$/;
 const io = vi.hoisted(() => ({ requestHeaders: new Headers() }));
 
 vi.mock("next/headers", () => ({ headers: async () => io.requestHeaders }));
+// The transport-layer cases stub Brevo, which turns the mail-route check on; example.com publishes a
+// null MX, so without this every request would stop at invalid_email before reaching the transport.
+vi.mock("@/lib/server/email-domain", () => ({ hasMailRoute: async () => true }));
 
 type SignupModule = typeof import("@/lib/server/signup");
 type DbModule = typeof import("@/db");

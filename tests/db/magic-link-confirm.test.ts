@@ -7,6 +7,7 @@ import { Pool } from "pg";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
+import { runAsSignup } from "@/lib/auth/signup-intent";
 import type { SignInLinkRequest } from "@/lib/server/signup";
 
 import {
@@ -104,6 +105,7 @@ beforeEach(async () => {
     await pool.query(`delete from "${table}"`);
   }
   await pool.query("delete from email_cooldowns");
+  await pool.query("delete from request_throttles");
 });
 
 afterEach(async () => {
@@ -198,8 +200,8 @@ describe("POST /magic-link/confirm", () => {
       "select ip_address as ip, user_agent as ua from session",
     );
     expect(rows).toHaveLength(1);
-    expect([null, ""]).toContain(rows[0]?.ip);
-    expect([null, ""]).toContain(rows[0]?.ua);
+    expect(rows[0]?.ip).toBeNull();
+    expect(rows[0]?.ua).toBeNull();
   });
 
   it("signs an existing account in through the form without touching its consent", async () => {
@@ -216,7 +218,7 @@ describe("POST /magic-link/confirm", () => {
     expect(rows).toEqual([{ consent_version: "2026-01-01" }]);
   });
 
-  it("refuses a direct POST's link (no signup intent) for a new address", async () => {
+  it("sends no link for a direct POST (no signup intent), so none can be confirmed", async () => {
     const response = await route.POST(
       new Request(`${ORIGIN}/api/auth/sign-in/magic-link`, {
         method: "POST",
@@ -224,11 +226,9 @@ describe("POST /magic-link/confirm", () => {
         body: JSON.stringify({ email: "forged@example.com", metadata: { mode: "signup" } }),
       }),
     );
-    expect(response.status).toBe(200);
-    const link = (await lastMail()).url;
-    expect(new URLSearchParams(new URL(link).hash.slice(1)).has("mode")).toBe(false);
-    const confirm = await route.POST(confirmRequest(link));
-    expect(await confirm.json()).toMatchObject({ code: "AGE_NOT_CONFIRMED" });
+    expect(response.status).toBe(404);
+    await expect(lastMail()).rejects.toThrow("no mail was written");
+    expect(await count("verification")).toBe(0);
     expect(await count("user")).toBe(0);
   });
 
@@ -346,14 +346,22 @@ describe("the browser-bound nonce (ruling Q19)", () => {
     );
   }
 
-  async function requestLinkFor(email: string): Promise<{ link: string; nonce: string }> {
-    const response = await route.POST(
-      new Request(`${ORIGIN}/api/auth/sign-in/magic-link`, {
-        method: "POST",
-        headers: { origin: ORIGIN, "content-type": "application/json" },
-        body: JSON.stringify({ email, callbackURL: "/fr/welcome" }),
-      }),
+  // Through the route with the signup intent, which only the Server Action can set: the response
+  // carries the nonce cookie, which the action's own call hands to Next's cookie store instead.
+  function postLinkRequest(email: string): Promise<Response> {
+    return runAsSignup(email, () =>
+      route.POST(
+        new Request(`${ORIGIN}/api/auth/sign-in/magic-link`, {
+          method: "POST",
+          headers: { origin: ORIGIN, "content-type": "application/json" },
+          body: JSON.stringify({ email, callbackURL: "/fr/welcome" }),
+        }),
+      ),
     );
+  }
+
+  async function requestLinkFor(email: string): Promise<{ link: string; nonce: string }> {
+    const response = await postLinkRequest(email);
     expect(response.status).toBe(200);
     const nonce = nonceOf(response);
     if (nonce === null) throw new Error("the link request set no nonce cookie");
@@ -362,13 +370,7 @@ describe("the browser-bound nonce (ruling Q19)", () => {
 
   it("sets an HttpOnly, path-scoped, Lax, 15-minute cookie and stores only its hash", async () => {
     await existingUser("known@example.com");
-    const response = await route.POST(
-      new Request(`${ORIGIN}/api/auth/sign-in/magic-link`, {
-        method: "POST",
-        headers: { origin: ORIGIN, "content-type": "application/json" },
-        body: JSON.stringify({ email: "known@example.com" }),
-      }),
-    );
+    const response = await postLinkRequest("known@example.com");
     expect(response.status).toBe(200);
     const setCookie = response.headers
       .getSetCookie()

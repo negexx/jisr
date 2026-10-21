@@ -65,10 +65,12 @@ beforeEach(async () => {
   await pool.query("delete from session");
   await pool.query("delete from pending_signups");
   await pool.query("delete from email_cooldowns");
+  await pool.query("delete from request_throttles");
 });
 
 afterEach(() => {
   vi.unstubAllEnvs();
+  vi.restoreAllMocks();
 });
 
 afterAll(async () => {
@@ -107,6 +109,11 @@ describe.each([
   beforeEach(() => {
     if (value === undefined) vi.stubEnv("ACCOUNTS_ENABLED", undefined);
     else vi.stubEnv("ACCOUNTS_ENABLED", value);
+  });
+
+  // The route handler answers before Better Auth, and so before its limiter, can touch the store.
+  afterEach(async () => {
+    expect(await count("request_throttles")).toBe(0);
   });
 
   it("refuses a magic-link sign-in and writes no row and no email", async () => {
@@ -204,29 +211,128 @@ describe("with ACCOUNTS_ENABLED on", () => {
     const response = await route.POST(
       postRequest("/api/auth/sign-in/magic-link", { email: "new@example.com" }),
     );
+    expect(response.status).toBe(404);
+    expect(await response.json()).toMatchObject({ code: "NOT_FOUND" });
+    expect(sentEmails).toEqual([]);
+    expect(await count("user")).toBe(0);
+    expect(await count("verification")).toBe(0);
+    expect(await count("email_cooldowns")).toBe(0);
+  });
+
+  it("sends the link of a request that carries the signup intent", async () => {
+    const { runAsSignup } = await import("@/lib/auth/signup-intent");
+    const response = await runAsSignup("new@example.com", () =>
+      route.POST(postRequest("/api/auth/sign-in/magic-link", { email: "new@example.com" })),
+    );
     expect(response.status).toBe(200);
     expect(sentEmails).toEqual(["new@example.com"]);
     expect(await count("user")).toBe(0);
   });
 });
 
+describe("request throttling (I1)", () => {
+  const CLIENT_IP = "203.0.113.7";
+
+  function socialStart(headers: Record<string, string> = { "x-forwarded-for": CLIENT_IP }) {
+    return route.POST(
+      new Request(`${ORIGIN}/api/auth/sign-in/social`, {
+        method: "POST",
+        headers: { origin: ORIGIN, "content-type": "application/json", ...headers },
+        body: JSON.stringify({ provider: "google" }),
+      }),
+    );
+  }
+
+  beforeEach(() => {
+    vi.stubEnv("ACCOUNTS_ENABLED", "true");
+  });
+
+  it("answers 429 from the twenty-first Google start in a minute from one address", async () => {
+    for (let attempt = 1; attempt <= 20; attempt += 1) {
+      expect((await socialStart()).status, `attempt ${attempt}`).not.toBe(429);
+    }
+    const refused = await socialStart();
+    expect(refused.status).toBe(429);
+    expect(Number(refused.headers.get("x-retry-after"))).toBeGreaterThanOrEqual(1);
+  });
+
+  it("counts another address separately", async () => {
+    for (let attempt = 1; attempt <= 21; attempt += 1) await socialStart();
+    expect((await socialStart()).status).toBe(429);
+    expect((await socialStart({ "x-forwarded-for": "203.0.113.8" })).status).not.toBe(429);
+  });
+
+  it("stores a hashed key, never the address", async () => {
+    await socialStart();
+    const { rows } = await pool.query<{ key: string }>("select key from request_throttles");
+    expect(rows).toHaveLength(1);
+    expect(rows[0]?.key).toMatch(/^[A-Za-z0-9_-]{43}$/);
+    expect(rows[0]?.key).not.toContain(CLIENT_IP);
+  });
+
+  it("keeps requests to made-up paths from one address in a single row", async () => {
+    for (const path of ["/nope-1", "/nope-2", "/nope-3"]) {
+      await route.GET(
+        new Request(`${ORIGIN}/api/auth${path}`, {
+          method: "GET",
+          headers: { origin: ORIGIN, "x-forwarded-for": CLIENT_IP },
+        }),
+      );
+    }
+    expect(await count("request_throttles")).toBe(1);
+    await socialStart();
+    expect(await count("request_throttles")).toBe(2);
+  });
+
+  // Under NODE_ENV=test Better Auth resolves "no trusted address" to localhost (in production, to
+  // its shared no-trusted-ip bucket); either way every such request lands in one shared row.
+  it("puts requests with an untrusted or missing forwarded-for in one shared bucket (test-mode address)", async () => {
+    for (let attempt = 1; attempt <= 20; attempt += 1) {
+      await socialStart({ "x-forwarded-for": `198.51.100.${attempt}, 203.0.113.9` });
+    }
+    expect((await socialStart({})).status).toBe(429);
+  });
+
+  it("answers a throttle store failure with a 5xx and prints neither the query nor the key", async () => {
+    const { db } = await import("@/db");
+    vi.spyOn(db, "insert").mockImplementation((() => {
+      throw Object.assign(
+        new Error(`Failed query: insert into "request_throttles" params: ${CLIENT_IP}`),
+        { cause: { code: "08006" } },
+      );
+    }) as unknown as typeof db.insert);
+    const spies = (["log", "info", "warn", "error", "debug"] as const).map((method) =>
+      vi.spyOn(console, method).mockImplementation(() => undefined),
+    );
+    const outcome = await socialStart().then(
+      (response) => ({ status: response.status, text: "" }),
+      (error: unknown) => ({
+        status: 500,
+        text: `${error instanceof Error ? `${error.message}${error.stack ?? ""}` : String(error)}`,
+      }),
+    );
+    expect(outcome.status).toBeGreaterThanOrEqual(500);
+    const output = `${outcome.text}${JSON.stringify(spies.flatMap((spy) => spy.mock.calls))}`;
+    expect(output).not.toContain("Failed query");
+    expect(output).not.toContain(CLIENT_IP);
+  });
+});
+
 describe("flag is read per request", () => {
   it("changes behaviour between requests of one test", async () => {
+    const { runAsSignup } = await import("@/lib/auth/signup-intent");
+    const asForm = (email: string) =>
+      runAsSignup(email, () => route.POST(postRequest("/api/auth/sign-in/magic-link", { email })));
+
     vi.stubEnv("ACCOUNTS_ENABLED", "true");
-    const open = await route.POST(
-      postRequest("/api/auth/sign-in/magic-link", { email: "a@example.com" }),
-    );
+    const open = await asForm("a@example.com");
     expect(open.status).toBe(200);
 
     vi.stubEnv("ACCOUNTS_ENABLED", "false");
-    await expectDisabled(
-      await route.POST(postRequest("/api/auth/sign-in/magic-link", { email: "b@example.com" })),
-    );
+    await expectDisabled(await asForm("b@example.com"));
 
     vi.stubEnv("ACCOUNTS_ENABLED", "true");
-    const reopened = await route.POST(
-      postRequest("/api/auth/sign-in/magic-link", { email: "c@example.com" }),
-    );
+    const reopened = await asForm("c@example.com");
     expect(reopened.status).toBe(200);
     expect(sentEmails).toEqual(["a@example.com", "c@example.com"]);
   });

@@ -10,8 +10,10 @@ import { magicLink } from "better-auth/plugins";
 import { db } from "@/db";
 import * as schema from "@/db/schema";
 import { eraseAccountResidue } from "@/lib/server/account-erasure";
+import { AUTH_IP_ADDRESS_OPTIONS } from "@/lib/server/client-address";
 import { type AuthEmailRequest, resolveAuthEmailLocale, sendAuthEmail } from "@/lib/server/email";
 import { claimAuthEmailSend } from "@/lib/server/email-cooldown";
+import { authLimiterStorage } from "@/lib/server/request-throttle";
 import { accountsEnabled } from "./accounts-enabled";
 import { ACCOUNTS_DISABLED_CODE, accountsGate } from "./accounts-gate";
 import {
@@ -42,6 +44,37 @@ import { isSignupFor } from "./signup-intent";
 // The pending row and the link that can use it expire together.
 export const MAGIC_LINK_EXPIRY_S = PENDING_SIGNUP_TTL_S;
 export const DELETE_TOKEN_EXPIRY_S = 60 * 60;
+
+// Better Auth's defaults (7 days, 1 day) written down so an upgrade cannot change them silently.
+// updateAge slides the expiry: a session in use lasts as long as it is used at least weekly.
+export const SESSION_EXPIRES_IN_S = 7 * 24 * 3600;
+export const SESSION_UPDATE_AGE_S = 24 * 3600;
+
+// Better Auth's default rule, for a path that neither it nor we give a rule of its own.
+export const AUTH_DEFAULT_RATE_LIMIT = { window: 60, max: 100 };
+
+// Per address and path, matched by exact path (no wildcards). The paths named here replace Better
+// Auth's built-in rule for them (3 per 10 s for every /sign-in path); every other path keeps
+// Better Auth's own rule (its stricter built-in ones, or the default above), counted per address and
+// rule by authLimiterStorage. The ceilings are generous because many mobile users share one IPv4
+// address behind carrier-grade NAT.
+export const AUTH_RATE_LIMIT_RULES: Record<string, { window: number; max: number } | false> = {
+  // Read on every page load; a rule of false skips the limiter, so no throttle row is written.
+  "/get-session": false,
+  "/sign-in/magic-link": { window: 60, max: 3 },
+  "/sign-in/social": { window: 60, max: 20 },
+  "/magic-link/confirm": { window: 60, max: 20 },
+  "/delete-user": { window: 3600, max: 10 },
+};
+
+// Per address, for the signup Server Action, which calls auth.api and so skips the limiter above.
+// Fixed windows on the throttle store: the day rule restarts at 00:00 UTC (throttleKey rotates its
+// keys then), so it is per calendar day, not a rolling 24 hours. The ceilings are generous because
+// many mobile users share one IPv4 address behind carrier-grade NAT.
+export const SIGN_IN_LINK_RULES = {
+  hour: { window: 60 * 60, max: 10 },
+  day: { window: 24 * 60 * 60, max: 30 },
+};
 
 const OAUTH_CALLBACK_PATH = "/callback/:id";
 const MAGIC_LINK_VERIFY_PATH = "/magic-link/verify";
@@ -129,7 +162,7 @@ function notFoundError(): APIError {
 // Exactly one claim per magic-link send, taken before the plugin writes its verification row, so
 // a refused request leaves no unused token behind. Hooks run for the HTTP route and for
 // auth.api.signInMagicLink alike (both dispatch through the hook pipeline), which covers the
-// signup Server Action and a direct POST. The body is not validated yet at this point, so the
+// signup Server Action and a direct POST (refused: see isSignupFor below). The body is not validated yet at this point, so the
 // address is checked here: anything the signup form would refuse (not a string, malformed, longer
 // than EMAIL_MAX_LENGTH) is a 400 before any claim, verification row or email. Without that, an
 // oversize address skipped the claim yet still passed the endpoint's own check and was sent.
@@ -152,9 +185,13 @@ const beforeAuthEndpoint = createAuthMiddleware(async (ctx) => {
   if (!accountsEnabled()) throw accountsDisabledError();
   const email: unknown = ctx.body?.email;
   if (typeof email !== "string" || !looksLikeEmail(email)) throw invalidEmailError();
+  // Only the signup Server Action can mark a request (signup-intent.ts), so a direct POST, whatever
+  // it sends, can neither claim a slot nor trigger an email: the form is the only way to ask for a
+  // link. Refused before the claim so it spends no budget.
+  if (!isSignupFor(email)) throw notFoundError();
   await claimSendSlot("magic-link", email);
   // Only after the claim, so a refused request cannot write or refresh a planted row (todo 28, F2).
-  if (isSignupFor(email)) await recordPendingSignup(email);
+  await recordPendingSignup(email);
 });
 
 // POST /delete-user with a token runs Better Auth's deletion callback as a plain function call, so the
@@ -259,12 +296,31 @@ function createAuth(secret: string, baseURL: string) {
     baseURL,
     secret,
     database: drizzleAdapter(db, { provider: "pg", schema }),
-    // Project rule: never record IPs. Better Auth then also skips its IP-keyed rate limiter, so
-    // throttling of auth emails must live in our own code (the email_cooldowns slot).
+    // The client address is read only to throttle requests (rateLimit below), and never stored:
+    // the limiter's storage hashes the `<address>|<path>` key with an HMAC before it reaches the
+    // database (request-throttle.ts), and the session hook below nulls session.ip_address and
+    // user_agent, which Better Auth fills from this same lookup. Vercel overwrites x-forwarded-for
+    // with the single client address; a header with several values is not trusted (no
+    // trustedProxies), so such a request lands in Better Auth's shared `no-trusted-ip` bucket.
     // disableOriginCheck: false is the production default already; Better Auth turns the origin and
     // CSRF checks off by default under NODE_ENV=test, so stating it keeps the test suites on the
     // production behaviour (the magic-link confirm's login-CSRF guard is tested through it).
-    advanced: { ipAddress: { disableIpTracking: true }, disableOriginCheck: false },
+    advanced: {
+      ipAddress: AUTH_IP_ADDRESS_OPTIONS,
+      disableOriginCheck: false,
+    },
+    // Explicit because the limiter defaults to production only. The email_cooldowns slot still
+    // guards each mailbox; this guards each address and path. The limiter runs for HTTP requests
+    // through the router only, so the signup Server Action (an auth.api call) throttles itself.
+    // A path without a rule counts per address only, so made-up paths cannot create rows.
+    // A store failure throws into Better Auth and answers 500 through onAuthApiError.
+    rateLimit: {
+      enabled: true,
+      ...AUTH_DEFAULT_RATE_LIMIT,
+      customRules: AUTH_RATE_LIMIT_RULES,
+      customStorage: authLimiterStorage({ ruledPaths: Object.keys(AUTH_RATE_LIMIT_RULES) }),
+    },
+    session: { expiresIn: SESSION_EXPIRES_IN_S, updateAge: SESSION_UPDATE_AGE_S },
     // The default logger and better-call print raw errors, which carry query parameters (tokens,
     // addresses): see log.ts.
     logger: { log: scrubbedAuthLog },
@@ -342,14 +398,29 @@ function createAuth(secret: string, baseURL: string) {
                 code: "AGE_NOT_CONFIRMED",
               });
             }
+            // Nothing reads the provider's name or picture (the UI and the emails address no one by
+            // name), so they are not kept: `name` is not null in the schema, hence "".
             return {
               data: {
                 ...user,
+                name: "",
+                image: null,
                 consentVersion: decision.consentVersion,
                 consentedAt: decision.consentedAt,
               },
             };
           },
+        },
+        update: {
+          // POST /update-user accepts any name and image from a signed-in caller; blank them the
+          // same way. Only when present, so other updates (e.g. emailVerified) pass untouched.
+          before: async (data) => ({
+            data: {
+              ...data,
+              ...("name" in data ? { name: "" } : {}),
+              ...("image" in data ? { image: null } : {}),
+            },
+          }),
         },
       },
       // Jisr never reads the provider ID token, and Better Auth stores it unencrypted even with

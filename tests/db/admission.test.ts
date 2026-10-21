@@ -2,6 +2,7 @@ import { startTestDatabase, type TestDatabase } from "@scripts/db/harness";
 import { Pool } from "pg";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import { CURRENT_CONSENT_VERSION } from "@/lib/auth/consent";
+import { runAsSignup } from "@/lib/auth/signup-intent";
 
 const TIMEOUT_MS = 60_000;
 const sentLinks: { to: string; token: string }[] = [];
@@ -54,11 +55,18 @@ function refusalCode(error: unknown): string | null {
 }
 
 // The real sign-in path: request a magic link, then confirm it the way the confirm page does (todo
-// 28, F3). A gate rejection is the refusal's code.
-async function signInWithMagicLink(email: string): Promise<{ error: string | null }> {
+// 28, F3). A gate rejection is the refusal's code. A link can only be requested with the signup
+// intent, and that writes a valid pending row; `pending` replaces it (or, absent, removes it) before
+// the link is followed, so the admission rules are exercised against exactly the row they name.
+async function signInWithMagicLink(
+  email: string,
+  pending?: Parameters<typeof insertPending>[1],
+): Promise<{ error: string | null }> {
   const headers = () =>
     new Headers({ "x-forwarded-for": "203.0.113.7", "user-agent": "jisr-test-agent" });
-  await auth.api.signInMagicLink({ body: { email }, headers: headers() });
+  await runAsSignup(email, () => auth.api.signInMagicLink({ body: { email }, headers: headers() }));
+  await pool.query("delete from pending_signups");
+  if (pending) await insertPending(email, pending);
   const link = sentLinks.at(-1);
   if (link?.to !== email) throw new Error("no magic link was sent");
   try {
@@ -166,17 +174,19 @@ describe("admission gate against the database", () => {
   });
 
   it("creates no user when the only pending row has expired", async () => {
-    await insertPending("new@example.com", { expiresAt: ONE_HOUR_AGO });
-    expect(await signInWithMagicLink("new@example.com")).toEqual({ error: "AGE_NOT_CONFIRMED" });
+    expect(await signInWithMagicLink("new@example.com", { expiresAt: ONE_HOUR_AGO })).toEqual({
+      error: "AGE_NOT_CONFIRMED",
+    });
     expect(await userCount()).toBe(0);
   });
 
   it("creates the user with the consent record from a valid pending row", async () => {
-    await insertPending("new@example.com", {
-      expiresAt: IN_ONE_HOUR,
-      consentVersion: CURRENT_CONSENT_VERSION,
-    });
-    expect(await signInWithMagicLink("new@example.com")).toEqual({ error: null });
+    expect(
+      await signInWithMagicLink("new@example.com", {
+        expiresAt: IN_ONE_HOUR,
+        consentVersion: CURRENT_CONSENT_VERSION,
+      }),
+    ).toEqual({ error: null });
     const { rows } = await pool.query<{
       consent_version: string | null;
       consented_at: Date | null;
@@ -187,11 +197,12 @@ describe("admission gate against the database", () => {
   });
 
   it("creates the user with NULL consent when the pending row names an older version", async () => {
-    await insertPending("new@example.com", {
-      expiresAt: IN_ONE_HOUR,
-      consentVersion: "2026-01-01",
-    });
-    expect(await signInWithMagicLink("new@example.com")).toEqual({ error: null });
+    expect(
+      await signInWithMagicLink("new@example.com", {
+        expiresAt: IN_ONE_HOUR,
+        consentVersion: "2026-01-01",
+      }),
+    ).toEqual({ error: null });
     const { rows } = await pool.query<{
       consent_version: string | null;
       consented_at: Date | null;
@@ -200,12 +211,13 @@ describe("admission gate against the database", () => {
   });
 
   it("records no client IP on the session created by the magic-link flow", async () => {
-    await insertPending("new@example.com", {
-      expiresAt: IN_ONE_HOUR,
-      consentVersion: CURRENT_CONSENT_VERSION,
-    });
-    // The request carries an x-forwarded-for header; with tracking disabled it must not land in the row.
-    expect(await signInWithMagicLink("new@example.com")).toEqual({ error: null });
+    // The request carries an x-forwarded-for header (read for the throttle only); it must not land in the row.
+    expect(
+      await signInWithMagicLink("new@example.com", {
+        expiresAt: IN_ONE_HOUR,
+        consentVersion: CURRENT_CONSENT_VERSION,
+      }),
+    ).toEqual({ error: null });
     const { rows } = await pool.query<{ ip_address: string | null }>(
       "select ip_address from session",
     );

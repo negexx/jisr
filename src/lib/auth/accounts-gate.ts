@@ -35,9 +35,12 @@ export function accountsOffResponse(request: Request, basePath: string): Respons
 
 // The kill switch (plan M-12): while accounts are off, every /api/auth request is refused,
 // not just sign-up. Google and magic-link accounts are created on GET callbacks, so a
-// POST-only block would leave creation open. Runs first in the router, before any DB work,
-// and reads the flag per request. The route handler answers first while off; this plugin is
-// the defence for a flag flipped after the instance exists.
+// POST-only block would leave creation open. Reads the flag per request. The route handler
+// answers first while off and never creates the instance, so nothing is written. This plugin is
+// the defence for a flag flipped after the instance exists. It is not first in the router:
+// Better Auth's request limiter runs before plugin onRequest hooks, so on such an instance a
+// request could still write one hashed throttle row (no address, no personal data) before this
+// plugin refuses it. That is the only write that can precede the gate.
 export function accountsGate(): BetterAuthPlugin {
   return {
     id: "accounts-gate",

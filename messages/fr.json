@@ -1166,7 +1166,7 @@
       "consentRequired": "Pour créer un compte, cochez la case pour accepter la politique de confidentialité.",
       "ageRequired": "Pour créer un compte, confirmez que vous avez 16 ans ou plus.",
       "emailInvalid": "Saisissez une adresse e-mail comme nom@exemple.com.",
-      "cooldown": "Nous ne pouvons pas envoyer d'autre lien à cette adresse pour le moment. Réessayez plus tard.",
+      "cooldown": "Nous ne pouvons pas envoyer d'autre lien de connexion pour le moment. Réessayez plus tard.",
       "disabled": "Les comptes ne sont pas encore disponibles. Vous pouvez continuer à utiliser Jisrr sans compte.",
       "failed": "Le lien n'a pas pu être envoyé. Réessayez dans un instant.",
       "linkFailed": "La connexion n'a pas fonctionné. Le lien a peut-être expiré ou déjà servi : demandez-en un nouveau."
@@ -1256,6 +1256,7 @@
       "erased": "Les données de Jisrr ont été effacées de cet appareil.",
       "signIn": "Se connecter",
       "unavailable": "Les comptes ne sont pas disponibles pour le moment. Rien n'a été supprimé.",
+      "tryLater": "Trop de demandes de suppression sont arrivées de votre réseau à l'instant. Rien n'a été supprimé. Patientez un peu, puis appuyez de nouveau sur le bouton. Si le lien de votre e-mail a expiré, demandez un nouveau lien depuis la page de votre compte.",
       "failed": "Nous n'avons pas pu confirmer la suppression. Vérifiez votre connexion et réessayez."
     }
   },
@@ -1325,7 +1326,8 @@
       },
       "errors": {
         "failed": "La demande n'a pas abouti. Rien n'a été supprimé. Vérifiez votre connexion et réessayez.",
-        "unavailable": "Les comptes ne sont pas disponibles pour le moment. Rien n'a été supprimé."
+        "unavailable": "Les comptes ne sont pas disponibles pour le moment. Rien n'a été supprimé.",
+        "tryLater": "Trop de demandes de suppression sont arrivées de votre réseau à l'instant. Rien n'a été supprimé. Patientez un peu, puis réessayez."
       }
     }
   },

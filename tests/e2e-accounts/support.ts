@@ -86,6 +86,14 @@ export async function resetEmailCooldown(email: string): Promise<void> {
   );
 }
 
+// The suite runs against a production build with no x-forwarded-for, so every request shares one
+// address key, in the auth request limiter and in the sign-in form's own per-address slots (their
+// limits are covered by tests/db and the handler test). Each spec file calls this in a beforeEach
+// so one test's sign-ins and confirms do not count against the next.
+export async function resetRequestThrottles(): Promise<void> {
+  await withDb((client) => client.query("delete from request_throttles"));
+}
+
 export async function accountRowCount(email: string): Promise<number> {
   return withDb(async (client) => {
     const result = await client.query<{ n: string }>(

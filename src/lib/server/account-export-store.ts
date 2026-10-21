@@ -1,3 +1,5 @@
+import "server-only";
+
 import { eq } from "drizzle-orm";
 
 import {
@@ -7,6 +9,7 @@ import {
   pendingSignups,
   profiles,
   savedPrograms,
+  session,
   user,
   userDataState,
 } from "@/db/schema";
@@ -19,11 +22,13 @@ import { byCodeUnit } from "./rows";
 // account-store.ts it takes the database and an already-authenticated user id.
 //
 // Every column is named: a column added later to any of these tables (a regenerated auth schema, a
-// migration) reaches the file only if it is added here on purpose. Session, verification and OAuth
-// token columns, the password hash and the session's user agent and IP are never selected, and from
-// `account` only the provider id and the link date are.
+// migration) reaches the file only if it is added here on purpose. Verification and OAuth token
+// columns and the password hash are never selected; from `account` only the provider id, the
+// provider's own id for the student and the link date are; from `session` only the two dates (never
+// the token, the user agent or the IP).
 
 export const ACCOUNT_EXPORT_FORMAT = "jisr-account-export";
+// Additive fields (sessions, accountId, role) do not bump this; only a removed or renamed field does.
 export const ACCOUNT_EXPORT_SCHEMA_VERSION = 1;
 
 export type AccountExport = {
@@ -35,10 +40,12 @@ export type AccountExport = {
     emailVerified: boolean;
     name: string;
     image: string | null;
+    role: string | null;
     createdAt: string;
     updatedAt: string;
-    signInMethods: { provider: string; createdAt: string }[];
+    signInMethods: { provider: string; accountId: string; createdAt: string }[];
   };
+  sessions: { createdAt: string; expiresAt: string }[];
   consent: { consentVersion: string | null; consentedAt: string | null };
   // The stored document as it is, even when this build can no longer parse it: `unknown`, so a
   // reader has to run ProfileSchema before using it.
@@ -95,6 +102,7 @@ export async function exportAccountDataFor(
           emailVerified: user.emailVerified,
           name: user.name,
           image: user.image,
+          role: user.role,
           createdAt: user.createdAt,
           updatedAt: user.updatedAt,
           consentVersion: user.consentVersion,
@@ -105,9 +113,17 @@ export async function exportAccountDataFor(
       if (owner === undefined) return null;
 
       const methods = await tx
-        .select({ provider: account.providerId, createdAt: account.createdAt })
+        .select({
+          provider: account.providerId,
+          accountId: account.accountId,
+          createdAt: account.createdAt,
+        })
         .from(account)
         .where(eq(account.userId, userId));
+      const sessions = await tx
+        .select({ createdAt: session.createdAt, expiresAt: session.expiresAt })
+        .from(session)
+        .where(eq(session.userId, userId));
       const [profileRow] = await tx
         .select({
           data: profiles.data,
@@ -174,6 +190,7 @@ export async function exportAccountDataFor(
           emailVerified: owner.emailVerified,
           name: owner.name,
           image: owner.image,
+          role: owner.role,
           createdAt: iso(owner.createdAt),
           updatedAt: iso(owner.updatedAt),
           signInMethods: [...methods]
@@ -181,8 +198,19 @@ export async function exportAccountDataFor(
               (a, b) =>
                 a.createdAt.getTime() - b.createdAt.getTime() || byCodeUnit(a.provider, b.provider),
             )
-            .map((method) => ({ provider: method.provider, createdAt: iso(method.createdAt) })),
+            .map((method) => ({
+              provider: method.provider,
+              accountId: method.accountId,
+              createdAt: iso(method.createdAt),
+            })),
         },
+        sessions: [...sessions]
+          .sort(
+            (a, b) =>
+              a.createdAt.getTime() - b.createdAt.getTime() ||
+              a.expiresAt.getTime() - b.expiresAt.getTime(),
+          )
+          .map((row) => ({ createdAt: iso(row.createdAt), expiresAt: iso(row.expiresAt) })),
         consent: {
           consentVersion: owner.consentVersion,
           consentedAt: isoOrNull(owner.consentedAt),

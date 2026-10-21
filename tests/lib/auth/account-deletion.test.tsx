@@ -32,6 +32,7 @@ const mocks = vi.hoisted(() => ({
 vi.mock("@/lib/auth/client", () => ({ authClient: { deleteUser: mocks.deleteUser } }));
 
 const CATALOGS = { fr, en, ar };
+const NEW_LINK = { fr: /nouveau lien/, en: /new link/, ar: /رابطًا جديدًا/ };
 const DEVICE_KEYS = [
   PROFILE_KEY,
   SAVED_KEY,
@@ -80,6 +81,7 @@ describe("requestAccountDeletion", () => {
   it.each([
     [{ status: 401, code: "UNAUTHORIZED" }, "signed-out"],
     [{ status: 403, code: "ACCOUNTS_DISABLED" }, "unavailable"],
+    [{ status: 429 }, "try-later"],
     [{ status: 500 }, "failed"],
   ] as const)("maps %o to %s", async (error, outcome) => {
     mocks.deleteUser.mockResolvedValue({ data: null, error });
@@ -106,6 +108,7 @@ describe("confirmAccountDeletion", () => {
     [{ status: 404, code: "INVALID_TOKEN" }, "invalid-token"],
     [{ status: 401, code: "UNAUTHORIZED" }, "signed-out"],
     [{ status: 403, code: "ACCOUNTS_DISABLED" }, "unavailable"],
+    [{ status: 429 }, "try-later"],
     [{ status: 500 }, "failed"],
   ] as const)("keeps this device's data when refused with %o (%s)", async (error, outcome) => {
     seedDevice();
@@ -240,6 +243,29 @@ describe("the confirm page", () => {
     expect((await screen.findByRole("alert")).textContent).toBe(fr.accountDelete.errors.failed);
     await userEvent.click(screen.getByRole("button", { name: fr.accountDelete.confirm }));
     await waitFor(() => expect(screen.getByText(fr.accountDelete.deleted.title)).toBeTruthy());
+  });
+
+  it.each([
+    "fr",
+    "en",
+    "ar",
+  ] as const)("says to try again later when the hourly limit refuses, and keeps the button (%s)", async (locale) => {
+    seedDevice();
+    window.history.replaceState(null, "", `/${locale}/account/delete#token=tok123`);
+    mocks.deleteUser.mockResolvedValueOnce({ data: null, error: { status: 429 } });
+    mocks.deleteUser.mockResolvedValueOnce(deleted);
+    renderPage(locale);
+
+    const messages = CATALOGS[locale].accountDelete;
+    await userEvent.click(await screen.findByRole("button", { name: messages.confirm }));
+    expect((await screen.findByRole("alert")).textContent).toBe(messages.errors.tryLater);
+    expect(messages.errors.tryLater).not.toBe(messages.errors.failed);
+    // The wait can outlast the emailed link, so the copy points at asking for a new one.
+    expect(messages.errors.tryLater).toMatch(NEW_LINK[locale]);
+    expect(jisrKeys().length).toBe(DEVICE_KEYS.length);
+
+    await userEvent.click(screen.getByRole("button", { name: messages.confirm }));
+    await waitFor(() => expect(screen.getByText(messages.deleted.title)).toBeTruthy());
   });
 
   it("says the link is not valid when it carries no token, and calls nothing", async () => {

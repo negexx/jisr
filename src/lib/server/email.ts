@@ -252,6 +252,17 @@ function selectTransport(env: Env): Transport {
   throw new AuthEmailTransportNotConfigured("BREVO_API_KEY is empty");
 }
 
+// True when sign-in mail would be written to disk rather than sent (tests, local runs, the e2e
+// server): there is no recipient domain to look up. A misconfigured transport is "not on disk"; the
+// send itself reports that.
+export function mailStaysOnDisk(env: Env = process.env): boolean {
+  try {
+    return selectTransport(env).kind === "file";
+  } catch {
+    return false;
+  }
+}
+
 async function writeMailFile(
   mailDir: string,
   request: AuthEmailRequest,

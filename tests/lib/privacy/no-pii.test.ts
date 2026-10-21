@@ -9,6 +9,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } 
 
 import { type Profile, ProfileSchema } from "@/data-schema/profile";
 import { JOURNEY_EVENTS, track } from "@/lib/analytics";
+import { runAsSignup } from "@/lib/auth/signup-intent";
 import type { SignInLinkRequest } from "@/lib/server/signup";
 
 import { confirmRequest } from "../../support/magic-link";
@@ -260,6 +261,7 @@ const DATA_TABLES = ["saved_programs", "checklist_progress", "profiles", "feedba
 beforeEach(async () => {
   vi.stubEnv("ACCOUNTS_ENABLED", "true");
   for (const table of DATA_TABLES) await pool.query(`delete from "${table}"`);
+  await pool.query("delete from request_throttles");
   signedInAs(alice);
 });
 
@@ -341,10 +343,12 @@ describe("sign-up and sign-in", () => {
     signedOut();
     let nonce = "";
     const logs = await recording(async () => {
-      const response = await post(null, "/sign-in/magic-link", {
-        email: "nonce.canary@example.com",
-        callbackURL: "/fr/welcome",
-      });
+      const response = await runAsSignup("nonce.canary@example.com", () =>
+        post(null, "/sign-in/magic-link", {
+          email: "nonce.canary@example.com",
+          callbackURL: "/fr/welcome",
+        }),
+      );
       expect(response.status).toBe(200);
       const setCookie = response.headers
         .getSetCookie()
@@ -530,10 +534,12 @@ describe("Better Auth's own error paths", () => {
     );
     signedOut();
     const logs = await recording(async () => {
-      await post(null, "/sign-in/magic-link", {
-        email: "direct.canary@example.com",
-        callbackURL: "/fr/welcome",
-      });
+      await runAsSignup("direct.canary@example.com", () =>
+        post(null, "/sign-in/magic-link", {
+          email: "direct.canary@example.com",
+          callbackURL: "/fr/welcome",
+        }),
+      );
     });
     expect(logs).toContain("[better-auth]");
     expect(leaksIn(logs, [OTHER_ADDRESS, "direct.canary", SENTINEL_TOKEN, USER_AGENT])).toEqual([]);

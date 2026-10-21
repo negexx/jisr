@@ -22,6 +22,7 @@ import {
   openDevice,
   readMailLink,
   requestLink,
+  resetRequestThrottles,
   savedSlugsOnServer,
   seedGuestData,
   shot,
@@ -36,6 +37,10 @@ const CHECK = E2E_SLUGS.check;
 const FOUNDATION = E2E_SLUGS.foundation;
 
 type StorageState = Awaited<ReturnType<Device["context"]["storageState"]>>;
+
+test.beforeEach(async () => {
+  await resetRequestThrottles();
+});
 
 for (const { locale, dir } of E2E_LOCALES) {
   test.describe

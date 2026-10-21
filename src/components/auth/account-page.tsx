@@ -191,7 +191,7 @@ function ConsentSection({
   );
 }
 
-type DeleteStatus = "idle" | "working" | "sent" | "failed" | "unavailable";
+type DeleteStatus = "idle" | "working" | "sent" | "failed" | "unavailable" | "try-later";
 
 function DeleteSection({
   email,
@@ -259,9 +259,9 @@ function DeleteSection({
       >
         {working ? t("working") : asked ? t("sent.again") : t("button")}
       </Button>
-      {status === "failed" || status === "unavailable" ? (
+      {status === "failed" || status === "unavailable" || status === "try-later" ? (
         <p role="alert" className="text-base font-medium text-destructive">
-          {t(`errors.${status}`)}
+          {t(status === "try-later" ? "errors.tryLater" : `errors.${status}`)}
         </p>
       ) : null}
     </section>

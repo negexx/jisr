@@ -1,3 +1,5 @@
+import "server-only";
+
 import { type Profile, ProfileSchema } from "@/data-schema/profile";
 import type { checklistProgress, profiles, savedPrograms } from "@/db/schema/app";
 import { CHECKLIST_STEP_IDS, type ChecklistStepId } from "@/domain/types";

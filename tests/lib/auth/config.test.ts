@@ -1,7 +1,12 @@
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import * as dbSchema from "@/db/schema";
 import { accountsEnabled } from "@/lib/auth/accounts-enabled";
-import { getAuth } from "@/lib/auth/server";
+import {
+  AUTH_RATE_LIMIT_RULES,
+  getAuth,
+  SESSION_EXPIRES_IN_S,
+  SESSION_UPDATE_AGE_S,
+} from "@/lib/auth/server";
 
 function required<T>(value: T | undefined, label: string): T {
   if (value === undefined) throw new Error(`auth config: ${label} is missing`);
@@ -49,8 +54,48 @@ describe("better auth server config", () => {
     }
   });
 
-  it("disables IP tracking so session.ip_address is never filled", () => {
-    expect(options.advanced?.ipAddress?.disableIpTracking).toBe(true);
+  it("keeps IP tracking on, reading only x-forwarded-for with IPv6 collapsed to its /64", () => {
+    const ipAddress: {
+      disableIpTracking?: boolean;
+      ipAddressHeaders?: string[];
+      ipv6Subnet?: number;
+      trustedProxies?: string[];
+    } = required(options.advanced?.ipAddress, "advanced.ipAddress");
+    expect(ipAddress.disableIpTracking).not.toBe(true);
+    expect(ipAddress.ipAddressHeaders).toEqual(["x-forwarded-for"]);
+    expect(ipAddress.ipv6Subnet).toBe(64);
+    expect(ipAddress.trustedProxies).toBeUndefined();
+  });
+
+  it("turns Better Auth's request limiter on, with our rules and hashed storage", () => {
+    const rateLimit = required(options.rateLimit, "rateLimit");
+    expect(rateLimit.enabled).toBe(true);
+    expect(rateLimit.window).toBe(60);
+    expect(rateLimit.max).toBe(100);
+    expect(rateLimit.customRules).toEqual(AUTH_RATE_LIMIT_RULES);
+    expect(typeof rateLimit.customStorage?.consume).toBe("function");
+  });
+
+  it("leaves get-session out of the limiter so page loads write no throttle row", () => {
+    expect(AUTH_RATE_LIMIT_RULES["/get-session"]).toBe(false);
+  });
+
+  // Sized for carrier-grade NAT: many mobile users in Morocco share one IPv4 address.
+  it("limits sign-in links, Google starts, link confirms and deletions", () => {
+    expect(AUTH_RATE_LIMIT_RULES).toEqual({
+      "/get-session": false,
+      "/sign-in/magic-link": { window: 60, max: 3 },
+      "/sign-in/social": { window: 60, max: 20 },
+      "/magic-link/confirm": { window: 60, max: 20 },
+      "/delete-user": { window: 3600, max: 10 },
+    });
+  });
+
+  it("names exact paths only: the storage matches a path by equality, never a wildcard", () => {
+    for (const path of Object.keys(AUTH_RATE_LIMIT_RULES)) {
+      expect(path, path).not.toContain("*");
+      expect(path, path).toMatch(/^\/[a-z-]+(\/[a-z-]+)*$/);
+    }
   });
 
   it("enables account deletion with a verification email callback", () => {
@@ -68,6 +113,18 @@ describe("better auth server config", () => {
   it("registers the create-before admission gate hook", () => {
     const before = options.databaseHooks?.user?.create?.before;
     expect(typeof before).toBe("function");
+  });
+
+  it("registers the update-before hook that blanks the profile name and image", () => {
+    const before = options.databaseHooks?.user?.update?.before;
+    expect(typeof before).toBe("function");
+  });
+
+  it("pins the session lifetime to 7 days, refreshed at most once a day", () => {
+    expect(SESSION_EXPIRES_IN_S).toBe(7 * 24 * 3600);
+    expect(SESSION_UPDATE_AGE_S).toBe(24 * 3600);
+    expect(options.session?.expiresIn).toBe(SESSION_EXPIRES_IN_S);
+    expect(options.session?.updateAge).toBe(SESSION_UPDATE_AGE_S);
   });
 
   it("configures the Google social provider from env", () => {

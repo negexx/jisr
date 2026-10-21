@@ -50,7 +50,8 @@ function unsignedIdToken(email: string, emailVerified: boolean): string {
     sub: `google-sub-${email}`,
     email,
     email_verified: emailVerified,
-    name: "Student",
+    name: "Real Name",
+    picture: "https://lh3.googleusercontent.example/avatar.png",
     iat: nowS,
     exp: nowS + 3600,
   };
@@ -151,6 +152,7 @@ beforeEach(async () => {
   await pool.query("delete from verification");
   await pool.query("delete from session");
   await pool.query("delete from pending_signups");
+  await pool.query("delete from request_throttles");
 });
 
 afterEach(() => {
@@ -352,6 +354,36 @@ describe("google sign-up admission", () => {
     expect(await idTokens()).toEqual([{ id_token: null }]);
     expect(await count("user")).toBe(1);
     expect(await count("session")).toBe(2);
+  });
+
+  it("keeps neither the Google profile name nor the picture: name is empty, image is null", async () => {
+    expect(
+      await signInWithGoogle("new@example.com", {
+        ageConfirmed: true,
+        consentVersion: CURRENT_CONSENT_VERSION,
+      }),
+    ).toBeNull();
+    const { rows } = await pool.query<{ name: string; image: string | null }>(
+      'select name, image from "user"',
+    );
+    expect(rows).toEqual([{ name: "", image: null }]);
+  });
+
+  it("stores an empty name and no image when the create hook is handed a Google-like profile", async () => {
+    const before = auth.options.databaseHooks?.user?.create?.before;
+    if (!before) throw new Error("the create.before gate hook is not registered");
+    // The magic-link confirm path takes its evidence from a pending row, so the gate admits it.
+    await insertPending("new@example.com", CURRENT_CONSENT_VERSION);
+    const stored = await before(
+      {
+        email: "new@example.com",
+        name: "Real Name",
+        image: "https://lh3.googleusercontent.example/avatar.png",
+        emailVerified: true,
+      } as never,
+      { path: "/magic-link/confirm" } as never,
+    );
+    expect(stored).toMatchObject({ data: { name: "", image: null, email: "new@example.com" } });
   });
 
   it("stores the Google access and refresh tokens encrypted", async () => {

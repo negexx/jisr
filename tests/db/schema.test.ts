@@ -106,6 +106,7 @@ describe("user data schema on the harness", () => {
       "feedback_reports",
       "pending_signups",
       "profiles",
+      "request_throttles",
       "saved_programs",
       "session",
       "user",
@@ -339,6 +340,15 @@ describe("user data schema on the harness", () => {
         }),
       ),
     ).toBe("22001");
+  });
+
+  it("keys request_throttles by key and rejects a count below one", async () => {
+    const row = { key: "throttle-key", windowStart: NOW, count: 1 };
+    await db.insert(schema.requestThrottles).values(row);
+    expect(await sqlState(db.insert(schema.requestThrottles).values(row))).toBe("23505");
+    expect(
+      await sqlState(db.insert(schema.requestThrottles).values({ ...row, key: "zero", count: 0 })),
+    ).toBe("23514");
   });
 
   it("rejects a user-owned row for a user that does not exist", async () => {

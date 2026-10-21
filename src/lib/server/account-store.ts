@@ -1,3 +1,5 @@
+import "server-only";
+
 import { and, count, eq, sql } from "drizzle-orm";
 import type { NodePgDatabase } from "drizzle-orm/node-postgres";
 

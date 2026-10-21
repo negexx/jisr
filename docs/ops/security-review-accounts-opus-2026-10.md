@@ -5,6 +5,28 @@
 **Scope:** `src/lib/auth/*`, `src/lib/server/*`, `src/app/api/auth/[...all]`, `src/app/api/account/export`, `src/app/[locale]/{sign-in,sign-in/confirm,welcome,account,account/delete}`, the browser halves they call (`src/components/auth/{sign-in-confirm,other-browser-warning,post-auth-landing}.tsx`), `src/db/{index,pool}.ts`, `src/db/schema/*`, `drizzle/0000-0002`, `src/proxy.ts`, `src/lib/security-headers.ts`, `src/components/analytics-loader.tsx`. ADR 0013 and `docs/ops/security-review-accounts.md` were read first and their claims tested against the code and the library.
 **Versions reviewed:** git `02b9643f`. Installed: better-auth 1.7.7, @better-auth/core 1.7.7, @better-auth/drizzle-adapter 1.7.7, better-call 1.4.0, drizzle-orm 0.45.4, drizzle-kit 0.31.11, next 16.3.7, pg 8.23.1, zod 4.6.5. The review worktree has no `node_modules`, so library code was read in the main checkout, which is at the same commit with an identical `package.json`. In the citations below, `better-auth/dist/…` stands for `node_modules/.pnpm/better-auth@1.7.7_drizzle-k_ce0cda7c101b6fa2152b65ad63cb1651/node_modules/better-auth/dist/…`.
 
+## Resolution (2026-10-21)
+
+Branch `fix/auth-rate-limit`, plan `docs/superpowers/plans/2026-10-21-auth-rate-limit.md`, recorded in ADR 0013.
+
+**Fixed.**
+- **I1** (no request-level throttling): Better Auth's limiter is back on with a Postgres store of daily-rotating HMAC keys (`request_throttles`, migration `0003`), the sign-in action takes its own per-address slots before any budget is claimed, a direct `POST /sign-in/magic-link` without the signup intent is refused, and a domain with no mail route is refused before any claim. The privacy notice names the fingerprint. Accepted residuals: windows restart at UTC midnight, students sharing one address share a bucket, a many-address botnet is not stopped.
+- **S2** GoatCounter loaded without integrity: versioned `count.v5.js` with SRI (`src/components/analytics-loader.tsx`); the matching notes in ADR 0011, `docs/audits/2026-10-17-security-audit.md` (SEC-7) and `docs/audits/2026-10-17-security-appendix-c-runtime.md` (C2) are marked resolved.
+- **S3** session lifetime: pinned at 7 days with a one-day update age.
+- **S4** export: now lists the session dates, each sign-in method's provider account id and the role.
+- **S5** deletion not atomic: documented as failure-safe ordering (ADR 0013 decision 9).
+- **S6** `import "server-only"` on the four store modules.
+- **S7** stored name and picture: blanked on create and update, and by migration `0004` for existing accounts; the notice now says they are received and not kept.
+- **S8** ADR drift: decision 2 (every form request is a signup intent) and decision 3 (expired verification rows are swept about an hour after expiry) corrected.
+
+**Left with the owner.**
+- **S1** read-only sync after "continue" on another browser (a change to ruling Q19).
+- An absolute session cap (a product trade-off for shared computers).
+- A Vercel WAF rule or Cloudflare Turnstile against a many-address botnet.
+- The Brevo bounce-rate alert and the `auth_email_days.sent` alert at 200 (`docs/ops/limits-runbook.md`, section 8).
+- Whether the notice change needs a consent-version bump: not bumped here (the throttle is a legitimate interest, and no new data is collected from the student), so the owner should confirm.
+- Run `pnpm db:migrate` (`0003`, `0004`) on the production Neon branch before merging the pull request, because the merge deploys (`docs/ops/deploy.md`, section 9).
+
 ## Summary verdict
 
 **No Critical finding. One Important finding. Several Suggestions.**
