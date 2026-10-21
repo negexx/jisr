@@ -191,6 +191,9 @@ function startsWithText(text: string): RegExp {
 // The sign-in form, filled and sent. One flow: both confirmations (consent + age) are always
 // required, for email and Google alike.
 export async function requestLink(page: Page, t: Translate, email: string): Promise<void> {
+  // Every request of this server shares the "no trusted address" key, and the sign-in form takes
+  // per-address slots of its own (covered by tests/db/sign-in-link-throttle.test.ts).
+  await resetRequestThrottles();
   await page.getByLabel(startsWithText(t("signup.email.label"))).fill(email);
   await page.getByRole("checkbox", { name: startsWithText(t("signup.consent.label")) }).check();
   await page.getByRole("checkbox", { name: startsWithText(t("signup.age.label")) }).check();

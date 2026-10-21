@@ -8,7 +8,7 @@ import { accountsEnabled } from "@/lib/auth/accounts-enabled";
 import { ACCOUNTS_DISABLED_CODE } from "@/lib/auth/accounts-gate";
 import { authCallbackUrls } from "@/lib/auth/callback-urls";
 import { normalizeEmail } from "@/lib/auth/normalize-email";
-import { AuthMisconfiguredError, getAuth } from "@/lib/auth/server";
+import { AuthMisconfiguredError, getAuth, SIGN_IN_LINK_RULES } from "@/lib/auth/server";
 // Node.js runtime only: runAsSignup is AsyncLocalStorage (node:async_hooks), and the auth hooks read
 // it on this same request. Never give a page that renders the sign-in form, or the auth route, an
 // edge runtime; tests/lib/server/signup-runtime.test.ts fails if any src/app segment declares one.
@@ -17,7 +17,14 @@ import { LOCALES } from "@/lib/constants";
 
 import { SignInEmailSchema } from "./account-inputs";
 import { sqlState } from "./account-store";
-import { AuthEmailAccountsDisabled, AuthEmailTransportNotConfigured } from "./email";
+import { clientAddressKey } from "./client-address";
+import {
+  AuthEmailAccountsDisabled,
+  AuthEmailTransportNotConfigured,
+  mailStaysOnDisk,
+} from "./email";
+import { hasMailRoute } from "./email-domain";
+import { consumeThrottle, throttleKey } from "./request-throttle";
 
 export type SignInLinkRequest = {
   // Every form request carries the signup intent (consent evidence); an existing address simply
@@ -110,6 +117,15 @@ function failureOf(error: unknown): SignInLinkError {
   return "failed";
 }
 
+// Hour first: a request the hour rule refuses never touches the day counter.
+async function withinAddressLimits(address: string): Promise<boolean> {
+  for (const [name, rule] of Object.entries(SIGN_IN_LINK_RULES)) {
+    const { allowed } = await consumeThrottle(throttleKey(`sign-in-link-${name}`, address), rule);
+    if (!allowed) return false;
+  }
+  return true;
+}
+
 export async function requestSignInLink(input: SignInLinkRequest): Promise<SignInLinkResult> {
   // First, before any parsing or database work: while accounts are off this action processes no
   // personal data at all (plan B6).
@@ -127,6 +143,17 @@ export async function requestSignInLink(input: SignInLinkRequest): Promise<SignI
     // Resolved first so a misconfigured deployment records nothing.
     const auth = getAuth();
     const requestHeaders = await headers();
+    // auth.api calls skip Better Auth's request limiter, so this action takes its own per-address
+    // slots. A refusal returns before the mail-route lookup, the mailbox cooldown and the daily
+    // email counter, so it spends none of them.
+    if (!(await withinAddressLimits(clientAddressKey(requestHeaders)))) {
+      return { ok: false, error: "cooldown" };
+    }
+    // An address at a domain that cannot receive mail never reaches a budget or the provider
+    // (bounces count against the sender). Skipped where the mail is written to disk.
+    if (!mailStaysOnDisk() && !(await hasMailRoute(email))) {
+      return { ok: false, error: "invalid_email" };
+    }
     // The auth instance's before hook claims the send slot inside this call and, for a request
     // marked by runAsSignup (which only this action can set), writes the pending row right after
     // the claim and before the verification row and the email. The server derives the wording.

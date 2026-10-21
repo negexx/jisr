@@ -205,6 +205,19 @@ describe("with ACCOUNTS_ENABLED on", () => {
     const response = await route.POST(
       postRequest("/api/auth/sign-in/magic-link", { email: "new@example.com" }),
     );
+    expect(response.status).toBe(404);
+    expect(await response.json()).toMatchObject({ code: "NOT_FOUND" });
+    expect(sentEmails).toEqual([]);
+    expect(await count("user")).toBe(0);
+    expect(await count("verification")).toBe(0);
+    expect(await count("email_cooldowns")).toBe(0);
+  });
+
+  it("sends the link of a request that carries the signup intent", async () => {
+    const { runAsSignup } = await import("@/lib/auth/signup-intent");
+    const response = await runAsSignup("new@example.com", () =>
+      route.POST(postRequest("/api/auth/sign-in/magic-link", { email: "new@example.com" })),
+    );
     expect(response.status).toBe(200);
     expect(sentEmails).toEqual(["new@example.com"]);
     expect(await count("user")).toBe(0);
@@ -274,21 +287,19 @@ describe("request throttling (I1)", () => {
 
 describe("flag is read per request", () => {
   it("changes behaviour between requests of one test", async () => {
+    const { runAsSignup } = await import("@/lib/auth/signup-intent");
+    const asForm = (email: string) =>
+      runAsSignup(email, () => route.POST(postRequest("/api/auth/sign-in/magic-link", { email })));
+
     vi.stubEnv("ACCOUNTS_ENABLED", "true");
-    const open = await route.POST(
-      postRequest("/api/auth/sign-in/magic-link", { email: "a@example.com" }),
-    );
+    const open = await asForm("a@example.com");
     expect(open.status).toBe(200);
 
     vi.stubEnv("ACCOUNTS_ENABLED", "false");
-    await expectDisabled(
-      await route.POST(postRequest("/api/auth/sign-in/magic-link", { email: "b@example.com" })),
-    );
+    await expectDisabled(await asForm("b@example.com"));
 
     vi.stubEnv("ACCOUNTS_ENABLED", "true");
-    const reopened = await route.POST(
-      postRequest("/api/auth/sign-in/magic-link", { email: "c@example.com" }),
-    );
+    const reopened = await asForm("c@example.com");
     expect(reopened.status).toBe(200);
     expect(sentEmails).toEqual(["a@example.com", "c@example.com"]);
   });

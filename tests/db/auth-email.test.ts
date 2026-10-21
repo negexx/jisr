@@ -2,6 +2,8 @@ import { startTestDatabase, type TestDatabase } from "@scripts/db/harness";
 import { Pool } from "pg";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
+import { runAsSignup } from "@/lib/auth/signup-intent";
+
 const TIMEOUT_MS = 60_000;
 
 type SentRequest = { kind: string; to: string; metadata?: Record<string, unknown> };
@@ -26,11 +28,15 @@ async function count(table: string): Promise<number> {
   return Number(rows[0]?.count);
 }
 
+// The form path: only the signup Server Action marks a request with the signup intent, and a request
+// without it is refused (see "a direct request" below).
 function signIn(email: string, metadata?: Record<string, unknown>) {
-  return auth.api.signInMagicLink({
-    body: { email, ...(metadata ? { metadata } : {}) },
-    headers: new Headers(),
-  });
+  return runAsSignup(email, () =>
+    auth.api.signInMagicLink({
+      body: { email, ...(metadata ? { metadata } : {}) },
+      headers: new Headers(),
+    }),
+  );
 }
 
 function sendDeleteVerification(email: string) {
@@ -53,6 +59,7 @@ beforeAll(async () => {
 beforeEach(async () => {
   sent.length = 0;
   await pool.query("delete from verification");
+  await pool.query("delete from pending_signups");
   await pool.query("delete from email_cooldowns");
   await pool.query("delete from auth_email_days");
   await pool.query("delete from request_throttles");
@@ -138,14 +145,16 @@ describe("with ACCOUNTS_ENABLED on", () => {
     expect(await count("email_cooldowns")).toBe(1);
   });
 
-  it("claims the slot for a direct POST to the magic-link route too", async () => {
+  it("claims the slot for the route too when the request carries the signup intent", async () => {
     const post = () =>
-      auth.handler(
-        new Request("http://localhost:3000/api/auth/sign-in/magic-link", {
-          method: "POST",
-          headers: { origin: "http://localhost:3000", "content-type": "application/json" },
-          body: JSON.stringify({ email: "direct@example.com" }),
-        }),
+      runAsSignup("direct@example.com", () =>
+        auth.handler(
+          new Request("http://localhost:3000/api/auth/sign-in/magic-link", {
+            method: "POST",
+            headers: { origin: "http://localhost:3000", "content-type": "application/json" },
+            body: JSON.stringify({ email: "direct@example.com" }),
+          }),
+        ),
       );
     expect((await post()).status).toBe(200);
     const refused = await post();
@@ -153,6 +162,21 @@ describe("with ACCOUNTS_ENABLED on", () => {
     expect(await refused.json()).toMatchObject({ code: "EMAIL_COOLDOWN" });
     expect(sent.map((request) => request.to)).toEqual(["direct@example.com"]);
     expect(await count("verification")).toBe(2);
+  });
+
+  it("refuses a direct POST to the route (no signup intent) and claims nothing", async () => {
+    const response = await auth.handler(
+      new Request("http://localhost:3000/api/auth/sign-in/magic-link", {
+        method: "POST",
+        headers: { origin: "http://localhost:3000", "content-type": "application/json" },
+        body: JSON.stringify({ email: "direct@example.com" }),
+      }),
+    );
+    expect(response.status).toBe(404);
+    expect(await count("email_cooldowns")).toBe(0);
+    expect(await count("auth_email_days")).toBe(0);
+    expect(await count("verification")).toBe(0);
+    expect(sent).toEqual([]);
   });
 
   it("refuses a value that is not an address with a 400, without claiming a slot", async () => {
@@ -232,15 +256,15 @@ describe("with ACCOUNTS_ENABLED on", () => {
     expect(sent.map((request) => request.to)).toEqual(["one@example.com", "two@example.com"]);
   });
 
-  it("hands the sign-in metadata to the email sender, marked as a sign-in", async () => {
+  it("hands the sign-in metadata to the email sender, marked as a sign-up (the form's intent)", async () => {
     await signIn("new@example.com", { locale: "ar" });
-    expect(sent[0]?.metadata).toEqual({ locale: "ar", mode: "signin" });
+    expect(sent[0]?.metadata).toEqual({ locale: "ar", mode: "signup" });
   });
 
-  it("treats a caller-supplied signup mode as a sign-in without the signup intent", async () => {
-    await signIn("new@example.com", { locale: "en", mode: "signup" });
-    expect(sent[0]?.metadata).toEqual({ locale: "en", mode: "signin" });
-    expect(await count("pending_signups")).toBe(0);
+  it("derives the mode from the signup intent, never from caller-supplied metadata", async () => {
+    await signIn("new@example.com", { locale: "en", mode: "signin" });
+    expect(sent[0]?.metadata).toEqual({ locale: "en", mode: "signup" });
+    expect(await count("pending_signups")).toBe(1);
   });
 
   it("throttles delete-account emails on their own slot", async () => {

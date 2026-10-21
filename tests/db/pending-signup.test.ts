@@ -83,11 +83,11 @@ function request(overrides: Partial<SignInLinkRequest> = {}): SignInLinkRequest 
   };
 }
 
-async function requestDirectLink(email: string): Promise<void> {
-  await auth.api.signInMagicLink({
-    body: { email, callbackURL: "/fr/welcome" },
-    headers: io.requestHeaders,
-  });
+// Takes the mailbox's send slot the way an earlier request (a link, or a deletion email's neighbour
+// request) would have, so the form's own request meets a cooldown.
+async function takeSendSlot(email: string): Promise<void> {
+  const { claimAuthEmailSend } = await import("@/lib/server/email-cooldown");
+  expect(await claimAuthEmailSend("magic-link", email)).toBe(true);
 }
 
 // Follows an emailed link the way a browser does: the link opens the confirm page, whose button posts
@@ -282,11 +282,17 @@ describe("requestSignInLink with accounts on", () => {
     expect(await count("verification")).toBe(2);
   });
 
-  it("refuses a link with no signup intent for an unknown address, creating nothing", async () => {
-    await requestDirectLink("unknown@example.com");
+  it("refuses a link request with no signup intent, creating and sending nothing", async () => {
+    await expect(
+      auth.api.signInMagicLink({
+        body: { email: "unknown@example.com", callbackURL: "/fr/welcome" },
+        headers: io.requestHeaders,
+      }),
+    ).rejects.toMatchObject({ status: "NOT_FOUND" });
     expect(await count("pending_signups")).toBe(0);
-    const { error } = await follow(await lastLink());
-    expect(error).toBe("AGE_NOT_CONFIRMED");
+    expect(await count("verification")).toBe(0);
+    expect(await count("email_cooldowns")).toBe(0);
+    expect(await mails()).toEqual([]);
     expect(await count("user")).toBe(0);
   });
 
@@ -318,7 +324,7 @@ describe("requestSignInLink with accounts on", () => {
     }
   });
 
-  it("does not let a direct POST claim the sign-up wording through the metadata", async () => {
+  it("refuses a direct POST that claims the sign-up wording through the metadata", async () => {
     const response = await auth.handler(
       new Request(`${ORIGIN}/api/auth/sign-in/magic-link`, {
         method: "POST",
@@ -329,13 +335,14 @@ describe("requestSignInLink with accounts on", () => {
         }),
       }),
     );
-    expect(response.status).toBe(200);
-    expect((await mails())[0]?.text).not.toMatch(/opening this link signs you in/i);
+    expect(response.status).toBe(404);
+    expect(await mails()).toEqual([]);
     expect(await count("pending_signups")).toBe(0);
+    expect(await count("email_cooldowns")).toBe(0);
   });
 
   it("writes no pending row for a signup the cooldown refuses", async () => {
-    await requestDirectLink("new@example.com");
+    await takeSendSlot("new@example.com");
     expect(await count("pending_signups")).toBe(0);
     expect(await requestSignInLink(request())).toEqual({ ok: false, error: "cooldown" });
     expect(await count("pending_signups")).toBe(0);
@@ -346,7 +353,7 @@ describe("requestSignInLink with accounts on", () => {
       `insert into pending_signups (email, consent_version, consented_at, age_confirmed, expires_at)
        values ('new@example.com', '2026-01-01', '2026-01-02T00:00:00Z', true, now() + interval '5 minutes')`,
     );
-    await requestDirectLink("new@example.com");
+    await takeSendSlot("new@example.com");
     const before = await pool.query("select * from pending_signups");
     expect(await requestSignInLink(request())).toEqual({ ok: false, error: "cooldown" });
     const afterRows = await pool.query("select * from pending_signups");
