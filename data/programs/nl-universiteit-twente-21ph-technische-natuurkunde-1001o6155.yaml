@@ -1,0 +1,76 @@
+slug: nl-universiteit-twente-21ph-technische-natuurkunde-1001o6155
+institution: nl-universiteit-twente-21ph
+country: NL
+city: enschede
+field: engineering
+level: bachelor
+name: Technische Natuurkunde
+summary:
+  fr:
+    text: Technische Natuurkunde (Applied Physics), Universiteit Twente (Enschede). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Technische Natuurkunde (Applied Physics), Universiteit Twente (Enschede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Technische Natuurkunde (Applied Physics), Universiteit Twente (Enschede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.utwente.nl/onderwijs/bachelor/opleidingen/technische-natuurkunde/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-09-01
+      applicationOpens: null
+      applicationDeadline: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifie que tu remplis les conditions d'admission pour un diplôme étranger (baccalauréat marocain) auprès de l'université ; la page ne précise pas ces conditions.
+          status: draft
+        en:
+          text: Check whether your foreign diploma (Moroccan Baccalauréat) meets the admission requirements with the university; the pages do not state these for foreign diplomas.
+          status: draft
+        ar:
+          text: تحقّق مما إذا كنت تستوفي شروط القبول بالنسبة إلى شهادة أجنبية (البكالوريا المغربية) لدى الجامعة؛ فالصفحة لا توضّح هذه الشروط.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.utwente.nl/onderwijs/bachelor/opleidingen/technische-natuurkunde/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.utwente.nl/onderwijs/bachelor/toelating-en-inschrijving/aanmelden/
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.utwente.nl/onderwijs/bachelor/toelating-en-inschrijving/
+    last_verified_at: 2026-10-21

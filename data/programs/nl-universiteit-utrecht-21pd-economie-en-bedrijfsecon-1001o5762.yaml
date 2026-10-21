@@ -1,0 +1,137 @@
+slug: nl-universiteit-utrecht-21pd-economie-en-bedrijfsecon-1001o5762
+institution: nl-universiteit-utrecht-21pd
+country: NL
+city: utrecht
+field: business-economics
+level: bachelor
+name: Economie en Bedrijfseconomie
+summary:
+  fr:
+    text: Economie en Bedrijfseconomie (Economics and Business Economics), Universiteit Utrecht (Utrecht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Economie en Bedrijfseconomie (Economics and Business Economics), Universiteit Utrecht (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Economie en Bedrijfseconomie (Economics and Business Economics), Universiteit Utrecht (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.uu.nl/bachelors/economie-en-bedrijfseconomie
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1510000
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 4
+        day: 1
+  source: page-2
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: subject_taken
+      subjects:
+        - mathematics
+      mode: all
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Faites évaluer votre Baccalauréat marocain par International Student Admissions : il doit être jugé équivalent à un diplôme VWO néerlandais (voir la liste d'équivalence des diplômes)."
+          status: draft
+        en:
+          text: "Have International Student Admissions assess your Moroccan Baccalauréat: it must be considered equivalent to a Dutch VWO diploma (see the diploma equivalency list)."
+          status: draft
+        ar:
+          text: "اطلب من مكتب قبول الطلاب الدوليين تقييم البكالوريا المغربية الخاصة بك: يجب أن تُعتبر معادِلة لشهادة VWO الهولندية (انظر قائمة معادلة الشهادات)."
+          status: draft
+    - id: req-4
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Si votre diplôme ne couvre pas les mathématiques au niveau VWO, vous devrez peut-être passer un examen de mathématiques A (Boswell-Bèta, CCVX ou OMPT-A, score minimum 75 %, 3 tentatives max.).
+          status: draft
+        en:
+          text: If your diploma does not cover mathematics at VWO level, you may need to pass a Mathematics A exam (Boswell-Bèta, CCVX or OMPT-A, minimum score 75%, max 3 attempts).
+          status: draft
+        ar:
+          text: إذا لم تشمل شهادتك الرياضيات بمستوى VWO، فقد تحتاج إلى اجتياز امتحان الرياضيات A (Boswell-Bèta أو CCVX أو OMPT-A، بحد أدنى 75%، و3 محاولات كحد أقصى).
+          status: draft
+    - id: req-5
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Consultez la page EMI-ready pour connaître les tests d'anglais acceptés et les scores requis, ainsi que les diplômes donnant dispense.
+          status: draft
+        en:
+          text: Consult the EMI-ready page for the accepted English tests and required scores, and for diplomas granting an exemption.
+          status: draft
+        ar:
+          text: راجع صفحة EMI-ready لمعرفة اختبارات الإنجليزية المقبولة والدرجات المطلوبة، وكذلك الشهادات المعفية.
+          status: draft
+    - id: req-6
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La procédure de matching (journée de matching) est obligatoire pour les étudiants inscrits à une adresse néerlandaise ; vous vivez à l'étranger, elle n'est donc pas obligatoire pour vous.
+          status: draft
+        en:
+          text: Matching (a matching day) is obligatory for students registered at a Dutch address; as you live abroad it is not compulsory for you.
+          status: draft
+        ar:
+          text: إجراء المطابقة (يوم المطابقة) إلزامي للطلاب المسجَّلين بعنوان في هولندا؛ وبما أنك تعيش في الخارج، فهو غير إلزامي بالنسبة إليك.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.uu.nl/bachelors/economie-en-bedrijfseconomie
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.uu.nl/en/bachelors/economics-and-business-economics/application-and-admission
+    last_verified_at: 2026-10-21

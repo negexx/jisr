@@ -1,0 +1,95 @@
+slug: nl-christelijke-hogeschool-windesheim-01vu-global-project-and-chang-1001o2659
+institution: nl-christelijke-hogeschool-windesheim-01vu
+country: NL
+city: zwolle
+field: business-economics
+level: bachelor
+name: Global Project and Change Management
+summary:
+  fr:
+    text: Global Project and Change Management (Global Project and Change Management), Christelijke Hogeschool Windesheim (Zwolle). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Global Project and Change Management (Global Project and Change Management), Christelijke Hogeschool Windesheim (Zwolle). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Global Project and Change Management (Global Project and Change Management), Christelijke Hogeschool Windesheim (Zwolle). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.windesheim.nl/opleidingen/voltijd/bachelor/global-project-and-change-management
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Diplôme étranger : admissible si équivalent à un diplôme havo, vwo ou mbo-4 ; vous devez aussi satisfaire aux exigences linguistiques (voir windesheim.com)."
+          status: draft
+        en:
+          text: "Foreign diploma: admissible if equivalent to a havo, vwo or mbo-4 diploma; you must also meet the language requirements (see windesheim.com)."
+          status: draft
+        ar:
+          text: "الشهادة الأجنبية: مقبولة إذا كانت معادِلة لشهادة havo أو vwo أو mbo-4؛ ويجب عليك أيضًا استيفاء المتطلبات اللغوية (انظر windesheim.com)."
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Sélection : il n'y a de place que pour 80 nouveaux étudiants ; une procédure de sélection s'applique. Consultez la procédure d'inscription."
+          status: draft
+        en:
+          text: "Selection: there is room for only 80 new students and a selection procedure applies. Check the application procedure."
+          status: draft
+        ar:
+          text: "الانتقاء: لا توجد سوى 80 مقعدًا للطلاب الجدد؛ ويُطبَّق إجراء انتقاء. راجع إجراء التقديم."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Exigence d'anglais : un diplôme havo/vwo exige une note suffisante en anglais ; pour les candidats étrangers, les exigences linguistiques sont précisées sur windesheim.com."
+          status: draft
+        en:
+          text: "English requirement: a havo/vwo diploma requires a sufficient mark in English; for foreign-qualification applicants the language requirements are set out on windesheim.com."
+          status: draft
+        ar:
+          text: "متطلب الإنجليزية: تشترط شهادة havo/vwo علامة كافية في الإنجليزية؛ أما المتقدمون الأجانب فتُحدَّد لهم المتطلبات اللغوية على windesheim.com."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.windesheim.nl/opleidingen/voltijd/bachelor/global-project-and-change-management
+    last_verified_at: 2026-10-21

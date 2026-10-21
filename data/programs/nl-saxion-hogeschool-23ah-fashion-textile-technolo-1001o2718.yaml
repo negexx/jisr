@@ -1,0 +1,90 @@
+slug: nl-saxion-hogeschool-23ah-fashion-textile-technolo-1001o2718
+institution: nl-saxion-hogeschool-23ah
+country: NL
+city: enschede
+field: engineering
+level: bachelor
+name: Fashion & Textile Technologies
+summary:
+  fr:
+    text: Fashion & Textile Technologies (Fashion and Textile Technologies), Saxion Hogeschool (Enschede). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Fashion & Textile Technologies (Fashion and Textile Technologies), Saxion Hogeschool (Enschede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Fashion & Textile Technologies (Fashion and Textile Technologies), Saxion Hogeschool (Enschede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.saxion.nl/opleidingen/en/fulltime/bachelor/fashion-and-textile-technologies
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 936000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme étranger doit être reconnu équivalent au moins à un diplôme havo, vwo ou mbo-4 néerlandais ; Studentregistratie évalue tes documents de diplôme.
+          status: draft
+        en:
+          text: A foreign diploma must be assessed as at least equivalent to a Dutch havo, vwo or mbo-4 diploma; Studentregistratie assesses your diploma documents.
+          status: draft
+        ar:
+          text: يجب أن تُعترف الشهادة الأجنبية بأنها معادلة على الأقل لشهادة havo أو vwo أو mbo-4 الهولندية؛ وتقيّم مصلحة Studentregistratie وثائق شهادتك.
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifie les exigences linguistiques (anglais) de la formation : la page de ce programme renvoie à l'onglet 'Requirements' et aux conditions d'admission internationales."
+          status: draft
+        en:
+          text: "Check the programme's language (English) requirements: this programme's page refers to the 'Requirements' tab and the international entry requirements."
+          status: draft
+        ar:
+          text: تحقّق من متطلبات اللغة (الإنجليزية) الخاصة بالبرنامج؛ فالصفحة تُحيل إلى تبويب 'Requirements' وإلى شروط القبول الدولية.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.saxion.nl/opleidingen/en/fulltime/bachelor/fashion-and-textile-technologies
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.saxion.nl/studeren-bij/opleidingskosten/collegegeld
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.saxion.nl/studeren-bij/ik-wil-mij-inschrijven/toelating
+    last_verified_at: 2026-10-21

@@ -1,0 +1,70 @@
+slug: nl-universiteit-utrecht-21pd-philosophy-politics-and-1001o5778
+institution: nl-universiteit-utrecht-21pd
+country: NL
+city: utrecht
+field: business-economics
+level: bachelor
+name: Philosophy, Politics and Economics
+summary:
+  fr:
+    text: Philosophy, Politics and Economics (Philosophy, Politics and Economics), Universiteit Utrecht (Utrecht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Philosophy, Politics and Economics (Philosophy, Politics and Economics), Universiteit Utrecht (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Philosophy, Politics and Economics (Philosophy, Politics and Economics), Universiteit Utrecht (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.uu.nl/bachelors/philosophy-politics-and-economics
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1790000
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si votre diplôme marocain est reconnu comme équivalent au VWO néerlandais (liste d'équivalence des diplômes) ; une sélection est mentionnée pour cette licence.
+          status: draft
+        en:
+          text: Check whether your Moroccan diploma is recognised as equivalent to a Dutch VWO diploma (diploma equivalency list); selection applies to this programme.
+          status: draft
+        ar:
+          text: تحقّق مما إذا كانت شهادتك المغربية تُعتبر معادِلةً لشهادة VWO الهولندية (قائمة معادلة الشهادات)؛ ويُذكر وجود انتقاء لهذه الإجازة.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.uu.nl/bachelors/philosophy-politics-and-economics
+    last_verified_at: 2026-10-21

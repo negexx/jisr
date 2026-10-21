@@ -1,0 +1,14 @@
+slug: nl-universiteit-twente-21ph-amsterdam
+name: Universiteit Twente
+country: NL
+city:
+  slug: amsterdam
+  name: Amsterdam
+type: null
+website: https://www.utwente.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.utwente.nl/
+    last_verified_at: 2026-10-21

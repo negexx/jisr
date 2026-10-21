@@ -1,0 +1,107 @@
+slug: nl-vrije-universiteit-amsterdam-21pl-business-analytics-1001o6110
+institution: nl-vrije-universiteit-amsterdam-21pl
+country: NL
+city: amsterdam
+field: business-economics
+level: bachelor
+name: Business Analytics
+summary:
+  fr:
+    text: Business Analytics (Business Analytics), Vrije Universiteit Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Business Analytics (Business Analytics), Vrije Universiteit Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Business Analytics (Business Analytics), Vrije Universiteit Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://vu.nl/nl/onderwijs/bachelor/business-analytics
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: vu-application-form-bachelor
+      name:
+        fr:
+          text: Formulaire de candidature VU - Bachelor
+          status: draft
+        en:
+          text: VU Application Form - Bachelor
+          status: draft
+        ar:
+          text: استمارة التقديم لجامعة VU - مرحلة الإجازة
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Avec un diplôme étranger, l'admission en bachelor (y compris les conditions de mathématiques) se fait via le International Office ; vérifiez les exigences de la page de la formation et remplissez le VU Application Form - Bachelor.
+          status: draft
+        en:
+          text: With a foreign diploma, admission to the bachelor (including mathematics requirements) goes through the International Office; check the programme page requirements and complete the VU Application Form - Bachelor.
+          status: draft
+        ar:
+          text: مع الشهادة الأجنبية يتم القبول في الإجازة (بما فيها شروط الرياضيات) عبر المكتب الدولي؛ تحقق من متطلبات صفحة البرنامج واملأ استمارة VU Application Form - Bachelor.
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Non-EU sans nationalité UE et ayant besoin d'un visa : la date limite d'inscription dans Studielink est le 1 avril (au lieu du 1 mai)."
+          status: draft
+        en:
+          text: "Non-EU applicants who need a visa: the Studielink application deadline is 1 April (instead of 1 May)."
+          status: draft
+        ar:
+          text: "غير حاملي جنسية الاتحاد الأوروبي (UE/EU) ممن يحتاجون إلى تأشيرة: الموعد النهائي للتقديم عبر Studielink هو 1 أبريل (بدلًا من 1 مايو)."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://vu.nl/nl/onderwijs/bachelor/business-analytics
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://vu.nl/nl/onderwijs/meer-over/documenten-voor-aanmelding
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://vu.nl/nl/onderwijs/meer-over/aanmelden-bacheloropleiding
+    last_verified_at: 2026-10-21

@@ -1,0 +1,93 @@
+slug: nl-hogeschool-inholland-27pz-haarlem-creative-business-1001o5013
+institution: nl-hogeschool-inholland-27pz-haarlem
+country: NL
+city: haarlem
+field: business-economics
+level: bachelor
+name: Creative Business
+summary:
+  fr:
+    text: Creative Business (Creative Business), Hogeschool Inholland (Haarlem). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Creative Business (Creative Business), Hogeschool Inholland (Haarlem). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Creative Business (Creative Business), Hogeschool Inholland (Haarlem). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.inholland.nl/inhollandcom/degree-programmes/creative-business-eng-full-time/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1036000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Diplôme étranger : l'admissibilité est évaluée individuellement ; le diplôme doit être équivalent à un HAVO, VWO ou MBO-4 néerlandais."
+          status: draft
+        en:
+          text: "Foreign diploma: admission is assessed individually; the diploma must be equivalent to a Dutch HAVO, VWO or MBO-4 diploma."
+          status: draft
+        ar:
+          text: "الشهادة الأجنبية: تُقيَّم الأهلية للقبول على حدة؛ ويجب أن تكون الشهادة معادِلة لشهادة HAVO أو VWO أو MBO-4 الهولندية."
+          status: draft
+    - id: req-2
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Envoyez des copies de votre diplôme et de votre relevé de notes final ; une traduction certifiée est requise si le document n'est pas en néerlandais, anglais, allemand, français ou espagnol.
+          status: draft
+        en:
+          text: Send copies of your diploma and final transcript; a certified translation is required if the document is not in Dutch, English, German, French or Spanish.
+          status: draft
+        ar:
+          text: أرسل نسخًا من شهادتك وكشف العلامات النهائي؛ والترجمة المصدَّقة مطلوبة إذا لم تكن الوثيقة بالهولندية أو الإنجليزية أو الألمانية أو الفرنسية أو الإسبانية.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.inholland.nl/inhollandcom/degree-programmes/creative-business-eng-full-time/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.inholland.nl/inschrijven/collegegeld/
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/
+    last_verified_at: 2026-10-21
+  page-4:
+    url: https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/
+    last_verified_at: 2026-10-21

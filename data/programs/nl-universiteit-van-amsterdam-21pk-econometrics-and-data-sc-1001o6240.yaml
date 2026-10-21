@@ -1,0 +1,172 @@
+slug: nl-universiteit-van-amsterdam-21pk-econometrics-and-data-sc-1001o6240
+institution: nl-universiteit-van-amsterdam-21pk
+country: NL
+city: amsterdam
+field: computer-science
+level: bachelor
+name: Econometrics and Data Science
+summary:
+  fr:
+    text: Econometrics and Data Science (Econometrics and Data Science), Universiteit van Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Econometrics and Data Science (Econometrics and Data Science), Universiteit van Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Econometrics and Data Science (Econometrics and Data Science), Universiteit van Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.uva.nl/en/programmes/bachelors/econometrics-and-data-science/econometrics-and-data-science.html
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value:
+    - slug: diploma-and-transcript
+      name:
+        fr:
+          text: Diplôme(s) et relevé(s) de notes
+          status: draft
+        en:
+          text: Diploma(s) and transcript(s) of grades
+          status: draft
+        ar:
+          text: الشهادة (الشهادات) وكشف (كشوف) العلامات
+          status: draft
+      translationRequired: null
+    - slug: english-language-proficiency-test-certificate
+      name:
+        fr:
+          text: Certificat de compétence en anglais
+          status: draft
+        en:
+          text: English language proficiency test certificate
+          status: draft
+        ar:
+          text: شهادة الكفاءة في اللغة الإنجليزية
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum vitae
+          status: draft
+        en:
+          text: Curriculum vitae / resume
+          status: draft
+        ar:
+          text: السيرة الذاتية
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme étranger doit être équivalent à un VWO néerlandais ; vérifiez votre diplôme dans le « diploma finder » de l'UvA. Les candidats dont le diplôme n'y figure pas sont évalués individuellement.
+          status: draft
+        en:
+          text: A foreign diploma must be equivalent to a Dutch VWO diploma; check yours in the UvA diploma finder. Applicants whose diploma is not listed are assessed individually.
+          status: draft
+        ar:
+          text: يجب أن تكون الشهادة الأجنبية معادلة لشهادة VWO الهولندية؛ تحقّق من شهادتك في «diploma finder» الخاص بـ UvA. أما المترشحون الذين لا تظهر شهاداتهم في الأداة فيُقيَّمون بشكل فردي.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats avec un diplôme étranger paient des frais de dossier non remboursables de 100 € ; l'inscription se fait dans Studielink puis via le portail SIS de l'UvA.
+          status: draft
+        en:
+          text: Applicants with an international diploma pay a non-refundable €100 application fee; apply in Studielink and then via the UvA application portal SIS.
+          status: draft
+        ar:
+          text: يدفع المتقدمون الحاصلون على شهادة أجنبية رسوم ملف غير قابلة للاسترداد قدرها 100 يورو؛ ويتم التقديم عبر Studielink ثم عبر بوابة SIS الخاصة بـ UvA.
+          status: draft
+    - id: req-4
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le certificat d'anglais doit être fourni avant le 1 avril pour les candidats non-UE/EEE, et le test doit dater de moins de deux ans avant le 1 septembre.
+          status: draft
+        en:
+          text: The English test certificate must be submitted by 1 April for non-EU/EEA applicants, and the test must be less than two years old at 1 September.
+          status: draft
+        ar:
+          text: يجب تقديم شهادة الإنجليزية قبل 1 أبريل للمتقدمين من خارج الاتحاد الأوروبي (UE)/EEE، ويجب أن يكون عمر الاختبار أقل من سنتين في 1 سبتمبر.
+          status: draft
+    - id: req-5
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La « UvA Matching » est obligatoire pour les étudiants ayant fait leurs études secondaires hors des Pays-Bas.
+          status: draft
+        en:
+          text: UvA Matching is mandatory for students who completed secondary education outside the Netherlands.
+          status: draft
+        ar:
+          text: المشاركة في « UvA Matching » إلزامية للطلاب الذين أتموا تعليمهم الثانوي خارج هولندا.
+          status: draft
+    - id: req-6
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Après admission conditionnelle, envoyez par courrier des copies certifiées de vos documents avant le 31 août.
+          status: draft
+        en:
+          text: After conditional admission, send certified hard copies of your documents by post before 31 August.
+          status: draft
+        ar:
+          text: بعد القبول المشروط، أرسل بالبريد نسخًا مصدَّقة من وثائقك قبل 31 أغسطس.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.uva.nl/en/programmes/bachelors/econometrics-and-data-science/econometrics-and-data-science.html
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.uva.nl/en/education/admissions/bachelors/applying-for-a-bachelors-programme.html
+    last_verified_at: 2026-10-21

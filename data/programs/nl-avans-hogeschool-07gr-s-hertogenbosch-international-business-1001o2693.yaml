@@ -1,0 +1,73 @@
+slug: nl-avans-hogeschool-07gr-s-hertogenbosch-international-business-1001o2693
+institution: nl-avans-hogeschool-07gr-s-hertogenbosch
+country: NL
+city: s-hertogenbosch
+field: business-economics
+level: bachelor
+name: International Business
+summary:
+  fr:
+    text: International Business (International Business), Avans Hogeschool ('s-Hertogenbosch). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: International Business (International Business), Avans Hogeschool ('s-Hertogenbosch). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Business (International Business), Avans Hogeschool ('s-Hertogenbosch). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.avans.nl/studeren/opleidingen/bachelor/international-business-voltijd
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1030800
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les conditions d'admission pour un diplôme étranger (baccalauréat marocain) auprès d'Avans; la page ne liste que havo/vwo/mbo néerlandais.
+          status: draft
+        en:
+          text: Check the admission requirements for a foreign diploma (Moroccan Baccalaureate) with Avans; the page only lists Dutch havo/vwo/mbo.
+          status: draft
+        ar:
+          text: تحقّق من شروط القبول بالنسبة إلى شهادة أجنبية (البكالوريا المغربية) لدى Avans؛ فالصفحة لا تذكر إلا الشهادات الهولندية havo/vwo/mbo.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.avans.nl/studeren/opleidingen/bachelor/international-business-voltijd
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.avans.nl/en/int/studying/practical-information/tuition-fees
+    last_verified_at: 2026-10-21

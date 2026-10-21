@@ -1,0 +1,56 @@
+slug: nl-universiteit-twente-21ph-electrical-engineering-1001o6142
+institution: nl-universiteit-twente-21ph
+country: NL
+city: enschede
+field: engineering
+level: bachelor
+name: Electrical Engineering
+summary:
+  fr:
+    text: Electrical Engineering, Universiteit Twente (Enschede). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Electrical Engineering, Universiteit Twente (Enschede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Electrical Engineering, Universiteit Twente (Enschede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.utwente.nl/onderwijs/bachelor/opleidingen/electrical-engineering/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.utwente.nl/onderwijs/bachelor/opleidingen/electrical-engineering/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.utwente.nl/onderwijs/bachelor/toelating-en-inschrijving/aanmelden/
+    last_verified_at: 2026-10-21

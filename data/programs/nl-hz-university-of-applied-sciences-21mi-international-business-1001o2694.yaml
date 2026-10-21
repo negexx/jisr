@@ -1,0 +1,81 @@
+slug: nl-hz-university-of-applied-sciences-21mi-international-business-1001o2694
+institution: nl-hz-university-of-applied-sciences-21mi
+country: NL
+city: vlissingen
+field: business-economics
+level: bachelor
+name: International Business
+summary:
+  fr:
+    text: International Business (International Business), HZ University of Applied Sciences (Vlissingen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: International Business (International Business), HZ University of Applied Sciences (Vlissingen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Business (International Business), HZ University of Applied Sciences (Vlissingen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://hz.nl/en/study-programmes/international-business
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Votre diplôme doit être équivalent au diplôme néerlandais d'enseignement secondaire (HAVO, VWO ou MBO niveau 4) ; vérifiez s'il figure sur la liste des diplômes étrangers reconnus, sinon HZ évaluera votre dossier individuellement.
+          status: draft
+        en:
+          text: Your diploma must be equivalent to a Dutch secondary education diploma (HAVO, VWO or MBO level 4); check whether it is on the recognised foreign diplomas list, otherwise HZ will assess your qualification individually.
+          status: draft
+        ar:
+          text: يجب أن تكون شهادتك معادلة لشهادة التعليم الثانوي الهولندية (HAVO أو VWO أو MBO المستوى 4)؛ تحقّق مما إذا كانت واردة في قائمة الشهادات الأجنبية المعترف بها، وإلا فستقيّم HZ ملفك بشكل فردي.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats de 21 ans ou plus sans diplôme requis peuvent passer un examen d'entrée alternatif ; contactez HZ pour les modalités.
+          status: draft
+        en:
+          text: Applicants aged 21 or older without the required diploma may take an alternative entrance exam; contact HZ for details.
+          status: draft
+        ar:
+          text: يمكن للمتقدمين البالغين 21 سنة أو أكثر ممن لا يحملون الشهادة المطلوبة اجتياز امتحان دخول بديل؛ تواصل مع HZ للاطلاع على التفاصيل.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://hz.nl/en/study-programmes/international-business
+    last_verified_at: 2026-10-21

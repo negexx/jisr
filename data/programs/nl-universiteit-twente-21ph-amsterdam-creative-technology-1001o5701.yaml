@@ -1,0 +1,70 @@
+slug: nl-universiteit-twente-21ph-amsterdam-creative-technology-1001o5701
+institution: nl-universiteit-twente-21ph-amsterdam
+country: NL
+city: amsterdam
+field: engineering
+level: bachelor
+name: Creative Technology
+summary:
+  fr:
+    text: Creative Technology, Universiteit Twente (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Creative Technology, Universiteit Twente (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Creative Technology, Universiteit Twente (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.utwente.nl/onderwijs/bachelor/opleidingen/creative-technology/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez les conditions d'admission pour un diplôme étranger (bac marocain) : la page indique seulement « Toelaatbaar met alle vwo-profielen ». Contactez l'université pour l'évaluation de votre diplôme."
+          status: draft
+        en:
+          text: "Check the admission requirements for a foreign diploma (Moroccan Baccalauréat): the page only states 'Toelaatbaar met alle vwo-profielen'. Contact the university about diploma evaluation."
+          status: draft
+        ar:
+          text: "تحقّق من شروط القبول بالنسبة إلى شهادة أجنبية (البكالوريا المغربية): فالصفحة تذكر فقط «Toelaatbaar met alle vwo-profielen». وتواصل مع الجامعة لتقييم شهادتك."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.utwente.nl/onderwijs/bachelor/opleidingen/creative-technology/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.utwente.nl/onderwijs/bachelor/toelating-en-inschrijving/aanmelden/
+    last_verified_at: 2026-10-21

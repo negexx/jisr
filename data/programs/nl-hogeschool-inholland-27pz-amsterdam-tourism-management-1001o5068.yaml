@@ -1,0 +1,100 @@
+slug: nl-hogeschool-inholland-27pz-amsterdam-tourism-management-1001o5068
+institution: nl-hogeschool-inholland-27pz-amsterdam
+country: NL
+city: amsterdam
+field: business-economics
+level: bachelor
+name: Tourism Management
+summary:
+  fr:
+    text: Tourism Management (Tourism Management), Hogeschool Inholland (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Tourism Management (Tourism Management), Hogeschool Inholland (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Tourism Management (Tourism Management), Hogeschool Inholland (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1036000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Votre diplôme étranger (baccalauréat marocain) doit être évalué par le service des admissions ; envoyez une copie de votre diplôme et de votre relevé de notes. La commission d'admission décide de l'admission.
+          status: draft
+        en:
+          text: Your foreign diploma (Moroccan Baccalauréat) must be evaluated by the Admissions department; send a copy of your diploma and final transcript. The admissions department decides on admission.
+          status: draft
+        ar:
+          text: يجب أن تُقيَّم شهادتك الأجنبية (البكالوريا المغربية) من طرف مصلحة القبول؛ أرسل نسخة من شهادتك وكشف علاماتك. وتتخذ لجنة القبول قرار القبول.
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien d'admission (intake) est demandé après l'inscription via Studielink.
+          status: draft
+        en:
+          text: An intake interview is expected after registering via Studielink.
+          status: draft
+        ar:
+          text: تُطلب مقابلة قبول بعد التسجيل عبر Studielink.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.inholland.nl/inschrijven/collegegeld/
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/
+    last_verified_at: 2026-10-21

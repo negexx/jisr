@@ -1,0 +1,88 @@
+slug: nl-vrije-universiteit-amsterdam-21pl-economie-en-bedrijfsecon-1001o5765
+institution: nl-vrije-universiteit-amsterdam-21pl
+country: NL
+city: amsterdam
+field: business-economics
+level: bachelor
+name: Economie en Bedrijfseconomie
+summary:
+  fr:
+    text: Economie en Bedrijfseconomie (Economics and Business Economics), Vrije Universiteit Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Economie en Bedrijfseconomie (Economics and Business Economics), Vrije Universiteit Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Economie en Bedrijfseconomie (Economics and Business Economics), Vrije Universiteit Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://vu.nl/nl/onderwijs/bachelor/economie-en-bedrijfseconomie
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Deadline pour les candidats non-UE/EEE : 1 avril. Les candidats avec un diplôme étranger passent par le International Office ; vérifiez les documents et l'éventuel application fee."
+          status: draft
+        en:
+          text: "Deadline for non-EU/EEA applicants: 1 April. Applicants with a foreign diploma go through the International Office; check documents and any application fee."
+          status: draft
+        ar:
+          text: "الموعد النهائي للمتقدمين من خارج الاتحاد الأوروبي (UE)/EEE: 1 أبريل. يمرّ المتقدمون الحاصلون على شهادة أجنبية عبر المكتب الدولي؛ تحقق من الوثائق وأي رسوم تقديم."
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Pour un programme anglophone, vous devez prouver votre niveau d'anglais (test reconnu ou diplôme exempté). Le niveau exact est fixé dans la décision d'admission.
+          status: draft
+        en:
+          text: For an English-taught programme you must prove your English proficiency (recognised test or exempting diploma). The exact level is set in the admission decision.
+          status: draft
+        ar:
+          text: بالنسبة إلى برنامج يُدرَّس بالإنجليزية، يجب إثبات مستواك في الإنجليزية (اختبار معترف به أو شهادة معفية). ويُحدَّد المستوى الدقيق في قرار القبول.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://vu.nl/nl/onderwijs/bachelor/economie-en-bedrijfseconomie
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://vu.nl/nl/onderwijs/meer-over/aanmelden-bacheloropleiding
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://vu.nl/nl/onderwijs/meer-over/documenten-voor-aanmelding
+    last_verified_at: 2026-10-21

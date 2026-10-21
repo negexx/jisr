@@ -1,0 +1,174 @@
+slug: nl-universiteit-van-amsterdam-21pk-politics-psychology-law-1001o6228
+institution: nl-universiteit-van-amsterdam-21pk
+country: NL
+city: amsterdam
+field: business-economics
+level: bachelor
+name: Politics, Psychology, Law and Economics
+summary:
+  fr:
+    text: Politics, Psychology, Law and Economics (Politics, Psychology, Law and Economics), Universiteit van Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Politics, Psychology, Law and Economics (Politics, Psychology, Law and Economics), Universiteit van Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Politics, Psychology, Law and Economics (Politics, Psychology, Law and Economics), Universiteit van Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.uva.nl/en/about-the-uva/organisation/faculties/amsterdam-law-school/education/bachelors-programme/pple.html
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: diploma
+      name:
+        fr:
+          text: Diplôme(s)
+          status: draft
+        en:
+          text: Diploma(s)
+          status: draft
+        ar:
+          text: الشهادة (الشهادات)
+          status: draft
+      translationRequired: null
+    - slug: transcript-of-grades
+      name:
+        fr:
+          text: Relevé(s) de notes
+          status: draft
+        en:
+          text: Transcript(s) of grades
+          status: draft
+        ar:
+          text: كشف (كشوف) العلامات
+          status: draft
+      translationRequired: null
+    - slug: english-language-proficiency-test-certificate
+      name:
+        fr:
+          text: Certificat de compétence en anglais
+          status: draft
+        en:
+          text: English language proficiency test certificate
+          status: draft
+        ar:
+          text: شهادة الكفاءة في اللغة الإنجليزية
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum vitae
+          status: draft
+        en:
+          text: Curriculum vitae / resume
+          status: draft
+        ar:
+          text: السيرة الذاتية
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les exigences linguistiques en anglais spécifiques au programme PPLE sur son site web.
+          status: draft
+        en:
+          text: Check the PPLE-specific English language proficiency requirements on the programme website.
+          status: draft
+        ar:
+          text: تحقّق من متطلبات اللغة الإنجليزية الخاصة ببرنامج PPLE على موقعه الإلكتروني.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "PPLE est un programme sélectif : consultez la procédure de sélection sur le site du programme."
+          status: draft
+        en:
+          text: "PPLE is a selective programme: consult the selection procedure on the programme website."
+          status: draft
+        ar:
+          text: "PPLE برنامج انتقائي: راجع إجراء الانتقاء على موقع البرنامج."
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Votre diplôme (baccalauréat marocain) doit être équivalent à un VWO néerlandais ; vérifiez via le « diploma finder ».
+          status: draft
+        en:
+          text: Your diploma (Moroccan Baccalauréat) must be equivalent to a Dutch VWO diploma; check the diploma finder.
+          status: draft
+        ar:
+          text: يجب أن تكون شهادتك (البكالوريا المغربية) معادلة لشهادة VWO الهولندية؛ تحقّق عبر «diploma finder».
+          status: draft
+    - id: req-4
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats avec un diplôme international doivent payer des frais de dossier non remboursables de 100 €.
+          status: draft
+        en:
+          text: Applicants with an international diploma must pay a non-refundable application fee of €100.
+          status: draft
+        ar:
+          text: يجب على المتقدمين الحاصلين على شهادة دولية دفع رسوم ملف غير قابلة للاسترداد قدرها 100 يورو.
+          status: draft
+    - id: req-5
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: UvA Matching est obligatoire pour les étudiants internationaux après l'admission conditionnelle.
+          status: draft
+        en:
+          text: UvA Matching is mandatory for international students after conditional admission.
+          status: draft
+        ar:
+          text: المشاركة في UvA Matching إلزامية للطلاب الدوليين بعد القبول المشروط.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.uva.nl/en/about-the-uva/organisation/faculties/amsterdam-law-school/education/bachelors-programme/pple.html
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.uva.nl/en/education/admissions/bachelors/applying-for-a-bachelors-programme.html
+    last_verified_at: 2026-10-21

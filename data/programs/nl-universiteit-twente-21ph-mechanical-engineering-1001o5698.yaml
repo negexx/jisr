@@ -1,0 +1,90 @@
+slug: nl-universiteit-twente-21ph-mechanical-engineering-1001o5698
+institution: nl-universiteit-twente-21ph
+country: NL
+city: enschede
+field: engineering
+level: bachelor
+name: Mechanical Engineering
+summary:
+  fr:
+    text: Mechanical Engineering (Mechanical Engineering), Universiteit Twente (Enschede). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Mechanical Engineering (Mechanical Engineering), Universiteit Twente (Enschede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Mechanical Engineering (Mechanical Engineering), Universiteit Twente (Enschede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.utwente.nl/onderwijs/bachelor/opleidingen/mechanical-engineering/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Étudiant étranger : vérifier les conditions d'admission pour un diplôme non néerlandais auprès de l'université (les pages décrivent surtout le vwo néerlandais)."
+          status: draft
+        en:
+          text: "Applicant with a foreign diploma: check admission conditions for non-Dutch qualifications with the university (pages mainly describe the Dutch vwo)."
+          status: draft
+        ar:
+          text: "طالب أجنبي: تحقّق من شروط القبول الخاصة بشهادة غير هولندية لدى الجامعة؛ فالصفحات تصف في الغالب شهادة vwo الهولندية."
+          status: draft
+    - id: req-2
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Participation à la studiekeuzecheck (matching) est obligatoire pour Mechanical Engineering.
+          status: draft
+        en:
+          text: Participation in the studiekeuzecheck (matching activity) is compulsory for Mechanical Engineering.
+          status: draft
+        ar:
+          text: المشاركة في اختبار ملاءمة التخصص (studiekeuzecheck) إلزامية لبرنامج الهندسة الميكانيكية (Mechanical Engineering).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.utwente.nl/onderwijs/bachelor/opleidingen/mechanical-engineering/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.utwente.nl/onderwijs/bachelor/toelating-en-inschrijving/aanmelden/
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.utwente.nl/onderwijs/bachelor/toelating-en-inschrijving/
+    last_verified_at: 2026-10-21
+  page-4:
+    url: https://www.utwente.nl/onderwijs/student-services/ik-word-student/inschrijving/studiekeuzecheck/
+    last_verified_at: 2026-10-21

@@ -1,0 +1,104 @@
+slug: nl-universiteit-twente-21ph-creative-technology-1001o5701
+institution: nl-universiteit-twente-21ph
+country: NL
+city: enschede
+field: engineering
+level: bachelor
+name: Creative Technology
+summary:
+  fr:
+    text: Creative Technology, Universiteit Twente (Enschede). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Creative Technology, Universiteit Twente (Enschede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Creative Technology, Universiteit Twente (Enschede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.utwente.nl/onderwijs/bachelor/opleidingen/creative-technology/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez sur la page d'admission de l'UT les exigences en matière de diplôme étranger (Bac marocain) et la procédure d'admission, y compris l'éventuel test d'anglais.
+          status: draft
+        en:
+          text: Check the UT admission page for the requirements for a foreign diploma (Moroccan Baccalaureate) and the admission procedure, including any English test.
+          status: draft
+        ar:
+          text: تحقّق في صفحة القبول الخاصة بـ UT من متطلبات الشهادة الأجنبية (البكالوريا المغربية) وإجراءات القبول، بما في ذلك أي اختبار للإنجليزية إن وُجد.
+          status: draft
+    - id: req-2
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez auprès de l'UT les conditions et le montant des frais de dossier (application fee) applicables aux candidats titulaires d'un diplôme étranger.
+          status: draft
+        en:
+          text: Check with UT the conditions and amount of the application fee that apply to applicants with a foreign diploma.
+          status: draft
+        ar:
+          text: تحقّق لدى UT من شروط رسوم ملف التقديم ومبلغها المطبّقة على المترشحين الحاملين لشهادة أجنبية.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "La date limite d'inscription des candidats internationaux n'est pas indiquée sur ces pages: consultez les délais internationaux de l'UT."
+          status: draft
+        en:
+          text: "The application deadline for international applicants is not given on these pages: check UT's international deadlines."
+          status: draft
+        ar:
+          text: "لا يرد الموعد النهائي للتقديم للمتقدمين الدوليين في هذه الصفحات: راجع المواعيد النهائية الدولية لدى UT."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.utwente.nl/onderwijs/bachelor/opleidingen/creative-technology/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.utwente.nl/onderwijs/bachelor/toelating-en-inschrijving/aanmelden/
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.utwente.nl/onderwijs/bachelor/toelating-en-inschrijving/
+    last_verified_at: 2026-10-21
+  page-4:
+    url: https://www.utwente.nl/onderwijs/student-services/ik-word-student/geldzaken/
+    last_verified_at: 2026-10-21

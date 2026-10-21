@@ -1,0 +1,76 @@
+slug: nl-hogeschool-inholland-27pz-creative-business-1001o5013
+institution: nl-hogeschool-inholland-27pz
+country: NL
+city: rotterdam
+field: business-economics
+level: bachelor
+name: Creative Business
+summary:
+  fr:
+    text: Creative Business (Creative Business), Hogeschool Inholland (Rotterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Creative Business (Creative Business), Hogeschool Inholland (Rotterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Creative Business (Creative Business), Hogeschool Inholland (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.inholland.nl/inhollandcom/degree-programmes/creative-business-eng-full-time/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1036000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Votre diplôme étranger (par ex. baccalauréat marocain) doit être évalué individuellement par Inholland ; vérifiez qu'il est jugé équivalent à un diplôme néerlandais havo, vwo ou mbo-4.
+          status: draft
+        en:
+          text: Your foreign diploma (e.g. Moroccan Baccalauréat) is assessed individually by Inholland; check that it is considered equivalent to a Dutch havo, vwo or mbo-4 diploma.
+          status: draft
+        ar:
+          text: يجب أن تُقيَّم شهادتك الأجنبية (مثل البكالوريا المغربية) بشكل فردي من طرف Inholland؛ تحقّق من أنها تُعتبر معادِلة لشهادة havo أو vwo أو mbo-4 الهولندية.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.inholland.nl/inhollandcom/degree-programmes/creative-business-eng-full-time/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.inholland.nl/inschrijven/collegegeld/
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/
+    last_verified_at: 2026-10-21

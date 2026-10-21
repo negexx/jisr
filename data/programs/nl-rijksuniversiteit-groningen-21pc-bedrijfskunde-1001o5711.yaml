@@ -1,0 +1,126 @@
+slug: nl-rijksuniversiteit-groningen-21pc-bedrijfskunde-1001o5711
+institution: nl-rijksuniversiteit-groningen-21pc
+country: NL
+city: groningen
+field: business-economics
+level: bachelor
+name: Bedrijfskunde
+summary:
+  fr:
+    text: Bedrijfskunde (Business Administration), Rijksuniversiteit Groningen (Groningen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Bedrijfskunde (Business Administration), Rijksuniversiteit Groningen (Groningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Bedrijfskunde (Business Administration), Rijksuniversiteit Groningen (Groningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.rug.nl/bachelors/business-administration/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1400000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-09-01
+      applicationOpens: null
+      applicationDeadline: 2027-05-01
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: diploma
+      name:
+        fr:
+          text: Diplôme (original)
+          status: draft
+        en:
+          text: Diploma
+          status: draft
+        ar:
+          text: الشهادة (الأصل)
+          status: draft
+      translationRequired: null
+    - slug: transcript
+      name:
+        fr:
+          text: Relevé de notes final
+          status: draft
+        en:
+          text: Final transcript
+          status: draft
+        ar:
+          text: كشف النقاط النهائي
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme équivalent au VWO néerlandais est requis; votre Baccalauréat marocain sera évalué individuellement par l'Admissions Board.
+          status: draft
+        en:
+          text: A qualification equivalent to the Dutch VWO is required; your Moroccan Baccalauréat will be assessed individually by the Admissions Board.
+          status: draft
+        ar:
+          text: مطلوب شهادة معادِلة لشهادة VWO الهولندية؛ وستُقيَّم البكالوريا المغربية الخاصة بك على حدة من قِبل مجلس القبول.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Exigence de mathématiques : niveau équivalent aux mathématiques A du VWO, évalué par l'Admissions Board sur la base des descriptions de cours."
+          status: draft
+        en:
+          text: "Mathematics requirement: level equivalent to VWO Mathematics A, assessed by the Admissions Board on the basis of course descriptions."
+          status: draft
+        ar:
+          text: "متطلب الرياضيات: مستوى معادِل لرياضيات A في VWO، يُقيَّم من قِبل مجلس القبول بناءً على أوصاف المقررات."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: nl
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.rug.nl/bachelors/business-administration/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.rug.nl/education/application-enrolment-tuition-fees/tuition-fee/bachelor
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.rug.nl/education/application-enrolment-tuition-fees/admission/non-dutch-qualification/bachelor-non-dutch-qualification
+    last_verified_at: 2026-10-21

@@ -1,0 +1,14 @@
+slug: nl-technische-universiteit-delft-21pf
+name: Technische Universiteit Delft
+country: NL
+city:
+  slug: delft
+  name: Delft
+type: null
+website: https://www.tudelft.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.tudelft.nl/
+    last_verified_at: 2026-10-21

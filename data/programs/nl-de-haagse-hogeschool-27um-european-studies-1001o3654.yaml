@@ -1,0 +1,112 @@
+slug: nl-de-haagse-hogeschool-27um-european-studies-1001o3654
+institution: nl-de-haagse-hogeschool-27um
+country: NL
+city: s-gravenhage
+field: business-economics
+level: bachelor
+name: European Studies
+summary:
+  fr:
+    text: European Studies (European Studies), De Haagse Hogeschool ('s-Gravenhage). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: European Studies (European Studies), De Haagse Hogeschool ('s-Gravenhage). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: European Studies (European Studies), De Haagse Hogeschool ('s-Gravenhage). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/european-studies-voltijd-4-jaar
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme étranger doit être équivalent à un diplôme néerlandais de havo ; De Haagse Hogeschool évalue ton diplôme selon les directives de Nuffic.
+          status: draft
+        en:
+          text: A foreign diploma must be comparable to a Dutch havo diploma; The Hague University assesses it using the Nuffic guidelines.
+          status: draft
+        ar:
+          text: يجب أن تكون الشهادة الأجنبية معادلة لشهادة havo الهولندية؛ وتقيّم De Haagse Hogeschool شهادتك وفق إرشادات Nuffic.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Une bonne maîtrise de l'anglais est exigée pour être admis, mais aucun niveau CECR ni test précis n'est indiqué : vérifie auprès de l'école."
+          status: draft
+        en:
+          text: "A good command of English is required for admission, but no CEFR level or specific test is stated: check with the school."
+          status: draft
+        ar:
+          text: يُشترط إتقان جيد للإنجليزية للقبول، غير أنه لم يُحدَّد أي مستوى CECR ولا اختبار بعينه؛ تحقّق لدى المؤسسة.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Si tu n'as pas de diplôme donnant accès et que tu as 21 ans ou plus, tu peux être admis via l'« Toelatingsonderzoek 21+ » (test de capacité numérique).
+          status: draft
+        en:
+          text: If you lack a qualifying diploma and are 21 or older, you may be admitted via the 'Toelatingsonderzoek 21+' (digital capacity test).
+          status: draft
+        ar:
+          text: إذا لم تكن لديك شهادة تتيح الدخول وكان عمرك 21 سنة أو أكثر، يمكنك القبول عبر « Toelatingsonderzoek 21+ » (اختبار القدرة العددية).
+          status: draft
+    - id: req-4
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Avec une formation étrangère, tu reçois un e-mail te demandant de téléverser tes documents de diplôme dans le système OSIRIS Aanmelding.
+          status: draft
+        en:
+          text: With a foreign qualification you receive an email asking you to upload your diploma documents in the OSIRIS Aanmelding system.
+          status: draft
+        ar:
+          text: مع الدراسة الأجنبية السابقة، ستتلقى رسالة بريد إلكتروني تطلب منك رفع وثائق شهادتك في نظام OSIRIS Aanmelding.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/european-studies-voltijd-4-jaar
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat
+    last_verified_at: 2026-10-21

@@ -1,0 +1,93 @@
+slug: nl-hz-university-of-applied-sciences-21mi-tourism-management-1001o5065
+institution: nl-hz-university-of-applied-sciences-21mi
+country: NL
+city: vlissingen
+field: business-economics
+level: bachelor
+name: Tourism Management
+summary:
+  fr:
+    text: Tourism Management (Tourism Management), HZ University of Applied Sciences (Vlissingen). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Tourism Management (Tourism Management), HZ University of Applied Sciences (Vlissingen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Tourism Management (Tourism Management), HZ University of Applied Sciences (Vlissingen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://hz.nl/en/study-programmes/tourism-management
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary education diploma
+          status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Votre diplôme doit être équivalent au diplôme néerlandais d'enseignement secondaire (HAVO, VWO ou MBO niveau 4). S'il figure sur la liste des diplômes étrangers reconnus, vous êtes admissible sous réserve des exigences supplémentaires ; sinon, votre qualification sera évaluée individuellement (via Nuffic).
+          status: draft
+        en:
+          text: Your diploma must be equivalent to a Dutch secondary education diploma (HAVO, VWO or MBO level 4). If it is on the recognised foreign diplomas list, you are admissible provided you meet additional requirements; otherwise your qualification is assessed individually (via Nuffic).
+          status: draft
+        ar:
+          text: يجب أن تكون شهادتك معادلة لشهادة التعليم الثانوي الهولندية (HAVO أو VWO أو MBO المستوى 4). فإن وردت في قائمة الشهادات الأجنبية المعترف بها، فأنت مؤهَّل للقبول رهناً بالمتطلبات الإضافية؛ وإلا فسيُقيَّم مؤهلك بشكل فردي (عبر Nuffic).
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Si vous n'avez pas le diplôme requis et avez 21 ans ou plus, vous pouvez être admissible via l'examen d'entrée alternatif de HZ.
+          status: draft
+        en:
+          text: If you do not have the required diploma and are 21 years or older, you may be eligible via HZ's alternative entrance exam.
+          status: draft
+        ar:
+          text: إذا لم تكن لديك الشهادة المطلوبة وكان عمرك 21 سنة أو أكثر، فقد تكون مؤهلًا للقبول عبر امتحان الدخول البديل الخاص بـ HZ.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://hz.nl/en/study-programmes/tourism-management
+    last_verified_at: 2026-10-21

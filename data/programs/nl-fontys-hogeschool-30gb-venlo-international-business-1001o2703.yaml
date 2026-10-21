@@ -1,0 +1,126 @@
+slug: nl-fontys-hogeschool-30gb-venlo-international-business-1001o2703
+institution: nl-fontys-hogeschool-30gb-venlo
+country: NL
+city: venlo
+field: business-economics
+level: bachelor
+name: International Business
+summary:
+  fr:
+    text: International Business (International Business), Fontys Hogeschool (Venlo). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: International Business (International Business), Fontys Hogeschool (Venlo). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Business (International Business), Fontys Hogeschool (Venlo). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.fontys.nl/en/Programmes/International-Business-bachelor-full-time.htm
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-09-06
+      applicationOpens: null
+      applicationDeadline: 2027-05-01
+    - startDate: 2026-02-09
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 11
+        day: 15
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: grade-lists
+      name:
+        fr:
+          text: Relevés de notes
+          status: draft
+        en:
+          text: Grade lists
+          status: draft
+        ar:
+          text: كشوف النقاط
+          status: draft
+      translationRequired: null
+    - slug: diploma
+      name:
+        fr:
+          text: Diplôme
+          status: draft
+        en:
+          text: Diploma
+          status: draft
+        ar:
+          text: الدبلوم
+          status: draft
+      translationRequired: null
+    - slug: proof-of-language
+      name:
+        fr:
+          text: Preuve de maîtrise linguistique
+          status: draft
+        en:
+          text: Proof of language
+          status: draft
+        ar:
+          text: إثبات الكفاءة اللغوية
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vous devez avoir un diplôme d'études secondaires supérieures équivalent au niveau néerlandais ; les exigences exactes varient selon le programme, vérifiez les critères d'admission.
+          status: draft
+        en:
+          text: You must have a higher secondary education diploma equivalent to Dutch standards; exact requirements vary per programme, check the specific admission criteria.
+          status: draft
+        ar:
+          text: يجب أن تحمل شهادة الدراسة الثانوية العليا المعادلة للمستوى الهولندي؛ وتختلف المتطلبات الدقيقة بحسب البرنامج، فتحقّق من معايير القبول.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez la date limite exacte et les étapes supplémentaires pour les étudiants non-EEE auprès de l'établissement avant de postuler via Studielink.
+          status: draft
+        en:
+          text: Check the exact deadline and the additional steps for non-EEA students with the institution before applying through Studielink.
+          status: draft
+        ar:
+          text: تحقّق من الموعد النهائي الدقيق والخطوات الإضافية للطلاب من خارج EEE لدى المؤسسة قبل التقدّم عبر Studielink.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.fontys.nl/en/Programmes/International-Business-bachelor-full-time.htm
+    last_verified_at: 2026-10-21

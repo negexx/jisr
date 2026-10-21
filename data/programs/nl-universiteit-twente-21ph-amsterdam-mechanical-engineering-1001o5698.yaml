@@ -1,0 +1,107 @@
+slug: nl-universiteit-twente-21ph-amsterdam-mechanical-engineering-1001o5698
+institution: nl-universiteit-twente-21ph-amsterdam
+country: NL
+city: amsterdam
+field: engineering
+level: bachelor
+name: Mechanical Engineering
+summary:
+  fr:
+    text: Mechanical Engineering (Mechanical Engineering), Universiteit Twente (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Mechanical Engineering (Mechanical Engineering), Universiteit Twente (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Mechanical Engineering (Mechanical Engineering), Universiteit Twente (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.utwente.nl/onderwijs/bachelor/opleidingen/mechanical-engineering/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Une activité de matching (studiekeuzecheck) est obligatoire pour Mechanical Engineering ; participez-y et vérifiez les modalités sur le site de la formation.
+          status: draft
+        en:
+          text: A matching activity (studiekeuzecheck) is compulsory for Mechanical Engineering; take part and check the details on the programme website.
+          status: draft
+        ar:
+          text: نشاط المطابقة (studiekeuzecheck) إلزامي لبرنامج Mechanical Engineering؛ شارك فيه وتحقّق من التفاصيل على الموقع الخاص بالبرنامج.
+          status: draft
+    - id: req-2
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez que votre Baccalauréat marocain est accepté comme diplôme d'accès et attendez-vous à une évaluation de votre diplôme et de vos notes.
+          status: draft
+        en:
+          text: Check that your Moroccan Baccalauréat is accepted as an entry qualification and expect an assessment of your diploma and grades.
+          status: draft
+        ar:
+          text: تحقّق من أن بكالوريتك المغربية مقبولة بوصفها شهادة ولوج، وتوقّع تقييم شهادتك وعلاماتك.
+          status: draft
+    - id: req-3
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les étudiants avec une formation étrangère paient des frais de dossier (application fee) de 100 € non remboursables.
+          status: draft
+        en:
+          text: Students with a foreign prior education pay a non-refundable application fee of €100.
+          status: draft
+        ar:
+          text: يدفع الطلاب ذوو الدراسة الأجنبية السابقة رسوم ملف (رسوم التقديم) قدرها 100 يورو، وهي غير قابلة للاسترداد.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.utwente.nl/onderwijs/bachelor/opleidingen/mechanical-engineering/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.utwente.nl/onderwijs/bachelor/toelating-en-inschrijving/aanmelden/
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.utwente.nl/onderwijs/student-services/ik-word-student/inschrijving/studiekeuzecheck/
+    last_verified_at: 2026-10-21
+  page-4:
+    url: https://www.utwente.nl/onderwijs/bachelor/toelating-en-inschrijving/
+    last_verified_at: 2026-10-21
+  page-5:
+    url: https://www.utwente.nl/onderwijs/student-services/ik-word-student/geldzaken/
+    last_verified_at: 2026-10-21

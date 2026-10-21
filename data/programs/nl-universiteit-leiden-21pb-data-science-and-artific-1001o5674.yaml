@@ -1,0 +1,70 @@
+slug: nl-universiteit-leiden-21pb-data-science-and-artific-1001o5674
+institution: nl-universiteit-leiden-21pb
+country: NL
+city: leiden
+field: computer-science
+level: bachelor
+name: Data Science and Artificial Intelligence
+summary:
+  fr:
+    text: Data Science and Artificial Intelligence (Data Science and Artificial Intelligence), Universiteit Leiden (Leiden). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Data Science and Artificial Intelligence (Data Science and Artificial Intelligence), Universiteit Leiden (Leiden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Data Science and Artificial Intelligence (Data Science and Artificial Intelligence), Universiteit Leiden (Leiden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.universiteitleiden.nl/en/education/study-programmes/bachelor/data-science-and-artificial-intelligence
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Diplôme non néerlandais (Bac marocain) : vous n'êtes pas admis automatiquement, une demande d'admission via le portail (uSis) est requise. Vérifiez les conditions d'admission du programme."
+          status: draft
+        en:
+          text: "Non-Dutch diploma (Moroccan Bac): you are not automatically admissible; you must apply for admission via the online portal (uSis). Check the programme's admission requirements."
+          status: draft
+        ar:
+          text: "الشهادة غير الهولندية (البكالوريا المغربية): لا يتم القبول تلقائيًا، بل يلزم تقديم طلب قبول عبر البوابة (uSis). تحقق من شروط القبول الخاصة بالبرنامج."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.universiteitleiden.nl/en/education/study-programmes/bachelor/data-science-and-artificial-intelligence
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.universiteitleiden.nl/en/education/admission-and-application/bachelors/application-procedure
+    last_verified_at: 2026-10-21

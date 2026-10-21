@@ -1,0 +1,150 @@
+slug: nl-universiteit-van-amsterdam-21pk-economics-and-business-e-1001o6230
+institution: nl-universiteit-van-amsterdam-21pk
+country: NL
+city: amsterdam
+field: business-economics
+level: bachelor
+name: Economics and Business Economics
+summary:
+  fr:
+    text: Economics and Business Economics (Economics and Business Economics), Universiteit van Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Economics and Business Economics (Economics and Business Economics), Universiteit van Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Economics and Business Economics (Economics and Business Economics), Universiteit van Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.uva.nl/en/programmes/bachelors/economics--business-economics/economics--business-economics.html
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1573000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-3
+  info_kind: official
+documents:
+  value:
+    - slug: diploma-and-transcript
+      name:
+        fr:
+          text: Diplôme(s) et relevé(s) de notes
+          status: draft
+        en:
+          text: Diploma(s) and transcript(s) of grades
+          status: draft
+        ar:
+          text: الشهادة (الشهادات) وكشف (كشوف) العلامات
+          status: draft
+      translationRequired: null
+    - slug: english-language-proficiency-certificate
+      name:
+        fr:
+          text: Certificat de compétence en anglais
+          status: draft
+        en:
+          text: English language proficiency test certificate
+          status: draft
+        ar:
+          text: شهادة الكفاءة في اللغة الإنجليزية
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum vitae
+          status: draft
+        en:
+          text: Curriculum vitae / resume
+          status: draft
+        ar:
+          text: السيرة الذاتية
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le diplôme marocain doit être jugé équivalent au VWO néerlandais par le Central Admissions Office (diploma finder) ; prévoyez aussi le test d'admission/selection (numerus fixus, 550 places).
+          status: draft
+        en:
+          text: Your Moroccan diploma must be assessed as equivalent to a Dutch VWO diploma by the Central Admissions Office (diploma finder); also prepare for the selection procedure (numerus fixus, 550 places).
+          status: draft
+        ar:
+          text: يجب أن تُعتبر الشهادة المغربية معادِلة لشهادة VWO الهولندية من قِبل مكتب القبول المركزي (diploma finder)؛ وخطط أيضًا لاختبار القبول/الانتقاء (numerus fixus، 550 مقعدًا).
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Frais de dossier non remboursables de 100 EUR pour les candidats avec un diplôme international, à payer avant le traitement du dossier.
+          status: draft
+        en:
+          text: Non-refundable €100 application fee for applicants with an international diploma, to be paid before the application is processed.
+          status: draft
+        ar:
+          text: رسوم ملف غير قابلة للاسترداد قدرها 100 EUR للمتقدمين الحاصلين على شهادة دولية، تُدفع قبل معالجة الملف.
+          status: draft
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La UvA Matching est obligatoire pour les candidats ayant fait leurs études secondaires hors des Pays-Bas.
+          status: draft
+        en:
+          text: UvA Matching is mandatory for applicants who completed secondary education outside the Netherlands.
+          status: draft
+        ar:
+          text: المشاركة في UvA Matching إلزامية للمتقدمين الذين أتموا تعليمهم الثانوي خارج هولندا.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.uva.nl/en/programmes/bachelors/economics--business-economics/economics--business-economics.html
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.uva.nl/onderwijs/praktische-informatie/collegegeld/collegegeld.html
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.uva.nl/en/education/admissions/bachelors/applying-for-a-bachelors-programme.html
+    last_verified_at: 2026-10-21

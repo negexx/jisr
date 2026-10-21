@@ -1,0 +1,87 @@
+slug: nl-universiteit-twente-21ph-technical-computer-scien-1001o6242
+institution: nl-universiteit-twente-21ph
+country: NL
+city: enschede
+field: computer-science
+level: bachelor
+name: Technical Computer Science
+summary:
+  fr:
+    text: Technical Computer Science (Technical Computer Science), Universiteit Twente (Enschede). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Technical Computer Science (Technical Computer Science), Universiteit Twente (Enschede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Technical Computer Science (Technical Computer Science), Universiteit Twente (Enschede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.utwente.nl/onderwijs/bachelor/opleidingen/technical-computer-science/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La participation à la studiekeuzecheck (matching) est obligatoire pour cette formation.
+          status: draft
+        en:
+          text: Participation in the studiekeuzecheck (matching activity) is compulsory for this programme.
+          status: draft
+        ar:
+          text: المشاركة في studiekeuzecheck (المطابقة) إلزامية لهذا البرنامج.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats avec une nationalité autre que néerlandaise doivent consulter les deadlines internationales spécifiques.
+          status: draft
+        en:
+          text: Applicants with a non-Dutch nationality should check the specific international deadlines.
+          status: draft
+        ar:
+          text: يجب على المتقدمين الذين يحملون جنسية غير هولندية الاطلاع على المواعيد النهائية الدولية المحددة.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.utwente.nl/onderwijs/bachelor/opleidingen/technical-computer-science/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.utwente.nl/onderwijs/bachelor/toelating-en-inschrijving/aanmelden/
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.utwente.nl/onderwijs/student-services/ik-word-student/inschrijving/studiekeuzecheck/
+    last_verified_at: 2026-10-21

@@ -1,0 +1,90 @@
+slug: nl-universiteit-van-amsterdam-21pk-business-administration-1001o5748
+institution: nl-universiteit-van-amsterdam-21pk
+country: NL
+city: amsterdam
+field: business-economics
+level: bachelor
+name: Business Administration
+summary:
+  fr:
+    text: Business Administration (Business Administration), Universiteit van Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Business Administration (Business Administration), Universiteit van Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Business Administration (Business Administration), Universiteit van Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.uva.nl/en/programmes/bachelors/business-administration/business-administration.html
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1573000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "L'admission se fait par une procédure de sélection (numerus fixus, 500 places) : participez à la sélection et respectez la date limite du 15 janvier. Vérifiez aussi votre diplôme dans le 'diploma finder'."
+          status: draft
+        en:
+          text: "Admission is via a selection procedure (numerus fixus, 500 places): take part in the selection and meet the 15 January deadline. Also check your diploma in the 'diploma finder'."
+          status: draft
+        ar:
+          text: "يتم القبول عبر إجراء انتقاء (numerus fixus، 500 مقعد): شارك في الانتقاء والتزم بالموعد النهائي 15 يناير. تحقق أيضًا من شهادتك في « diploma finder »."
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les étudiants avec un diplôme international doivent payer des frais de dossier non remboursables de 100 € avant le traitement de leur candidature.
+          status: draft
+        en:
+          text: Students applying with an international diploma must pay a non-refundable €100 application fee before the application is processed.
+          status: draft
+        ar:
+          text: يجب على الطلاب الحاصلين على شهادة دولية دفع رسوم ملف غير قابلة للاسترداد قدرها 100 يورو قبل معالجة طلب التقديم الخاص بهم.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.uva.nl/en/programmes/bachelors/business-administration/business-administration.html
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.uva.nl/onderwijs/praktische-informatie/collegegeld/collegegeld.html
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.uva.nl/en/education/admissions/bachelors/applying-for-a-bachelors-programme.html
+    last_verified_at: 2026-10-21

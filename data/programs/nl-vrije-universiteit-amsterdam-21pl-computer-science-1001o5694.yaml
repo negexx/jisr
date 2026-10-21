@@ -1,0 +1,87 @@
+slug: nl-vrije-universiteit-amsterdam-21pl-computer-science-1001o5694
+institution: nl-vrije-universiteit-amsterdam-21pl
+country: NL
+city: amsterdam
+field: computer-science
+level: bachelor
+name: Computer Science
+summary:
+  fr:
+    text: Computer Science (Computer Science), Vrije Universiteit Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Computer Science (Computer Science), Vrije Universiteit Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Computer Science (Computer Science), Vrije Universiteit Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://vu.nl/nl/onderwijs/bachelor/computer-science
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vraag na of je met een buitenlands diploma via het International Office moet aanmelden en welke documenten en eventuele application fee gelden.
+          status: draft
+        en:
+          text: Check whether applying with a foreign diploma requires the International Office route, which documents are needed and whether an application fee applies.
+          status: draft
+        ar:
+          text: استفسر عما إذا كان عليك التقدّم بشهادة أجنبية عبر مكتب International Office، وعن المستندات المطلوبة وعن رسوم التقديم إن وُجدت.
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vraag na of voor deze Engelstalige bachelor een bewijs van Engelse taalvaardigheid vereist is en welk niveau.
+          status: draft
+        en:
+          text: Check whether proof of English proficiency is required for this English-taught bachelor and at which level.
+          status: draft
+        ar:
+          text: استفسر عما إذا كان يُشترط لهذه الإجازة المدرّسة بالإنجليزية إثبات الكفاءة في اللغة الإنجليزية، وما المستوى المطلوب.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://vu.nl/nl/onderwijs/bachelor/computer-science
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://vu.nl/nl/onderwijs/meer-over/aanmelden-bacheloropleiding
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://vu.nl/nl/onderwijs/meer-over/documenten-voor-aanmelding
+    last_verified_at: 2026-10-21

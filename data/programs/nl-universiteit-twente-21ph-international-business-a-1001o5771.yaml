@@ -1,0 +1,110 @@
+slug: nl-universiteit-twente-21ph-international-business-a-1001o5771
+institution: nl-universiteit-twente-21ph
+country: NL
+city: enschede
+field: business-economics
+level: bachelor
+name: International Business Administration
+summary:
+  fr:
+    text: International Business Administration, Universiteit Twente (Enschede). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: International Business Administration, Universiteit Twente (Enschede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Business Administration, Universiteit Twente (Enschede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.utwente.nl/onderwijs/bachelor/opleidingen/international-business-administration/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-09-01
+      applicationOpens: null
+      applicationDeadline: null
+    - startDate: 2028-09-01
+      applicationOpens: null
+      applicationDeadline: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifie les conditions d'admission pour un diplôme étranger (Bac marocain) sur le site de l'université ; la page ne donne pas de conditions précises pour ce profil.
+          status: draft
+        en:
+          text: Check the admission requirements for a foreign diploma (Moroccan Baccalaureate) on the university website; the page gives no specific conditions for this profile.
+          status: draft
+        ar:
+          text: تحقّق من شروط القبول الخاصة بالشهادة الأجنبية (البكالوريا المغربية) على موقع الجامعة؛ فالصفحة لا تذكر شروطاً محددة لهذا الملف.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Il n'y a pas de numerus fixus pour ce programme, mais une activité de matching (studiekeuzecheck) est prévue ; renseigne-toi sur les modalités et les dates.
+          status: draft
+        en:
+          text: There is no numerus fixus for this programme, but a matching activity (studiekeuzecheck) is organised; check the procedure and dates.
+          status: draft
+        ar:
+          text: لا يوجد numerus fixus لهذا البرنامج، لكن هناك نشاط مطابقة (studiekeuzecheck) مُقرَّر؛ استعلم عن الإجراءات والمواعيد.
+          status: draft
+    - id: req-3
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Une application fee de 100 EUR s'applique aux étudiants avec une formation étrangère pour un bachelor ; vérifie le montant et les conditions.
+          status: draft
+        en:
+          text: An application fee of EUR 100 applies to students with a foreign prior education for a bachelor; check the amount and conditions.
+          status: draft
+        ar:
+          text: تُطبَّق رسوم تقديم قدرها 100 EUR على الطلاب الذين درسوا تكويناً أجنبياً للالتحاق بالإجازة؛ تحقّق من المبلغ والشروط.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.utwente.nl/onderwijs/bachelor/opleidingen/international-business-administration/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.utwente.nl/onderwijs/bachelor/toelating-en-inschrijving/aanmelden/
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.utwente.nl/onderwijs/bachelor/toelating-en-inschrijving/
+    last_verified_at: 2026-10-21
+  page-4:
+    url: https://www.utwente.nl/onderwijs/student-services/ik-word-student/geldzaken/
+    last_verified_at: 2026-10-21

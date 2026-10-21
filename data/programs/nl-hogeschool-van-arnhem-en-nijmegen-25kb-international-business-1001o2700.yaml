@@ -1,0 +1,67 @@
+slug: nl-hogeschool-van-arnhem-en-nijmegen-25kb-international-business-1001o2700
+institution: nl-hogeschool-van-arnhem-en-nijmegen-25kb
+country: NL
+city: arnhem
+field: business-economics
+level: bachelor
+name: International Business
+summary:
+  fr:
+    text: International Business (International Business), Hogeschool van Arnhem en Nijmegen (Arnhem). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: International Business (International Business), Hogeschool van Arnhem en Nijmegen (Arnhem). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Business (International Business), Hogeschool van Arnhem en Nijmegen (Arnhem). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.han.nl/opleidingen/hbo/international-business-engelstalig/voltijd/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Critères d'admission: vérifiez les conditions d'admission (diplôme étranger, mbo, havo, vwo ou 21+) sur la page des conditions d'admission de la HAN."
+          status: draft
+        en:
+          text: "Admission criteria: check the admission requirements (foreign diploma, mbo, havo, vwo or 21+) on the HAN admission requirements page."
+          status: draft
+        ar:
+          text: "معايير القبول: تحقق من شروط القبول (الشهادة الأجنبية، mbo، havo، vwo أو 21+) في صفحة شروط القبول الخاصة بـ HAN."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.han.nl/opleidingen/hbo/international-business-engelstalig/voltijd/
+    last_verified_at: 2026-10-21

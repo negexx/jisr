@@ -1,0 +1,101 @@
+slug: nl-hogeschool-rotterdam-22oj-international-business-1001o2695
+institution: nl-hogeschool-rotterdam-22oj
+country: NL
+city: rotterdam
+field: business-economics
+level: bachelor
+name: International Business
+summary:
+  fr:
+    text: International Business (International Business), Hogeschool Rotterdam (Rotterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: International Business (International Business), Hogeschool Rotterdam (Rotterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Business (International Business), Hogeschool Rotterdam (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/international-business/voltijd/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez les conditions d'admission pour un diplôme étranger (baccalauréat marocain) : équivalence avec un diplôme néerlandais et maîtrise du néerlandais ou de l'anglais selon les pages d'admission."
+          status: draft
+        en:
+          text: "Check admission requirements for a foreign diploma (Moroccan Baccalauréat): comparability with the required Dutch diploma and Dutch or English language proficiency as stated on the admission pages."
+          status: draft
+        ar:
+          text: "تحقّق من شروط القبول بالنسبة إلى شهادة أجنبية (البكالوريا المغربية): معادلتها لشهادة هولندية، وإتقان الهولندية أو الإنجليزية حسب ما تذكره صفحات القبول."
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats non-UE doivent respecter des délais d'admission et de visa plus précoces (par exemple 1 avril pour l'admission, 5 juin pour les documents de visa pour la rentrée de septembre).
+          status: draft
+        en:
+          text: Non-EU applicants have earlier admission and visa deadlines (e.g. 1 April for admission, 5 June for visa documents for the September intake).
+          status: draft
+        ar:
+          text: يجب على المتقدمين من خارج الاتحاد الأوروبي (UE) الالتزام بمواعيد قبول وتأشيرة أبكر (مثلًا 1 أبريل للقبول، و5 يونيو لوثائق التأشيرة لبداية الدراسة في سبتمبر).
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un visa d'études est nécessaire pour les non-UE ; l'école en fait la demande après admission conditionnelle, avec preuve de moyens financiers (12x le montant mensuel de référence).
+          status: draft
+        en:
+          text: A study visa is required for non-EU students; the school applies after conditional admission, with proof of sufficient financial means (12x the monthly norm).
+          status: draft
+        ar:
+          text: تأشيرة الدراسة مطلوبة للطلاب من خارج الاتحاد الأوروبي (UE)؛ وتتولّى المؤسسة تقديم الطلب بعد القبول المشروط، مع إثبات موارد مالية كافية (12 ضعفاً من المبلغ الشهري المرجعي).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/international-business/voltijd/
+    last_verified_at: 2026-10-21
+  page-2:
+    url: https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/
+    last_verified_at: 2026-10-21
+  page-3:
+    url: https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/studievisum/
+    last_verified_at: 2026-10-21
