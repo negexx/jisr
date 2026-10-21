@@ -99,7 +99,7 @@ documents:
           text: Proof of application fee payment slip
           status: draft
         ar:
-          text: إثبات دفع رسوم الترشيح
+          text: إثبات دفع رسوم الترشح
           status: draft
       translationRequired: null
   source: page-3
