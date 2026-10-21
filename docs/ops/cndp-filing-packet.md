@@ -284,7 +284,7 @@ The following measures are in the repository and are the ones to describe in the
 | Arabic body | `content/ar/privacy.mdx`, `content/ar/terms.mdx` |
 | Page components | `src/app/[locale]/privacy/page.tsx`, `src/app/[locale]/terms/page.tsx` |
 | Consent constant | `CURRENT_CONSENT_VERSION` in `src/lib/auth/consent.ts` |
-| Consent version value | `2026-10-16` |
+| Consent version value | `2026-10-21` |
 | Version tie test | `tests/app/legal-pages.test.tsx` ties the constant to the frontmatter in all three privacy files |
 | Controller in the notice | Hamza Dagdagui, established in Italy; contact dagdaguihamza@gmail.com |
 | Languages | English, French, Modern Standard Arabic (RTL) |
