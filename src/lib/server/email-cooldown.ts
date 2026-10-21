@@ -8,6 +8,7 @@ import { cooldownKey } from "@/lib/auth/normalize-email";
 import { AUTH_EMAILS_PER_DAY, AUTH_EMAILS_RESERVED_FOR_DELETION } from "@/lib/constants";
 
 import { sqlState } from "./account-store";
+import { purgeExpiredThrottles } from "./request-throttle";
 
 // One auth email of each kind per mailbox per minute, for both magic links and deletion
 // confirmations. Better Auth's own limiter is IP-keyed and we record no IPs, so this and the daily
@@ -82,6 +83,7 @@ async function purgeExpiredAuthRows(now: Date | undefined): Promise<void> {
   } catch (error) {
     console.error("[auth] purge of expired pre-account rows failed", { sqlState: sqlState(error) });
   }
+  await purgeExpiredThrottles(now);
 }
 
 export type AuthEmailClaimOptions = {

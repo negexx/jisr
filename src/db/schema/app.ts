@@ -141,6 +141,23 @@ export const authEmailDays = pgTable(
   (table) => [check("auth_email_days_sent_check", sql`${table.sent} >= 0`)],
 );
 
+// One fixed-window counter per HMAC key (throttleKey): the key is a keyed hash of a UTC day, a
+// bucket and the raw request key (client address, path), so the row holds no address and cannot be
+// linked across days. consumeThrottle is the only writer; rows older than a day are deleted on an
+// auth email send.
+export const requestThrottles = pgTable(
+  "request_throttles",
+  {
+    key: text("key").primaryKey(),
+    windowStart: timestamptz("window_start").notNull(),
+    count: integer("count").notNull(),
+  },
+  (table) => [
+    check("request_throttles_count_check", sql`${table.count} >= 1`),
+    index("request_throttles_window_start_idx").on(table.windowStart),
+  ],
+);
+
 export const userDataState = pgTable("user_data_state", {
   userId: text("user_id")
     .primaryKey()
