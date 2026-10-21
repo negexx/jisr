@@ -8,10 +8,10 @@ fields: []
 level: bachelor
 summary:
   fr:
-    text: Bourse au mérite de 300 € par mois (150 € de l'État fédéral, 150 € de parrains privés), attribuée par les universités qui participent au programme. Les étudiants de toutes nationalités peuvent candidater ; vérifiez que votre université y participe.
+    text: Bourse au mérite de 300 € par mois (150 € de l'État fédéral, 150 € de parrains privés), attribuée par les universités qui participent au programme.
     status: draft
   en:
-    text: Merit scholarship of EUR 300 a month (EUR 150 from the federal government, EUR 150 from private sponsors), awarded by the universities that take part. Students of all nationalities can apply; check that your university takes part.
+    text: Merit scholarship of EUR 300 a month (EUR 150 from the federal government, EUR 150 from private sponsors), awarded by the universities that take part.
     status: draft
   ar:
     text: منحة استحقاق قدرها 300 € شهريًا (150 € من الدولة الفيدرالية و150 € من رعاة خواص)، تمنحها الجامعات المشاركة في البرنامج. يمكن لطلبة جميع الجنسيات التقدم؛ تحقق من أن جامعتك مشاركة.
@@ -41,10 +41,10 @@ documents:
   info_kind: official
 howToApply:
   fr:
-    text: "Candidatez directement auprès de votre université, selon ses critères, ses pièces et ses dates : chaque université attribue le Deutschlandstipendium."
+    text: Candidatez directement auprès de votre université, selon ses critères, ses pièces et ses dates.
     status: draft
   en:
-    text: "Apply directly to your university, following its criteria, documents and dates: each university awards the Deutschlandstipendium."
+    text: Apply directly to your university, following its criteria, documents and dates.
     status: draft
   ar:
     text: "قدّم طلبك مباشرة إلى جامعتك وفق معاييرها ووثائقها ومواعيدها: فكل جامعة هي التي تمنح Deutschlandstipendium."
