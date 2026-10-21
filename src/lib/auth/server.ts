@@ -45,6 +45,11 @@ import { isSignupFor } from "./signup-intent";
 export const MAGIC_LINK_EXPIRY_S = PENDING_SIGNUP_TTL_S;
 export const DELETE_TOKEN_EXPIRY_S = 60 * 60;
 
+// Better Auth's defaults (7 days, 1 day) written down so an upgrade cannot change them silently.
+// updateAge slides the expiry: a session in use lasts as long as it is used at least weekly.
+export const SESSION_EXPIRES_IN_S = 7 * 24 * 3600;
+export const SESSION_UPDATE_AGE_S = 24 * 3600;
+
 // Better Auth's default rule, for a path that neither it nor we give a rule of its own.
 export const AUTH_DEFAULT_RATE_LIMIT = { window: 60, max: 100 };
 
@@ -315,6 +320,7 @@ function createAuth(secret: string, baseURL: string) {
       customRules: AUTH_RATE_LIMIT_RULES,
       customStorage: authLimiterStorage({ ruledPaths: Object.keys(AUTH_RATE_LIMIT_RULES) }),
     },
+    session: { expiresIn: SESSION_EXPIRES_IN_S, updateAge: SESSION_UPDATE_AGE_S },
     // The default logger and better-call print raw errors, which carry query parameters (tokens,
     // addresses): see log.ts.
     logger: { log: scrubbedAuthLog },
@@ -392,14 +398,29 @@ function createAuth(secret: string, baseURL: string) {
                 code: "AGE_NOT_CONFIRMED",
               });
             }
+            // Nothing reads the provider's name or picture (the UI and the emails address no one by
+            // name), so they are not kept: `name` is not null in the schema, hence "".
             return {
               data: {
                 ...user,
+                name: "",
+                image: null,
                 consentVersion: decision.consentVersion,
                 consentedAt: decision.consentedAt,
               },
             };
           },
+        },
+        update: {
+          // POST /update-user accepts any name and image from a signed-in caller; blank them the
+          // same way. Only when present, so other updates (e.g. emailVerified) pass untouched.
+          before: async (data) => ({
+            data: {
+              ...data,
+              ...("name" in data ? { name: "" } : {}),
+              ...("image" in data ? { image: null } : {}),
+            },
+          }),
         },
       },
       // Jisr never reads the provider ID token, and Better Auth stores it unencrypted even with

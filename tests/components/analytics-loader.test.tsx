@@ -5,7 +5,11 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { AnalyticsLoader } from "@/components/analytics-loader";
 
 const URL = "https://jisr.goatcounter.com/count";
-const COUNT_JS = "https://gc.zgo.at/count.js";
+const COUNT_JS = "https://gc.zgo.at/count.v5.js";
+// Published at https://www.goatcounter.com/help/countjs-versions and re-computed from the downloaded
+// file with `openssl dgst -sha384 -binary count.v5.js | openssl base64 -A`.
+const COUNT_JS_INTEGRITY =
+  "sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ";
 
 function scriptBody(): string {
   const html = renderToStaticMarkup(<AnalyticsLoader goatCounterUrl={URL} />);
@@ -56,6 +60,9 @@ describe("AnalyticsLoader markup", () => {
     expect(html).not.toMatch(/<script[^>]*\ssrc=/);
     expect(html).toContain(URL);
     expect(html).toContain(COUNT_JS);
+    expect(html).not.toContain("gc.zgo.at/count.js");
+    expect(html).toContain(COUNT_JS_INTEGRITY);
+    expect(html).toContain("anonymous");
     expect(html).toContain("requestIdleCallback");
     expect(html).toContain("__jisrAnalytics");
   });
@@ -80,6 +87,8 @@ describe("AnalyticsLoader script", () => {
     const added = document.head.querySelector("script");
     expect(added?.getAttribute("src")).toBe(COUNT_JS);
     expect(added?.getAttribute("data-goatcounter")).toBe(URL);
+    expect(added?.getAttribute("integrity")).toBe(COUNT_JS_INTEGRITY);
+    expect(added?.getAttribute("crossorigin")).toBe("anonymous");
   });
 
   it("flushes events queued before count.js loaded, once count exists", () => {

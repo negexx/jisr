@@ -58,7 +58,6 @@ const SECRETS = {
   refreshToken: "SENTINEL-oauth-refresh-token",
   idToken: "SENTINEL-oauth-id-token",
   passwordHash: "SENTINEL-password-hash",
-  providerAccountId: "SENTINEL-provider-account-id",
   scope: "SENTINEL-oauth-scope",
   userAgent: "SENTINEL-user-agent/9.9",
   ipAddress: "203.0.113.77",
@@ -66,8 +65,14 @@ const SECRETS = {
   verificationIdentifier: "SENTINEL-verification-identifier",
 };
 
+// `sessions` (dates only) and `accountId` (the provider's own id for the student) are exported on
+// purpose; every other session, device and credential column stays out.
 const FORBIDDEN_KEY =
-  /token|password|secret|hash|cookie|userAgent|user_agent|ipAddress|ip_address|accountId|account_id|scope|session|verification/i;
+  /token|password|secret|hash|cookie|userAgent|user_agent|ipAddress|ip_address|account_id|scope|verification/i;
+
+// The student's own provider id; unlike the OAuth tokens it is not a credential, and Art. 20 covers it.
+const PROVIDER_ACCOUNT_ID = "SENTINEL-provider-account-id";
+const BOB_PROVIDER_ACCOUNT_ID = "SENTINEL-bob-provider-id";
 
 async function lastLink(): Promise<string> {
   const files = (await readdir(io.mailDir)).sort();
@@ -198,7 +203,7 @@ async function seedAlice(): Promise<void> {
        $6, $7, '2026-09-30 08:00:00', '2026-09-30 08:00:00')`,
     [
       alice.id,
-      SECRETS.providerAccountId,
+      PROVIDER_ACCOUNT_ID,
       SECRETS.accessToken,
       SECRETS.refreshToken,
       SECRETS.idToken,
@@ -228,9 +233,9 @@ async function seedBob(): Promise<void> {
   await expectOk(actions.createFeedbackReport(BOB_REPORT));
   await pool.query(
     `insert into account (id, account_id, provider_id, user_id, access_token, password, created_at, updated_at)
-     values ('acc-bob', 'SENTINEL-bob-provider-id', 'google', $1, 'SENTINEL-bob-access', 'SENTINEL-bob-hash',
+     values ('acc-bob', $2, 'google', $1, 'SENTINEL-bob-access', 'SENTINEL-bob-hash',
        '2026-09-29 08:00:00', '2026-09-29 08:00:00')`,
-    [bob.id],
+    [bob.id, BOB_PROVIDER_ACCOUNT_ID],
   );
 }
 
@@ -332,10 +337,18 @@ describe("a signed-in student", () => {
         emailVerified: true,
         name: expect.any(String),
         image: null,
+        role: "student",
         createdAt: iso,
         updatedAt: iso,
-        signInMethods: [{ provider: "google", createdAt: "2026-09-30T08:00:00.000Z" }],
+        signInMethods: [
+          {
+            provider: "google",
+            accountId: PROVIDER_ACCOUNT_ID,
+            createdAt: "2026-09-30T08:00:00.000Z",
+          },
+        ],
       },
+      sessions: [{ createdAt: iso, expiresAt: iso }],
       consent: { consentVersion: CURRENT_CONSENT_VERSION, consentedAt: iso },
       profile: { data: ALICE_EDITED_PROFILE, revision: 2, updatedAt: iso },
       savedPrograms: [
@@ -486,7 +499,11 @@ describe("ownership", () => {
     expect(bobBody.feedbackReports.map((row) => row.note)).toEqual(["BOB-PRIVATE-NOTE"]);
     expect(bobBody.profile?.data).toEqual(BOB_PROFILE);
     expect(bobBody.account.signInMethods).toEqual([
-      { provider: "google", createdAt: "2026-09-29T08:00:00.000Z" },
+      {
+        provider: "google",
+        accountId: BOB_PROVIDER_ACCOUNT_ID,
+        createdAt: "2026-09-29T08:00:00.000Z",
+      },
     ]);
   });
 
@@ -552,11 +569,42 @@ describe("secrets", () => {
     }
   });
 
-  it("export a sign-in method as its provider and link date and nothing more", async () => {
+  it("export a sign-in method as its provider, provider account id and link date and nothing more", async () => {
     const body = await exportedBody(alice);
     expect(body.account.signInMethods).toEqual([
-      { provider: "google", createdAt: "2026-09-30T08:00:00.000Z" },
+      {
+        provider: "google",
+        accountId: PROVIDER_ACCOUNT_ID,
+        createdAt: "2026-09-30T08:00:00.000Z",
+      },
     ]);
+  });
+
+  it("export each session as its start and end date and nothing more", async () => {
+    const stored = await pool.query<{ created_at: string; expires_at: string }>(
+      `select to_char(created_at, 'YYYY-MM-DD"T"HH24:MI:SS.MS"Z"') as created_at,
+              to_char(expires_at, 'YYYY-MM-DD"T"HH24:MI:SS.MS"Z"') as expires_at
+         from session where user_id = $1 order by created_at`,
+      [alice.id],
+    );
+    expect(stored.rows.length).toBeGreaterThan(0);
+    const body = await exportedBody(alice);
+    expect(body.sessions).toEqual(
+      stored.rows.map((row) => ({ createdAt: row.created_at, expiresAt: row.expires_at })),
+    );
+    for (const session of body.sessions)
+      expect(Object.keys(session).sort()).toEqual(["createdAt", "expiresAt"]);
+  });
+
+  it("export the role the account holds", async () => {
+    expect((await exportedBody(alice)).account.role).toBe("student");
+  });
+
+  it("have no token, ipAddress or userAgent key anywhere in the JSON", async () => {
+    for (const student of [alice, bob, carol]) {
+      const keys = keysDeep(await exportedBody(student));
+      expect(keys.filter((key) => ["token", "ipAddress", "userAgent"].includes(key))).toEqual([]);
+    }
   });
 });
 
