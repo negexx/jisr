@@ -88,7 +88,7 @@ export function AccountDeleteConfirm({ locale }: { locale: AppLocale }) {
     );
   }
 
-  if (stage.kind === "refused" && stage.outcome !== "failed") {
+  if (stage.kind === "refused" && stage.outcome !== "failed" && stage.outcome !== "try-later") {
     return (
       <div className="flex max-w-prose flex-col items-start gap-4 text-start">
         <p role="alert" className="text-base font-medium text-destructive">
@@ -131,7 +131,7 @@ export function AccountDeleteConfirm({ locale }: { locale: AppLocale }) {
       </p>
       {stage.kind === "refused" ? (
         <p role="alert" className="text-base font-medium text-destructive">
-          {t("errors.failed")}
+          {stage.outcome === "try-later" ? t("errors.tryLater") : t("errors.failed")}
         </p>
       ) : null}
       <Button

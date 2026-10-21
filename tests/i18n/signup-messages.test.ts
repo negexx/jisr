@@ -74,6 +74,15 @@ describe("signup messages: the shared send refusal", () => {
     expect(message).toMatch(later);
     expect(message).not.toMatch(minute);
   });
+
+  // The same answer also covers the network throttle, which is not about the typed address.
+  it.each([
+    ["fr", /adresse/i],
+    ["en", /address/i],
+    ["ar", /عنوان/],
+  ] as const)("does not blame the typed address in %s", (locale, address) => {
+    expect(CATALOGS[locale].signup.errors.cooldown).not.toMatch(address);
+  });
 });
 
 describe("signup messages: language rules", () => {

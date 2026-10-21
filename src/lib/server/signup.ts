@@ -121,7 +121,12 @@ function failureOf(error: unknown): SignInLinkError {
 async function withinAddressLimits(address: string): Promise<boolean> {
   for (const [name, rule] of Object.entries(SIGN_IN_LINK_RULES)) {
     const { allowed } = await consumeThrottle(throttleKey(`sign-in-link-${name}`, address), rule);
-    if (!allowed) return false;
+    if (!allowed) {
+      console.warn("sign-in link request refused by the address throttle", {
+        bucket: `sign-in-link-${name}`,
+      });
+      return false;
+    }
   }
   return true;
 }

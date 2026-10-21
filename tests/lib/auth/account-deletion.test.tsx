@@ -106,6 +106,7 @@ describe("confirmAccountDeletion", () => {
     [{ status: 404, code: "INVALID_TOKEN" }, "invalid-token"],
     [{ status: 401, code: "UNAUTHORIZED" }, "signed-out"],
     [{ status: 403, code: "ACCOUNTS_DISABLED" }, "unavailable"],
+    [{ status: 429 }, "try-later"],
     [{ status: 500 }, "failed"],
   ] as const)("keeps this device's data when refused with %o (%s)", async (error, outcome) => {
     seedDevice();
@@ -240,6 +241,27 @@ describe("the confirm page", () => {
     expect((await screen.findByRole("alert")).textContent).toBe(fr.accountDelete.errors.failed);
     await userEvent.click(screen.getByRole("button", { name: fr.accountDelete.confirm }));
     await waitFor(() => expect(screen.getByText(fr.accountDelete.deleted.title)).toBeTruthy());
+  });
+
+  it.each([
+    "fr",
+    "en",
+    "ar",
+  ] as const)("says to try again later when the hourly limit refuses, and keeps the button (%s)", async (locale) => {
+    seedDevice();
+    window.history.replaceState(null, "", `/${locale}/account/delete#token=tok123`);
+    mocks.deleteUser.mockResolvedValueOnce({ data: null, error: { status: 429 } });
+    mocks.deleteUser.mockResolvedValueOnce(deleted);
+    renderPage(locale);
+
+    const messages = CATALOGS[locale].accountDelete;
+    await userEvent.click(await screen.findByRole("button", { name: messages.confirm }));
+    expect((await screen.findByRole("alert")).textContent).toBe(messages.errors.tryLater);
+    expect(messages.errors.tryLater).not.toBe(messages.errors.failed);
+    expect(jisrKeys().length).toBe(DEVICE_KEYS.length);
+
+    await userEvent.click(screen.getByRole("button", { name: messages.confirm }));
+    await waitFor(() => expect(screen.getByText(messages.deleted.title)).toBeTruthy());
   });
 
   it("says the link is not valid when it carries no token, and calls nothing", async () => {

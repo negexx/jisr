@@ -15,6 +15,7 @@ export type DeletionConfirmOutcome =
   | "invalid-token"
   | "signed-out"
   | "unavailable"
+  | "try-later"
   | "failed";
 
 type AuthError = { status: number; code?: string } | null;
@@ -23,6 +24,14 @@ function refusal(error: NonNullable<AuthError>): "signed-out" | "unavailable" | 
   if (error.status === 401) return "signed-out";
   if (error.code === "ACCOUNTS_DISABLED") return "unavailable";
   return "failed";
+}
+
+// The email request and the token confirmation share one hourly bucket per network address, so on a
+// shared address (carrier-grade NAT) a valid token can meet a full bucket: waiting fixes it.
+function confirmRefusal(error: NonNullable<AuthError>): DeletionConfirmOutcome {
+  if (error.code === "INVALID_TOKEN") return "invalid-token";
+  if (error.status === 429) return "try-later";
+  return refusal(error);
 }
 
 /**
@@ -68,7 +77,7 @@ export async function confirmAccountDeletion(token: string): Promise<DeletionCon
   } catch {
     return "failed";
   }
-  if (error) return error.code === "INVALID_TOKEN" ? "invalid-token" : refusal(error);
+  if (error) return confirmRefusal(error);
   eraseThisDevice();
   return "deleted";
 }

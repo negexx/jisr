@@ -82,6 +82,14 @@ async function throttleKeyOf(bucket: string, rawKey: string): Promise<string> {
   return throttleKey(bucket, rawKey);
 }
 
+async function throttleCount(bucket: string): Promise<number | undefined> {
+  const { rows } = await pool.query<{ count: number }>(
+    "select count from request_throttles where key = $1",
+    [await throttleKeyOf(bucket, CLIENT_IP)],
+  );
+  return rows[0]?.count;
+}
+
 async function seedThrottle(key: string, count: number): Promise<void> {
   await pool.query(
     "insert into request_throttles (key, window_start, count) values ($1, now(), $2)",
@@ -116,6 +124,7 @@ beforeEach(async () => {
 });
 
 afterEach(async () => {
+  vi.restoreAllMocks();
   vi.unstubAllEnvs();
   await rm(io.mailDir, { recursive: true, force: true });
 });
@@ -134,6 +143,7 @@ describe("the sign-in link action, per address", () => {
       });
     }
     expect(await requestSignInLink(request(unique(11)))).toEqual({ ok: false, error: "cooldown" });
+    expect(await throttleCount("sign-in-link-day")).toBe(10);
     expect(await count("email_cooldowns")).toBe(10);
     const { rows } = await pool.query<{ sent: number }>("select sent from auth_email_days");
     expect(rows).toEqual([{ sent: 10 }]);
@@ -215,8 +225,32 @@ describe("the sign-in link action, per address", () => {
     expect(output).not.toContain("Failed query");
     expect(output).not.toContain(CLIENT_IP);
     expect(output).not.toContain(unique(1));
-    vi.restoreAllMocks();
     expect(await count("email_cooldowns")).toBe(0);
+  });
+
+  it.each([
+    ["sign-in-link-hour", 10],
+    ["sign-in-link-day", 30],
+  ])("logs one fixed line naming only the %s bucket when it refuses", async (bucket, max) => {
+    const spies = (["log", "info", "warn", "error", "debug"] as const).map((method) =>
+      vi.spyOn(console, method).mockImplementation(() => undefined),
+    );
+    await seedThrottle(await throttleKeyOf(bucket, CLIENT_IP), max);
+    expect(await requestSignInLink(request(unique(1)))).toEqual({ ok: false, error: "cooldown" });
+    const output = JSON.stringify(spies.flatMap((spy) => spy.mock.calls));
+    expect(output).toContain(bucket);
+    expect(output).not.toContain(CLIENT_IP);
+    expect(output).not.toContain(unique(1));
+    expect(output).not.toMatch(/[A-Za-z0-9_-]{43}/);
+    expect(spies.flatMap((spy) => spy.mock.calls)).toHaveLength(1);
+  });
+
+  it("logs nothing when the address is within its limits", async () => {
+    const spies = (["log", "info", "warn", "error", "debug"] as const).map((method) =>
+      vi.spyOn(console, method).mockImplementation(() => undefined),
+    );
+    expect(await requestSignInLink(request(unique(1)))).toEqual({ ok: true });
+    expect(spies.flatMap((spy) => spy.mock.calls)).toEqual([]);
   });
 
   it("takes no throttle slot while the confirmations are missing", async () => {
