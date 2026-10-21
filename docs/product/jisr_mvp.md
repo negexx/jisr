@@ -35,6 +35,8 @@ Start with a small number of countries and study fields rather than trying to co
 - Engineering
 - Business / Economics
 
+**Update, 2026-10-21:** Release 1 now covers six destinations (France, Germany, the Netherlands, Hungary, Italy and Spain) and six study fields: Computer Science, Engineering, Business and Economics, Medicine, Pharmacy and Allied health. Bachelor's programmes taught in English come first in every destination; programmes taught in other languages stay in the data but are not the priority. France has no health fields yet, because French-taught health is deferred (health-fields spec, 2026-10-12). The lists above are the original scope and are kept as written.
+
 ## Core User Journey
 
 ### 1. Create Your Profile

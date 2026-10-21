@@ -16,7 +16,7 @@ Usage conditions (confirmed): general. Students arrive on laptops and MacBooks, 
 
 ## Product Purpose
 
-Jisrr is a free, non-commercial web app that runs one journey: student profile, realistic options, costs, scholarships, application steps. It answers four questions: where can I study, can I apply, how much will it cost, what do I need to do. It is not a university directory. Release 1 covers France, Germany, the Netherlands, Hungary and Italy, in Computer Science, Engineering and Business/Economics. Success is that the student ends with realistic options, approximate costs, scholarships they may qualify for, and a clear next step, and trusts the information enough to use Jisrr as their starting point.
+Jisrr is a free, non-commercial web app that runs one journey: student profile, realistic options, costs, scholarships, application steps. It answers four questions: where can I study, can I apply, how much will it cost, what do I need to do. It is not a university directory. Release 1 covers France, Germany, the Netherlands, Hungary, Italy and Spain, in six fields: Computer Science, Engineering, Business and Economics, Medicine, Pharmacy and Allied health, with English-taught Bachelor's programmes first in every destination. Success is that the student ends with realistic options, approximate costs, scholarships they may qualify for, and a clear next step, and trusts the information enough to use Jisrr as their starting point.
 
 ## Positioning
 
